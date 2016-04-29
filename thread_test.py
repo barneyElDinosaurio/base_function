@@ -14,7 +14,7 @@ def loop2():
 
 
 class MyThread(threading.Thread):
-	def __init__(self,fun,arg,name):
+	def __init__(self,fun,arg,name=""):
 		threading.Thread.__init__(self)
 		self.fun=fun
 		self.arg=arg
@@ -24,6 +24,9 @@ class MyThread(threading.Thread):
 	def run(self):
 		self.result=apply(self.fun,self.arg)
 	
+	def getName(self):
+		return self.name
+
 	def getResult(self):
 		return self.result
 
@@ -72,6 +75,19 @@ def multi_thread():
 		threads[i].join()
 		result= threads[i].getResult()
 		print result
+def fast():
+	print "in fast"
+	sleep(15)
+	print "done in fast"
+
+def slow():
+	print "in slow"
+	sleep(10)
+	print "done in slow"
+
+def wireteQ(queue):
+	pass
+
 def main():
 	'''
 	print "start at main"
@@ -80,6 +96,7 @@ def main():
 	sleep(10)
 	print "end at main"
 	'''
+	'''
 	start=ctime()
 	#print "Used %f" %(end-start).seconds
 	print start	
@@ -87,6 +104,29 @@ def main():
 	end=ctime()
 	print end
 	multi_thread()
+	'''
 	#print "used %s" %(end-start).seconds 
+	
+	threads=[]
+	f=[fast,slow]
+	l=len(f)
+	for i in range(l):
+		t=MyThread(f[i],(),str(i))
+		threads.append(t)
+	
+	for i in range(l):
+		threads[i].start()
+
+	for i in range(l):
+		#pass
+		threads[i].join()
+		print threads[i].getName()
+	print "Done on main"
+	exit()
+
+main()
+	
+'''		
 if __name__=="__main__":
 	main()
+'''
