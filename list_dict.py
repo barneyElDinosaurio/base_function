@@ -24,3 +24,10 @@ for k in s:
 print d
 
 print 'I\'m {},{}'.format("hongten","welcome to you")
+
+mydict=collections.defaultdict(list)
+s=[("a",[1,2,3,4]),("b",[2,3,4,5]),("c",[3,4,5,6]),("d",[4,5,6,7])]
+for k,v in s:
+    mydict[k]=v
+
+print mydict
