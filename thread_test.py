@@ -14,7 +14,7 @@ def loop2():
 
 
 class MyThread(threading.Thread):
-	def __init__(self,fun,arg,name):
+	def __init__(self,fun,arg,name=""):
 		threading.Thread.__init__(self)
 		self.fun=fun
 		self.arg=arg
