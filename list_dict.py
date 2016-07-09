@@ -47,5 +47,8 @@ def dict_assign():
     print b
     print id(a)
     print id(b)
+    list=[1,2,3,5,4,6,434,2323,333,99999]
+    print "max of list is ",
+    print max(list)
 
 dict_assign()
