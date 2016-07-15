@@ -51,4 +51,9 @@ def dict_assign():
     print "max of list is ",
     print max(list)
 
-dict_assign()
+def sclice_func():
+    a=[1,3,5,7,9,11,23,1,2]
+    b=a[-1:-6:-1]
+    print b
+#dict_assign()
+sclice_func()
