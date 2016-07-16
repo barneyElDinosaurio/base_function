@@ -75,6 +75,7 @@ def get_high_test():
 def get_all_stock_id():
     print len(stock_info.index)
     for i in  stock_info.index:
+        print i
 
 
 get_all_stock_id()
