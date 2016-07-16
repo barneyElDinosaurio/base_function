@@ -36,35 +36,45 @@ for i in data:
     index=index+1
 print data[1:3]
 '''
-df = ts.get_h_data('300141',start=day30,end=day0)
-#这个函数可以获取所有的历史数据
-#print df
-#current= df[:1]
-#current=df.iloc[0]
-print df
-current=df.ix['2016-07-15']
-print current
-current_high=current['high'].values[0]
-print current_high
-highest= df['high']
-lowest=df['low']
 
-price_30_max = highest.max()
-price_30_min = lowest.min()
+def get_high_test():
+    df = ts.get_h_data('300141',start=day30,end=day0)
+    #这个函数可以获取所有的历史数据
+    #print df
+    #current= df[:1]
+    #current=df.iloc[0]
+    print df
+    current=df.ix['2016-07-15']
+    print current
+    current_high=current['high'].values[0]
+    print current_high
+    highest= df['high']
+    lowest=df['low']
 
-print df[df.high>=price_30_max]
-#得出出现最大值的那一天
-print df[df.low<=price_30_min]
-#得出出现最小值的那一天
+    price_30_max = highest.max()
+    price_30_min = lowest.min()
 
-print price_30_max
-print price_30_min
-#oneData= df.ix['2016-07-11']
-#print oneData.iloc[0,1]
-#print type(oneData)
-#for i in highest.len:
-#    print i
+    print df[df.high>=price_30_max]
+    #得出出现最大值的那一天
+    print df[df.low<=price_30_min]
+    #得出出现最小值的那一天
 
-#print type(t)
-if current_high>=price_30_max:
-    print stock_info.ix['300141']['name'].decode('utf-8')
+    print price_30_max
+    print price_30_min
+    #oneData= df.ix['2016-07-11']
+    #print oneData.iloc[0,1]
+    #print type(oneData)
+    #for i in highest.len:
+    #    print i
+
+    #print type(t)
+    if current_high>=price_30_max:
+        print stock_info.ix['300141']['name'].decode('utf-8')
+
+
+def get_all_stock_id():
+    print len(stock_info.index)
+    for i in  stock_info.index:
+
+
+get_all_stock_id()
