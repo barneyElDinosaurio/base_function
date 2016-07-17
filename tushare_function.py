@@ -83,5 +83,18 @@ def check_type():
     print df.dtypes
     print df.index
 
+
+def news():
+    getnews=ts.get_latest_news()
+    print type(getnews)
+    print getnews
+    #print getnews
+    '''
+    for i in getnews:
+        print i
+    '''
+
+
 #get_all_stock_id()
-check_type()
+#check_type()
+news()
