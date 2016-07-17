@@ -78,4 +78,10 @@ def get_all_stock_id():
         print i
 
 
-get_all_stock_id()
+def check_type():
+    df = ts.get_h_data('300141',start=day30,end=day0)
+    print df.dtypes
+    print df.index
+
+#get_all_stock_id()
+check_type()
