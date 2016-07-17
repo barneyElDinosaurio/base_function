@@ -79,9 +79,15 @@ def get_all_stock_id():
 
 
 def check_type():
-    df = ts.get_h_data('300141',start=day30,end=day0)
+    df = ts.get_hist_data('300141',start=day30,end=day0)
     print df.dtypes
     print df.index
+    t1=df.iloc[0]
+    print type(t1)
+
+    t2=df[:1]
+    print type(t2)
+    print t2.index.values[0]
 
 
 def news():
@@ -96,5 +102,5 @@ def news():
 
 
 #get_all_stock_id()
-#check_type()
-news()
+check_type()
+#news()
