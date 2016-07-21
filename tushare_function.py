@@ -100,7 +100,17 @@ def news():
         print i
     '''
 
+def empty_type():
+    id ="300527"
+    df=ts.get_hist_data(id)
+    print type(df)
+    if df is None:
+        print "None"
+    else:
+        print "Not Empty"
 
 #get_all_stock_id()
-check_type()
+#check_type()
 #news()
+
+empty_type()
