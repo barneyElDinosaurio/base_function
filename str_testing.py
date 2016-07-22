@@ -37,6 +37,18 @@ def check_year():
 def _write_adead():
     sys.stdout.write("Helloafafdafafafafd\n")
     print sys.version_info[0]
+
+def zfill_test():
+    temp="Rocky Chen"
+    temp=temp.zfill(20)
+    print temp
+
+    print len(temp)
+    f=lambda x:str(x).zfill(6)
+    a=f(234)
+    print a
+    print type(a)
+
 check_year()
 _write_adead()
-
+zfill_test()
