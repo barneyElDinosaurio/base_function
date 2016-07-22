@@ -14,10 +14,13 @@ def insert():
                     );
                     '''
     conn.execute(table_create)
-    paul="INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(1,'PAUL',32,'CALIFORNIA',2000.00);"
+    temp="2017-12-12"
+    paul="INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(1,\"%s\",32,'CALIFORNIA',2000.00);" %temp
     allen="INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(2,'ALLEN',72,'CALIFORNIA',20500.00);"
     teddy="INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(3,'TEDDY',732,'CALIFORNIA',52000.00);"
     mark="INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(4,'MARK',327,'CALIFORNIA',3000.00);"
+    #conn.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(?,?,32,'CALIFORNIA',2000.00)",temp)
+    print paul
     conn.execute(paul)
     conn.execute(allen)
     conn.execute(teddy)
@@ -46,8 +49,9 @@ def update():
     conn.commit()
     #¼ÇµÃÒªcommit
 
-db_name='rocky_sqlite.db'
-query()
-update()
-print "After update"
-query()
+insert()
+#db_name='rocky_sqlite.db'
+#query()
+#update()
+#print "After update"
+#query()

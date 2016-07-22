@@ -2,6 +2,7 @@
 __author__ = 'rocchen'
 import tushare as ts
 import datetime
+import urllib2
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
 #这个函数只能获取近3年的数据
 #print df
@@ -109,8 +110,35 @@ def empty_type():
     else:
         print "Not Empty"
 
+def exception_test():
+    #遇到一些停牌的
+
+    stockid='002316'
+    df=ts.get_hist_data(stockid,start='20160601',end='20160701')
+    if df.empty:
+        print "empty"
+
+def get_basic():
+    hsdq=stock_info.ix['300141']
+    print hsdq
+    report=ts.get_report_data(2014,1)
+    print report
+
+
+
+def detail_tushare():
+    #获取所有A股的基本信息
+    all_file="http://218.244.146.57/static/all.csv"
+    req=urllib2.Request(all_file)
+    text = urllib2.urlopen(req).read()
+    print text
+
+
 #get_all_stock_id()
 #check_type()
 #news()
 
 empty_type()
+#exception_test()
+get_basic()
+#detail_tushare()
