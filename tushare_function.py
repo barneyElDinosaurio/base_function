@@ -4,10 +4,15 @@ import tushare as ts
 import datetime
 import urllib2
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
-#�������ֻ�ܻ�ȡ��3�������
+#这个函数只能获取近3年的数据
 #print df
 
 stock_info=ts.get_stock_basics()
+
+def get_all_stock_id():
+    #获取所有股票代码
+    for i in stock_info.index:
+        print i
 
 data=stock_info.ix['300141']['timeToMarket']
 print data
@@ -19,9 +24,9 @@ print data[4:6]
 print data
 date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
 print date_format
-#���ڵĸ�ʽ����ת��
+#日期的格式进行转换
 delta=60*7/5
-#���ǵ������շǽ���
+#考虑到周六日非交易
 day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
 day30=day0-datetime.timedelta(delta)
 print day30
@@ -40,7 +45,7 @@ print data[1:3]
 
 def get_high_test():
     df = ts.get_h_data('300141',start=day30,end=day0)
-    #����������Ի�ȡ���е���ʷ����
+    #这个函数可以获取所有的历史数据
     #print df
     #current= df[:1]
     #current=df.iloc[0]
@@ -56,9 +61,9 @@ def get_high_test():
     price_30_min = lowest.min()
 
     print df[df.high>=price_30_max]
-    #�ó��������ֵ����һ��
+    #得出出现最大值的那一天
     print df[df.low<=price_30_min]
-    #�ó�������Сֵ����һ��
+    #得出出现最小值的那一天
 
     print price_30_max
     print price_30_min
@@ -111,7 +116,7 @@ def empty_type():
         print "Not Empty"
 
 def exception_test():
-    #����һЩͣ�Ƶ�
+    #遇到一些停牌的
 
     stockid='002316'
     df=ts.get_hist_data(stockid,start='20160601',end='20160701')
@@ -127,18 +132,20 @@ def get_basic():
 
 
 def detail_tushare():
-    #��ȡ����A�ɵĻ�����Ϣ
+    #获取所有A股的基本信息
     all_file="http://218.244.146.57/static/all.csv"
     req=urllib2.Request(all_file)
     text = urllib2.urlopen(req).read()
     print text
-
+def get_profit():
+    #获取业绩
 
 #get_all_stock_id()
 #check_type()
 #news()
 
-empty_type()
+#empty_type()
 #exception_test()
-get_basic()
+#get_basic()
 #detail_tushare()
+get_all_stock_id()
