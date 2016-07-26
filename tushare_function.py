@@ -139,7 +139,20 @@ def detail_tushare():
     print text
 def get_profit():
     #获取业绩
+    pass
 
+def get_real_time():
+    df=ts.get_today_all()
+    print df
+
+def get_mount():
+    df = ts.get_tick_data('300141',date='2016-07-25')
+    print df
+
+def for_test():
+    for _ in range(10):
+        # only for loop, no variable
+        print "Hello"
 #get_all_stock_id()
 #check_type()
 #news()
@@ -148,4 +161,7 @@ def get_profit():
 #exception_test()
 #get_basic()
 #detail_tushare()
-get_all_stock_id()
+#get_all_stock_id()
+#get_real_time()
+#get_mount()
+for_test()
