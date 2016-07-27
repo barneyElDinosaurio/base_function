@@ -18,18 +18,18 @@ data=stock_info.ix['300141']['timeToMarket']
 print data
 print type(data)
 data=str(data)
-print type(data)
-print data[1:4]
-print data[4:6]
-print data
+#print type(data)
+#print data[1:4]
+#print data[4:6]
+#print data
 date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
-print date_format
+#print date_format
 #日期的格式进行转换
 delta=60*7/5
 #考虑到周六日非交易
 day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
 day30=day0-datetime.timedelta(delta)
-print day30
+#print day30
 day30=day30.strftime("%Y-%m-%d")
 day0=day0.strftime("%Y-%m-%d")
 
@@ -153,6 +153,16 @@ def for_test():
     for _ in range(10):
         # only for loop, no variable
         print "Hello"
+
+def get_each_mount():
+    url='http://market.finance.sina.com.cn/downxls.php?date=2016-07-25&symbol=sz300141'
+    req=urllib2.Request(url)
+    resp=urllib2.urlopen(req)
+    content=resp.read()
+    data= content.decode('GBK')
+    print len(data)
+
+    TICK_COLUMNS = ['time', 'price', 'change', 'volume', 'amount', 'type']
 #get_all_stock_id()
 #check_type()
 #news()
@@ -164,4 +174,5 @@ def for_test():
 #get_all_stock_id()
 #get_real_time()
 #get_mount()
-for_test()
+#for_test()
+get_each_mount()
