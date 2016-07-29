@@ -71,6 +71,25 @@ def del_row():
     print ndf
 
 
+def win_or_lost():
+    l=len(df.index)
+
+    for i in range(l):
+        '''
+        if item[u'业务'] == u'买入成交':
+            item[u'资金发生数']=item[u'资金发生数']*-1
+        '''
+        #print item
+        if df.iloc[i][u'业务']==u'买入成交':
+            df.iloc[i][u'资金发生数']=-1*df.iloc[i][u'资金发生数']
+            #print new_line
+    #print df
+
+    print df
+    #print df
+    #df.loc[df[u'业务']==u'买入成交',u'资金发生数']=0
+    #print df
 #excel_op()
 #del_row()
-search()
+#search()
+win_or_lost()
