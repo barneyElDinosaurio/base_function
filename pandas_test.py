@@ -2,15 +2,17 @@
 __author__ = 'rocky'
 import pandas as pd
 import numpy as np
+df=pd.read_excel("huatai2.xls")
+
+
 def excel_op():
-    df=pd.read_excel("mystocks.xls")
     #rint df.head(20)
-    df=df.fillna(0)
+    #df=df.fillna(0)
     #print df.head(20)
-    code=df[[u'代码',u'资金发生数']]
+    #code=df[[u'代码',u'资金发生数']]
     #print(code)
     #print type(code)
-    code=code.fillna(0)
+    #code=code.fillna(0)
     #print code
     '''
     for i in code:
@@ -25,6 +27,50 @@ def excel_op():
         print type(i)
         num=num+1
     '''
+    '''
     for index,row in df.iterrows():
-        print row[u'代码'],row[u'资金发生数']
-excel_op()
+        #print row[u'代码'],row[u'资金发生数']
+        print "index**********************"
+        print index
+        print "row************************"
+        print row
+    '''
+def search():
+    #遍历
+    input_m=0.0
+    output_m=0.0
+    for index, row in df.iterrows():
+        if row[u'业务']==u'存入':
+            each_input=row[u'资金发生数']
+            print u"存入",
+            print each_input
+            input_m=input_m+each_input
+            #print type(money)
+        if row[u'业务']==u'取出':
+            each_output=row[u'资金发生数']
+            print u"取出",
+            print each_output
+            #print type(money)
+            output_m=output_m+each_output
+
+    print "Sumary is %f" %(input_m-output_m)
+
+
+
+
+
+def del_row():
+    #删除某一行
+
+    #可以获得某个index
+    #print df[df[u'代码']==300141].index
+    #print df
+
+    #print "\nAfter drop"
+    ndf=df.drop(df[df[u'代码']==300141.0].index)
+    print ndf
+
+
+#excel_op()
+#del_row()
+search()
