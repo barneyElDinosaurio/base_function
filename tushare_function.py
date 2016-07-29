@@ -3,6 +3,9 @@ __author__ = 'rocchen'
 import tushare as ts
 import datetime
 import urllib2
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
 #这个函数只能获取近3年的数据
 #print df
@@ -147,12 +150,38 @@ def get_real_time():
 
 def get_mount():
     df = ts.get_tick_data('300141',date='2016-07-25')
+    df.plot()
     print df
 
 def for_test():
     for _ in range(10):
         # only for loop, no variable
         print "Hello"
+
+def plot_test():
+    df=ts.get_hist_data('600415',start='2015-04-01',end='2015-06-18')
+    # 所有的结果汇图
+    df.plot()
+    # 只将stock最高值进行汇图
+    df.high.plot()
+    # 指定绘图的四个量，并指定线条颜色
+    with pd.plot_params.use('x_compat', True):
+        df.open.plot(color='g')
+        df.close.plot(color='y')
+        df.high.plot(color='r')
+        df.low.plot(color='b')
+    # 指定绘图的长宽尺度及背景网格
+    with pd.plot_params.use('x_compat', True):
+        df.high.plot(color='r',figsize=(10,4),grid='on')
+        df.low.plot(color='b',figsize=(10,4),grid='on')
+
+def plot_test2():
+    fig = matplotlib.pyplot.gcf()
+    df = ts.get_hist_data('600415', start='2015-04-01', end='2015-06-18')
+    with pd.plot_params.use('x_compat', True):
+        df.high.plot(color='r', figsize=(10, 4), grid='on')
+        df.low.plot(color='b', figsize=(10, 4), grid='on')
+        fig.savefig('graph.png')
 
 def get_each_mount():
     url='http://market.finance.sina.com.cn/downxls.php?date=2016-07-25&symbol=sz300141'
@@ -175,4 +204,5 @@ def get_each_mount():
 #get_real_time()
 #get_mount()
 #for_test()
-get_each_mount()
+#get_each_mount()
+plot_test2()
