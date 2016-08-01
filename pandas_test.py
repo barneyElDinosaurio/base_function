@@ -119,22 +119,33 @@ def replace_test2():
     print b
     print c
     print d
-
+    print "fist"
     first=pd.DataFrame({'Entry1':a,'Relation':b,'Entry2':c,'Meta':d})
     print first
     new_df=pd.DataFrame({'Entry1':pd.Series(data[0:4]),'Relation':pd.Series(data[4:8]),'Entry2':pd.Series(data[8:12]),'Meta':pd.Series(data[12:16]),})
     #狗日的，一个冒号写成逗号搞了我一个下午。
-
+    print "new_df"
     print new_df
-
+    print "loc[0]"
     print new_df.loc[0]
+    print "type of loc is "
+    print type(new_df.loc[0])
     #a=pd.Series()
+    print "log[2] entery2: "
     print new_df.loc[2,['Entry2']]
 
     #E511
 
     print new_df.at[2,"Entry2"]
     #at 是获取出来的值,而且是单个的值
+    print "get row 1 2"
+    print new_df[1:3]
+    #only row 1,2
+
+    print "\t iloc[2]"
+    print new_df.iloc[2]
+    print type(new_df.iloc[2])
+
 
 def data_type_test():
     data = pd.Series([0.25, 0.5, 0.75, 1.0],index=['a','b','c','d'])
@@ -169,7 +180,7 @@ def data_type_test():
     print ind[::2]
 
 
-    print a
+    #print
 #excel_op()
 #del_row()
 #search()
@@ -197,5 +208,6 @@ def win_or_lost():
 #excel_op()
 #del_row()
 #search()
-win_or_lost()
+#win_or_lost()
+replace_test2()
 
