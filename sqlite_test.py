@@ -1,8 +1,9 @@
 # -*-coding=utf-8-*-
 __author__ = 'rocchen'
 import sqlite3
+db_name="rocky_sqlite.db"
 def insert():
-    conn = sqlite3.connect("rocky_sqlite.db")
+    conn = sqlite3.connect(db_name)
     print "open database passed"
     table_create = '''
                     CREATE TABLE COMPANY
@@ -47,11 +48,11 @@ def update():
     conn=sqlite3.connect(db_name)
     conn.execute(update_command)
     conn.commit()
-    #记得要commit
+    #锟角碉拷要commit
 
 insert()
 #db_name='rocky_sqlite.db'
-#query()
+query()
 #update()
 #print "After update"
 #query()

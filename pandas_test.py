@@ -75,6 +75,7 @@ def del_row():
 def replace_test():
     #替换值
 
+
     s1=pd.Series(['a','b','c','d','e'])
     #print s1
     s2=pd.Series(['1','2','3','4','5'])
@@ -174,3 +175,27 @@ def data_type_test():
 #search()
 replace_test2()
 #data_type_test()
+
+def win_or_lost():
+    l=len(df.index)
+
+    for i in range(l):
+        '''
+        if item[u'业务'] == u'买入成交':
+            item[u'资金发生数']=item[u'资金发生数']*-1
+        '''
+        #print item
+        if df.iloc[i][u'业务']==u'买入成交':
+            df.iloc[i][u'资金发生数']=-1*df.iloc[i][u'资金发生数']
+            #print new_line
+    #print df
+
+    print df
+    #print df
+    #df.loc[df[u'业务']==u'买入成交',u'资金发生数']=0
+    #print df
+#excel_op()
+#del_row()
+#search()
+win_or_lost()
+
