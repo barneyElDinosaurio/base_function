@@ -146,6 +146,9 @@ def replace_test2():
     print new_df.iloc[2]
     print type(new_df.iloc[2])
 
+    new_df['Entry1'].replace('E11','EE',inplace=True)
+    print new_df
+
 
 def data_type_test():
     data = pd.Series([0.25, 0.5, 0.75, 1.0],index=['a','b','c','d'])
