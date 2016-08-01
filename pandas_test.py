@@ -64,13 +64,113 @@ def del_row():
 
     #可以获得某个index
     #print df[df[u'代码']==300141].index
-    #print df
+    print df
 
     #print "\nAfter drop"
-    ndf=df.drop(df[df[u'代码']==300141.0].index)
-    print ndf
+    df.drop(df[df[u'代码']==300141.0].index,inplace=True)
+    new_df=df.drop(df[df[u'代码']==300141.0].index)
+    #print ndf
+    print df
+
+def replace_test():
+    #替换值
+
+    s1=pd.Series(['a','b','c','d','e'])
+    #print s1
+    s2=pd.Series(['1','2','3','4','5'])
+    #print s2
+
+    s3=s1.replace(1,'k')
+    #print s1
+    #print s3
+    df.replace(3,['20160725','0','0','0',0,0,0,0,'0'],inplace=True)
+    print df
+
+def replace_test2():
+    temp='''
+    E11 | R_31 | E21 | M_xxx |
+    E12 | R_21 | E51 | M_relation |
+    E33 | R_21 | E51 | M_yyy |
+    E44 | R_41 | E46 | M_relation
+    '''
+    split_data=temp.split('|')
+    t=[]
+    for i in split_data:
+       t.append(i.strip())
+    print t
+    data=[]
+    result=[]
+    l=len(t)/4
+    print l
+    for j in range(l):
+        for k in range(l):
+            data.append(t[4*k+j])
+            #data.append(t[4*(j+1)+k])
+            #data.append(t[4*(j+2)+k])
+            #data.append(t[4*(j+3)+k])
+    print data
+    a=pd.Series(data[0:4])
+    b=pd.Series(data[4:8])
+    c=pd.Series(data[8:12])
+    d=pd.Series(data[12:16])
+    #print a
+    print a
+    print b
+    print c
+    print d
+
+    first=pd.DataFrame({'Entry1':a,'Relation':b,'Entry2':c,'Meta':d})
+    print first
+    new_df=pd.DataFrame({'Entry1':pd.Series(data[0:4]),'Relation':pd.Series(data[4:8]),'Entry2':pd.Series(data[8:12]),'Meta':pd.Series(data[12:16]),})
+    #狗日的，一个冒号写成逗号搞了我一个下午。
+
+    print new_df
+
+    print new_df.loc[0]
+    #a=pd.Series()
+    print new_df.loc[2,['Entry2']]
+
+    #E511
+
+    print new_df.at[2,"Entry2"]
+    #at 是获取出来的值,而且是单个的值
+
+def data_type_test():
+    data = pd.Series([0.25, 0.5, 0.75, 1.0],index=['a','b','c','d'])
+    print data
+    print data.values
+    print type(data.values)
+    print data.index
+    for i in data.index:
+        print i
+    print data[1:3]
+    print data['b']
+    print df.columns
+    print df[u'代码']
+    #print df['col0']
+    population_dict = {'California': 38332521,
+               'Texas': 26448193,
+               'New York': 19651127,
+               'Florida': 19552860,
+               'Illinois': 12882135}
+    population=pd.Series(population_dict)
+    print population
+    print population["California"]
+    new_df= pd.DataFrame(population,columns=['population'])
+    print new_df
+    data = [{'a': i, 'b': 2 * i}
+    for i in range(3)]
+    print data
+    pd.DataFrame(data)
+    ind = pd.Index([2, 3, 5, 7, 11])
+    print ind
+
+    print ind[::2]
 
 
+    print a
 #excel_op()
 #del_row()
-search()
+#search()
+replace_test2()
+#data_type_test()
