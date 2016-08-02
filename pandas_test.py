@@ -227,16 +227,24 @@ def select_function():
     print df[(df.D>0) & (df.C>0)]
 
 
-def get_static():
+def get_static1():
     df=pd.read_excel("huatai2.xls")
     count=df[u'名称'].value_counts()
     print count
     plt=count.plot(kind='bar').get_figure()
     plt.savefig("plot.png")
+
+def get_static2():
+    df=pd.read_excel("huatai2.xls")
+    high= df[df[u'资金发生数']>10000]
+    #print high
+    g=df.groupby(u'资金发生数')
+    #print g.first()
+    print g.last()
 #excel_op()
 #del_row()
 #search()
-replace_test()
+#replace_test()
 #data_type_test()
 #excel_op()
 #del_row()
@@ -244,4 +252,5 @@ replace_test()
 #win_or_lost()
 #replace_test2()
 #select_function()
-get_static()
+#get_static1()
+get_static2()
