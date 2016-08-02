@@ -2,7 +2,7 @@
 __author__ = 'rocky'
 import pandas as pd
 import numpy as np
-df=pd.read_excel("huatai2.xls")
+import matplotlib.pyplot as plt
 
 
 def excel_op():
@@ -37,6 +37,7 @@ def excel_op():
     '''
 def search():
     #遍历
+    df=pd.read_excel("huatai2.xls")
     input_m=0.0
     output_m=0.0
     for index, row in df.iterrows():
@@ -61,7 +62,7 @@ def search():
 
 def del_row():
     #删除某一行
-
+    df=pd.read_excel("huatai2.xls")
     #可以获得某个index
     #print df[df[u'代码']==300141].index
     print df
@@ -75,7 +76,7 @@ def del_row():
 def replace_test():
     #替换值
 
-
+    df=pd.read_excel("huatai2.xls")
     s1=pd.Series(['a','b','c','d','e'])
     #print s1
     s2=pd.Series(['1','2','3','4','5'])
@@ -84,7 +85,9 @@ def replace_test():
     s3=s1.replace(1,'k')
     #print s1
     #print s3
-    df.replace(3,['20160725','0','0','0',0,0,0,0,'0'],inplace=True)
+    print df
+    df.replace(['20160722',u'卖出成交',2431.0,u'棕榈股份',13.00,300.0,3891.10,3905.71,u'自动'],['20160722','0','0','0',0,0,0,0,'0'],inplace=True)
+    #df.replace(['20160722'],['20160725','0','0','0',0,0,0,0,'0'],inplace=True)
     print df
 
 def replace_test2():
@@ -157,6 +160,10 @@ def replace_test2():
     print "select one value" #r21
     print new_df.iloc[1,3]
 
+    alist=['E11','E12']
+
+    print new_df.isin(alist)
+
 
 def data_type_test():
     data = pd.Series([0.25, 0.5, 0.75, 1.0],index=['a','b','c','d'])
@@ -217,18 +224,24 @@ def select_function():
     df=pd.DataFrame(np.random.randn(6,4),columns=list("ABCD"))
     print df
 
-    print df[df.D>0]
+    print df[(df.D>0) & (df.C>0)]
 
 
+def get_static():
+    df=pd.read_excel("huatai2.xls")
+    count=df[u'名称'].value_counts()
+    print count
+    plt=count.plot(kind='bar').get_figure()
+    plt.savefig("plot.png")
 #excel_op()
 #del_row()
 #search()
-#replace_test2()
+replace_test()
 #data_type_test()
 #excel_op()
 #del_row()
 #search()
 #win_or_lost()
 #replace_test2()
-print select_function()
-
+#select_function()
+get_static()
