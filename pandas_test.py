@@ -149,6 +149,14 @@ def replace_test2():
     new_df['Entry1'].replace('E11','EE',inplace=True)
     print new_df
 
+    #sclice
+    print "\nsclice"
+    print new_df.iloc[[1,3]]
+    print "partion"
+    print new_df.iloc[:,[1,3]]
+    print "select one value" #r21
+    print new_df.iloc[1,3]
+
 
 def data_type_test():
     data = pd.Series([0.25, 0.5, 0.75, 1.0],index=['a','b','c','d'])
@@ -184,11 +192,7 @@ def data_type_test():
 
 
     #print
-#excel_op()
-#del_row()
-#search()
-replace_test2()
-#data_type_test()
+
 
 def win_or_lost():
     l=len(df.index)
@@ -208,9 +212,23 @@ def win_or_lost():
     #print df
     #df.loc[df[u'业务']==u'买入成交',u'资金发生数']=0
     #print df
+
+def select_function():
+    df=pd.DataFrame(np.random.randn(6,4),columns=list("ABCD"))
+    print df
+
+    print df[df.D>0]
+
+
+#excel_op()
+#del_row()
+#search()
+#replace_test2()
+#data_type_test()
 #excel_op()
 #del_row()
 #search()
 #win_or_lost()
-replace_test2()
+#replace_test2()
+print select_function()
 
