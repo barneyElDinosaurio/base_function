@@ -241,6 +241,14 @@ def get_static2():
     g=df.groupby(u'资金发生数')
     #print g.first()
     print g.last()
+
+def my_data():
+    #测试我自己的数据
+    df=pd.read_excel("huatai2.xls")
+    print df[df[u'名称']==u'和顺电气']
+
+
+
 #excel_op()
 #del_row()
 #search()
@@ -253,4 +261,5 @@ def get_static2():
 #replace_test2()
 #select_function()
 #get_static1()
-get_static2()
+#get_static2()
+my_data()
