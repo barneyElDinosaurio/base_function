@@ -245,7 +245,24 @@ def get_static2():
 def my_data():
     #测试我自己的数据
     df=pd.read_excel("huatai2.xls")
-    print df[df[u'名称']==u'和顺电气']
+    hsdq = df[df[u'名称']==u'和顺电气']
+    print hsdq
+    hsdq[hsdq[u'业务']==u'买入成交']
+
+def string_op():
+    a='ABCdEFG'
+    s=pd.Series(list(a))
+    print s.str.lower()
+    print s.str.upper()
+    print "Now s is : "
+    print s
+    print s.str.len()
+
+def string_op2():
+    a=['a1','b2','c3','d4','e5']
+    s=pd.Series(a)
+    print s
+    print s.str.extract('\w(\d)')
 
 
 
@@ -262,4 +279,5 @@ def my_data():
 #select_function()
 #get_static1()
 #get_static2()
-my_data()
+#my_data()
+string_op2()
