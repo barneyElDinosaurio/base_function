@@ -1,3 +1,4 @@
+#-*-coding=utf-8-*-
 import time,datetime
 
 now = time.strftime("%Y-%m-%d")
@@ -8,3 +9,61 @@ print now_time
 print type(now_time)
 today = time.strftime("_%Y_%m_%d")
 print today
+
+aa=datetime.datetime(2016,8,7)
+#看输入的日期是一个星期的第几天
+print aa.weekday()
+
+
+class Data_test(object):
+    day=0
+    month=0
+    year=0
+    def __init__(self,year=0,month=0,day=0):
+        self.day=day
+        self.month=month
+        self.year=year
+
+    def out_date(self):
+        print "year :"
+        print self.year
+        print "month :"
+        print self.month
+        print "day :"
+        print self.day
+
+class Data_test2(object):
+    day=0
+    month=0
+    year=0
+    def __init__(self,year=0,month=0,day=0):
+        self.day=day
+        self.month=month
+        self.year=year
+
+    @classmethod
+    def get_date(cls,data_as_string):
+        year,month,day=map(int,string_date.split('-'))
+        date1=cls(year,month,day)
+        return date1
+
+    def out_date(self):
+        print "year :"
+        print self.year
+        print "month :"
+        print self.month
+        print "day :"
+        print self.day
+        print "Done"
+
+t=Data_test(2016,8,1)
+t.out_date()
+string_date='2016-8-1'
+year,month,day=map(int,string_date.split('-'))
+s=Data_test(year,month,day)
+s.out_date()
+print "@Class"
+r=Data_test2.get_date("2016-8-6")
+r.out_date()
+
+
