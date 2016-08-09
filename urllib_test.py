@@ -44,5 +44,6 @@ def get_page():
     for i in page:
         print i
 get_page()
-#filter_p = re.compile('´óÎó.*')
+urllib2.url
+#filter_p = re.compile('ï¿½ï¿½ï¿½ï¿½.*')
 #getPost('20160620',filter_p)
