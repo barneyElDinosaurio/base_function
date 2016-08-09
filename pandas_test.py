@@ -264,8 +264,12 @@ def string_op2():
     print s
     print s.str.extract('\w(\d)')
 
-
-
+def string_op3():
+    # use regalar type
+    s=pd.Series(["a1","dd2","1ww2","ef2","t1","g2","h7","ood","444","12er","1qa",np.nan,"z9"])
+    print s
+    p=r'[a-z][0-9]'
+    print s.str.contains(p)
 #excel_op()
 #del_row()
 #search()
@@ -280,4 +284,5 @@ def string_op2():
 #get_static1()
 #get_static2()
 #my_data()
-string_op2()
+#string_op2()
+string_op3()
