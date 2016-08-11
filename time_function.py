@@ -1,6 +1,6 @@
 #-*-coding=utf-8-*-
+#日期函数的使用
 import time,datetime
-
 now = time.strftime("%Y-%m-%d")
 print now
 print type(now)
