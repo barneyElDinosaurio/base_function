@@ -8,5 +8,10 @@ def request_test():
     r=requests.get(url)
     print r.text
 
+    data={"name":"Rocky"}
+    url2="http://httpbin.org/post"
+    s=requests.post(url2,data)
+    print s.text
+
 
 request_test()
