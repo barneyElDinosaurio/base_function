@@ -35,3 +35,9 @@ requests_practise()
 end=datetime.datetime.now()
 used=end-start
 print used
+
+def renren_access():
+    url="http://www.renren.com/ajaxLogin/login"
+    s=requests.Session()
+    user={'email':'','password':''}
+    r=

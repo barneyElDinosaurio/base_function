@@ -13,3 +13,6 @@ print os.path.abspath('.')
 
 print sys.stdout.encoding
 #get your system coding
+
+if __name__=="__main__":
+    print "Start from here"
