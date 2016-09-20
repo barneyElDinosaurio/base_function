@@ -56,6 +56,12 @@ class Data_test2(object):
         print self.day
         print "Done"
 
+class DateTest3():
+        def getPreviousDay(self):
+            now=datetime.datetime.now()
+            last=now+datetime.timedelta(days=-3)
+            print   last.strftime("%Y-%m-%d")
+
 t=Data_test(2016,8,1)
 t.out_date()
 string_date='2016-8-1'
@@ -65,5 +71,11 @@ s.out_date()
 print "@Class"
 r=Data_test2.get_date("2016-8-6")
 r.out_date()
+
+print "*"*10
+d3=DateTest3()
+d3.getPreviousDay()
+
+
 
 
