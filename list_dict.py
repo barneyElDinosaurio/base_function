@@ -55,5 +55,18 @@ def sclice_func():
     a=[1,3,5,7,9,11,23,1,2]
     b=a[-1:-6:-1]
     print b
+
+def list_change():
+    a=[1,2,3,4]
+    print a
+    for i in range(len(a)):
+        a[i]=a[i]+1
+
+    print a
+
 #dict_assign()
-sclice_func()
+
+
+#sclice_func()
+
+list_change()

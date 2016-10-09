@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 def excel_op():
-    #rint df.head(20)
+    #print df.head(20)
     #df=df.fillna(0)
     #print df.head(20)
     #code=df[[u'代码',u'资金发生数']]

@@ -33,6 +33,29 @@ def base_usage():
     #这样不会显示end
     print "End"
 
+
+class ChangeUI_lable(QtGui.QWidget):
+    def __init__(self,parent=None):
+        super(ChangeUI_lable,self).__init__(parent)
+        self.setWindowTitle("One")
+
+        self.pushButton=QtGui.QPushButton("Rocky_Button")
+        self.pushButton1=QtGui.QPushButton("Clear")
+        self.textEdit=QtGui.QTextEdit()
+        layout=QtGui.QVBoxLayout()
+
+        self.pushButton.clicked.connect(self.onClick)
+        self.pushButton1.clicked.connect(self.onClick1)
+
+        layout.addWidget(self.textEdit)
+        layout.addWidget(self.pushButton)
+        layout.addWidget(self.pushButton1)
+        self.setLayout(layout)
+    def onClick(self):
+        self.textEdit.setText("Click button")
+    def onClick1(self):
+        self.textEdit.setText("")
+
 if __name__=="__main__":
     '''
     app=QtGui.QApplication(sys.argv)
@@ -40,4 +63,8 @@ if __name__=="__main__":
     window.show()
     sys.exit(app.exec_())
     '''
-    base_usage()
+    #base_usage()
+    app=QtGui.QApplication(sys.argv)
+    w=ChangeUI_lable()
+    w.show()
+    sys.exit(app.exec_())

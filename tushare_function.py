@@ -17,24 +17,25 @@ def get_all_stock_id():
     for i in stock_info.index:
         print i
 
-data=stock_info.ix['300141']['timeToMarket']
-print data
-print type(data)
-data=str(data)
-#print type(data)
-#print data[1:4]
-#print data[4:6]
-#print data
-date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
-#print date_format
-#日期的格式进行转换
-delta=60*7/5
-#考虑到周六日非交易
-day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
-day30=day0-datetime.timedelta(delta)
-#print day30
-day30=day30.strftime("%Y-%m-%d")
-day0=day0.strftime("%Y-%m-%d")
+def date_test():
+    data=stock_info.ix['300141']['timeToMarket']
+    print data
+    print type(data)
+    data=str(data)
+    #print type(data)
+    #print data[1:4]
+    #print data[4:6]
+    #print data
+    date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
+    #print date_format
+    #日期的格式进行转换
+    delta=60*7/5
+    #考虑到周六日非交易
+    day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
+    day30=day0-datetime.timedelta(delta)
+    #print day30
+    day30=day30.strftime("%Y-%m-%d")
+    day0=day0.strftime("%Y-%m-%d")
 
 '''
 data="20101112"
@@ -127,10 +128,17 @@ def exception_test():
         print "empty"
 
 def get_basic():
-    hsdq=stock_info.ix['300141']
-    print hsdq
-    report=ts.get_report_data(2014,1)
-    print report
+    #hsdq=stock_info.ix['300141']
+    #print hsdq
+    #report=ts.get_report_data(2014,1)
+    #print report
+    print '*'*20
+    df=ts.get_today_all()
+    zrkj=df[df['code']=='300333']
+    print type(zrkj)
+    print type(zrkj['code'])
+    print zrkj['name'].values[0]
+
 
 
 
@@ -192,6 +200,15 @@ def get_each_mount():
     print len(data)
 
     TICK_COLUMNS = ['time', 'price', 'change', 'volume', 'amount', 'type']
+
+def save_excel():
+    df=ts.get_today_all()
+    df.to_excel('1.xls',sheet_name='all_stock')
+    df2=ts.get_hist_data('300333')
+    df2.to_excel('1.xls',sheet_name='basic_info')
+    df.ExcelWriter
+    out=pd.ExcelWriter("2.xls")
+    df.to_excel()
 #get_all_stock_id()
 #check_type()
 #news()
@@ -205,4 +222,6 @@ def get_each_mount():
 #get_mount()
 #for_test()
 #get_each_mount()
-plot_test2()
+#plot_test2()
+#save_excel()
+get_real_time()
