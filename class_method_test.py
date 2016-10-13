@@ -64,6 +64,22 @@ class Factory_Work():
             return PC_worker()
 
 
+class Person():
+    def __init__(self,first,last):
+        self.fisrt_name=first
+        self.last_name=last
+
+    #@property
+    def p_name(self):
+        return self.fisrt_name+" " + self.last_name
+
+'''
 a=Factory_Work.get_fun("phone")
 #b=a.get_fun("PC")
 a.work_fun()
+'''
+
+person=Person("Jacky","He")
+print person.p_name()
+person.last_name="HHHH"
+print person.p_name()
