@@ -63,7 +63,7 @@ class DateTest3():
             print   last.strftime("%Y-%m-%d")
 
 def time_string_test():
-
+    print "Test"
     file_name="hello.txt"
     f=open(file_name,'a')
     now=datetime.datetime.now()
