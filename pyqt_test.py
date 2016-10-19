@@ -111,12 +111,45 @@ class SigSlot(QtGui.QWidget):
 
 
 
-class 
+class ProgressBar(QtGui.QWidget):
+    def __init__(self,parent=None):
+        QtGui.QWidget.__init__(self)
+        self.setGeometry(300,300,250,150)
+
+        self.pBar=QtGui.QProgressBar(self)
+        self.pBar.setGeometry(30,40,200,25)
+
+        self.button=QtGui.QPushButton('start',self)
+        self.button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.button.move(40,80)
+
+        self.connect(self.button,QtCore.SIGNAL('clicked()'),self.onStart)
+        self.timer=QtCore.QBasicTimer()
+        self.step=0
+
+    def timerEvent(self, event):
+        if self.step>=100:
+            self.timer.stop()
+            return
+        self.step=self.step+1
+        self.pBar.setValue(self.step)
+
+    def onStart(self):
+        if self.timer.isActive():
+            self.timer.stop()
+            self.button.setText("Start")
+        else:
+            self.timer.start(100,self)
+            self.button.setText(("Stop"))
+
+class DrawTest(QtGui.QWidget):
+    def __init__(self):
+
 
 if __name__ =='__main__':
     app=QtGui.QApplication(sys.argv)
-    slot=SigSlot()
-    slot.show()
+    bar=ProgressBar()
+    bar.show()
     sys.exit(app.exec_())
 
 

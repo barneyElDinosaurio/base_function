@@ -62,6 +62,24 @@ class DateTest3():
             last=now+datetime.timedelta(days=-3)
             print   last.strftime("%Y-%m-%d")
 
+def time_string_test():
+    print "Test"
+    file_name="hello.txt"
+    f=open(file_name,'a')
+    now=datetime.datetime.now()
+    print now
+    print type(now)
+    #f.write(now)
+
+    now2 = time.strftime("%Y-%m-%d %H:%M:%S")
+    print now2
+    print type(now2)
+
+    now3=now.strftime("%Y-%m-%d %H:%M:%S")
+    print now3
+    print type(now3)
+    f.close()
+
 t=Data_test(2016,8,1)
 t.out_date()
 string_date='2016-8-1'
