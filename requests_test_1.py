@@ -17,5 +17,9 @@ def request_test():
     t=requests.post(url2,params=data)
     print t.url
 
+def request_test2():
+    url='http://yuepaowanimal.tumblr.com/api/read?type=video&num=50&start=0'
+    result=requests.get(url).text
+    print result
 
-request_test()
+request_test2()
