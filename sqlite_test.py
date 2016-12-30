@@ -1,7 +1,7 @@
 # -*-coding=utf-8-*-
 __author__ = 'rocchen'
 import sqlite3
-db_name="rocky_sqlite1.db"
+db_name="rocky_sqlite2.db"
 
 #判断表存不存在来创建表
 def create_table():
