@@ -3,14 +3,39 @@ __author__ = 'rocchen'
 import tushare as ts
 import datetime
 import urllib2
+
+#df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
+#�������ֻ�ܻ�ȡ��3�������
+
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
 #这个函数只能获取近3年的数据
+
 #print df
 
 stock_info=ts.get_stock_basics()
+
+
+data=stock_info.ix['300141']['timeToMarket']
+print data
+print type(data)
+data=str(data)
+print type(data)
+print data[1:4]
+print data[4:6]
+print data
+date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
+print date_format
+#���ڵĸ�ʽ����ת��
+delta=60*7/5
+#���ǵ������շǽ���
+day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
+day30=day0-datetime.timedelta(delta)
+print day30
+day30=day30.strftime("%Y-%m-%d")
+day0=day0.strftime("%Y-%m-%d")
 
 def get_all_stock_id():
     #获取所有股票代码
@@ -37,6 +62,7 @@ def date_test():
     day30=day30.strftime("%Y-%m-%d")
     day0=day0.strftime("%Y-%m-%d")
 
+
 '''
 data="20101112"
 index=0
@@ -49,7 +75,9 @@ print data[1:3]
 
 def get_high_test():
     df = ts.get_h_data('300141',start=day30,end=day0)
+
     #这个函数可以获取所有的历史数据
+
     #print df
     #current= df[:1]
     #current=df.iloc[0]
@@ -65,9 +93,11 @@ def get_high_test():
     price_30_min = lowest.min()
 
     print df[df.high>=price_30_max]
+
     #得出出现最大值的那一天
     print df[df.low<=price_30_min]
     #得出出现最小值的那一天
+
 
     print price_30_max
     print price_30_min
@@ -120,7 +150,9 @@ def empty_type():
         print "Not Empty"
 
 def exception_test():
+
     #遇到一些停牌的
+
 
     stockid='002316'
     df=ts.get_hist_data(stockid,start='20160601',end='20160701')
@@ -128,6 +160,12 @@ def exception_test():
         print "empty"
 
 def get_basic():
+
+    hsdq=stock_info.ix['300141']
+    print hsdq
+    report=ts.get_report_data(2014,1)
+    print report
+
     #hsdq=stock_info.ix['300141']
     #print hsdq
     #report=ts.get_report_data(2014,1)
@@ -142,12 +180,19 @@ def get_basic():
 
 
 
+
 def detail_tushare():
+
     #获取所有A股的基本信息
+
     all_file="http://218.244.146.57/static/all.csv"
     req=urllib2.Request(all_file)
     text = urllib2.urlopen(req).read()
     print text
+
+
+
+
 def get_profit():
     #获取业绩
     pass
@@ -210,6 +255,7 @@ def save_excel():
     out=pd.ExcelWriter("2.xls")
     df.to_excel()
 
+
 def gsz():
     hq=ts.get_today_all()
     hq['trade']=hq.apply(lambda x:x.settlement if x.trade == 0 else x.trade,axis=1)
@@ -249,9 +295,16 @@ def getBigVol(code):
     else :
         print hist_big_deal
 
+
 #get_all_stock_id()
 #check_type()
 #news()
+
+
+empty_type()
+#exception_test()
+get_basic()
+#detail_tushare()
 
 #empty_type()
 #exception_test()
@@ -264,9 +317,12 @@ def getBigVol(code):
 #get_each_mount()
 #plot_test2()
 #save_excel()
+
 #get_real_time()
 #gsz()
 #new_api()
 filename="mystock.txt"
 getStockList(filename)
 getBigVol('300527')
+get_real_time()
+

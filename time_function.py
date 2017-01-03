@@ -1,6 +1,9 @@
+import time,datetime
+
 #-*-coding=utf-8-*-
 #日期函数的使用
 import time,datetime
+
 now = time.strftime("%Y-%m-%d")
 print now
 print type(now)
@@ -8,6 +11,8 @@ now_time = datetime.datetime.now()
 print now_time
 print type(now_time)
 today = time.strftime("_%Y_%m_%d")
+
+
 print today
 
 aa=datetime.datetime(2016,8,7)

@@ -56,6 +56,10 @@ def sclice_func():
     b=a[-1:-6:-1]
     print b
 
+#dict_assign()
+sclice_func()
+
+
 def list_change():
     a=[1,2,3,4]
     print a
@@ -77,5 +81,9 @@ def map_func():
 
 #sclice_func()
 
+
 #list_change()
 map_func()
+
+list_change()
+

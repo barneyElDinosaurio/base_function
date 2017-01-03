@@ -12,7 +12,9 @@ print os.path.abspath('.')
 #get the currently directory
 
 print sys.stdout.encoding
+
 #get your system coding
 
 if __name__=="__main__":
     print "Start from here"
+

@@ -1,5 +1,11 @@
 __author__ = 'rocchen'
 #-*-coding=utf-8-*-
+
+import urllib2,re,sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+
 import urllib2,re,sys,sqlite3,time
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -47,6 +53,7 @@ class Myurllib2():
 
 
 
+
 def getPost(date_time, filter_p):
     url = 'https://zhhrb.sinaapp.com/index.php?date=' + date_time
     user_agent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
@@ -86,6 +93,11 @@ def get_page():
     print "return"
     for i in page:
         print i
+
+get_page()
+#filter_p = re.compile('����.*')
+#getPost('20160620',filter_p)
+
 #get_page()
 #urllib2.url
 #filter_p = re.compile('����.*')
@@ -94,3 +106,4 @@ obj=Myurllib2()
 #obj.proxy_test()
 content=obj.getContent("http://xueqiu.com/8255849716")
 print content
+
