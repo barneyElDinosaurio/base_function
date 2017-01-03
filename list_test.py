@@ -7,4 +7,6 @@ d=list(set(c))
 print d
 
 urlss = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(str(i)) for i in range(1,6,1)]
-print urlss
+#print urlss
+for i in urlss:
+    print i
