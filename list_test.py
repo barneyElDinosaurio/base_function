@@ -35,3 +35,11 @@ recordx=['a','b','c','a','b']
 count=getCount(recordx)
 print count['a']
 
+
+my_list=[0,0,0,0,0,0]
+if   0 in my_list:
+    print 'empty'
+    my_list=[]
+    print type(my_list)
+if len(my_list)==0:
+    print "None"

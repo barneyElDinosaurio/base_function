@@ -4,6 +4,7 @@ import tushare as ts
 import datetime
 import urllib2
 
+
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
 #�������ֻ�ܻ�ȡ��3�������
 

@@ -1,7 +1,6 @@
 # -*-coding=utf-8-*-
 from PyQt4.QtCore import QPointF, QLineF, Qt
 from PyQt4.QtGui import QGraphicsLineItem, QGraphicsView, QGraphicsScene, QPen
-Qt
 __author__ = 'Rocky'
 
 import sys
@@ -144,6 +143,7 @@ class ProgressBar(QtGui.QWidget):
 
 class DrawTest(QtGui.QWidget):
     def __init__(self):
+        pass
 
 
 if __name__ =='__main__':
