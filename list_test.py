@@ -31,15 +31,32 @@ def getCount(strings):
         else:
             counts[x]=1
     return counts
+
+
+def empty_test():
+    my_list=[0,0,0,0,0,0]
+    if   0 in my_list:
+        print 'empty'
+        my_list=[]
+        print type(my_list)
+    if len(my_list)==0:
+        print "None"
+
+def modify_list():
+    lst=list("IamRocky")
+    print lst
+    '''
+    wrong here
+    for i in enumerate(lst):
+
+        lst[i]="SB"
+    '''
+    print lst
+
+'''
+Above are functions
+'''
 recordx=['a','b','c','a','b']
 count=getCount(recordx)
 print count['a']
-
-
-my_list=[0,0,0,0,0,0]
-if   0 in my_list:
-    print 'empty'
-    my_list=[]
-    print type(my_list)
-if len(my_list)==0:
-    print "None"
+modify_list()
