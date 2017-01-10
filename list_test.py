@@ -45,13 +45,11 @@ def empty_test():
 def modify_list():
     lst=list("IamRocky")
     print lst
-    '''
-    wrong here
-    for i in enumerate(lst):
 
-        lst[i]="SB"
-    '''
-    print lst
+    for i,strs in enumerate(lst):
+
+        print "Index",i,"content",strs
+
 
 '''
 Above are functions
