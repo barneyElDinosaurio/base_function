@@ -4,6 +4,7 @@ import tushare as ts
 import datetime
 import urllib2
 
+
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
 #�������ֻ�ܻ�ȡ��3�������
 
@@ -255,6 +256,47 @@ def save_excel():
     out=pd.ExcelWriter("2.xls")
     df.to_excel()
 
+
+def gsz():
+    hq=ts.get_today_all()
+    hq['trade']=hq.apply(lambda x:x.settlement if x.trade == 0 else x.trade,axis=1)
+    basedata=stock_info[['outstanding','totals','reservedPerShare','esp']]
+    hqdata=hq[['code','name','trade','mktcap','nmc']]
+    hqdata=hqdata.set_index('code')
+    data=basedata.merge(hqdata,left_index=True,right_index=True)
+    print data.head(10)
+
+
+def new_api():
+    data=ts.get_k_data('300333')
+    print data
+
+#读取我的股票列表
+def getStockList(filename):
+    f=open(filename,'r')
+    stock_list=[]
+    for i in f.readlines():
+
+        stock_list.append(i.strip())
+    return stock_list
+
+#获取大单的数据
+def getBigVol(code):
+    #获取当天的分笔
+
+    #today_vol=ts.get_today_ticks(code)
+    #hist_vol=ts.get_tick_data(code,date='2016-11-28')
+    #print today_vol.head(10)
+
+    #print hist_vol
+
+    hist_big_deal=ts.get_sina_dd(code,date='2016-12-01',vol=500)
+    if hist_big_deal is None:
+        print "No Big Deal"
+    else :
+        print hist_big_deal
+
+
 #get_all_stock_id()
 #check_type()
 #news()
@@ -276,5 +318,12 @@ get_basic()
 #get_each_mount()
 #plot_test2()
 #save_excel()
+
+#get_real_time()
+#gsz()
+#new_api()
+filename="mystock.txt"
+getStockList(filename)
+getBigVol('300527')
 get_real_time()
 

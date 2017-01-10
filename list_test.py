@@ -8,6 +8,12 @@ print c
 d=list(set(c))
 print d
 
+
+urlss = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(str(i)) for i in range(1,6,1)]
+#print urlss
+for i in urlss:
+    print i
+
 record=[json.loads(line) for line in open('json.txt')]
 print record
 print '\n'
@@ -25,6 +31,32 @@ def getCount(strings):
         else:
             counts[x]=1
     return counts
+
+
+def empty_test():
+    my_list=[0,0,0,0,0,0]
+    if   0 in my_list:
+        print 'empty'
+        my_list=[]
+        print type(my_list)
+    if len(my_list)==0:
+        print "None"
+
+def modify_list():
+    lst=list("IamRocky")
+    print lst
+    '''
+    wrong here
+    for i in enumerate(lst):
+
+        lst[i]="SB"
+    '''
+    print lst
+
+'''
+Above are functions
+'''
 recordx=['a','b','c','a','b']
 count=getCount(recordx)
 print count['a']
+modify_list()

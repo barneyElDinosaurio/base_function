@@ -68,10 +68,22 @@ def list_change():
 
     print a
 
+def test_func(x):
+    return x*x
+
+def map_func():
+    a=[1,2,3,4,5]
+    b=map(test_func,a)
+    print b
+
 #dict_assign()
 
 
 #sclice_func()
+
+
+#list_change()
+map_func()
 
 list_change()
 

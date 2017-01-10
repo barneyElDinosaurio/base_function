@@ -1,10 +1,17 @@
+#-*-coding=utf-8-*-
 from pandas import Series,DataFrame
 import pandas as pd
 import numpy as np
+import datetime
 
 def format_line(obj=""):
     print "*"*20
     print obj
+
+
+def format_line():
+    print "*"*20
+
 
 def series_1():
     s=Series(['a','b','c','d','e'])
@@ -156,6 +163,62 @@ def Store():
     df=pd.read_table('sample.txt',sep=',',header=None)
     print df
 
+def merge_op():
+    df1=DataFrame({'key':['b','b','a','c','a','a','b'],'data_one':range(7)})
+    df2=DataFrame({'key':['a','b','e'],'data_tow':[7,4,99]})
+    print df1
+    format_line()
+    print df2
+    format_line()
+    print pd.merge(df1,df2,how='outer')
+    #print df_m
+    #print pd.merge(df1,df2,how='outer')
+    #print df3
+
+def data_aggre():
+    #排序测试
+    df=pd.DataFrame({"Weather":["Cold","HOT","WARM","HOT","HOT"],"Place":["HK","BJ","NY","LD","SZ"],"Price":[12,2,3,12,6]})
+    df1=pd.DataFrame({"Weather":["Cold","HOT","WARM","HOT","HOT"],"Place":["HK","BJ","NY","LD","SZ"],"Price":[12,2,3,12,6]})
+    df2=pd.DataFrame({"Weather":["HOT","WARM"],"Place": ["JJ","JP"],"Price":[99,77]})
+    print df
+    group_weather=df.groupby('Price')
+    i =0
+    for name, group in group_weather:
+        i=i+1
+        print "Group",i,name
+        print group
+    #df2=pd.DataFrame()
+    print pd.concat([df1,df2])
+    #print df3
+    print df
+
+def type_test():
+    df=pd.DataFrame({"Weather":["Cold","HOT","WARM","HOT","HOT"],"Place":["HK","BJ","NY","LD","SZ"],"Price":[12,2,3,12,6]})
+    print type(df)
+    print df[:2]
+    print type(df[:2])
+
+def date_op():
+    start=pd.date_range('2015-01-01',periods=50)
+    #print start
+    print type(start)
+
+    date_list=[datetime.datetime(2017,1,1),datetime.datetime(2017,1,2),datetime.datetime(2017,1,3),datetime.datetime(2017,1,4)]
+    df=pd.DataFrame(np.random.randn(4),index=date_list)
+    print df
+    print df.index[2]
+    format_line()
+
+    s_x=pd.date_range('2000-1-1',periods=1000)
+    df_x=pd.DataFrame(np.arange(2000).reshape(1000,2),index=s_x)
+    print df_x
+    print df_x.ix['2002/09/24']
+    print df_x[1]
+    #这样子就会选择的列
+    #选取行就用ix
+    print df_x.ix['2001-09']
+
+
 if __name__=="__main__":
     #series_1()
     #dataframe_1()
@@ -165,4 +228,8 @@ if __name__=="__main__":
     #dup_index()
     #df_static()
     #multi_index()
-    Store()
+    #Store()
+    #merge_op()
+    #data_aggre()
+    #type_test()
+    date_op()

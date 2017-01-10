@@ -49,6 +49,17 @@ def zfill_test():
     print a
     print type(a)
 
+def loo_each():
+    str1="You are bitch!\n"
+    print str1
+    word=[x.strip() for x in str1.split(' ')]
+    print word
+    conn=" ".join(word)
+    print conn
+    if 'bitch' in str1:
+        print "Bitch"
+
 check_year()
 _write_adead()
 zfill_test()
+loo_each()

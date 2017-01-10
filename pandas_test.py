@@ -5,11 +5,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def excel_op():
-    #print df.head(20)
-    #df=df.fillna(0)
-    #print df.head(20)
-    #code=df[[u'代码',u'资金发生数']]
+def excel_op(df):
+    print df.head(20)
+    df=df.fillna(0)
+    print df.head(20)
+    code=df[[u'代码',u'资金发生数']]
     #print(code)
     #print type(code)
     #code=code.fillna(0)
@@ -270,6 +270,16 @@ def string_op3():
     print s
     p=r'[a-z][0-9]'
     print s.str.contains(p)
+
+def Serial():
+    a=[1,2,3,4]
+    p=pd.Series(a,index=['a','b','c','d'])
+    print p
+    print p.values
+    print p.index
+    heap=[[1,2],[3,4],[5,6]]
+    print heap.pop(0)
+    print heap
 #excel_op()
 #del_row()
 #search()
@@ -285,4 +295,5 @@ def string_op3():
 #get_static2()
 #my_data()
 #string_op2()
-string_op3()
+#string_op3()
+Serial()
