@@ -191,6 +191,9 @@ def data_aggre():
     print pd.concat([df1,df2])
     #print df3
     print df
+    df1.append(df2)
+    print df1
+    print df1.index.values[1]
 
 def type_test():
     df=pd.DataFrame({"Weather":["Cold","HOT","WARM","HOT","HOT"],"Place":["HK","BJ","NY","LD","SZ"],"Price":[12,2,3,12,6]})
@@ -218,6 +221,12 @@ def date_op():
     #选取行就用ix
     print df_x.ix['2001-09']
 
+def cumsum_test():
+    a=np.array([[1,2,3],[4,5,6]])
+    b=np.cumsum(a)
+
+    print a
+    print b
 
 if __name__=="__main__":
     #series_1()
@@ -232,4 +241,5 @@ if __name__=="__main__":
     #merge_op()
     #data_aggre()
     #type_test()
-    date_op()
+    #date_op()
+    cumsum_test()
