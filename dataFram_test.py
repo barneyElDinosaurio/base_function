@@ -10,4 +10,11 @@ def df_practice():
     df.ix[(df['A']>0) & (df['B']<0),'A']=100
     print df
 
-df_practice()
+def question():
+    a = pd.Series([1])
+    b = pd.Series([2])
+    if (b/a)[0]==2:
+        print "ok"
+
+#df_practice()
+question()
