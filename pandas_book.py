@@ -228,6 +228,22 @@ def cumsum_test():
     print a
     print b
 
+def provit_test():
+    df=pd.DataFrame(np.arange(6).reshape(2,3),index=['Ohio','New York'],columns=['one','tow','three'])
+    print df
+    new_df=df.stack()
+    print new_df
+    new_df1=new_df.unstack()
+    print new_df1
+    '''
+    pivote_df=new_df1.pivot('')
+    print pivote_df
+    '''
+
+def data_change():
+    df=pd.DataFrame({"key":['one']*3+['two']*4,'item':np.arange(7)})
+    print df
+
 if __name__=="__main__":
     #series_1()
     #dataframe_1()
@@ -242,4 +258,7 @@ if __name__=="__main__":
     #data_aggre()
     #type_test()
     #date_op()
+    #provit_test()
+    data_change()
     cumsum_test()
+
