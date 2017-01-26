@@ -115,8 +115,16 @@ def from_book():
     date_type = datetime.datetime.strptime(str1, '%Y/%m/%d')
     print date_type
 
+def time_run():
+    start=datetime.datetime.now()
+    time.sleep(3)
+    print start
+    end=datetime.datetime.now()
+    print "time use ", (end-start).seconds
+
 
 if __name__ == "__main__":
-    format()
-    from_book()
+    #format()
+    #from_book()
+    time_run()
 
