@@ -1,6 +1,6 @@
 #-*-coding=utf-8-*-
 #__author__ = 'rocky'
-from uiautomator import Device as d
+from uiautomator import device as d
 #from uiautomator import Device
 def base_info():
     '''
