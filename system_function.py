@@ -15,6 +15,8 @@ print sys.stdout.encoding
 
 #get your system coding
 
+#os.startfile('1.mp3')
+
 if __name__=="__main__":
     print "Start from here"
 
