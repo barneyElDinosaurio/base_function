@@ -51,10 +51,20 @@ def modify_list():
         print "Index",i,"content",strs
 
 
+def in_test():
+    a=['sam','disk','jacky','homeless']
+    b='jacky'
+    if b in a:
+        print b
+    else:
+        print "not there"
 '''
 Above are functions
+'''
 '''
 recordx=['a','b','c','a','b']
 count=getCount(recordx)
 print count['a']
 modify_list()
+'''
+in_test()
