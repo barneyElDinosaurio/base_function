@@ -1,3 +1,5 @@
+import logging
+
 def get_parameter(func):
     print "IN GET PARAMETER"
 
@@ -18,5 +20,9 @@ def show_function():
 #a=show_function
 #a()
 #get_parameter()
-a=show_function()
-print a
+#a=show_function()
+#print a
+if __name__=="__main__":
+    #logging.info("Test")
+    print "Test"
+    #show_function()
