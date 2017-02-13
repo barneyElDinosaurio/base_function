@@ -26,3 +26,4 @@ if __name__=="__main__":
     #print t.info
 
     d.press.home()
+    d.swipe(200,500,700,500)
