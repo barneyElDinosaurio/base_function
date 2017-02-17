@@ -1,8 +1,8 @@
 # -*-coding=utf-8-*-
 __author__ = 'Rocky'
-import dis
-sBuf=[0]*16
-cur=0
+#import dis
+#sBuf=[0]*16
+#cur=0
 def sPush(n):
     global cur
     if cur>15:
@@ -25,5 +25,7 @@ def main():
     sPush(2)
     sPush(3)
     print cur
-main()
-dis.dis(main)
+#main()
+#dis.dis(main)
+a=2**10000000
+print a

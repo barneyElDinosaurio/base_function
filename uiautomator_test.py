@@ -11,6 +11,8 @@ def base_info():
     print type(info)
     print info
 
+def click_test():
+    d.click(371,1524)
 
 def op_test():
     d.press.home()
@@ -25,5 +27,10 @@ if __name__=="__main__":
 
     #print t.info
 
+
     d.press.home()
     d.swipe(200,500,700,500)
+
+    #d.press.home()
+    click_test()
+
