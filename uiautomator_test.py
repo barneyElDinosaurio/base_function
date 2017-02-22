@@ -17,6 +17,9 @@ def click_test():
 def op_test():
     d.press.home()
     #d.screen.on()
+def liuliang():
+    d(text='签到').click()
+
 if __name__=="__main__":
     #base_info()
     #op_test()
@@ -27,10 +30,13 @@ if __name__=="__main__":
 
     #print t.info
 
-
+    '''
     d.press.home()
     d.swipe(200,500,700,500)
 
     #d.press.home()
     click_test()
+    '''
+    liuliang()
+
 
