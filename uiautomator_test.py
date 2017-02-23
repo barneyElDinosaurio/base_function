@@ -2,6 +2,7 @@
 #__author__ = 'rocky'
 from uiautomator import device as d
 #from uiautomator import Device
+import time
 def base_info():
     '''
     for v,k in enumerate(d.info):
@@ -18,7 +19,17 @@ def op_test():
     d.press.home()
     #d.screen.on()
 def liuliang():
-    d(text='签到').click()
+    d(text=u'全部').click()
+    time.sleep(4)
+    d(text=u'领流量').click()
+    time.sleep(5)
+    #这个签到好像找不到
+    #d(text=u'签到').click()
+    d.click(271,813)
+    time.sleep(1)
+    d.click(271,813)
+    time.sleep(5)
+    print "get liu liang"
 
 if __name__=="__main__":
     #base_info()
