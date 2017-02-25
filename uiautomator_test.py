@@ -17,6 +17,12 @@ def click_test():
 def op_test():
     d.press.home()
     #d.screen.on()
+def scroll_test():
+    try:
+        d(scrollable=True).scroll.to(text="Linksys_2G")
+        d(text='Linksys_2G').click()
+    except:
+        print "Not found"
 if __name__=="__main__":
     #base_info()
     #op_test()
@@ -28,9 +34,11 @@ if __name__=="__main__":
     #print t.info
 
 
-    d.press.home()
-    d.swipe(200,500,700,500)
+    #d.press.home()
+    #d.swipe(200,500,700,500)
 
     #d.press.home()
-    click_test()
+    #click_test()
+
+    scroll_test()
 
