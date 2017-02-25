@@ -3,7 +3,15 @@
 __author__ = 'Rocky'
 
 import requests,datetime
+import cookielib
+session = requests.session()
 
+session.cookies = cookielib.LWPCookieJar(filename="cookies")
+agent = 'Mozilla/5.0 (Windows NT 5.1; rv:33.0) Gecko/20100101 Firefox/33.0'
+headers = {'Host': 'xueqiu.com',
+           'Referer': 'https://xueqiu.com/',
+           'Origin':'https://xueqiu.com',
+           'User-Agent': agent}
 '''
 #url='http://www.zhihu.com'
 url='http://httpbin.org/get'
@@ -40,4 +48,31 @@ def renren_access():
     url="http://www.renren.com/ajaxLogin/login"
     s=requests.Session()
     user={'email':'','password':''}
-    r=
+
+
+def request_test():
+    url='https://github.com/timeline.json'
+    r=requests.get(url)
+    print r.text
+    print r.json()
+
+    data={"name":"Rocky"}
+    url2="http://httpbin.org/post"
+    s=requests.post(url2,data)
+    print s.text
+    print s.url
+    t=requests.post(url2,params=data)
+    print t.url
+
+def request_test2():
+    url='http://yuepaowanimal.tumblr.com/api/read?type=video&num=50&start=0'
+    result=requests.get(url).text
+    print result
+
+def status_code_test():
+    url='https://www.zhihu.com/collection/47548799?page=5'
+    s=session.get(url,headers=headers,allow_redirects=False)
+    print s.text
+    print s.status_code
+#request_test2()
+status_code_test()
