@@ -31,8 +31,8 @@ def liuliang():
     time.sleep(5)
     print "get liu liang"
 
-if __name__=="__main__":
-    #base_info()
+def main():
+        #base_info()
     #op_test()
 
     print "Go"
@@ -48,6 +48,13 @@ if __name__=="__main__":
     #d.press.home()
     click_test()
     '''
-    liuliang()
+    #liuliang()
+    #d(text=u'数码科技').click()
+    #if d(text=u'腾讯体育').exists:
+        #print "Existed"
+    #d.dump("hierarchy.xml")
+    d.swipe(500,1570,500,400)
+if __name__=="__main__":
+    main()
 
 
