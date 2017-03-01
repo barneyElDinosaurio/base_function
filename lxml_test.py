@@ -2,7 +2,7 @@
 __author__ = 'rocchen'
 from lxml import html
 from lxml import etree
-import urllib2
+import urllib2,requests
 def lxml_test():
     url="http://www.caixunzz.com"
     req=urllib2.Request(url=url)
@@ -25,5 +25,20 @@ def lxml_test():
 
     print type(href)
 #not working yet
-
-lxml_test()
+session = requests.session()
+import cookielib
+session.cookies = cookielib.LWPCookieJar(filename="cookies")
+agent = 'Mozilla/5.0 (Windows NT 5.1; rv:33.0) Gecko/20100101 Firefox/33.0'
+headers = {'Host': 'www.zhihu.com',
+           'Referer': 'https://www.zhihu.com',
+           'User-Agent': agent}
+def lxml_text():
+    url='https://www.zhihu.com/question/20401952/answer/21764432'
+    s=requests.get(url,headers=headers).text
+    #print s
+    tree=etree.HTML(s)
+    content=tree.xpath('//div[@class="zm-editable-content clearfix"]')
+    print content
+    for i in content:
+        print i.xpath('string(.)')
+lxml_text()

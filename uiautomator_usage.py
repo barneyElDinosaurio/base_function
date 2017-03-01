@@ -23,6 +23,7 @@ def basic_usage():
     #com.suning.mobile.ebuy
     #com.kingpoint.gmcchh
     #com.jd.jrapp
+    #com.tencent.mm
 
 
 
@@ -56,6 +57,10 @@ def launch_app():
     #os.system(cmd)
     p=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
     print p.stdout.read()
+
+    if d(text=u'我的信箱').wait.exists(timeout=10000):
+        d(text=u'关闭').click()
+
     if d(text=u'版本更新').wait.exists(timeout=15000):
         d(text=u'取消').click()
     else:
@@ -64,11 +69,38 @@ def launch_app():
     d(text=u'签到赢话费').click()
     print "Go"
     time.sleep(3)
-    d(text=u'签到').click()
+    d(text=u'签到规则').click()
     #d(text=u'')
     #print result
+    print "Done"
+def darcy_test():
+    pass
+def wechat():
+    cmd='adb shell am start -n com.tencent.mm/.ui.LauncherUI'
+    #os.system(cmd)
+    p=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
+    print p.stdout.read()
+def sunning():
+    cmd='adb shell am start -n com.suning.mobile.ebuy/.base.host.InitialActivity'
+    #os.system(cmd)
+    p=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
+    print p.stdout.read()
+    time.sleep(5)
+    d(text=u'领云钻').click()
+    time.sleep(8)
+    d(text=u'打卡领云钻').wait.exists(timeout=10000)
+    print "Done"
 
+def step_by_step():
+    #d(text=u'打卡领云钻').wait.exists(timeout=10000)
+    #print "done"
+    result=d(text=u'').exists
+    print result
 if __name__=="__main__":
+    step_by_step()
     #basic_usage()
     #operation_usage()
-    launch_app()
+    #launch_app()
+    #wechat()
+
+    #sunning()
