@@ -117,6 +117,7 @@ def from_book():
 
 def time_run():
     start=datetime.datetime.now()
+    print start
     time.sleep(3)
     print start
     end=datetime.datetime.now()
