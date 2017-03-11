@@ -1,7 +1,7 @@
 # -*-coding=utf-8-*-
 #常用的工具集合
 __author__ = 'Rocky'
-
+import codecs,re
 
 class Toolkit():
     @staticmethod
@@ -11,6 +11,15 @@ class Toolkit():
         f = open(filename, 'a')
         f.write(content)
         f.close()
+
+    @staticmethod
+    def save2filecn( filename, content):
+        # 保存为文件
+        filename = filename + ".txt"
+        f = codecs.open(filename, 'a',encoding='utf-8')
+        f.write(content)
+        f.close()
+
     @staticmethod
     def getUserData(cfg_file):
         f=open(cfg_file,'r')
@@ -22,3 +31,8 @@ class Toolkit():
             account[ctype.strip()]=passwd.strip()
 
         return account
+
+    @staticmethod
+    def filename_filter(filename_old):
+        filename = re.sub('[\/:*?"<>|]', '-', filename_old)
+        return filename

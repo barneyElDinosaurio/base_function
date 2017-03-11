@@ -59,6 +59,8 @@ def loo_each():
     if 'bitch' in str1:
         print "Bitch"
 
+
+
 check_year()
 _write_adead()
 zfill_test()

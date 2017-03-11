@@ -18,6 +18,14 @@ def click_test():
 def op_test():
     d.press.home()
     #d.screen.on()
+
+def scroll_test():
+    try:
+        d(scrollable=True).scroll.to(text="Linksys_2G")
+        d(text='Linksys_2G').click()
+    except:
+        print "Not found"
+
 def liuliang():
     d(text=u'全部').click()
     time.sleep(4)
@@ -30,6 +38,7 @@ def liuliang():
     d.click(271,813)
     time.sleep(5)
     print "get liu liang"
+
 
 def each_dianpu():
     mid_x=1080/2
@@ -50,6 +59,11 @@ def each_dianpu():
     #返回到试用列表
 def main():
         #base_info()
+
+
+
+    #base_info()
+
     #op_test()
 
     print "Go"
@@ -57,6 +71,16 @@ def main():
     print "Start"
 
     #print t.info
+
+
+
+    #d.press.home()
+    #d.swipe(200,500,700,500)
+
+    #d.press.home()
+    #click_test()
+
+    #scroll_test()
 
     '''
     d.press.home()
@@ -88,5 +112,6 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
 
