@@ -3,3 +3,6 @@
 data.cfg
 *.mp3
 *.pkl
+*.xls
+*.xml
+*.txt
