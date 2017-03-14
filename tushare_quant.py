@@ -2,7 +2,7 @@
 __author__ = 'Rocky'
 import sys,time
 import tushare as ts
-
+from toolkit import Toolkit
 DATA_GETTING_FLAG="#"
 def basic_usage():
     df=ts.get_today_all()
@@ -11,7 +11,9 @@ def basic_usage():
     #print df[df['code']=='000006']
 
 def quanshan():
-    ts.set_broker('htzq',user='xxxxx',passwd='xxxxx')
+    data=Toolkit.getUserData('data.cfg')
+    print data
+    ts.set_broker('htzq',user=data['huatai'],passwd=data['huatai_passwd'])
     ts.get_broker()
     htzq=ts.TraderAPI('htzq')
     htzq.login()
@@ -30,7 +32,7 @@ def main():
     #basic_usage()
 
     #getNewStock()
-    for i in range(20):
+    for i in range(2):
         _write_console()
         time.sleep(2)
     quanshan()
