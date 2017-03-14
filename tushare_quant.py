@@ -7,8 +7,18 @@ def basic_usage():
     #print df.to_excel('tets.xls')
     #print df[df['code']=='000006']
 
+def quanshan():
+    ts.set_broker('htzq',user='xxxxx',passwd='xxxxx')
+    ts.get_broker()
+    htzq=ts.TraderAPI('htzq')
+    htzq.login()
+    info=htzq.baseinfo()
+    print info
 
 def main():
-    basic_usage()
+    #basic_usage()
+    quanshan()
+
+
 if __name__=='__main__':
     main()
