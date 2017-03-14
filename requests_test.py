@@ -1,9 +1,10 @@
 #-*-coding=utf-8-*-
 
 __author__ = 'Rocky'
-
+from toolkit import Toolkit
 import requests,datetime
 import cookielib
+from lxml import etree
 session = requests.session()
 
 session.cookies = cookielib.LWPCookieJar(filename="cookies")
@@ -75,4 +76,17 @@ def status_code_test():
     print s.text
     print s.status_code
 #request_test2()
-status_code_test()
+def bbs_filename_check():
+    url='http://bbs.sysu.edu.cn/bbstcon?board=Love&file=M.1104508652.A'
+    headers={'User-Agent':agent}
+    resp=requests.get(url,headers=headers)
+    resp.encoding='gbk'
+    content=resp.text
+    tree=etree.HTML(content)
+    title=tree.xpath('//title/text()')[0]
+    print title
+    filename=Toolkit.filename_filter(title)
+    print filename
+
+#status_code_test()
+bbs_filename_check()

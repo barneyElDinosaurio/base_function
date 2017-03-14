@@ -10,6 +10,13 @@ def basic_usage():
     #print df.to_excel('tets.xls')
     #print df[df['code']=='000006']
 
+def quanshan():
+    ts.set_broker('htzq',user='xxxxx',passwd='xxxxx')
+    ts.get_broker()
+    htzq=ts.TraderAPI('htzq')
+    htzq.login()
+    info=htzq.baseinfo()
+    print info
 
 def getNewStock():
     df= ts.new_stocks()
@@ -21,10 +28,13 @@ def _write_console():
 
 def main():
     #basic_usage()
+
     #getNewStock()
     for i in range(20):
         _write_console()
         time.sleep(2)
+    quanshan()
+
 
 if __name__=='__main__':
 
