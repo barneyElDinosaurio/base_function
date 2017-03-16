@@ -22,7 +22,7 @@ def quanshan():
 
 def getNewStock():
     df= ts.new_stocks()
-    df.to_excel('new_stock.xls')
+    df.to_excel('new_stock.xls','gbk')
 
 def _write_console():
     sys.stdout.write(DATA_GETTING_FLAG)
