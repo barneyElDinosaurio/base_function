@@ -243,7 +243,10 @@ def provit_test():
 def data_change():
     df=pd.DataFrame({"key":['one']*3+['two']*4,'item':np.arange(7)})
     print df
-
+    '''
+    “你是谁"
+    print
+     '''
 if __name__=="__main__":
     series_1()
     #dataframe_1()
