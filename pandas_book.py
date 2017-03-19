@@ -42,7 +42,7 @@ def series_1():
     print t
 
     t.index=['Mingzhi',"Sex","Country","Languge"]
-    format_line(t)
+    #format_line(t)
 
 
     i=t.index
@@ -245,7 +245,7 @@ def data_change():
     print df
 
 if __name__=="__main__":
-    #series_1()
+    series_1()
     #dataframe_1()
     #dataframe_op()
     #sort_test()
@@ -259,6 +259,6 @@ if __name__=="__main__":
     #type_test()
     #date_op()
     #provit_test()
-    data_change()
-    cumsum_test()
+    #data_change()
+    #cumsum_test()
 
