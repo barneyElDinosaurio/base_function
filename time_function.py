@@ -3,22 +3,6 @@
 import time, datetime
 
 
-def test2():
-    now = time.strftime("%Y-%m-%d")
-    print now
-    print type(now)
-    now_time = datetime.datetime.now()
-    print now_time
-    print type(now_time)
-    today = time.strftime("_%Y_%m_%d")
-
-    print today
-
-    aa = datetime.datetime(2016, 8, 7)
-    #看输入的日期是一个星期的第几天
-    print aa.weekday()
-
-
 class Data_test(object):
     day = 0
     month = 0
@@ -105,6 +89,34 @@ def test1():
     d3 = DateTest3()
     d3.getPreviousDay()
 
+def test2():
+    now = time.strftime("%Y-%m-%d")
+    print now
+    print type(now)
+    now_time = datetime.datetime.now()
+    print now_time
+    print type(now_time)
+    today = time.strftime("_%Y_%m_%d")
+
+    print today
+
+    aa = datetime.datetime(2016, 8, 7)
+    #看输入的日期是一个星期的第几天
+    print aa.weekday()
+
+    print str(int(time.time()*1000))
+    t1=time.time()
+    print t1
+    print time.ctime()
+    t=1490060308998*1.00/1000
+    print time.ctime(t1)
+
+    print time.ctime(t)
+    t3=time.ctime(t)
+
+    print time.gmtime(t)
+    #print time.strptime(t3,'%Y-%m-%d')
+    print type(t3)
 
 def format():
     print "*" * 10
@@ -127,5 +139,6 @@ def time_run():
 if __name__ == "__main__":
     #format()
     #from_book()
-    time_run()
+    #time_run()
+    test2()
 
