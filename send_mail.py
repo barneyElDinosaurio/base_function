@@ -15,7 +15,7 @@ def send_139():
     msg['Subject']=Header(subject,'utf-8')
     try:
         obj=smtplib.SMTP()
-        obj.connect('smtp.qq.com',25)
+        obj.connect('smtp.126.com',25)
         obj.login(sender,passwd)
         obj.sendmail(sender,receiver,msg.as_string())
     except smtplib.SMTPException,e:
