@@ -99,12 +99,18 @@ def update():
     conn.execute(update_command)
     conn.commit()
 
-    #�ǵ�Ҫcommit
+
+def query_data():
+
+    conn=sqlite3.connect('strategy_19.db')
+    cmd='select * from STRATEGY;'
+    conn.execute(cmd)
+    conn.commit()
+    conn.close()
 
 
 
-
-insert()
+#insert()
 #db_name='rocky_sqlite.db'
 #query()
 #update()
@@ -114,4 +120,4 @@ insert()
 
 #query()
 #create_table()
-
+query_data()
