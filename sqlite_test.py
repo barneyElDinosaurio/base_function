@@ -108,8 +108,17 @@ def query_data():
     conn.commit()
     conn.close()
 
-
-
+def order_test():
+    try:
+        conn=sqlite3.connect('strategy_19.db')
+        cur=conn.cursor()
+        #cmd='select * from sqlite_master where type="table";'
+        cmd='SELECT * FROM STRATEGY'
+        print cur.execute(cmd)
+        print cur.fetchall()
+    except :
+        print "Error"
+    #cur.commit()
 #insert()
 #db_name='rocky_sqlite.db'
 #query()
@@ -120,4 +129,5 @@ def query_data():
 
 #query()
 #create_table()
-query_data()
+#query_data()
+order_test()
