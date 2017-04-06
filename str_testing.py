@@ -59,9 +59,22 @@ def loo_each():
     if 'bitch' in str1:
         print "Bitch"
 
+def replace_func():
+    a=' i love this game . I hate this game, no love '
+    print a,
+    print 'end'
+    print a.lstrip(),
+    print 'end'
+    b=2
+    c=3
+    print b,c
+    print a,
+    print 'end'
 
 
-check_year()
-_write_adead()
-zfill_test()
-loo_each()
+
+#check_year()
+#_write_adead()
+#zfill_test()
+#loo_each()
+replace_func()
