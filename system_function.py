@@ -12,7 +12,7 @@ print os.path.abspath('.')
 #get the currently directory
 
 print sys.stdout.encoding
-
+print os.getcwd()
 #get your system coding
 
 #os.startfile('1.mp3')
