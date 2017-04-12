@@ -321,6 +321,10 @@ def base_case():
     plt.figure()
     df_11.plot()
 
+def base_function():
+    data={'one':[1,2,3,4,5],'two':[2,3,4,5,6]}
+    df=pd.DataFrame(data)
+    print df['one'].mean()
 #base_case()
 #excel_op()
 #del_row()
@@ -340,4 +344,5 @@ def base_case():
 #string_op3()
 
 
-Serial()
+#Serial()
+base_function()

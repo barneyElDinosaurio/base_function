@@ -72,9 +72,12 @@ def replace_func():
     print 'end'
 
 
+def garbe_character():
+    print "\x00"
 
 #check_year()
 #_write_adead()
 #zfill_test()
 #loo_each()
-replace_func()
+#replace_func()
+garbe_character()
