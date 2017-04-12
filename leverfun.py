@@ -9,12 +9,14 @@ def leverfun_data():
     s=requests.get(stock_api,params=stock)
     data= s.json()
     print data
+
     '''
     for i in data:
         print i,
         print " ",
         print data[i]
     '''
+
     count=1
     for i in data['data']['sellPankou']:
         print count,'\t',
