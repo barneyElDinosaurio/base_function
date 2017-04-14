@@ -124,8 +124,11 @@ def format():
 
 def from_book():
     str1 = '2017/01/08'
+    str2 = '20170108'
     date_type = datetime.datetime.strptime(str1, '%Y/%m/%d')
-    print date_type
+    date_type2 = datetime.datetime.strptime(str2, '%Y%m%d')
+    print date_type2
+    print type(date_type2)
 
 def time_run():
     start=datetime.datetime.now()
@@ -135,10 +138,14 @@ def time_run():
     end=datetime.datetime.now()
     print "time use ", (end-start).seconds
 
-
+def time_fun():
+    timestamp=20170414
+    datearr = datetime.datetime.utcfromtimestamp(timestamp)
+    timestr = datearr.strftime("%Y-%m-%d %H:%M:%S")
+    print timestr
 if __name__ == "__main__":
     #format()
-    #from_book()
+    from_book()
     #time_run()
-    test2()
-
+    #test2()
+    #time_fun()
