@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from pandas import DataFrame,Series
 import pandas as pd
 import numpy as np
-
+from matplotlib import mlab
+from matplotlib import rcParams
 def plot_test1():
     x=[1,2]
     y=[2,4]
@@ -33,6 +34,14 @@ def pd_plot():
     #为啥不能显示，只能在ipython上作用
     df=pd.DataFrame(np.random.randn(10,4).cumsum(0),index=np.arange(0,100,10),columns=['A','B','C','D'])
     df.plot()
+
+def bar_test():
+    fig1=plt.figure(2)
+    rect=plt.bar(left=(0.2,1),height=(1,0.5),width=0.2,align='center',yerr=0.000001)
+    plt.title("PE")
+    plt.xticks((0.2,1),('one','two'))
+    plt.show()
 #from_book()
 #plot_test1()
-pd_plot()
+#pd_plot()
+bar_test()

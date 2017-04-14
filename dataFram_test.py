@@ -34,6 +34,12 @@ def compare_values():
     b=-9.299
     if a>=b and b<c:
         print "Got"
+
+def autolabel(rects):
+    for rect in rects:
+        height=rect.get_height()
+        print height
+
 def calculate():
     total=[]
     df=pd.read_excel('2017-04-12_all_.xls')
@@ -62,9 +68,18 @@ def calculate():
         sum=sum+total[i]
     print sum
     print total
+    #plt.style.use('ggplot')
+    fig1=plt.figure(len(total))
     df_figure=pd.Series(total,index=[range(-10,10)])
     print df_figure
-    fg=df_figure.plot(kind='bar',y=total)
+    #fg=df_figure.plot(kind='bar',title="2017-04-12",grid=True,table=True,)
+    mycolor=['g']*10
+    mycolor2=['r']*10
+    mycolor3=list(mycolor,)
+    mycolor.append(mycolor2)
+    print len(total)
+    fg=df_figure.plot(kind='bar',table=True)
+    #autolabel(fg)
     plt.show(fg)
 
 #df_practice()
