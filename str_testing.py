@@ -75,9 +75,13 @@ def replace_func():
 def garbe_character():
     print "\x00"
 
+def slic():
+    code='002341'
+    print code[:1]
 #check_year()
 #_write_adead()
 #zfill_test()
 #loo_each()
 #replace_func()
-garbe_character()
+#garbe_character()
+slic()

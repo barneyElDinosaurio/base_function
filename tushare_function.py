@@ -339,15 +339,20 @@ def holiday():
 
 
 def check_k_data():
-    each_code='002451'
+    each_code='603555'
     #如果当天还没收盘，就获取昨天的收盘
     df_x=ts.get_k_data(code=each_code,start='2017-03-01')
+    '''
+    if len(df_x)<11:
+        print "Error"
+        exit()
     print df_x
+
     ma5= df_x['close'][-5:].mean()
     ma10=df_x['close'][-10:].mean()
     print ma5
     print ma10
-
+    '''
 #get_all_stock_id()
 #check_type()
 #news()
@@ -387,7 +392,7 @@ def get_index():
 #get_k_test()
 #holiday()
 
-
-#check_k_data()
-get_index()
+#print ts.__version__
+check_k_data()
+#get_index()
 
