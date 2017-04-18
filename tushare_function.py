@@ -2,7 +2,7 @@
 __author__ = 'rocchen'
 import tushare as ts
 import datetime
-import urllib2
+import urllib2,time
 
 
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
@@ -15,11 +15,14 @@ import matplotlib.pyplot
 #这个函数只能获取近3年的数据
 
 #print df
-
+'''
 stock_info=ts.get_stock_basics()
-
+#print stock_info
+print stock_info.index.values
+time.sleep(10)
 
 data=stock_info.ix['300141']['timeToMarket']
+
 print data
 print type(data)
 data=str(data)
@@ -37,7 +40,7 @@ day30=day0-datetime.timedelta(delta)
 print day30
 day30=day30.strftime("%Y-%m-%d")
 day0=day0.strftime("%Y-%m-%d")
-
+'''
 def get_all_stock_id():
     #获取所有股票代码
     for i in stock_info.index:
@@ -296,15 +299,25 @@ def getBigVol(code):
     else :
         print hist_big_deal
 
-
+def check_k_data():
+    each_code='002451'
+    #如果当天还没收盘，就获取昨天的收盘
+    df_x=ts.get_k_data(code=each_code,start='2017-03-01')
+    print df_x
+    ma5= df_x['close'][-5:].mean()
+    ma10=df_x['close'][-10:].mean()
+    print ma5
+    print ma10
 #get_all_stock_id()
 #check_type()
 #news()
 
-
-empty_type()
+def get_index():
+    df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
+    print df
+#empty_type()
 #exception_test()
-get_basic()
+#get_basic()
 #detail_tushare()
 
 #empty_type()
@@ -322,8 +335,10 @@ get_basic()
 #get_real_time()
 #gsz()
 #new_api()
-filename="mystock.txt"
-getStockList(filename)
-getBigVol('300527')
-get_real_time()
+#filename="mystock.txt"
+#getStockList(filename)
+#getBigVol('300527')
+#get_real_time()
 
+#check_k_data()
+get_index()
