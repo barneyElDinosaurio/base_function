@@ -3,7 +3,7 @@ import pandas as pd
 from pandas import Series
 import matplotlib.pyplot as plt
 import time
-pd.set_option('display.max_rows',None)
+#pd.set_option('display.max_rows',None)
 def df_practice():
     a=[1,-23,4,5,6,7,-4,34,3,5,33]
     b=[-2,55,-5,99,3,-3,55,3,-1,4,7]
@@ -42,7 +42,7 @@ def autolabel(rects):
 
 def calculate():
     total=[]
-    df=pd.read_excel('2017-04-12_all_.xls')
+    df=pd.read_excel('2017-04-15_all_.xls')
     '''
     i=-10
     dfx= df[(df['changepercent']>=(i+0.1)) & (df['changepercent']<((i+1))*1.000)]
@@ -82,8 +82,12 @@ def calculate():
     #autolabel(fg)
     plt.show(fg)
 
+def jianshu():
+    df=pd.read_excel('2017-04-15_all_.xls')
+    print df.info()
 #df_practice()
 #question()
 #plot_test()
-calculate()
+#calculate()
 #compare_values()
+jianshu()

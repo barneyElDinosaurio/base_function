@@ -9,7 +9,7 @@ def format_line(obj=""):
     print obj
 
 
-def format_line():
+def format_lines():
     print "*"*20
 
 
@@ -58,15 +58,15 @@ def dataframe_1():
     data = {'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada'], 'year': [2000, 2001, 2002, 2001, 2002],'pop': [1.5, 1.7, 3.6, 2.4, 2.9]}
     df=pd.DataFrame(data)
     print df
-    format_line()
+    format_lines()
     print df['year']
-    format_line()
+    format_lines()
     print df.year
-    format_line()
+    format_lines()
     print df.ix[2]
 
     df['year']=2019
-    format_line()
+    format_lines()
     print df
 
     df['year']=[2012,2999,1111,333,1212]
@@ -75,8 +75,12 @@ def dataframe_1():
     new_series=Series(['New york',"Los Angles",'Golden state',"Huston",'Nevada'],index=[0,1,3,2,4])
     df['state']=new_series
     format_line(df)
-
+    print "Check here"
+    #添加新列
     df['colleage']=['UC',"LA","HK","YL","BK"]
+    format_line(df)
+    #添加新行
+    df.loc['5']=['1','2','3','4']
     format_line(df)
 
     format_line(df.values)
@@ -248,8 +252,8 @@ def data_change():
     print
      '''
 if __name__=="__main__":
-    series_1()
-    #dataframe_1()
+    #series_1()
+    dataframe_1()
     #dataframe_op()
     #sort_test()
     #sort_test2()
