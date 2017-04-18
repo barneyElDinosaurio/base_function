@@ -2,15 +2,16 @@
 __author__ = 'rocchen'
 import tushare as ts
 import datetime
-import urllib2
+import urllib2,time
 
 
 #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
-#�������ֻ�ܻ�ȡ��3�������
+
 
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
+
 
 def test_1():
     #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
@@ -31,15 +32,43 @@ def test_1():
     print data
     date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
     print date_format
-    #���ڵĸ�ʽ����ת��
     delta=60*7/5
-    #���ǵ������շǽ���
     day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
     day30=day0-datetime.timedelta(delta)
     print day30
     day30=day30.strftime("%Y-%m-%d")
     day0=day0.strftime("%Y-%m-%d")
 
+#df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
+#这个函数只能获取近3年的数据
+
+#print df
+'''
+stock_info=ts.get_stock_basics()
+#print stock_info
+print stock_info.index.values
+time.sleep(10)
+
+data=stock_info.ix['300141']['timeToMarket']
+
+print data
+print type(data)
+data=str(data)
+print type(data)
+print data[1:4]
+print data[4:6]
+print data
+date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
+print date_format
+#���ڵĸ�ʽ����ת��
+delta=60*7/5
+#���ǵ������շǽ���
+day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
+day30=day0-datetime.timedelta(delta)
+print day30
+day30=day30.strftime("%Y-%m-%d")
+day0=day0.strftime("%Y-%m-%d")
+'''
 def get_all_stock_id():
     #获取所有股票代码
     for i in stock_info.index:
@@ -298,6 +327,7 @@ def getBigVol(code):
     else :
         print hist_big_deal
 
+
 def get_k_test():
     code='300333'
     #要更新tushare到最新
@@ -307,10 +337,27 @@ def get_k_test():
 def holiday():
     print ts.is_holiday('2017-04-16')
 
+
+def check_k_data():
+    each_code='002451'
+    #如果当天还没收盘，就获取昨天的收盘
+    df_x=ts.get_k_data(code=each_code,start='2017-03-01')
+    print df_x
+    ma5= df_x['close'][-5:].mean()
+    ma10=df_x['close'][-10:].mean()
+    print ma5
+    print ma10
+
 #get_all_stock_id()
 #check_type()
 #news()
 
+
+
+
+def get_index():
+    df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
+    print df
 
 #empty_type()
 #exception_test()
@@ -336,5 +383,11 @@ def holiday():
 #getStockList(filename)
 #getBigVol('300527')
 #get_real_time()
+
 #get_k_test()
-holiday()
+#holiday()
+
+
+#check_k_data()
+get_index()
+
