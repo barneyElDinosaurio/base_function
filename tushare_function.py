@@ -339,10 +339,10 @@ def holiday():
 
 
 def check_k_data():
-    each_code='603555'
+    each_code='000693'
     #如果当天还没收盘，就获取昨天的收盘
     df_x=ts.get_k_data(code=each_code,start='2017-03-01')
-
+    print df_x
     if len(df_x)<11:
         print "Error"
         exit()
@@ -392,7 +392,7 @@ def get_index():
 #get_k_test()
 #holiday()
 
-#print ts.__version__
+print ts.__version__
 check_k_data()
 #get_index()
 
