@@ -342,7 +342,7 @@ def check_k_data():
     each_code='603555'
     #如果当天还没收盘，就获取昨天的收盘
     df_x=ts.get_k_data(code=each_code,start='2017-03-01')
-    '''
+
     if len(df_x)<11:
         print "Error"
         exit()
@@ -352,7 +352,7 @@ def check_k_data():
     ma10=df_x['close'][-10:].mean()
     print ma5
     print ma10
-    '''
+
 #get_all_stock_id()
 #check_type()
 #news()
