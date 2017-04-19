@@ -339,7 +339,7 @@ def holiday():
 
 
 def check_k_data():
-    each_code='000693'
+    each_code='300333'
     #如果当天还没收盘，就获取昨天的收盘
     df_x=ts.get_k_data(code=each_code,start='2017-03-01')
     print df_x
