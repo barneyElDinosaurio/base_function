@@ -364,6 +364,9 @@ def get_index():
     df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
     print df
 
+def code_issue():
+    base=ts.get_stock_basics()
+    base.to_excel('111.xls')
 #empty_type()
 #exception_test()
 #get_basic()
@@ -393,6 +396,7 @@ def get_index():
 #holiday()
 
 print ts.__version__
-check_k_data()
+#check_k_data()
 #get_index()
+code_issue()
 
