@@ -336,7 +336,7 @@ def check_k_data():
     each_code='300333'
     #如果当天还没收盘，就获取昨天的收盘
     df_x=ts.get_k_data(code=each_code,start='2017-03-01')
-
+    print df_x
     if len(df_x)<11:
         print "Error"
         exit()
@@ -359,11 +359,17 @@ def get_index():
     df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
     print df
 
+<<<<<<< HEAD
 def get_volume():
     code='600874'
     df=ts.get_hist_data(code=code,start='2017-01-01')
     vol=df['ma20']
     print vol
+=======
+def code_issue():
+    base=ts.get_stock_basics()
+    base.to_excel('111.xls')
+>>>>>>> origin/master
 #empty_type()
 #exception_test()
 #get_basic()
@@ -392,9 +398,16 @@ def get_volume():
 #get_k_test()
 #holiday()
 
+<<<<<<< HEAD
 #print ts.__version__
 #check_k_data()
 #get_index()
 get_volume()
 
+=======
+print ts.__version__
+#check_k_data()
+#get_index()
+code_issue()
+>>>>>>> origin/master
 
