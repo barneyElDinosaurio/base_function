@@ -328,18 +328,12 @@ def getBigVol(code):
         print hist_big_deal
 
 
-def get_k_test():
-    code='300333'
-    #要更新tushare到最新
-    df=ts.get_k_data(code=code,start='2017-01-04',end='2017-04-17')
-    print df
-
 def holiday():
     print ts.is_holiday('2017-04-16')
 
 
 def check_k_data():
-    each_code='603555'
+    each_code='300333'
     #如果当天还没收盘，就获取昨天的收盘
     df_x=ts.get_k_data(code=each_code,start='2017-03-01')
 
@@ -352,6 +346,7 @@ def check_k_data():
     ma10=df_x['close'][-10:].mean()
     print ma5
     print ma10
+    print df_x['volume']
 
 #get_all_stock_id()
 #check_type()
@@ -364,6 +359,11 @@ def get_index():
     df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
     print df
 
+def get_volume():
+    code='600874'
+    df=ts.get_hist_data(code=code,start='2017-01-01')
+    vol=df['ma20']
+    print vol
 #empty_type()
 #exception_test()
 #get_basic()
@@ -393,6 +393,8 @@ def get_index():
 #holiday()
 
 #print ts.__version__
-check_k_data()
+#check_k_data()
 #get_index()
+get_volume()
+
 
