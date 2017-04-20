@@ -13,8 +13,13 @@ def print_fun():
     a=1
     #print '%d100/%\n' %a
     print "a values is ",a,"%"
+
+def loopTest():
+    for i in range(-9,10,1):
+        print i
 #getData('Rocky',1000)
 #wrong!
 
 #path_function()
-print_fun()
+#print_fun()
+loopTest()

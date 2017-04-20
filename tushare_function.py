@@ -359,17 +359,17 @@ def get_index():
     df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
     print df
 
-<<<<<<< HEAD
+
 def get_volume():
     code='600874'
     df=ts.get_hist_data(code=code,start='2017-01-01')
     vol=df['ma20']
     print vol
-=======
+
 def code_issue():
     base=ts.get_stock_basics()
     base.to_excel('111.xls')
->>>>>>> origin/master
+
 #empty_type()
 #exception_test()
 #get_basic()
@@ -398,16 +398,11 @@ def code_issue():
 #get_k_test()
 #holiday()
 
-<<<<<<< HEAD
-#print ts.__version__
+
+print ts.__version__
 #check_k_data()
 #get_index()
 get_volume()
 
-=======
-print ts.__version__
-#check_k_data()
-#get_index()
-code_issue()
->>>>>>> origin/master
+#code_issue()
 
