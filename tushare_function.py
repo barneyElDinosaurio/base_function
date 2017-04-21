@@ -3,25 +3,41 @@ __author__ = 'rocchen'
 import tushare as ts
 import datetime
 import urllib2,time
-
-
-#df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
-
-
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
 
 
-def test_1():
+def baseAPI():
     #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
     #这个函数只能获取近3年的数据
-
     #print df
 
     stock_info=ts.get_stock_basics()
 
+    stock_info.to_csv('2.csv',encoding='gbk')
+    n_df=pd.read_csv('2.csv',encoding='gbk')
+    n_df.to_excel('2.xls',encoding='gbk')
+    #这样子居然搞定了。
+    '''
+    stock_info.to_csv('1.csv',encoding='gbk')
+    n_df=pd.read_csv('1.csv',encoding='gbk')
+    n_df.to_excel('22.xls',encoding='gbk')
+    '''
 
+    '''
+    print stock_info.dtypes
+    cols=stock_info.columns
+    for col in cols:
+        if stock_info[col].dtype == 'O':
+            print "O in " ,col
+            del stock_info[col]
+    print stock_info
+    stock_info.to_excel('new.xls')
+    '''
+    # 编码出错
+    #stock_info.to_excel('base.xls',encoding='gb2312')
+    '''
     data=stock_info.ix['300141']['timeToMarket']
     print data
     print type(data)
@@ -38,41 +54,8 @@ def test_1():
     print day30
     day30=day30.strftime("%Y-%m-%d")
     day0=day0.strftime("%Y-%m-%d")
+    '''
 
-#df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
-#这个函数只能获取近3年的数据
-
-#print df
-'''
-stock_info=ts.get_stock_basics()
-#print stock_info
-print stock_info.index.values
-time.sleep(10)
-
-data=stock_info.ix['300141']['timeToMarket']
-
-print data
-print type(data)
-data=str(data)
-print type(data)
-print data[1:4]
-print data[4:6]
-print data
-date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
-print date_format
-#���ڵĸ�ʽ����ת��
-delta=60*7/5
-#���ǵ������շǽ���
-day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
-day30=day0-datetime.timedelta(delta)
-print day30
-day30=day30.strftime("%Y-%m-%d")
-day0=day0.strftime("%Y-%m-%d")
-'''
-def get_all_stock_id():
-    #获取所有股票代码
-    for i in stock_info.index:
-        print i
 
 def date_test():
     data=stock_info.ix['300141']['timeToMarket']
@@ -402,7 +385,8 @@ def code_issue():
 print ts.__version__
 #check_k_data()
 #get_index()
-get_volume()
+#get_volume()
+baseAPI()
 
 #code_issue()
 

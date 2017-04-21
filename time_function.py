@@ -140,12 +140,53 @@ def time_run():
 
 def time_fun():
     timestamp=20170414
+    #timestamp=long(1492744322234)
     datearr = datetime.datetime.utcfromtimestamp(timestamp)
+    print datearr
     timestr = datearr.strftime("%Y-%m-%d %H:%M:%S")
     print timestr
+
+#时间戳的使用
+
+def time_exchange():
+    str_time='2017-04-21 11:12:02.234'
+    print 'type of str_time ', type(str_time)
+    #字符转为datatime类型
+    locatime=datetime.datetime.strptime(str_time,'%Y-%m-%d %H:%M:%S.%f')
+    print locatime
+    print 'type of locatime ', type(locatime)
+    #datatime类型转为timestamp timestamp 为long类型
+    t_stamp=long(time.mktime(locatime.timetuple())*1000.0+locatime.microsecond/1000.0)
+    print t_stamp
+    print 'type of t_stamp ', type(t_stamp)
+    #timestamp类型转为 datatime
+    d_time=datetime.datetime.fromtimestamp(t_stamp/1000.0)
+    print d_time
+
+    current=datetime.datetime.now()
+    print current
+    #datatime转为str
+    current_str=current.strftime('%Y/%m/%d %H,%M,%S')
+    print current_str
+
+    curr_stamp=time.time()
+    print "current time stamp : ",curr_stamp
+    curr_struct=time.localtime()
+    print "current struct :", curr_struct
+
+    curr_d=datetime.datetime.fromtimestamp(curr_stamp)
+    print curr_d
+
+    cti=time.ctime(curr_stamp)
+    print type(cti)
+    print cti
+    #dd=datetime.datetime.strptime(cti,'%Y-%m-%d %H:%M:%S')
+    #print dd
+
 if __name__ == "__main__":
     #format()
-    from_book()
+    #from_book()
     #time_run()
     #test2()
-    #time_fun()
+    time_fun()
+    time_exchange()
