@@ -14,16 +14,19 @@ def baseAPI():
     #print df
 
     stock_info=ts.get_stock_basics()
+    #print stock_info
 
     stock_info.to_csv('2.csv',encoding='gbk')
+
     n_df=pd.read_csv('2.csv',encoding='gbk')
     n_df.to_excel('2.xls',encoding='gbk')
+    #print n_df
     #这样子居然搞定了。
-    '''
-    stock_info.to_csv('1.csv',encoding='gbk')
-    n_df=pd.read_csv('1.csv',encoding='gbk')
-    n_df.to_excel('22.xls',encoding='gbk')
-    '''
+
+    dx_1=ts.get_hist_data('603111',start='2017-01-28',end='2017-04-22')
+    print dx_1
+    print len(dx_1)
+    #print dx_1['close'][0]
 
     '''
     print stock_info.dtypes
