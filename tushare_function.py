@@ -9,9 +9,9 @@ import matplotlib.pyplot
 
 
 def baseAPI():
-    #df=ts.get_hist_data('300141',start='2011-01-01',end='2016-7-13')
+    df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
     #这个函数只能获取近3年的数据
-    #print df
+    print df['close'].sum()
 
     #stock_info=ts.get_stock_basics()
     #print stock_info
@@ -27,7 +27,7 @@ def baseAPI():
     #print dx_1
     #print len(dx_1)
 
-    ts.get_sz50s()
+    #ts.get_sz50s()
     #print dx_1['close'][0]
 
     '''
