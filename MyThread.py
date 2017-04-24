@@ -12,8 +12,17 @@ class MyThread(threading.Thread):
 	def getResult(self):
 		return self.result
 
+def worker():
+    x=0
+    while 1:
+        x=x^1
+
+
 def main():
-    print multiprocessing.cpu_count()
+    l= multiprocessing.cpu_count()
+    for i in range(l):
+        t=threading.Thread(target=worker)
+        t.start()
 
 if __name__=='__main__':
 	main()

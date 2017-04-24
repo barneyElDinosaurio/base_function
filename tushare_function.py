@@ -13,19 +13,21 @@ def baseAPI():
     #这个函数只能获取近3年的数据
     #print df
 
-    stock_info=ts.get_stock_basics()
+    #stock_info=ts.get_stock_basics()
     #print stock_info
 
-    stock_info.to_csv('2.csv',encoding='gbk')
+    #stock_info.to_csv('2.csv',encoding='gbk')
 
-    n_df=pd.read_csv('2.csv',encoding='gbk')
-    n_df.to_excel('2.xls',encoding='gbk')
+    #n_df=pd.read_csv('2.csv',encoding='gbk')
+    #n_df.to_excel('2.xls',encoding='gbk')
     #print n_df
     #这样子居然搞定了。
 
-    dx_1=ts.get_hist_data('603111',start='2017-01-28',end='2017-04-22')
-    print dx_1
-    print len(dx_1)
+    #dx_1=ts.get_hist_data('603111',start='2017-01-28',end='2017-04-22')
+    #print dx_1
+    #print len(dx_1)
+
+    ts.get_sz50s()
     #print dx_1['close'][0]
 
     '''

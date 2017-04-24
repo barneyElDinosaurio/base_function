@@ -130,12 +130,14 @@ def from_book():
     print date_type2
     print type(date_type2)
 
+#运行了多少时间
 def time_run():
     start=datetime.datetime.now()
     print start
     time.sleep(3)
-    print start
+
     end=datetime.datetime.now()
+    print end
     print "time use ", (end-start).seconds
 
 def time_fun():
@@ -186,7 +188,7 @@ def time_exchange():
 if __name__ == "__main__":
     #format()
     #from_book()
-    #time_run()
+    time_run()
     #test2()
-    time_fun()
-    time_exchange()
+    #time_fun()
+    #time_exchange()
