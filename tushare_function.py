@@ -11,14 +11,8 @@ import matplotlib.pyplot
 def baseAPI():
     df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
     #这个函数只能获取近3年的数据
-    print df
     print df['close'].sum()
-    print df['volume'][0]
-    print df['close'][-1]
 
-    df2=ts.get_k_data('600000',start='2016-08-16')
-    print df2.dtypes
-    print df2['volume'][134]
     #stock_info=ts.get_stock_basics()
     #print stock_info
 
