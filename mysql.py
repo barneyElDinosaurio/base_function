@@ -1,8 +1,9 @@
+#-*-coding=utf-8-*-
 __author__ = 'xda'
 import MySQLdb,sqlite3
 import pandas as pd
 def DB_Usage():
-    db=MySQLdb.connect("localhost","root","123456z","first_lesson")
+    db=MySQLdb.connect("localhost","root","xxxxx","first_lesson")
     cursor=db.cursor()
     cursor.execute("SELECT VERSION()")
     data=cursor.fetchone()
@@ -32,5 +33,18 @@ def DB_Usage_sqlite():
     df=pd.read_sql(cmd,db)
     print df
 
-DB_Usage()
+def Aliyun():
+    conn = MySQLdb.connect(host = 'qdm225205669.my3w.com',  # 远程主机的ip地址，
+                                            user = 'qdm225205669',   # MySQL用户名
+                                            db = 'qdm225205669_db',   # database名
+                                            passwd = '',   # 数据库密码
+                                            port = 3306,  #数据库监听端口，默认3306
+                                            charset = "utf8")  #指定utf8编码的连接
+    cursor=conn.cursor()
+    cursor.execute('SELECT VERSION()')
+    data=cursor.fetchone()
+    print data
+
+#DB_Usage()
 #DB_Usage_sqlite()
+Aliyun()
