@@ -325,6 +325,12 @@ def base_function():
     data={'one':[1,2,3,4,5],'two':[2,3,4,5,6]}
     df=pd.DataFrame(data)
     print df['one'].mean()
+
+def read_data():
+    df=pd.read_csv('data/603308.csv', parse_dates=[0])
+    #指定 index, 指定为日期类型 parse_dates=[x] 指定为第几类
+    print df
+    print df.info()
 #base_case()
 #excel_op()
 #del_row()
@@ -345,4 +351,5 @@ def base_function():
 
 
 #Serial()
-base_function()
+#base_function()
+read_data()

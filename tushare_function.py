@@ -6,12 +6,12 @@ import urllib2,time
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
-
+pd.set_option('display.max_rows',None)
 
 def baseAPI():
-    df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
+    #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
     #这个函数只能获取近3年的数据
-    print df['close'].sum()
+    #print df['close'].sum()
 
     #stock_info=ts.get_stock_basics()
     #print stock_info
@@ -60,7 +60,12 @@ def baseAPI():
     day30=day30.strftime("%Y-%m-%d")
     day0=day0.strftime("%Y-%m-%d")
     '''
-
+    df1=ts.new_stocks(1)
+    print df1
+    df2=ts.new_stocks(2)
+    print df2
+    df3=ts.new_stocks(3)
+    print df3
 
 def date_test():
     data=stock_info.ix['300141']['timeToMarket']
