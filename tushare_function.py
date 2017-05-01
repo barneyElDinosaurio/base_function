@@ -60,12 +60,16 @@ def baseAPI():
     day30=day30.strftime("%Y-%m-%d")
     day0=day0.strftime("%Y-%m-%d")
     '''
-    df1=ts.new_stocks(1)
-    print df1
-    df2=ts.new_stocks(2)
-    print df2
-    df3=ts.new_stocks(3)
-    print df3
+    #df1=ts.new_stocks()
+    #print df1
+    #df2=ts.new_stocks(2)
+    #print df2
+    #df3=ts.new_stocks(3)
+    #print df3
+
+    sz_index=ts.get_k_data('399001',index=True,start='2017-01-10',end='2017-04-28')
+    print sz_index
+
 
 def date_test():
     data=stock_info.ix['300141']['timeToMarket']

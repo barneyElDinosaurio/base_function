@@ -2,7 +2,6 @@
 #日期函数的使用
 import time, datetime
 
-
 class Data_test(object):
     day = 0
     month = 0
@@ -51,7 +50,10 @@ class Data_test2(object):
 class DateTest3():
     def getPreviousDay(self):
         now = datetime.datetime.now()
+        print type(now)
         last = now + datetime.timedelta(days=-3)
+        #日期增减
+        print last
         print   last.strftime("%Y-%m-%d")
 
 
@@ -188,7 +190,9 @@ def time_exchange():
 if __name__ == "__main__":
     #format()
     #from_book()
-    time_run()
+    #time_run()
     #test2()
     #time_fun()
     #time_exchange()
+    obj=DateTest3()
+    obj.getPreviousDay()

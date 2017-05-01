@@ -18,6 +18,15 @@ def question():
     b = pd.Series([2])
     if (b/a)[0]==2:
         print "ok"
+    c=[2,4,6,8,10,12,14,16,18]
+    d= [i*2*-1 for i in c]
+    print d
+    d[0]=3
+    s1=Series(c)
+    s2=Series(d)
+
+    corr=s1.corr(s2)
+    print corr
 
 def plot_test():
     s=Series(np.random.rand(20))
@@ -85,9 +94,25 @@ def calculate():
 def jianshu():
     df=pd.read_excel('2017-04-15_all_.xls')
     print df.info()
+
+def func(x):
+    return x*2
+
+def  apply_map_test():
+    df=pd.DataFrame({'A':[1,2,3,4,5],'B':[10,20,30,40,50]})
+    print df
+    new_df=df.applymap(func)
+    print new_df
+    new_df1=df.applymap(lambda x:x*2)
+    print new_df1
+
+    df2=df.apply(func)
+    print df2
+
 #df_practice()
 #question()
 #plot_test()
 #calculate()
 #compare_values()
-jianshu()
+#jianshu()
+apply_map_test()

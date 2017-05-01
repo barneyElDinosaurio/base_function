@@ -15,9 +15,6 @@ def plot_test1():
     plt.show()
 
 
-def plot_test2():
-    pass
-
 def from_book():
     fig=plt.figure()
     ax1=fig.add_subplot(2,2,1)
@@ -31,7 +28,7 @@ def pd_plot():
     s=Series(np.random.randn(10).cumsum(),index=range(0,100,10))
     print s
     s.plot()
-    #为啥不能显示，只能在ipython上作用
+    #为啥不能显示，只能在ipython上作用 ？
     df=pd.DataFrame(np.random.randn(10,4).cumsum(0),index=np.arange(0,100,10),columns=['A','B','C','D'])
     df.plot()
 
