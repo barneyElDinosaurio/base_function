@@ -9,8 +9,10 @@ import matplotlib.pyplot
 pd.set_option('display.max_rows',None)
 
 def baseAPI():
-    #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
+    df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
     #这个函数只能获取近3年的数据
+    #目前这个版本是从最新开始 【0】
+    print df
     #print df['close'].sum()
 
     #stock_info=ts.get_stock_basics()
@@ -67,9 +69,12 @@ def baseAPI():
     #df3=ts.new_stocks(3)
     #print df3
 
-    sz_index=ts.get_k_data('399001',index=True,start='2017-01-10',end='2017-04-28')
+    #sz_index=ts.get_k_data('399001',index=True,start='2017-01-10',end='2017-04-28')
+    '''
+    sz_index=ts.get_k_data('300141')
     print sz_index
-
+    print sz_index.ix[sz_index['date']=='2014-05-06','high'].values[0]
+    '''
 
 def date_test():
     data=stock_info.ix['300141']['timeToMarket']

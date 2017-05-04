@@ -1,3 +1,4 @@
+#-*-coding=utf-8-*-
 import numpy as np
 import pandas as pd
 from pandas import Series
@@ -10,8 +11,10 @@ def df_practice():
     df=pd.DataFrame({'A':a,'B':b})
     print df
     #df.loc[(df['A']>0) & (df['B']<0),'A']=100
+    #赋值测试
     df.ix[(df['A']>0) & (df['B']<0),'A']=100
     print df
+    print df.ix[0,0]
 
 def question():
     a = pd.Series([1])
@@ -109,10 +112,19 @@ def  apply_map_test():
     df2=df.apply(func)
     print df2
 
+#行 合并
+def row_merge():
+    df=pd.DataFrame({'A':[1,2,3,4,5],'B':[10,20,30,40,50]})
+    df2=pd.DataFrame({'A':[6],'B':[60]})
+    df_x=[df,df2]
+    result=pd.concat(df_x)
+    print result
+    print df['A'][0]
 #df_practice()
 #question()
 #plot_test()
 #calculate()
 #compare_values()
 #jianshu()
-apply_map_test()
+#apply_map_test()
+row_merge()
