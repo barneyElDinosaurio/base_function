@@ -38,7 +38,31 @@ def bar_test():
     plt.title("PE")
     plt.xticks((0.2,1),('one','two'))
     plt.show()
+#最简单的话直线
+def plot_line():
+    x=[1,2,3,4,5]
+    y=[2,4,6,8,10]
+    plt.plot(x,y)
+    plt.show()
+
+def multi_plot():
+    plt.figure(1)
+    plt.figure(2)
+    ax1=plt.subplot(211)
+    ax2=plt.subplot(212)
+    x=np.linspace(0,3,100)
+    print x
+    for i in xrange(5):
+        plt.figure(1)
+        plt.plot(x,np.exp(i*x/3))
+        plt.sca(ax1)
+        plt.plot(x,np.sin(i*x))
+        plt.sca(ax2)
+        plt.plot(x,np.cos(i*x))
+    plt.show()
 #from_book()
 #plot_test1()
 #pd_plot()
-bar_test()
+#bar_test()
+#plot_line()
+multi_plot()

@@ -3,6 +3,7 @@ __author__ = 'Rocky'
 import xlrd,xlwt
 from xlutils.copy import copy
 import pandas as pd
+
 def write_excel():
     filename="python_excel_test.xls"
     excel_file=xlwt.Workbook()
@@ -64,6 +65,14 @@ def modify_excel2():
     #w=copy(rb)
     #sheet=w.get_sheet(0)
     #w.save('book3.xls')
+#为了提取所有的testcase id
+def save_id():
+    df=pd.read_excel('12.xls')
+    #print df.info()
+
+    for i in range(len(df)):
+        print str(df.iloc[i,0]).strip(),',',
+
 '''
 file="python_excel_test.xls"
 rb=xlrd.open_workbook(file)
@@ -75,3 +84,4 @@ copy_excel(rb,1,'asking')
 
 #getCodeFromExcel("ownstock.xls")
 
+save_id()
