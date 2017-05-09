@@ -186,6 +186,12 @@ def time_exchange():
     print cti
     #dd=datetime.datetime.strptime(cti,'%Y-%m-%d %H:%M:%S')
     #print dd
+#把分钟秒的字符转为datetime
+def str_time_hour():
+    t='08:30:12'
+    t0=datetime.datetime.strptime(t,'%H:%M:%S')
+    print type(t0)
+    print t0
 
 if __name__ == "__main__":
     #format()
@@ -194,5 +200,6 @@ if __name__ == "__main__":
     #test2()
     #time_fun()
     #time_exchange()
-    obj=DateTest3()
-    obj.getPreviousDay()
+    #obj=DateTest3()
+    #obj.getPreviousDay()
+    str_time_hour()
