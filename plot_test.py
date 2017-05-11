@@ -44,6 +44,13 @@ def plot_line():
     y=[2,4,6,8,10]
     plt.plot(x,y)
     plt.show()
+def plot_bar():
+    x=[1,2,3,4,5]
+    y=[2,4,6,8,10]
+    plt.bar(x,y)
+    plt.show()
+
+
 
 def multi_plot():
     plt.figure(1)
@@ -65,4 +72,5 @@ def multi_plot():
 #pd_plot()
 #bar_test()
 #plot_line()
-multi_plot()
+plot_bar()
+#multi_plot()
