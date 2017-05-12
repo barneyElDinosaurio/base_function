@@ -141,6 +141,7 @@ def time_run():
     end=datetime.datetime.now()
     print end
     print "time use ", (end-start).seconds
+    print end.strftime("%H:%M:%S")
 
 def time_fun():
     timestamp=20170414
@@ -196,10 +197,10 @@ def str_time_hour():
 if __name__ == "__main__":
     #format()
     #from_book()
-    #time_run()
+    time_run()
     #test2()
     #time_fun()
     #time_exchange()
     #obj=DateTest3()
     #obj.getPreviousDay()
-    str_time_hour()
+    #str_time_hour()
