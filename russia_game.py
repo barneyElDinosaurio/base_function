@@ -1,7 +1,7 @@
 # -*-coding=utf-8-*-
 __author__ = 'Rocky'  #!/usr/bin/python
 # tetris.py
-#pyqt 俄罗斯方块
+# pyqt 俄罗斯方块
 import sys
 import random
 from PyQt4 import QtCore, QtGui

@@ -1,16 +1,19 @@
-#-*-coding=utf-8-*-
+# -*-coding=utf-8-*-
 __author__ = 'xda'
+
+
 def getUserData():
-    f=open("data.cfg",'r')
-    account={}
+    f = open("data.cfg", 'r')
+    account = {}
     for i in f.readlines():
-        ctype,passwd=i.split('=')
+        ctype, passwd = i.split('=')
         #print ctype
         #print passwd
-        account[ctype.strip()]=passwd.strip()
+        account[ctype.strip()] = passwd.strip()
 
     return account
 
-if __name__=="__main__":
-    data=getUserData()
+
+if __name__ == "__main__":
+    data = getUserData()
     print data

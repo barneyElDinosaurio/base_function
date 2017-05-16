@@ -1,8 +1,9 @@
 def yield_test():
-    a=1
-    for i in range(0,10):
-        b=a+i
+    a = 1
+    for i in range(0, 10):
+        b = a + i
         yield b
+
 
 '''
 data=yield_test()

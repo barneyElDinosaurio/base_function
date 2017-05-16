@@ -1,16 +1,19 @@
 # -*- coding:utf-8 -*-
 import sys
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
+
 def chinese_str():
-    w=open("C:\Kingsoft\Python\q.txt","a")
-    for i in range(1,100):
+    w = open("C:\Kingsoft\Python\q.txt", "a")
+    for i in range(1, 100):
         print(str(i))
-        w.write(str(i)+"\n")
-        #w.write(u"程先生")
+        w.write(str(i) + "\n")
+        # w.write(u"程先生")
     w.close()
 
-#print u"程先生"
+# print u"程先生"
 
 '''
 name=u"程先生"
@@ -30,44 +33,48 @@ print sys.getdefaultencoding()
 
 
 def check_year():
-    year=11
-    if isinstance(year,str) :
+    year = 11
+    if isinstance(year, str):
         print "Bingo"
+
 
 def _write_adead():
     sys.stdout.write("Helloafafdafafafafd\n")
     print sys.version_info[0]
 
+
 def zfill_test():
-    temp="Rocky Chen"
-    temp=temp.zfill(20)
+    temp = "Rocky Chen"
+    temp = temp.zfill(20)
     print temp
 
     print len(temp)
-    f=lambda x:str(x).zfill(6)
-    a=f(234)
+    f = lambda x: str(x).zfill(6)
+    a = f(234)
     print a
     print type(a)
 
+
 def loo_each():
-    str1="You are bitch!\n"
+    str1 = "You are bitch!\n"
     print str1
-    word=[x.strip() for x in str1.split(' ')]
+    word = [x.strip() for x in str1.split(' ')]
     print word
-    conn=" ".join(word)
+    conn = " ".join(word)
     print conn
     if 'bitch' in str1:
         print "Bitch"
 
+
 def replace_func():
-    a=' i love this game . I hate this game, no love '
+    a = ' i love this game . I hate this game, no love '
     print a,
     print 'end'
     print a.lstrip(),
     print 'end'
-    b=2
-    c=3
-    print b,c
+    b = 2
+    c = 3
+    print b, c
     print a,
     print 'end'
 
@@ -75,9 +82,11 @@ def replace_func():
 def garbe_character():
     print "\x00"
 
+
 def slic():
-    code='002341'
+    code = '002341'
     print code[:1]
+
 #check_year()
 #_write_adead()
 #zfill_test()

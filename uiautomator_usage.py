@@ -18,7 +18,7 @@ def basic_usage():
         info = d.info
         print info['currentPackageName']
         time.sleep(10)
-        #com.taobao.taobao
+        # com.taobao.taobao
         #com.jingdong.app.mall
         #com.suning.mobile.ebuy
         #com.kingpoint.gmcchh
@@ -45,7 +45,7 @@ def operation_usage():
         print "move"
     '''
 
-    #d(text=u'显示').click()
+    # d(text=u'显示').click()
     #支持unicode
 
     d(scrollable=True).scroll(steps=3)
@@ -53,7 +53,7 @@ def operation_usage():
 
 def launch_app():
     cmd = 'adb shell am start -n com.kingpoint.gmcchh/.ui.home.StartUpActivity'
-    #os.system(cmd)
+    # os.system(cmd)
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     print p.stdout.read()
 
@@ -80,14 +80,14 @@ def darcy_test():
 
 def wechat():
     cmd = 'adb shell am start -n com.tencent.mm/.ui.LauncherUI'
-    #os.system(cmd)
+    # os.system(cmd)
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     print p.stdout.read()
 
 
 def sunning():
     cmd = 'adb shell am start -n com.suning.mobile.ebuy/.base.host.InitialActivity'
-    #os.system(cmd)
+    # os.system(cmd)
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     print p.stdout.read()
     time.sleep(5)
@@ -105,7 +105,7 @@ def text_search():
 
 
 def step_by_step():
-    #d(text=u'打卡领云钻').wait.exists(timeout=10000)
+    # d(text=u'打卡领云钻').wait.exists(timeout=10000)
     #print "done"
     #result = d(text=u'').exists
     #print result
@@ -114,7 +114,7 @@ def step_by_step():
 
 if __name__ == "__main__":
     step_by_step()
-    #basic_usage()
+    # basic_usage()
     #operation_usage()
     #launch_app()
     #wechat()

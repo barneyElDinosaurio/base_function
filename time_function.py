@@ -1,6 +1,7 @@
 # -*-coding=utf-8-*-
-#日期函数的使用
+# 日期函数的使用
 import time, datetime
+
 
 class Data_test(object):
     day = 0
@@ -91,6 +92,7 @@ def test1():
     d3 = DateTest3()
     d3.getPreviousDay()
 
+
 def test2():
     now = time.strftime("%Y-%m-%d")
     print now
@@ -106,19 +108,20 @@ def test2():
     #看输入的日期是一个星期的第几天
     print aa.weekday()
 
-    print str(int(time.time()*1000))
-    t1=time.time()
+    print str(int(time.time() * 1000))
+    t1 = time.time()
     print t1
     print time.ctime()
-    t=1490060308998*1.00/1000
+    t = 1490060308998 * 1.00 / 1000
     print time.ctime(t1)
 
     print time.ctime(t)
-    t3=time.ctime(t)
+    t3 = time.ctime(t)
 
     print time.gmtime(t)
     #print time.strptime(t3,'%Y-%m-%d')
     print type(t3)
+
 
 def format():
     print "*" * 10
@@ -132,67 +135,73 @@ def from_book():
     print date_type2
     print type(date_type2)
 
+
 #运行了多少时间
 def time_run():
-    start=datetime.datetime.now()
+    start = datetime.datetime.now()
     print start
     time.sleep(3)
 
-    end=datetime.datetime.now()
+    end = datetime.datetime.now()
     print end
-    print "time use ", (end-start).seconds
+    print "time use ", (end - start).seconds
     print end.strftime("%H:%M:%S")
 
+
 def time_fun():
-    timestamp=20170414
+    timestamp = 20170414
     #timestamp=long(1492744322234)
     datearr = datetime.datetime.utcfromtimestamp(timestamp)
     print datearr
     timestr = datearr.strftime("%Y-%m-%d %H:%M:%S")
     print timestr
 
+
 #时间戳的使用
 
 def time_exchange():
-    str_time='2017-04-21 11:12:02.234'
+    str_time = '2017-04-21 11:12:02.234'
     print 'type of str_time ', type(str_time)
     #字符转为datatime类型
-    locatime=datetime.datetime.strptime(str_time,'%Y-%m-%d %H:%M:%S.%f')
+    locatime = datetime.datetime.strptime(str_time, '%Y-%m-%d %H:%M:%S.%f')
     print locatime
     print 'type of locatime ', type(locatime)
     #datatime类型转为timestamp timestamp 为long类型
-    t_stamp=long(time.mktime(locatime.timetuple())*1000.0+locatime.microsecond/1000.0)
+    t_stamp = long(time.mktime(locatime.timetuple()) * 1000.0 + locatime.microsecond / 1000.0)
     print t_stamp
     print 'type of t_stamp ', type(t_stamp)
     #timestamp类型转为 datatime
-    d_time=datetime.datetime.fromtimestamp(t_stamp/1000.0)
+    d_time = datetime.datetime.fromtimestamp(t_stamp / 1000.0)
     print d_time
 
-    current=datetime.datetime.now()
+    current = datetime.datetime.now()
     print current
     #datatime转为str
-    current_str=current.strftime('%Y/%m/%d %H,%M,%S')
+    current_str = current.strftime('%Y/%m/%d %H,%M,%S')
     print current_str
 
-    curr_stamp=time.time()
-    print "current time stamp : ",curr_stamp
-    curr_struct=time.localtime()
+    curr_stamp = time.time()
+    print "current time stamp : ", curr_stamp
+    curr_struct = time.localtime()
     print "current struct :", curr_struct
 
-    curr_d=datetime.datetime.fromtimestamp(curr_stamp)
+    curr_d = datetime.datetime.fromtimestamp(curr_stamp)
     print curr_d
 
-    cti=time.ctime(curr_stamp)
+    cti = time.ctime(curr_stamp)
     print type(cti)
     print cti
     #dd=datetime.datetime.strptime(cti,'%Y-%m-%d %H:%M:%S')
     #print dd
+
+
 #把分钟秒的字符转为datetime
 def str_time_hour():
-    t='08:30:12'
-    t0=datetime.datetime.strptime(t,'%H:%M:%S')
+    t = '08:30:12'
+    t0 = datetime.datetime.strptime(t, '%H:%M:%S')
     print type(t0)
     print t0
+
 
 if __name__ == "__main__":
     #format()

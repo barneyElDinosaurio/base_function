@@ -1,10 +1,12 @@
-#-*-coding=utf-8-*-
+# -*-coding=utf-8-*-
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 from toolkit import Toolkit
 from email.mime.multipart import MIMEMultipart
 from email import Encoders, Utils
+
+
 class MailAtt():
     def __init__(self, smtp_server, from_mail, password, to_mail):
         self.server = smtp_server
@@ -21,7 +23,7 @@ class MailAtt():
         self.smtp.connect(self.server)
         self.smtp.login(self.username, self.password)
         #self.msg = MIMEMultipart()
-        self.msg=MIMEText("content",'plain','utf-8')
+        self.msg = MIMEText("content", 'plain', 'utf-8')
         self.msg['to'] = self.to_mail
         self.msg['from'] = self.from_mail
         self.msg['Subject'] = "459"
@@ -41,31 +43,29 @@ class MailAtt():
         self.smtp.quit()
 
 
-
-
-
 def send_139():
-    cfg=Toolkit.getUserData('data.cfg')
-    sender=cfg['mail_user']
-    passwd=cfg['mail_pass']
-    receiver=cfg['receiver']
-    msg=MIMEText('Python mail test','plain','utf-8')
-    msg['From']=Header('FromTest','utf-8')
-    msg['To']=Header('ToTest','utf-8')
-    subject='Python SMTP Test'
-    msg['Subject']=Header(subject,'utf-8')
+    cfg = Toolkit.getUserData('data.cfg')
+    sender = cfg['mail_user']
+    passwd = cfg['mail_pass']
+    receiver = cfg['receiver']
+    msg = MIMEText('Python mail test', 'plain', 'utf-8')
+    msg['From'] = Header('FromTest', 'utf-8')
+    msg['To'] = Header('ToTest', 'utf-8')
+    subject = 'Python SMTP Test'
+    msg['Subject'] = Header(subject, 'utf-8')
     try:
-        obj=smtplib.SMTP()
-        obj.connect('smtp.126.com',25)
-        obj.login(sender,passwd)
-        obj.sendmail(sender,receiver,msg.as_string())
-    except smtplib.SMTPException,e:
+        obj = smtplib.SMTP()
+        obj.connect('smtp.126.com', 25)
+        obj.login(sender, passwd)
+        obj.sendmail(sender, receiver, msg.as_string())
+    except smtplib.SMTPException, e:
         print e
 
 
 def main():
-    obj=MailAtt('info')
+    obj = MailAtt('info')
     obj.send_txt('html')
+
 #send_139()
 main()
 

@@ -1,3 +1,4 @@
 import numpy
-a=numpy.arange(8)
+
+a = numpy.arange(8)
 print a

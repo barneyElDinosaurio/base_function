@@ -1,18 +1,20 @@
 import numpy as np
 
+
 def numpysum(n):
-    a=np.arange(n)
-    b=np.arange(n)
-    c=a+b
+    a = np.arange(n)
+    b = np.arange(n)
+    c = a + b
     return c
 
-x=numpysum(20)
+
+x = numpysum(20)
 print x
-d=np.array([1,2,34,5])
+d = np.array([1, 2, 34, 5])
 print d
-e=d.tolist()
+e = d.tolist()
 print e
 
-f=e
-g=np.array(f)
+f = e
+g = np.array(f)
 print g

