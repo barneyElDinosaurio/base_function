@@ -1,4 +1,4 @@
-import thread, threading, time, datetime
+import threading, time, datetime
 from time import sleep, ctime
 
 
@@ -82,13 +82,13 @@ def multi_thread():
 
 def fast():
     print "in fast"
-    sleep(15)
+    sleep(10)
     print "done in fast"
 
 
 def slow():
     print "in slow"
-    sleep(10)
+    sleep(15)
     print "done in slow"
 
 
@@ -114,12 +114,13 @@ def main():
     multi_thread()
     '''
     # print "used %s" %(end-start).seconds
-
+    start=datetime.datetime.now()
     threads = []
     f = [fast, slow]
     l = len(f)
     for i in range(l):
-        t = MyThread(f[i], (), str(i))
+        #t = MyThread(f[i], (), str(i))
+        t=threading.Thread(target=f[i],args=())
         threads.append(t)
 
     for i in range(l):
@@ -129,13 +130,11 @@ def main():
         #pass
         threads[i].join()
         print threads[i].getName()
+
+    end=datetime.datetime.now()
+    print end-start
     print "Done on main"
     exit()
 
-
 main()
 
-'''		
-if __name__=="__main__":
-	main()
-'''
