@@ -1,3 +1,4 @@
+#-*-coding=utf-8-*-
 """Test 1"""
 #不断地factory，重启
 import subprocess
@@ -50,10 +51,10 @@ class Test:
         while count <= number:
             print "Cycle %d" % count
             self.run_cmd(self.wait_device)
-            time.sleep(300)
+            time.sleep(10)
             self.run_cmd(self.log)
             if not self.boot_completed in open("log1.txt").read():
-                time.sleep(30)
+                time.sleep(10)
                 self.run_cmd(self.log)
             self.run_cmd_background(self.logcat)
             for event in self.events:
