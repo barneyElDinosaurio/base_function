@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from matplotlib import mlab
 from matplotlib import rcParams
-
+import tushare as ts
 
 def plot_test1():
     x = [1, 2]
@@ -74,10 +74,21 @@ def multi_plot():
         plt.plot(x, np.cos(i * x))
     plt.show()
 
+def two_in_one_canvas():
+    fig,ax=plt.subplots()
+    df=ts.get_hist_data('300333')
+    closed=df.close
+    vol=df.volume
+    print closed
+    print vol
+    closed.plot(ax)
+    vol.plot(ax)
+    plt.show()
 #from_book()
 #plot_test1()
 #pd_plot()
 #bar_test()
 #plot_line()
-plot_bar()
+#plot_bar()
 #multi_plot()
+two_in_one_canvas()
