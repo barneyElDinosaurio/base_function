@@ -6,8 +6,9 @@ import pandas as pd
 import numpy as np
 from matplotlib import mlab
 from matplotlib import rcParams
-
-
+import tushare as ts
+import matplotlib
+matplotlib.use('TkAgg')
 def plot_test1():
     x = [1, 2]
     y = [2, 4]
@@ -74,6 +75,7 @@ def multi_plot():
         plt.plot(x, np.cos(i * x))
     plt.show()
 
+
 def plot_csdn():
     date_list=[]
     range_list=[]
@@ -88,11 +90,27 @@ def plot_csdn():
     plt.plot(range_list)
     plt.show()
 
+
+def two_in_one_canvas():
+    fig,ax=plt.subplots(211)
+    df=ts.get_hist_data('300333')
+    closed=df.close
+    vol=df.open
+    print closed
+    print vol
+    #closed.plot()
+    closed.plot(ax)
+    vol.plot(ax)
+    plt.show()
+
 #from_book()
 #plot_test1()
 #pd_plot()
 #bar_test()
 #plot_line()
 #plot_bar()
-#multi_plot()
-plot_csdn()
+multi_plot()
+#plot_csdn()
+
+two_in_one_canvas()
+
