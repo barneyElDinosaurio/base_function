@@ -74,10 +74,25 @@ def multi_plot():
         plt.plot(x, np.cos(i * x))
     plt.show()
 
+def plot_csdn():
+    date_list=[]
+    range_list=[]
+    f=open('csdn_range.txt','r')
+    for i in f.readlines():
+        #print i
+        date_,range_=i.split('\t')
+        date_list.append( date_)
+        range_list.append( range_)
+    #plt.axis([0,33,0,20000])
+    plt.xlim(0,50)
+    plt.plot(range_list)
+    plt.show()
+
 #from_book()
 #plot_test1()
 #pd_plot()
 #bar_test()
 #plot_line()
-plot_bar()
+#plot_bar()
 #multi_plot()
+plot_csdn()
