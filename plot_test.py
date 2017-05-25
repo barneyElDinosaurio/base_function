@@ -81,6 +81,7 @@ def two_in_one_canvas():
     vol=df.volume
     print closed
     print vol
+    #closed.plot()
     closed.plot(ax)
     vol.plot(ax)
     plt.show()
