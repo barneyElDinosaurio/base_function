@@ -8,6 +8,7 @@ from matplotlib import mlab
 from matplotlib import rcParams
 import tushare as ts
 import matplotlib
+
 matplotlib.use('TkAgg')
 def plot_test1():
     x = [1, 2]
@@ -92,15 +93,15 @@ def plot_csdn():
 
 
 def two_in_one_canvas():
-    fig,ax=plt.subplots(211)
-    df=ts.get_hist_data('300333')
+    #fig,ax=plt.subplots(211)
+    df=ts.get_hist_data('300333','2015-01-01','2016-12-30')
     closed=df.close
-    vol=df.open
+    vol=df.volume/10000
     print closed
     print vol
     #closed.plot()
-    closed.plot(ax)
-    vol.plot(ax)
+    closed.plot()
+    vol.plot()
     plt.show()
 
 #from_book()
@@ -109,7 +110,7 @@ def two_in_one_canvas():
 #bar_test()
 #plot_line()
 #plot_bar()
-multi_plot()
+#multi_plot()
 #plot_csdn()
 
 two_in_one_canvas()
