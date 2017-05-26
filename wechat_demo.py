@@ -18,7 +18,7 @@ def testcase1():
     for i in account:
         #print type(i)
         #print i
-        if i[u'PYQuanPin']==u'wwwei':
+        if i[u'PYQuanPin']==u'爱惟创意':
             print i['UserName']
             #print i
     #itchat.send(content, toUserName=id)
