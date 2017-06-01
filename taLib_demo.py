@@ -24,43 +24,43 @@ def overlap_process(event):
     axes[0].plot(lowerband, 'y-')
     axes[0].set_title(overlap, fontproperties="SimHei")
 
-    if overlap == '布林线':
+    if overlap == u'布林线':
         pass
-    elif overlap == '双指数移动平均线':
+    elif overlap == u'双指数移动平均线':
         real = ta.DEMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
-    elif overlap == '指数移动平均线 ':
+    elif overlap == u'指数移动平均线 ':
         real = ta.EMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
-    elif overlap == '希尔伯特变换——瞬时趋势线':
+    elif overlap == u'希尔伯特变换——瞬时趋势线':
         real = ta.HT_TRENDLINE(close)
         axes[1].plot(real, 'r-')
-    elif overlap == '考夫曼自适应移动平均线':
+    elif overlap == u'考夫曼自适应移动平均线':
         real = ta.KAMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
-    elif overlap == '移动平均线':
+    elif overlap == u'移动平均线':
         real = ta.MA(close, timeperiod=30, matype=0)
         axes[1].plot(real, 'r-')
-    elif overlap == 'MESA自适应移动平均':
+    elif overlap == u'MESA自适应移动平均':
         mama, fama = ta.MAMA(close, fastlimit=0, slowlimit=0)
         axes[1].plot(mama, 'r-')
         axes[1].plot(fama, 'g-')
-    elif overlap == '变周期移动平均线':
+    elif overlap == u'变周期移动平均线':
         real = ta.MAVP(close, periods, minperiod=2, maxperiod=30, matype=0)
         axes[1].plot(real, 'r-')
-    elif overlap == '简单移动平均线':
+    elif overlap == u'简单移动平均线':
         real = ta.SMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
-    elif overlap == '三指数移动平均线(T3)':
+    elif overlap == u'三指数移动平均线(T3)':
         real = ta.T3(close, timeperiod=5, vfactor=0)
         axes[1].plot(real, 'r-')
-    elif overlap == '三指数移动平均线':
+    elif overlap == u'三指数移动平均线':
         real = ta.TEMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
-    elif overlap == '三角形加权法 ':
+    elif overlap == u'三角形加权法 ':
         real = ta.TRIMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
-    elif overlap == '加权移动平均数':
+    elif overlap == u'加权移动平均数':
         real = ta.WMA(close, timeperiod=30)
         axes[1].plot(real, 'r-')
     plt.show()
