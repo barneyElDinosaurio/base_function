@@ -111,12 +111,17 @@ def step_by_step():
     #print result
     pass
 
+def getView():
+    #d.dump("hierarchy_no_download.xml")
+    print d(textContains=u'您还没有安装任何游戏 快去下载游戏吧').exists
+    #print "Download"
 
 if __name__ == "__main__":
-    step_by_step()
+    #step_by_step()
     # basic_usage()
     #operation_usage()
     #launch_app()
     #wechat()
     #sunning()
-    text_search()
+    #text_search()
+    getView()
