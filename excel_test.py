@@ -74,13 +74,15 @@ def modify_excel2():
 
 # 为了提取所有的testcase id
 def save_id():
-    df = pd.read_excel('12.xls')
+    df = pd.read_excel('2.xls',skiprows=[0])
     #print df.info()
 
+    '''
     for i in range(len(df)):
         print str(df.iloc[i, 0]).strip(), ',',
 
-
+    '''
+    print df
 '''
 file="python_excel_test.xls"
 rb=xlrd.open_workbook(file)

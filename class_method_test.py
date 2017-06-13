@@ -1,6 +1,6 @@
 # -*-coding=utf-8-*-
 # classmethod 和 staticmethod 的用法
-__author__ = 'rocchen'
+__author__ = 'rocky chen'
 
 
 class Hero():
@@ -26,7 +26,7 @@ class Boy_Hero(Hero):
         print "in Boy"
 
 
-'''
+
 test=Girl_Hero()
 test.sayHello_cls()
 test.sayHello()
@@ -34,7 +34,7 @@ test.sayHello()
 test1=Boy_Hero()
 test1.sayHello_cls()
 test1.sayHello()
-'''
+
 
 #factory mode
 class worker():
@@ -73,12 +73,12 @@ class Factory_Work():
 
 class Person():
     def __init__(self, first, last):
-        self.fisrt_name = first
+        self.first_name = first
         self.last_name = last
 
-    #@property
+    @property
     def p_name(self):
-        return self.fisrt_name + " " + self.last_name
+        return self.first_name + ' ' + self.last_name
 
 
 '''
@@ -88,6 +88,29 @@ a.work_fun()
 '''
 
 person = Person("Jacky", "He")
-print person.p_name()
+print person.p_name
 person.last_name = "HHHH"
-print person.p_name()
+print person.p_name
+
+from abc import  abstractmethod,ABCMeta
+class abc_abstract_test():
+    __metaclass__=ABCMeta
+    @abstractmethod
+    def fun(self):
+        '''
+
+        :return:
+        '''
+
+class sub_class(abc_abstract_test):
+    def getSize(self):
+        print "Size"
+
+    def fun(self):
+        print "New here"
+
+
+obj=sub_class()
+obj.fun()
+obj.getSize()
+
