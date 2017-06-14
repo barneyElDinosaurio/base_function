@@ -82,5 +82,71 @@ def delete_item_list():
             x.remove(i)
     print x
 
+def generator_list():
+    g = (sum(i) for i in [(1,2,3),(4,5,6),(7,8,9)])
+    h = [sum(i) for i in [(1,2,3),(4,5,6),(7,8,9)]]
+
+    print type(g)
+    print type(h)
+    print g
+    #print g.get(1)
+    for i in g:
+        print i
+    print h
+
+def iter_test():
+    a=[1,2,3,4,5,6]
+    i=iter(a)
+    for x in i:
+        print x
+    print i
+    while 1:
+        try:
+            print next(i)
+        except Exception,e:
+            print e
+            break
+    print i
+
+    while 1:
+        try:
+            print next(i)
+            #不会有任何输出，因为你已经在上一个循环中迭代完成了，位置已经指向最后。
+        except Exception,e:
+            print e
+            break
+def rang_test():
+    '''
+    for v in range(1000000000000): #possible Memory Error
+        if v == 2:
+            break
+    '''
+    for v in xrange(100000): #fine
+        if v == 2:
+            break
+
+def generator_test(a):
+    #a=0
+    i=0
+    while i<a:
+
+        yield i*i
+        i=i+1
+
+
+def use_generator():
+    '''
+    for i in generator_list(10):
+        print i
+    '''
+    #x=generator_test(10)
+    #print x
+
+    for i in generator_test(10):
+        print i
 # in_test()
-delete_item_list()
+#delete_item_list()
+#generator_list()
+#iter_test()
+#rang_test()
+use_generator()

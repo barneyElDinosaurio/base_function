@@ -87,10 +87,17 @@ def slic():
     code = '002341'
     print code[:1]
 
+def replace_test():
+    a='s gsz'
+    if ' ' in a:
+        a=a.replace(' ','')
+    print a
+
 #check_year()
 #_write_adead()
 #zfill_test()
 #loo_each()
 #replace_func()
 #garbe_character()
-slic()
+#slic()
+replace_test()

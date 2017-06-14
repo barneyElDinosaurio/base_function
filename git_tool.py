@@ -10,13 +10,13 @@ def git_sync():
     fetch='git fetch origin'
     status='git status'
     for (dirname,dirs,filename) in os.walk('.'):
-        print dirname
-        print dirs
-        print filename
+        #print dirname
+        #print dirs
+        #print filename
         for dir in dirs:
             path=os.path.join(current,dir)
             os.chdir(path)
-            print os.getcwd()
+            #print os.getcwd()
             try:
 
                 print path

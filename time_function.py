@@ -206,10 +206,10 @@ def str_time_hour():
 if __name__ == "__main__":
     #format()
     #from_book()
-    time_run()
+    #time_run()
     #test2()
     #time_fun()
-    #time_exchange()
+    time_exchange()
     #obj=DateTest3()
     #obj.getPreviousDay()
     #str_time_hour()

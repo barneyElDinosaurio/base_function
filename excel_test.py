@@ -74,12 +74,14 @@ def modify_excel2():
 
 # 为了提取所有的testcase id
 def save_id():
-    df = pd.read_excel('12.xls')
+    df = pd.read_excel('2.xls',skiprows=[0])
     #print df.info()
 
+    '''
     for i in range(len(df)):
         print str(df.iloc[i, 0]).strip(), ',',
 
+    '''
 def remove_use():
     l = [1,2,3,4]
     for i in l:
@@ -104,11 +106,14 @@ def check_diff():
             ax2.remove(i)
 
     print ax2
-'''
+
+    #print df
+
+
 file="python_excel_test.xls"
 rb=xlrd.open_workbook(file)
 copy_excel(rb,1,'asking')
-'''
+
 #modify_excel2()
 #运行通过
 #add_sheet()

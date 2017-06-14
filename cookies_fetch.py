@@ -18,4 +18,53 @@ def csdn():
     print resp.text
 
 
-csdn()
+def getFromWebBrowser():
+    #not work
+    import requests
+    import browsercookie
+    cj = browsercookie.chrome()
+    r = requests.get('http://stackoverflow.com', cookies=cj)
+
+#csdn()
+#getFromWebBrowser()
+
+import os
+import sqlite3
+import cookielib
+import Cookie
+import urllib2
+
+def build_opener_with_chrome_cookies(domain=None):
+    #同样失败了
+    cookie_file_path = os.path.join(os.environ['LOCALAPPDATA'], r'Google\Chrome\User Data\Default\Cookies')
+    if not os.path.exists(cookie_file_path):
+        raise Exception('Cookies file not exist!')
+    conn = sqlite3.connect(cookie_file_path)
+    sql = 'select host_key, name, value, path from cookies'
+    if domain:
+        sql += ' where host_key like "%{}%"'.format(domain)
+
+    cookiejar = cookielib.CookieJar()    # No cookies stored yet
+
+    for row in conn.execute(sql):
+        print row
+        cookie_item = cookielib.Cookie(
+            version=0, name=row[1], value=row[2],
+                     port=None, port_specified=None,
+                     domain=row[0], domain_specified=None, domain_initial_dot=None,
+                     path=row[3], path_specified=None,
+                     secure=None,
+                     expires=None,
+                     discard=None,
+                     comment=None,
+                     comment_url=None,
+                     rest=None,
+                     rfc2109=False,
+            )
+        cookiejar.set_cookie(cookie_item)    # Apply each cookie_item to cookiejar
+    conn.close()
+    return urllib2.build_opener(urllib2.HTTPCookieProcessor(cookiejar))    # Return opener
+
+#build_opener_with_chrome_cookies()
+
+
