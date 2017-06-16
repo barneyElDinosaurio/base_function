@@ -82,16 +82,44 @@ def save_id():
         print str(df.iloc[i, 0]).strip(), ',',
 
     '''
-    print df
-'''
+def remove_use():
+    l = [1,2,3,4]
+    for i in l:
+        if i != 4:
+            l.remove(i)
+    print l
+def check_diff():
+    df1=pd.read_excel('book202.xlsx')
+    df2=pd.read_excel('book521.xlsx')
+    print df1.info
+    print df2.info
+    print df1.dtypes
+    print df2.dtypes
+    id1=df1.icol(0).values
+    id2=df2.icol(0).values
+    #print id1
+    #print id2
+    ax1=list(id1)
+    ax2=list(id2)
+    for i in ax1:
+        if i in ax2:
+            ax2.remove(i)
+
+    print ax2
+
+    #print df
+
+
 file="python_excel_test.xls"
 rb=xlrd.open_workbook(file)
 copy_excel(rb,1,'asking')
-'''
+
 #modify_excel2()
 #运行通过
 #add_sheet()
 
 #getCodeFromExcel("ownstock.xls")
 
-save_id()
+#save_id()
+check_diff()
+#remove_use()
