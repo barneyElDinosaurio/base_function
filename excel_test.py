@@ -89,8 +89,8 @@ def remove_use():
             l.remove(i)
     print l
 def check_diff():
-    df1=pd.read_excel('book202.xlsx')
-    df2=pd.read_excel('book521.xlsx')
+    df1=pd.read_excel('less1.xlsx')
+    df2=pd.read_excel('more1.xlsx')
     print df1.info
     print df2.info
     print df1.dtypes
