@@ -6,7 +6,7 @@ from uiautomator import device as d
 # 注意这个device是小写的
 
 def basic_usage():
-    '''
+
     info= d.info
     print info
     print type(info)
@@ -17,6 +17,7 @@ def basic_usage():
     while True:
         info = d.info
         print info['currentPackageName']
+        #显示的包名
         time.sleep(10)
         # com.taobao.taobao
         #com.jingdong.app.mall
@@ -24,19 +25,19 @@ def basic_usage():
         #com.kingpoint.gmcchh
         #com.jd.jrapp
         #com.tencent.mm
-
+    '''
 
 def operation_usage():
-    '''
-    d.press.home()
-    result=d(text=u'设置').wait.exists(timeout=10000)
+
+    #d.press.home()
+    result=d(textContains=u'设置').wait.exists(timeout=10000)
     #单位是毫秒, 如果timeout还没有找到，就返回false
     print "next"
     if result:
         print "You press setting"
     else:
         print "You don't touch any thing"
-    '''
+
 
     '''
     if d(text=u'设置').exists:
@@ -50,6 +51,10 @@ def operation_usage():
 
     d(scrollable=True).scroll(steps=3)
 
+    time.sleep(3)
+    #d.open.notification()
+    d.wait.idle()
+    print "waiting for idle"
 
 def launch_app():
     cmd = 'adb shell am start -n com.kingpoint.gmcchh/.ui.home.StartUpActivity'
@@ -72,10 +77,6 @@ def launch_app():
     #d(text=u'')
     #print result
     print "Done"
-
-
-def darcy_test():
-    pass
 
 
 def wechat():
@@ -116,12 +117,23 @@ def getView():
     print d(textContains=u'您还没有安装任何游戏 快去下载游戏吧').exists
     #print "Download"
 
+def fc_close(device):
+    if device(textContains=u'蓝牙').exists:
+        device(textContains=u'蓝牙').click()
+        print "click"
+    return True
+
+def handler_test():
+    d.handlers.on(fc_close)
+
 if __name__ == "__main__":
     #step_by_step()
-    # basic_usage()
+    #basic_usage()
     #operation_usage()
     #launch_app()
     #wechat()
     #sunning()
     #text_search()
-    getView()
+    #getView()
+    handler_test()
+    time.sleep(20)

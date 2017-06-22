@@ -4,10 +4,16 @@ __author__ = 'rocky chen'
 
 
 class Hero():
+    '''
+    this is the python doc test
+    '''
     @staticmethod
     def sayHello():
         print "hello in static"
 
+    '''
+    will this effect ?
+    '''
     @classmethod
     def sayHello_cls(cls):
         if cls.__name__ == "Girl_Hero":
@@ -15,6 +21,11 @@ class Hero():
         elif cls.__name__ == "Boy_Hero":
             print "Boy_Here in classmethod"
 
+
+h=Hero()
+print h.__doc__
+#h.sayHello()
+Hero.sayHello()
 
 class Girl_Hero(Hero):
     def foo(self):
