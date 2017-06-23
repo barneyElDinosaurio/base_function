@@ -16,5 +16,8 @@ def testcase1():
     signature=base64.b64encode(sha)
     print signature
 
-
-testcase1()
+def testcase2():
+    t1=hashlib.sha1('Hello World').hexdigest()
+    print t1
+#testcase1()
+testcase2()
