@@ -24,12 +24,33 @@ def list_test(x,l=[]):
         l.append(i*i)
         print l
 
+def test_list_case():
+    f1(1,'h',2)
+    f2(h='help',o='option')
+
+    list_test(4)
+    list_test(5)
+
+'''
+a=1
+def address(a):
+    print "fun_in a",id(a)
+    a=2
+    print "remount a ", id(a),id(2)
+
+print "fun out ", id(a),id(1)
+address(a)
+print a
+'''
+
+class ObjectCreator(object):
+    pass
+
+def main():
+    #exchange()
+    print ObjectCreator
 
 
-exchange()
+if __name__=='__main__':
+    main()
 
-f1(1,'h',2)
-f2(h='help',o='option')
-
-list_test(4)
-list_test(5)
