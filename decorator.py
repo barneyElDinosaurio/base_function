@@ -24,6 +24,6 @@ def show_function():
 #a=show_function()
 #print a
 if __name__ == "__main__":
-    #logging.info("Test")
-    print "Test"
-    #show_function()
+    logging.info("Test")
+    #print "Test"
+    show_function()

@@ -45,11 +45,168 @@ print a
 
 class ObjectCreator(object):
     pass
+def foot(self):
+    print "foot!!"
+class ObjectCreator2():
+    def foox(self):
+        print "in obj2 foo"
 
-def main():
+
+def foo1(obj):
+    print obj,'call'
+
+
+class Test1():
+    def help(self):
+        print "in side"
+
+def dynamic_class(name):
+    if name=='foo':
+        class foo():
+            def __init__(self):
+                print "foo"
+        return foo
+    else:
+        class nobody():
+            def __init__(self):
+                print "nobody"
+        return nobody
+
+def testcase():
+    x=dynamic_class('foo1')
+    print x
+    obj=x()
+    print obj
+
+def tesecase2():
     #exchange()
     print ObjectCreator
+    foo1(ObjectCreator)
+    print hasattr(ObjectCreator,'new_func')
+    ObjectCreator.new_func=foo1('x')
+    print hasattr(ObjectCreator,'new_func')
+    #ObjectCreator.new_func('x')
+    print hasattr(Test1,'help')
+    testcase()
+    print type(ObjectCreator)
+    a=type('ObjectCreator',(),{})
+    print a
+    b=type('ObjectCreator2',(),{'foot':foot})
+    print b
+    c=b()
+    #c.foox()
+    print hasattr(b,'foox')
+    #返回的是True
+    c.foot()
 
+class base_for_method():
+    def foo(self):
+        print "under base"
+
+class method_test(base_for_method):
+
+    def normal(self,x):
+        print "Nornal method %s" %x
+
+    @staticmethod
+    def static_method(x):
+        print 'Static method %s' %x
+    @classmethod
+    def class_method(cls,x):
+        print "Class method %s %s" %(cls,x)
+
+
+def testcase2():
+    obj=method_test()
+    obj.normal('x')
+    obj.static_method('x')
+    obj2=method_test()
+    obj.class_method('x')
+    method_test.static_method('jj')
+
+class class_var():
+    name='aaa'
+    lover=[]
+
+def testcase3():
+    a=class_var()
+    b=class_var()
+    print a.name
+    print b.name
+    b.name='xxx'
+    print b.name
+    print class_var.name
+
+    a.lover.append('1')
+    a.lover.append('2')
+    print a.lover
+    print b.lover
+    print class_var.lover
+    obj=base_for_method()
+    print isinstance(obj,method_test)
+
+def testcase4():
+    class line_test():
+        first='Li'
+        def __init__(self):
+            self.name='yong'
+            self._foo='ni hao'
+    obj=line_test()
+    print obj.first
+    print obj.name
+    print obj._foo
+
+def testcase5():
+    a=[1,2,3]
+    b=(1,2,3)
+    c={'a':'apple','b':'banana','c':'cat'}
+    print "a=%s" % c
+    f1('a','b','c','d')
+
+def testcase6():
+#单例,不太懂.回去继续研究
+    class Sington(object):
+        def __new__(cls, *args, **kwargs):
+            if not hasattr(cls,'_instance'):
+                org=super(Sington,cls)
+                cls._intance=org.__new__(cls,*args,**kwargs)
+            return cls._intance
+
+    class MyObject(Sington):
+        a=1
+    obj=MyObject()
+    print obj.a
+    print obj
+
+    obj2=MyObject()
+    print obj2
+
+def testcase7():
+    a=[1,2,3,4,5,6]
+    b=filter(lambda x:x>4,a)
+    print b
+
+    c=map(lambda x:x*x,a)
+    print c
+
+    d=reduce(lambda x,y:x*y,a)
+    print d
+
+def testcase8():
+    age=10
+    print age.__class__
+    print age.__class__.__class__
+    class Obj_Cls(object):
+        pass
+    print Obj_Cls.__class__.__class__
+
+
+def testcase9():
+    name='kingOfflight'
+    print name.startswith('kn')
+
+def main():
+    testcase9()
 
 if __name__=='__main__':
     main()
