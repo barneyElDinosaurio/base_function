@@ -1,7 +1,7 @@
 #-*-coding=utf-8-*-
 import logging
 
-'''
+
 def get_parameter(func):
     print "IN GET PARAMETER"
 
@@ -18,7 +18,7 @@ def show_function():
     print "SHOW Function"
     return "HELLO"
 
-'''
+
 # a=show_function
 #a()
 #get_parameter()
@@ -30,11 +30,13 @@ def add_br(func):
     #print '<br>',
 
     def wrapper():
+        print "br"
         return '<br>'+func()+'</br>'
     return wrapper
 
 def add_header(func):
     def wrapper():
+        print "header"
         return "<header>" +func()+ '</header>'
     return wrapper
 
@@ -74,11 +76,32 @@ def deco_multi_arg(*args,**kwargs):
     print "end in main"
 
 
+
+def deco_rocky(name):
+    print "deco_rocky: ",name
+    def sub_function(func):
+        print "sub function"
+        def wrapper(args1,args2):
+            print "in wrapper"
+            func(args1,args2)
+            print "end of wrapper"
+        return wrapper
+    return sub_function
+
+@deco_rocky("Dinesh")
+def foo_focky(arg1,arg2):
+    print "In foo_rocky"
+    print "arg1: ",arg1
+    print "arg2: ",arg2
+    print "End of foo_rocky"
+
 def main():
-    #print sayHelloWorld()
-    print "Morning"
+    print sayHelloWorld()
+    #print "Morning"
     #args_deco_test('one','two')
-    deco_multi_arg('args1','args2','args3','args4',name="Rocky",sex="Female")
+    #deco_multi_arg('args1','args2','args3','args4',name="Rocky",sex="Female")
+    #foo_focky('HHH','Mars')
+
 if __name__ == "__main__":
     #logging.info("Test")
     #print "Test"
