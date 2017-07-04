@@ -1,4 +1,8 @@
 # -*-coding=utf-8-*-
+import random
+import time
+import datetime
+
 __author__ = 'Rocky'
 '''
 http://30daydo.com
@@ -205,8 +209,48 @@ def testcase9():
     name='kingOfflight'
     print name.startswith('kn')
 
+def testcase10():
+    x=1
+    a=(lambda t:(t for _ in xrange(10)))(x)
+    b=[1,2,3,4,5](2)
+
+    print list(a)
+    print b
+
+def testcase11():
+    d=globals()
+    print d
+
+
+def check_time(func):
+    def wrapper():
+        #start=datetime.datetime.now()
+        start=time.clock()
+        func()
+        use=(time.clock()-start)
+        print use
+        if use>1.0:
+            print "bad"
+        else:
+            print "good"
+
+    return wrapper
+
+@check_time
+def run_time():
+    t=random.random()
+    print t
+    time.sleep(t*2)
+
+def testcase12():
+    run_time()
+
+
+def testcase13():
+
+
 def main():
-    testcase9()
+    testcase12()
 
 if __name__=='__main__':
     main()

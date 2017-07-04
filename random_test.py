@@ -4,7 +4,10 @@ import random
 #print list[2]
 
 list = []
+'''
 for i in range(536870911):
     list.append(random.random())
-
-print len(list)
+'''
+for _ in xrange(100):
+    print random.random()
+#print len(list)
