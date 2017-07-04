@@ -23,13 +23,18 @@ def list_test(x,l=[]):
     for i in range(x):
         l.append(i*i)
         print l
+        print id(l)
 
 
+def main():
+    exchange()
 
-exchange()
+    f1(1,'h',2)
+    f2(h='help',o='option')
 
-f1(1,'h',2)
-f2(h='help',o='option')
+    list_test(4)
 
-list_test(4)
-list_test(5)
+    list_test(5)
+
+
+main()
