@@ -6,7 +6,7 @@ Contact: weigesysu@qq.com
 '''
 import copy
 def copy_case():
-    list1=[1,2,3,['a',',b','d','d']]
+    list1=[1,2,3,['a','b','d','d']]
     list2=list1
     print list1
     list1.append(5)
@@ -16,4 +16,12 @@ def copy_case():
     print list1[3][2]
 
     print "list2",list2
-copy_case()
+    print "list1",list1
+    print "Check address : list1: ",id(list1)," list2: ",id(list2)
+
+def main():
+    copy_case()
+
+
+if __name__=='__main__':
+    main()
