@@ -3,7 +3,7 @@ __author__ = 'Rocky'
 import xlrd, xlwt
 from xlutils.copy import copy
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 def write_excel():
     filename = "python_excel_test.xls"
@@ -110,9 +110,36 @@ def check_diff():
     #print df
 
 
-file="python_excel_test.xls"
-rb=xlrd.open_workbook(file)
-copy_excel(rb,1,'asking')
+def profit_line():
+    #df=pd.read_excel('d.xlsx',header=0,skiprows=[0])
+    df=pd.read_excel('d.xlsx')
+    print df[u'盈亏']
+    #df.reset_index(level=None, drop=True, inplace=True, col_level=1, col_fill='')
+    df.set_index(u'日期',inplace=True,drop=True)
+    print df
+    date_d,profit=df.index,df[u'盈亏'].values
+    print type(profit)
+    print "mean: ",df[u'盈亏'].mean()
+    #print df[u'盈亏'].mean()
+    print "count: ",df[u'盈亏'].count()
+    print "description: ",df.describe()
+    print "最大盈利: " ,df[u'盈亏'].max()
+    print "发生在: ",df[df[u'盈亏']==df[u'盈亏'].max()].index.values[0]
+    print "最大亏损: " ,df[df[u'盈亏']==df[u'盈亏'].min()].index.values[0]
+
+    '''
+    一些统计信息
+    '''
+
+    print "亏损"
+
+    plt.plot(profit,'o')
+    plt.grid()
+    #plt.show()
+
+#file="python_excel_test.xls"
+#rb=xlrd.open_workbook(file)
+#copy_excel(rb,1,'asking')
 
 #modify_excel2()
 #运行通过
@@ -121,5 +148,6 @@ copy_excel(rb,1,'asking')
 #getCodeFromExcel("ownstock.xls")
 
 #save_id()
-check_diff()
+#check_diff()
 #remove_use()
+profit_line()
