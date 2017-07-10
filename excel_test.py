@@ -131,11 +131,14 @@ def profit_line():
     一些统计信息
     '''
 
-    print "亏损"
+    print "亏损多余1w的次数", df[df[u'盈亏']<-10000][u'盈亏'].count()
+    print "盈利多余1w的次数", df[df[u'盈亏']>10000][u'盈亏'].count()
 
-    plt.plot(profit,'o')
-    plt.grid()
-    #plt.show()
+    #plt.plot(profit,'o')
+    #plt.grid()
+    x=range(1,len(profit)+1)
+    plt.bar(x,profit,width=0.35)
+    plt.show()
 
 #file="python_excel_test.xls"
 #rb=xlrd.open_workbook(file)
