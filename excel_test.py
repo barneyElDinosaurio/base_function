@@ -119,6 +119,8 @@ def profit_line():
     print df
     date_d,profit=df.index,df[u'盈亏'].values
     print type(profit)
+    print 'type of date_d ',type(date_d)
+    #date_d
     print "mean: ",df[u'盈亏'].mean()
     #print df[u'盈亏'].mean()
     print "count: ",df[u'盈亏'].count()
@@ -136,9 +138,46 @@ def profit_line():
 
     #plt.plot(profit,'o')
     #plt.grid()
+    '''
     x=range(1,len(profit)+1)
     plt.bar(x,profit,width=0.35)
     plt.show()
+    '''
+    '''
+    plt.figure(1)
+    plt.subplot(4,3,1)
+    num=12
+    l=len(profit)
+    delta=l/12
+
+    for i in range(num-1):
+        plt.subplot(4,3,i+1)
+        plt.plot(profit[delta*i:delta*(i+1)])
+    plt.subplot(4,3,12)
+    plt.plot(profit[delta*11:])
+    plt.show()
+    '''
+
+
+    date_d1=date_d.map(lambda x:x.strftime("%Y-%m-%d"))
+    print date_d1
+    print type(date_d1)
+    print type(profit)
+
+
+    num=12
+    l=len(profit)
+    delta=l/12
+    for i in range(num-1):
+        #plt.subplot(4,3,i+1)
+        plt.figure(i)
+        plt.bar(date_d[delta*i:delta*(i+1)],profit[delta*i:delta*(i+1)])
+    #plt.subplot(4,3,12)
+    plt.figure(12)
+    plt.bar(date_d[delta*11:],profit[delta*11:])
+    plt.show()
+
+
 
 #file="python_excel_test.xls"
 #rb=xlrd.open_workbook(file)

@@ -1,11 +1,11 @@
 #-*-coding=utf-8-*-
 
-import queue
+import Queue
 
 def task(name,work_queue):
-    if work_queue.empty():
+    if work_queue.empty() :
         print "task %s is empty " %name
-    while not work_queue.empty:
+    while not work_queue.empty():
         count=work_queue.get()
 
         for x in range(count):
@@ -13,7 +13,7 @@ def task(name,work_queue):
             print x
 
 def main():
-    q=queue.Queue()
+    q=Queue.Queue()
     count_list=[5,10,20,13]
     for i in count_list:
         q.put(i)
@@ -23,6 +23,7 @@ def main():
 
     for t,n,q_list in tasks_list:
         t(n,q_list)
+        print "!"
 
 
 main()

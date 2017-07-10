@@ -54,7 +54,8 @@ def plot_line():
 
 
 def plot_bar():
-    x = [1, 2, 3, 4, 5]
+    #x = [1, 2, 3, 4, 5]
+    x = ['1', '2', 'x', '4', '5']
     y = [2, 4, 6, 8, 10]
     plt.bar(x, y)
     plt.show()
@@ -131,15 +132,101 @@ def hist_test():
     plt.axis([40, 160, 0, 0.03])
     plt.grid(True)
     plt.show()
+def multi_plot_rocky():
+
+    plt.figure(1)
+    #plt.figure(2)
+    #plt.figure(3)
+    #plt.figure(4)
+
+    #plt.figure(1)
+    ax1=plt.subplot(2,2,1)
+    ax2=plt.subplot(2,2,2)
+    ax3=plt.subplot(2,2,3)
+    ax4=plt.subplot(2,2,4)
+    x1=range(0,10)
+    x2=range(0,20)
+    x3=range(0,30)
+    x4=range(0,40)
+    plt.plot(x1,'o')
+    plt.sca(ax1)
+
+    plt.plot(x2)
+    plt.sca(ax2)
+
+    plt.plot(x3)
+    plt.sca(ax3)
+
+    plt.plot(x4)
+    plt.sca(ax4)
+
+    plt.show()
+def multi_plot_rocky2():
+
+    plt.figure(1)
+    #plt.figure(2)
+    #plt.figure(3)
+    #plt.figure(4)
+
+    #plt.figure(1)
+    #ax1=plt.subplot(2,2,1)
+    #ax2=plt.subplot(2,2,2)
+    #ax3=plt.subplot(2,2,3)
+    #ax4=plt.subplot(2,2,4)
+    x1=range(0,10)
+    x2=range(0,20)
+    x3=range(0,30)
+    x4=range(0,40)
+    plt.subplot(2,2,1)
+    plt.title('x1')
+    plt.plot(x1,'o')
+    #plt.sca(ax1)
+
+    plt.subplot(2,2,2)
+    plt.title('x2')
+    plt.plot(x2)
+    #plt.sca(ax2)
+
+    plt.subplot(2,2,3)
+    plt.title('x3')
+
+    plt.plot(x3)
+    #plt.sca(ax3)
+    plt.subplot(2,2,4)
+    plt.title('x4')
+
+    plt.plot(x4)
+    #plt.sca(ax4)
+    #plt.subplot(2,1,1)
+    #plt.title('x1')
+    plt.show()
+
+def other_mil():
+    plt.figure(1)
+    plt.subplot(211)
+    plt.plot([1,2,3])
+    plt.subplot(212)
+    plt.plot([4,5,6])
+
+    plt.figure(2)
+    plt.plot([4,5,6])
+
+    plt.figure(1)
+    plt.subplot(211)
+    plt.title('Easy as 1,2,3')
+    plt.show()
+
 #from_book()
 #plot_test1()
 #pd_plot()
 #bar_test()
 #plot_line()
-#plot_bar()
+plot_bar()
 #multi_plot()
 #plot_csdn()
 
 #two_in_one_canvas()
 #line_define()
-hist_test()
+#hist_test()
+#multi_plot_rocky2()
+#other_mil()
