@@ -172,9 +172,13 @@ def profit_line():
         #plt.subplot(4,3,i+1)
         plt.figure(i)
         plt.bar(date_d[delta*i:delta*(i+1)],profit[delta*i:delta*(i+1)])
+        plt.grid()
+        plt.title(str(i))
     #plt.subplot(4,3,12)
     plt.figure(num)
     plt.bar(date_d[delta*(num-1):],profit[delta*(num-1):])
+    plt.grid()
+    plt.title(str(num))
     plt.show()
 
 

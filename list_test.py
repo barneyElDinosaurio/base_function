@@ -144,9 +144,15 @@ def use_generator():
 
     for i in generator_test(10):
         print i
+
+def cut_case():
+    #y=[1,2,3,4,5,6]
+    y=range(0,200)
+    print y[:,0]
 # in_test()
 #delete_item_list()
 #generator_list()
 #iter_test()
 #rang_test()
-use_generator()
+#use_generator()
+cut_case()

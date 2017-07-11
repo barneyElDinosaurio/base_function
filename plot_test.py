@@ -216,12 +216,32 @@ def other_mil():
     plt.title('Easy as 1,2,3')
     plt.show()
 
+
+def testcase1():
+    #http://www.jianshu.com/p/1ad947f98e4c
+
+    np.random.seed(2000)
+    y = np.random.standard_normal((20, 2)).cumsum(axis=0)
+
+    plt.figure(figsize=(7, 4))
+    plt.plot(y[:,0], lw=1.5,label='1st')
+    plt.plot(y[:,1], lw=1.5,label='2nd')
+    plt.plot(y, 'ro')
+    plt.grid(True)
+    plt.legend(loc=0)
+    plt.axis('tight')
+    plt.xlabel('index')
+    plt.ylabel('value')
+    plt.title('A Simple Plot')
+    plt.show()
+
+
 #from_book()
 #plot_test1()
 #pd_plot()
 #bar_test()
 #plot_line()
-plot_bar()
+#plot_bar()
 #multi_plot()
 #plot_csdn()
 
@@ -230,3 +250,4 @@ plot_bar()
 #hist_test()
 #multi_plot_rocky2()
 #other_mil()
+testcase1()

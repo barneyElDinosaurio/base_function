@@ -3,7 +3,7 @@ __author__ = 'rocky'
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+from pandas import DataFrame
 
 def excel_op(df):
     print df.head(20)
@@ -344,6 +344,31 @@ def read_data():
     print df
     print df.info()
 
+def data_analysis():
+    df=pd.read_csv('LoanStats_2017Q1.csv',header=0)
+    print df.head(10)
+    print df.describe()
+
+    analysis_columns = ['issue_d','term','int_rate','emp_title','grade','home_ownership','verification_status','purpose','loan_amnt','total_pymnt','out_prncp','total_rec_int','total_rec_prncp','installment','annual_inc','dti','fico_range_low','fico_range_high','last_fico_range_low','last_fico_range_high','open_acc','loan_status','delinq_amnt','acc_now_delinq','tot_coll_amt']
+    deal_data = df.loc[:,analysis_columns]
+    print deal_data
+    deal_data.groupby('issue_d').agg({'loan_amnt':'sum'}).plot(kind="bar")
+    deal_data.groupby('issue_d').agg({'issue_d':'count'}).plot(kind = 'bar')
+    plt.show()
+
+def group_test():
+    df = DataFrame({'key1': ['a', 'a', 'b', 'b', 'a'],
+                'key2': ['one', 'two', 'one', 'two', 'one'],
+                'data1': np.random.randn(5),
+                'data2': np.random.randn(5)})
+
+    print df
+    group_df=df.groupby(df['data1'])
+    print group_df.mean()
+    print df.groupby(lambda x:'even' if x%2==0 else 'odd').mean()
+    group1=df.groupby('key1')
+    print group1
+
 #base_case()
 #excel_op()
 #del_row()
@@ -365,4 +390,6 @@ def read_data():
 
 #Serial()
 #base_function()
-read_data()
+#read_data()
+#data_analysis()
+group_test()

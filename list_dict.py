@@ -60,7 +60,7 @@ def sclice_func():
     print b
 
 # dict_assign()
-sclice_func()
+#sclice_func()
 
 
 def list_change():
@@ -81,6 +81,31 @@ def map_func():
     b = map(test_func, a)
     print b
 
+
+def get_float(x):
+    return x*1.00
+
+def testcase1():
+    x1=range(0,100)
+    print "before map\n",x1
+
+    x2=map(get_float,x1)
+    print "After map\n",x2
+
+
+
+def testcase2():
+    x=range(0,200)
+    y=filter(lambda t:t%2==0,x)
+    print y
+
+def reduce_case(x,y):
+    return x+y
+
+def testcase3():
+    x=range(0,200)
+    y=reduce(reduce_case,x)
+    print y
 #dict_assign()
 
 
@@ -88,7 +113,9 @@ def map_func():
 
 
 #list_change()
-map_func()
+#map_func()
 
-list_change()
+#list_change()
 
+#testcase1()
+testcase3()
