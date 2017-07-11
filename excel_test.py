@@ -165,16 +165,16 @@ def profit_line():
     print type(profit)
 
 
-    num=12
+    num=24
     l=len(profit)
-    delta=l/12
+    delta=l/num
     for i in range(num-1):
         #plt.subplot(4,3,i+1)
         plt.figure(i)
         plt.bar(date_d[delta*i:delta*(i+1)],profit[delta*i:delta*(i+1)])
     #plt.subplot(4,3,12)
-    plt.figure(12)
-    plt.bar(date_d[delta*11:],profit[delta*11:])
+    plt.figure(num)
+    plt.bar(date_d[delta*(num-1):],profit[delta*(num-1):])
     plt.show()
 
 
