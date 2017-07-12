@@ -32,16 +32,31 @@ def testcase2():
     r1=f1.read()
     print 'type of r1 ', type(r1)
     print 'content of r1 ', r1
+    f1.close()
 
-    r2=f1.readlines()
+    f2=open('data.cfg','r')
+    r2=f2.readlines()
 
     print 'type of r2 ', type(r2)
     print 'content of r2 ', r2
+    f2.close()
 
-    '''
-    print 'type of r1 ', type(r1)
-    print 'content of r1 ', r1
-    '''
+    f3=open('data.cfg','r')
+    r3=f3.readline()
+
+    print 'type of r3 ', type(r3)
+    print 'content of r3 ', r3
+    r3=f3.readline()
+
+    print 'type of r3 ', type(r3)
+    print 'content of r3 ', r3
+
+    r3=f3.readline()
+
+    print 'type of r3 ', type(r3)
+    print 'content of r3 ', r3
+
+    f3.close()
 
 def main():
     testcase2()
