@@ -4,7 +4,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from pandas import DataFrame
-from pandas_datareader import data
+
+from pandas_datareader import data as web
+
 def excel_op(df):
     print df.head(20)
     df = df.fillna(0)
@@ -369,8 +371,13 @@ def group_test():
     group1=df.groupby('key1')
     print group1
 
+<<<<<<< HEAD
 
 def
+=======
+def big_data():
+   pass
+>>>>>>> origin/master
 
 #base_case()
 #excel_op()

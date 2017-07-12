@@ -20,6 +20,30 @@ def func():
                     os.remove(os.path.join(dirpath, i))
 
 
-i = "memory"
-sub_folder = os.path.join(os.getcwd(), i)
-print sub_folder
+def testcase1():
+    i = "memory"
+    sub_folder = os.path.join(os.getcwd(), i)
+    print sub_folder
+
+
+def testcase2():
+    #read/readline/readlines
+    f1=open('data.cfg','r')
+    r1=f1.read()
+    print 'type of r1 ', type(r1)
+    print 'content of r1 ', r1
+
+    r2=f1.readlines()
+
+    print 'type of r2 ', type(r2)
+    print 'content of r2 ', r2
+
+    '''
+    print 'type of r1 ', type(r1)
+    print 'content of r1 ', r1
+    '''
+
+def main():
+    testcase2()
+if __name__ == '__main__':
+    main()
