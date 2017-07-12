@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from pandas import DataFrame
-
+from pandas_datareader import data
 def excel_op(df):
     print df.head(20)
     df = df.fillna(0)
@@ -368,6 +368,9 @@ def group_test():
     print df.groupby(lambda x:'even' if x%2==0 else 'odd').mean()
     group1=df.groupby('key1')
     print group1
+
+
+def
 
 #base_case()
 #excel_op()
