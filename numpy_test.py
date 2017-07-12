@@ -57,6 +57,8 @@ def testcase4():
         plt.text(xn2+0.6,yn2+0.05,'%.2f' %yn,ha='center',va='bottom')
 
     plt.ylim(0,1.25)
+    plt.xlabel("number")
+    plt.ylabel("uniform")
     plt.show()
 
 
@@ -68,6 +70,6 @@ def testcase5():
 
 
 def main():
-    testcase5()
+    testcase4()
 
 main()

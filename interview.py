@@ -1,6 +1,6 @@
 # -*-coding=utf-8-*-
 import random
-import time
+import time,copy
 import datetime
 
 __author__ = 'Rocky'
@@ -247,10 +247,34 @@ def testcase12():
 
 
 def testcase13():
+    jack=['name','id',['male','math']]
+    #tom=jack[:]
+    #anny=list(jack)
+    lily=jack
+    tom=copy.deepcopy(jack)
+    anny=copy.deepcopy(jack)
+    print id(jack)
+    print id(tom)
+    print id(anny)
+    print jack
+    print tom
+    print anny
+
+    jack.append('married')
+    jack[2].append('china')
+    print jack
+    print tom
+    print anny
+
+    if jack is lily:
+        print "same"
+    else:
+        print "diff"
+
 
 
 def main():
-    testcase12()
+    testcase13()
 
 if __name__=='__main__':
     main()
