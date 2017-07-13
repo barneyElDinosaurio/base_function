@@ -5,7 +5,7 @@ http://30daydo.com
 Contact: weigesysu@qq.com
 '''
 import os
-
+from multiprocessing import Process
 def fork_case():
     print "Process %s start " %os.getpid()
     pid=os.fork()
@@ -16,6 +16,19 @@ def fork_case():
         print "i am parent process %s, and create my child process %s" %(os.getpid(),pid)
 
 
+def sub_proc():
+    for i in range(10):
+        print "under subprocess, parent pid %s" %os.getpid()
+
+def process_testcase():
+    print "parent process"
+    print 'creating sub process'
+    p=Process(target=sub_proc,args=())
+    p.start()
+    p.join()
+    print 'done'
+
 def main():
-    fork_case()
+    #fork_case()
+    process_testcase()
 main()
