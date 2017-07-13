@@ -93,8 +93,10 @@ def plot_csdn():
         date_list.append( date_)
         range_list.append( range_)
     #plt.axis([0,33,0,20000])
-    plt.xlim(0,50)
+    #plt.xlim(0,50)
+    #plt.plot(date_list,range_list)
     plt.plot(range_list)
+    plt.ylim([13000,19000])
     plt.show()
 
 
@@ -266,7 +268,7 @@ def main():
     #plot_line()
     #plot_bar()
     #multi_plot()
-    #plot_csdn()
+    plot_csdn()
 
     #two_in_one_canvas()
     #line_define()
@@ -274,6 +276,6 @@ def main():
     #multi_plot_rocky2()
     #other_mil()
     #testcase1()
-    testcase2()
+    #testcase2()
 
 main()
