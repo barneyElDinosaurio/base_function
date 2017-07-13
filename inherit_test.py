@@ -15,6 +15,7 @@ class base(object):
 
 class base2():
     def __init__(self):
+
         print "base2 constructor"
 
     def foo(self):
@@ -33,8 +34,16 @@ class child(base):
         #base.foo(self)
         print "child foo"
 
+class child2(base):
+    def __init__(self):
+        base.__init__(self)
+
+class child3(base):
+    def __init__(self):
+        super(child3,self).__init__()
 
 
-
-obj=child()
+#obj=child()
 #obj.foo()
+obj1=child2()
+obj2=child3()
