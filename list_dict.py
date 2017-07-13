@@ -106,6 +106,21 @@ def testcase3():
     x=range(0,200)
     y=reduce(reduce_case,x)
     print y
+
+
+def zip_case():
+    x=[1,3,5,7,9]
+    y=[2,4,6,8,10]
+    z=zip(x,y)
+    print z
+
+    uzip=zip(*z)
+    print uzip
+    uzip_x=uzip[0]
+    uzip_y=uzip[1]
+
+
+
 #dict_assign()
 
 
@@ -118,4 +133,5 @@ def testcase3():
 #list_change()
 
 #testcase1()
-testcase3()
+#testcase3()
+zip_case()

@@ -14,6 +14,7 @@ def plot_test1():
     x = [1, 2]
     y = [2, 4]
     #plt.scatter(x,y)
+
     plt.scatter(x, y, color='red', marker='x')
     plt.axis([0, 10, 0, 10])
     plt.show()
@@ -26,6 +27,10 @@ def from_book():
     ax3 = fig.add_subplot(2, 2, 3)
     ax4 = fig.add_subplot(2, 2, 4)
     ax1.hist(range(100), bins=20, color='k', alpha=0.3)
+    x2=np.arange(10)
+    ax2.plot(x2,x2*5,label='x=y')
+    #ax2.legend()
+    plt.show()
 
 
 def pd_plot():
@@ -235,19 +240,40 @@ def testcase1():
     plt.title('A Simple Plot')
     plt.show()
 
+def testcase2():
+    import matplotlib.pyplot as plt
+    import numpy as np
 
-#from_book()
-#plot_test1()
-#pd_plot()
-#bar_test()
-#plot_line()
-#plot_bar()
-#multi_plot()
-#plot_csdn()
+    x = np.arange(10)
+    print x
+    fig = plt.figure()
+    ax = plt.subplot(111)
 
-#two_in_one_canvas()
-#line_define()
-#hist_test()
-#multi_plot_rocky2()
-#other_mil()
-testcase1()
+    for i in xrange(5):
+        #ax.plot(x, i * x, label='y=%dx' %i)
+        ax.plot(x, i * x, label='$y = %ix$' % i)
+
+    #ax.legend(bbox_to_anchor=(1.2,1.2))
+    ax.legend()
+
+    plt.show()
+
+def main():
+    #from_book()
+    #plot_test1()
+    #pd_plot()
+    #bar_test()
+    #plot_line()
+    #plot_bar()
+    #multi_plot()
+    #plot_csdn()
+
+    #two_in_one_canvas()
+    #line_define()
+    #hist_test()
+    #multi_plot_rocky2()
+    #other_mil()
+    #testcase1()
+    testcase2()
+
+main()
