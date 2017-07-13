@@ -13,7 +13,7 @@ def fork_case():
     if pid==0:
         print "i am child process. and my parent pid is %s " %os.getpid()
     else:
-        print "i am parent process %s, and create my child process %s" %(os.getpid,pid)
+        print "i am parent process %s, and create my child process %s" %(os.getpid(),pid)
 
 
 def main():
