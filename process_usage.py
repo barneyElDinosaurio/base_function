@@ -23,8 +23,9 @@ def fork_case():
 
 def pid_test():
     print 'pid ',os.getpid()
-    print 'ppid ',os.getppid()
-
+    #print 'ppid ',os.getppid()
+    cpus = multiprocessing.cpu_count()
+    print cpus
 def sub_proc():
 
     for i in range(10):
@@ -83,10 +84,10 @@ def process_communication():
 
 def main():
 
-    fork_case()
+    #fork_case()
     #process_testcase()
     #process_pool()
     #process_communication()
-    #pid_test()
+    pid_test()
 if __name__=='__main__':
     main()
