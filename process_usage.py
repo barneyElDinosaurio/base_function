@@ -83,10 +83,10 @@ def process_communication():
 
 def main():
 
-    #fork_case()
+    fork_case()
     #process_testcase()
     #process_pool()
     #process_communication()
-    pid_test()
+    #pid_test()
 if __name__=='__main__':
     main()
