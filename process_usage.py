@@ -17,13 +17,14 @@ def fork_case():
     pid=os.fork()
 
     if pid==0:
-        print "i am child process. and my parent pid is %s " %os.getpid()
+        print "i am child process %s. and my parent pid is %s " %(os.getpid(),os.getppid())
     else:
         print "i am parent process %s, and create my child process %s" %(os.getpid(),pid)
 
 def pid_test():
     print 'pid ',os.getpid()
     print 'ppid ',os.getppid()
+
 def sub_proc():
 
     for i in range(10):
