@@ -12,6 +12,9 @@ import multiprocessing
 multiprocessing.freeze_support()
 from multiprocessing import Process,Pool,Queue,Manager
 #import Queue
+manager=Manager()
+q=manager.Queue()
+lock=manager.Lock()
 def fork_case():
     #can't work under windows
     print "Process %s start " %os.getpid()
@@ -143,15 +146,66 @@ def pool_map():
     print len(s)
     print "end. Time used: ",time.time()-start
 
+def pool_write(q):
+    lock.acquire()
+    for i in "Chinese World wide":
+        q.put(i)
+        print "put in queue"
+    print 'release'
+    lock.release()
+
+
+
+def pool_read(q):
+    while True:
+        if  not q.empty():
+
+            print q.get(True)
+            print "geting"
+        else:
+            break
+
+
+
+
+def pool_lock():
+    '''
+    manager=Manager()
+    q=manager.Queue()
+    lock=manager.Lock()
+    '''
+    p=Pool()
+
+    p.apply_async(pool_write,args=(q,lock))
+    p.apply_async(pool_read,args=(q,))
+
+    p.close()
+    p.join()
+    print "end"
 
 def main():
-
+    pass
     #fork_case()
     #process_testcase()
-    process_pool()
+    #process_pool()
     #process_communication()
     #basic_usage()
     #main_process()
     #pool_map()
+    #pool_lock()
+
 if __name__=='__main__':
-    main()
+    #main()
+    '''
+    manager=Manager()
+    q=manager.Queue()
+    lock=manager.Lock()
+    '''
+    p=Pool()
+
+    p.apply_async(pool_write,args=(q,))
+    p.apply_async(pool_read,args=(q,))
+
+    p.close()
+    p.join()
+    print "end"
