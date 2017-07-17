@@ -155,7 +155,6 @@ def pool_write(q):
     lock.release()
 
 
-
 def pool_read(q):
     while True:
         if  not q.empty():
