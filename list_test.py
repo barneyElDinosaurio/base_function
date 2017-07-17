@@ -1,7 +1,8 @@
 # -*-coding=utf-8-*-
 __author__ = 'Rocky'
 import json
-
+from Queue import Queue
+#from multiprocessing import Queue
 
 def case1():
     a = [1, 2, 3, 4]
@@ -97,12 +98,15 @@ def generator_list():
 def iter_test():
     a=[1,2,3,4,5,6]
     i=iter(a)
+    '''
     for x in i:
         print x
     print i
+    '''
     while 1:
         try:
             print next(i)
+            print 'while'
         except Exception,e:
             print e
             break
@@ -149,10 +153,21 @@ def cut_case():
     #y=[1,2,3,4,5,6]
     y=range(0,200)
     print y[:,0]
+
+
+def iter_case2():
+    q=Queue()
+    org=['a','b','c','d','e','f','not see this']
+    for i in org:
+        q.put(i)
+    for j in iter(q.get,'d'):
+        print j
+
 # in_test()
 #delete_item_list()
 #generator_list()
 #iter_test()
 #rang_test()
 #use_generator()
-cut_case()
+#cut_case()
+iter_case2()
