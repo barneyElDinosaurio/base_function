@@ -127,6 +127,25 @@ def set_case():
     print b
     print 'type of b : ',type(b)
 
+
+	
+def dict_emulation():
+	#print 'display'
+	x=['a','b','c','d','d']
+	y=[1,2,3,4,5]
+	d=dict(zip(x,y))
+	print d
+	
+	for k in d:
+		print k
+		print d[k]
+		
+	for k,v in d.items():
+		print k,v
+		
+	for k,v in d.iteritems():
+		print k,v
+
 #dict_assign()
 
 
@@ -141,4 +160,5 @@ def set_case():
 #testcase1()
 #testcase3()
 #zip_case()
-set_case()
+#set_case()
+dict_emulation()

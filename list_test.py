@@ -181,6 +181,23 @@ def in_usage():
         print "In"
     else:
         print "Not in"
+
+def reversed_usage():
+	s='Python'
+	q=reversed(s)
+	print q
+	print type(q)
+	print list(q)
+	
+def remove_list():
+	l=[1,2,3,4,5]
+	x=l.remove(1)
+	print x
+	print l
+	
+	x=l.pop(0)
+	print x
+	print l
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -190,4 +207,7 @@ def in_usage():
 #cut_case()
 #iter_case2()
 #mutebale()
-in_usage()
+#in_usage()
+#case1()
+#reversed_usage()
+remove_list()
