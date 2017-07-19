@@ -28,6 +28,7 @@ class Myurllib2():
         query_cmd = '''
         select * from PROXY
         '''
+        #设置代理
         cursor = conn.execute(query_cmd)
         for row in cursor:
             ip = row[1]
@@ -36,6 +37,7 @@ class Myurllib2():
             proxy_handler = urllib2.ProxyHandler(proxy_config)
             openner = urllib2.build_opener(proxy_handler)
             urllib2.install_opener(openner)
+            #主要就是安装opener
             req = urllib2.Request(url, headers=self.header)
             content = urllib2.urlopen(req).read()
             print "Now content is :"
@@ -52,7 +54,7 @@ class Myurllib2():
         content = resp.read()
         return content
 
-
+#标准的urllib2爬虫
 def getPost(date_time, filter_p):
     url = 'https://zhhrb.sinaapp.com/index.php?date=' + date_time
     user_agent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
@@ -64,7 +66,7 @@ def getPost(date_time, filter_p):
     result = re.findall(p, content)
     print result
 
-
+#标准的urllib2爬虫
 def get_page():
     user_agent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"
     header = {"User-Agent": user_agent}
@@ -95,12 +97,8 @@ def get_page():
 
 
 get_page()
-#filter_p = re.compile('����.*')
-#getPost('20160620',filter_p)
 
-#get_page()
-#urllib2.url
-#filter_p = re.compile('����.*')
+
 #getPost('20160620',filter_p)
 obj = Myurllib2()
 #obj.proxy_test()
