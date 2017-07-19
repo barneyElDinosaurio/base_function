@@ -163,6 +163,24 @@ def iter_case2():
     for j in iter(q.get,'d'):
         print j
 
+
+def mutebale():
+    a=2
+    print id(a)
+    a=5
+    print id(a)
+
+    x='abc'
+    y=x.replace('a','A')
+    print x
+    print y
+
+def in_usage():
+    l=range(100000)
+    if 100000 in l:
+        print "In"
+    else:
+        print "Not in"
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -170,4 +188,6 @@ def iter_case2():
 #rang_test()
 #use_generator()
 #cut_case()
-iter_case2()
+#iter_case2()
+#mutebale()
+in_usage()

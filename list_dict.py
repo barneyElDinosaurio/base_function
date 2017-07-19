@@ -120,6 +120,12 @@ def zip_case():
     uzip_y=uzip[1]
 
 
+def set_case():
+    a=['a','b','d','c','a']
+    print a
+    b=set(a)
+    print b
+    print 'type of b : ',type(b)
 
 #dict_assign()
 
@@ -134,4 +140,5 @@ def zip_case():
 
 #testcase1()
 #testcase3()
-zip_case()
+#zip_case()
+set_case()
