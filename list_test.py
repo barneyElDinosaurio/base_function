@@ -198,6 +198,30 @@ def remove_list():
 	x=l.pop(0)
 	print x
 	print l
+
+
+
+def extendList(val, list=[]):
+    list.append(val)
+    return list
+
+list1 = extendList(10)
+list2 = extendList(123,[])
+list3 = extendList('a')
+
+print "list1 = %s" % list1
+print "list2 = %s" % list2
+print "list3 = %s" % list3
+
+list = [ [ ] ] * 5
+print list
+print len(list)
+list[0].append(10)
+print list
+list[1].append(20)
+print list
+list.append(30)
+print list
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -210,4 +234,4 @@ def remove_list():
 #in_usage()
 #case1()
 #reversed_usage()
-remove_list()
+#remove_list()
