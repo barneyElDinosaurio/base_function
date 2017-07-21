@@ -93,6 +93,9 @@ def replace_test():
         a=a.replace(' ','')
     print a
 
+def split_fun():
+    l="This is a test string from Andrew".split()
+    print l
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -100,4 +103,5 @@ def replace_test():
 #replace_func()
 #garbe_character()
 #slic()
-replace_test()
+#replace_test()
+split_fun()

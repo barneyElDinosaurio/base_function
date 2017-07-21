@@ -205,23 +205,30 @@ def extendList(val, list=[]):
     list.append(val)
     return list
 
-list1 = extendList(10)
-list2 = extendList(123,[])
-list3 = extendList('a')
+def extend_case():
+    list1 = extendList(10)
+    list2 = extendList(123,[])
+    list3 = extendList('a')
 
-print "list1 = %s" % list1
-print "list2 = %s" % list2
-print "list3 = %s" % list3
+    print "list1 = %s" % list1
+    print "list2 = %s" % list2
+    print "list3 = %s" % list3
 
-list = [ [ ] ] * 5
-print list
-print len(list)
-list[0].append(10)
-print list
-list[1].append(20)
-print list
-list.append(30)
-print list
+    list = [ [ ] ] * 5
+    print list
+    print len(list)
+    list[0].append(10)
+    print list
+    list[1].append(20)
+    print list
+    list.append(30)
+    print list
+def list_filter():
+    l=[12,22,43,23,65,34,22,33,55,22,11,2,3,5,7]
+    l1=l[2:8:2]
+    print l1
+    print id(l)
+    print id(l1)
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -235,3 +242,4 @@ print list
 #case1()
 #reversed_usage()
 #remove_list()
+list_filter()
