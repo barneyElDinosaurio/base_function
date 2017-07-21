@@ -222,6 +222,10 @@ list[1].append(20)
 print list
 list.append(30)
 print list
+
+for i in list:
+    print i
+    print id(i)
 # in_test()
 #delete_item_list()
 #generator_list()
