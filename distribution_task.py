@@ -35,8 +35,11 @@ def main():
 
 
     for j in range(10):
-        t=result_manager.get(timeout=20)
-        print "get %d from the queue server" %t
+        try:
+            t=result_manager.get(timeout=20)
+            print "get %d from the queue server" %t
+        except Exception,e:
+            print e
 
     manager.shutdown()
 
