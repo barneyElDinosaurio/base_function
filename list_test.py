@@ -205,27 +205,106 @@ def extendList(val, list=[]):
     list.append(val)
     return list
 
-list1 = extendList(10)
-list2 = extendList(123,[])
-list3 = extendList('a')
 
-print "list1 = %s" % list1
-print "list2 = %s" % list2
-print "list3 = %s" % list3
 
-list = [ [ ] ] * 5
-print list
-print len(list)
-list[0].append(10)
-print list
-list[1].append(20)
-print list
-list.append(30)
-print list
 
-for i in list:
-    print i
-    print id(i)
+def extend_case():
+    list1 = extendList(10)
+    list2 = extendList(123,[])
+    list3 = extendList('a')
+
+    print "list1 = %s" % list1
+    print "list2 = %s" % list2
+    print "list3 = %s" % list3
+
+    list = [ [ ] ] * 5
+    print list
+    print len(list)
+    list[0].append(10)
+    print list
+    list[1].append(20)
+    print list
+    list.append(30)
+    print list
+def list_filter():
+    l=[12,22,43,23,65,34,22,33,55,22,11,2,3,5,7]
+    l1=l[2:8:2]
+    print l1
+    print id(l)
+    print id(l1)
+
+def list_change():
+    coin_list=['IFC','DOGE','EAC','DNC','MET','ZET','SKT','YTC','PLC','LKC',
+                        'JBC','MRYC','GOOC','QEC','PEB','XRP','NXT','WDC','MAX','ZCC',
+                        'HLB','RSS','PGC','RIO','XAS','TFC','BLK','FZ','ANS','XPM','VTC',
+                        'KTC','VRC','XSGS','LSK','PPC','ETC','GAME','LTC','ETH','BTC']
+    l1=map(lambda x:x.lower(),coin_list)
+    print coin_list
+    print l1
+    with open ('coin_list.cfg','w') as f:
+        for i in l1:
+            f.write(i)
+
+    coin_name={'zet':u'泽塔币',
+                        'doge':u'狗狗币',
+                        'eac':u'地球币',
+                        'dnc':u'暗网币',
+                        'rio':u'里约币',
+                        'blk':u'黑币',
+                        'ifc':u'无限币',
+                        'met':u'美通币',
+                        'gooc':u'谷壳币',
+                        'jbc':u'聚宝币',
+                        'pgc':u'乐通币',
+                        'lsk':u'LISK',
+                        'tfc':u'传送币',
+                        'xpm':u'质数币',
+                        'nxt':u'未来币',
+                        'ppc':u'点点币',
+                        'ktc':u'肯特币',
+                        'mtc':u'猴宝币',
+                        'skt':u'鲨之信',
+                        'btc':u'比特币',
+                        'peb':u'普银币',
+                        'ltc':u'莱特币',
+                        'xsgs':u'雪山古树',
+                        'eth':u'以太坊',
+                        'vtc':u'绿币',
+                        'bts':u'比特股',
+                        'hlb':u'活力币',
+                        'zcc':u'招财币',
+                        'etc':u'以太经典',
+                        'qec':u'企鹅币',
+                        'fz':u'冰河币',
+                        'plc':u'保罗币',
+                        'max':u'最大币',
+                        'ytc':u'一号币',
+                        'xrp':u'瑞波币',
+                        'lkc':u'幸运币',
+                        'wdc':u'世界币',
+                        'vrc':u'维理币',
+                        'rss':u'红贝壳',
+                        'ans':u'小蚁股',
+                        'xas':u'阿希比',
+                        'game':u'游戏点',
+                        'mryc':u'美人鱼币',
+                            }
+
+    cn=json.dumps(coin_name)
+    print type(cn)
+    with open('coin_list.cfg','w') as f:
+        f.write(cn)
+
+    with open('coin_list.cfg','r') as rf:
+        s=rf.read()
+    dic=json.loads(s)
+    print type(dic)
+    print dic
+    print coin_name
+    for k,v in dic.items():
+        print k,v
+
+
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -239,3 +318,5 @@ for i in list:
 #case1()
 #reversed_usage()
 #remove_list()
+#list_filter()
+list_change()
