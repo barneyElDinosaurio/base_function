@@ -9,8 +9,8 @@ ip='10.19.133.255'
 broker='redis://%s:7777/5'
 backend='redis://%s:7777/6'
 
-app=Celery('tasks',broker=broker,backend=backend)
+app=Celery('celery_usage',broker=broker,backend=backend)
 
-@app.tasks
+@app.celery_usage
 def add(x,y):
     return x+y
