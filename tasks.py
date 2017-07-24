@@ -11,6 +11,6 @@ backend='redis://%s:7777/6' %ip
 
 app=Celery('tasks',broker=broker,backend=backend)
 
-@app.tasks
+@app.task
 def add(x,y):
     return x+y
