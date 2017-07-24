@@ -6,8 +6,8 @@ Contact: weigesysu@qq.com
 '''
 from celery import Celery
 ip='10.19.133.255'
-broker='redis://%s:7777/5' %ip
-backend='redis://%s:7777/6' %ip
+broker='redis://%s:6379/5' %ip
+backend='redis://%s:6379/6' %ip
 
 app=Celery('tasks',broker=broker,backend=backend)
 
