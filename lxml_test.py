@@ -49,4 +49,12 @@ def lxml_text():
         print i.xpath('string(.)')
 
 
-lxml_text()
+
+def lxml_case():
+    r=requests.get('http://30daydo.com')
+    t=etree.HTML(r.text)
+    s=t.xpath('//div[@class="aw-item article"]/)
+    print s
+#lxml_text()
+
+lxml_case()
