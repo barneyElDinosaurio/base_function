@@ -268,14 +268,13 @@ def main():
     #plot_line()
     #plot_bar()
     #multi_plot()
-    plot_csdn()
-
+    #plot_csdn()
     #two_in_one_canvas()
     #line_define()
     #hist_test()
     #multi_plot_rocky2()
     #other_mil()
     #testcase1()
-    #testcase2()
+    testcase2()
 
 main()
