@@ -96,6 +96,9 @@ def replace_test():
 def split_fun():
     l="This is a test string from Andrew".split()
     print l
+    link='http://quotes.toscrape.com/page/1/'
+    l_link=link.split('/')
+    print l_link
 #check_year()
 #_write_adead()
 #zfill_test()

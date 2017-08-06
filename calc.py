@@ -15,4 +15,14 @@ def test1():
 def percentage(a,b):
     print (a-b)*1.00/b*100
 
-percentage(0.195,0.185)
+def base_usge():
+    x=16*13
+    print x
+
+
+
+def main():
+    #percentage(0.195,0.185)
+    base_usge()
+
+main()

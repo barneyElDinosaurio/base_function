@@ -12,6 +12,7 @@ def get_data(url):
 	print len(resp.text)
 
 def testcase():
+	print "Version: ", gevent.version_info
 	gevent.joinall([gevent.spawn(get_data,'https://python.org/'),
 					gevent.spawn(get_data,'https://www.yahoo.com/'),
 					gevent.spawn(get_data,'https://github.com/')])
