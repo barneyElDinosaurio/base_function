@@ -13,3 +13,7 @@ t1='i love baseketball 13424281084!'
 text = 'c++ python2 python3 perl ruby lua javascript java php4 php5 c'
 print re.match(r'java',text)
 print re.search(r'java',text).group()
+
+line='RockFish 55'
+name2 = re.findall('^(.+)\s+\d+', line)
+print name2
