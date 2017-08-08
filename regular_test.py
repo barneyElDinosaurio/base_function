@@ -17,3 +17,10 @@ print re.search(r'java',text).group()
 line='RockFish 55'
 name2 = re.findall('^(.+)\s+\d+', line)
 print name2
+
+print '\n'*5
+s='?orgame=1&categoryId=-10'
+print s
+p=re.compile('categoryId=(-?\d+)')
+x=p.findall(s)
+print x
