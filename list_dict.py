@@ -1,5 +1,5 @@
 import collections
-
+from pandas import Series,DataFrame
 
 def list_dict():
     s = [("yellow", 1), ("red", 2), ("white", 3), ("black", 4), ("green", 5)]
@@ -109,16 +109,22 @@ def testcase3():
 
 
 def zip_case():
-    x=[1,3,5,7,9]
+    x=['1','3','5','7','9']
     y=[2,4,6,8,10]
     z=zip(x,y)
     print z
-
+    zd=dict(z)
+    print zd
+    #s=Series(zd)
+    #print s
+    d=DataFrame(zd,index=[0])
+    d.to_csv('kk.csv',mode='a')
+    '''
     uzip=zip(*z)
     print uzip
     uzip_x=uzip[0]
     uzip_y=uzip[1]
-
+    '''
 
 def set_case():
     a=['a','b','d','c','a']
@@ -159,6 +165,6 @@ def dict_emulation():
 
 #testcase1()
 #testcase3()
-#zip_case()
+zip_case()
 #set_case()
-dict_emulation()
+#dict_emulation()

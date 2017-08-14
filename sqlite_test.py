@@ -2,7 +2,6 @@
 __author__ = 'rocchen'
 import sqlite3
 
-
 def insert():
     conn = sqlite3.connect("rocky_sqlite.db")
 

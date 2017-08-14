@@ -1,8 +1,9 @@
 # -*- coding:utf-8 -*-
 import sys
-
-reload(sys)
-sys.setdefaultencoding('utf-8')
+import urllib
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
+import chardet
 
 
 def chinese_str():
@@ -99,6 +100,18 @@ def split_fun():
     link='http://quotes.toscrape.com/page/1/'
     l_link=link.split('/')
     print l_link
+
+    a='https://shenzhen.anjuke.com/community/p50/'
+    b='https://shenzhen.anjuke.com'
+    x=a.split(b)
+    print x
+def url_encode():
+   w='欧陆经典'
+
+   #s1=unicode(w,"gbk")
+   x=urllib.quote(w)
+   print x
+   print chardet.detect(w)
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -108,3 +121,4 @@ def split_fun():
 #slic()
 #replace_test()
 split_fun()
+#url_encode()
