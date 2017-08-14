@@ -74,6 +74,8 @@ def time_string_test():
     now3 = now.strftime("%Y-%m-%d %H:%M:%S")
     print now3
     print type(now3)
+    now4=now.strftime("%Y%m%d%H%M%S")
+    print now4
     f.close()
 
 
@@ -209,7 +211,8 @@ if __name__ == "__main__":
     #time_run()
     #test2()
     #time_fun()
-    time_exchange()
+    #time_exchange()
     #obj=DateTest3()
     #obj.getPreviousDay()
     #str_time_hour()
+    time_string_test()
