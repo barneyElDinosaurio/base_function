@@ -114,7 +114,8 @@ def test2():
     t1 = time.time()
     print t1
     print time.ctime()
-    t = 1490060308998 * 1.00 / 1000
+    #t = 1490060308998 * 1.00 / 1000
+    t = 1503048528*1.00
     print time.ctime(t1)
 
     print time.ctime(t)
@@ -204,6 +205,11 @@ def str_time_hour():
     print type(t0)
     print t0
 
+def time_cuo():
+    print int(time.time())
+    t = 1503048528 * 1.00
+    t3 = time.ctime(t)
+    print t3
 
 if __name__ == "__main__":
     #format()
@@ -215,4 +221,5 @@ if __name__ == "__main__":
     #obj=DateTest3()
     #obj.getPreviousDay()
     #str_time_hour()
-    time_string_test()
+    #time_string_test()
+    time_cuo()

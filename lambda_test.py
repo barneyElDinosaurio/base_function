@@ -14,6 +14,13 @@ def testcase1():
 def multipliers():
   return [lambda x : i * x for i in range(4)]
 
-print [m(2) for m in multipliers()]
-for i in multipliers():
-    print i
+def testcase2():
+    print [m(2) for m in multipliers()]
+    for i in multipliers():
+        print i
+
+def compare_case():
+    f=lambda x,y: x if x>y else y
+    x=f(61,8)
+    print x
+compare_case()

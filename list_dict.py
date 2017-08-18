@@ -117,14 +117,17 @@ def zip_case():
     print zd
     #s=Series(zd)
     #print s
-    d=DataFrame(zd,index=[0])
-    d.to_csv('kk.csv',mode='a')
-    '''
+    #d=DataFrame(zd,index=[0])
+    #d.to_csv('kk.csv',mode='a')
+
     uzip=zip(*z)
     print uzip
     uzip_x=uzip[0]
     uzip_y=uzip[1]
-    '''
+
+    x1=[('a','x'),('b','y')]
+
+    print zip(*x1)
 
 def set_case():
     a=['a','b','d','c','a']
@@ -152,6 +155,10 @@ def dict_emulation():
 	for k,v in d.iteritems():
 		print k,v
 
+
+def baseDict():
+    a={':authouer':'hello'}
+    print a
 #dict_assign()
 
 
@@ -165,6 +172,7 @@ def dict_emulation():
 
 #testcase1()
 #testcase3()
-zip_case()
+#zip_case()
 #set_case()
 #dict_emulation()
+baseDict()

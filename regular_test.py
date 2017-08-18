@@ -24,3 +24,7 @@ print s
 p=re.compile('categoryId=(-?\d+)')
 x=p.findall(s)
 print x
+kw0='萧宏·普罗旺斯'
+print kw0
+kw_p=re.findall('·',kw0)
+print kw_p

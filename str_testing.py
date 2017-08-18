@@ -128,9 +128,23 @@ def show_data():
     j= x['msg'].split('\\')
     for i in j:
         print i.decode('utf-8')
-
     str1=''
 
+def testNone():
+    x=None
+    if x is not None:
+        print "Go"
+
+    else:
+        print "None"
+
+def type_compare():
+    x=[1,2,3,4]
+
+    if x==404:
+        print "error"
+    else:
+        print 'bingo'
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -139,11 +153,9 @@ def show_data():
 #garbe_character()
 #slic()
 #replace_test()
-
-split_fun()
-#url_encode()
-
 #split_fun()
+#url_encode()
 #format_case()
-show_data()
-
+#show_data()
+#testNone()
+type_compare()

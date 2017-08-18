@@ -40,6 +40,7 @@ def requests_practise():
     header = {'User-Agent': agent}
     content = requests.get(url1)
     print content.text
+    print type(content.status_code)
 
 
 start = datetime.datetime.now()
@@ -97,4 +98,5 @@ def bbs_filename_check():
     print filename
 
 #status_code_test()
-bbs_filename_check()
+#bbs_filename_check()
+requests_practise()

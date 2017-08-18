@@ -32,4 +32,36 @@ def getJson():
 
 #using_requests()
 
-getJson()
+
+def jsonParse(dictionary):
+        if isinstance(dictionary,dict):
+            for i in range(len(dictionary)):
+                key=dictionary.keys()[i]
+                value=dictionary[key]
+                print key,value
+
+                jsonParse(value)
+
+
+def list_all_dict(dict_a):
+    if isinstance(dict_a, dict):  # 使用isinstance检测数据类型
+
+        for x in range(len(dict_a)):
+            temp_key = dict_a.keys()[x]
+
+            temp_value = dict_a[temp_key]
+
+            print"%s : %s" % (temp_key, temp_value)
+
+            list_all_dict(temp_value)  # 自我调用实现无限遍历
+
+def testcase1():
+    new_url = 'http://api.k.sohu.com/api/channel/v6/news.go?p1=NjMwMjg4NTczMDc1OTEyNzA2OA%3D%3D&pid=-1&channelId=1&num=20&imgTag=1&showPic=1&picScale=11&rt=json&net=wifi&cdma_lat=22.553053&cdma_lng=113.902393&from=channel&mac=b4%3A0b%3A44%3A83%3A93%3A16&AndroidID=4dd00e258bbe295f&carrier=CMCC&imei=990006203070023&imsi=460020242631842&density=3.0&apiVersion=37&skd=9bf84c6c9d24711f43f7058db2d1ed5ba7c6a2fecca504d3f44839a8bf22b4521ff192a4ac2d77946d871706ceb89baa269d145d2f5a07fddb656d6417029bb04459d2a5aa0ca50764b2de62da32f9e5e6055efa78b93cafbd89ef0971a836d3542ce2065edff7017a28b164e4210fec&v=1502985600&t=1503044087&page=1&action=0&mode=0&cursor=0&mainFocalId=0&focusPosition=1&viceFocalId=0&lastUpdateTime=0&gbcode=440300&forceRefresh=0&apiVersion=37&u=1&source=0&isSupportRedPacket=0&t=1503044087'
+
+    s=requests.get(new_url)
+    js=s.json()
+    #print js
+    list_all_dict(js)
+
+#getJson()
+testcase1()
