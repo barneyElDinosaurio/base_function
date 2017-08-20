@@ -200,16 +200,24 @@ def time_exchange():
 
 #把分钟秒的字符转为datetime
 def str_time_hour():
-    t = '08:30:12'
-    t0 = datetime.datetime.strptime(t, '%H:%M:%S')
+    t = '2017-08-19 08:30:12'
+    t0 = datetime.datetime.strptime(t, '%Y-%m-%d %H:%M:%S')
     print type(t0)
     print t0
 
 def time_cuo():
+    #10位
     print int(time.time())
-    t = 1503048528 * 1.00
+    t = 1503048528
+    t2=1503048528*1.00
+    updateTime = 1500713681000/1000.00
     t3 = time.ctime(t)
-    print t3
+    t4 = time.ctime(t2)
+
+    print 't3',t3
+    print 't4',t4
+    curr_d = datetime.datetime.fromtimestamp(updateTime)
+    print curr_d
 
 if __name__ == "__main__":
     #format()
