@@ -145,6 +145,15 @@ def type_compare():
         print "error"
     else:
         print 'bingo'
+
+def cityLink():
+    url='http://bj.fang.com/'
+    url2='http://bj.fang.com'
+    x1=url.split('/')[-1]
+    print len(x1)
+    x2=url2.split('/')[-1]
+    print len(x2)
+
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -158,4 +167,5 @@ def type_compare():
 #format_case()
 #show_data()
 #testNone()
-type_compare()
+#type_compare()
+cityLink()

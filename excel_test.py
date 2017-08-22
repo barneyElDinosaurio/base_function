@@ -183,6 +183,15 @@ def profit_line():
 
 
 
+def drop_dup():
+    filename='2017-08-22_15-12-12.xls'
+
+    df=pd.read_excel(filename)
+    print df
+    df=df.drop_duplicates()
+    #df=df.drop_duplicates(['Unnamed: 7'])
+    #df=df.drop_duplicates(['Unnamed: 11'])
+    df.to_excel('new.xls')
 #file="python_excel_test.xls"
 #rb=xlrd.open_workbook(file)
 #copy_excel(rb,1,'asking')
@@ -196,4 +205,5 @@ def profit_line():
 #save_id()
 #check_diff()
 #remove_use()
-profit_line()
+#profit_line()
+drop_dup()
