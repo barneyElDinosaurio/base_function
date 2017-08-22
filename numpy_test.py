@@ -1,5 +1,5 @@
 import numpy as np
-import math
+import math,time
 import matplotlib.pyplot as plt
 def numpysum(n):
     a = np.arange(n)
@@ -68,8 +68,22 @@ def testcase5():
     print y
     print len(y)
 
+def perf_compare():
+    i=[x for x in xrange(10000000)]
+    start=time.clock()
+    for ii in i:
+        k=math.sin(ii)
+    end=time.clock()
+    print "Time use:", end-start
+
+    np_i=np.array(i)
+    start=time.clock()
+    np.sin(np_i)
+    end=time.clock()
+    print "numpy time used : ", end-start
 
 def main():
-    testcase4()
+    #testcase4()
+    perf_compare()
 
 main()
