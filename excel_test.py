@@ -1,9 +1,11 @@
 # -*-coding=utf-8-*-
+import os
+import re
+
 __author__ = 'Rocky'
 import xlrd, xlwt
 from xlutils.copy import copy
 import pandas as pd
-import matplotlib.pyplot as plt
 
 def write_excel():
     filename = "python_excel_test.xls"
@@ -193,6 +195,40 @@ def drop_dup():
     df.drop_duplicates(['Unnamed: 15'],inplace=True)
     #df=df.drop_duplicates(['Unnamed: 11'])
     df.to_excel('new.xls')
+
+def saveOneFile():
+    files=os.listdir('.')
+    df_list=[]
+    for i in files:
+        #print i
+        try:
+
+            if len(re.findall(r'xls',i))!=0:
+            #if 'xls'==i.split('.')[1]:
+                print i
+                #deal with xls file
+                df = pd.read_excel(i)
+                #df.drop_duplicates(inplace=True)
+                #df.to_excel(i)
+                #print df
+                print len(df)
+                df_list.append(df)
+        except:
+            continue
+
+    final_df=pd.concat(df_list)
+    final_df.to_excel('all.xls')
+    #print final_df
+    print len(final_df)
+    '''
+    final_df.drop_duplicates(inplace=True)
+    final_df.drop_duplicates([7],inplace=True)
+    final_df.drop_duplicates([0],inplace=True)
+    final_df.drop_duplicates([8],inplace=True)
+    print len(final_df)
+    print final_df
+    final_df.to_excel('2017-08-25-sohu.xls')
+    '''
 #file="python_excel_test.xls"
 #rb=xlrd.open_workbook(file)
 #copy_excel(rb,1,'asking')
@@ -207,4 +243,5 @@ def drop_dup():
 #check_diff()
 #remove_use()
 #profit_line()
-drop_dup()
+#drop_dup()
+saveOneFile()

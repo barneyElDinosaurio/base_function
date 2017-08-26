@@ -154,6 +154,22 @@ def cityLink():
     x2=url2.split('/')[-1]
     print len(x2)
 
+def code_case():
+    s = "人生苦短"
+    s1 = u"人生苦短"
+    s2 = unicode("人生苦短", "utf-8")
+
+    su = "人生苦短"
+    u = s.decode("utf-8")
+    sg = u.encode("gbk")
+    print sg
+    print type(s)
+    print type(s1)
+    print type(s2)
+    print type(su)
+    print type(u)
+    print type(sg)
+    print s.encode('gbk')
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -168,4 +184,5 @@ def cityLink():
 #show_data()
 #testNone()
 #type_compare()
-cityLink()
+#cityLink()
+code_case()

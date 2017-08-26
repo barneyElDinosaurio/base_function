@@ -1,7 +1,10 @@
 # -*-coding=utf-8-*-
+import re
+import sys
 import requests, urllib2, urllib, json
-
-
+reload(sys)
+sys.setdefaultencoding('utf-8')
+from lxml import etree
 def using_requests():
     post_data = {'first': 'true', 'kd': 'Android', 'pn': '1'}
     url = "http://www.lagou.com/jobs/positionAjax.json?city=%E6%B7%B1%E5%9C%B3&needAddtionalResult=false"
@@ -63,5 +66,31 @@ def testcase1():
     #print js
     list_all_dict(js)
 
+def testcase2():
+    js=json.loads(open('lianjia.json').read())
+    #print js
+    body=js['body']
+    tree = etree.HTML(body)
+    nodes = tree.xpath('//li[@class="pictext"]')
+    print "NODE:",len(nodes)
+    print js['args']
+    print '*'*20
+    print type(js)
+    print type(js['args'])
+    #p=re.compile('"cur_city_name":"(.*?)"')
+    p=re.compile('"total":(\d+)')
+    s=p.findall(js['args'])[0]
+    print s
+    '''
+    print type(s)
+    print s
+    print s.decode('utf-8').encode('gbk')
+    print s.decode('unicode_escape')
+
+    
+    for k,v in js['args'].items():
+        print k,"::",v
+    '''
 #getJson()
-testcase1()
+#testcase1()
+testcase2()
