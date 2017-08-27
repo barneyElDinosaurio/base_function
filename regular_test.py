@@ -28,3 +28,9 @@ kw0='萧宏·普罗旺斯'
 print kw0
 kw_p=re.findall('·',kw0)
 print kw_p
+
+ip='112.95.16.107'
+if re.match('\.',ip) is None:
+    print "can't get IP"
+else:
+    print "IP: ",ip
