@@ -153,6 +153,9 @@ def cityLink():
     print len(x1)
     x2=url2.split('/')[-1]
     print len(x2)
+    url3='https://m.lianjia.com/cd/xiaoqu'
+    x3=url3.split('/')
+    print x3
 
 def code_case():
     s = "人生苦短"
@@ -170,6 +173,7 @@ def code_case():
     print type(u)
     print type(sg)
     print s.encode('gbk')
+
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -184,5 +188,5 @@ def code_case():
 #show_data()
 #testNone()
 #type_compare()
-#cityLink()
-code_case()
+cityLink()
+#code_case()
