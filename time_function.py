@@ -55,7 +55,7 @@ class DateTest3():
         last = now + datetime.timedelta(days=-3)
         #日期增减
         print last
-        print   last.strftime("%Y-%m-%d")
+        print last.strftime("%Y-%m-%d")
 
 
 def time_string_test():
