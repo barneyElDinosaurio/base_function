@@ -26,12 +26,23 @@ def loopTest():
 def sayHi(x,name):
     return x+name
 
+def return_case():
+    x=1
+    y='hello'
+    return x,y
+
+def get_return_case():
+    x,y=return_case()
+
+    print x
+    print y
 def main():
     p=partial(sayHi,name='Rocky')
     print p('Chen')
     print p('Li')
     print p('Peng')
     print p('Luo')
+    get_return_case()
 
 main()
 

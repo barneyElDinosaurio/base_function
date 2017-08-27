@@ -219,6 +219,16 @@ def time_cuo():
     curr_d = datetime.datetime.fromtimestamp(updateTime)
     print curr_d
 
+def time_format():
+    print type(time.strftime("%Y-%m-%d %H:%M:%S"))
+    t=time.strftime("%Y-%m-%d %H:%M:%S")
+    print t
+    today=datetime.date.today()
+    print today
+    print type(today)
+
+
+
 if __name__ == "__main__":
     #format()
     #from_book()
@@ -230,4 +240,5 @@ if __name__ == "__main__":
     #obj.getPreviousDay()
     #str_time_hour()
     #time_string_test()
-    time_cuo()
+    #time_cuo()
+    time_format()
