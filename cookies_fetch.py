@@ -68,3 +68,25 @@ def build_opener_with_chrome_cookies(domain=None):
 #build_opener_with_chrome_cookies()
 
 
+class transCookie:
+    def __init__(self, cookie):
+        self.cookie = cookie
+
+    def stringToDict(self):
+        '''
+        将从浏览器上Copy来的cookie字符串转化为Scrapy能使用的Dict
+        :return:
+        '''
+        itemDict = {}
+        items = self.cookie.split(';')
+        for item in items:
+            key = item.split('=')[0].replace(' ', '')
+            value = item.split('=')[1]
+            itemDict[key] = value
+        return itemDict
+
+if __name__ == "__main__":
+    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_city=440300; select_nation=1; CNZZDATA1254525948=145009446-1503633660-%7C1503908541; CNZZDATA1253491255=851767322-1503638199-%7C1503907203; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503912523; lianjia_ssid=290ce12b-c434-4782-9b1a-06c450c2dbb3'
+    cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_nation=1; select_city=441900; CNZZDATA1253491255=851767322-1503638199-%7C1503914876; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1503919341; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503920035; lianjia_ssid=e07f3016-cad2-4f82-96f5-516af563669e'
+    trans = transCookie(cookie)
+    print trans.stringToDict()

@@ -13,7 +13,7 @@ mayi_port = '8123'
 mayi_proxy = {'http': 'http://{}:{}'.format(mayi_url, mayi_port)}
 
 # 准备去爬的 URL 链接
-#url = 'http://1212.ip138.com/ic.asp'
+#testUrl = 'http://1212.ip138.com/ic.asp'
 testUrl='http://members.3322.org/dyndns/getip'
 # 计算签名
 timesp = '{}'.format(time.strftime("%Y-%m-%d %H:%M:%S"))
