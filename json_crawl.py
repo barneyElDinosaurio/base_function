@@ -67,9 +67,9 @@ def testcase1():
     list_all_dict(js)
 
 def testcase2():
-    js=json.loads(open('lianjia.json').read())
+    js=json.loads(open('lianjia_sh.txt').read())
     #print js
-    body=js['body']
+    body=js['data']
     tree = etree.HTML(body)
     nodes = tree.xpath('//li[@class="pictext"]')
     print "NODE:",len(nodes)
@@ -91,6 +91,32 @@ def testcase2():
     for k,v in js['args'].items():
         print k,"::",v
     '''
+
+def read_lj():
+    #js = json.loads(open('lianjia_sh.txt').read())
+    js = json.loads(open('lianjia_sz.txt').read())
+    arg= json.loads(js['args'])
+    print arg['no_more_data']
+    '''
+    all=js['data']['list']
+    #print all
+    print len(all)
+    for i in all:
+        if i.has_key('completeYear'):
+            print i['completeYear']
+        
+        print i['referAvgPrice']
+        print i['houseType']
+        print i['completeYear']
+        
+        #print i['']
+        
+        for k,v in i.items():
+            print k,v
+        print '*'*10
+   
+    '''
 #getJson()
 #testcase1()
-testcase2()
+#testcase2()
+read_lj()
