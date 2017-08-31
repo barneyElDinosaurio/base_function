@@ -1,15 +1,22 @@
 # coding: utf-8
 import re
-fp=open('city.txt','r').read()
+fp=open('temp_city.txt','r').read()
 #print fp
 s=re.sub(r'/\* \d+ \*/','',fp)
 #dic=eval(s)
 #print s
 s1=re.findall('"city_name" : "(.*?)"',s)
+<<<<<<< HEAD
 s2=re.findall('"count" : (\d+)\.0',s)
 
 for i in range(len(s1)):
     print s1[i], " ", s2[i],'/',s2[i]
+=======
+s2=re.findall('"count" : (\d+)',s)
+print s2
+for i in range(len(s1)):
+    print s1[i], " ", s2[i],"/",s2[i]
+>>>>>>> origin/master
 
 '''
 ss=0
