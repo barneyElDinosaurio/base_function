@@ -1,16 +1,20 @@
 # coding: utf-8
+import pprint
 import pymongo,datetime
 client=pymongo.MongoClient('127.0.0.1',27017)
 #db=client.test
-db=client.py_create_db
+db=client.demo_api
 #collection=db.houseinfo_aug
-collection=db.test_collection1
+collection=db.first_collection
 def basic_usage():
-    data={"name":"a","sex":"F","school":"THSU"}
-    data2={"name":"b","sex":"F","school":"SYSU"}
-    collection.insert(data)
-    collection.save(data2)
-
+    #data={"name":"a","sex":"F","school":"THSU"}
+    #ata2={"name":"b","sex":"F","school":"SYSU"}
+    #collection.insert(data)
+    #collection.save(data2)
+    print db.first_collection
+    print db.first_collection.find()
+    arr=list(db.first_collection.find())
+    print arr
 def query():
     print collection.count()
     print collection.find({'name':'a'})
@@ -33,7 +37,11 @@ def insert():
         data={'_id':i}
         collection.insert(data)
 
+def update():
+    db. first_collection.update({'name':'rocky','age':19},{'name':'rocky','age':199})
+
 #basic_usage()
 #query()
 #remove()
-insert()
+#insert()
+update()

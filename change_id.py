@@ -10,7 +10,7 @@ with codecs.open('houseinfo_11.json','r',encoding='utf-8') as fp:
 '''
 #for x in data:
     #print x
-with codecs.open('houseinfo_11.json','r') as fp:
+with codecs.open('houseinfo_831.json','r') as fp:
     data=fp.readlines()
 '''
 for x in data:
@@ -19,7 +19,7 @@ for x in data:
 
 number_list=[number for number in xrange(1000000,2000000)]
 
-op=codecs.open('xiaoqu11.txt','w',encoding='utf-8')
+op=codecs.open('xiaoqu_LI_08_31.txt','w',encoding='utf-8')
 new_dict={}
 for index,line in enumerate(data):
     #print line

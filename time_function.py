@@ -240,5 +240,5 @@ if __name__ == "__main__":
     #obj.getPreviousDay()
     #str_time_hour()
     #time_string_test()
-    #time_cuo()
-    time_format()
+    time_cuo()
+    #time_format()

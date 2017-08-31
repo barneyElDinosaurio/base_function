@@ -4,12 +4,12 @@ fp=open('city.txt','r').read()
 #print fp
 s=re.sub(r'/\* \d+ \*/','',fp)
 #dic=eval(s)
-print s
-s1=re.findall('"_id" : "(.*?)"',s)
-s2=re.findall('"count" : (\d+)',s)
+#print s
+s1=re.findall('"city_name" : "(.*?)"',s)
+s2=re.findall('"count" : (\d+)\.0',s)
 
 for i in range(len(s1)):
-    print s1[i], " ", s2[i]
+    print s1[i], " ", s2[i],'/',s2[i]
 
 '''
 ss=0
