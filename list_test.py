@@ -318,14 +318,15 @@ def list_change():
     for k, v in dic.items():
         print k, v
 
-
+def list_str_exchange():
+    #a=['name':]
 # in_test()
 #delete_item_list()
 #generator_list()
 #iter_test()
 #rang_test()
 #use_generator()
-cut_case()
+#cut_case()
 #iter_case2()
 #mutebale()
 #in_usage()

@@ -1,4 +1,5 @@
 import os
+import pprint
 from functools import partial
 
 def getData(name, times):
@@ -44,7 +45,10 @@ def main():
     print p('Luo')
     get_return_case()
 
-main()
+def print_case():
+    a=[1,2,3,'hello',['w',12,'d']]
+    pprint.pprint(a)
+#main()
 
 # getData('Rocky',1000)
 #wrong!
@@ -52,3 +56,4 @@ main()
 #path_function()
 #print_fun()
 #loopTest()
+print_case()

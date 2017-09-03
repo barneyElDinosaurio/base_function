@@ -195,6 +195,27 @@ def drop_dup():
     df.drop_duplicates(['Unnamed: 15'],inplace=True)
     #df=df.drop_duplicates(['Unnamed: 11'])
     df.to_excel('new.xls')
+# 复制文件
+def copy_file():
+    '2017-08-25_15-38-32_drop_dup.xls'
+    start_pattern='2017-08-2[6789]_\d{2}-\d{2}-\d{2}_drop_dup.xls'
+    files=os.listdir('.')
+    for file in files:
+        if re.search(start_pattern,file):
+            os.system('cp %s 0901/%s' %(file,file))
+
+    start_pattern2='2017-08-3[01]_\d{2}-\d{2}-\d{2}_drop_dup.xls'
+    files=os.listdir('.')
+    for file in files:
+        if re.search(start_pattern2,file):
+            os.system('cp %s 0901/%s' %(file,file))
+
+
+def remove_dup():
+    file='2017-09-01-sohu-1.xls'
+    df=pd.read_excel(file)
+    df.drop_duplicates([u'广告链接'],inplace=True)
+    df.to_excel('sohu-news.xls')
 
 def saveOneFile():
     files=os.listdir('.')
@@ -244,4 +265,5 @@ def saveOneFile():
 #remove_use()
 #profit_line()
 #drop_dup()
-saveOneFile()
+#saveOneFile()
+remove_dup()
