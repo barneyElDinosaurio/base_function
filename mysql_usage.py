@@ -77,24 +77,34 @@ class mysql_usage():
         conn.commit()
         conn.close()
 
-    def insert_data(self):
+    def create_table(self,table_name):
+        cursor=self.db.cursor()
+        create_cmd='''
+        CREATE TABLE %s(
+        NAME TEXT,CITY_NAME TEXT,LOCATION TEXT,PRICE TEXT
+        );
+        ''' %table_name
+        print create_cmd
+        cursor.execute(create_cmd)
+        self.db.commit()
+        self.db.close()
         
-    def mysql_usage(self):
-        cursor=db.cursor()
+    def mysql_add_data(self,table):
+        cursor=self.db.cursor()
         cursor.execute('select version()')
         data=cursor.fetchone()
         print data
         print type(data)
         my_dict={"2017-07" : [ {"origin" : "LJ","price" : 44267,"crawl_date" : "2017-09-01"}]}
-        item={'name':'万科','city_name':'深圳','location':'龙岗','price':str(my_dict)}
-        #item={'name':'wk2','city_name':'1sz1','location':'lg1','price':12111}
+        #item={'name':'万科','city_name':'深圳','location':'龙岗','price':str(my_dict)}
+        item={'name':'wk2','city_name':'1sz1','location':'lg1','price':'12111'}
         print item
         sql='''
                 insert into first ( name,city_name,location,price)
                 values ('wk','sz','lg',12)  
                 '''
         #
-        sql2='''insert into first ( name,city_name,location,price) values ('%s','%s','%s','%s')'''  %(item['name'], item['city_name'], item['location'], item['price'].encode('utf-8'))
+        sql2='''insert into %s ( name,city_name,location,price) values ('%s','%s','%s','%s','%s')'''  %(table,item['name'], item['city_name'], item['location'], item['price'].encode('utf-8'))
         print sql2
         # sql 插入有问题
         #cursor.execute(sql2)
@@ -106,12 +116,14 @@ class mysql_usage():
         data1=cursor.fetchone()
         print data1
 
-        db.commit()
-        db.close()
+        self.db.commit()
+        self.db.close()
 
 
-
-#DB_Usage()
-#DB_Usage_sqlite()
-#Aliyun()
-mysql_usage()
+if __name__=='__main__':
+    #DB_Usage()
+    #DB_Usage_sqlite()
+    #Aliyun()
+    obj=mysql_usage()
+    obj.create_table('houseinfo')
+    #obj.mysql_add_data()
