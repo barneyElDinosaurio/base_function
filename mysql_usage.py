@@ -3,14 +3,15 @@ __author__ = 'xda'
 import MySQLdb, sqlite3
 import pandas as pd
 from toolkit import Toolkit
-
+import json
 
 class mysql_usage():
     def __init__(self):
         mysql_password = Toolkit.getUserData('data.cfg')['mysql_password']
         host='127.0.0.1'
         user='root'
-        db='test_database'
+        db='mydb'
+        #db='test_database'
         self.db=MySQLdb.connect(host,user,mysql_password,db,charset='utf8')
 
     def DB_Usage(self):
@@ -91,39 +92,100 @@ class mysql_usage():
         
     def mysql_add_data(self,table):
         cursor=self.db.cursor()
+        creat_db='''
+        create table if not exists houseinfo(
+        name TEXT,city_name TEXT, location TEXT,price TEXT
+        );
+        '''
+        cursor.execute(creat_db)
+        self.db.commit()
+
         cursor.execute('select version()')
         data=cursor.fetchone()
         print data
         print type(data)
         my_dict={"2017-07" : [ {"origin" : "LJ","price" : 44267,"crawl_date" : "2017-09-01"}]}
-        #item={'name':'万科','city_name':'深圳','location':'龙岗','price':str(my_dict)}
+        price = json.dumps(my_dict)
+        print price
+        item2={'name':'万科','city_name':'深圳','location':'龙岗','price':price}
         item={'name':'wk2','city_name':'1sz1','location':'lg1','price':'12111'}
         print item
+
         sql='''
-                insert into first ( name,city_name,location,price)
+                insert into houseinfo ( name,city_name,location,price)
                 values ('wk','sz','lg',12)  
                 '''
-        #
-        sql2='''insert into %s ( name,city_name,location,price) values ('%s','%s','%s','%s','%s')'''  %(table,item['name'], item['city_name'], item['location'], item['price'].encode('utf-8'))
+
+
+        #这个是可以正常运行的
+        sql2='''insert into houseinfo ( name,city_name,location,price) values ('%s','%s','%s','%s')'''  %(item2['name'], item2['city_name'], item2['location'], item2['price'])
         print sql2
         # sql 插入有问题
-        #cursor.execute(sql2)
+        cursor.execute(sql2)
 
         query_cmd='''
         select name from first;
         '''
-        cursor.execute(query_cmd)
-        data1=cursor.fetchone()
-        print data1
+        #cursor.execute(sql)
+        #data1=cursor.fetchone()
+        #print data1
 
         self.db.commit()
         self.db.close()
 
+    def query(self):
+        vol=500
+        table='tick0901'
+        sql_cmd1='''
+        select * from %s where volume>%d;
+        ''' %(table,vol)
+        cursor=self.db.cursor()
+        cursor.execute(sql_cmd1)
+        #dataone=cursor.fetchone()
+        dataall=cursor.fetchall()
+        #print dataone
+        for i in dataall:
+            print i[0],i[1],i[2],i[3],i[4],i[5],i[6]
+
+
+    def update(self):
+        sql_cmd='''
+        update tick0901 set type='NA' where type='中性盘'
+        '''
+        cursor=self.db.cursor()
+        cursor.execute(sql_cmd)
+        self.db.commit()
+        self.db.close()
+
+    def transfer_data(self):
+        fp=open('houseinfo_origin_all.json','r')
+        cursor=self.db.cursor()
+        linenumber=0
+        while 1:
+            try:
+                line=fp.readline()
+                item=json.loads(line.strip())
+                sql_cmd='''
+                insert into houseinfo(name,city_name,building_type,building_data,location,price) values('%s','%s','%s','%s','%s','%s')
+                ''' %(item['name'],item['city_name'],item['building_type'],item['building_date'],item['location'],json.dumps(item['price']))
+                cursor.execute(sql_cmd)
+                linenumber=linenumber+1
+            except Exception,e:
+                print e
+                print "EOF"
+                break
+        self.db.commit()
+        self.db.close()
+        print linenumber
+        #print line
 
 if __name__=='__main__':
     #DB_Usage()
     #DB_Usage_sqlite()
     #Aliyun()
     obj=mysql_usage()
-    obj.create_table('houseinfo')
-    #obj.mysql_add_data()
+    #obj.create_table('houseinfo')
+    #obj.mysql_add_data('temp')
+    #obj.query()
+    #obj.update()
+    obj.transfer_data()
