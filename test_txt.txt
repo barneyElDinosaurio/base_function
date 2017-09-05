@@ -1,5 +1,0 @@
-{"name": "优品建筑", "price": {"2017-07": [{"origin": "LJ", "price": 43145, "crawl_date": "2017-08-29"}]}, "building_date": "2003年建成", "building_type": "板楼/塔板结合", "location": "龙华区龙华中心", "city_name": "深圳", "id": 1000000}
-{"name": "英伦名苑三期", "price": {"2017-07": [{"origin": "LJ", "price": 72276, "crawl_date": "2017-08-29"}]}, "building_date": "2005年建成", "building_type": "塔板结合", "location": "南山区科技园", "city_name": "深圳", "id": 1000001}
-{"name": "合正逸园", "price": {"2017-07": [{"origin": "LJ", "price": 60795, "crawl_date": "2017-08-29"}]}, "building_date": "2003年建成", "building_type": "塔板结合", "location": "福田区梅林", "city_name": "深圳", "id": 1000002}
-{"name": "惠中名苑", "price": {"2017-07": [{"origin": "LJ", "price": 54128, "crawl_date": "2017-08-29"}]}, "building_date": "2000年建成", "building_type": "板楼/塔板结合", "location": "南山区南山中心", "city_name": "深圳", "id": 1000003}
-{"name": "德意名居一期", "price": {"2017-07": [{"origin": "LJ", "price": 60905, "crawl_date": "2017-08-29"}]}, "building_date": "2009年建成", "building_type": "塔板结合", "location": "南山区大学城", "city_name": "深圳", "id": 1000004}

@@ -9,3 +9,4 @@ data.cfg
 *.pkl
 ~$d.xlsx
 d.xlsx
+data/
