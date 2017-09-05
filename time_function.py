@@ -205,13 +205,20 @@ def str_time_hour():
 def time_cuo():
     # 10位
     print int(time.time())
-    t = 1503048528
-    t2 = 1503048528 * 1.00
-    updateTime = 1500713681000 / 1000.00
-    t3 = time.ctime(t)
-    t4 = time.ctime(t2)
+    # 13位
+    print long(time.time()*1000)
 
-    print 't3', t3
+    t_1= 1504165854069/1000.00
+    print 't_1', time.ctime(t_1)
+    t_s=1504165854069/1000.0
+    t2 = 1503048528 * 1.00
+    updateTime = 1504602551076 / 1000.00
+    #t3 = time.ctime(t)
+    t4 = time.ctime(t2)
+    t5=time.ctime(t_s)
+    print 't5',t5
+
+    #print 't3', t3
     print 't4', t4
     curr_d = datetime.datetime.fromtimestamp(updateTime)
     print curr_d
@@ -237,5 +244,5 @@ if __name__ == "__main__":
     # obj.getPreviousDay()
     # str_time_hour()
     # time_string_test()
-    # time_cuo()
-    time_format()
+    time_cuo()
+    # time_format()

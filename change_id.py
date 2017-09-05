@@ -10,11 +10,7 @@ with codecs.open('houseinfo_11.json','r',encoding='utf-8') as fp:
 '''
 #for x in data:
     #print x
-<<<<<<< HEAD
-with codecs.open('houseinfo_831.json','r') as fp:
-=======
-with codecs.open('houseinfo_all.json','r') as fp:
->>>>>>> origin/master
+with codecs.open('xiaoqu_LJ_08_31.txt','r') as fp:
     data=fp.readlines()
 '''
 for x in data:
@@ -23,11 +19,8 @@ for x in data:
 
 number_list=[number for number in xrange(1000000,2000000)]
 
-<<<<<<< HEAD
-op=codecs.open('xiaoqu_LI_08_31.txt','w',encoding='utf-8')
-=======
-op=codecs.open('xiaoqu_all.txt','w',encoding='utf-8')
->>>>>>> origin/master
+op=codecs.open('xiaoqu_LI_09_05.txt','w',encoding='utf-8')
+
 new_dict={}
 for index,line in enumerate(data):
     #print line
@@ -35,12 +28,13 @@ for index,line in enumerate(data):
     #print linex
     #js=json.loads(linex,ensure_ascii=False)
     js=json.loads(linex)
-
+    temp_price=js['price']['2017-07'][0]['price']
+    print temp_price
     #print js
     #js=eval(line)
+    js['price']=temp_price
 
-
-    js['_id']=number_list[index]
+    #js['_id']=number_list[index]
     '''
     for k,v in js.items():
         print k,v
@@ -56,7 +50,7 @@ for index,line in enumerate(data):
     op.write(str1)
     op.write('\n')
 
-op.close()
+#op.close()
 
     #print line
 
