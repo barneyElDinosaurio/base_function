@@ -179,6 +179,11 @@ class mysql_usage():
         print linenumber
         #print line
 
+    def replace(self):
+        cursor=self.db.cursor()
+        cmd='''
+        insert into 
+        '''
 if __name__=='__main__':
     #DB_Usage()
     #DB_Usage_sqlite()
