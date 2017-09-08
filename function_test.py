@@ -18,6 +18,7 @@ def print_fun():
     a = 1
     # print '%d100/%\n' %a
     print "a values is ", a, "%"
+    print 'a values is %d%%' %a
 
 
 def loopTest():
@@ -48,7 +49,9 @@ def main():
 def print_case():
     a=[1,2,3,'hello',['w',12,'d']]
     pprint.pprint(a)
-#main()
+
+def os_system():
+    os.system('notepad.exe')
 
 # getData('Rocky',1000)
 #wrong!
@@ -56,4 +59,5 @@ def print_case():
 #path_function()
 #print_fun()
 #loopTest()
-print_case()
+#print_case()
+print os_system()

@@ -1,7 +1,4 @@
 # -*-coding=utf-8-*-
-import random
-import time
-
 __author__ = 'Rocky'
 '''
 http://30daydo.com
@@ -11,6 +8,8 @@ import os
 import multiprocessing
 multiprocessing.freeze_support()
 from multiprocessing import Process,Pool,Queue,Manager
+import random
+import time
 #import Queue
 manager=Manager()
 q=manager.Queue()
@@ -182,8 +181,13 @@ def pool_lock():
     p.join()
     print "end"
 
+
+def os_system_case():
+    os.system('notepad.exe')
+    time.sleep(10)
+
 def main():
-    pass
+    os_system_case()
     #fork_case()
     #process_testcase()
     #process_pool()
@@ -200,6 +204,8 @@ if __name__=='__main__':
     q=manager.Queue()
     lock=manager.Lock()
     '''
+
+    '''
     p=Pool()
 
     p.apply_async(pool_write,args=(q,))
@@ -208,3 +214,4 @@ if __name__=='__main__':
     p.close()
     p.join()
     print "end"
+    '''

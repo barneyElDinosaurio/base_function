@@ -14,7 +14,6 @@ paramMap = {
 # 排序
 keys = paramMap.keys()
 keys.sort()
-
 codes = "%s%s%s" % (secret, str().join('%s%s' % (key, paramMap[key]) for key in keys), secret)
 
 # 计算签名

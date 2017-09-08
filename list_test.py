@@ -188,6 +188,11 @@ def in_usage():
         print "In"
     else:
         print "Not in"
+    city='qd'
+    if city in ['bj','qd']:
+        print 'city in '
+    else:
+        print 'not in'
 
 
 def reversed_usage():
@@ -319,6 +324,7 @@ def list_change():
         print k, v
 
 def list_str_exchange():
+    pass
     #a=['name':]
 # in_test()
 #delete_item_list()
@@ -329,9 +335,10 @@ def list_str_exchange():
 #cut_case()
 #iter_case2()
 #mutebale()
-#in_usage()
+in_usage()
 #case1()
 #reversed_usage()
 #remove_list()
 #list_filter()
 #list_change()
+

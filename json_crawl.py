@@ -1,4 +1,5 @@
 # -*-coding=utf-8-*-
+import codecs
 import re
 import sys
 import requests, urllib2, urllib, json
@@ -116,7 +117,25 @@ def read_lj():
         print '*'*10
    
     '''
+
+def json_read_file():
+    fp=codecs.open('city_list.txt')
+    data=fp.read()
+    js=json.loads(data)
+    d=dict()
+    for k,v in js.items():
+        #print k
+        short_cut= v['url'].split('/')[3]
+        d[short_cut]=k
+    print d
+    str1=json.dumps(d,ensure_ascii=False)
+    fp2=codecs.open('new_city.txt','w',encoding='utf-8')
+    fp2.write(str1)
+    fp2.close()
+
+
 #getJson()
 #testcase1()
 #testcase2()
-read_lj()
+#read_lj()
+json_read_file()

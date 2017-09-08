@@ -222,13 +222,61 @@ def getSZXiaoqu_WEB():
 
     for i in range(1,3):
         #url = 'https://bj.lianjia.com/xiaoqu/pg%dcro21/' % i
-        url = 'http://su.lianjia.com/xiaoqu/d2s11'
+        url = 'http://bj.lianjia.com/xiaoqu/d2s11'
 
         headers['Referer'] = url
         r = requests.get(url=url, headers=headers)
         print r.status_code
-        parse_lianjia_web(r.text)
+        parse_bj(r.text)
 
+def parse_bj(content):
+    #content = response.body
+    tree = etree.HTML(content)
+    nodes = tree.xpath('//ul[@class="listContent"]/li')
+    for node in nodes:
+        name = node.xpath('.//div[@class="title"]/a/text()')[0]
+        print 'name: ',name
+        try:
+            position = node.xpath('.//div[@class="positionInfo"]/a/text()')
+            address = position[0] + position[1]
+        except:
+            address = 'NA'
+        print 'address: ', address
+        try:
+            text_content = node.xpath('.//div[@class="positionInfo"]/text()')
+            # print len(build_date)
+
+            detail = text_content[3].split('/')
+            # 除去北京，北京的页面会多一个小区结构
+            building_date = detail[-1].strip()
+            building_type = detail[1].strip()
+            if len(building_type) == 0:
+                building_type = 'NA'
+            '''
+            for k, i in enumerate(detail):
+                print k, i
+
+            if len(detail) == 4:
+                buiding_type = detail[1].strip() + detail[3].strip()
+                build_date = detail[3].strip()
+            elif len(detail) == 3:
+                buiding_type = detail[1].strip()
+
+                build_date = detail[2].strip()
+            '''
+        except:
+            building_date = '未知年建成'
+            building_type = 'NA'
+        print 'building type: ',building_type
+        print 'building_date:',building_date
+        price_t = node.xpath('.//div[@class="totalPrice"]/span/text()')[0]
+
+        p = re.findall('\d+', price_t)
+        if len(p) != 0:
+            price = int(price_t)
+        else:
+            price = 0
+        print 'price:',price
 
 def parse_lianjia_web(data):
     fp = open('web_lianjia.txt', 'a')

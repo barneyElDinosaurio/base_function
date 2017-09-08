@@ -52,26 +52,26 @@ class DateTest3():
     def getPreviousDay(self):
         now = datetime.datetime.now()
         print type(now)
-        last = now + datetime.timedelta(days=-3)
+        last = now + datetime.timedelta(days=-31)
         # 日期增减
         print last
-        print last.strftime("%Y-%m-%d")
+        print last.strftime("%Y-%m")
 
 
 def time_string_test():
     now = datetime.datetime.now()
     print now
-    print type(now)
+    print 'type now',type(now)
 
     now2 = time.strftime("%Y-%m-%d %H:%M:%S")
     print now2
-    print type(now2)
+    print 'type now2',type(now2)
 
     now3 = now.strftime("%Y-%m-%d %H:%M:%S")
     print now3
-    print type(now3)
+    print 'type now3:',type(now3)
     now4 = now.strftime("%Y%m%d%H%M%S")
-    print now4
+    print 'string now4',now4
 
 
 def test1():
@@ -223,7 +223,7 @@ def time_cuo():
     curr_d = datetime.datetime.fromtimestamp(updateTime)
     print curr_d
 
-
+# 时间的格式
 def time_format():
     print type(time.strftime("%Y-%m-%d %H:%M:%S"))
     t = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -231,7 +231,11 @@ def time_format():
     today = datetime.date.today()
     print today
     print type(today)
-
+#查看某一天是星期几? 从0开始,周一是0
+def check_weekday():
+    d = datetime.datetime(2017, 9, 4)
+    t = d.weekday()
+    print t
 
 if __name__ == "__main__":
     # format()
@@ -240,9 +244,10 @@ if __name__ == "__main__":
     # test2()
     # time_fun()
     # time_exchange()
-    # obj=DateTest3()
-    # obj.getPreviousDay()
+    obj=DateTest3()
+    obj.getPreviousDay()
     # str_time_hour()
-    # time_string_test()
-    time_cuo()
+    #time_string_test()
+    #time_cuo()
     # time_format()
+    #check_weekday()

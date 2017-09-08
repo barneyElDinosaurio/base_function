@@ -10,7 +10,7 @@ with codecs.open('houseinfo_11.json','r',encoding='utf-8') as fp:
 '''
 #for x in data:
     #print x
-with codecs.open('xiaoqu_LJ_08_31.txt','r') as fp:
+with codecs.open('anjuke_m1.json','r') as fp:
     data=fp.readlines()
 '''
 for x in data:
@@ -19,7 +19,7 @@ for x in data:
 
 number_list=[number for number in xrange(1000000,2000000)]
 
-op=codecs.open('xiaoqu_LI_09_05.txt','w',encoding='utf-8')
+op=codecs.open('anjuke_with_position2.json','w',encoding='utf-8')
 
 new_dict={}
 for index,line in enumerate(data):
@@ -28,13 +28,13 @@ for index,line in enumerate(data):
     #print linex
     #js=json.loads(linex,ensure_ascii=False)
     js=json.loads(linex)
-    temp_price=js['price']['2017-07'][0]['price']
-    print temp_price
+    #temp_price=js['price']['2017-07'][0]['price']
+    #print temp_price
     #print js
     #js=eval(line)
-    js['price']=temp_price
+    #js['price']=temp_price
 
-    #js['_id']=number_list[index]
+    js['_id']=number_list[index]
     '''
     for k,v in js.items():
         print k,v
@@ -46,7 +46,7 @@ for index,line in enumerate(data):
     '''
     str1=json.dumps(js,ensure_ascii=False)
 
-    print str1
+    #print str1
     op.write(str1)
     op.write('\n')
 

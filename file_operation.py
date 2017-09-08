@@ -1,4 +1,6 @@
 # -*-coding=utf-8-*-
+import codecs
+
 __author__ = 'Rocky'
 import os, re
 
@@ -58,7 +60,20 @@ def testcase2():
 
     f3.close()
 
+def testcase4():
+    fp=codecs.open('data/house_10.cfg','r',encoding='utf-8')
+    data=fp.readlines()
+    #print data[:5]
+    print len(data)
+    data=map(lambda x:x.split()[3:6],data)
+
+    for i in range(5):
+        print data[i][0]
+        print data[i][2]
+        #print data[i][2]
+
+    print len(data)
 def main():
-    testcase2()
+    testcase4()
 if __name__ == '__main__':
     main()
