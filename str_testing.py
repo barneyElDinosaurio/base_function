@@ -174,6 +174,17 @@ def code_case():
     print type(sg)
     print s.encode('gbk')
 
+def check_default_type():
+    a=u'上海'
+    print a
+    print type(a)
+    b=a.encode('unicode-escape').decode('string_escape')
+    print b.encode('gb2312')
+    print type(b)
+    print b
+    c=a.encode('utf-8')
+    print c
+    print type(c)
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -188,5 +199,6 @@ def code_case():
 #show_data()
 #testNone()
 #type_compare()
-cityLink()
+#cityLink()
 #code_case()
+check_default_type()

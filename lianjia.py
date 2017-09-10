@@ -426,7 +426,53 @@ def mobile_case():
     for k, v in js.items():
         print k, v
 
+def getXiaoquDetail():
+    url='https://m.lianjia.com/sz/xiaoqu/2411049901872/'
+    header_xiaoqu = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                     'Accept-Encoding': 'gzip, deflate, sdch',
+                     'Accept-Language': 'zh-CN,zh;q=0.8',
+                     'Cache-Control': 'no-cache',
+                     'Connection': 'keep-alive',
+                     'Cookie': 'lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; cityCode=sh; lj-ss=1e5c8b6bb356c2aabadd162c97341948; lj-api=bdc2423978f089fb6b74ab39d5dac617; _jzqx=1.1504062784.1504852403.8.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=sz%2Elianjia%2Ecom|jzqct=/xiaoqu/; ubt_load_interval_b=1504876703908; ubtd=24; __xsptplus696=696.17.1504876704.1504876704.1%234%7C%7C%7C%7C%7C%23%23cg7Y55E7DbBs-leDZV_ej_nDvMHBKzZu%23; ubta=3154866423.3241223259.1503971686808.1504876703921.1504876712806.103; ubtc=3154866423.3241223259.1504876712808.13E3964C794E1E867DC6AA2BF1D1B81D; select_city=440300; select_nation=1; _jzqy=1.1504975260.1504975260.1.jzqsr=baidu.-; _jzqckmp=1; _smt_uid=59a62d3f.3df2aef3; _jzqa=1.1378702697002941000.1504062784.1504852403.1504975260.21; _jzqc=1; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.882389161.1505006605; CNZZDATA1253491255=1590115228-1504765831-%7C1505006839; CNZZDATA1254525948=23895973-1504766359-%7C1505009618; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699,1504258015,1504675657,1504975259; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1505009847; lianjia_ssid=2bafd2a3-3230-e197-e2cc-a74f98991c4c',
+                     'Host': 'm.lianjia.com',
+                     'Pragma': 'no-cache',
+                     'Upgrade-Insecure-Requests': '1',
+                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0'}
 
+    r=requests.get(url=url,headers=header_xiaoqu)
+    tree=etree.HTML(r.text,parser=etree.HTMLParser(encoding='utf-8'))
+    print r.text
+    #x=tree.xpath('//meta[@class="location"]/@content')[0]
+    #print x
+    name = tree.xpath('//div[@class="xiaoqu_head_title"]/h1/text()')[0]
+    print name
+    # title=tree2.title
+    #self.logger.info('name %s' % name)
+
+    # head_tree=etree.HTML(head)
+    #desc = tree.xpath('//meta[@class="location"]/@content')[0]
+    #city_name = re.findall('city=(.*?);', desc)[0]
+    #cooridinate = re.findall('coord=(.*?)')[0]
+    #longitude = cooridinate.split(',')[0]
+    #latitude = cooridinate.split(',')[1]
+    address = tree.xpath('//p[@class="xiaoqu_head_address"]/text()')[0]
+    print address
+    details = tree.xpath('//div[@class="mod_box jichuxinxi"]')
+    print details
+    building_date = details.xpath('.//div[@class="value"]/text()')[0].strip()
+    print building_date
+    building_type = details.xpath('.//div[@class="value"]/text()')[].strip()
+    print building_type
+    price = tree.xpath('//div=[@class="mod_box zoushi"]/div[@class="box_col"]/h4/text()')[0]
+    #print latitude
+    #print longitude
+    print price
+    print address
+    print building_type
+    print building_date
+    #print city_name
+    print name
 # get_lianjia_m()
 #mobile_case()
-getSZXiaoqu_WEB()
+#getSZXiaoqu_WEB()
+getXiaoquDetail()
