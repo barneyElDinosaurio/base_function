@@ -4,7 +4,9 @@ __author__ = 'Rocky'
 http://30daydo.com
 Contact: weigesysu@qq.com
 '''
-import pickle,pprint
+import cPickle as pickle
+import pprint
+#import pickle,pprint
 def write_file():
     obj=range(10)
     with open('save.pkl','wb') as f:

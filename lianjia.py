@@ -455,23 +455,32 @@ def getXiaoquDetail():
     #cooridinate = re.findall('coord=(.*?)')[0]
     #longitude = cooridinate.split(',')[0]
     #latitude = cooridinate.split(',')[1]
-    address = tree.xpath('//p[@class="xiaoqu_head_address"]/text()')[0]
-    print address
-    details = tree.xpath('//div[@class="mod_box jichuxinxi"]')
-    print details
+    #address = tree.xpath('//p[@class="xiaoqu_head_address"]/text()')[0]
+    #print address
+    #details = tree.xpath('//div[@class="mod_box jichuxinxi"]')
+    #print details
+    '''
     building_date = details.xpath('.//div[@class="value"]/text()')[0].strip()
     print building_date
-    building_type = details.xpath('.//div[@class="value"]/text()')[].strip()
+    building_type = details.xpath('.//div[@class="value"]/text()')[0].strip()
     print building_type
-    price = tree.xpath('//div=[@class="mod_box zoushi"]/div[@class="box_col"]/h4/text()')[0]
+    '''
+    #price = tree.xpath('//div=[@class="mod_box zoushi"]/div[@class="box_col"]/h4/text()')[0]
+
     #print latitude
     #print longitude
-    print price
-    print address
-    print building_type
-    print building_date
+    #print price
+    #print address
+    #print building_type
+    #print building_date
     #print city_name
-    print name
+    #print name
+    src_link=tree.xpath('//div[@class="mod_box loudong"]/div/a/img/@src')[0]
+    point=re.findall('center=(.*?)&width',src_link)[0]
+    print point
+    longtitue,latitude=point.split(',')
+    print longtitue
+    print latitude
 # get_lianjia_m()
 #mobile_case()
 #getSZXiaoqu_WEB()

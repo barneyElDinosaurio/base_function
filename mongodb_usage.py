@@ -1,12 +1,14 @@
 # coding: utf-8
+import json
 import pprint
 import pymongo,datetime
-client=pymongo.MongoClient('127.0.0.1',27017)
-#db=client.test
-db=client.demo_api
-#collection=db.houseinfo_aug
-collection=db.first_collection
+
 def basic_usage():
+    client = pymongo.MongoClient('127.0.0.1', 27017)
+    # db=client.test
+    db = client.demo_api
+    # collection=db.houseinfo_aug
+    collection = db.first_collection
     #data={"name":"a","sex":"F","school":"THSU"}
     #ata2={"name":"b","sex":"F","school":"SYSU"}
     #collection.insert(data)
@@ -40,8 +42,32 @@ def insert():
 def update():
     db. first_collection.update({'name':'rocky','age':19},{'name':'rocky','age':199})
 
+def getlianjia_price():
+    client=pymongo.MongoClient('127.0.0.1',27017)
+    db=client.test
+    data=db.total_lianjia.find({'city_name':'深圳'})
+    data_list=list(data)
+    print len(data_list)
+    for i in data_list:
+        print type(i)
+        #js=json.loads(i['price'])
+        print i['price']['2017-07'][0]['price']
+
+def update_testcase():
+    client=pymongo.MongoClient('127.0.0.1',27017)
+    db=client.demo_api
+    x=db.mycollect.find()
+    print x
+    db.mycollect.update({'name':'rocky_chen'},{'$set':{'sex':'M'}},upsert=True)
+
+def remove_data():
+    client=pymongo.MongoClient('127.0.0.1',27017)
+    db=client.test
+    db.total_lianjia_add_position.find()
 #basic_usage()
 #query()
 #remove()
 #insert()
-update()
+#update()
+#getlianjia_price()
+update_testcase()

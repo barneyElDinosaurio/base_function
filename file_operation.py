@@ -73,7 +73,15 @@ def testcase4():
         #print data[i][2]
 
     print len(data)
+
+# 写入缓冲
+def testcase5():
+    f=open('data/buffer.txt','w',buffering=1)
+    f.write("Hello world")
+
 def main():
-    testcase4()
+    testcase5()
+
+
 if __name__ == '__main__':
     main()
