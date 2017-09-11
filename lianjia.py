@@ -450,6 +450,7 @@ def getXiaoquDetail():
     #self.logger.info('name %s' % name)
 
     # head_tree=etree.HTML(head)
+
     #desc = tree.xpath('//meta[@class="location"]/@content')[0]
     #city_name = re.findall('city=(.*?);', desc)[0]
     #cooridinate = re.findall('coord=(.*?)')[0]
@@ -481,6 +482,40 @@ def getXiaoquDetail():
     longtitue,latitude=point.split(',')
     print longtitue
     print latitude
+
+
+    address = tree.xpath('//p[@class="xiaoqu_head_address"]/text()')[0]
+    print address
+    details = tree.xpath('//div[@class="mod_box jichuxinxi"]/div[@class="mod_cont"]/div[@class="row"]')
+    print len(details)
+    building_date = details[0].xpath('.//div[@class="value"]/text()')[0].strip()
+    #time.sleep(20)
+    #building_date
+    print building_date
+    building_type = details[1].xpath('.//div[@class="value"]/text()')[0].strip()
+    print building_type
+    price = tree.xpath('//div[@class="mod_box zoushi"]//div[@class="gridbox col_3"]//div[@class="box_col"]/h4/text()')[0].strip()
+    print price
+    #print latitude
+    #print longitude
+    print price
+    print address
+    print building_type
+    print building_date
+    desc = tree.xpath('//head/meta[@name="location"]/@content')[0].encode('utf-8').strip()
+    print desc
+    print type(desc)
+    city_name = re.findall('city=(.*?);', desc)[0]
+    print city_name
+    cooridinate = re.findall('coord=(.*)', desc)
+    print len(cooridinate)
+    print cooridinate
+    longitude = cooridinate[0].split(',')[0]
+    latitude = cooridinate[0].split(',')[1]
+
+    print latitude
+    print longitude
+
 # get_lianjia_m()
 #mobile_case()
 #getSZXiaoqu_WEB()
