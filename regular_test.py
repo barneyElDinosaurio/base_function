@@ -34,3 +34,12 @@ if re.match('\.',ip) is None:
     print "can't get IP"
 else:
     print "IP: ",ip
+
+def latitude():
+    ss='province=dd;city=dd;tttt=woaini'
+    p=re.compile('tttt=(.*)')
+    rt=p.findall(ss,re.S)
+    print len(rt)
+    print rt[0]
+
+latitude()
