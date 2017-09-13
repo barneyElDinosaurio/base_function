@@ -36,7 +36,7 @@ def addr_poi(city,addr):
 
 def getcordinate():
     dbname='test'
-    collection='total_lianjia_baidu'
+    collection='qfang_total'
     client = pymongo.MongoClient('127.0.0.1', 27017)
     db=client[dbname]
     data=db[collection].find({'latitude':{'$exists':False}})

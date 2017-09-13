@@ -159,6 +159,14 @@ def dict_emulation():
 def baseDict():
     a={':authouer':'hello'}
     print a
+def check_error():
+    l=[{u'domain': u'.anjuke.com', u'secure': False, u'value': u'1', u'expiry': 1505201030, u'path': u'/', u'httpOnly': False, u'name': u'new_session'}, {u'domain': u'.anjuke.com', u'name': u'sessid', u'value': u'E886BE30-8244-2420-B6C0-78E4D38F6A71', u'path': u'/', u'httpOnly': False, u'secure': False}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'http%3A%2F%2Fshenzhen.anjuke.com%2Fcommunity%2Fp1%2F%7C', u'expiry': 1505231991.959638, u'path': u'/', u'httpOnly': False, u'name': u'lps'}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'13', u'expiry': 1507791229.959652, u'path': u'/', u'httpOnly': False, u'name': u'ctid'}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'1', u'expiry': 1505199530, u'path': u'/', u'httpOnly': False, u'name': u'__xsptplusUT_8'}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'D7D1D874-A066-7E07-A756-3766D45F5AF5', u'expiry': 1536821630.407441, u'path': u'/', u'httpOnly': False, u'name': u'aQQ_ajkguid'}, {u'domain': u'.anjuke.com', u'name': u'twe', u'value': u'2', u'path': u'/', u'httpOnly': False, u'secure': False}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'79092a60-0956-47e9-b60f-593683bb642c', u'expiry': 1536735230, u'path': u'/', u'httpOnly': False, u'name': u'58tj_uuid'}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'', u'expiry': 1505201030, u'path': u'/', u'httpOnly': False, u'name': u'init_refer'}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'1', u'expiry': 1536735230, u'path': u'/', u'httpOnly': False, u'name': u'new_uv'}, {u'domain': u'.anjuke.com', u'secure': False, u'value': u'8.1.1505199230.1505199230.1%234%7C%7C%7C%7C%7C%23%230rofZGQUhk1RMDrJQhVrTPQ8gCEjX3_a%23', u'expiry': 1568271230, u'path': u'/', u'httpOnly': False, u'name': u'__xsptplus8'}]
+    print type(l)
+    print len(l)
+    for i in l:
+        for k,v in i.items():
+            print k,v
+        print '\n'
 #dict_assign()
 
 
@@ -175,4 +183,5 @@ def baseDict():
 #zip_case()
 #set_case()
 #dict_emulation()
-baseDict()
+#baseDict()
+check_error()
