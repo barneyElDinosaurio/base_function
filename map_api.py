@@ -10,7 +10,8 @@ import time
 
 
 def addr_poi(city,addr):
-    queryStr = '/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO' %(city,addr)
+    ak_code=''
+    queryStr = '/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=%s' %(city,addr,ak_code)
     #queryStr = '/geocoder/v2/?address=%s&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO' %addr
     #queryStr='/place/v2/search?q=银河小区&region=杭州市&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO'
 
@@ -18,11 +19,12 @@ def addr_poi(city,addr):
     encodedStr = urllib.quote(queryStr, safe="/:=&?#+!$,;'@()*[]")
 
     # 在最后直接追加上yoursk
-    rawStr = encodedStr + 'HWMYuBMbfW6sooCmN487953tY495T9vn'
+    sk=''
+    rawStr = encodedStr + sk
     # md5计算出的sn值7de5a22212ffaa9e326444c75a58f9a0
     # 最终合法请求url是http://api.map.baidu.com/geocoder/v2/?address=百度大厦&output=json&ak=yourak&sn=7de5a22212ffaa9e326444c75a58f9a0
     sn= hashlib.md5(urllib.quote_plus(rawStr)).hexdigest()
-    url='http://api.map.baidu.com/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO&sn=%s' %(city,addr,sn)
+    url='http://api.map.baidu.com/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=%s&sn=%s' %(city,addr,ak_code,sn)
     s=requests.get(url)
     js=s.json()
     try:
