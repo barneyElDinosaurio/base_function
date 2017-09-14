@@ -6,8 +6,8 @@ import hashlib
 # 以get请求为例http://api.map.baidu.com/geocoder/v2/?address=百度大厦&output=json&ak=yourak
 import requests
 def addr_poi():
-    city='深圳市'
-    addr='滨苑住宅小区8栋'
+    city='哈尔滨'
+    addr='星河湾'
     queryStr = '/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO' %(city,addr)
     #queryStr = '/geocoder/v2/?address=%s&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO' %addr
     #queryStr='/place/v2/search?q=银河小区&region=杭州市&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO'
@@ -73,6 +73,6 @@ def poi_addr():
     except Exception, e:
         print e
 
-#poi_addr()
-x,y=addr_poi()
-print x,y
+poi_addr()
+#x,y=addr_poi()
+#print x,y
