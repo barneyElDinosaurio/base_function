@@ -48,7 +48,7 @@ def anjuke():
     # options.add_argument('--user-agent=Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus S Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1')
     # options.add_argument('--user-agent=Mozilla/5.0 (Linux; U; Android 4.0.2; en-us; Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30')
     browser = webdriver.Chrome(executable_path=r'C:\software\chrome\chromedriver.exe',
-                               chrome_options=options)  # Get local session of firefox
+                               chrome_options=options)
     browser.implicitly_wait(60)
     # browser.get("https://www.crunchbase.com/app/search/companies/")
     for i in range(1,2):
@@ -90,7 +90,7 @@ def key_operation():
     options.add_argument(
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
     browser = webdriver.Chrome(executable_path=r'C:\software\chrome\chromedriver.exe',
-                               chrome_options=options)  # Get local session of firefox
+                               chrome_options=options)  #
     browser.implicitly_wait(60)
 
     browser.get('https://m.fang.com/fangjia/sz_list_pinggu/')
@@ -102,6 +102,28 @@ def key_operation():
         time.sleep(5)
         count=count+1
     raw_input('enter')
+
+def shop():
+    options = webdriver.ChromeOptions()
+    options.add_argument(
+        '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    browser = webdriver.Chrome(executable_path=r'C:\software\chrome\chromedriver.exe',
+                               chrome_options=options)
+
+    browser.implicitly_wait(60)
+    url='http://shop.99114.com/'
+    browser.get(url)
+    time.sleep(5)
+    txt=browser.page_source
+
+    print txt
+
+    #browser.send_keys(Keys.DOWN)
+
 #netease()
 #anjuke()
-key_operation()
+
+#key_operation()
+#shop()

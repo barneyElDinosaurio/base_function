@@ -1,4 +1,5 @@
 # coding: utf-8
+import codecs
 import json
 import pprint
 import pymongo,datetime
@@ -55,10 +56,20 @@ def getlianjia_price():
 
 def update_testcase():
     client=pymongo.MongoClient('127.0.0.1',27017)
-    db=client.demo_api
-    x=db.mycollect.find()
-    print x
-    db.mycollect.update({'name':'rocky_chen'},{'$set':{'sex':'M'}},upsert=True)
+    db=client['test']
+    collection=db['enterprise']
+    collection2=db['enterprise_new']
+    data=collection.find({})
+    data_new=list(data)
+    for i in range(10):
+        print data_new[1]
+
+def update_json():
+    fp=codecs.open('enterprise.json','r')
+    while 1:
+        org=json.loads(fp.readline())
+        link='http://shop.99114.com'+org['link']
+
 
 def remove_data():
     client=pymongo.MongoClient('127.0.0.1',27017)
