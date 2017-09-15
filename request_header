@@ -1,11 +1,8 @@
-Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
-Accept-Encoding:gzip, deflate
-Accept-Language:zh-CN,zh;q=0.8
-Cache-Control:no-cache
-Connection:keep-alive
-Cookie:shop_login_count=0; Hm_lvt_f160a8c6f9e75fcc0c45d38950c1b318=1505357228; Hm_lpvt_f160a8c6f9e75fcc0c45d38950c1b318=1505366980; _ga=GA1.2.1857728228.1505357228; _gid=GA1.2.1392999576.1505357228
-Host:shop.99114.com
-Pragma:no-cache
-Referer:http://shop.99114.com/
-Upgrade-Insecure-Requests:1
-User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+accept-encoding:gzip, deflate, sdch
+accept-language:zh-CN,zh;q=0.8
+cache-control:no-cache
+cookie:global_cookie=i1vd2yl9ur6h23p92d1t7dx4n17j6s78vhh; Integrateactivity=notincludemc; __jsluid=8c5cf9a5eb9efda012120d7d2b59a871; global_wapandm_cookie=m5ncqn52u03eu3yyv3t9rzs4q2hj6ufukec; zhcity=%E6%B7%B1%E5%9C%B3; encity=sz; addr=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3; newhouse_user_guid=425263D6-787F-4546-0E9F-C2193BEA5A36; newhouse_chat_guid=181C16EB-6981-88DD-71F2-FD20839730CC; unique_cookie=U_l7m5y71pa7e804s0pwjfxtfrs1uj78l1buz*6; JSESSIONID=aaaUBkqzMq4vO9fjTN55v; city=jinzhou; __utmt_t0=1; __utmt_t1=1; __utma=147393320.784965721.1503685036.1505445931.1505453621.18; __utmb=147393320.2.10.1505453621; __utmc=147393320; __utmz=147393320.1504795759.12.2.utmcsr=baidu|utmccn=(organic)|utmcmd=organic; mencity=gz; unique_wapandm_cookie=U_a5rofalfxrxkrnrt4ma2citfq24j7akkabq*10
+pragma:no-cache
+upgrade-insecure-requests:1
+user-agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0
