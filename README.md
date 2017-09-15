@@ -8,3 +8,5 @@ sqlite_test.py ----python 操作sqlite
 
 time_function.py ----日期函数的使用
 
+测试git config user
+
