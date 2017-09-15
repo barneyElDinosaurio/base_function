@@ -74,11 +74,46 @@ def update_json():
 def remove_data():
     client=pymongo.MongoClient('127.0.0.1',27017)
     db=client.test
-    db.total_lianjia_add_position.find()
+    data=db.fangtianxia_remove_same.find({'city_name':'北京'})
+    curr=list(data)
+    #print len(curr)
+    for i in curr:
+        print i['city_name']
+        db.fangtianxia_remove_same.remove({'city_name':i['city_name']})
+
+
+def insert_bj():
+    client=pymongo.MongoClient('127.0.0.1',27017)
+    db=client.test
+    bj_data=db.fangtianxia.find({'city_name':'北京'})
+    data=list(bj_data)
+    print len(data)
+    for i in data:
+        #print i
+        db.fangtianxia_remove_same.insert(i)
+
+
+def update_url():
+    dbname = 'test'
+    collection = 'fangtianxia_url'
+
+    client = pymongo.MongoClient('127.0.0.1', 27017)
+    db = client[dbname]
+    data = db[collection].find({})
+    data_list = list(data)
+    for i in data_list:
+        org_url=i['url']
+        new_url=org_url.replace('//','/')
+        print new_url
+        db[collection].update({'url':org_url},{'$set':{'url':new_url}})
+
 #basic_usage()
 #query()
 #remove()
 #insert()
 #update()
 #getlianjia_price()
-update_testcase()
+#update_testcase()
+#remove_data()
+#insert_bj()
+update_url()
