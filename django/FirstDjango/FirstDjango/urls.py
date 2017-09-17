@@ -1,3 +1,4 @@
+#-*-coding=utf-8-*-
 """FirstDjango URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,9 +16,25 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from . import view
+from . import view,testdb,search,search_post
+#from django.conf.urls. import *
+from django.contrib import admin
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',view.FirstView),
-    url(r'first',view.FirstView)
+    url(r'first',view.FirstView),
+    url(r'^insert$',testdb.insert),
+    url(r'^get$',testdb.search),
+    url(r'^search_form$',search.search_form),
+    #url(r'^search',search.search_get),
+    #url(r'^post$',search_post.form_post),
+    url(r'^search_post$',search_post.form_post2),
+    # 无法执行
+    url(r'^dbtest/$',view.dbshow),
+    url(r'^books/$',view.books),
+
+    #url(r'^admin/', include('django.contrib.admin.urls')),
+
+
 ]

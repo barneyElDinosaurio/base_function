@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+{% for author in authors %}
+<li>Author: {{ author }}</li>
+Book:
+{% for i in author.newbook_set.all %}
+
+{% endfor %}
+{% endfor %}
+</body>
+</html>

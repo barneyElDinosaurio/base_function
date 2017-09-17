@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'TestModel',
+    #'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +78,11 @@ WSGI_APPLICATION = 'FirstDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'db_django',
+        'USER': 'root' ,
+        'PASSWORD': '123456z',
+        'HOST':'localhost',
+        'PORT':'3306',
 
     }
 }
