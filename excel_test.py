@@ -212,10 +212,10 @@ def copy_file():
 
 
 def remove_dup():
-    file='2017-09-01-sohu-1.xls'
+    file='2017-09-18-sohu.xls'
     df=pd.read_excel(file)
-    df.drop_duplicates([u'广告链接'],inplace=True)
-    df.to_excel('sohu-news.xls')
+    df.drop_duplicates([0],inplace=True)
+    df.to_excel('sohu-news1 .xls')
 
 def saveOneFile():
     files=os.listdir('.')

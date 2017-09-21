@@ -1,4 +1,6 @@
 # -*-coding=utf-8-*-
+import time
+
 __author__ = 'Rocky'
 import json
 from Queue import Queue
@@ -220,6 +222,11 @@ def extendList(val, list=[]):
 
 
 def extend_case():
+    l1=[]
+    l2=[1,2,3]
+    l1.extend(l2)
+    print l1
+    time.sleep(100)
     list1 = extendList(10)
     list2 = extendList(123, [])
     list3 = extendList('a')
@@ -335,10 +342,10 @@ def list_str_exchange():
 #cut_case()
 #iter_case2()
 #mutebale()
-in_usage()
+#in_usage()
 #case1()
 #reversed_usage()
 #remove_list()
 #list_filter()
 #list_change()
-
+extend_case()

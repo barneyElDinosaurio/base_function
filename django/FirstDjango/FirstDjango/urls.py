@@ -33,6 +33,9 @@ urlpatterns = [
     # 无法执行
     url(r'^dbtest/$',view.dbshow),
     url(r'^books/$',view.books),
+    url(r'^date/$',view.showdate),
+    url(r'^ajax_list/$', view.ajax_list, name='ajax-list'),
+    url(r'^ajax_dict/$', view.ajax_dict, name='ajax-dict'),
 
     #url(r'^admin/', include('django.contrib.admin.urls')),
 

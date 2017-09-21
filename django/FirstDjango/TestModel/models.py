@@ -102,6 +102,19 @@ class NewBook(models.Model):
     def __unicode__(self):
         return self.name
 
+class Customer(models.Model):
+    CUSTOMER_FROM_NAMES = (
+            (1, u"无"),
+            (2, u"首页登记"),
+            (3, u"客服QQ"),
+            (4, u"邮件"),
+            (5, u"市场活动"),
+            (6, u"电话咨询"),
+            (7, u"电话外呼"),
+            (8, u"商务扩展"),
+            (9, u"内部推荐"),
+            (10, u"公司分配"),
+            )
 
 
 
