@@ -1,4 +1,6 @@
 # coding: utf-8
+import json
+
 
 def getheader():
     with open('request_header') as fp:
@@ -28,8 +30,32 @@ def urlParse():
 
     fp.close()
 
+def read_json():
+    fp=open('temp','r').read().strip()
+    #js=json.load(fp,encoding='utf-8')
+
+    #print fp
+    #js=json.loads(fp)
+    #print js
+    return_data=eval(fp)
+    print return_data
+    #print return_data['log_extra']
+    if return_data.has_key('app_name'):
+        print return_data.get('app_name')
+        print return_data.get('title')
+        print return_data.get('image')
+        print return_data.get('image').get('url')
+        print "DDD"
+
+    for k,v in return_data.items():
+        print k,v
+        if k=='filter_words':
+            for i in v:
+                for k1,v1 in i.items():
+                    print k1,v1
 
 if __name__ == "__main__":
-    print getheader()
+    #print getheader()
     # analysis_cookie()
     #urlParse()
+    read_json()

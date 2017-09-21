@@ -208,7 +208,7 @@ def time_cuo():
     # 13位
     print long(time.time()*1000)
 
-    t_1= 1504165854069/1000.00
+    t_1= 1505985103406/1000.00
     print 't_1', time.ctime(t_1)
     t_s=1504165854069/1000.0
     t2 = 1503048528 * 1.00
@@ -244,10 +244,10 @@ if __name__ == "__main__":
     # test2()
     # time_fun()
     # time_exchange()
-    obj=DateTest3()
-    obj.getPreviousDay()
+    #obj=DateTest3()
+    #bj.getPreviousDay()
     # str_time_hour()
     #time_string_test()
-    #time_cuo()
+    time_cuo()
     # time_format()
     #check_weekday()
