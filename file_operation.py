@@ -4,7 +4,6 @@ import codecs
 __author__ = 'Rocky'
 import os, re
 
-
 def func():
     cwd = os.getcwd()
     p = re.compile('\.txt')
@@ -79,8 +78,12 @@ def testcase5():
     f=open('data/buffer.txt','w',buffering=1)
     f.write("Hello world")
 
+def testcase6():
+    file=os.listdir('.')
+    for i in file:
+        print i
 def main():
-    testcase5()
+    testcase6()
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 # coding: utf-8
 import json
-import time
+import time,collections
 import datetime
 
 import requests
@@ -25,7 +25,7 @@ def analysis_cookie():
 
 
 def urlParse():
-    url='https://lf.snssdk.com/api/news/feed/v66/?category=news_astrology&concern_id=6215497898268822018&refer=2&count=10&max_behot_time=1506047993&last_refresh_sub_entrance_interval=1506149205&loc_mode=0&loc_time=1505991427&latitude=22.553074&longitude=113.902542&city=%E6%B7%B1%E5%9C%B3%E5%B8%82&tt_from=pre_load_more&lac=42360&cid=45370605&cp=5395c04f7ccb5q1&plugin_enable=3&iid=15189530186&device_id=38220008232&ac=wifi&channel=smartisan&aid=13&app_name=news_article&version_code=636&version_name=6.3.6&device_platform=android&ab_version=169863%2C177250%2C179334%2C173967%2C172663%2C172659%2C171194%2C176916%2C170349%2C178991%2C176179%2C177070%2C169447%2C178210%2C179194%2C168463%2C174398%2C178732%2C178921%2C169300%2C178930%2C177166%2C152026%2C176593%2C178581%2C176695%2C177786%2C170713%2C179373%2C176739%2C179006%2C179751%2C156262%2C145585%2C179382%2C174429%2C177258%2C179636%2C177042%2C162572%2C176599%2C176609%2C179625%2C175163%2C169176%2C175634%2C176616%2C170988%2C178989%2C176597%2C176652%2C177702%2C176615&ab_client=a1%2Cc4%2Ce1%2Cf2%2Cg2%2Cf7&ab_feature=102749%2C94563&abflag=3&ssmix=a&device_type=SM801&device_brand=SMARTISAN&language=zh&os_api=22&os_version=5.1.1&uuid=990006203070023&openudid=4dd00e258bbe295f&manifest_version_code=636&resolution=1080'
+    url='http://lg.snssdk.com/api/news/feed/v66/?concern_id=6286225228934679042&refer=1&count=20&max_behot_time=1506210972&last_refresh_sub_entrance_interval=1506220325&loc_mode=0&loc_time=1506071873&latitude=22.552248&longitude=113.903644&city=%E6%B7%B1%E5%9C%B3%E5%B8%82&tt_from=pre_load_more&lac=9365&cid=3672&cp=5493c07313925q1&plugin_enable=3&st_time=333&iid=15189530186&device_id=38220008232&ac=wifi&channel=smartisan&aid=13&app_name=news_article&version_code=636&version_name=6.3.6&device_platform=android&ab_version=179886%2C169863%2C177250%2C179334%2C173967%2C172663%2C172659%2C171194%2C170349%2C178991%2C176179%2C177070%2C169447%2C178210%2C179194%2C168463%2C174398%2C178732%2C178921%2C169300%2C178930%2C180698%2C177166%2C152026%2C176593%2C180172%2C179891%2C178581%2C177786%2C170713%2C179373%2C176739%2C179006%2C156262%2C145585%2C180654%2C179382%2C174429%2C177258%2C180186%2C177042%2C162572%2C176599%2C176609%2C179625%2C175163%2C169176%2C175634%2C176616%2C170988%2C178989%2C176597%2C176652%2C177702%2C176615&ab_client=a1%2Cc4%2Ce1%2Cf2%2Cg2%2Cf7&ab_feature=102749%2C94563&abflag=3&ssmix=a&device_type=SM801&device_brand=SMARTISAN&language=zh&os_api=22&os_version=5.1.1&uuid=990006203070023&openudid=4dd00e258bbe295f&manifest_version_code=636&resolution=1080*1920&dpi=480&update_version_code=6368&_rticket=1506220325881&plugin=2431'
     x = url.split('&')
     fp = open('urlparse', 'w')
     for i in x:
@@ -35,6 +35,7 @@ def urlParse():
 
 def urlAdd(filename):
     t = int(time.time())
+    d=collections.OrderedDict()
     with open(filename, 'r') as fp:
         line = fp.readline().strip()
         url = line
@@ -46,29 +47,21 @@ def urlAdd(filename):
             if len(line) < 1:
                 break
             sp = line.split('=')
+            print sp[0]," ", sp[1]
             # print sp[0],sp[1]
             # print arg,val
-
-            if sp[0] == 'channelId':
-                url = url + '&' + 'channelId=' + ''
-            if sp[0] == 'page':
-                url = url + '&' + 'page=' + ''
-            if sp[0] == 't':
-                url = url + '&' + 't=' + str(t)
-            if sp[0] == 'action':
-                url = url + '&' + 'action=' + ''
-            else:
-                url = url + '&' + line
-                # print 'done'
-    print url
-    r = requests.get(url)
-    print r.json()
+            d[sp[0]]=sp[1]
+    base='http://lf.snssdk.com/api/news/feed/v66/?concern_id=6286225228934679042'
+    #print url
+    #r = requests.get(url)
+    #print r.json()
 
     #return url
     # print url
+    return d
 
 def read_json():
-    fp=open('temp','r').read().strip()
+    fp=open('url','r').read().strip()
     #js=json.load(fp,encoding='utf-8')
 
     #print fp
@@ -107,4 +100,4 @@ if __name__ == "__main__":
     # analysis_cookie()
     #urlParse()
     #read_json()
-    urlAdd('urlparse')
+    print urlAdd('urlparse')
