@@ -1,6 +1,7 @@
-Host: lf.snssdk.com
-Connection: keep-alive
-Cookie: alert_coverage=24; qh[360]=1; install_id=15189530186; ttreq=1$11f3a59a25fea701418d37b11730ac66cf9fe4e8
+Accept: application/json
+Charset: UTF-8
+Content-Type: application/json
+User-Agent: Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM801 Build/LMY47V)
+Host: news.l.qq.com
+Connection: Keep-Alive
 Accept-Encoding: gzip
-User-Agent: Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM801 Build/LMY47V) NewsArticle/6.3.6 cronet/58.0.2991.0
-X-SS-REQ-TICKET: 1505985103406

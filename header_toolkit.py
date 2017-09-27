@@ -96,8 +96,8 @@ def read_json():
                     pass
 
 if __name__ == "__main__":
-    #print getheader()
+    print getheader()
     # analysis_cookie()
     #urlParse()
     #read_json()
-    print urlAdd('urlparse')
+    #print urlAdd('urlparse')

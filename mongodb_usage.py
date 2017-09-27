@@ -95,7 +95,7 @@ def insert_bj():
 
 def update_url():
     dbname = 'test'
-    collection = 'fangtianxia_url'
+    collection = 'fangtianxia_final1'
 
     client = pymongo.MongoClient('127.0.0.1', 27017)
     db = client[dbname]
@@ -103,10 +103,29 @@ def update_url():
     data_list = list(data)
     for i in data_list:
         org_url=i['url']
-        new_url=org_url.replace('//','/')
-        print new_url
-        db[collection].update({'url':org_url},{'$set':{'url':new_url}})
+        #new_url=org_url.replace('//','/')
+        #print new_url
+        print org_url
+        db[collection].update({'url':org_url},{'$set':{'crawl_date':'2017-09-15','month_price':'2017-09','origin':'FTX'}})
 
+def get_price():
+        dbname = 'test'
+        collection = 'qfang'
+        client = pymongo.MongoClient('127.0.0.1', 27017)
+        db = client[dbname]
+        data = db[collection].find({'city_name':'荥阳'})
+        data_list = list(data)
+        for i in data_list:
+            #city_name = i['city_name']
+            url=i['url']
+            #if city_name==u'合川':
+            db[collection].update({'url': url}, {'$set': {'city_name': '郑州'}})
+            #if price>0 and price<= 1000:
+                #print price
+                #print i['url']
+            #new_url = org_url.replace('//', '/')
+            #print new_url
+                #db[collection].update({'url': url}, {'$set': {'price': '0'}})
 #basic_usage()
 #query()
 #remove()
@@ -117,3 +136,4 @@ def update_url():
 #remove_data()
 #insert_bj()
 update_url()
+#get_price()

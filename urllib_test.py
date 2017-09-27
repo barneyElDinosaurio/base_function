@@ -95,6 +95,23 @@ def get_page():
     for i in page:
         print i
 
+import urllib2,sys,StringIO,gzip,time,random,re,urllib,os
+# 压缩内容解压
+def getContentAuto(url):
+        url=''
+        headers={'User-Agent':'Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM801 Build/LMY47V)'}
+        req=urllib2.Request(url,headers=headers)
+        resp=urllib2.urlopen(req)
+        #time.sleep(2*random.random())
+        content=resp.read()
+        info=resp.info().get("Content-Encoding")
+        if info==None:
+            return content
+        else:
+            t=StringIO.StringIO(content)
+            gziper=gzip.GzipFile(fileobj=t)
+            html = gziper.read()
+            return html
 
 get_page()
 
