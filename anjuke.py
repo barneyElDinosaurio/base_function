@@ -52,7 +52,7 @@ def getcitylist():
 
         for index in range(len(name)):
             short_cut=link[index].split('/')[3]
-            dict[short_cut]=name[index]
+            dicts[short_cut]=name[index]
 
     return dicts
 
