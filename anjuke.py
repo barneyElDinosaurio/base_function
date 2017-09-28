@@ -40,6 +40,7 @@ def getcitylist():
     tree = etree.HTML(r.text)
     word=u'其他'
     node = tree.xpath('//div[@class="cl-c-l-h" and @id !="letter-%s"]/following-sibling::*[1]' %word)
+    dicts = ()
     for i in node:
         name =  i.xpath('.//li/a/text()')
         link= i.xpath('.//li/a/@href')
@@ -49,6 +50,14 @@ def getcitylist():
             for k in link:
                 print k
 
+        for index in range(len(name)):
+            short_cut=link[index].split('/')[3]
+            dict[short_cut]=name[index]
 
-# query('南方明珠花园二期1栋')
-getcitylist()
+    return dicts
+
+if __name__=="__main__":
+    # query('南方明珠花园二期1栋')
+    d = getcitylist()
+    for k,v in d.items():
+        print k,v
