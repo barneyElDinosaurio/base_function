@@ -332,6 +332,20 @@ def list_change():
 
 def list_str_exchange():
     pass
+
+def index_usage():
+    l1=['R','O','C','K','Y']
+    print l1.index
+    for i in l1.index:
+        print i
+
+def change_value():
+    a=[1,2,3,4,5,6,7,8]
+    print a
+    for i in a:
+        if i==4:
+            i=0
+    print a
     #a=['name':]
 # in_test()
 #delete_item_list()
@@ -348,4 +362,6 @@ def list_str_exchange():
 #remove_list()
 #list_filter()
 #list_change()
-extend_case()
+#extend_case()
+#index_usage()
+change_value()
