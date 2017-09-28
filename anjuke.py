@@ -61,6 +61,6 @@ if __name__=="__main__":
     # query('南方明珠花园二期1栋')
     d = getcitylist()
     f=codecs.open('anjuke_city','w',encoding='utf-8')
-    json.dump(d,f)
+    json.dump(d,f,ensure_ascii=False)
     for k,v in d.items():
         print k,v
