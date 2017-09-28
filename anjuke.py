@@ -40,7 +40,7 @@ def getcitylist():
     tree = etree.HTML(r.text)
     word=u'其他'
     node = tree.xpath('//div[@class="cl-c-l-h" and @id !="letter-%s"]/following-sibling::*[1]' %word)
-    dicts = ()
+    dicts ={}
     for i in node:
         name =  i.xpath('.//li/a/text()')
         link= i.xpath('.//li/a/@href')
