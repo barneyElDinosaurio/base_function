@@ -1,17 +1,13 @@
 # coding: utf-8
-# coding: utf-8
 import json
 import urllib
 import pymongo
 import requests
-# coding: utf-8
 import json
 import random
 import urllib
 from urllib import quote
 import MySQLdb
-import datetime
-import requests
 import time
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker,relationship

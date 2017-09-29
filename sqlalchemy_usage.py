@@ -18,6 +18,8 @@ import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime, Integer, Text, INT,ForeignKey,Index
 #from mayidaili import useproxy
+from sqlalchemy import event
+from sqlalchemy import DDL
 
 engine = create_engine('mysql+pymysql://root:123456z@localhost:3306/house?charset=utf8')
 DBSession = sessionmaker(bind=engine)
@@ -26,7 +28,7 @@ session = DBSession()
 
 
 class House(Base):
-    __tablename__ = 'tb_house1'
+    __tablename__ = 'tb_house'
 
     id = Column(Integer, primary_key=True)
     house_name = Column(String(80),index=True)
@@ -44,14 +46,20 @@ class House(Base):
         Index('house_name', 'city_name'),  # 联合索引
     )
 
+event.listen(
+        House.__table__,
+        "after_create",
+        DDL("ALTER TABLE %(table)s AUTO_INCREMENT = 100000;")
+    )
+
 class Price(Base):
-    __tablename__ = 'tb_price1'
+    __tablename__ = 'tb_price'
     id = Column(Integer, primary_key=True)
     price = Column(Integer)
     origin = Column(String(80))
     months = Column(String(80))
     crawl_time = Column(DateTime)
-    uid= Column(Integer,ForeignKey('tb_house1.id'))
+    uid= Column(Integer,ForeignKey('tb_house.id'))
 
 Base.metadata.create_all(engine)
 
@@ -83,7 +91,7 @@ def query_case():
     #query_case()
 def update_info():
     dbname = 'test'
-    collection = 'qfang_house'
+    collection = 'total_lianjia_baidu'
     client = pymongo.MongoClient('127.0.0.1', 27017)
     db = client[dbname]
     data = db[collection].find({})
@@ -93,12 +101,12 @@ def update_info():
 
         db_house = session.query(House).filter(House.house_name ==mon_info['name']).filter(House.city_name ==mon_info['city_name']).first()
         if db_house:
-            print 'has same name and city'
-            print  mon_info['name']
-            print mon_info['city_name']
-            #for  price_info in db_house.price:
+            #print 'has same name and city'
+            #print  mon_info['name']
+            #print mon_info['city_name']
+            # 需要添加判断, 以防同一个价格数据插入多次
             p=Price(
-                price=mon_info['price'],
+                price=int(mon_info['price']),
                 origin = mon_info['origin'],
                 months = mon_info['month_price'],
                 crawl_time = mon_info['crawl_date'],
@@ -110,7 +118,7 @@ def update_info():
             house = House(
                 house_name=mon_info['name'],
                 city_name=mon_info['city_name'],
-                url=mon_info['url'],
+                #url=mon_info['url'],
                 latitude=mon_info['latitude'],
                 longitude=mon_info['longitude'],
                 address=mon_info['location'],
@@ -118,15 +126,14 @@ def update_info():
                 building_type=mon_info['building_type']
             )
             price = Price(
-                price=int(mon_info['price']),
-                origin=mon_info['origin'],
-                months=mon_info['month_price'],
-                crawl_time=mon_info['crawl_date']
+                price=int(mon_info['price']['2017-07'][0]['price']),
+                origin=mon_info['price']['2017-07'][0]['origin'],
+                months='2017-07',
+                crawl_time=mon_info['price']['2017-07'][0]['crawl_date']
             )
 
             house.price.append(price)
             session.add(house)
-
 
         try:
             session.commit()
@@ -134,5 +141,5 @@ def update_info():
             print e
             session.rollback()
 
-#query_case()
 update_info()
+session.close()

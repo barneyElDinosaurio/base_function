@@ -110,22 +110,41 @@ def update_url():
 
 def get_price():
         dbname = 'test'
-        collection = 'qfang'
+        collection = 'total_lianjia_baidu'
         client = pymongo.MongoClient('127.0.0.1', 27017)
         db = client[dbname]
-        data = db[collection].find({'city_name':'荥阳'})
+        data = db[collection].find({})
         data_list = list(data)
         for i in data_list:
-            #city_name = i['city_name']
-            url=i['url']
-            #if city_name==u'合川':
-            db[collection].update({'url': url}, {'$set': {'city_name': '郑州'}})
-            #if price>0 and price<= 1000:
+            try:
+                price = i['price']['2017-07'][0]['price']
+                #print type(price)
                 #print price
+            except:
+                print i['name']
+                print i['city_name']
+            #url=i['url']
+            #print price
+            #if city_name==u'合川':
+            #db[collection].update({'url': url}, {'$set': {'city_name': '郑州'}})
+
+            if price>0 and price<= 1000:
+                print price
+
                 #print i['url']
             #new_url = org_url.replace('//', '/')
             #print new_url
-                #db[collection].update({'url': url}, {'$set': {'price': '0'}})
+                #db[collection].update({'url': url}, {'$set': {'price': 0}})
+def change_city():
+    dbname = 'anjuke_mobile'
+    collection = 'mobile_complete_update_change_price'
+    client = pymongo.MongoClient('127.0.0.1', 27017)
+    db = client[dbname]
+    #data = db[collection].find({'city_name':'溧阳'})
+    #data_list = list(data)
+    #for i in data_list:
+    db[collection].update({'city_name':'溧阳'},{'$set':{'city_name':'常州'}},{'multi':True})
+
 #basic_usage()
 #query()
 #remove()
@@ -135,5 +154,6 @@ def get_price():
 #update_testcase()
 #remove_data()
 #insert_bj()
-update_url()
-#get_price()
+#update_url()
+get_price()
+#change_city()

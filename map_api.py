@@ -12,6 +12,7 @@ import time
 
 def addr_poi(city, addr):
     ak_code = 'pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO'
+    # 添加下面那一句可以增大查找到的概率
     addr=city+addr
     queryStr = '/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=%s' % (city, addr, ak_code)
     # queryStr = '/geocoder/v2/?address=%s&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO' %addr
@@ -42,10 +43,10 @@ def addr_poi(city, addr):
 
 def getcordinate():
     dbname = 'test'
-    collection = 'fangtianxia_final1'
+    collection = 'total_lianjia_Aug'
     client = pymongo.MongoClient('127.0.0.1', 27017)
     db = client[dbname]
-    data = db[collection].find({'latitude': '0'})
+    data = db[collection].find({'latitude': 0})
     data_list = list(data)
     print len(data_list)
 
