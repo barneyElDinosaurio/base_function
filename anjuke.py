@@ -57,10 +57,21 @@ def getcitylist():
 
     return dicts
 
-if __name__=="__main__":
+def debug_page():
+    headers={'accept-language': 'zh,en;q=0.8,en-US;q=0.6', 'accept-encoding': 'gzip, deflate, br', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'upgrade-insecure-requests': '1', 'referer': 'https://m.anjuke.com/ba/community/?from=anjuke_home', 'cookie': 'als=0; __xsptplus8=8.2.1503557877.1503557921.6%234%7C%7C%7C%7C%7C%23%23hWmIxvWGtBprdSupD-oChmF9MknKarey%23; lps="/|"; sessid=AA1DC8BC-375D-3025-4411-F1DE18A9495E; _ga=GA1.2.2091742266.1503400901; _gid=GA1.2.1006102639.1506599574; twe=2; aQQ_ajkguid=AB109AF3-AAA3-9AEB-8739-7694D2BC3888; ctid=242; 58tj_uuid=32b49206-df0d-4ec8-abb6-b6befe305088; new_session=0; init_refer=; new_uv=4', 'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'}
+    url='https://m.anjuke.com/ba/community/769921/'
+    r=requests.get(url=url,headers=headers)
+    print r.status_code
+    tree = etree.HTML(r.text)
+    return tree
+
+#if __name__=="__main__":
+    #debug_page()
     # query('南方明珠花园二期1栋')
-    d = getcitylist()
-    f=codecs.open('anjuke_city','w',encoding='utf-8')
-    json.dump(d,f,ensure_ascii=False)
-    for k,v in d.items():
-        print k,v
+    #d = getcitylist()
+    #f=codecs.open('anjuke_city','w',encoding='utf-8')
+    #json.dump(d,f,ensure_ascii=False)
+    #for k,v in d.items():
+        #print k,v
+
+tree=debug_page()
