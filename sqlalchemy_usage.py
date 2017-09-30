@@ -51,7 +51,7 @@ class House(Base):
 event.listen(
         House.__table__,
         "after_create",
-        DDL("ALTER TABLE %(table)s AUTO_INCREMENT = 100000;")
+        DDL("ALTER TABLE %(table)s AUTO_INCREMENT = 1000000;")
     )
 
     '''

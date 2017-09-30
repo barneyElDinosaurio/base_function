@@ -1,7 +1,8 @@
-Accept: application/json
-Charset: UTF-8
-Content-Type: application/json
-User-Agent: Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM801 Build/LMY47V)
-Host: news.l.qq.com
-Connection: Keep-Alive
-Accept-Encoding: gzip
+Host: m.anjuke.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Cookie: aQQ_ajkguid=0B0A627A-FCF1-2B6A-2ADF-56DD166B0EBC; ctid=13; lps="/|"; sessid=804075FD-7FE8-E9C0-FA60-2FCB76C5B6B3; 58tj_uuid=02402201-d0d6-48de-8e58-6432612af29d; new_session=0; init_refer=; new_uv=1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1

@@ -248,6 +248,7 @@ if __name__ == "__main__":
     #bj.getPreviousDay()
     # str_time_hour()
     #time_string_test()
-    time_cuo()
+    #time_cuo()
     # time_format()
     #check_weekday()
+    str_time_hour()
