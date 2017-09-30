@@ -58,10 +58,9 @@ def getcitylist():
     return dicts
 
 def debug_page():
-    #headers={'accept-language': 'zh,en;q=0.8,en-US;q=0.6', 'accept-encoding': 'gzip, deflate, br', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'upgrade-insecure-requests': '1', 'referer': 'https://m.anjuke.com/ba/community/?from=anjuke_home', 'cookie': 'als=0; __xsptplus8=8.2.1503557877.1503557921.6%234%7C%7C%7C%7C%7C%23%23hWmIxvWGtBprdSupD-oChmF9MknKarey%23; lps="/|"; sessid=AA1DC8BC-375D-3025-4411-F1DE18A9495E; _ga=GA1.2.2091742266.1503400901; _gid=GA1.2.1006102639.1506599574; twe=2; aQQ_ajkguid=AB109AF3-AAA3-9AEB-8739-7694D2BC3888; ctid=242; 58tj_uuid=32b49206-df0d-4ec8-abb6-b6befe305088; new_session=0; init_refer=; new_uv=4', 'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'}
+
     headers = {'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0', 'Host': 'm.anjuke.com', 'Cookie': 'aQQ_ajkguid=0B0A627A-FCF1-2B6A-2ADF-56DD166B0EBC; ctid=13; lps="/|"; sessid=804075FD-7FE8-E9C0-FA60-2FCB76C5B6B3; 58tj_uuid=02402201-d0d6-48de-8e58-6432612af29d; new_session=0; init_refer=; new_uv=1', 'Upgrade-Insecure-Requests': '1'}
 
-    #url='https://m.anjuke.com/ba/community/769921/'
     url='https://m.anjuke.com/dg/community/279422/'
     r=requests.get(url=url,headers=headers)
     print r.status_code
