@@ -185,14 +185,47 @@ class mysql_usage():
         insert into 
         '''
 
+def remote_mysql():
+    conn = MySQLdb.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
+    cursor = conn.cursor()
+    cursor.execute("SELECT count(*) from tb_houses;")
+    data = cursor.fetchone()
+    print data
+    conn.close()
+
+def remote_mysql2():
+    '''
+    可以运行
+    :return:
+    '''
+    import MySQLdb
+    from sshtunnel import SSHTunnelForwarder
+
+    with SSHTunnelForwarder(
+                ('gdgwcmcc.jpushoa.com', 8220),
+            ssh_password="Java!444",
+            ssh_username="chenjw",
+            remote_bind_address=('172.16.103.57', 3306)) as server:
+        conn = MySQLdb.connect(host='127.0.0.1',
+                               port=server.local_bind_port,
+                               user='parker',
+                               passwd='parker_3z7ljV0dDjRO',
+                               db='db_parker')
+
+        cursor = conn.cursor()
+        cursor.execute("SELECT count(*) from tb_houses;")
+        data = cursor.fetchone()
+        conn.close()
 
 if __name__ == '__main__':
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
-    obj = mysql_usage()
-    obj.create_table('houseinfo')
+    #obj = mysql_usage()
+    #obj.create_table('houseinfo')
     # obj.mysql_add_data('temp')
     # obj.query()
     # obj.update()
     # obj.transfer_data()
+    #remote_mysql2()
+    remote_mysql()
