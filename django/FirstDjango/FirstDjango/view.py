@@ -60,3 +60,20 @@ def time_show(request):
     ''' %now
 
     return HttpResponse(html)
+
+def time_show2(request,offset):
+    offset=int(offset)
+    current = datetime.datetime.now()+datetime.timedelta(hours=offset)
+    html='''
+    <html>
+    <head>
+    <title>
+    This is title
+    </title>
+    </head>
+    <body>
+    <h1>%s</h1>
+    </body>
+    </html>
+    ''' %current
+    return HttpResponse(html)

@@ -41,6 +41,7 @@ urlpatterns = [
     url(r'^header/$',view.getAgent),
     url(r'^notfound/$',view.notfound),
     url(r'^time/$',view.time_show),
+    url(r'^mytime/plug/(\d{1,2})$',view.time_show2),
     #url(r'^admin/', include('django.contrib.admin.urls')),
 
 
