@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>My title</title>
+</head>
+<body>
+<p>这个是P</p>
+<script >
+     document.write(Date());
+</script>
+<script>
+    function changetext(id)
+    {
+    id.innerHTML="谢谢你"
+
+    }
+</script>
+<h1 onclick="changetext(this)">请单击该文本</h1>
+
+<img src="30天.png" id="image">
+<script >
+    document.getElementById("image").src="sql.jpg"
+</script>
+</body>
+</html>
