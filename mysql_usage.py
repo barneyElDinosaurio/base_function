@@ -202,14 +202,14 @@ def remote_mysql2():
     from sshtunnel import SSHTunnelForwarder
 
     with SSHTunnelForwarder(
-                ('gdgwcmcc.jpushoa.com', 8220),
-            ssh_password="Java!444",
-            ssh_username="chenjw",
-            remote_bind_address=('172.16.103.57', 3306)) as server:
+                ('x', 8220),
+            ssh_password="x",
+            ssh_username="x",
+            remote_bind_address=('x', 3306)) as server:
         conn = MySQLdb.connect(host='127.0.0.1',
                                port=server.local_bind_port,
-                               user='parker',
-                               passwd='parker_3z7ljV0dDjRO',
+                               user='x',
+                               passwd='x',
                                db='db_parker')
 
         cursor = conn.cursor()
