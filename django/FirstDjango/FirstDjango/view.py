@@ -2,22 +2,28 @@
 import json
 
 import datetime
-from django.http import HttpResponse,HttpResponseNotFound
-from django.shortcuts import render,render_to_response
-from TestModel.models import Test,NewBook,NewAuthor
+from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render, render_to_response
+from TestModel.models import Test, NewBook, NewAuthor
+from django import template
+
+
 def FirstView(request):
-    context={}
-    context['value']="Value setup"
-    return render(request,'firstview.html',context)
-    #re turn HttpResponse("First View")
+    context = {}
+    context['value'] = "Value setup"
+    return render(request, 'firstview.html', context)
+    # re turn HttpResponse("First View")
+
 
 def dbshow(request):
-    test=Test.objects.all()
-    return render(request,'db.html',{'teststr':test})
+    test = Test.objects.all()
+    return render(request, 'db.html', {'teststr': test})
+
 
 def books(request):
-    authors=NewAuthor.objects.all()
-    return render_to_response('books.html',{'authors':authors})
+    authors = NewAuthor.objects.all()
+    return render_to_response('books.html', {'authors': authors})
+
 
 def showdate(request):
     return render_to_response('show_page.html', {'current_date': '2017 Sep'})
@@ -38,15 +44,17 @@ def show_string(request):
 
 
 def getAgent(request):
-    header=request.META['HTTP_USER_AGENT']
+    header = request.META['HTTP_USER_AGENT']
     return HttpResponse(header)
+
 
 def notfound(request):
     return HttpResponseNotFound('not found!!!')
 
+
 def time_show(request):
-    now= datetime.datetime.now().strftime('%Y-%m-%d')
-    html='''
+    now = datetime.datetime.now().strftime('%Y-%m-%d')
+    html = '''
     <html>
     <head>
     <title>
@@ -57,14 +65,15 @@ def time_show(request):
     <h1>%s</h1>
     </body>
     </html>
-    ''' %now
+    ''' % now
 
     return HttpResponse(html)
 
-def time_show2(request,offset):
-    offset=int(offset)
-    current = datetime.datetime.now()+datetime.timedelta(hours=offset)
-    html='''
+
+def time_show2(request, offset):
+    offset = int(offset)
+    current = datetime.datetime.now() + datetime.timedelta(hours=offset)
+    html = '''
     <html>
     <head>
     <title>
@@ -75,5 +84,22 @@ def time_show2(request,offset):
     <h1>%s</h1>
     </body>
     </html>
-    ''' %current
+    ''' % current
     return HttpResponse(html)
+
+
+# 出错，需要在python manager.py shell 下运行
+
+def template_usage():
+    t = template.Template('My name is {{ name }}')
+    c = template.Context({'name': 'Rocky'})
+    print t.render(c)
+
+
+# template_usage()
+def current_date(request):
+    current = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    current_date = current
+    name = 'Rocky Chen'
+    # return render_to_response('current_date.html',current_date_rsp)
+    return render_to_response('current_date.html', locals())
