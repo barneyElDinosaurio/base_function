@@ -40,3 +40,14 @@ print type(l[:1])
 print l[0]
 print l[:1]
 
+print "*"*10
+def sort_usge():
+    dic={'a':33,'b':2,'c':44,'z':22,'d':89,'e':5}
+    print dic
+    for k,v in dic.items():
+        print k,v
+    dic2 = sorted(dic.iteritems(),key=lambda asd:asd[0],reverse=True)
+    print dic
+    print dic2
+
+sort_usge()
