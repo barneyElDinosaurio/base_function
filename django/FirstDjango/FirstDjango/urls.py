@@ -43,6 +43,8 @@ urlpatterns = [
     url(r'^time/$',view.time_show),
     url(r'^mytime/plug/(\d{1,2})$',view.time_show2),
     url(r'^current$',view.current_date),
+    url(r'^filter$',view.filter_usage),
+    url(r'^filter2$',view.filter_usage2),
     #url(r'^admin/', include('django.contrib.admin.urls')),
 
 

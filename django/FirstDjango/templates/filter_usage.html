@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block mainbody %}
+<p>这个是在filter 的html </p>
+<p>用户名字是{{ username | upper | lower }}</p>
+{% for add in address %}
+<li>Address : {{ add }}</li>
+{% endfor %}
+<p>current time is {{ current|date:"Y年m月d日 H时i分" }}</p>
+{% endblock %}

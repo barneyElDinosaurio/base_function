@@ -103,3 +103,15 @@ def current_date(request):
     name = 'Rocky Chen'
     # return render_to_response('current_date.html',current_date_rsp)
     return render_to_response('current_date.html', locals())
+
+def filter_usage(request):
+    current=datetime.datetime.now()
+    username="Rocky"
+    address=['LA','Shenzhen','Dongguan']
+    return render_to_response('filter_usage.html',locals())
+
+def filter_usage2(request):
+    current=datetime.datetime.now()
+    username="Light "
+    address=['NY','Shanghai','Zhuhai']
+    return render_to_response('filter_usage.html',locals())
