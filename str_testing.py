@@ -119,7 +119,13 @@ def format_case():
     #url = 'https://api.anjuke.com/mobile/v5/community/list\?page_size=25&area_id=0&city_id=13&page=1&lat=22.565992&block_id=0&lng=113.953578&androidid=4dd00e258bbe295f&uuid=26f709cf-699c-4aa4-9563-019ed46e713e&cid=-1&pm=b638&version_code=321813&m=Android-SM801&qtime=%s&from=mobile&app=a-ajk&v=5.1.1&i=990006203070023&_pid=15964&cv=10.10.2&o=icesky_msm8992-user\%205.1.1\%20LMY47V\%201\%20release-keys&macid=12a0fc64a12e5d8a1ef367d0bccb9690&_chat_id=0&manufacturer=smartisan HTTP/1.1' %now4
     url='dd//&dd%%20%s' %now4
     print url
+    id='123456'
+    city='dg'
+    page='1'
+    req_url = 'https://m.fang.com/zf/?projcodes={}&src=xiaoqu&jhtype=zf&renttype=cz&c=zf&a=ajaxGetList&city={}&page={}'
+    req_url = req_url.format(id,city,page)
 
+    print req_url
 def show_data():
     x={"status": "20001", "msg": "\u7b7e\u540d\u9519\u8bef"}
     for k,v in x.items():
@@ -185,6 +191,14 @@ def check_default_type():
     c=a.encode('utf-8')
     print c
     print type(c)
+    d=u'\xbd\xa8\xd6\xfe\xc0\xe0\xd0\xcd\xa3\xba'
+    print unicode(d)
+
+def len_case():
+    a=''
+    print len(a)
+
+
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -195,10 +209,11 @@ def check_default_type():
 #replace_test()
 #split_fun()
 #url_encode()
-#format_case()
+format_case()
 #show_data()
 #testNone()
 #type_compare()
 #cityLink()
 #code_case()
-check_default_type()
+#check_default_type()
+#len_case()

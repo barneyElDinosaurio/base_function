@@ -103,19 +103,17 @@ def debug_page():
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0'
     }
 
-    url = 'http://www.fang.com/SoufunFamily.htm'
+    url = 'https://m.fang.com/zf/dg/JHAGT_159882152_3b534580adb97789437a93180a2d9b27_160526362.html'
     r = requests.get(url=url, headers=headers)
+    r.encoding='gbk'
     print r.status_code
+
     #print r.text
     tree = etree.HTML(r.text)
-    #return tree
-    p=tree.xpath('//div[@class="outCont"]')[0].xpath('.//tr/td[@valign="top"]/strong/text()')
-    for i in p:
-        if i!=u'\xa0':
-            print i
+    return tree,r.text
 
 
-tree = debug_page()
+tree,text = debug_page()
     # print getheader()
     # analysis_cookie()
     # urlParse()
