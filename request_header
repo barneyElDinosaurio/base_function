@@ -1,8 +1,16 @@
-Host: m.anjuke.com
-User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
-Accept-Encoding: gzip, deflate, br
-Cookie: aQQ_ajkguid=0B0A627A-FCF1-2B6A-2ADF-56DD166B0EBC; ctid=13; lps="/|"; sessid=804075FD-7FE8-E9C0-FA60-2FCB76C5B6B3; 58tj_uuid=02402201-d0d6-48de-8e58-6432612af29d; new_session=0; init_refer=; new_uv=1
-Connection: keep-alive
-Upgrade-Insecure-Requests: 1
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh,en;q=0.8,en-US;q=0.6
+Cache-Control:no-cache
+Connection:keep-alive
+Content-Length:87
+Content-Type:application/x-www-form-urlencoded; charset=UTF-8
+Cookie:user_trace_token=20160612223035-3a02d006-30aa-11e6-a343-5254005c3644; LGUID=20160612223035-3a02d566-30aa-11e6-a343-5254005c3644; JSESSIONID=ABAAABAACDBAAIAB4095AAF89D3AD5B9FC8820E18CBA3D0; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; X_HTTP_TOKEN=ae3de20baf406224ec17647191d91609; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=108; _putrc=DFAF58A586D854B0; login=true; unick=%E9%99%88%E9%94%A6%E4%BC%9F; TG-TRACK-CODE=index_search; SEARCH_ID=0c11516fce07432ba38343a5ab89e291; index_location_city=%E6%B7%B1%E5%9C%B3; _gat=1; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507809365; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507810536; _gid=GA1.2.40968328.1507809365; _ga=GA1.2.499625224.1465741835; LGSID=20171012195605-53f4fb44-af44-11e7-8fe6-525400f775ce; LGRID=20171012201537-0e60963c-af47-11e7-9516-5254005c3644
+Host:www.lagou.com
+Origin:https://www.lagou.com
+Pragma:no-cache
+Referer:https://www.lagou.com/gongsi/j917.html
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+X-Anit-Forge-Code:46392022
+X-Anit-Forge-Token:982dcf3a-607f-4812-9dd0-4d10e210f48e
+X-Requested-With:XMLHttpRequest

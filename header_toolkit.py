@@ -113,8 +113,8 @@ def debug_page():
     return tree,r.text
 
 
-tree,text = debug_page()
-    # print getheader()
+#tree,text = debug_page()
+print getheader()
     # analysis_cookie()
     # urlParse()
     # read_json()
