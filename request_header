@@ -5,12 +5,12 @@ Cache-Control:no-cache
 Connection:keep-alive
 Content-Length:87
 Content-Type:application/x-www-form-urlencoded; charset=UTF-8
-Cookie:user_trace_token=20160612223035-3a02d006-30aa-11e6-a343-5254005c3644; LGUID=20160612223035-3a02d566-30aa-11e6-a343-5254005c3644; JSESSIONID=ABAAABAACDBAAIAB4095AAF89D3AD5B9FC8820E18CBA3D0; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; X_HTTP_TOKEN=ae3de20baf406224ec17647191d91609; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=108; _putrc=DFAF58A586D854B0; login=true; unick=%E9%99%88%E9%94%A6%E4%BC%9F; TG-TRACK-CODE=index_search; SEARCH_ID=0c11516fce07432ba38343a5ab89e291; index_location_city=%E6%B7%B1%E5%9C%B3; _gat=1; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507809365; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507810536; _gid=GA1.2.40968328.1507809365; _ga=GA1.2.499625224.1465741835; LGSID=20171012195605-53f4fb44-af44-11e7-8fe6-525400f775ce; LGRID=20171012201537-0e60963c-af47-11e7-9516-5254005c3644
+Cookie:user_trace_token=20160612223035-3a02d006-30aa-11e6-a343-5254005c3644; LGUID=20160612223035-3a02d566-30aa-11e6-a343-5254005c3644; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=124; index_location_city=%E6%B7%B1%E5%9C%B3; login=false; unick=""; _putrc=""; JSESSIONID=ABAAABAACDBAAIAF33B4C87F595BE43FE5DBD6846EA46FE; _gat=1; SEARCH_ID=ab601b73c41e433b9585f11d13253dab; _gid=GA1.2.1335763621.1507978370; _ga=GA1.2.499625224.1465741835; LGSID=20171014185251-d2e2289c-b0cd-11e7-9550-5254005c3644; LGRID=20171014191037-4e4ec5c5-b0d0-11e7-9550-5254005c3644; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507809365,1507978370; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507979436; TG-TRACK-CODE=hpage_code
 Host:www.lagou.com
 Origin:https://www.lagou.com
 Pragma:no-cache
 Referer:https://www.lagou.com/gongsi/j917.html
 User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-X-Anit-Forge-Code:46392022
-X-Anit-Forge-Token:982dcf3a-607f-4812-9dd0-4d10e210f48e
+X-Anit-Forge-Code:96936519
+X-Anit-Forge-Token:ecaf7e78-4ec7-4145-8b3a-9f11b3d1e0ef
 X-Requested-With:XMLHttpRequest
