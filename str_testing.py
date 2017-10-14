@@ -198,6 +198,15 @@ def len_case():
     a=''
     print len(a)
 
+def geturlid():
+    url='http://m.qfang.com/taicang/garden'
+    url_list = url.split('/')
+    houseid = url_list[-1]
+    url_list[len(url_list)-1]='rent'
+    url_list.append(houseid)
+    url ='/'.join(url_list)
+    / taicang
+
 
 #check_year()
 #_write_adead()
@@ -209,7 +218,7 @@ def len_case():
 #replace_test()
 #split_fun()
 #url_encode()
-format_case()
+#format_case()
 #show_data()
 #testNone()
 #type_compare()
@@ -217,3 +226,4 @@ format_case()
 #code_case()
 #check_default_type()
 #len_case()
+geturlid()

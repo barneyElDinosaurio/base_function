@@ -3,7 +3,7 @@ import json
 import time, collections
 import datetime
 from lxml import etree
-
+import chardet
 import requests
 
 
@@ -107,19 +107,27 @@ def debug_page():
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0'
     }
 
-    url = 'https://m.fang.com/zf/dg/JHAGT_159882152_3b534580adb97789437a93180a2d9b27_160526362.html'
+    url = 'https://m.fang.com/fangjia/?c=pinggu&a=ajaxGetList&city=sz&price=&district=&comarea=&orderby=0&keyword=&x1=&y1=&distance=&from=&r=0.0828841320981899&p=101'
     r = requests.get(url=url, headers=headers)
     r.encoding='gbk'
     print r.status_code
-
-    #print r.text
-    tree = etree.HTML(r.text)
+    print type(r.content)
+    print r.content
+    #print chardet.detect(r)
+    tree = etree.HTML(r.text,parser=etree.HTMLParser(encoding='gbk'))
+    #print etree.tostring(tree)
     return tree,r.text
 
 
+<<<<<<< HEAD
 #tree,text = debug_page()
 #print getheader()
 analysis_cookie()
+=======
+tree,text = debug_page()
+#print getheader()
+    # analysis_cookie()
+>>>>>>> origin/master
     # urlParse()
     # read_json()
     # print urlAdd('urlparse')

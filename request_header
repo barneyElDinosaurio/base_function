@@ -1,8 +1,9 @@
-Accept:application/json, text/javascript, */*; q=0.01
-Accept-Encoding:gzip, deflate, br
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding:gzip, deflate
 Accept-Language:zh,en;q=0.8,en-US;q=0.6
 Cache-Control:no-cache
 Connection:keep-alive
+<<<<<<< HEAD
 Content-Length:87
 Content-Type:application/x-www-form-urlencoded; charset=UTF-8
 Cookie:user_trace_token=20160612223035-3a02d006-30aa-11e6-a343-5254005c3644; LGUID=20160612223035-3a02d566-30aa-11e6-a343-5254005c3644; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=124; index_location_city=%E6%B7%B1%E5%9C%B3; login=false; unick=""; _putrc=""; JSESSIONID=ABAAABAACDBAAIAF33B4C87F595BE43FE5DBD6846EA46FE; _gat=1; SEARCH_ID=ab601b73c41e433b9585f11d13253dab; _gid=GA1.2.1335763621.1507978370; _ga=GA1.2.499625224.1465741835; LGSID=20171014185251-d2e2289c-b0cd-11e7-9550-5254005c3644; LGRID=20171014191037-4e4ec5c5-b0d0-11e7-9550-5254005c3644; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507809365,1507978370; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507979436; TG-TRACK-CODE=hpage_code
@@ -14,3 +15,11 @@ User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, l
 X-Anit-Forge-Code:96936519
 X-Anit-Forge-Token:ecaf7e78-4ec7-4145-8b3a-9f11b3d1e0ef
 X-Requested-With:XMLHttpRequest
+=======
+Cookie:qchatid=8c000cb7-e46f-49a9-8ed9-5b1e365db2a9; _jzqy=1.1502162895.1505202967.2.jzqsr=baidu|jzqct=%E6%B7%B1%E5%9C%B3%E6%94%BE%E5%81%87.jzqsr=baidu|jzqct=%E6%88%BF%E5%A4%A9%E4%B8%8B; cookieId=c9d4bf28-a066-4f56-842d-a3fc1c9721e6; _jzqx=1.1502184218.1505269623.2.jzqsr=shenzhen%2Eqfang%2Ecom|jzqct=/.jzqsr=beijing%2Eqfang%2Ecom|jzqct=/; _jzqa=1.891413787490525200.1502162895.1505202967.1505269623.5; JSESSIONID=aaaeYOv9uxvG5_K_6Fu8v; CITY_NAME=SUZHOU; Hm_lvt_de678bd934b065f76f05705d4e7b662c=1507877029; Hm_lpvt_de678bd934b065f76f05705d4e7b662c=1507881995; _ga=GA1.3.1951310847.1505203374; _gid=GA1.3.54393069.1507877432; sid=1e6a36c1-a24e-4aa4-a40f-9202efa450e0
+Host:m.qfang.com
+Pragma:no-cache
+Referer:http://m.qfang.com/shenzhen/garden/57796
+Upgrade-Insecure-Requests:1
+User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
+>>>>>>> origin/master

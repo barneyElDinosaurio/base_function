@@ -4,6 +4,8 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import re
+
 from scrapy.conf import settings
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker,relationship
@@ -69,10 +71,25 @@ Base.metadata.create_all(engine)
 
 
 session=DBSession()
-d=session.query(Price).filter(Price.origin=='FTX').all()
+#d=session.query(House).filter(House.house_name ==u'丽都花园').filter(House.city_name ==u'东莞').first()
+urls_info = session.query(House.id, House.url).join(Price).filter(Price.origin == 'FTX').filter(
+    House.url.like('%m.fang.com%')).filter(
+    House.city_name == '保定').all()
+
+for i in urls_info:
+    #print i[1]
+    try:
+        hostid = re.findall('/(\d+)\.htm', i[1])[0]
+        print hostid
+    except:
+        pass
+#print d.building_date
+#if d.building_date==u'暂无数据':
+    #d.building_date=u'2017年'
+'''
 for i in d:
     print i.price
-    session.delete(i)
-
+    #session.delete(i)
+'''
 session.commit()
 session.close()
