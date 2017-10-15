@@ -5,7 +5,7 @@ http://30daydo.com
 Contact: weigesysu@qq.com
 '''
 import redis
-r = redis.Redis(host='127.0.0.1', port=6379, db=0)
+r = redis.Redis(host='127.0.0.1', port=6379, db=1)
 def base_usage():
     print r.dbsize()
     #r.flushdb()

@@ -119,15 +119,14 @@ def debug_page():
     return tree,r.text
 
 
-<<<<<<< HEAD
+
+#tree,text = debug_page()
+print getheader()
+#analysis_cookie()
+
 #tree,text = debug_page()
 #print getheader()
-analysis_cookie()
-=======
-tree,text = debug_page()
-#print getheader()
-    # analysis_cookie()
->>>>>>> origin/master
-    # urlParse()
-    # read_json()
-    # print urlAdd('urlparse')
+
+# urlParse()
+# read_json()
+# print urlAdd('urlparse')

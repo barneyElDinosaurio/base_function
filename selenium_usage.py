@@ -109,7 +109,7 @@ def shop():
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    browser = webdriver.Chrome(executable_path=r'C:\software\chrome\chromedriver.exe',
+    browser = webdriver.Chrome(executable_path=r'E:\OneDrive\Python\selenium\chromedriver.exe',
                                chrome_options=options)
 
     browser.implicitly_wait(60)
@@ -126,4 +126,4 @@ def shop():
 #anjuke()
 
 #key_operation()
-#shop()
+shop()
