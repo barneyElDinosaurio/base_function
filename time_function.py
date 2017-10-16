@@ -222,6 +222,8 @@ def time_cuo():
     print 't4', t4
     curr_d = datetime.datetime.fromtimestamp(updateTime)
     print curr_d
+    d_time = datetime.datetime.fromtimestamp(t_s)
+    print d_time
 
 # 时间的格式
 def time_format():
@@ -248,7 +250,7 @@ if __name__ == "__main__":
     #bj.getPreviousDay()
     # str_time_hour()
     #time_string_test()
-    #time_cuo()
+    time_cuo()
     # time_format()
     #check_weekday()
-    str_time_hour()
+    #str_time_hour()
