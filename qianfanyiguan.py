@@ -43,10 +43,11 @@ def getprimarycatelogy():
                'X-Requested-With': 'XMLHttpRequest', 'Host': 'qianfan.analysys.cn', 'Accept': '*/*',
                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
                'Connection': 'keep-alive',
-               'Cookie': 'referer=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Ds1vGcLrFlTzWdgeR9Eb6oH2SHim6I-hq9_F_71Z798voFVykU6D1AM6RV4QBQsta%26wd%3D%26eqid%3Dad661995000071910000000659e41f8b; notice=1505724860000; gdxidpyhxdE=iT89tkVk5PnnVNx1k1l0YSj%2Fr4Z0vwV5P6Goz38E7poaP1RfeVNbgqdf2zwyOXdSyhItPR70y6LloitbiOcYSJGhDMxWImn3nNaPNjYaXzodyAxwSQJfOKIP0m%5CCjdTB5dxHfQCis%5CnYZIu2Gfds%2Fzgw0rG%5Ca7Y%2BMzBUYm5RoVYTde2L%3A1508123613312; _9755xjdesxxd_=31; algtipA3home-=true; algtipA3-=true; JSESSIONID=EE6F87A96A35C7DD9E4566387046E2D7; cacheCookie=%5B%7B%22appIds%22%3A2601273%2C%22categoryIds%22%3A1011007%2C%22itemId%22%3A2601273%2C%22itemName%22%3A%22%E5%84%BF%E6%AD%8C%E5%A4%9A%E5%A4%9A%22%7D%5D; Hm_lvt_abe5c65ffb860ebf053a859d05bee0ea=1508122511,1508122889; Hm_lpvt_abe5c65ffb860ebf053a859d05bee0ea=1508134527',
+               'Cookie': 'referer=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Ds1vGcLrFlTzWdgeR9Eb6oH2SHim6I-hq9_F_71Z798voFVykU6D1AM6RV4QBQsta%26wd%3D%26eqid%3Dad661995000071910000000659e41f8b; notice=1505724860000; gdxidpyhxdE=iT89tkVk5PnnVNx1k1l0YSj%2Fr4Z0vwV5P6Goz38E7poaP1RfeVNbgqdf2zwyOXdSyhItPR70y6LloitbiOcYSJGhDMxWImn3nNaPNjYaXzodyAxwSQJfOKIP0m%5CCjdTB5dxHfQCis%5CnYZIu2Gfds%2Fzgw0rG%5Ca7Y%2BMzBUYm5RoVYTde2L%3A1508123613312; _9755xjdesxxd_=31; algtipA3home-=true; algtipA3-=true; JSESSIONID=9EE2A7B29E2988256B328DD16F8FAE5C; Hm_lvt_abe5c65ffb860ebf053a859d05bee0ea=1508156428,1508159435,1508159448,1508205878; Hm_lpvt_abe5c65ffb860ebf053a859d05bee0ea=1508205987; cacheCookie=%5B%7B%22appIds%22%3A2601273%2C%22categoryIds%22%3A1011007%2C%22itemId%22%3A2601273%2C%22itemName%22%3A%22%E5%84%BF%E6%AD%8C%E5%A4%9A%E5%A4%9A%22%7D%5D',
                'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
                'Referer': 'http://qianfan.analysys.cn/view/category/list.html',
                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+
     data = {'rootCateId': '',
             '$reinitialize': 'undefined'}
 
@@ -73,12 +74,13 @@ def getcatelogy(d):
               'X-Requested-With': 'XMLHttpRequest', 'Host': 'qianfan.analysys.cn', 'Accept': '*/*',
               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
               'Connection': 'keep-alive',
-              'Cookie': 'referer=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Ds1vGcLrFlTzWdgeR9Eb6oH2SHim6I-hq9_F_71Z798voFVykU6D1AM6RV4QBQsta%26wd%3D%26eqid%3Dad661995000071910000000659e41f8b; notice=1505724860000; gdxidpyhxdE=iT89tkVk5PnnVNx1k1l0YSj%2Fr4Z0vwV5P6Goz38E7poaP1RfeVNbgqdf2zwyOXdSyhItPR70y6LloitbiOcYSJGhDMxWImn3nNaPNjYaXzodyAxwSQJfOKIP0m%5CCjdTB5dxHfQCis%5CnYZIu2Gfds%2Fzgw0rG%5Ca7Y%2BMzBUYm5RoVYTde2L%3A1508123613312; _9755xjdesxxd_=31; algtipA3home-=true; algtipA3-=true; JSESSIONID=EE6F87A96A35C7DD9E4566387046E2D7; cacheCookie=%5B%7B%22appIds%22%3A2601273%2C%22categoryIds%22%3A1011007%2C%22itemId%22%3A2601273%2C%22itemName%22%3A%22%E5%84%BF%E6%AD%8C%E5%A4%9A%E5%A4%9A%22%7D%5D; Hm_lvt_abe5c65ffb860ebf053a859d05bee0ea=1508122511,1508122889; Hm_lpvt_abe5c65ffb860ebf053a859d05bee0ea=1508132923',
+              'Cookie': 'referer=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Ds1vGcLrFlTzWdgeR9Eb6oH2SHim6I-hq9_F_71Z798voFVykU6D1AM6RV4QBQsta%26wd%3D%26eqid%3Dad661995000071910000000659e41f8b; notice=1505724860000; gdxidpyhxdE=iT89tkVk5PnnVNx1k1l0YSj%2Fr4Z0vwV5P6Goz38E7poaP1RfeVNbgqdf2zwyOXdSyhItPR70y6LloitbiOcYSJGhDMxWImn3nNaPNjYaXzodyAxwSQJfOKIP0m%5CCjdTB5dxHfQCis%5CnYZIu2Gfds%2Fzgw0rG%5Ca7Y%2BMzBUYm5RoVYTde2L%3A1508123613312; _9755xjdesxxd_=31; algtipA3home-=true; algtipA3-=true; cacheCookie=%5B%7B%22appIds%22%3A2601273%2C%22categoryIds%22%3A1011007%2C%22itemId%22%3A2601273%2C%22itemName%22%3A%22%E5%84%BF%E6%AD%8C%E5%A4%9A%E5%A4%9A%22%7D%5D; JSESSIONID=9EE2A7B29E2988256B328DD16F8FAE5C; Hm_lvt_abe5c65ffb860ebf053a859d05bee0ea=1508156428,1508159435,1508159448,1508205878; Hm_lpvt_abe5c65ffb860ebf053a859d05bee0ea=1508205878',
               'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
               'Referer': 'http://qianfan.analysys.cn/view/category/list.html',
               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+
     data = {'parentCateId': d['first_cate_id'],
-            'statDate': '',
+            'statDate': '2016/01/01',
             '$reinitialize': 'undefined'}
 
     r = requests.post(url=url, data=data, headers=header)
@@ -95,11 +97,11 @@ def getcatelogy(d):
         d['cateId'] = cateId
         print 'second id', cateId
         print 'second name', cate['cateName']
-        getdata(d)
+        #getdata(d)
         # print 'type'
         # print type(cateId)
         '''
-        if (cateId==3191060) or (cateId==1011010) or (cateId==1151143):
+        if (cateId==1191294) or (cateId==1041045):
             print 'got'
             getdata(d)
         else:
@@ -114,12 +116,13 @@ def getdata(d):
               'X-Requested-With': 'XMLHttpRequest', 'Host': 'qianfan.analysys.cn', 'Accept': '*/*',
               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
               'Connection': 'keep-alive',
-              'Cookie': 'referer=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Ds1vGcLrFlTzWdgeR9Eb6oH2SHim6I-hq9_F_71Z798voFVykU6D1AM6RV4QBQsta%26wd%3D%26eqid%3Dad661995000071910000000659e41f8b; notice=1505724860000; gdxidpyhxdE=iT89tkVk5PnnVNx1k1l0YSj%2Fr4Z0vwV5P6Goz38E7poaP1RfeVNbgqdf2zwyOXdSyhItPR70y6LloitbiOcYSJGhDMxWImn3nNaPNjYaXzodyAxwSQJfOKIP0m%5CCjdTB5dxHfQCis%5CnYZIu2Gfds%2Fzgw0rG%5Ca7Y%2BMzBUYm5RoVYTde2L%3A1508123613312; _9755xjdesxxd_=31; JSESSIONID=8CC88BB722344071EEC4455872C94CBF; algtipA3home-=true; algtipA3-=true; cacheCookie=%5B%5D; Hm_lvt_abe5c65ffb860ebf053a859d05bee0ea=1508122511,1508122889; Hm_lpvt_abe5c65ffb860ebf053a859d05bee0ea=1508123829',
+              'Cookie': 'referer=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Ds1vGcLrFlTzWdgeR9Eb6oH2SHim6I-hq9_F_71Z798voFVykU6D1AM6RV4QBQsta%26wd%3D%26eqid%3Dad661995000071910000000659e41f8b; notice=1505724860000; gdxidpyhxdE=iT89tkVk5PnnVNx1k1l0YSj%2Fr4Z0vwV5P6Goz38E7poaP1RfeVNbgqdf2zwyOXdSyhItPR70y6LloitbiOcYSJGhDMxWImn3nNaPNjYaXzodyAxwSQJfOKIP0m%5CCjdTB5dxHfQCis%5CnYZIu2Gfds%2Fzgw0rG%5Ca7Y%2BMzBUYm5RoVYTde2L%3A1508123613312; _9755xjdesxxd_=31; algtipA3home-=true; algtipA3-=true; cacheCookie=%5B%7B%22appIds%22%3A2601273%2C%22categoryIds%22%3A1011007%2C%22itemId%22%3A2601273%2C%22itemName%22%3A%22%E5%84%BF%E6%AD%8C%E5%A4%9A%E5%A4%9A%22%7D%5D; JSESSIONID=9EE2A7B29E2988256B328DD16F8FAE5C; Hm_lvt_abe5c65ffb860ebf053a859d05bee0ea=1508156428,1508159435,1508159448,1508205878; Hm_lpvt_abe5c65ffb860ebf053a859d05bee0ea=1508205987',
               'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
               'Referer': 'http://qianfan.analysys.cn/view/category/detail.html?categoryId=%s' % d['cateId'],
               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+
     data = {'categoryId': d['cateId'],
-            'statDate': '2016/12/01',
+            'statDate': '2016/01/01',
             'menuCode': '1001001'}
     try:
         r = useproxy(url=url, headers=header, postdata=data, post=True)
@@ -128,10 +131,10 @@ def getdata(d):
         # print r.text
         js = r.json()
         app_lists = js['datas']['appIndexList']
-        #print len(app_lists)
+        # print len(app_lists)
         # d = dict()
-        if len(app_lists)==0:
-            print "empyt app in catelogy",d['first_cateName']
+        if len(app_lists) == 0:
+            print "empyt app in catelogy", d['first_cateName']
         for rank, app in enumerate(app_lists):
             app_rank = rank + 1
             try:

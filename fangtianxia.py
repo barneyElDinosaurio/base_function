@@ -86,5 +86,11 @@ def fangtx():
         building_date = elem.xpath('.//p[@class="fc"]/span/text()')[1]
         print building_date
 
+def getcontent():
+    url='https://m.fang.com/fangjia/?c=pinggu&a=ajaxGetList&city=zh&price=&district=&comarea=&orderby=0&keyword=&x1=&y1=&distance=&from=&r=0.5950817591123896&p=99'
+    r=requests.get(url)
+    r.encoding='utf-8'
+    print r.text
 #getcity()
-fangtx()
+#fangtx()
+getcontent()

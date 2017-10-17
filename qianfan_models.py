@@ -13,7 +13,7 @@ Base = declarative_base()
 
 
 class Apps(Base):
-    __tablename__ = 'tb_apps2'
+    __tablename__ = 'tb_apps3'
     id = Column(Integer, primary_key=True)
     app_rank = Column(Integer, index=True)
     appName = Column(String(150), index=True)
