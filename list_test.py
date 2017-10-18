@@ -11,9 +11,15 @@ def case1():
     b = [54, 3, 2, 1, 2]
     c = a + b
     print c
+    print set(c)
     d = list(set(c))
     print d
-
+    print {}.fromkeys(c).keys()
+    x= a.index
+    '''
+    for i in x:
+        print i
+    '''
     urlss = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(str(i)) for i in range(1, 6, 1)]
     # print urlss
     for i in urlss:
@@ -347,6 +353,24 @@ def change_value():
             i=0
     print a
     #a=['name':]
+
+def sort_case():
+    x=[2,5,3,11,43,33,99,100,66,44]
+    print x.sort()
+    print x
+    y=[10,11,12,13,11,14,10,9]
+    y.reverse()
+    print y
+    print x[::-1]
+    print x
+
+def mutable():
+    b=[1,2,3]
+    a=(1,2,3,4,b)
+    print a[4]
+    b[1]=99
+    print a
+    print a[4]
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -364,4 +388,6 @@ def change_value():
 #list_change()
 #extend_case()
 #index_usage()
-change_value()
+#change_value()
+#sort_case()
+mutable()

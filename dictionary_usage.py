@@ -70,7 +70,15 @@ def find_key():
             print k
             break
 
-
+def dict_create():
+    a=[('a',1),('b',2)]
+    b=dict(a)
+    print b
+    c={}.fromkeys([i for i in range(10)])
+    print c
+    d=c.keys()
+    print d
 # sort_usge()
 # base_usage()
-find_key()
+#find_key()
+dict_create()
