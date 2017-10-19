@@ -106,21 +106,20 @@ def debug_page():
     headers = {
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:31.0) Gecko/20100101 Firefox/31.0'
     }
-
-    url = 'https://m.fang.com/fangjia/?c=pinggu&a=ajaxGetList&city=sz&price=&district=&comarea=&orderby=0&keyword=&x1=&y1=&distance=&from=&r=0.0828841320981899&p=101'
+    url = 'http://m.qfang.com/guangzhou/rent/100001468?gardenId=1109818'
     r = requests.get(url=url, headers=headers)
-    r.encoding='gbk'
+    #r.encoding='gbk'
     print r.status_code
     print type(r.content)
     print r.content
     #print chardet.detect(r)
-    tree = etree.HTML(r.text,parser=etree.HTMLParser(encoding='gbk'))
+    tree = etree.HTML(r.text,parser=etree.HTMLParser(encoding='utf-8'))
     #print etree.tostring(tree)
     return tree,r.text
 
 
 
-#tree,text = debug_page()
+tree,text = debug_page()
 print getheader()
 #analysis_cookie()
 
