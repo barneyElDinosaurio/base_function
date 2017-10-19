@@ -24,7 +24,12 @@ def copy_case():
 
 def validate_case():
     dict1 = {"a": "apple", "o": "orange", 'b': ['a', 'b', 'c', 'd']}
-    dict2 = copy.copy(dict1)
+    # 浅复制 dict2 = copy.copy(dict1)
+
+
+    # 深复制
+    dict2 = copy.deepcopy(dict1)
+
     dict1['b'].append('f')
     print dict1
     print dict2
