@@ -21,6 +21,31 @@ def list_generator():
     print type(l)
     print l
 
-x = generator_usage()
-print x
+def iter_function():
+    a=[i for i in range(100)]
+    b=iter(a)
+    while True:
+        try:
+            print b.next()
+        except StopIteration:
+            print 'over'
+            break
+
+def key_function():
+    d={'a':1,'z':2,'f':3,'g':9,'i':8}
+    '''
+    for i in d:
+        print i
+    '''
+
+    for i in d.items():
+    #for i in d.itervalues():
+    #for i in d.iterkeys():
+    #for i in d.iteritems():
+        print i
+
+#iter_function()
+key_function()
+#x = generator_usage()
+#print x
 #list_generator()

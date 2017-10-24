@@ -1,9 +1,16 @@
-accept:*/*
-accept-encoding:gzip, deflate, br
-accept-language:zh,en;q=0.8,en-US;q=0.6
-cache-control:no-cache
-cookie:global_cookie=mhf9mmses6ovr76y48gq9jrfj1pj6ekwgdp; Integrateactivity=notincludemc; vh_newhouse=1_1503451998_12479%5B%3A%7C%40%7C%3A%5Dbcc17dddf35e886dd3be5d0a8a822358; __jsluid=542d5f8b93b04313bed905bc9085206c; global_wapandm_cookie=7u17sxmhmlxcdue3lchbetnfq2vj7havntp; token=59c66a51681142018630f1745e1e739f; JSESSIONID=aaa6VDSlSRcwl4K4Uno8v; SoufunSessionID_Esf=1_1507864006_8862; sf_source=; s=; city=sz; newhouse_user_guid=671E18B0-D023-C049-0AFB-BD2E31F666A9; newhouse_chat_guid=77FDE94B-AA70-5D16-C016-B9A5F61CF6F4; unique_cookie=U_je7bkyenpc0zw6e71lercteqj2gj8mukwoh*28; __utmt_t0=1; __utmt_t1=1; cityHistory=%E6%B7%B1%E5%9C%B3%2Csz%3B%E6%98%86%E6%98%8E%2Ckm%3B%E5%AE%89%E8%BE%BE%2Canda; mencity=sz; __utma=147393320.1104454669.1502861445.1508229895.1508233270.60; __utmb=147393320.14.10.1508233270; __utmc=147393320; __utmz=147393320.1507863904.55.19.utmcsr=baidu|utmccn=(organic)|utmcmd=organic; unique_wapandm_cookie=U_hpbc9s7aij2u71vypkro2gbrq28j8munvsi*70
-pragma:no-cache
-referer:https://m.fang.com/fangjia/sz_list_pinggu/?x1=114.025974&y1=22.546054&distance=5&from=tjxq
-user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
-x-requested-with:XMLHttpRequest
+Accept:application/json, text/javascript, */*; q=0.01
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh,en;q=0.8,en-US;q=0.6
+Cache-Control:no-cache
+Connection:keep-alive
+Content-Length:39
+Content-Type:application/x-www-form-urlencoded; charset=UTF-8
+Cookie:user_trace_token=20171008235700-51c89e1e-ac41-11e7-822c-525400f775ce; LGUID=20171008235700-51c8a17f-ac41-11e7-822c-525400f775ce; JSESSIONID=ABAAABAACDBABJB2B423D18B13E1DA9574E04C3A67D18CB; _gat=1; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; TG-TRACK-CODE=index_company; LGSID=20171022205613-622e2f35-b728-11e7-a438-525400f775ce; LGRID=20171022205618-65283f3a-b728-11e7-9601-5254005c3644; _putrc=DFAF58A586D854B0; login=true; unick=%E9%99%88%E9%94%A6%E4%BC%9F; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=138; index_location_city=%E6%B7%B1%E5%9C%B3; _gid=GA1.2.1723890745.1508676965; _ga=GA1.2.891768125.1507478204; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1508000182,1508164186,1508336224,1508676965; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1508676974
+Host:www.lagou.com
+Origin:https://www.lagou.com
+Pragma:no-cache
+Referer:https://www.lagou.com/gongsi/
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36
+X-Anit-Forge-Code:0
+X-Anit-Forge-Token:None
+X-Requested-With:XMLHttpRequest

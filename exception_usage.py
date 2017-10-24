@@ -4,18 +4,19 @@ def case1():
     try:
         print 'try'
         r =  int('a')
+        #r =  int('a')
         print 'result is ',r
     except ZeroDivisionError as e:
         print 'exception ',e
     except IOError as e:
         print 'exception',e
-    except ValueError as e:
-        print 'exception:::' , e
+    #except ValueError as e:
+        #print 'exception:::' , e
         #logging.exception(e)
     else:
         print 'in else'
     finally:
-        print  'finally'
+        print 'finally'
 
     print 'end'
 
@@ -30,4 +31,4 @@ def case2():
     return 10/n
 
 #case1()
-case2()
+#case2()
