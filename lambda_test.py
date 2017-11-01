@@ -23,4 +23,10 @@ def compare_case():
     f=lambda x,y: x if x>y else y
     x=f(61,8)
     print x
-compare_case()
+
+def lamda_case2():
+    y=lambda x,y:x*y
+    print y(2,4)
+
+#compare_case()
+lamda_case2()

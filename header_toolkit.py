@@ -122,10 +122,6 @@ def debug_page():
 #tree,text = debug_page()
 #print getheader()
 analysis_cookie()
-
-#tree,text = debug_page()
-#print getheader()
-
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')

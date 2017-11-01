@@ -3,14 +3,14 @@ Accept-Encoding:gzip, deflate, br
 Accept-Language:zh,en;q=0.8,en-US;q=0.6
 Cache-Control:no-cache
 Connection:keep-alive
-Content-Length:39
+Content-Length:89
 Content-Type:application/x-www-form-urlencoded; charset=UTF-8
-Cookie:user_trace_token=20171008235700-51c89e1e-ac41-11e7-822c-525400f775ce; LGUID=20171008235700-51c8a17f-ac41-11e7-822c-525400f775ce; JSESSIONID=ABAAABAACDBABJB2B423D18B13E1DA9574E04C3A67D18CB; _gat=1; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; TG-TRACK-CODE=index_company; LGSID=20171022205613-622e2f35-b728-11e7-a438-525400f775ce; LGRID=20171022205618-65283f3a-b728-11e7-9601-5254005c3644; _putrc=DFAF58A586D854B0; login=true; unick=%E9%99%88%E9%94%A6%E4%BC%9F; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=138; index_location_city=%E6%B7%B1%E5%9C%B3; _gid=GA1.2.1723890745.1508676965; _ga=GA1.2.891768125.1507478204; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1508000182,1508164186,1508336224,1508676965; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1508676974
+Cookie:user_trace_token=20160612223035-3a02d006-30aa-11e6-a343-5254005c3644; LGUID=20160612223035-3a02d566-30aa-11e6-a343-5254005c3644; SEARCH_ID=08c78425fe834aad93ccda9367e90b39; JSESSIONID=ABAAABAACDBAAIABC4729F0A9CEC95D283FC7071EF87E1E; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; _putrc=DFAF58A586D854B0; login=true; unick=%E9%99%88%E9%94%A6%E4%BC%9F; showExpriedIndex=1; showExpriedCompanyHome=1; showExpriedMyPublish=1; hasDeliver=138; TG-TRACK-CODE=index_company; index_location_city=%E6%B7%B1%E5%9C%B3; _gat=1; _gid=GA1.2.1667060466.1509002344; _ga=GA1.2.499625224.1465741835; LGSID=20171027125724-52ba86b9-bad3-11e7-a9d9-525400f775ce; LGRID=20171027132206-c5e392f3-bad6-11e7-a9dc-525400f775ce; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1507978370,1508072067,1509002344,1509080246; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1509081728
 Host:www.lagou.com
 Origin:https://www.lagou.com
 Pragma:no-cache
-Referer:https://www.lagou.com/gongsi/
-User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36
-X-Anit-Forge-Code:0
-X-Anit-Forge-Token:None
+Referer:https://www.lagou.com/gongsi/j21775.html
+User-Agent:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+X-Anit-Forge-Code:29147244
+X-Anit-Forge-Token:7de3070b-49c3-4b96-918c-13adf53ad7c3
 X-Requested-With:XMLHttpRequest
