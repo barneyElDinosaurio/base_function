@@ -9,13 +9,19 @@ import json
 class mysql_usage():
     def __init__(self):
         # mysql_password = Toolkit.getUserData('data.cfg')['mysql_password']
-        host = '192.168.137.44'
-        user = 'rocky'
-        db = 'mysql'
+        host = '127.0.0.1'
+        user = 'root'
+        db = 'db_parker'
         # db='test_database'
         mysql_password = '123456z'
         self.db = MySQLdb.connect(host, user, mysql_password, db, charset='utf8')
 
+    def getVersion(self):
+        cur = self.db.cursor()
+        cur.execute('select version()')
+        data = cur.fetchone()
+        print data
+    
     def DB_Usage(self):
         db = MySQLdb.connect("localhost", "root", "123456z", "house")
         cursor = db.cursor()
@@ -221,11 +227,13 @@ if __name__ == '__main__':
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
-    #obj = mysql_usage()
+    obj = mysql_usage()
     #obj.create_table('houseinfo')
     # obj.mysql_add_data('temp')
     # obj.query()
     # obj.update()
     # obj.transfer_data()
+    obj.getVersion()
     #remote_mysql2()
-    remote_mysql()
+    #remote_mysql()
+
