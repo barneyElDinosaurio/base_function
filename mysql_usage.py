@@ -21,7 +21,7 @@ class mysql_usage():
         cur.execute('select version()')
         data = cur.fetchone()
         print data
-    
+
     def DB_Usage(self):
         db = MySQLdb.connect("localhost", "root", "123456z", "house")
         cursor = db.cursor()
