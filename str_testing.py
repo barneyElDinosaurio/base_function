@@ -205,8 +205,11 @@ def geturlid():
     url_list[len(url_list)-1]='rent'
     url_list.append(houseid)
     url ='/'.join(url_list)
-    / taicang
+    #taicang
 
+def find_usage():
+    s = 'Hello'
+    print s.find('o')
 
 #check_year()
 #_write_adead()
@@ -226,4 +229,5 @@ def geturlid():
 #code_case()
 #check_default_type()
 #len_case()
-geturlid()
+#geturlid()
+find_usage()
