@@ -94,7 +94,7 @@ def ma_type_test():
     plt.show()
 
 
-#baseAPI()
+baseAPI()
 #boll()
 #price_moment()
-ma_type_test()
+#ma_type_test()

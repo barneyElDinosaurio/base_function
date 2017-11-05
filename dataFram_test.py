@@ -129,6 +129,11 @@ def row_merge():
     print result
     print df['A'][0]
 
+def dataframe_create():
+    df=pd.DataFrame()
+    df['name']=[i for i in range(1,10)]
+    print df
+
 #df_practice()
 #question()
 #plot_test()
@@ -136,4 +141,5 @@ def row_merge():
 #compare_values()
 #jianshu()
 #apply_map_test()
-row_merge()
+#row_merge()
+dataframe_create()
