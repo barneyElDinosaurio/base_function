@@ -1,4 +1,5 @@
 # coding: utf-8
+from Queue import Queue
 def generator_usage():
     g = (x for x in range(1000))
     #rint type(g)
@@ -44,8 +45,26 @@ def key_function():
     #for i in d.iteritems():
         print i
 
+def iter_usage():
+    q=Queue()
+    q.put(1)
+    q.put(2)
+    q.put(3)
+    q.put(4)
+    q.put(5)
+    q.put('END')
+
+    def fetchdata():
+        return q.get()
+
+    for i in iter(fetchdata,'END'):
+        print i
+
+
+
 #iter_function()
-key_function()
+#key_function()
 #x = generator_usage()
 #print x
 #list_generator()
+iter_usage()

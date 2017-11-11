@@ -243,8 +243,6 @@ def testcase1():
     plt.show()
 
 def testcase2():
-    import matplotlib.pyplot as plt
-    import numpy as np
 
     x = np.arange(10)
     print x
@@ -258,6 +256,12 @@ def testcase2():
     #ax.legend(bbox_to_anchor=(1.2,1.2))
     ax.legend()
 
+    plt.show()
+
+def pie_test():
+    plt.figure()
+    x=[1,1,3]
+    plt.pie(x)
     plt.show()
 
 def main():
@@ -275,6 +279,7 @@ def main():
     #multi_plot_rocky2()
     #other_mil()
     #testcase1()
-    testcase2()
+    #testcase2()
+    pie_test()
 
 main()

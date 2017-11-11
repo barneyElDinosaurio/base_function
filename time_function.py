@@ -1,6 +1,17 @@
 # -*-coding=utf-8-*-
 # 日期时间函数的使用
 import time, datetime
+import timeit
+
+
+def test_func():
+    x = [i for i in range(10000)]
+
+def timeit_usage():
+    start=time.clock()
+    print timeit.timeit('test_func()','from __main__ import test_func',number=10000)
+    end=time.clock()
+    print end-start
 
 
 class Data_test(object):
@@ -250,7 +261,8 @@ if __name__ == "__main__":
     #bj.getPreviousDay()
     # str_time_hour()
     #time_string_test()
-    time_cuo()
+    #time_cuo()
     # time_format()
     #check_weekday()
     #str_time_hour()
+    timeit_usage()
