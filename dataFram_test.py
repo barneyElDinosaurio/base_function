@@ -4,7 +4,9 @@ import pandas as pd
 from pandas import Series
 import matplotlib.pyplot as plt
 import time
-#pd.set_option('display.max_rows',None)
+#显示全部的行
+pd.set_option('display.max_rows',None)
+
 def df_practice():
     a = [1, -23, 4, 5, 6, 7, -4, 34, 3, 5, 33]
     b = [-2, 55, -5, 99, 3, -3, 55, 3, -1, 4, 7]
@@ -133,7 +135,10 @@ def dataframe_create():
     df=pd.DataFrame()
     df['name']=[i for i in range(1,10)]
     print df
-
+    df['id']=[chr(i) for i in range(ord('a'),ord('a')+9)]
+    print df
+    df = df.set_index('name',drop=False)
+    print df
 #df_practice()
 #question()
 #plot_test()

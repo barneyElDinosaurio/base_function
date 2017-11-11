@@ -211,6 +211,9 @@ def find_usage():
     s = 'Hello'
     print s.find('o')
 
+def lower_usage():
+    a = 'DFDFFlll'
+    print a.lower()
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -230,4 +233,5 @@ def find_usage():
 #check_default_type()
 #len_case()
 #geturlid()
-find_usage()
+#find_usage()
+lower_usage()

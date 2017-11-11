@@ -54,10 +54,10 @@ event.listen(
         DDL("ALTER TABLE %(table)s AUTO_INCREMENT = 1000000;")
     )
 
-    '''
-    def __repr__(self):
+
+def __repr__(self):
         return "House Name:%scity_name:%s" %(self.house_name,self.city_name)
-    '''
+
 
 class Price(Base):
     __tablename__ = 'tb_price'
