@@ -6,9 +6,9 @@ import urllib2, time
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot
-
+from sqlalchemy import create_engine
 pd.set_option('display.max_rows', None)
-
+engine = create_engine('mysql+pymysql://root:123456z@127.0.0.1/db_parker?charset=utf8')
 
 def baseAPI():
     #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
@@ -383,6 +383,9 @@ def code_issue():
     base = ts.get_stock_basics()
     base.to_excel('111.xls')
 
+def sql_store():
+    df = ts.get_tick_data('300333', date='2016-12-22')
+    df.to_sql('tick_data', engine)
 #empty_type()
 #exception_test()
 #get_basic()
@@ -413,10 +416,11 @@ def code_issue():
 
 
 print ts.__version__
+sql_store()
 #check_k_data()
 #get_index()
 #get_volume()
-baseAPI()
+#baseAPI()
 
 #code_issue()
 
