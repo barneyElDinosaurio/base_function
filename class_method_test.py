@@ -98,10 +98,7 @@ a=Factory_Work.get_fun("phone")
 a.work_fun()
 '''
 
-person = Person("Jacky", "He")
-print person.p_name
-person.last_name = "HHHH"
-print person.p_name
+
 
 from abc import  abstractmethod,ABCMeta
 class abc_abstract_test():
@@ -120,8 +117,23 @@ class sub_class(abc_abstract_test):
     def fun(self):
         print "New here"
 
+class Base():
+    def __init__(self):
+        print "in base init"
 
-obj=sub_class()
-obj.fun()
-obj.getSize()
-
+class Child(Base):
+    def __init__(self):
+        print 'child init'
+    def foo(self):
+        print 'in foo'
+'''
+person = Person("Jacky", "He")
+print person.p_name
+person.last_name = "HHHH"
+print person.p_name
+'''
+#obj=sub_class()
+#obj.fun()
+#obj.getSize()
+obj = Child()
+obj.foo()
