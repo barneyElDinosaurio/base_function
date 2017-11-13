@@ -126,6 +126,20 @@ class Child(Base):
         print 'child init'
     def foo(self):
         print 'in foo'
+
+class TestDir():
+    name = 'Rokcy'
+    def __init__(self):
+        self.work=0
+
+    def __str__(self):
+        return TestDir.name
+
+    __repr__=__str__
+
+
+
+
 '''
 person = Person("Jacky", "He")
 print person.p_name
@@ -135,5 +149,13 @@ print person.p_name
 #obj=sub_class()
 #obj.fun()
 #obj.getSize()
-obj = Child()
-obj.foo()
+#obj = Child()
+#obj.foo()
+obj = TestDir()
+print dir(obj)
+print vars(obj).keys()
+print dir(TestDir)
+print TestDir.__dict__
+print vars(TestDir)
+#print vars()
+print obj

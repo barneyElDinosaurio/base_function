@@ -54,6 +54,8 @@ def sort_usge():
     dic2 = sorted(dic.iteritems(), key=lambda asd: asd[0], reverse=True)
     print dic
     print dic2
+    dic3 = sorted(dic.keys())
+    print dic3
 
 
 # 根据值来找键
@@ -78,7 +80,18 @@ def dict_create():
     print c
     d=c.keys()
     print d
-# sort_usge()
+
+class SortDict(dict):
+    def keys(self):
+        return sorted(super(SortDict,self).keys())
+
+def sort_test():
+    d = SortDict({'a': 33, 'b': 2, 'c': 44, 'z': 22, 'd': 89, 'e': 5})
+    d1 = SortDict((('zheng-cai',67),('hui-jun',11),('xin-yi',88)))
+    print d.keys()
+    print d1.keys()
+#sort_usge()
 # base_usage()
 #find_key()
-dict_create()
+#dict_create()
+sort_test()
