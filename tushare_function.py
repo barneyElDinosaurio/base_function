@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot
 from sqlalchemy import create_engine
-pd.set_option('display.max_rows', None)
+#pd.set_option('display.max_rows', None)
 engine = create_engine('mysql+pymysql://root:123456z@127.0.0.1/db_parker?charset=utf8')
 
 def baseAPI():
@@ -77,9 +77,16 @@ def baseAPI():
     print sz_index
     print sz_index.ix[sz_index['date']=='2014-05-06','high'].values[0]
     '''
+    '''
     df = ts.get_realtime_quotes(['600848', '000980', '000981'])  #一次过返回3个数据
     print df
+    '''
 
+    #bar 函数
+    conn = ts.get_apis()
+    df =ts.bar('000022',conn,start_date='2000-01-01',adj='qfq')
+    print df
+    print df.dtypes
 
 def date_test():
     data = stock_info.ix['300141']['timeToMarket']
@@ -416,11 +423,9 @@ def sql_store():
 
 
 print ts.__version__
-sql_store()
+#sql_store()
 #check_k_data()
 #get_index()
 #get_volume()
-#baseAPI()
-
+baseAPI()
 #code_issue()
-
