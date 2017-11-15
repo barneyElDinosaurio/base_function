@@ -5,7 +5,7 @@ http://30daydo.com
 Contact: weigesysu@qq.com
 '''
 import redis
-r = redis.Redis(host='127.0.0.1', port=6379, db=3)
+r = redis.Redis(host='127.0.0.1', port=6379, db=1)
 def base_usage():
     print r.dbsize()
     #r.flushdb()
@@ -61,11 +61,44 @@ def getMulti():
 def getMulti2():
     x= r.mget('a','b','c')
     print x
+
+def pop_usage():
+    #r.lpush('key',{'hello1':'world'})
+    #r.lpush('key','hello')
+    #r.lpush('key','hello')
+    for i in range(r.llen('key')):
+        x= r.lpop('key')
+        print type(x)
+def get_keys():
+    '''
+    for i in r.keys():
+        print i,
+        print r.get(i)
+    '''
+    print r.llen('codes')
+    i=0
+    while i<10:
+        try:
+            x= r.lpop('codes')
+            print x
+            '''
+            d = eval(x[1])
+            code = d.keys()[0]
+            name = d[d.keys()[0]]
+            print code,name
+            '''
+        except Exception,e:
+            print e
+            break
+        i=i+1
+    print "Done"
 #base_usage()
 #insert_data()
 #get_data()
 #list_usage()
 #get_data2()
-getMulti()
+#getMulti()
 #get_data2()
-getMulti2()
+#getMulti2()
+#pop_usage()
+get_keys()
