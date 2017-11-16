@@ -5,7 +5,8 @@ http://30daydo.com
 Contact: weigesysu@qq.com
 '''
 import redis
-r = redis.Redis(host='127.0.0.1', port=6379, db=1)
+HOSTNAME='localhost'
+r = redis.Redis(host=HOSTNAME, port=6379, db=1)
 def base_usage():
     print r.dbsize()
     #r.flushdb()
@@ -23,6 +24,11 @@ def base_usage():
         print type(x)
     #print r.get('test')
 
+#删除数据库
+def clear_db(db):
+    r=redis.StrictRedis(HOSTNAME,6379,db=db)
+    #r.flushdb()
+    print r.dbsize()
 
 def insert_data():
     '''
@@ -101,4 +107,5 @@ def get_keys():
 #get_data2()
 #getMulti2()
 #pop_usage()
-get_keys()
+#get_keys()
+clear_db(1)
