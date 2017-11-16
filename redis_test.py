@@ -7,6 +7,7 @@ Contact: weigesysu@qq.com
 import redis
 HOSTNAME='raspberrypi'
 r = redis.Redis(host=HOSTNAME, port=6379, db=0)
+
 def base_usage():
     print r.dbsize()
     #r.flushdb()
@@ -24,6 +25,11 @@ def base_usage():
         print type(x)
     #print r.get('test')
 
+#删除数据库
+def clear_db(db):
+    r=redis.StrictRedis(HOSTNAME,6379,db=db)
+    #r.flushdb()
+    print r.dbsize()
 
 def insert_data():
     '''
@@ -103,3 +109,4 @@ list_usage()
 #getMulti2()
 #pop_usage()
 #get_keys()
+clear_db(1)
