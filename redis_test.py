@@ -5,7 +5,8 @@ http://30daydo.com
 Contact: weigesysu@qq.com
 '''
 import redis
-r = redis.Redis(host='127.0.0.1', port=6379, db=1)
+HOSTNAME='raspberrypi'
+r = redis.Redis(host=HOSTNAME, port=6379, db=0)
 def base_usage():
     print r.dbsize()
     #r.flushdb()
@@ -95,10 +96,10 @@ def get_keys():
 #base_usage()
 #insert_data()
 #get_data()
-#list_usage()
+list_usage()
 #get_data2()
 #getMulti()
 #get_data2()
 #getMulti2()
 #pop_usage()
-get_keys()
+#get_keys()
