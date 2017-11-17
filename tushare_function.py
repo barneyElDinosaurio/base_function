@@ -8,7 +8,7 @@ import matplotlib
 import matplotlib.pyplot
 from sqlalchemy import create_engine
 #pd.set_option('display.max_rows', None)
-engine = create_engine('mysql+pymysql://root:123456z@127.0.0.1/db_parker?charset=utf8')
+engine = create_engine('mysql+pymysql://root:@127.0.0.1/db_parker?charset=utf8')
 
 def baseAPI():
     #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')

@@ -21,7 +21,7 @@ from sqlalchemy import Column, String, DateTime, Integer, Text, INT,ForeignKey,I
 #from mayidaili import useproxy
 from sqlalchemy import event
 from sqlalchemy import DDL
-engine = create_engine('mysql+pymysql://root:123456z@localhost:3306/stock?charset=utf8')
+engine = create_engine('mysql+pymysql://root:@localhost:3306/stock?charset=utf8')
 DBSession = sessionmaker(bind=engine)
 Base = declarative_base()
 session = DBSession()

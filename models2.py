@@ -13,7 +13,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime, Integer, Text,ForeignKey
 from sqlalchemy import event
 from sqlalchemy import DDL
-engine = create_engine('mysql+pymysql://root:123456z@localhost:3306/db_parker?charset=utf8')
+engine = create_engine('mysql+pymysql://root:@localhost:3306/db_parker?charset=utf8')
 DBSession = sessionmaker(bind=engine)
 Base = declarative_base()
 

@@ -17,7 +17,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime, Integer, Text, INT,ForeignKey
 #from mayidaili import useproxy
 
-engine = create_engine('mysql+pymysql://root:123456z@localhost:3306/house?charset=utf8')
+engine = create_engine('mysql+pymysql://root:''@localhost:3306/house?charset=utf8')
 DBSession = sessionmaker(bind=engine)
 Base = declarative_base()
 session = DBSession()

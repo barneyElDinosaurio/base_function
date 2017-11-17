@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import Column, String, DateTime, Integer, Text, INT,ForeignKey,Index
-engine = create_engine('mysql+pymysql://root:123456z@localhost:3306/stock?charset=utf8',echo=True)
+engine = create_engine('mysql+pymysql://root:@localhost:3306/stock?charset=utf8',echo=True)
 #DBSession = sessionmaker(bind=engine)
 #session = DBSession()
 Base = declarative_base(engine)

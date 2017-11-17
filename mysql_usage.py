@@ -4,17 +4,12 @@ import MySQLdb, sqlite3
 import pandas as pd
 from toolkit import Toolkit
 import json
-
+from setting import MYSQL_USER,MYSQL_PASSWORD,MYSQL_HOST
+db='history'
 
 class mysql_usage():
     def __init__(self):
-        # mysql_password = Toolkit.getUserData('data.cfg')['mysql_password']
-        host = '127.0.0.1'
-        user = 'root'
-        db = 'db_parker'
-        # db='test_database'
-        mysql_password = '123456z'
-        self.db = MySQLdb.connect(host, user, mysql_password, db, charset='utf8')
+        self.db = MySQLdb.connect(MYSQL_HOST,MYSQL_USER, MYSQL_PASSWORD,  db, charset='utf8')
 
     def getVersion(self):
         cur = self.db.cursor()
@@ -22,23 +17,43 @@ class mysql_usage():
         data = cur.fetchone()
         print data
 
+    def query(self):
+        cursor = self.db.cursor()
+        cmd = 'select * from `{}` where datetime = \'{}\''
+        cursor.execute(cmd.format('300333','2017-11-15'))
+        data = cursor.fetchall()
+        for i in data[0]:
+            print i,
+        print
+        print data[0]
+        '''
+        for i in data:
+            print i
+        '''
+    def delete_item(self):
+        cursor = self.db.cursor()
+        cmd = 'select table_name from information_schema.`TABLES` where table_schema=\'{}\';'
+        cursor.execute(cmd.format('history'))
+        data = cursor.fetchall()
+        for i in data:
+            code = i[0]
+            cmd_del = 'select * from `{}` where datetime = \'2017-11-17\';'
+            try:
+                cursor.execute(cmd_del.format(code))
+                print cursor.fetchall()
+                #self.db.commit()
+            except Exception,e:
+                print e
+                self.db.rollback()
+
     def DB_Usage(self):
-        db = MySQLdb.connect("localhost", "root", "123456z", "house")
-        cursor = db.cursor()
-        cursor.execute("SELECT VERSION()")
-        data = cursor.fetchone()
-        print data
-        # db.close()
-        cmd = 'SELECT * from first;'
-        df = pd.read_sql(cmd, db)
-        print df
-        db.close()
 
         db1 = sqlite3.connect("df_sql3.db")
         data = [[1, 2, 3, 4], [3, 4, 5, 6], [54, 234, 23, 222]]
         df1 = pd.DataFrame(data)
         print df1
         df1.to_sql("data", db1)
+
 
     def DB_Usage_sqlite(self):
         db = sqlite3.connect("db_sql_test.db")
@@ -139,7 +154,7 @@ class mysql_usage():
         self.db.commit()
         self.db.close()
 
-    def query(self):
+    def query_base(self):
         vol = 500
         table = 'tick0901'
         sql_cmd1 = '''
@@ -223,17 +238,21 @@ def remote_mysql2():
         data = cursor.fetchone()
         conn.close()
 
-if __name__ == '__main__':
+def main():
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
     obj = mysql_usage()
+    #obj.query()
+    obj.delete_item()
     #obj.create_table('houseinfo')
     # obj.mysql_add_data('temp')
     # obj.query()
     # obj.update()
     # obj.transfer_data()
-    obj.getVersion()
+    #obj.getVersion()
     #remote_mysql2()
     #remote_mysql()
+if __name__ == '__main__':
+    main()
 

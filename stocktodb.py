@@ -15,7 +15,7 @@ from sqlalchemy import create_engine
 THREADS_NUM = 25  # 采集线程数
 THREADS_EXITFLAG = 0  # 线程退出标志
 TICKS_DATA_DATE = '2017-11-13'  # 指定采集日期
-MYSQL_ENGINE = 'mysql+pymysql://root:123456z@localhost:3306/stock?charset=utf8'
+MYSQL_ENGINE = 'mysql+pymysql://root:@localhost:3306/stock?charset=utf8'
 
 class GetStockData(threading.Thread):
     def __init__(self, threadID, q):
