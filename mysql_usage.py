@@ -1,15 +1,20 @@
 # -*-coding=utf-8-*-
+import redis
+
 __author__ = 'xda'
 import MySQLdb, sqlite3
 import pandas as pd
 from toolkit import Toolkit
 import json
-from setting import MYSQL_USER,MYSQL_PASSWORD,MYSQL_HOST
-db='history'
+from setting import MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, get_engine, get_mysql_conn
+
+db = 'history'
+engine = get_engine('daily')
+
 
 class mysql_usage():
     def __init__(self):
-        self.db = MySQLdb.connect(MYSQL_HOST,MYSQL_USER, MYSQL_PASSWORD,  db, charset='utf8')
+        self.db = MySQLdb.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
 
     def getVersion(self):
         cur = self.db.cursor()
@@ -20,7 +25,7 @@ class mysql_usage():
     def query(self):
         cursor = self.db.cursor()
         cmd = 'select * from `{}` where datetime = \'{}\''
-        cursor.execute(cmd.format('300333','2017-11-15'))
+        cursor.execute(cmd.format('300333', '2017-11-15'))
         data = cursor.fetchall()
         for i in data[0]:
             print i,
@@ -30,6 +35,7 @@ class mysql_usage():
         for i in data:
             print i
         '''
+
     def delete_item(self):
         cursor = self.db.cursor()
         cmd = 'select table_name from information_schema.`TABLES` where table_schema=\'{}\';'
@@ -37,14 +43,25 @@ class mysql_usage():
         data = cursor.fetchall()
         for i in data:
             code = i[0]
-            cmd_del = 'select * from `{}` where datetime = \'2017-11-17\';'
+            cmd_del = 'delete  from `{}` where datetime = \'2017-11-17\';'
             try:
                 cursor.execute(cmd_del.format(code))
-                print cursor.fetchall()
-                #self.db.commit()
-            except Exception,e:
+                # print cursor.fetchall()
+                self.db.commit()
+            except Exception, e:
                 print e
                 self.db.rollback()
+
+    def modify_table(self):
+        engine_line = get_engine('db_selection')
+        df = pd.read_sql_table('xiayinxian', engine_line, index_col='index')
+        df['ocupy_ration'] = df['ocupy_ration'].map(lambda x: '%.3f' % x)
+        # print df
+        df.to_sql('xiayingxian', engine_line)
+
+    def sql_table(self):
+
+        df = pd.read_sql_table('2017-11-17', engine, index_col='index')
 
     def DB_Usage(self):
 
@@ -53,7 +70,6 @@ class mysql_usage():
         df1 = pd.DataFrame(data)
         print df1
         df1.to_sql("data", db1)
-
 
     def DB_Usage_sqlite(self):
         db = sqlite3.connect("db_sql_test.db")
@@ -139,7 +155,7 @@ class mysql_usage():
 
         # 这个是可以正常运行的
         sql2 = '''insert into houseinfo ( name,city_name,location,price) values ('%s','%s','%s','%s')''' % (
-        item2['name'], item2['city_name'], item2['location'], item2['price'])
+            item2['name'], item2['city_name'], item2['location'], item2['price'])
         print sql2
         # sql 插入有问题
         cursor.execute(sql2)
@@ -206,6 +222,7 @@ class mysql_usage():
         insert into 
         '''
 
+
 def remote_mysql():
     conn = MySQLdb.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
     cursor = conn.cursor()
@@ -213,6 +230,7 @@ def remote_mysql():
     data = cursor.fetchone()
     print data
     conn.close()
+
 
 def remote_mysql2():
     '''
@@ -223,7 +241,7 @@ def remote_mysql2():
     from sshtunnel import SSHTunnelForwarder
 
     with SSHTunnelForwarder(
-                ('x', 8220),
+            ('x', 8220),
             ssh_password="x",
             ssh_username="x",
             remote_bind_address=('x', 3306)) as server:
@@ -238,21 +256,56 @@ def remote_mysql2():
         data = cursor.fetchone()
         conn.close()
 
+
+def create_db_case():
+    low_db = get_mysql_conn('db_selection')
+    low_cursor = low_db.cursor()
+    code = '12345'
+    cur_low = 12.22
+    date = '2017-01-11'
+    name = u'总公司'
+    create_cmd = 'create table if not exists break_low ' \
+                 '(`index` int primary key auto_increment,code text ,name text , cur_low float ,datetime datetime);'
+    low_cursor.execute(create_cmd)
+    insert_cmd = 'insert into break_low (code,name,cur_low,datetime) values (%s,%s,%s,%s);'
+    low_info = (code, name, cur_low, date)
+    low_cursor.execute(insert_cmd, low_info)
+    low_db.commit()
+
+# 删除某一行
+def remove_row():
+    r = redis.StrictRedis('localhost',6379,db=0)
+    db=get_mysql_conn('history')
+    cur = db.cursor()
+    for k in r.keys():
+        print k
+        cmd = 'delete from `{}` where datetime > \'2017-11-16\';'.format(k)
+        try:
+            cur.execute(cmd)
+            db.commit()
+        except:
+            db.rollback()
+    db.close()
+
 def main():
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
-    obj = mysql_usage()
-    #obj.query()
-    obj.delete_item()
-    #obj.create_table('houseinfo')
+    # obj = mysql_usage()
+    # obj.query()
+    # obj.delete_item()
+    # obj.modify_table()
+    # obj.sql_table()
+    # obj.create_table('houseinfo')
     # obj.mysql_add_data('temp')
     # obj.query()
     # obj.update()
     # obj.transfer_data()
-    #obj.getVersion()
-    #remote_mysql2()
-    #remote_mysql()
+    # obj.getVersion()
+    # remote_mysql2()
+    # remote_mysql()
+    # create_db_case()
+    remove_row()
+
 if __name__ == '__main__':
     main()
-

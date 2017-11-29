@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from pandas import Series
 import matplotlib.pyplot as plt
+from setting import get_engine
 import time
 #显示全部的行
 pd.set_option('display.max_rows',None)
@@ -14,20 +15,22 @@ def df_practice():
     print df
     #df.loc[(df['A']>0) & (df['B']<0),'A']=100
     #赋值测试
-    df.ix[(df['A'] > 0) & (df['B'] < 0), 'A'] = 100
+    #df.ix[(df['A'] > 0) & (df['B'] < 0), 'A'] = 100
     print df
     print df.ix[0, 0]
+    print df.dtypes
+    print df['A'].idxmax()
 
-
-def question():
+# 计算相关系数
+def corr_number():
     a = pd.Series([1])
     b = pd.Series([2])
     if (b / a)[0] == 2:
         print "ok"
     c = [2, 4, 6, 8, 10, 12, 14, 16, 18]
-    d = [i * 2 * -1 for i in c]
+    d = [i * 2  for i in c]
     print d
-    d[0] = 3
+    #d[0] = 3
     s1 = Series(c)
     s2 = Series(d)
 
@@ -128,6 +131,7 @@ def row_merge():
     df2 = pd.DataFrame({'A': [6], 'B': [60]})
     df_x = [df, df2]
     result = pd.concat(df_x)
+    result = result.reset_index(drop=True)
     print result
     print df['A'][0]
 
@@ -139,12 +143,34 @@ def dataframe_create():
     print df
     df = df.set_index('name',drop=False)
     print df
-#df_practice()
-#question()
-#plot_test()
-#calculate()
-#compare_values()
-#jianshu()
-#apply_map_test()
-#row_merge()
-dataframe_create()
+
+def dataframe_create1():
+    l=10
+    today=1
+    code = 110
+    name ='hello'
+    opens = 1
+    close =10
+    high=0
+    low=0
+    vol=99
+    amount=99
+    df = pd.DataFrame(columns=[ 'datetime', 'code', 'name', 'open', 'close', 'high', 'low', 'vol', 'amount'])
+    df.loc[99] = [ today, code, name, opens, close, high, low, vol, amount]
+    print df
+    engine = get_engine('test')
+    #df.to_sql('test',engine,if_exists='append')
+
+def main():
+
+    #df_practice()
+    #corr_number()
+    #plot_test()
+    #calculate()
+    #compare_values()
+    #jianshu()
+    #apply_map_test()
+    row_merge()
+    #dataframe_create1()
+
+main()

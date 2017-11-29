@@ -1,5 +1,5 @@
 #-*-coding=utf-8-*-
-
+import math
 #计算N的阶乘
 def factorial(N):
     ret = 1
@@ -21,21 +21,32 @@ def permutations(x,n):
     return factorial(n)/factorial(n-x)
 
 
-
 # 组合 从n个中选出x个组合:
 def combination(x,n):
     return permutations(x,n)/factorial(x)
-
 
 
 def yield_calc(rate, money):
     return rate * money / 365 / 100
 
 
-def test1():
-    for i in range(1, 6):
+def fv():
+    for i in range(1, 8):
         rise = (1.1 ** i - 1) * 100
         print "%d day's raise is %.2f" % (i, rise)
+
+    for i in range(1,10):
+        rise = 1.01**i
+        print rise
+
+    print math.log(2,1.01)
+
+def fv_yield(n):
+    for i in range(1,n):
+        rise=1.01**i
+        yield rise
+
+
 
 
 #c = yield_calc(3.65, 1000000)
@@ -57,6 +68,8 @@ def validation():
 def main():
     #percentage(0.195,0.185)
     #print factorial(5)
-    validation()
-
+    #validation()
+    #fv()
+    fv_g=fv_yield(100)
+    print fv_g.next()
 main()
