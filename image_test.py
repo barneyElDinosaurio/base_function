@@ -49,8 +49,32 @@ def read_image():
     new_im = Image.fromarray(dt)
     new_im.show()
 
+
+def image_recognize():
+    import pytesseract
+    from PIL import Image
+
+    class GetImageDate(object):
+        def m(self):
+            image = Image.open("data/0.jpg")
+            text = pytesseract.image_to_string(image)
+            return text
+
+        def SaveResultToDocument(self):
+            text = self.m()
+            f = open(u"Verification.txt", "w")
+            print text
+            f.write(str(text))
+            f.close()
+
+    g = GetImageDate()
+    g.SaveResultToDocument()
+
+
 def main():
     #base_usage()
-    read_image()
+    # read_image()
+    image_recognize()
+
 if __name__=='__main__':
     main()

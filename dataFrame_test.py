@@ -5,6 +5,7 @@ from pandas import Series
 import matplotlib.pyplot as plt
 from setting import get_engine
 import time
+import timeit
 #显示全部的行
 pd.set_option('display.max_rows',None)
 
@@ -160,6 +161,35 @@ def dataframe_create1():
     print df
     engine = get_engine('test')
     #df.to_sql('test',engine,if_exists='append')
+# 统计出现的次数
+def count_case():
+    df=pd.DataFrame()
+    df['A']=[90,97,95,99,99,99,92,90,97,96,99,99,92,93]
+    df['B']=[80,87,85,89,89,89,82,80,87,86,89,89,82,83]
+    #print df
+    print df['A'].value_counts()
+
+def nan_case():
+    df = pd.DataFrame()
+    df['A'] = [1,2,3,None,4,5]
+    # print df
+    print df['A'].value_counts()
+    df['B']=[2,2,2,2,2,2]
+    # print df
+    print df['A'].sum()
+    print df['B'].sum()
+
+def misc():
+    vals1 = np.array([1, np.nan, 3, 4])
+    print vals1.sum()
+
+    for dtype in ['object', 'int']:
+        print("dtype =", dtype)
+        # print timeit.timeit(np.arange(1E6, dtype=dtype).sum())
+        start = time.time()
+        print np.arange(1E8, dtype=dtype).sum()
+
+        print time.time()-start
 
 def main():
 
@@ -170,7 +200,10 @@ def main():
     #compare_values()
     #jianshu()
     #apply_map_test()
-    row_merge()
+    # row_merge()
     #dataframe_create1()
+    # count_case()
+    # nan_case()
+    misc()
 
 main()

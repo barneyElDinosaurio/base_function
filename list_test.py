@@ -371,6 +371,12 @@ def mutable():
     b[1]=99
     print a
     print a[4]
+
+def slice_case():
+    x= range(10)
+    print x
+    y=x[::-1]
+    print y
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -390,4 +396,5 @@ def mutable():
 #index_usage()
 #change_value()
 #sort_case()
-mutable()
+# mutable()
+slice_case()

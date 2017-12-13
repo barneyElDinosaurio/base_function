@@ -1,6 +1,9 @@
 #-*-coding=utf-8-*-
 import math
 #计算N的阶乘
+import sys
+
+
 def factorial(N):
     ret = 1
     for i in range(1,N+1):
@@ -65,11 +68,21 @@ def validation():
     print permutations(2,6)
     print combination(2,6)
 
+def value_large():
+    m = sys.maxint
+    print type(m)
+    m=m+1
+    print m
+    w  = math.log(m,2)
+    print w
+    print 2**w
 def main():
     #percentage(0.195,0.185)
     #print factorial(5)
     #validation()
     #fv()
-    fv_g=fv_yield(100)
-    print fv_g.next()
+    # fv_g=fv_yield(100)
+    # print fv_g.next()
+    value_large()
+
 main()

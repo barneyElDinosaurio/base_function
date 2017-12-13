@@ -214,6 +214,15 @@ def find_usage():
 def lower_usage():
     a = 'DFDFFlll'
     print a.lower()
+
+def str_function():
+    x= 'My name is Rocky and , what\'s your name ?'
+    # print x.find('name') # 3
+    # print x.find('Xname') # -1
+    print x.count('n')
+
+
+
 #check_year()
 #_write_adead()
 #zfill_test()
@@ -234,4 +243,5 @@ def lower_usage():
 #len_case()
 #geturlid()
 #find_usage()
-lower_usage()
+# lower_usage()
+str_function()

@@ -294,13 +294,6 @@ def Serial():
     print heap.pop(0)
     print heap
 
-#-*-coding=utf-8-*-
-#author: Rocky Chen
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
-
 def base_case():
     dates = pd.date_range("20160516", periods=5)
     print dates
@@ -371,15 +364,16 @@ def group_test():
     group1=df.groupby('key1')
     print group1
 
-<<<<<<< HEAD
-
-def
-=======
 def big_data():
    pass
->>>>>>> origin/master
 
-#base_case()
+def read_network():
+    url = 'https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv'
+    df = pd.read_csv(url)
+    print df
+
+
+# base_case()
 #excel_op()
 #del_row()
 #search()
@@ -402,4 +396,5 @@ def big_data():
 #base_function()
 #read_data()
 #data_analysis()
-group_test()
+#group_test()
+read_network()
