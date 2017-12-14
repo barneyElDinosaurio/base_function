@@ -117,11 +117,17 @@ def debug_page():
     #print etree.tostring(tree)
     return tree,r.text
 
-
+# 可以随意替换这个header信息
+def see_header():
+    ua = 'IE'
+    header = {'User-Agent':ua}
+    r = requests.get(url='https://helloacm.com/api/user-agent/')
+    print r.text
 
 #tree,text = debug_page()
 #print getheader()
-analysis_cookie()
+# analysis_cookie()
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')
+see_header()
