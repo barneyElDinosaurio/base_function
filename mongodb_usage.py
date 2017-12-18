@@ -3,9 +3,9 @@ import codecs
 import json
 import pprint
 import pymongo,datetime
-
+host = 'raspberrypi'
 def basic_usage():
-    client = pymongo.MongoClient('127.0.0.1', 27017)
+    client = pymongo.MongoClient(host, 27017)
     # db=client.test
     db = client.demo_api
     # collection=db.houseinfo_aug
@@ -34,16 +34,17 @@ def remove():
 
 
 def insert():
-    client = pymongo.MongoClient('127.0.0.1', 27017)
+    client = pymongo.MongoClient(host, 27017)
     # db=client.test
     db = client.demo_api
     # collection=db.houseinfo_aug
     collection = db.first_collection
     date=datetime.datetime.now()
-    #data={"_id":"100001","name":"rocky","age":21,"date":date}
+    data={"_id":"100001","name":"rocky","age":21,"date":date}
     for i in xrange (100,200):
-        data={'_id':i}
-        collection.insert(data)
+        #data={'_id':i}
+        data['_id']=i
+        collection.save(data)
 
 def update():
     db. first_collection.update({'name':'rocky','age':19},{'name':'rocky','age':199})
@@ -153,12 +154,12 @@ def change_city():
 #basic_usage()
 #query()
 #remove()
-#insert()
+insert()
 #update()
 #getlianjia_price()
 #update_testcase()
 #remove_data()
 #insert_bj()
 #update_url()
-get_price()
+# get_price()
 #change_city()
