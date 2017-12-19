@@ -5,12 +5,12 @@ def yield_test():
         yield b
 
 
-'''
+
 data=yield_test()
 print data
 for i in range(0,10):
-    print data
-'''
+    print data.next()
+
 
 for i in yield_test():
     print i

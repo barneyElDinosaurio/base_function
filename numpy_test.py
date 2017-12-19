@@ -111,6 +111,11 @@ def base_type():
     a1 = np.array(range(20))
     print 'a1 is ',a1
     print a1[-1]
+    print 'revert ',a1[::-1]
+    b1 = np.arange(24)
+    b2 = b1.reshape(2,3,4)
+    print 'b1',b1
+    print 'b2',b2
 
 
 @loop_test
