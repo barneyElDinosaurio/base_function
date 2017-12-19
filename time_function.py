@@ -59,14 +59,18 @@ class Data_test2(object):
         print "Done"
 
 
-class DateTest3():
-    def getPreviousDay(self):
-        now = datetime.datetime.now()
-        print type(now)
-        last = now + datetime.timedelta(days=-31)
-        # 日期增减
-        print last
-        print last.strftime("%Y-%m")
+def getPreviousDay():
+    now = datetime.datetime.now()
+    print now
+    print type(now)
+    last = now + datetime.timedelta(days=-31)
+    # 日期增减
+    print last
+    print last.strftime("%Y-%m")
+
+    my_birth = datetime.datetime(2000,1,1,12,2,2)
+    print type(my_birth)
+    print now-my_birth
 
 
 def time_string_test():
@@ -95,10 +99,7 @@ def test1():
     print "@Class"
     r = Data_test2.get_date("2016-8-6")
     r.out_date()
-
     print "*" * 10
-    d3 = DateTest3()
-    d3.getPreviousDay()
 
 
 def test2():
@@ -257,12 +258,11 @@ if __name__ == "__main__":
     # test2()
     # time_fun()
     # time_exchange()
-    #obj=DateTest3()
-    #bj.getPreviousDay()
+    getPreviousDay()
     # str_time_hour()
     #time_string_test()
     #time_cuo()
     # time_format()
     #check_weekday()
     #str_time_hour()
-    timeit_usage()
+    # timeit_usage()

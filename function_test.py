@@ -38,6 +38,23 @@ def get_return_case():
 
     print x
     print y
+
+
+def print_case():
+    a=[1,2,3,'hello',['w',12,'d']]
+    pprint.pprint(a)
+
+def os_system():
+    # os.system('notepad.exe')
+    os.system('shutdown -h now')
+
+def foo(x):
+
+    def zoo(x,y):
+        return x+y
+
+    return zoo
+
 def main():
     p=partial(sayHi,name='Rocky')
     print p('Chen')
@@ -46,18 +63,15 @@ def main():
     print p('Luo')
     get_return_case()
 
-def print_case():
-    a=[1,2,3,'hello',['w',12,'d']]
-    pprint.pprint(a)
-
-def os_system():
-    os.system('notepad.exe')
-
 # getData('Rocky',1000)
 #wrong!
 
+# getData('Rocky')
 #path_function()
 #print_fun()
 #loopTest()
 #print_case()
-print os_system()
+# os_system()
+a = foo(100)
+b=a(9,9)
+print b

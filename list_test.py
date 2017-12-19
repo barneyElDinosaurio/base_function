@@ -6,7 +6,7 @@ import json
 from Queue import Queue
 # from multiprocessing import Queue
 
-def case1():
+def base_usage():
     a = [1, 2, 3, 4]
     b = [54, 3, 2, 1, 2]
     c = a + b
@@ -15,24 +15,25 @@ def case1():
     d = list(set(c))
     print d
     print {}.fromkeys(c).keys()
-    x= a.index
-    '''
-    for i in x:
-        print i
-    '''
+    x= d.index(54)
+    print x
+
+    # for i in x:
+        # print i
+    
     urlss = ['http://bj.xiaozhu.com/search-duanzufang-p{}-0/'.format(str(i)) for i in range(1, 6, 1)]
-    # print urlss
+    print urlss
     for i in urlss:
         print i
 
     record = [json.loads(line) for line in open('json.txt')]
     print record
     print '\n'
-    '''
+    
     for line in open('json.txt'):
         print line
         print "\n"
-    '''
+    
 
 
 def getCount(strings):
@@ -52,7 +53,7 @@ def empty_test():
         my_list = []
         print type(my_list)
     if len(my_list) == 0:
-        print "None"
+        print "it was None"
 
 
 def modify_list():
@@ -72,15 +73,6 @@ def in_test():
         print "not there"
 
 
-'''
-Above are functions
-'''
-'''
-recordx=['a','b','c','a','b']
-count=getCount(recordx)
-print count['a']
-modify_list()
-'''
 
 
 def delete_item_list():
@@ -336,14 +328,16 @@ def list_change():
     for k, v in dic.items():
         print k, v
 
-def list_str_exchange():
-    pass
+
 
 def index_usage():
     l1=['R','O','C','K','Y']
+
+    # wrong usage
     print l1.index
     for i in l1.index:
         print i
+
 
 def change_value():
     a=[1,2,3,4,5,6,7,8]
@@ -351,8 +345,8 @@ def change_value():
     for i in a:
         if i==4:
             i=0
+    # a doesn't change
     print a
-    #a=['name':]
 
 def sort_case():
     x=[2,5,3,11,43,33,99,100,66,44]
@@ -372,6 +366,7 @@ def mutable():
     print a
     print a[4]
 
+# reverse
 def slice_case():
     x= range(10)
     print x
@@ -387,14 +382,21 @@ def slice_case():
 #iter_case2()
 #mutebale()
 #in_usage()
-#case1()
+# base_usage()
 #reversed_usage()
 #remove_list()
-#list_filter()
+# list_filter()
 #list_change()
 #extend_case()
-#index_usage()
-#change_value()
+# index_usage()
+# change_value()
 #sort_case()
 # mutable()
-slice_case()
+#slice_case()
+# recordx=['a','b','c','a','b']
+# r = 'hello'
+# count=getCount(r)
+# print count
+# print count.get('a')
+# modify_list()
+# empty_test()
