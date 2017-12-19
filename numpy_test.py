@@ -1,6 +1,8 @@
 import numpy as np
 import math,time
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+from toolkit import timecal,loop_test
+
 def numpysum(n):
     a = np.arange(n)
     b = np.arange(n)
@@ -82,8 +84,50 @@ def perf_compare():
     end=time.clock()
     print "numpy time used : ", end-start
 
+@timecal
+def python_multi(n):
+    a= range(n)
+    b= range(n)
+    c=[]
+    for i in range(len(a)):
+        c.append(a[i]**2+b[i]**3)
+    return c
+
+@timecal
+def np_multi(n):
+    return np.arange(n)**2+np.arange(n)**3
+
+def base_type():
+    a = np.arange(10)
+    print a
+    print 'a type {}'.format(type(a))
+    print a.shape
+    print a.dtype
+    b = np.arange(0,10,0.5)
+    print b
+    zero_array = np.zeros(20)
+    print zero_array
+
+    a1 = np.array(range(20))
+    print 'a1 is ',a1
+    print a1[-1]
+
+
+@loop_test
+def Qscore():
+    x=np.random.randn(1000).mean()
+    print 'function x is',x
+    return x
+
+
 def main():
     #testcase4()
-    perf_compare()
+    # perf_compare()
+    
+    # python_multi(10000)
+    # np_multi(10000)
+    base_type()
+    # x=Qscore()
+    # print 'qcore x is',x
 
 main()

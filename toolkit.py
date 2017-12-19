@@ -1,8 +1,27 @@
 # -*-coding=utf-8-*-
 # 常用的工具集合
 __author__ = 'Rocky'
-import codecs, re
+import codecs, re,time
 
+def timecal(func):
+
+    def wrapper(*args,**kw):
+        start = time.time()
+        func(*args,**kw)
+        end=time.time() - start
+        print "Time used {}".format(end)
+
+    return wrapper
+
+def loop_test(func):
+    def wrapper(*args,**kw):
+        print 'working'
+        func(*args,**kw)
+        # for i in range(100):
+            # s=func(*args,**kw)
+        # avg = s*1.00/100
+        # print 'avg is {}'.format(avg)
+    return wrapper
 
 class Toolkit():
     @staticmethod
