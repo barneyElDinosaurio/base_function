@@ -1,9 +1,9 @@
 #-*-coding=utf-8-*-
 import os
-folder = os.path.join(os.getcwd(),'data/')
 import pandas as pd
 import numpy as np
 import datetime
+
 
 def base_usage():
 	filename='600609.xls'
@@ -77,11 +77,43 @@ def base_usage():
 	new_df2=(df_set_index['high']+df_set_index['low'])/2
 	print 'cal df \n',new_df2
 
+def calc():
+	df1=pd.DataFrame(np.random.randint(10,size=10).reshape(2,5),columns=list('bcaed'))
+	print df1
+
+	df2= pd.DataFrame(np.random.randint(10,size=12).reshape(3,4),columns=list('abcd'))
+	print df2
+	rangef=lambda x:x.max()-x.min()
+
+	df3 = df1.add(df2,fill_value=0)
+	print df3
+
+	print rangef(df3)
+	print df3.apply(rangef,axis=0)
+	print df3.apply(rangef,axis=1)
+
+	print 'df count()\n',df1.count()
+
+	high_change = lambda x:x-1
+	filename='600050.xls'
+	df = pd.read_excel(filename)
+	print df.head(5)
+	df=df.set_index('datetime')
+	print 'after set index\n',df.head(10)
+	df['high']=df['high'].map(high_change)
+	print 'after map\n',df.head(10)
+
+	df['color'] = map(lambda x:'red' if x>0 else 'none' if x==0 else 'greed',df['close']-df['open'])
+	print df.head(20)
+	print 'value_counts\n',df['color'].value_counts()
+	df_group = df.groupby(df['color'])
+	print 'group \n',df_group
+	print 'groupby describle \n',df_group.describe()
 
 
 def main():
-	base_usage()
-
+	# base_usage()
+	calc()
 
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')

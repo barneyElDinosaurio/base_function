@@ -308,7 +308,7 @@ def save_excel():
     df.to_excel()
 
 def store_data():
-    code='600609'
+    code='600050'
     conn=ts.get_apis()
     file_name=os.path.join(data_path,code+'.xls')
     df = ts.bar(code,conn=conn,start_date='2015-01-01')
