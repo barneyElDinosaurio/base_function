@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import numpy as np
 import datetime
-
+import matplotlib.pyplot as plt
 
 def base_usage():
 	filename='600609.xls'
@@ -111,9 +111,29 @@ def calc():
 	print 'groupby describle \n',df_group.describe()
 
 
+def time_item():
+	print pd.Timestamp('now')
+	dates=pd.date_range('2017-01-01','2017-02-01')
+	print dates
+	s1= pd.Series(np.random.randn(len(dates)),index=dates)
+	f1= pd.DataFrame(np.random.randn(len(dates)),index=dates)
+	print 's1\n',s1
+	print 'f1\n',f1
+	filename='600050.xls'
+	df = pd.read_excel(filename)
+	print 'df info\n',df.info()
+	df=df.set_index('datetime')
+	print 'df \n',df.head(20)
+	print 'Nov data\n',df['2017-11']
+	print 'truncate \n',df.truncate(after='2017-10-01')
+	s3=df['close'].truncate(after='2017-10-01')
+	fig=plt.figure()
+	s3.plot()
+	plt.show()
 def main():
 	# base_usage()
-	calc()
+	# calc()
+	time_item()
 
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')
