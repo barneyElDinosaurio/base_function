@@ -3,6 +3,16 @@ __author__ = 'Rocky'
 import pandas as pd
 import datetime
 from pandas import DataFrame
+import tushare as ts
+
+
+def GetstockData(code,start,end=None):
+    api=ts.get_apis()
+    if not end:
+        end = datetime.datetime.now().strftime('%Y-%m-%d')
+        print end
+    df = ts.bar(code,conn=api,freq='D',start_date=start,end_date=end)
+    df.to_excel('data/'+code+'.xls')
 
 
 def getData():
@@ -41,4 +51,5 @@ def getData():
 
 
 if __name__ == "__main__":
-    getData()
+    GetstockData('600609','2016-01-01')
+    print 'done'

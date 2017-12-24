@@ -167,6 +167,8 @@ def check_error():
         for k,v in i.items():
             print k,v
         print '\n'
+
+
 #dict_assign()
 
 
@@ -184,4 +186,4 @@ def check_error():
 #set_case()
 #dict_emulation()
 #baseDict()
-check_error()
+# check_error()

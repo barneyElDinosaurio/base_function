@@ -372,6 +372,29 @@ def slice_case():
     print x
     y=x[::-1]
     print y
+
+def list_generator():
+    string = ['uk','hello world','china','jp','usa','canada']
+    country =[ x.upper() for x in string if len(x) > 2]
+    print country
+
+    t1=range(1,11)
+    t2=range(11,21)
+    t=[t1,t2]
+
+    s = [n2 for n1 in t for n2 in  n1 if n2%2==0]
+    print s
+
+def set_case():
+    x={1,2,3,4}
+    print x
+    x.add(4)
+    print x
+
+def dict_map():
+    string=['China','USA','Japan','Hollan']
+    dict_index = {value:index for index,value in enumerate(string)}
+    print dict_index
 # in_test()
 #delete_item_list()
 #generator_list()
@@ -400,3 +423,6 @@ def slice_case():
 # print count.get('a')
 # modify_list()
 # empty_test()
+# list_generator()
+# set_case()
+dict_map()
