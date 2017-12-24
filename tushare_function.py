@@ -4,11 +4,13 @@ import tushare as ts
 import datetime
 import urllib2, time
 import pandas as pd
-import matplotlib
-import matplotlib.pyplot
+# import matplotlib
+import os
+# import matplotlib.pyplot
 from sqlalchemy import create_engine
 #pd.set_option('display.max_rows', None)
 engine = create_engine('mysql+pymysql://root:@127.0.0.1/db_parker?charset=utf8')
+data_path=os.path.join(os.getcwd(),'data')
 
 def baseAPI():
     #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
@@ -296,6 +298,7 @@ def get_each_mount():
 
 
 def save_excel():
+
     df = ts.get_today_all()
     df.to_excel('1.xls', sheet_name='all_stock')
     df2 = ts.get_hist_data('300333')
@@ -304,6 +307,14 @@ def save_excel():
     out = pd.ExcelWriter("2.xls")
     df.to_excel()
 
+def store_data():
+    code='600609'
+    conn=ts.get_apis()
+    file_name=os.path.join(data_path,code+'.xls')
+    df = ts.bar(code,conn=conn,start_date='2015-01-01')
+    # print df.head(10)
+    print file_name
+    df.to_excel(file_name)
 
 def gsz():
     hq = ts.get_today_all()
@@ -427,5 +438,7 @@ print ts.__version__
 #check_k_data()
 #get_index()
 #get_volume()
-baseAPI()
+# baseAPI()
 #code_issue()
+store_data()
+print 'done'
