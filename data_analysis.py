@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import matplotlib.pyplot as plt
-
+from scipy import stats
 def base_usage():
 	filename='600609.xls'
 	df = pd.read_excel(filename)
@@ -130,11 +130,51 @@ def time_item():
 	fig=plt.figure()
 	s3.plot()
 	plt.show()
+
+def missing_value():
+	d={
+	'name':['Allen','Ben','Cindy','Danny'],
+	'age':[21,22,43,22],
+	'sex':['f','f','m','f']}
+	df = pd.DataFrame(d)
+	print df
+	df.iloc[[1,2],[1]]=[np.nan,np.nan]
+	print df
+	df=df.fillna(method='ffill')
+	print 'after fill\n',df
+	df.loc[[2],['sex']]=[np.nan]
+	print 'change sex\n',df
+	print df.dropna(axis=0)
+	# print 'after drop\n',df
+	print df.dropna(how='all',axis=1)
+	df['number']=np.arange(len(df))
+	df.loc[2,'number']=np.nan
+	print df
+	print df.interpolate(method='values')
+
+def statistice_case():
+
+	df=pd.DataFrame()
+	df['age']=np.arange(1,11)
+	df['score']=np.arange(10,30,2)
+	print df
+	print 'mean\n',df['age'].mean()
+	print 'mean\n',df['score'].mean()
+	print 'mean\n',df.mean()
+
+	print 't mean\n',stats.tmean(df['age'],[2,10])
+
+	print 'median\n',df['age'].median()
+	print 'median\n',df['score'].median()
+
+
+
 def main():
 	# base_usage()
 	# calc()
-	time_item()
-
+	# time_item()
+	# missing_value()
+	statistice_case()
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')
 	os.chdir(data_path)	
