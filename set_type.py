@@ -1,8 +1,11 @@
 # -*-coding=utf-8-*-
 def case1():
-    s=set('hello')
+    s=set('helloworld')
     print s
+
+    # f can't change
     f=frozenset('world!')
+    print f
     if 'h' in s:
         print True
     if 'w' in f:
@@ -13,4 +16,9 @@ def case1():
     s.add('w')
     s.update('123')
     print s
+    try:
+        f.add('k')
+    except Exception,e:
+
+        print e
 case1()

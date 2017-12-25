@@ -32,7 +32,9 @@ print z.cookies
 r = requests.get('http://github.com/timeline.json')
 print r
 '''
-
+def count_words(url):
+    resp=requests.get(url)
+    return len(resp.text.split())
 
 def requests_practise():
     url1 = 'http://httpbin.org/get'

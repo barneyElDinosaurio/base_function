@@ -186,8 +186,8 @@ def stock_analysis():
 	print 'percentile\n',stats.scoreatpercentile(stock_df['amount'],[25,50,75])
 	print 'median\n',stock_df['amount'].median()
 	print 'mean\n',stock_df['amount'].mean()
-	# stock_df['amount'].plot()
-	# plt.show()
+	stock_df['amount'].plot()
+	plt.show()
 
 	zglt_df = pd.read_excel('600050.xls')
 	print zglt_df.head(20)
@@ -232,7 +232,7 @@ def main():
 	# time_item()
 	# missing_value()
 	# statistice_case()
-	# stock_analysis()
+	stock_analysis()
 	year2017_report()
 
 if __name__=='__main__':
