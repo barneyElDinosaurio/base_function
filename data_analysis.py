@@ -1,5 +1,5 @@
 #-*-coding=utf-8-*-
-import os
+import os,time
 import pandas as pd
 import numpy as np
 import datetime
@@ -166,6 +166,51 @@ def statistice_case():
 
 	print 'median\n',df['age'].median()
 	print 'median\n',df['score'].median()
+	print 'quarttile \n',stats.scoreatpercentile(df['age'],[25,50,75,100])
+	df['count']=[1,2,3,4,5,6,7,8,8,8]
+	print 'mode \n',df['count'].mode()
+
+def stock_analysis():
+	filename=datetime.datetime.now().strftime('%Y-%m-%d')+'.xls'
+	stock_df = pd.read_excel(filename)
+	
+	# change amount to xxx W
+	stock_df['amount']=map(lambda x:round(x*1.0/10000,1),stock_df['amount'])
+	# print stock_df.head(10)
+	# time.sleep(20)
+	print 'count \n',stock_df['changepercent'].count()
+	print 'median \n',stock_df['changepercent'].median()
+	print '0% count \n',stock_df[stock_df['changepercent']==0]['code'].count()
+	print '0% name \n',stock_df[stock_df['changepercent']==0][['code','name','changepercent']]
+	print 'percentile\n',stats.scoreatpercentile(stock_df['changepercent'],[25,50,75])
+	print 'percentile\n',stats.scoreatpercentile(stock_df['amount'],[25,50,75])
+	print 'median\n',stock_df['amount'].median()
+	print 'mean\n',stock_df['amount'].mean()
+	# stock_df['amount'].plot()
+	# plt.show()
+
+	zglt_df = pd.read_excel('600050.xls')
+	print zglt_df.head(20)
+	print 'corr \n',zglt_df['amount'].corr(zglt_df['vol'])
+	print 'corr \n',zglt_df['vol'].corr(zglt_df['close'])
+	print 'max\n',zglt_df['high'].max()
+	print 'location of max\n',zglt_df.loc[zglt_df['high'].idxmax(),::]
+	print 'max\n',zglt_df['high'].min()
+	print 'location of min\n',zglt_df.loc[zglt_df['high'].idxmin(),::]
+
+	print 'change date to calc\n'
+	zglt_df_t = zglt_df.set_index('datetime')
+	print zglt_df_t.head(10)
+	print zglt_df_t.info()
+	zglt_df_2017=zglt_df_t.truncate(after='2017-01-01')
+	print zglt_df_2017.tail(10)
+	print 'max\n',zglt_df_2017['high'].max()
+	print zglt_df_2017['high'].idxmax()
+	print 'location of max\n',zglt_df_2017.loc[zglt_df_2017['high'].idxmax()]
+	print 'max\n',zglt_df_2017['high'].min()
+	print zglt_df_2017['high'].idxmin()
+	print 'location of min\n',zglt_df_2017.loc[zglt_df_2017['high'].idxmin()]
+
 
 
 
@@ -174,7 +219,8 @@ def main():
 	# calc()
 	# time_item()
 	# missing_value()
-	statistice_case()
+	# statistice_case()
+	stock_analysis()
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')
 	os.chdir(data_path)	

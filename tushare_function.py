@@ -4,15 +4,17 @@ import tushare as ts
 import datetime
 import urllib2, time
 import pandas as pd
-# import matplotlib
+import matplotlib
 import os
-# import matplotlib.pyplot
+import matplotlib.pyplot
 from sqlalchemy import create_engine
 #pd.set_option('display.max_rows', None)
 engine = create_engine('mysql+pymysql://root:@127.0.0.1/db_parker?charset=utf8')
 data_path=os.path.join(os.getcwd(),'data')
+os.chdir(data_path)
 
 def baseAPI():
+
     #df=ts.get_hist_data('002524',start='2017-01-01',end='2017-04-24')
     #这个函数只能获取近3年的数据
     #目前这个版本是从最新开始 【0】
@@ -85,10 +87,14 @@ def baseAPI():
     '''
 
     #bar 函数
-    conn = ts.get_apis()
-    df =ts.bar('000022',conn,start_date='2000-01-01',adj='qfq')
-    print df
-    print df.dtypes
+    # conn = ts.get_apis()
+    # df =ts.bar('000022',conn,start_date='2000-01-01',adj='qfq')
+    # print df
+    # print df.dtypes
+    df =ts.get_today_all()
+    # print df
+    filename=datetime.datetime.now().strftime('%Y-%m-%d')+'.xls'
+    df.to_excel(filename)
 
 def date_test():
     data = stock_info.ix['300141']['timeToMarket']
@@ -404,6 +410,8 @@ def code_issue():
 def sql_store():
     df = ts.get_tick_data('300333', date='2016-12-22')
     df.to_sql('tick_data', engine)
+
+
 #empty_type()
 #exception_test()
 #get_basic()
@@ -438,7 +446,7 @@ print ts.__version__
 #check_k_data()
 #get_index()
 #get_volume()
-# baseAPI()
+baseAPI()
 #code_issue()
-store_data()
+# store_data()
 print 'done'
