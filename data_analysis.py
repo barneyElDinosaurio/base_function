@@ -226,14 +226,24 @@ def year2017_report():
 	print df.groupby(df['type']).describe()
 	print df[(df['type']==u'预降') | (df['type']==u'预减')]
 
+
+def graphic_case():
+	x= np.linspace(-20,20,500)
+	print x
+	g=9.8
+	y=1.0/2.0*g*x**2
+	print y
+	plt.plot(x,y)
+	plt.show()
 def main():
 	# base_usage()
 	# calc()
 	# time_item()
 	# missing_value()
 	# statistice_case()
-	stock_analysis()
-	year2017_report()
+	# stock_analysis()
+	# year2017_report()
+	graphic_case()
 
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')
