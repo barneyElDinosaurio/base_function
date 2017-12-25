@@ -211,8 +211,20 @@ def stock_analysis():
 	print zglt_df_2017['high'].idxmin()
 	print 'location of min\n',zglt_df_2017.loc[zglt_df_2017['high'].idxmin()]
 
+	year_profit_df = pd.read_excel('2017-12.xls',dtype={'report_date':np.datetime64,'code':np.str})
+	print year_profit_df.info()
+	year_profit_df=year_profit_df.set_index('report_date')
+	# print year_profit_df.tail(20)
+	year_profit_df_new = year_profit_df.truncate(after='2017-11-01')
+	print year_profit_df_new.tail(10)
+	year_profit_df_new.to_excel('2017-year.xls')
 
-
+def year2017_report():
+	df = pd.read_excel('2017-year.xls')
+	df=df.set_index('report_date')
+	print df.info()
+	print df.groupby(df['type']).describe()
+	print df[(df['type']==u'预降') | (df['type']==u'预减')]
 
 def main():
 	# base_usage()
@@ -220,7 +232,9 @@ def main():
 	# time_item()
 	# missing_value()
 	# statistice_case()
-	stock_analysis()
+	# stock_analysis()
+	year2017_report()
+
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')
 	os.chdir(data_path)	

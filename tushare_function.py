@@ -91,10 +91,15 @@ def baseAPI():
     # df =ts.bar('000022',conn,start_date='2000-01-01',adj='qfq')
     # print df
     # print df.dtypes
-    df =ts.get_today_all()
+    # df =ts.get_today_all()
     # print df
-    filename=datetime.datetime.now().strftime('%Y-%m-%d')+'.xls'
-    df.to_excel(filename)
+    # filename=datetime.datetime.now().strftime('%Y-%m-%d')+'.xls'
+    # df.to_excel(filename)
+    # forecast_filename=datetime.datetime.now().strftime('%Y-%m')+'.xls'
+    forecast_filename = '2016-12.xls'
+    forecast_df = ts.forecast_data(2016,4)
+    print forecast_df
+    forecast_df.to_excel(forecast_filename)
 
 def date_test():
     data = stock_info.ix['300141']['timeToMarket']
