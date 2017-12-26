@@ -5,6 +5,9 @@ import numpy as np
 import datetime
 import matplotlib.pyplot as plt
 from scipy import stats
+import jieba
+from wordcloud import WordCloud
+import tushare as ts
 def base_usage():
 	filename='600609.xls'
 	df = pd.read_excel(filename)
@@ -228,13 +231,94 @@ def year2017_report():
 
 
 def graphic_case():
-	x= np.linspace(-20,20,500)
-	print x
+	x1= np.linspace(-20,20,500)
+	# print x
 	g=9.8
-	y=1.0/2.0*g*x**2
-	print y
-	plt.plot(x,y)
+	y1=1.0/2.0*g*x1**2-10*x1+1
+	# print y
+	plt.subplot(331)
+	plt.plot(x1,y1)
+
+	plt.subplot(332)
+	plt.plot([0,1],[0,1])
+	plt.title('a strait line')
+	plt.xlabel('x value')
+	plt.ylabel('y value')
+
+	a=np.array([1.0/2.0*g,-10,1])
+	p=np.poly1d(a)
+	y3=p(x1)
+	plt.subplot(333)
+	plt.plot(x1,y3)
+
+	p1=p.deriv(m=1)
+	y4=p1(x1)
+	plt.subplot(334)
+	plt.plot(x1,y4)
+
+
 	plt.show()
+
+
+def stock_graphic():
+	df=pd.read_excel('600050.xls',dtype={'datetime':np.datetime64})
+	# print df.info()
+	# print df.dtypes
+	df=df.set_index('datetime')
+	print df
+	print df['close'].head(10)
+	print 'sum\n',df['close'][:5].sum()/5.0
+	print df['close'].rolling(5).mean()
+	# df['close'].plot(grid=True)
+	# df['close'].plot(use_index=False,grid=True)
+	# plt.show()
+
+	'''
+	df1=df.truncate(after='2017-06-30')
+	print len(df1)
+
+	meanop=df1['close'].rolling(5).mean()
+	stdop=df1['close'].rolling(5).std()
+	plt.plot(range(len(df1)),df1['close'],color='r')
+	plt.fill_between(range(len(df1)),meanop-1.96*stdop,meanop+1.96*stdop,color='b',alpha=0.3)
+	plt.grid()
+	plt.show()
+	'''
+
+	'''
+	df1=df.truncate(after='2017-09-30')
+	print df1[['close','vol']]
+	df1['close'].plot(use_index=True,grid=True)
+	df1['vol'].plot(use_index=True,grid=True,secondary_y=True)
+	plt.show()
+	'''
+
+	df1=df.truncate(after='2017-01-30')
+	# plt.scatter(df1['close'],df1['vol'],c='darkblue',alpha=0.2)
+	df1.plot.scatter(x='open',y='close',c='vol',grid=True,cmap='Blues_r')
+	plt.show()
+
+
+def _wordcould():
+	# df=pd.read_csv('english.txt')
+	# df1=ts.get_industry_classified()
+	# print df1
+	# df2=ts.get_concept_classified()
+	# print df2
+
+	df3=ts.get_latest_news()
+	print df3
+	mylist=df3['title']
+	word_list=[' '.join(jieba.cut(sentense)) for sentense in mylist]
+	new_text=' '.join(word_list)
+	#new_text='you are my friends, and you not sure'
+	print new_text
+	'''
+	wordcld=WordCloud(font_path='/home/xda/git/base_function/data/msyh.ttf',background_color='white',max_words=100,width=2000,height=1000).generate(new_text)
+	plt.imshow(wordcld)
+	plt.axis('off')
+	plt.show()
+	'''
 def main():
 	# base_usage()
 	# calc()
@@ -243,7 +327,9 @@ def main():
 	# statistice_case()
 	# stock_analysis()
 	# year2017_report()
-	graphic_case()
+	# graphic_case()
+	# stock_graphic()
+	_wordcould()
 
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')

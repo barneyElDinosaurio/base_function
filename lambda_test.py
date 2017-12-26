@@ -15,6 +15,10 @@ def multipliers():
   return [lambda x : i * x for i in range(4)]
 
 def testcase2():
+    a=multipliers()
+    print a
+    for i in a:
+        print i(5)
     print [m(2) for m in multipliers()]
     for i in multipliers():
         print i
@@ -28,5 +32,7 @@ def lamda_case2():
     y=lambda x,y:x*y
     print y(2,4)
 
-#compare_case()
-lamda_case2()
+# testcase1()
+testcase2()
+# compare_case()
+# lamda_case2()
