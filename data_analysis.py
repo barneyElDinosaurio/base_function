@@ -115,18 +115,26 @@ def calc():
 
 
 def time_item():
+	
+
 	print pd.Timestamp('now')
+	# below is index type
+
 	dates=pd.date_range('2017-01-01','2017-02-01')
 	print dates
+	
 	s1= pd.Series(np.random.randn(len(dates)),index=dates)
 	f1= pd.DataFrame(np.random.randn(len(dates)),index=dates)
 	print 's1\n',s1
 	print 'f1\n',f1
+	
 	filename='600050.xls'
 	df = pd.read_excel(filename)
 	print 'df info\n',df.info()
+
 	df=df.set_index('datetime')
 	print 'df \n',df.head(20)
+	print 'new info',df.info()
 	print 'Nov data\n',df['2017-11']
 	print 'truncate \n',df.truncate(after='2017-10-01')
 	s3=df['close'].truncate(after='2017-10-01')
@@ -322,14 +330,14 @@ def _wordcould():
 def main():
 	# base_usage()
 	# calc()
-	# time_item()
+	time_item()
 	# missing_value()
 	# statistice_case()
 	# stock_analysis()
 	# year2017_report()
 	# graphic_case()
 	# stock_graphic()
-	_wordcould()
+	# _wordcould()
 
 if __name__=='__main__':
 	data_path=os.path.join(os.getcwd(),'data')

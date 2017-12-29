@@ -9,3 +9,5 @@ parser.add_option("-q", "--quiet",
                   help="don't print status messages to stdout")
 
 (options, args) = parser.parse_args()
+print options
+print args
