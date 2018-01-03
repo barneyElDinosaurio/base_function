@@ -7,8 +7,9 @@ import numpy as np
 from matplotlib import mlab
 from matplotlib import rcParams
 import tushare as ts
-import matplotlib
-
+import matplotlib,os
+data_path=os.path.join(os.getcwd(),'data')
+os.chdir(data_path)
 matplotlib.use('TkAgg')
 def plot_test1():
     x = [1, 2]
@@ -264,6 +265,51 @@ def pie_test():
     plt.pie(x)
     plt.show()
 
+def hist_case1():
+    #概率分布直方图  
+    #高斯分布  
+    #均值为0  
+    mean = 0  
+    #标准差为1，反应数据集中还是分散的值  
+    sigma = 1  
+    x=mean+sigma*np.random.randn(10000)  
+    fig,(ax0,ax1) = plt.subplots(nrows=2,figsize=(9,6))  
+    #第二个参数是柱子宽一些还是窄一些，越大越窄越密  
+    ax0.hist(x,500,normed=1,histtype='bar',facecolor='yellowgreen',alpha=0.75)  
+    ##pdf概率分布图，一万个数落在某个区间内的数有多少个  
+    ax0.set_title('pdf')  
+    ax1.hist(x,20,normed=1,histtype='bar',facecolor='pink',alpha=0.75,cumulative=True,rwidth=0.8)  
+    #cdf累计概率函数，cumulative累计。比如需要统计小于5的数的概率  
+    ax1.set_title("cdf")  
+    fig.subplots_adjust(hspace=0.4)  
+    plt.show() 
+
+def my_hist():
+    plt.figure('hello')
+    x=np.random.randn(1000)
+    print x
+    plt.hist(x,bins=10,histtype='bar',alpha=0.75)
+    plt.show()
+
+
+def captcha():
+    import string,random,os
+    from PIL import ImageDraw,Image,ImageFont
+    letter=string.ascii_lowercase+string.ascii_uppercase
+    x=random.choice(letter)
+    lens=4
+    random_text=''
+    for _ in range(lens):
+        random_text+=random.choice(letter)
+    print random_text
+
+    image=Image.new('RGB',(400,100))
+    font=ImageFont.truetype('msyh.ttf')
+    draw=ImageDraw.Draw(image)
+    xy=(100,50)
+    draw.text(xy=xy,text=random_text,font=font)
+    image.show()
+
 def main():
     #from_book()
     #plot_test1()
@@ -280,6 +326,9 @@ def main():
     #other_mil()
     #testcase1()
     #testcase2()
-    pie_test()
+    # pie_test()
+    # hist_case1()
+    # my_hist()
+    captcha()
 
 main()

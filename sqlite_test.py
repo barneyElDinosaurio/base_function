@@ -1,10 +1,6 @@
 # -*-coding=utf-8-*-
 __author__ = 'rocchen'
-import sqlite3
-
-def insert():
-    conn = sqlite3.connect("rocky_sqlite.db")
-
+import sqlite3,os
 
 db_name = "rocky_sqlite2.db"
 
@@ -82,16 +78,29 @@ def insert():
 
 
 def query():
+    db_name='python_test'
     conn = sqlite3.connect(db_name)
     print "open database successful"
-    query_command = 'select id,name,age,address,salary from COMPANY'
-    data = conn.execute(query_command)
-    for i in data:
-        print "ID:\t%d" % i[0],
-        print "NAME:\t%s" % i[1],
-        print "AGE:\t%d" % i[2],
-        print "ADDRESS:\t%s" % i[3],
-        print "SALARY:\t%f" % i[4]
+    # query_command = 'select id,name,age,address,salary from COMPANY'
+    query_command='select ID,Name,Population from City ORDER by Population desc LIMIT 1000'
+    cur=conn.cursor()
+    conn.text_factory=str
+    cur.execute(query_command)
+    s=cur.fetchall()
+    colname=[cn[0] for cn in cur.description]
+    print colname
+    # print s
+    '''
+    for i in s:
+        print i
+    '''
+    # data = conn.execute(query_command)
+    # for i in data:
+    #     print "ID:\t%d" % i[0],
+    #     print "NAME:\t%s" % i[1],
+    #     print "AGE:\t%d" % i[2],
+    #     print "ADDRESS:\t%s" % i[3],
+    #     print "SALARY:\t%f" % i[4]
 
 
 def update():
@@ -124,13 +133,11 @@ def order_test():
 
 #insert()
 #db_name='rocky_sqlite.db'
-#query()
 #update()
 #print "After update"
-
-#query()
-
-#query()
+data_path=os.path.join(os.getcwd(),'data')
+os.chdir(data_path) 
+query()
 #create_table()
 #query_data()
-order_test()
+# order_test()

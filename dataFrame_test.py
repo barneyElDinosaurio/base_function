@@ -196,7 +196,7 @@ def nan_case():
     print df['B'].sum()
 
 
-def misc():
+def miscaa():
     vals1 = np.array([1, np.nan, 3, 4])
     print vals1.sum()
 

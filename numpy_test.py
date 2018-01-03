@@ -7,6 +7,8 @@ def numpysum(n):
     a = np.arange(n)
     b = np.arange(n)
     c = a + b
+    d=a+10
+    print d
     return c
 
 def testcase1():
@@ -124,6 +126,10 @@ def Qscore():
     print 'function x is',x
     return x
 
+def reshape_usage():
+    x=np.arange(20)
+    x=x.reshape(2,2,5)
+    print x
 
 def main():
     #testcase4()
@@ -131,8 +137,9 @@ def main():
     
     # python_multi(10000)
     # np_multi(10000)
-    base_type()
+    # base_type()
     # x=Qscore()
     # print 'qcore x is',x
-
+    # numpysum(10)
+    reshape_usage()
 main()

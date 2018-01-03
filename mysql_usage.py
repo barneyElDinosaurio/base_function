@@ -5,7 +5,7 @@ __author__ = 'xda'
 import MySQLdb, sqlite3
 import pandas as pd
 from toolkit import Toolkit
-import json
+import json,os
 from setting import MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, get_engine, get_mysql_conn
 
 db = 'history'
@@ -287,6 +287,26 @@ def remove_row():
             db.rollback()
     db.close()
 
+
+def run_sql_script():
+    cur_db='python_test'
+
+    # db = MySQLdb.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, cur_db, charset='utf8')
+    # cur=db.cursor()
+    # with open('world.sql','r') as f:
+    #     cur.executescript(f.read())
+    # db.commit()
+    # db.close()
+
+    import sqlite3
+
+    db=sqlite3.connect(cur_db)
+    cur=db.cursor()
+    with open('world.sql','rb') as f:
+        cur.executescript(f.read())
+
+
+
 def main():
     # DB_Usage()
     # DB_Usage_sqlite()
@@ -305,7 +325,10 @@ def main():
     # remote_mysql2()
     # remote_mysql()
     # create_db_case()
-    remove_row()
+    # remove_row()
+    run_sql_script()
 
 if __name__ == '__main__':
+    data_path=os.path.join(os.getcwd(),'data')
+    os.chdir(data_path) 
     main()
