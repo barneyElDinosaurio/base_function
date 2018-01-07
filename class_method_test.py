@@ -138,6 +138,17 @@ class TestDir():
     __repr__=__str__
 
 
+def get_no_of_instances(cls_obj):
+    return cls_obj.no_inst
+class Kls(object):
+    no_inst = 0
+    def __init__(self):
+        Kls.no_inst = Kls.no_inst + 1
+def main():
+    ik1 = Kls()
+    ik2 = Kls()
+    print '*'*10
+    print(get_no_of_instances(Kls))
 
 
 '''
@@ -151,11 +162,12 @@ print person.p_name
 #obj.getSize()
 #obj = Child()
 #obj.foo()
-obj = TestDir()
-print dir(obj)
-print vars(obj).keys()
-print dir(TestDir)
-print TestDir.__dict__
-print vars(TestDir)
-#print vars()
-print obj
+# obj = TestDir()
+# print dir(obj)
+# print vars(obj).keys()
+# print dir(TestDir)
+# print TestDir.__dict__
+# print vars(TestDir)
+# #print vars()
+# print obj
+main()
