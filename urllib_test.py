@@ -8,8 +8,6 @@ sys.setdefaultencoding('utf-8')
 
 import urllib2, re, sys, sqlite3, time
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 #修改成类的方法
 class Myurllib2():

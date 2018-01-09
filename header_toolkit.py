@@ -18,7 +18,7 @@ def getheader():
 
 
 def analysis_cookie():
-    cookie = getheader()['Cookie']
+    cookie = getheader().get('cookie')
     print cookie
     items = cookie.split(';')
     for item in items:
@@ -124,9 +124,8 @@ def see_header():
     r = requests.get(url='https://helloacm.com/api/user-agent/')
     print r.text
 
-#tree,text = debug_page()
-print getheader()
-# analysis_cookie()
+# print getheader()
+analysis_cookie()
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')
