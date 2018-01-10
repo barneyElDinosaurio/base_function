@@ -124,8 +124,8 @@ def see_header():
     r = requests.get(url='https://helloacm.com/api/user-agent/')
     print r.text
 
-# print getheader()
-analysis_cookie()
+print getheader()
+# analysis_cookie()
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')
