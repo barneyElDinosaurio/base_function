@@ -90,8 +90,21 @@ def sort_test():
     d1 = SortDict((('zheng-cai',67),('hui-jun',11),('xin-yi',88)))
     print d.keys()
     print d1.keys()
-#sort_usge()
-# base_usage()
-#find_key()
-#dict_create()
-sort_test()
+
+def multi_dictionary():
+    user=dict()
+    print user
+    user['Dave']={"Rocket":2}
+    print user
+
+
+def main():
+    #sort_usge()
+    # base_usage()
+    #find_key()
+    #dict_create()
+    # sort_test()
+    multi_dictionary()
+
+if __name__ == '__main__':
+    main()
