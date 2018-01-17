@@ -131,9 +131,9 @@ def see_header():
 
 
 # print getheader()
-# analysis_cookie()
+analysis_cookie()
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')
 # see_header()
-tree, text = debug_page()
+# tree, text = debug_page()
