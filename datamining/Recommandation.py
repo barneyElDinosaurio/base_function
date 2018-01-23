@@ -49,7 +49,7 @@ class recommander():
 		pearson_val=[]
 		for i in range(self.k):
 			name=distances[i][0]
-			pearson_val.append([[name,distances[i][1]])
+			pearson_val.append([name,distances[i][1]])
 		total=pearson_val.sum()
 		# pearson_val=pearson_val
 		persons=[]
@@ -57,7 +57,7 @@ class recommander():
 			percent=per[1]/float(total)
 			persons.append((per[0],percent))
 
-		
+
 
 def main():
 	with open('user.json','r') as f:
