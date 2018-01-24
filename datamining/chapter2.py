@@ -45,13 +45,13 @@ def pearson(user1,user2):
 	else:
 		return (xy-sumX*sumY/float(n))/float(math.sqrt(sqr_X-sumX**2/float(n))*math.sqrt(sqr_Y-sumY**2/float(n)))
 
-
+# ??? 怎么实现这个
 def cosin(user1,user2):
 	sumXY=0
 	x_len=0
 	y_len=0
 	for key in user1:
-		if 
+		pass
 
 
 def main():
