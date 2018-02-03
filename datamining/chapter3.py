@@ -72,10 +72,57 @@ def computeSimilarity(band1,band2,userRatings):
     result=sum_XY/(float(math.sqrt(dem1))*float(math.sqrt(dem2)))
     return result
 
+
+def computeDeviations(users):
+    freq={}
+    deviation={}
+
+    for user,ratings in users.items():
+
+        for music1, ratings1 in ratings.items():
+
+            deviation.setdefault(music1,{})
+            freq.setdefault(music1,{})
+            for music2, ratings2 in ratings.items():
+
+                if music1!=music2:
+                    deviation[music1].setdefault(music2,0)
+                    deviation[music1][music2]+=ratings1-ratings2
+                    freq[music1].setdefault(music2,0)
+                    freq[music1][music2]+=1
+    # print deviation
+    # print freq
+
+
+    for item1,item2 in deviation.items():
+        for  item3,rating in item2.items():
+            deviation[item1][item3]=rating/float(freq[item1][item3])
+
+    return deviation,freq
+
+
+def slopeoneRecommand(userRating):
+    deviation,freq=computeDeviations(users2)
+    # print deviation
+    # print userRating
+    recommand={}
+    freqs={}
+    for d_user,d_user_item in deviation.items():
+        if d_user not in userRating:
+            for key,value in userRating.items():
+                if key in d_user_item:
+                    recommand.setdefault(d_user,0)
+                    recommand[d_user]+=(value+d_user_item[key])*freq[key][d_user]
+                    freqs.setdefault(d_user,0)
+                    freqs[d_user]+=freq[d_user][key]
+    r=[(k,v/float(freqs[k]))for k,v in recommand.items()]
+    r=sorted(r,key=lambda x:x[1],reverse=True)
+    print r
 # print computeSimilarity('Blues Traveler','Deadmau5',users3)
-print computeSimilarity("Fall Out Boy","Daft Punk",users3)
-
-
+# print computeSimilarity("Fall Out Boy","Daft Punk",users3)
+# computeDeviations(users2)
+g=users2['Clara']
+slopeoneRecommand(g)
 
 
 

@@ -8,7 +8,7 @@ from lxml import etree
 
 
 def getheader():
-    with open('request_header') as fp:
+    with open('header_toolkit.txt') as fp:
         data = fp.readlines()
     dictionary = dict()
     for line in data:
