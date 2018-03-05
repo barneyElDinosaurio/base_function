@@ -7,6 +7,7 @@ from itchat.content import *
 def text_reply(msg):
     match = re.search(u'年', msg['Text']).span()
     if match:
+        print msg['FromUserName']
         itchat.send((u'那我就祝你鸡年大吉吧'), msg['FromUserName'])
 
 
@@ -15,5 +16,6 @@ def other_reply(msg):
     itchat.send((u'那我就祝你鸡年大吉吧'), msg['FromUserName'])
 
 
-itchat.auto_login(enableCmdQR=True, hotReload=True)
+# itchat.auto_login()
+itchat.auto_login( hotReload=True)
 itchat.run()

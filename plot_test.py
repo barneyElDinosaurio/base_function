@@ -272,7 +272,7 @@ def hist_case1():
     mean = 0  
     #标准差为1，反应数据集中还是分散的值  
     sigma = 1  
-    x=mean+sigma*np.random.randn(10000)  
+    x=mean+sigma*np.random.randn(10000)
     fig,(ax0,ax1) = plt.subplots(nrows=2,figsize=(9,6))  
     #第二个参数是柱子宽一些还是窄一些，越大越窄越密  
     ax0.hist(x,500,normed=1,histtype='bar',facecolor='yellowgreen',alpha=0.75)  

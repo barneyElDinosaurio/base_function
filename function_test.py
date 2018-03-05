@@ -55,23 +55,35 @@ def foo(x):
 
     return zoo
 
+# def main():
+#     p=partial(sayHi,name='Rocky')
+#     print p('Chen')
+#     print p('Li')
+#     print p('Peng')
+#     print p('Luo')
+#     get_return_case()
+
+import getpass
+def getpass_function():
+    name=raw_input('input your name:\n')
+    print getpass.getuser()
+    password=getpass.getpass('input your password:\n')
+    print 'name {0} ; password {1}'.format(name,password)
 def main():
-    p=partial(sayHi,name='Rocky')
-    print p('Chen')
-    print p('Li')
-    print p('Peng')
-    print p('Luo')
-    get_return_case()
+    # getData('Rocky',1000)
+    #wrong!
 
-# getData('Rocky',1000)
-#wrong!
+    # getData('Rocky')
+    #path_function()
+    #print_fun()
+    #loopTest()
+    #print_case()
+    # os_system()
+    # a = foo(100)
+    # b=a(9,9)
+    # print b
+    getpass_function()
 
-# getData('Rocky')
-#path_function()
-#print_fun()
-#loopTest()
-#print_case()
-# os_system()
-a = foo(100)
-b=a(9,9)
-print b
+
+if __name__ =='__main__':
+    main()
