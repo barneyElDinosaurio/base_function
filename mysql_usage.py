@@ -8,13 +8,13 @@ from toolkit import Toolkit
 import json,os
 from setting import MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, get_engine, get_mysql_conn
 
-db = 'history'
+db = 'db_news'
 engine = get_engine('daily')
 
 
 class mysql_usage():
     def __init__(self):
-        self.db = MySQLdb.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
+        self.db = MySQLdb.connect('raspberrypi', MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
 
     def getVersion(self):
         cur = self.db.cursor()
@@ -311,7 +311,7 @@ def main():
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
-    # obj = mysql_usage()
+    obj = mysql_usage()
     # obj.query()
     # obj.delete_item()
     # obj.modify_table()
@@ -321,12 +321,12 @@ def main():
     # obj.query()
     # obj.update()
     # obj.transfer_data()
-    # obj.getVersion()
+    obj.getVersion()
     # remote_mysql2()
     # remote_mysql()
     # create_db_case()
     # remove_row()
-    run_sql_script()
+    # run_sql_script()
 
 if __name__ == '__main__':
     data_path=os.path.join(os.getcwd(),'data')
