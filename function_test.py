@@ -9,7 +9,6 @@ def getData(name, times):
 def getData(name):
     print "Your name is", name, " Times is : None"
 
-
 def path_function():
     print os.getcwd()
 
@@ -69,6 +68,13 @@ def getpass_function():
     print getpass.getuser()
     password=getpass.getpass('input your password:\n')
     print 'name {0} ; password {1}'.format(name,password)
+
+
+def many_func():
+    f_name = [path_function,print_fun,loopTest]
+    for fun in f_name:
+        fun()
+
 def main():
     # getData('Rocky',1000)
     #wrong!
@@ -82,8 +88,8 @@ def main():
     # a = foo(100)
     # b=a(9,9)
     # print b
-    getpass_function()
-
+    # getpass_function()
+    many_func()
 
 if __name__ =='__main__':
     main()
