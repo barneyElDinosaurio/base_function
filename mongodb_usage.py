@@ -3,7 +3,9 @@ import codecs
 import json
 import pprint
 import pymongo,datetime
-host = 'raspberrypi'
+host = 'localhost'
+client=pymongo.MongoClient(host,27017)
+
 def basic_usage():
     client = pymongo.MongoClient(host, 27017)
     # db=client.test
@@ -18,6 +20,7 @@ def basic_usage():
     print db.first_collection.find()
     arr=list(db.first_collection.find())
     print arr
+
 def query():
     print collection.count()
     print collection.find({'name':'a'})
@@ -151,10 +154,32 @@ def change_city():
     #for i in data_list:
     db[collection].update({'city_name':'溧阳'},{'$set':{'city_name':'常州'}},{'multi':True})
 
+def update_id():
+	collection = client['test']['update']
+	url='qq.com'
+	html='<hello world!!!!!!!!!!!!!!!>'
+	collection.update({'_id':url},{'$set':{'html':html}},upsert=True)
+
+class Mongo():
+	def __init__(self):
+		self.collection = client['test']['update']
+
+	def __getitem__(self, item):
+		return self.collection.find({'_id':item})
+
+	def __setitem__(self, key, value):
+		self.collection.update({'_id':key},{'$set':{'html':value}},upsert=True)
+
+def mongo_case1():
+	mongo=Mongo()
+	# mongo['baidu.com']='http://baidu.com'
+	# mongo['jd.com']='http://jd.com'
+	# mongo['taobao.com']='http://taobao.com'
+	mongo['qq.com']='http://qq.com'
 #basic_usage()
 #query()
 #remove()
-insert()
+# insert()
 #update()
 #getlianjia_price()
 #update_testcase()
@@ -163,3 +188,5 @@ insert()
 #update_url()
 # get_price()
 #change_city()
+# update_id()
+mongo_case1()

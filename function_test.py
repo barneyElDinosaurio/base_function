@@ -75,6 +75,16 @@ def many_func():
     for fun in f_name:
         fun()
 
+def call_back_case1(x):
+    return x*2
+
+def call_back_case2(x):
+    return x*4
+
+def call_back_demo(k,fun):
+    return 1+fun(k)
+
+
 def main():
     # getData('Rocky',1000)
     #wrong!
@@ -89,7 +99,9 @@ def main():
     # b=a(9,9)
     # print b
     # getpass_function()
-    many_func()
+    # many_func()
+    print call_back_demo(5,call_back_case1)
+    print call_back_demo(5,call_back_case2)
 
 if __name__ =='__main__':
     main()
