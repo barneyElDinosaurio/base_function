@@ -225,7 +225,7 @@ def str_function():
 
 #check_year()
 #_write_adead()
-#zfill_test()
+zfill_test()
 #loo_each()
 #replace_func()
 #garbe_character()
@@ -244,4 +244,4 @@ def str_function():
 #geturlid()
 #find_usage()
 # lower_usage()
-str_function()
+# str_function()
