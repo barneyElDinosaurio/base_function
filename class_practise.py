@@ -26,7 +26,7 @@ class Access():
 class ChildAccess(Access):
 	bar =20
 
-def main():
+def call_test():
 	print Base.__dict__
 	obj = Base()
 	print dir(obj)
@@ -59,6 +59,17 @@ def main():
 	ojb_access.good = 'rocky'
 	print ojb_access.__dict__
 
+class myclass():
+	def __init__(self):
+		print 'on init'
 
+	def __call__(self,num):
+		print 'on __call__ function number is {}'.format(num)
 
-main()
+def call_function_test():
+	# obj=myclass()
+	# obj(6)
+	myclass(10)
+
+# call_test()
+call_function_test()
