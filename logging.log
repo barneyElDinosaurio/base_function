@@ -1,0 +1,4 @@
+foobar
+[2018-03-08 21:42:57,288][140249689634560][logging_usage.py][line: 37][INFO] ## foobar
+[2018-03-08 21:44:53,894][140265543526144][logging_usage.py][line: 37][DEBUG] ## debug foobar
+[2018-03-08 21:45:40,439][140691839731456][logging_usage.py][line: 37][DEBUG] ## debug foobar 2

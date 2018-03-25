@@ -12,10 +12,20 @@ class Download():
 	def __call__(self, url):
 		result=None
 		if self.cache:
-			result=self.cache[url]
+			try:
+				result=self.cache[url]
+			except KeyError:
+				pass
+		# else:
+		# 	if
 
-		result = self.download(url)
-		return result
+		if result is None:
+
+			result = self.download(url)
+			if self.cache:
+				self.cache[url]=result
+
+		return result['html']
 
 	def download(self,url,retry=3):
 		for _ in range(retry):
@@ -34,19 +44,23 @@ class MongoCache():
 		self.client=pymongo.MongoClient('localhost',27017)
 		self.db=self.client.cache
 		self.db.webpage.create_index('timestamp',expireAfterSeconds=expires.total_seconds())
+
 	def __getitem__(self, url):
-		ret =  self.db.webpage.findone({'_id':url})
+		ret =  self.db.webpage.find_one({'_id':url})
 		if ret:
 			return ret['html']
 		else:
 			raise KeyError(url+'does not exist')
 
-	def __setitem__(self, key, value):
-		self.db.webpage.insert({'_id':key,'html':value})
+	def __setitem__(self, url, html):
+		record={'html':html,'timestamp':datetime.datetime.utcnow()}
+		self.db.webpage.update({'_id':url},{'$set':record},upsert=True)
 
 def main():
-	d=Download()
-	print d('http://30daydo.com')['html']
+
+	mongo=MongoCache()
+	d=Download(cache=mongo)
+	print d('http://30daydo.com')
 
 if __name__== '__main__':
 	main()
