@@ -5,9 +5,9 @@ http://30daydo.com
 Contact: weigesysu@qq.com
 '''
 import redis
-# HOSTNAME='raspberrypi'
-HOSTNAME='localhost'
-r = redis.Redis(host=HOSTNAME, port=6379, db=2)
+HOSTNAME='raspberrypi'
+# HOSTNAME='localhost'
+r = redis.Redis(host=HOSTNAME, port=6379, db=0)
 
 def base_usage():
     print r.dbsize()
@@ -111,8 +111,8 @@ def check_dup():
         pass
     x=len(set(total))
     print x
-#base_usage()
-#insert_data()
+base_usage()
+# insert_data()
 #get_data()
 # list_usage()
 #get_data2()
@@ -122,4 +122,4 @@ def check_dup():
 #pop_usage()
 #get_keys()
 # clear_db(1)
-check_dup()
+# check_dup()
