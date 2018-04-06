@@ -368,7 +368,7 @@ def getBigVol(code):
 
 
 def holiday():
-	print ts.is_holiday('2017-04-16')
+	print ts.is_holiday('20180405')
 
 
 def check_k_data():
@@ -441,7 +441,7 @@ def sql_store():
 # get_real_time()
 
 # get_k_test()
-# holiday()
+holiday()
 
 
 print ts.__version__
@@ -449,7 +449,7 @@ print ts.__version__
 # check_k_data()
 # get_index()
 # get_volume()
-baseAPI()
+# baseAPI()
 # code_issue()
 # store_data()
 print 'done'

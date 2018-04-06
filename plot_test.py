@@ -1,4 +1,6 @@
 # -*-  coding=utf-8 -*-
+import json
+
 __author__ = 'rocky chen'
 import matplotlib.pyplot as plt
 from pandas import DataFrame, Series
@@ -9,15 +11,18 @@ from matplotlib import rcParams
 import tushare as ts
 import matplotlib
 import os
+import talib
 import matplotlib.dates as mdates
-# from matplotlib.finance import candlestick_ohlc
-from mpl_finance import candlestick_ochl
+from matplotlib.finance import candlestick2_ochl,volume_overlay
+# from mpl_finance import candlestick_ochl
+# from mpl_finance import candlestick2_ochl
+matplotlib.style.use('ggplot')
+
 data_path = os.path.join(os.getcwd(), 'data')
 if not os.path.exists(data_path):
     os.mkdir(data_path)
 os.chdir(data_path)
-
-matplotlib.use('TkAgg')
+api = ts.get_apis()
 
 
 def plot_test1():
@@ -327,21 +332,106 @@ def captcha():
     image.show()
 
 
+def fill_between_usage():
+    x = np.linspace(-np.pi * 2, np.pi * 2, 100)
+    y = np.sin(x)
+    plt.plot(x, y)
+    plt.fill_between(x, y)
+    plt.show()
+
+'''
+两幅图在一起，上面是k线，下面是成交量
+'''
+def stock_plot():
+    left, width = 0.1, 0.8
+    rect_vol = [left, 0.1, width, 0.3]
+    rect_main = [left, 0.4, width, 0.5]
+    fig = plt.figure()
+    conn = ts.get_apis()
+    df = ts.bar('300333', conn=conn, start_date='2018-01-01')
+    del df['code']
+    df.reset_index(inplace=True)
+    dates=df['datetime'].values
+
+    df['datetime'] = df['datetime'].map(mdates.date2num)
+    # dates=df['datetime'].values
+    vol = df['vol'].values
+    ax_vol = fig.add_axes(rect_vol)
+    ax_vol.fill_between(dates, vol,color = 'y')
+    # 横坐标时间旋转
+    plt.setp(ax_vol.get_xticklabels(), rotation=30, horizontalalignment='right')
+    ax_main = fig.add_axes(rect_main)
+    candlestick_ochl(ax_main,df.values,width=0.6,colordown='g',colorup='r')
+    ax_main.axes.get_xaxis().set_visible(False)
+    ax_main.set_title("STOCK LINE")
+
+    ts.close_apis(conn)
+    plt.show()
+
+
 def stock_line():
-    api=ts.get_apis()
-    df=ts.bar('300141',conn=api,start_date='2018-01-01')
+    api = ts.get_apis()
+    df = ts.bar('300141', conn=api, start_date='2018-01-01')
     # print df
     del df['code']
-
     df.reset_index(inplace=True)
     print df
-    df['datetime']=df['datetime'].map(mdates.date2num)
-    ax1=plt.subplot2grid((6,1),(0,0),rowspan=5)
-    ax2=plt.subplot2grid((6,1),(5,0),rowspan=5,sharex=ax1)
+    df['datetime'] = df['datetime'].map(mdates.date2num)
+    ax1 = plt.subplot2grid((6, 1), (0, 0), rowspan=5)
+    ax2 = plt.subplot2grid((6, 1), (5, 0), rowspan=5, sharex=ax1)
     ax1.xaxis_date()
-    candlestick_ochl(ax1,df.values,width=1,colorup='r',colordown='g')
+    candlestick_ochl(ax1, df.values, width=1, colorup='r', colordown='g')
     # ax2.fill_between(ax1,df['vol'].values,0)
     plt.show()
+    ts.close_apis(api)
+
+'''
+网络上的教程：
+https://ipreacher.github.io/2017/candlestick/
+'''
+def plot_stock_line(code,start):
+    fig = plt.figure(figsize=(10,15))
+    # fig,(ax,ax2)=plt.subplots(2,1,sharex=True,figsize=(16,10))
+    ax=fig.add_axes([0,0.2,1,0.5])
+    ax2=fig.add_axes([0,0,1,0.2])
+    df = ts.bar(code,conn=api,start_date=start)
+    # df=df.sort_values(by='datetime')
+    df = df.sort_index()
+    df =df.reset_index()
+    # df = ts.get_k_data('300141',start='2018-03-01')
+    # df['date']=df['date'].dt.strftime('%Y-%m-%d')
+    df['datetime']=df['datetime'].dt.strftime('%Y-%m-%d')
+    sma5=talib.SMA(df['close'].values,5)
+    sma20=talib.SMA(df['close'].values,20)
+    # ax.set_xticks(range(0,len(df),20))
+    # # ax.set_xticklabels(df['date'][::5])
+    # ax.set_xticklabels(df['datetime'][::20])
+    candlestick2_ochl(ax,df['open'],df['close'],df['high'],df['low'],width=0.5,colorup='r',colordown='g',alpha=0.6)
+    # ax.set_title(code)
+    ax.plot(sma5)
+    ax.plot(sma20)
+
+
+    # df['vol'].plot(kind='bar')
+    volume_overlay(ax2,df['open'],df['close'],df['vol'],width=0.5,alpha=0.8,colordown='g',colorup='r')
+    ax2.set_xticks(range(0,len(df),20))
+    # ax.set_xticklabels(df['date'][::5])
+    ax2.set_xticklabels(df['datetime'][::20])
+    # ax2.grid(True)
+
+    # plt.setp(ax.get_xticklabels(), rotation=30, horizontalalignment='right')
+    # plt.grid(True)
+    # plt.subplots_adjust(hspace=0)
+    plt.show()
+
+def get_selected_stock():
+    with open('../codes.txt') as f:
+        js_data = json.load(f)
+
+    code_list = js_data.get('example1')
+    for code in code_list:
+        print code,code_list[code]
+        plot_stock_line(code,'2018-01-01')
     ts.close_apis(api)
 
 def main():
@@ -364,6 +454,10 @@ def main():
     # hist_case1()
     # my_hist()
     # captcha()
-    stock_line()
+    # stock_plot()
+    # fill_between_usage()
+    # stock_line()
+    plot_stock_line('300333','2017-09-01')
+    # get_selected_stock()
 
 main()
