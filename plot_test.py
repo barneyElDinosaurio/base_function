@@ -266,23 +266,23 @@ def pie_test():
     plt.show()
 
 def hist_case1():
-    #概率分布直方图  
-    #高斯分布  
-    #均值为0  
-    mean = 0  
-    #标准差为1，反应数据集中还是分散的值  
-    sigma = 1  
+    #概率分布直方图
+    #高斯分布
+    #均值为0
+    mean = 0
+    #标准差为1，反应数据集中还是分散的值
+    sigma = 1
     x=mean+sigma*np.random.randn(10000)
-    fig,(ax0,ax1) = plt.subplots(nrows=2,figsize=(9,6))  
-    #第二个参数是柱子宽一些还是窄一些，越大越窄越密  
-    ax0.hist(x,500,normed=1,histtype='bar',facecolor='yellowgreen',alpha=0.75)  
+    fig,(ax0,ax1) = plt.subplots(nrows=2,figsize=(9,6))
+    #第二个参数是柱子宽一些还是窄一些，越大越窄越密
+    ax0.hist(x,500,normed=1,histtype='bar',facecolor='yellowgreen',alpha=0.75)
     ##pdf概率分布图，一万个数落在某个区间内的数有多少个  
-    ax0.set_title('pdf')  
-    ax1.hist(x,20,normed=1,histtype='bar',facecolor='pink',alpha=0.75,cumulative=True,rwidth=0.8)  
-    #cdf累计概率函数，cumulative累计。比如需要统计小于5的数的概率  
-    ax1.set_title("cdf")  
-    fig.subplots_adjust(hspace=0.4)  
-    plt.show() 
+    ax0.set_title('pdf')
+    ax1.hist(x,20,normed=1,histtype='bar',facecolor='pink',alpha=0.75,cumulative=True,rwidth=0.8)
+    #cdf累计概率函数，cumulative累计。比如需要统计小于5的数的概率
+    ax1.set_title("cdf")
+    fig.subplots_adjust(hspace=0.4)
+    plt.show()
 
 def my_hist():
     plt.figure('hello')
@@ -310,6 +310,28 @@ def captcha():
     draw.text(xy=xy,text=random_text,font=font)
     image.show()
 
+def fill_between_usage():
+    x=np.linspace(-np.pi*2,np.pi*2,100)
+    y=np.sin(x)
+    plt.plot(x,y)
+    plt.fill_between(x,y)
+    plt.show()
+def stock_plot():
+    left,width = 0.1, 0.8
+    rect_vol=[left,0.1,width,0.3]
+    rect_main=[left,0.4,width,0.5]
+    fig=plt.figure()
+    conn=ts.get_apis()
+    df=ts.bar('300333',conn=conn,start_date='2018-01-01')
+    dates = df.reset_index()['datetime'].values
+    vol = df['vol'].values
+    ax_vol=fig.add_axes(rect_vol)
+    ax_vol.fill_between(dates,vol)
+    plt.setp(ax_vol.get_xticklabels(),rotation=30,horizontalalignment='right'  )
+    ax_main=fig.add_axes(rect_main)
+    ts.close_apis(conn)
+    plt.show()
+
 def main():
     #from_book()
     #plot_test1()
@@ -329,6 +351,7 @@ def main():
     # pie_test()
     # hist_case1()
     # my_hist()
-    captcha()
-
+    # captcha()
+    stock_plot()
+    # fill_between_usage()
 main()
