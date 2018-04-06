@@ -210,14 +210,14 @@ def miscase():
 
 
 def main():
-    # df_practice()
+    df_practice()
     # corr_number()
     # plot_test()
     # calculate()
     # compare_values()
     # jianshu()
     # apply_map_test()
-    row_merge()
+    # row_merge()
     # dataframe_create1()
     # count_case()
     # nan_case()

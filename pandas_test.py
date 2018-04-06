@@ -4,18 +4,19 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from pandas import DataFrame
-
 from pandas_datareader import data as web
+pd.set_option('display.max_rows', None) # 显示所有的列
+pd.set_option('expand_frame_repr',False) # 显示行不换行
 
 def excel_op(df):
     print df.head(20)
     df = df.fillna(0)
     print df.head(20)
     code = df[[u'代码', u'资金发生数']]
-    #print(code)
-    #print type(code)
-    #code=code.fillna(0)
-    #print code
+    # print(code)
+    # print type(code)
+    # code=code.fillna(0)
+    # print code
     '''
     for i in code:
         if i is not None:
@@ -40,7 +41,7 @@ def excel_op(df):
 
 
 def search():
-    #遍历
+    # 遍历
     df = pd.read_excel("huatai2.xls")
     input_m = 0.0
     output_m = 0.0
@@ -50,47 +51,47 @@ def search():
             print u"存入",
             print each_input
             input_m = input_m + each_input
-            #print type(money)
+            # print type(money)
         if row[u'业务'] == u'取出':
             each_output = row[u'资金发生数']
             print u"取出",
             print each_output
-            #print type(money)
+            # print type(money)
             output_m = output_m + each_output
 
     print "Sumary is %f" % (input_m - output_m)
 
 
 def del_row():
-    #删除某一行
+    # 删除某一行
     df = pd.read_excel("huatai2.xls")
-    #可以获得某个index
-    #print df[df[u'代码']==300141].index
+    # 可以获得某个index
+    # print df[df[u'代码']==300141].index
     print df
 
-    #print "\nAfter drop"
+    # print "\nAfter drop"
     df.drop(df[df[u'代码'] == 300141.0].index, inplace=True)
     new_df = df.drop(df[df[u'代码'] == 300141.0].index)
-    #print ndf
+    # print ndf
     print df
 
 
 def replace_test():
-    #替换值
+    # 替换值
 
     df = pd.read_excel("huatai2.xls")
     s1 = pd.Series(['a', 'b', 'c', 'd', 'e'])
-    #print s1
+    # print s1
     s2 = pd.Series(['1', '2', '3', '4', '5'])
-    #print s2
+    # print s2
 
     s3 = s1.replace(1, 'k')
-    #print s1
-    #print s3
+    # print s1
+    # print s3
     print df
     df.replace(['20160722', u'卖出成交', 2431.0, u'棕榈股份', 13.00, 300.0, 3891.10, 3905.71, u'自动'],
                ['20160722', '0', '0', '0', 0, 0, 0, 0, '0'], inplace=True)
-    #df.replace(['20160722'],['20160725','0','0','0',0,0,0,0,'0'],inplace=True)
+    # df.replace(['20160722'],['20160725','0','0','0',0,0,0,0,'0'],inplace=True)
     print df
 
 
@@ -113,15 +114,15 @@ def replace_test2():
     for j in range(l):
         for k in range(l):
             data.append(t[4 * k + j])
-            #data.append(t[4*(j+1)+k])
-            #data.append(t[4*(j+2)+k])
-            #data.append(t[4*(j+3)+k])
+            # data.append(t[4*(j+1)+k])
+            # data.append(t[4*(j+2)+k])
+            # data.append(t[4*(j+3)+k])
     print data
     a = pd.Series(data[0:4])
     b = pd.Series(data[4:8])
     c = pd.Series(data[8:12])
     d = pd.Series(data[12:16])
-    #print a
+    # print a
     print a
     print b
     print c
@@ -132,24 +133,24 @@ def replace_test2():
     new_df = pd.DataFrame(
         {'Entry1': pd.Series(data[0:4]), 'Relation': pd.Series(data[4:8]), 'Entry2': pd.Series(data[8:12]),
          'Meta': pd.Series(data[12:16]), })
-    #狗日的，一个冒号写成逗号搞了我一个下午。
+    # 狗日的，一个冒号写成逗号搞了我一个下午。
     print "new_df"
     print new_df
     print "loc[0]"
     print new_df.loc[0]
     print "type of loc is "
     print type(new_df.loc[0])
-    #a=pd.Series()
+    # a=pd.Series()
     print "log[2] entery2: "
     print new_df.loc[2, ['Entry2']]
 
-    #E511
+    # E511
 
     print new_df.at[2, "Entry2"]
-    #at 是获取出来的值,而且是单个的值
+    # at 是获取出来的值,而且是单个的值
     print "get row 1 2"
     print new_df[1:3]
-    #only row 1,2
+    # only row 1,2
 
     print "\t iloc[2]"
     print new_df.iloc[2]
@@ -158,12 +159,12 @@ def replace_test2():
     new_df['Entry1'].replace('E11', 'EE', inplace=True)
     print new_df
 
-    #sclice
+    # sclice
     print "\nsclice"
     print new_df.iloc[[1, 3]]
     print "partion"
     print new_df.iloc[:, [1, 3]]
-    print "select one value"  #r21
+    print "select one value"  # r21
     print new_df.iloc[1, 3]
 
     alist = ['E11', 'E12']
@@ -183,7 +184,7 @@ def data_type_test():
     print data['b']
     print df.columns
     print df[u'代码']
-    #print df['col0']
+    # print df['col0']
     population_dict = {'California': 38332521,
                        'Texas': 26448193,
                        'New York': 19651127,
@@ -203,8 +204,7 @@ def data_type_test():
 
     print ind[::2]
 
-
-    #print
+    # print
 
 
 def win_or_lost():
@@ -215,16 +215,16 @@ def win_or_lost():
         if item[u'业务'] == u'买入成交':
             item[u'资金发生数']=item[u'资金发生数']*-1
         '''
-        #print item
+        # print item
         if df.iloc[i][u'业务'] == u'买入成交':
             df.iloc[i][u'资金发生数'] = -1 * df.iloc[i][u'资金发生数']
-            #print new_line
-    #print df
+            # print new_line
+    # print df
 
     print df
-    #print df
-    #df.loc[df[u'业务']==u'买入成交',u'资金发生数']=0
-    #print df
+    # print df
+    # df.loc[df[u'业务']==u'买入成交',u'资金发生数']=0
+    # print df
 
 
 def select_function():
@@ -245,14 +245,14 @@ def get_static1():
 def get_static2():
     df = pd.read_excel("huatai2.xls")
     high = df[df[u'资金发生数'] > 10000]
-    #print high
+    # print high
     g = df.groupby(u'资金发生数')
-    #print g.first()
+    # print g.first()
     print g.last()
 
 
 def my_data():
-    #测试我自己的数据
+    # 测试我自己的数据
     df = pd.read_excel("huatai2.xls")
     hsdq = df[df[u'名称'] == u'和顺电气']
     print hsdq
@@ -294,9 +294,10 @@ def Serial():
     print heap.pop(0)
     print heap
 
+
 def base_case():
     dates = pd.date_range("20160516", periods=5)
-    print 'dates\n',dates
+    print 'dates\n', dates
 
     df = pd.DataFrame(np.random.randn(5, 5), index=dates, columns=list("ABCDE"))
     print df
@@ -309,12 +310,12 @@ def base_case():
     print df.tail()
 
     print 'index\n', df.index
-    print 'columns\n',df.columns
+    print 'columns\n', df.columns
 
-    print 'transform\n',df.T
+    print 'transform\n', df.T
 
-    print 'df[B]\n',df['B']
-    
+    print 'df[B]\n', df['B']
+
     print df[0:2]
     print df.loc['20160517':'20160519', 'A':'C']
     ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
@@ -323,8 +324,8 @@ def base_case():
     print ts.plot()
 
     df_11 = pd.DataFrame(np.random.randn(1000, 4), index=ts.index, columns=['A', 'B', 'C', 'D'])
-    #df_11 = df - df_11.cumsum()
-    print 'df cussum\n',df_11.cumsum()
+    # df_11 = df - df_11.cumsum()
+    print 'df cussum\n', df_11.cumsum()
     plt.figure()
     df_11.plot()
     # plt.show()
@@ -338,37 +339,45 @@ def base_function():
 
 def read_data():
     df = pd.read_csv('data/603308.csv', parse_dates=[0])
-    #指定 index, 指定为日期类型 parse_dates=[x] 指定为第几类
+    # 指定 index, 指定为日期类型 parse_dates=[x] 指定为第几类
     print df
     print df.info()
 
+
 def data_analysis():
-    df=pd.read_csv('LoanStats_2017Q1.csv',header=0)
+    df = pd.read_csv('LoanStats_2017Q1.csv', header=0)
     print df.head(10)
     print df.describe()
 
-    analysis_columns = ['issue_d','term','int_rate','emp_title','grade','home_ownership','verification_status','purpose','loan_amnt','total_pymnt','out_prncp','total_rec_int','total_rec_prncp','installment','annual_inc','dti','fico_range_low','fico_range_high','last_fico_range_low','last_fico_range_high','open_acc','loan_status','delinq_amnt','acc_now_delinq','tot_coll_amt']
-    deal_data = df.loc[:,analysis_columns]
+    analysis_columns = ['issue_d', 'term', 'int_rate', 'emp_title', 'grade', 'home_ownership', 'verification_status',
+                        'purpose', 'loan_amnt', 'total_pymnt', 'out_prncp', 'total_rec_int', 'total_rec_prncp',
+                        'installment', 'annual_inc', 'dti', 'fico_range_low', 'fico_range_high', 'last_fico_range_low',
+                        'last_fico_range_high', 'open_acc', 'loan_status', 'delinq_amnt', 'acc_now_delinq',
+                        'tot_coll_amt']
+    deal_data = df.loc[:, analysis_columns]
     print deal_data
-    deal_data.groupby('issue_d').agg({'loan_amnt':'sum'}).plot(kind="bar")
-    deal_data.groupby('issue_d').agg({'issue_d':'count'}).plot(kind = 'bar')
+    deal_data.groupby('issue_d').agg({'loan_amnt': 'sum'}).plot(kind="bar")
+    deal_data.groupby('issue_d').agg({'issue_d': 'count'}).plot(kind='bar')
     plt.show()
+
 
 def group_test():
     df = DataFrame({'key1': ['a', 'a', 'b', 'b', 'a'],
-                'key2': ['one', 'two', 'one', 'two', 'one'],
-                'data1': np.random.randn(5),
-                'data2': np.random.randn(5)})
+                    'key2': ['one', 'two', 'one', 'two', 'one'],
+                    'data1': np.random.randn(5),
+                    'data2': np.random.randn(5)})
 
     print df
-    group_df=df.groupby(df['data1'])
+    group_df = df.groupby(df['data1'])
     print group_df.mean()
-    print df.groupby(lambda x:'even' if x%2==0 else 'odd').mean()
-    group1=df.groupby('key1')
+    print df.groupby(lambda x: 'even' if x % 2 == 0 else 'odd').mean()
+    group1 = df.groupby('key1')
     print group1
 
+
 def big_data():
-   pass
+    pass
+
 
 def read_network():
     url = 'https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv'
@@ -377,27 +386,27 @@ def read_network():
 
 
 base_case()
-#excel_op()
-#del_row()
-#search()
-#replace_test()
-#data_type_test()
-#excel_op()
-#del_row()
-#search()
-#win_or_lost()
-#replace_test2()
-#select_function()
-#get_static1()
-#get_static2()
-#my_data()
-#string_op2()
-#string_op3()
+# excel_op()
+# del_row()
+# search()
+# replace_test()
+# data_type_test()
+# excel_op()
+# del_row()
+# search()
+# win_or_lost()
+# replace_test2()
+# select_function()
+# get_static1()
+# get_static2()
+# my_data()
+# string_op2()
+# string_op3()
 
 
-#Serial()
-#base_function()
-#read_data()
-#data_analysis()
-#group_test()
+# Serial()
+# base_function()
+# read_data()
+# data_analysis()
+# group_test()
 # read_network()
