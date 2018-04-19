@@ -6,16 +6,15 @@ import MySQLdb, sqlite3
 import pandas as pd
 from toolkit import Toolkit
 import json,os
-from setting import MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, get_engine, get_mysql_conn
+from setting import get_mysql_conn,get_engine
 
 db = 'db_news'
 engine = get_engine('daily')
 
 
-class mysql_usage():
+class MysqlUsage():
     def __init__(self):
-        self.db = MySQLdb.connect('raspberrypi', MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
-
+        self.conn=get_mysql_conn('db_zdt',local=True)
     def getVersion(self):
         cur = self.db.cursor()
         cur.execute('select version()')
@@ -85,9 +84,9 @@ class mysql_usage():
     def Aliyun(self):
         passwd = Toolkit.getUserData('data.cfg')['alipasswd']
         print passwd
-        conn = MySQLdb.connect(host='bdm273219298.my3w.com',  # 远程主机的ip地址，
-                               user='bdm273219298',  # MySQL用户名
-                               db='bdm273219298_db',  # database名
+        conn = MySQLdb.connect(host='',  # 远程主机的ip地址，
+                               user='',  # MySQL用户名
+                               db='',  # database名
                                passwd=passwd,  # 数据库密码
                                port=3306,  # 数据库监听端口，默认3306
                                charset="utf8")  # 指定utf8编码的连接
@@ -222,6 +221,13 @@ class mysql_usage():
         insert into 
         '''
 
+    def show_all_table(self):
+        cur = self.conn.cursor()
+        cmd='show tables;'
+        cur.execute(cmd)
+        content = cur.fetchall()
+        for item in content:
+            print item[0]
 
 def remote_mysql():
     conn = MySQLdb.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
@@ -311,7 +317,7 @@ def main():
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
-    obj = mysql_usage()
+    obj = MysqlUsage()
     # obj.query()
     # obj.delete_item()
     # obj.modify_table()
@@ -321,7 +327,7 @@ def main():
     # obj.query()
     # obj.update()
     # obj.transfer_data()
-    obj.getVersion()
+    obj.show_all_table()
     # remote_mysql2()
     # remote_mysql()
     # create_db_case()

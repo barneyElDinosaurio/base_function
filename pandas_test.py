@@ -385,7 +385,7 @@ def read_network():
     print df
 
 
-base_case()
+# base_case()
 # excel_op()
 # del_row()
 # search()
@@ -395,7 +395,7 @@ base_case()
 # del_row()
 # search()
 # win_or_lost()
-# replace_test2()
+replace_test2()
 # select_function()
 # get_static1()
 # get_static2()

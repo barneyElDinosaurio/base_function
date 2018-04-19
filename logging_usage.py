@@ -30,7 +30,7 @@ def case2():
 
 	f_handler = logging.FileHandler('logging.log')
 	f_handler.setLevel(logging.DEBUG)
-	formatter = logging.Formatter('[%(asctime)s][%(thread)d][%(filename)s][line: %(lineno)d][%(levelname)s] ## %(message)s')
+	formatter = logging.Formatter('[%(asctime)s][%(filename)s][line: %(lineno)d]\[%(levelname)s] ## %(message)s')
 
 	f_handler.setFormatter(formatter)	
 	logger.addHandler(f_handler)
