@@ -21,7 +21,7 @@ def gamble_test(cash):
 
 		# print 'count',count
 		counts.append(count)
-	print max(counts)
+	print max(counts)  	
 	return float(sum(counts))/100.0
 
 print gamble_test(1)
