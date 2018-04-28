@@ -395,6 +395,7 @@ def dict_map():
     string=['China','USA','Japan','Hollan']
     dict_index = {value:index for index,value in enumerate(string)}
     print dict_index
+
 # in_test()
 #delete_item_list()
 #generator_list()
