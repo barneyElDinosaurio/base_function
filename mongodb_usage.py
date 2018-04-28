@@ -3,7 +3,7 @@ import codecs
 import json
 import pprint
 import pymongo,datetime
-host = 'localhost'
+host = 'raspberrypi'
 client=pymongo.MongoClient(host,27017)
 
 def basic_usage():
@@ -179,7 +179,7 @@ def mongo_case1():
 #basic_usage()
 #query()
 #remove()
-# insert()
+insert()
 #update()
 #getlianjia_price()
 #update_testcase()
@@ -189,4 +189,4 @@ def mongo_case1():
 # get_price()
 #change_city()
 # update_id()
-mongo_case1()
+# mongo_case1()
