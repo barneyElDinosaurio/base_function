@@ -50,7 +50,7 @@ def insert():
         collection.save(data)
 
 def update():
-    db. first_collection.update({'name':'rocky','age':19},{'name':'rocky','age':199})
+    db.first_collection.update({'name':'rocky','age':19},{'name':'rocky','age':199})
 
 def getlianjia_price():
     client=pymongo.MongoClient('127.0.0.1',27017)

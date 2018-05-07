@@ -20,6 +20,16 @@ def low_image():
                 new_name = os.path.join(current_path,name+'_thunbnail.'+post_fix)
                 new_im.save(new_name)
 
+def low_snapshot(filename):
+    im = Image.open(filename)
+    w,h = im.size
+
+    new_im = im.resize((w*3.0/5,h*3.0/5),Image.ANTIALIAS)
+    name = filename.split('.')[0]
+    post_fix = filename.split('.')[1]
+    new_name = name+'_thunbnail.'+post_fix
+    new_im.save(new_name)    
+
 
 def low_down(filename):
     im = Image.open(filename)
@@ -31,7 +41,12 @@ def low_down(filename):
         new_name = name+'_thunbnail.'+post_fix
         new_im.save(new_name)
 
+
 if __name__=='__main__':
-    filename=sys.argv[1]
+    if len(sys.argv)>1:
+        filename=sys.argv[1]
+    else:
+        filename=''
+
     print filename
-    low_down(filename)
+    low_snapshot(filename)
