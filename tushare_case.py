@@ -293,6 +293,14 @@ def main():
     sb.get_info(id)
 '''
 
+'''
+测试api退出
+'''
+def api_close_case():
+    api=ts.get_apis()
+    print 'exit function'
+    ts.close_apis(api)
+    # exit(0)
 # sb.looper(id)
 # sb.realtime(id)
 # stockBox.base_function("300333")
@@ -304,4 +312,6 @@ def main():
 # sb.get_stock_chengfeng()
 
 if __name__ == "__main__":
-    main()
+    # main()
+    api_close_case()
+    print 'exit process'
