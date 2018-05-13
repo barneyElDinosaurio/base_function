@@ -221,8 +221,10 @@ def time_cuo():
     # 1521204495005
     print long(time.time()*1000)
 
-    t_1= 1521204495005/1000.00
+    #十三位转为时间
+    t_1= 1526018963000/1000.00
     print 't_1', time.ctime(t_1)
+
     t_s=1504165854069/1000.0
     t2 = 1503048528 * 1.00
     updateTime = 1504602551076 / 1000.00
@@ -234,7 +236,7 @@ def time_cuo():
     #print 't3', t3
     print 't4', t4
     curr_d = datetime.datetime.fromtimestamp(updateTime)
-    print curr_d
+    print 'curr_d',curr_d
     d_time = datetime.datetime.fromtimestamp(t_s)
     print d_time
 

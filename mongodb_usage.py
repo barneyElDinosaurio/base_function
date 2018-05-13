@@ -3,7 +3,7 @@ import codecs
 import json
 import pprint
 import pymongo, datetime
-
+import pandas as pd
 host = 'raspberrypi'
 client = pymongo.MongoClient(host, 27017)
 
@@ -240,11 +240,33 @@ class StockMongo():
             for code in codes:
                 print code
 
+def mongo_calculation():
+    collection=client['xueqiu']['ceo']
+    result={}
+    ret = collection.find({},{'created_at':1,'source':1})
+    print 'start to calculate'
+    count =0
+    # ret= collection.find_one({'source':u'持仓盈亏'},{'description':1,'source_link':1})
+
+    ret_list = list(ret)
+    df = pd.DataFrame(ret_list)
+    del df['_id']
+    print df.info()
+    # for i in ret:
+    #     count+=1
+    #     result.setdefault(i.get('source'),0)
+    #     result[i.get('source')]+=1
+    # # print result
+    # for k,v in result.items():
+    #     print k,v
+
+
 def main():
-    obj=StockMongo('stock','industry')
+    # obj=StockMongo('stock','industry')
     # obj.find()
     # obj.findone(u'中成')
-    obj.show_industry()
+    # obj.show_industry()
+    mongo_calculation()
 
 if __name__ == '__main__':
     main()
