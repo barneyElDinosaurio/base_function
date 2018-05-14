@@ -13,12 +13,12 @@ def getheader():
     dictionary = dict()
     for line in data:
         line = line.strip()
-        dictionary[line.split(":")[0]] = ':'.join(line.split(":")[1:])
+        dictionary[line.split(":")[0].strip()] = ':'.join(line.split(":")[1:])
     return dictionary
 
 
 def analysis_cookie():
-    cookie = getheader().get('cookie')
+    cookie = getheader().get('Cookie')
     print cookie
     items = cookie.split(';')
     for item in items:
@@ -130,8 +130,8 @@ def see_header():
     print r.text
 
 
-print getheader()
-# analysis_cookie()
+# print getheader()
+analysis_cookie()
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')
