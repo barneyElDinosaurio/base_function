@@ -8,9 +8,23 @@ from toolkit import Toolkit
 import json,os
 from setting import get_mysql_conn,get_engine
 
-db = 'db_news'
-engine = get_engine('daily')
+db = 'qdm225205669_db'
+# engine = get_engine('daily')
+conn = get_mysql_conn(db,local=False)
 
+def groupcheck():
+    cur =conn.cursor()
+    cmd = 'select `email` from aws_users group by`email`'
+    cur.execute(cmd)
+    ret = cur.fetchall()
+    domain = {}
+    for i in ret:
+        mail = i[0].split('@')[1]
+        domain.setdefault(mail,0)
+        domain[mail]+=1
+
+    result = sorted(domain.items(),key=lambda x:x[1],reverse=True)
+    print result
 
 class MysqlUsage():
     def __init__(self):
@@ -317,7 +331,7 @@ def main():
     # DB_Usage()
     # DB_Usage_sqlite()
     # Aliyun()
-    obj = MysqlUsage()
+    # obj = MysqlUsage()
     # obj.query()
     # obj.delete_item()
     # obj.modify_table()
@@ -327,13 +341,13 @@ def main():
     # obj.query()
     # obj.update()
     # obj.transfer_data()
-    obj.show_all_table()
+    # obj.show_all_table()
     # remote_mysql2()
     # remote_mysql()
     # create_db_case()
     # remove_row()
     # run_sql_script()
-
+    groupcheck()
 if __name__ == '__main__':
     data_path=os.path.join(os.getcwd(),'data')
     os.chdir(data_path) 
