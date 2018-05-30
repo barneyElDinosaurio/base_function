@@ -9,10 +9,9 @@ def case1():
     except ZeroDivisionError as e:
         print 'exception ',e
     except IOError as e:
-        print 'exception',e
-    #except ValueError as e:
-        #print 'exception:::' , e
-        #logging.exception(e)
+        print 'exception ',e
+    except ValueError as e:
+        print 'exception:::' , e
     else:
         print 'in else'
     finally:
@@ -30,5 +29,5 @@ def case2():
         raise Fooerror('foo invalid : %s' %a)
     return 10/n
 
-#case1()
+case1()
 #case2()

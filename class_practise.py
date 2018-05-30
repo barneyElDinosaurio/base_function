@@ -63,13 +63,24 @@ class myclass():
 	def __init__(self):
 		print 'on init'
 
+	def show(self):
+		print type(self).__name__
+
 	def __call__(self,num):
 		print 'on __call__ function number is {}'.format(num)
 
 def call_function_test():
-	# obj=myclass()
-	# obj(6)
-	myclass(10)
+	obj=myclass()
+	obj(6)
 
-# call_test()
-call_function_test()
+	# wrong !
+	# myclass(10)
+	obj.show()
+
+
+
+def main():
+	# call_test()
+	call_function_test()
+
+main()
