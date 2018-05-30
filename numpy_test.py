@@ -131,6 +131,9 @@ def reshape_usage():
     x=x.reshape(2,2,5)
     print x
 
+def basic_test():
+    a = np.zeros(10)
+
 def main():
     #testcase4()
     # perf_compare()
