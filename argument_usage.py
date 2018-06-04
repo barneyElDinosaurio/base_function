@@ -13,3 +13,13 @@ print options
 print args
 print type(options)
 print options.filename
+
+print '\n'*5
+
+def dict_args(*args, **kwargs):
+
+	print args
+	print kwargs
+	print kwargs.get('b')
+
+dict_args(a='1',b='admin')
