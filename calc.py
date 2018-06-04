@@ -85,4 +85,11 @@ def main():
     # print fv_g.next()
     value_large()
 
+def ops_test(n):
+    print n
+    return n
+
+# run left then right
+x = ops_test(2) + ops_test(5):
+
 main()

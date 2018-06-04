@@ -97,6 +97,11 @@ def multi_dictionary():
     user['Dave']={"Rocket":2}
     print user
 
+def dict_update():
+    a={'A':1,'B':2,'C':3}
+    print(a)
+    a.update({'A':9,'D':10})
+    print('new a : {}'.format(a))
 
 def main():
     #sort_usge()
@@ -104,7 +109,8 @@ def main():
     #find_key()
     #dict_create()
     # sort_test()
-    multi_dictionary()
+    # multi_dictionary()
+    dict_update()
 
 if __name__ == '__main__':
     main()
