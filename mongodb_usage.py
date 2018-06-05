@@ -195,7 +195,7 @@ def mongo_case1():
 # basic_usage()
 # query()
 # remove()
-insert()
+# insert()
 # update()
 # getlianjia_price()
 # update_testcase()
