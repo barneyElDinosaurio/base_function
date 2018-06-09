@@ -133,6 +133,11 @@ def reshape_usage():
 
 def basic_test():
     a = np.zeros(10)
+    b = np.arange(10)
+    # print b
+    print b[5]
+    print type(b)
+    
 
 def main():
     #testcase4()
@@ -144,5 +149,6 @@ def main():
     # x=Qscore()
     # print 'qcore x is',x
     # numpysum(10)
-    reshape_usage()
+    # reshape_usage()
+    basic_test()
 main()

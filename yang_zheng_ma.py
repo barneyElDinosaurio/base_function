@@ -1,5 +1,5 @@
 #coding=utf-8
-__author__ = 'vmplay'
+__author__ = 'rocky'
 # 生成验证码 四个字母
 import random, Image, ImageFont, ImageDraw, ImageFilter
 from PIL import Image
@@ -51,4 +51,4 @@ def changeBW(im):
 def case2():
     print yanzengma()
 
-case2()
+# case2()
