@@ -1,70 +1,49 @@
-# coding: utf-8
-from Queue import Queue
-def generator_usage():
-    g = (x for x in range(1000))
-    #rint type(g)
-    #print g
-    #print g.next()
-    while g:
-        try:
-            print g.next()
-        except IOError:
-            break
+
+class DefineIter:
+    def __init__(self,length):
+        self.length = length
+        self.data = range(self.length)
+        self.index=0
+
+    def __iter__(self):
+        return self
+
+
+
+    def next(self):
+        if self.index >=self.length:
+            # return None
+            raise StopIteration
+
+
+        d = self.data[self.index]
+
+        self.index =self.index + 1
+        return d
+
+
+
+a = iter(DefineIter(10))
+
+for i in a:
+    print i
+
+
+
+class Counter:
+    def __init__(self):
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        i = self.index
+        if i < 10:
+            self.index += 1
+            return i
         else:
-            print ' in else'
-            return 0
-        finally:
-            print 'finanlly'
-            return 1
+            raise StopIteration
 
-def list_generator():
-    l = [ x for x in range(1000)]
-    print type(l)
-    print l
-
-def iter_function():
-    a=[i for i in range(100)]
-    b=iter(a)
-    while True:
-        try:
-            print b.next()
-        except StopIteration:
-            print 'over'
-            break
-
-def key_function():
-    d={'a':1,'z':2,'f':3,'g':9,'i':8}
-    '''
-    for i in d:
-        print i
-    '''
-
-    for i in d.items():
-    #for i in d.itervalues():
-    #for i in d.iterkeys():
-    #for i in d.iteritems():
-        print i
-
-def iter_usage():
-    q=Queue()
-    q.put(1)
-    q.put(2)
-    q.put(3)
-    q.put(4)
-    q.put(5)
-    q.put('END')
-
-    def fetchdata():
-        return q.get()
-
-    for i in iter(fetchdata,'END'):
-        print i
-
-
-
-#iter_function()
-#key_function()
-#x = generator_usage()
-#print x
-#list_generator()
-iter_usage()
+# counter = iter(Counter())
+# print next(counter)

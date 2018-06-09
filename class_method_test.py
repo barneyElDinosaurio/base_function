@@ -2,7 +2,7 @@
 # classmethod 和 staticmethod 的用法
 __author__ = 'rocky chen'
 
-
+import datetime
 class Hero():
     '''
     this is the python doc test
@@ -22,10 +22,7 @@ class Hero():
             print "Boy_Here in classmethod"
 
 
-h=Hero()
-print h.__doc__
-#h.sayHello()
-Hero.sayHello()
+
 
 class Girl_Hero(Hero):
     def foo(self):
@@ -38,13 +35,7 @@ class Boy_Hero(Hero):
 
 
 
-test=Girl_Hero()
-test.sayHello_cls()
-test.sayHello()
 
-test1=Boy_Hero()
-test1.sayHello_cls()
-test1.sayHello()
 
 
 #factory mode
@@ -144,11 +135,54 @@ class Kls(object):
     no_inst = 0
     def __init__(self):
         Kls.no_inst = Kls.no_inst + 1
+
+
+
+# classmethod usage
+class Birthday(object):
+    def __init__(self,year, month, day):
+        self.birthday = datetime.datetime(year=year, month=month, day=day)
+
+
+    @classmethod
+    def from_str(cls,date_str):
+        ds = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+        return cls(ds.year,ds.month,ds.day)
+
+
+    def show(self):
+        print self.birthday
+        print type(self.birthday)
+
+
+
+
 def main():
-    ik1 = Kls()
-    ik2 = Kls()
-    print '*'*10
-    print(get_no_of_instances(Kls))
+
+
+    # test=Girl_Hero()
+    # test.sayHello_cls()
+    # test.sayHello()
+
+    # test1=Boy_Hero()
+    # test1.sayHello_cls()
+    # test1.sayHello()
+
+    # h=Hero()
+    # print h.__doc__
+    # h.sayHello()
+    # Hero.sayHello()
+
+
+
+    # ik1 = Kls()
+    # ik2 = Kls()
+    # print '*'*10
+    # print(get_no_of_instances(Kls))
+
+    # obj = Birthday(2018,1,1)
+    obj = Birthday.from_str('2017-10-10')
+    obj.show()
 
 
 '''

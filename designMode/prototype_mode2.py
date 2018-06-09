@@ -1,5 +1,6 @@
 import copy
 class Book:
+	x='init'
 	def __init__(self):
 		self.a=0
 		self.b=None
@@ -9,10 +10,13 @@ class Book:
 		print self.__dict__
 
 b = Book()
+print('__dict__ content: ')
+
 b.show()
 
 b.c = 0
 
+print('__dict__ content: ')
 b.show()
 
 d={'a':1,'b':2}
