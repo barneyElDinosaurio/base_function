@@ -1,9 +1,10 @@
 #coding=utf-8
-#图像的基本测试
-import random
-
 __author__ = 'rocky'
 
+#图像的基本测试
+import random
+import pytesseract
+from PIL import Image
 from PIL import Image,ImageFilter
 import numpy as np
 
@@ -26,16 +27,17 @@ def base_usage():
 def read_image():
     im = Image.open('data/len_full.jpg')
     print im.mode
-    print im.getpixel((0,0))
+    # print im.getpixel((0,0))
     bw = im.convert('1')
     x,y = bw.size
+    print x,y
     grey = im.convert('L')
     for i in range(x):
         for j in range(y):
             pass
             #print bw.getpixel((i,j))
-    #bw.show()
-    #grey.show()
+    bw.show()
+    grey.show()
     data = grey.getdata()
     new_data = np.matrix(data)
     print new_data
@@ -45,25 +47,23 @@ def read_image():
     for i in range(855-1):
         for j in range(400-1):
             if random.random()>0.5:
-                dt[j,i]=0
+                dt[i,j]=0
     new_im = Image.fromarray(dt)
     new_im.show()
 
 
 def image_recognize():
-    import pytesseract
-    from PIL import Image
 
     class GetImageDate(object):
         def m(self):
-            image = Image.open("data/0.jpg")
+            image = Image.open("ocr5.png")
             text = pytesseract.image_to_string(image)
             return text
 
         def SaveResultToDocument(self):
             text = self.m()
-            f = open(u"Verification.txt", "w")
             print text
+            f = open(u"Verification.txt", "w")
             f.write(str(text))
             f.close()
 
@@ -72,7 +72,7 @@ def image_recognize():
 
 
 def main():
-    #base_usage()
+    # base_usage()
     # read_image()
     image_recognize()
 
