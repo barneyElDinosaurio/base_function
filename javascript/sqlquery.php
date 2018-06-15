@@ -11,7 +11,7 @@ header("Content-type: text/html;charset=utf-8");
 mysql_query('set names utf8');
 $servername = "localhost";
 $username = "root";
-$password = "123456z";
+$password = "";
 $dbname = "db_stock";
 // 创建连接
 $conn = new mysqli($servername, $username, $password, $dbname);

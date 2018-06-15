@@ -6,9 +6,9 @@
     <body>
 <h3><center>A股每天最新新闻</center></h3>
 <?php
-$host="qdm225205669.my3w.com";
-$user="qdm225205669";
-$password="123456qA";
+$host="";
+$user="";
+$password="";
 //$link=mysql_connect($host,$user,$password);
 $link=mysql_connect($host,$user,$password);
 if(!$link) echo "没有连接成功!".'<br>';

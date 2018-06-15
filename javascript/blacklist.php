@@ -6,7 +6,7 @@
     <body>
 <h3><center>A股黑名单</center></h3><br>
 <?php
-$link=mysql_connect("qdm225205669.my3w.com","qdm225205669","123456qA");
+$link=mysql_connect("qdm225205669.my3w.com","qdm225205669","");
 if(!$link) echo "没有连接成功!".'<br>';
 else echo '<center>今天是'.date('Y-m-d').'</center><br>';
 
