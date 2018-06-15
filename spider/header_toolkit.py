@@ -13,6 +13,7 @@ def getheader():
     dictionary = dict()
     for line in data:
         line = line.strip()
+        line = line.replace(' ', '')
         dictionary[line.split(":")[0].strip()] = ':'.join(line.split(":")[1:])
     return dictionary
 
@@ -130,8 +131,8 @@ def see_header():
     print r.text
 
 
-# print getheader()
-analysis_cookie()
+print getheader()
+# analysis_cookie()
 # urlParse()
 # read_json()
 # print urlAdd('urlparse')

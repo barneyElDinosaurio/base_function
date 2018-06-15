@@ -1,7 +1,6 @@
 # coding: utf-8
 import collections
-import requests
-from header_toolkit import urlAdd
+from spider.header_toolkit import urlAdd
 
 d = urlAdd('urlparse')
 arg_dict = {'ac': 'wifi',

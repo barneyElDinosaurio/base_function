@@ -7,7 +7,7 @@ Contact: weigesysu@qq.com
 import redis
 HOSTNAME='raspberrypi'
 # HOSTNAME='localhost'
-r = redis.Redis(host=HOSTNAME, port=6379, db=0)
+r = redis.Redis(host=HOSTNAME, port=6379, db=2)
 
 def base_usage():
     print r.dbsize()
@@ -111,7 +111,14 @@ def check_dup():
         pass
     x=len(set(total))
     print x
-base_usage()
+
+def search():
+    for i in r.keys():
+        print i
+        # print r.get(i),len(r.get(i))
+        # if len(r.get(i))==0:
+            # print i
+# base_usage()
 # insert_data()
 #get_data()
 # list_usage()
@@ -123,3 +130,4 @@ base_usage()
 #get_keys()
 # clear_db(1)
 # check_dup()
+search()

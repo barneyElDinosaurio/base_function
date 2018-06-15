@@ -56,7 +56,7 @@ def image_recognize():
 
     class GetImageDate(object):
         def m(self):
-            image = Image.open("ocr5.png")
+            image = Image.open("captchaNew.jpg")
             text = pytesseract.image_to_string(image)
             return text
 
