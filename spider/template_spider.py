@@ -7,9 +7,9 @@ Email: weigesysu@qq.com
 '''
 import requests
 import json
-
+from lxml import etree
 def getContent():
-    url = 'https://www.douyin.com/aweme/v1/aweme/post/?user_id=63386731255&max_cursor=0&count=20'
+    url = 'http://quotes.money.163.com/f10/gdfx_000011.html'
     '''
     headers = {'Accept-Language': 'zh-CN,zh;q=0.9', 'Accept-Encoding': 'gzip,deflate,br', 'Host': 'sp0.baidu.com',
                'Accept': '*/*',
@@ -24,6 +24,8 @@ def getContent():
     # js= json.loads(r.text)
 
     print r.text
+    tree = etree.HTML(r.text)
+    return r.text,tree
 
 def main():
     getContent()

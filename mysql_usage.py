@@ -325,6 +325,15 @@ def run_sql_script():
     with open('world.sql','rb') as f:
         cur.executescript(f.read())
 
+def put_to_redis():
+    r = redis.Redis(host='localhost', port=6379, db=10)
+    conn = get_mysql_conn('db_parker',local=True)
+    cursor = conn.cursor()
+    cmd = 'select `identity_number` from frauds'
+    cursor.execute(cmd)
+    ret = cursor.fetchall()
+    for i in ret:
+        r.lpush('identity',i[0])
 
 
 def main():
@@ -347,7 +356,9 @@ def main():
     # create_db_case()
     # remove_row()
     # run_sql_script()
-    groupcheck()
+    # groupcheck()
+    put_to_redis()
+
 if __name__ == '__main__':
     data_path=os.path.join(os.getcwd(),'data')
     os.chdir(data_path) 
