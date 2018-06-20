@@ -20,7 +20,7 @@ def getheader():
 
 def analysis_cookie():
     cookie = getheader().get('Cookie')
-    print cookie
+    print(cookie)
     items = cookie.split(';')
     for item in items:
         name = item.split('=')[0]
@@ -28,7 +28,7 @@ def analysis_cookie():
         # print name,value
         name = name.replace(' ', '')
         # print '\'',name,'\'',':','\'',value,'\'',','
-        print '\"{}\":\"{}\",'.format(name, value)
+        print('\"{}\":\"{}\",'.format(name, value))
 
 
 def urlParse():
@@ -36,7 +36,7 @@ def urlParse():
     x = url.split('&')
     fp = open('urlparse', 'w')
     for i in x:
-        print i
+        print(i)
         fp.write(i + '\n')
     fp.close()
 
@@ -55,7 +55,7 @@ def urlAdd(filename):
             if len(line) < 1:
                 break
             sp = line.split('=')
-            print sp[0], " ", sp[1]
+            print(sp[0], " ", sp[1])
             # print sp[0],sp[1]
             # print arg,val
             d[sp[0]] = sp[1]
@@ -77,14 +77,14 @@ def read_json():
     # js=json.loads(fp)
     # print js
     return_data = eval(fp)
-    print return_data
+    print(return_data)
     # print return_data['log_extra']
     if return_data.has_key('app_name'):
-        print return_data.get('app_name')
-        print return_data.get('title')
-        print return_data.get('image')
-        print return_data.get('image').get('url')
-        print "TS"
+        print(return_data.get('app_name'))
+        print(return_data.get('title'))
+        print(return_data.get('image'))
+        print(return_data.get('image').get('url'))
+        print("TS")
 
     for k, v in return_data.items():
         # print k,v
@@ -94,7 +94,7 @@ def read_json():
                 for ik, iv in i.items():
                     if ik == 'url_list':
                         picUrl = iv[0].get('url')
-                        print picUrl
+                        print(picUrl)
                         break
 
         if k == 'filter_words':
@@ -119,7 +119,7 @@ def debug_page():
     # print chardet.detect(r)
     tree = etree.HTML(r.text, parser=etree.HTMLParser(encoding='utf-8'))
     # print etree.tostring(tree)
-    print r.text
+    print(r.text)
     return tree, r.text
 
 
@@ -128,10 +128,10 @@ def see_header():
     ua = 'IE'
     header = {'User-Agent': ua}
     r = requests.get(url='https://helloacm.com/api/user-agent/')
-    print r.text
+    print(r.text)
 
 
-print getheader()
+print(getheader())
 # analysis_cookie()
 # urlParse()
 # read_json()

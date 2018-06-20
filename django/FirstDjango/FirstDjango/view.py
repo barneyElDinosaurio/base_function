@@ -93,7 +93,7 @@ def time_show2(request, offset):
 def template_usage():
     t = template.Template('My name is {{ name }}')
     c = template.Context({'name': 'Rocky'})
-    print t.render(c)
+    print(t.render(c))
 
 
 # template_usage()
