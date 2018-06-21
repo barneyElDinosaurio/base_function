@@ -1,5 +1,5 @@
+#-*-coding:utf-8-*-
 import time
-
 import os
 from PIL import Image
 import pytesseract
@@ -45,11 +45,13 @@ def conver_gif():
 
 
 def get_image():
-    url = 'http://113.108.219.40/Dop/CheckCode.aspx?codemark=38.63767845258748'
+    os.chdir('data')
+    for i in range(1000):
+        url = 'http://113.108.219.40/Dop/CheckCode.aspx?codemark=38.63767845258748'
     # request.urlretrieve(url,'code.png')
-    r = requests.get(url)
-    with open('code', 'wb') as f:
-        f.write(r.content)
+        r = requests.get(url)
+        with open(str(i)+'.gif', 'wb') as f:
+            f.write(r.content)
 
 
 def change_color():
@@ -68,7 +70,7 @@ def change_color():
     for i in range(0, width):  # 遍历所有长度的点
         for j in range(0, height):  # 遍历所有宽度的点
             data = (img.getpixel((i, j)))  # 打印该图片的所有点
-            print(data)  # 打印每个像素点的颜色RGBA的值(r,g,b,alpha)
+            # print(data)  # 打印每个像素点的颜色RGBA的值(r,g,b,alpha)
             # print(data[0])  # 打印RGBA的r值
             # print(data[1])
             if data[1] > 200:
@@ -90,15 +92,52 @@ def change_color():
     if target == text:
         print('Bingo')
 
+def split_photo():
+    os.chdir('data')
+    x1=5
+    y1=4
+    x2=65
+    y2=20
+    for num in range(1000):
+        im=Image.open(str(num)+'.gif')
+        im=im.crop((x1,y1,x2,y2))
+        width = im.size[0]  # 长度
+        height = im.size[1]  # 宽度
+        im = im.convert('RGB')
+        for i in range(0, width):  # 遍历所有长度的点
+            for j in range(0, height):  # 遍历所有宽度的点
+                data = (im.getpixel((i, j)))  # 打印该图片的所有点
+                # print(data)  # 打印每个像素点的颜色RGBA的值(r,g,b,alpha)
+                # print(data[0])  # 打印RGBA的r值
+                # print(data[1])
+                if data[1] > 200:
+                    # data[1]=0
+                    # r=data[0]
+                    im.putpixel((i, j), (255, 255, 255))  # 则这些像素点的颜色改成白色
+        im.save(str(num)+'-crop.gif')
+
+def split_photo_piece():
+    os.chdir('data')
+    for num in range(1000):
+        im=Image.open(str(num)+'-crop.gif')
+        width = im.size[0]  # 长度
+        each_width = width/5
+        height = im.size[1]  # 宽度
+        for i in range(5):
+            im_x=im.crop((each_width*i,0,each_width*(i+1),height))
+            # im_x=im_x.convert('RGB')
+            im_x=im_x.convert('L')
+            im_x.save(str(num)+'-crop-{}'.format(i)+'.gif')
 
 def main():
     # base_usage()
     # read_image()
     # image_recognize()
     # get_image()
-    change_color()
+    # change_color()
     # conver_gif()
-
+    # split_photo()
+    split_photo_piece()
 
 if __name__ == '__main__':
     main()
