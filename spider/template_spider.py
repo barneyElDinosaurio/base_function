@@ -11,21 +11,21 @@ from lxml import etree
 
 
 def getContent():
-    url = 'http://quotes.money.163.com/f10/gdfx_000011.html'
-    '''
-    headers = {'Accept-Language': 'zh-CN,zh;q=0.9', 'Accept-Encoding': 'gzip,deflate,br', 'Host': 'sp0.baidu.com',
-               'Accept': '*/*',
-               'User-Agent': 'Mozilla/5.0(WindowsNT6.1;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/65.0.3325.162Safari/537.36',
-               'Connection': 'keep-alive',
-               'Cookie': 'BAIDUID=807FDFD8452E0BBE9D4E90BE4ACA3E48:FG=1;BIDUPSID=807FDFD8452E0BBE9D4E90BE4ACA3E48;PSTM=1510554299;MCITY=-340%3A;pgv_pvi=5560071168;H_PS_PSSID=1437_21116_18560_26350_26578_20929;PSINO=6',
-               'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
-               'Referer': 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E5%A4%B1%E4%BF%A1%E4%BA%BA&rsv_pq=ba070cee00021d68&rsv_t=af202PtBAFQNGpj0I7C5T4usPJQM4XwFNcLDD7LLLYIzLiejH%2Br66BFrgCg&rqlang=cn&rsv_enter=1&rsv_sug3=11&rsv_sug1=11&rsv_sug7=100&rsv_sug2=0&inputT=2625&rsv_sug4=2625'}
-      '''
+    url = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=%E5%A4%B1%E4%BF%A1%E8%A2%AB%E6%89%A7%E8%A1%8C%E4%BA%BA&cardNum=&iname=%E8%96%9B&areaName=&pn=0'
+
+    # url1 = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人&cardNum=&iname=陈&areaName=&pn=0'
+    # url2='https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人&cardNum=&iname=b'\xe6\x97\xb6'&areaName=&pn=0'
     headers = {
-        'User-Agent': 'Mozilla/5.0(WindowsNT6.1;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/65.0.3325.162Safari/537.36'}
+        'Accept': '*/*', 'Accept-Encoding': 'gzip,deflate,br', 'Accept-Language': 'zh,en;q=0.9,en-US;q=0.8',
+        'Cache-Control': 'no-cache', 'Connection': 'keep-alive',
+        'Cookie': 'BAIDUID=C459F789B96EDC64D968698B40CF0EB2:FG=1;BIDUPSID=C459F789B96EDC64D968698B40CF0EB2;PSTM=1529375614;H_PS_PSSID=1435_21098_18560_26430_20929;BDORZ=B490B5EBF6F3CD402E515D22BCDA1598;PSINO=3',
+        'Host': 'sp0.baidu.com', 'Pragma': 'no-cache',
+        'Referer': 'https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E5%A4%B1%E4%BF%A1%E8%A2%AB%E6%89%A7%E8%A1%8C%E4%BA%BA&oq=%25E5%25A4%25B1%25E4%25BF%25A1%25E8%25A2%25AB%25E6%2589%25A7%25E8%25A1%258C%25E4%25BA%25BA&rsv_pq=d971ea7000015588&rsv_t=b50dWdhvxoeP9syF9bJkhqWClc8wUiQNJpmr6zi5ayWjxqtGbrsGtHa2N28&rqlang=cn&rsv_enter=0&prefixsug=%25E5%25A4%25B1%25E4%25BF%25A1%25E8%25A2%25AB%25E6%2589%25A7%25E8%25A1%258C%25E4%25BA%25BA&rsp=0',
+        'User-Agent': 'Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.3396.87Safari/537.36'
+        }
+
     r = requests.get(url, headers=headers)
     # js= json.loads(r.text)
-
     print(r.text)
     tree = etree.HTML(r.text)
     return r.text, tree
@@ -69,8 +69,8 @@ def download():
 
 
 def main():
-    # getContent()
-    getContentPost()
+    getContent()
+    # getContentPost()
     # download()
 
 
