@@ -129,6 +129,21 @@ def split_photo_piece():
             im_x=im_x.convert('L')
             im_x.save(str(num)+'-crop-{}'.format(i)+'.gif')
 
+def single_word():
+    import string,shutil
+    os.chdir('data/split_data')
+
+    for i in os.listdir('.'):
+        if os.path.isfile(i):
+            # print i
+            im=Image.open(i)
+            text=pytesseract.image_to_string(im,config='-psm 10')
+            print text
+            if text in string.ascii_uppercase or text in string.digits or text in string.ascii_lowercase:
+                print 'find one'
+                print text.upper()+'/'+i
+                shutil.copy(i,os.path.join(text.upper(),i))
+
 def main():
     # base_usage()
     # read_image()
@@ -137,7 +152,8 @@ def main():
     # change_color()
     # conver_gif()
     # split_photo()
-    split_photo_piece()
+    # split_photo_piece()
+    single_word()
 
 if __name__ == '__main__':
     main()
