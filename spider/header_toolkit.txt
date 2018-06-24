@@ -1,10 +1,14 @@
-Accept: */*
-Accept-Encoding: gzip, deflate, br
-Accept-Language: zh,en;q=0.9,en-US;q=0.8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
 Cache-Control: no-cache
 Connection: keep-alive
-Cookie: BAIDUID=C459F789B96EDC64D968698B40CF0EB2:FG=1; BIDUPSID=C459F789B96EDC64D968698B40CF0EB2; PSTM=1529375614; H_PS_PSSID=1435_21098_18560_26430_20929; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; PSINO=3
-Host: sp0.baidu.com
+Content-Length: 22221
+Content-Type: application/x-www-form-urlencoded
+Cookie: ASP.NET_SessionId=2dmlxtigirfq1bdsoq3drcc2; UM_distinctid=1642c6120b37f6-04852df3d8901a-3f3c5b02-144000-1642c6120b4537; CNZZDATA1261062804=132559596-1529751561-%7C1529751561
+Host: 113.108.219.40
+Origin: http://113.108.219.40
 Pragma: no-cache
-Referer: https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E5%A4%B1%E4%BF%A1%E8%A2%AB%E6%89%A7%E8%A1%8C%E4%BA%BA&oq=%25E5%25A4%25B1%25E4%25BF%25A1%25E8%25A2%25AB%25E6%2589%25A7%25E8%25A1%258C%25E4%25BA%25BA&rsv_pq=d971ea7000015588&rsv_t=b50dWdhvxoeP9syF9bJkhqWClc8wUiQNJpmr6zi5ayWjxqtGbrsGtHa2N28&rqlang=cn&rsv_enter=0&prefixsug=%25E5%25A4%25B1%25E4%25BF%25A1%25E8%25A2%25AB%25E6%2589%25A7%25E8%25A1%258C%25E4%25BA%25BA&rsp=0
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36
+Referer: http://113.108.219.40/Dop/Search/BldQuaReissueList.aspx
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36
