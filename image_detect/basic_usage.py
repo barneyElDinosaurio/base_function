@@ -397,8 +397,13 @@ def validation():
     text=pytesseract.image_to_string(image)
     print(text)
 
+def clear_noise2():
+    img = Image.open('g.jpg')
+    clearNoise(img,50,1,4)
+    img.show()
+
 def main():
-    os.chdir('data/temp')
+    # os.chdir('data/temp')
     # base_usage()
     # read_image()
     # image_recognize()
@@ -412,9 +417,11 @@ def main():
     # print(calc_ration())
     # remove_noise()
     # calc_all()
-    folder_detect()
+    # folder_detect()
     # validation()
     # find_best_args()
+    clear_noise2()
+
 
 if __name__ == '__main__':
     main()
