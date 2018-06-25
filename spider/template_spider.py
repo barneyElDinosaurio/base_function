@@ -11,7 +11,7 @@ from lxml import etree
 
 
 def getContent():
-    url = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=%E5%A4%B1%E4%BF%A1%E8%A2%AB%E6%89%A7%E8%A1%8C%E4%BA%BA&cardNum=&iname=%E8%96%9B&areaName=&pn=0'
+    url = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=%E5%A4%B1%E4%BF%A1%E8%A2%AB%E6%89%A7%E8%A1%8C%E4%BA%BA%E5%90%8D%E5%8D%95&cardNum=&iname=%E8%AF%B8%E8%91%9B&areaName=&pn=13&rn=10&ie=utf-8&oe=utf-8&format=json&t=1529662298628&cb=jQuery1102016673961426878225_1529662064306&_=1529662064378'
 
     # url1 = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人&cardNum=&iname=陈&areaName=&pn=0'
     # url2='https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人&cardNum=&iname=b'\xe6\x97\xb6'&areaName=&pn=0'
