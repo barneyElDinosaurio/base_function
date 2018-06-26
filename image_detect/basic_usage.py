@@ -172,7 +172,7 @@ def juli(r, s):
 
 
 def sample():
-    im = Image.open('test.gif')
+    im = Image.open('code.gif')
     width = im.size[0]  # 长度
     height = im.size[1]  # 宽度
     im = im.convert('RGB')
@@ -190,7 +190,7 @@ def sample():
     # im = ImageEnhance.Sharpness(im).enhance(9)
     # im.show()
     im=im.convert('L')
-    im.save('test-no-green.gif')
+    im.save('no-greed-code.gif')
     return im
 
 
@@ -398,7 +398,7 @@ def validation():
     print(text)
 
 def main():
-    os.chdir('data/temp')
+    # os.chdir('data/temp')
     # base_usage()
     # read_image()
     # image_recognize()
@@ -412,9 +412,10 @@ def main():
     # print(calc_ration())
     # remove_noise()
     # calc_all()
-    folder_detect()
+    # folder_detect()
     # validation()
     # find_best_args()
+    sample()
 
 if __name__ == '__main__':
     main()

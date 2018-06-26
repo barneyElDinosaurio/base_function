@@ -1,14 +1,14 @@
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,zh;q=0.9
+Accept-Language: zh,en;q=0.9,en-US;q=0.8
 Cache-Control: no-cache
-Connection: keep-alive
-Content-Length: 22221
+Content-Length: 6342
 Content-Type: application/x-www-form-urlencoded
-Cookie: ASP.NET_SessionId=2dmlxtigirfq1bdsoq3drcc2; UM_distinctid=1642c6120b37f6-04852df3d8901a-3f3c5b02-144000-1642c6120b4537; CNZZDATA1261062804=132559596-1529751561-%7C1529751561
+Cookie: UM_distinctid=1641b08da9a800-0e1bb87bdc335a-601a147a-1fa400-1641b08da9b2b9; ASP.NET_SessionId=3h1ucdlbblt3bwjlmtkaegwc; CNZZDATA1261062804=671075873-1529461922-%7C1529895381
 Host: 113.108.219.40
 Origin: http://113.108.219.40
 Pragma: no-cache
-Referer: http://113.108.219.40/Dop/Search/BldQuaReissueList.aspx
+Proxy-Connection: keep-alive
+Referer: http://113.108.219.40/Dop/Open/PersonPunishmentList.aspx
 Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36
