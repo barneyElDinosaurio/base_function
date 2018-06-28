@@ -19,14 +19,18 @@ from myapps import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('myapps',views.CarView)
+# router.register('myapps',views.CarView)
+router.register('myapps',views.FraudView)
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
 	url('',include(router.urls)), 
+    url(r'^fraud/(\S+)/$',views.get_fraud),
+    url(r'^product/$',views.get_product_quality)
+    # url(r'^/(\S+)/$',views.get_fraud)
 
     # url('', views.myindex),
-    url(r'^(\S+)/$', views.get_car),
+    # url(r'^(\S+)/$', views.get_car),
     # url(r'^vw/$', views.get_car),
     # url(r'<str:car_name>', views.get_car),
 
