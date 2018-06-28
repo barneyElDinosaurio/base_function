@@ -172,7 +172,7 @@ def juli(r, s):
 
 
 def sample():
-    im = Image.open('test.gif')
+    im = Image.open('code.gif')
     width = im.size[0]  # 长度
     height = im.size[1]  # 宽度
     im = im.convert('RGB')
@@ -190,7 +190,7 @@ def sample():
     # im = ImageEnhance.Sharpness(im).enhance(9)
     # im.show()
     im=im.convert('L')
-    im.save('test-no-green.gif')
+    im.save('no-greed-code.gif')
     return im
 
 
@@ -420,8 +420,12 @@ def main():
     # folder_detect()
     # validation()
     # find_best_args()
+<<<<<<< HEAD
+    sample()
+=======
     clear_noise2()
 
+>>>>>>> origin/master
 
 if __name__ == '__main__':
     main()
