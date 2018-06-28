@@ -1,16 +1,3 @@
-from __future__ import unicode_literals
-from django.db import models
-
-
-# Create your models here.
-class Car(models.Model):
-    car_name = models.CharField(max_length=100)
-    top_speed = models.IntegerField()
-
-    def __str__(self):
-        return self.car_name
-
-
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
@@ -18,209 +5,11 @@ class Car(models.Model):
 #   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
+from __future__ import unicode_literals
+
+from django.db import models
 
 
-class DjangoMigrations(models.Model):
-    app = models.CharField(max_length=255)
-    name = models.CharField(max_length=255)
-    applied = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'django_migrations'
-
-
-class TbBackpaylist(models.Model):
-    enterprise = models.CharField(max_length=180, blank=True, null=True)
-    project_name = models.CharField(max_length=200, blank=True, null=True)
-    backpay_people = models.IntegerField(blank=True, null=True)
-    backpay_money = models.FloatField(blank=True, null=True)
-    happen_date = models.DateField(blank=True, null=True)
-    crawl_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_backpaylist'
-
-
-class TbCreditrecord(models.Model):
-    institution = models.CharField(max_length=50, blank=True, null=True)
-    qualification_no = models.CharField(max_length=20, blank=True, null=True)
-    punish_date = models.DateField(blank=True, null=True)
-    punish_dept = models.CharField(max_length=50, blank=True, null=True)
-    punish_type = models.CharField(max_length=50, blank=True, null=True)
-    punish_reason = models.TextField(blank=True, null=True)
-    crawl_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_creditrecord'
-
-
-class TbFrauds2(models.Model):
-    executed_name = models.CharField(max_length=300, blank=True, null=True)
-    gender = models.CharField(max_length=10, blank=True, null=True)
-    age = models.CharField(max_length=10, blank=True, null=True)
-    identity_number = models.CharField(max_length=50, blank=True, null=True)
-    court = models.CharField(max_length=200, blank=True, null=True)
-    province = models.CharField(max_length=50, blank=True, null=True)
-    case_number = models.CharField(max_length=100, blank=True, null=True)
-    performance = models.CharField(max_length=100, blank=True, null=True)
-    disrupt_type_name = models.TextField(blank=True, null=True)
-    duty = models.TextField(blank=True, null=True)
-    release_time = models.CharField(max_length=50, blank=True, null=True)
-    crawl_time = models.DateTimeField(blank=True, null=True)
-    data_resource = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_frauds2'
-
-    def __str__(self):
-        return self.executed_name
-
-
-class TbFrauds(models.Model):
-    executed_name = models.CharField(max_length=300, blank=True, null=True)
-    gender = models.CharField(max_length=10, blank=True, null=True)
-    age = models.CharField(max_length=10, blank=True, null=True)
-    identity_number = models.CharField(max_length=50, blank=True, null=True)
-    court = models.CharField(max_length=200, blank=True, null=True)
-    province = models.CharField(max_length=50, blank=True, null=True)
-    case_number = models.CharField(max_length=100, blank=True, null=True)
-    performance = models.CharField(max_length=100, blank=True, null=True)
-    disrupt_type_name = models.TextField(blank=True, null=True)
-    duty = models.TextField(blank=True, null=True)
-    release_time = models.CharField(max_length=50, blank=True, null=True)
-    crawl_time = models.DateTimeField(blank=True, null=True)
-    data_resource = models.CharField(max_length=50, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_frauds_'
-
-
-class TbGdcic(models.Model):
-    enterprise = models.CharField(max_length=180, blank=True, null=True)
-    enterprise_link = models.CharField(max_length=380, blank=True, null=True)
-    punish_file = models.CharField(max_length=100, blank=True, null=True)
-    punish_file_no = models.CharField(max_length=50, blank=True, null=True)
-    punish_dept = models.CharField(max_length=80, blank=True, null=True)
-    punish_date = models.DateField(blank=True, null=True)
-    crawl_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_gdcic'
-
-
-class TbMissed(models.Model):
-    index = models.BigIntegerField(blank=True, null=True)
-    appcet_unit = models.TextField(blank=True, null=True)
-    apply_seral_number = models.BigIntegerField(blank=True, null=True)
-    cancel_date = models.TextField(blank=True, null=True)
-    certificate_book_type = models.TextField(blank=True, null=True)
-    certificate_no = models.TextField(blank=True, null=True)
-    certificate_type = models.TextField(blank=True, null=True)
-    enterprise = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_missed'
-
-
-class TbPersoninfo(models.Model):
-    identity_card = models.CharField(max_length=100, blank=True, null=True)
-    sexy = models.CharField(max_length=120, blank=True, null=True)
-    education = models.CharField(max_length=50, blank=True, null=True)
-    working_company_link = models.CharField(max_length=300, blank=True, null=True)
-    register_certification_info_type = models.CharField(max_length=50, blank=True, null=True)
-    register_certification_info_number = models.CharField(max_length=50, blank=True, null=True)
-    register_certification_info_register_company = models.CharField(max_length=150, blank=True, null=True)
-    register_certification_info_licence_issue_institution = models.CharField(max_length=50, blank=True, null=True)
-    register_certification_info_licence_issue_date = models.CharField(max_length=50, blank=True, null=True)
-    register_certification_info_validity = models.CharField(max_length=50, blank=True, null=True)
-    certificate_title_info_level = models.CharField(max_length=500, blank=True, null=True)
-    certificate_title_info_name = models.CharField(max_length=500, blank=True, null=True)
-    certificate_title_info_issue_office = models.CharField(max_length=500, blank=True, null=True)
-    certificate_title_info_issue_date = models.CharField(max_length=500, blank=True, null=True)
-    certificate_title_info_validity = models.CharField(max_length=500, blank=True, null=True)
-    safety_production_assessment_info_type = models.CharField(max_length=500, blank=True, null=True)
-    safety_production_assessment_info_number = models.CharField(max_length=500, blank=True, null=True)
-    safety_production_assessment_info_issue_office = models.CharField(max_length=500, blank=True, null=True)
-    safety_production_assessment_info_issue_issue_date = models.CharField(max_length=500, blank=True, null=True)
-    safety_production_assessment_info_issue_issue_validity = models.CharField(max_length=500, blank=True, null=True)
-    job_certificate_information_info_name = models.CharField(db_column='Job_certificate_information_info_name',
-                                                             max_length=500, blank=True,
-                                                             null=True)  # Field name made lowercase.
-    job_certificate_information_info_number = models.CharField(db_column='Job_certificate_information_info_number',
-                                                               max_length=500, blank=True,
-                                                               null=True)  # Field name made lowercase.
-    job_certificate_information_info_issue_office = models.CharField(
-        db_column='Job_certificate_information_info_issue_office', max_length=500, blank=True,
-        null=True)  # Field name made lowercase.
-    job_certificate_information_info_issue_date = models.CharField(
-        db_column='Job_certificate_information_info_issue_date', max_length=500, blank=True,
-        null=True)  # Field name made lowercase.
-    job_certificate_information_info_issue_validity = models.CharField(
-        db_column='Job_certificate_information_info_issue_validity', max_length=500, blank=True,
-        null=True)  # Field name made lowercase.
-    bad_behavious_number = models.CharField(max_length=500, blank=True, null=True)
-    bad_behavious_punish_institution = models.CharField(max_length=500, blank=True, null=True)
-    bad_behavious_punish_date = models.CharField(max_length=500, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_personinfo'
-
-
-class TbPersonpunishment(models.Model):
-    name = models.CharField(max_length=180, blank=True, null=True)
-    punish_no = models.CharField(max_length=100, blank=True, null=True)
-    punish_institution = models.CharField(max_length=120, blank=True, null=True)
-    punish_date = models.CharField(max_length=50, blank=True, null=True)
-    person_link = models.CharField(max_length=200, blank=True, null=True)
-    punish_link = models.CharField(max_length=200, blank=True, null=True)
-    crawl_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_personpunishment'
-
-
-class TbQualCancel(models.Model):
-    index = models.BigIntegerField(blank=True, null=True)
-    cancel_date = models.TextField(blank=True, null=True)
-    cancel_institution = models.TextField(blank=True, null=True)
-    cancel_method = models.TextField(blank=True, null=True)
-    cancel_qualification = models.TextField(blank=True, null=True)
-    certificate = models.TextField(blank=True, null=True)
-    certificate_no = models.TextField(blank=True, null=True)
-    enterprise = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_qual_cancel'
-
-
-class TbSafeaccident(models.Model):
-    happend_date = models.DateTimeField(blank=True, null=True)
-    title = models.TextField(blank=True, null=True)
-    development_corp = models.CharField(max_length=200, blank=True, null=True)
-    contractor_construction = models.CharField(max_length=200, blank=True, null=True)
-    development_charger = models.CharField(max_length=200, blank=True, null=True)
-    construction_manger = models.CharField(max_length=200, blank=True, null=True)
-    construction_charger = models.CharField(max_length=200, blank=True, null=True)
-    project_director_supervising = models.CharField(max_length=200, blank=True, null=True)
-    crawl_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'tb_safeaccident'
-
-
-
-# remote mysql db
 class BaiduSearchLink(models.Model):
     bank_name = models.CharField(max_length=255, blank=True, null=True)
     card_bin = models.CharField(max_length=15, blank=True, null=True)
@@ -846,7 +635,7 @@ class WenshuAnyou(models.Model):
 
 
 class WenshuAnyouDic(models.Model):
-    id = models.CharField(max_length=20,primary_key=True)
+    id = models.CharField(max_length=20, blank=True, null=True)
     parentid = models.CharField(db_column='parentId', max_length=20, blank=True, null=True)  # Field name made lowercase.
     name = models.CharField(max_length=200, blank=True, null=True)
     key = models.CharField(max_length=10, blank=True, null=True)
