@@ -20,15 +20,15 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 # router.register('myapps',views.CarView)
-router.register('myapps',views.FraudView)
+router.register('myapps',views.ProductQualityView)
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
 	url('',include(router.urls)), 
     url(r'^fraud/(\S+)/$',views.get_fraud),
-    url(r'^product/$',views.get_product_quality)
+    url(r'^productqual/$',views.get_product_quality),
+    url(r'^backpay/$',views.people_bad_behavious)
     # url(r'^/(\S+)/$',views.get_fraud)
-
     # url('', views.myindex),
     # url(r'^(\S+)/$', views.get_car),
     # url(r'^vw/$', views.get_car),

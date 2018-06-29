@@ -3,12 +3,12 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh,en;q=0.9,en-US;q=0.8
 Cache-Control: no-cache
 Connection: keep-alive
-Content-Length: 21589
+Content-Length: 6287
 Content-Type: application/x-www-form-urlencoded
-Cookie: UM_distinctid=1641b08da9a800-0e1bb87bdc335a-601a147a-1fa400-1641b08da9b2b9; ASP.NET_SessionId=aarvfbqgg2sbceof3d053moh; CNZZDATA1261062804=671075873-1529461922-%7C1530063505
+Cookie: UM_distinctid=1641b08da9a800-0e1bb87bdc335a-601a147a-1fa400-1641b08da9b2b9; CNZZDATA1261062804=671075873-1529461922-%7C1530090507; ASP.NET_SessionId=tuxjcy2h3lp12igblod32oia
 Host: 113.108.219.40
 Origin: http://113.108.219.40
 Pragma: no-cache
-Referer: http://113.108.219.40/Dop/Search/BldQuaReissueList.aspx
+Referer: http://113.108.219.40/Dop/Open/PersonPunishmentList.aspx
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
