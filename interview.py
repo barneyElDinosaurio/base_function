@@ -275,9 +275,9 @@ def search_item(item,target):
     loc = item.index(target)
     return loc
 def main():
-    # testcase13()
-    l = [2,1,33,2,11,22,99]
-    print search_item(l,99)
+    testcase11()
+    # l = [2,1,33,2,11,22,99]
+    # print search_item(l,99)
 if __name__=='__main__':
     main()
 

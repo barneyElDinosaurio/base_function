@@ -1,23 +1,48 @@
-#-*-coding=utf-8-*-
+# -*-coding=utf-8-*-
 import hashlib
 
 import time
+
+import requests
 from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
+
 
 class CustomerUserAgent(UserAgentMiddleware):
     def process_request(self, request, spider):
-        ua='HELLO World?????????'
-        request.headers.setdefault('User-Agent',ua)
+        ua = 'HELLO World?????????'
+        request.headers.setdefault('User-Agent', ua)
+
 
 class CustomProxy(object):
-    def process_request(self,request,spider):
-
+    def process_request(self, request, spider):
         # request.meta['']
         # time.sleep(1)
-        auth_header = self.get_auth_header()
-        request.meta['proxy'] = "http://s3.proxy.mayidaili.com:8123"
-        request.headers['Proxy-Authorization'] = auth_header
+        # auth_header = self.get_auth_header()
+        proxy = self.get_proxy()
+        request.meta['proxy'] = proxy
+        # request.headers['Proxy-Authorization'] = auth_header
 
+    def get_proxy(self,retry=5):
+        proxyurl = 'http:///dynamicIp/common/getDynamicIp.do'
+        count = 0
+        for i in range(retry):
+            try:
+                r = requests.get(proxyurl, timeout=10)
+            except Exception as e:
+                print(e)
+                count += 1
+                print('代理获取失败,重试' + str(count))
+                time.sleep(1)
+
+            else:
+                js = r.json()
+                proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
+                proxies_random = {
+                    'http': proxyServer
+                }
+                return proxyServer
+
+    '''
     def get_auth_header(self):
         # 请替换app_key和secret
         app_key = "xxxxxxxxx"
@@ -49,3 +74,4 @@ class CustomProxy(object):
         # print authHeader
 
         return auth_header
+    '''

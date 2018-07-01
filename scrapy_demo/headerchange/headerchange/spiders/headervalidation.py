@@ -13,6 +13,6 @@ class HeadervalidationSpider(scrapy.Spider):
     #     yield scrapy.Request(url='http://helloacm.com/api/user-agent/',headers=header)
 
     def parse(self, response):
-        print '*'*20
-        print response.body
-        print '*'*20
+        print('*'*20)
+        print(response.body)
+        print('*'*20)
