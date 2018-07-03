@@ -18,7 +18,7 @@ def case1():
     print s
     try:
         f.add('k')
-    except Exception,e:
+    except Exception as e:
 
         print e
 case1()

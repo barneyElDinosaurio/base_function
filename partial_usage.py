@@ -12,7 +12,7 @@ def save_file(content,file_name):
         f.write(content)
         f.write('\n')
         f.close()
-    except Exception,e:
+    except Exception as e:
         print e
         return
 

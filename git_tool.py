@@ -30,7 +30,7 @@ def git_sync():
                 p.communicate()
                 p.wait()
                 print p.stderr.read()
-            except Exception,e:
+            except Exception as e:
                 print e
         break
 

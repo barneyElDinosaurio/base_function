@@ -59,7 +59,7 @@ class Yinyongbao():
         try:
             pageContext=int(js['pageContext'])
             self.each_page(categoryId,pageContext)
-        except Exception,e:
+        except Exception as e:
             return
 
 def main():

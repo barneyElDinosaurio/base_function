@@ -25,7 +25,7 @@ def send(phone):
             print "not work"
             time.sleep(random.random()*60*5)
             return False
-    except Exception,e:
+    except Exception as e:
         print e
         return False
 

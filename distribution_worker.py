@@ -27,6 +27,6 @@ for i in range(10):
         print 'get data %s from server' %t
         s=process_fun(t)
         result.put(s)
-    except Exception,e:
+    except Exception as e:
         print e
 

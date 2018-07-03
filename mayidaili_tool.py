@@ -33,11 +33,11 @@ def useproxy(url,headers,postdata=None,post=False):
             r = requests.post(url=url, headers=headers, proxies={'http': proxy},data=postdata)
             #print 'in post'
             #print r.text
-        except Exception,e:
+        except Exception as e:
             return None
     else:
         try:
             r=requests.get(url=url,headers=headers,proxies={'http':proxy})
-        except Exception,e :
+        except Exception as e :
             return None
     return r

@@ -3,7 +3,7 @@ import re
 import sys
 try:
     from PIL import Image
-except Exception,e:
+except Exception as e:
     import Image
 
 def low_image():

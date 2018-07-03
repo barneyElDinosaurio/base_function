@@ -19,7 +19,7 @@ def check_robots(url):
 	headers = {'User-Agent':ua}
 	try:
 		r = requests.get(url+'/robots.txt',headers=headers)
-	except Exception,e:
+	except Exception as e:
 		print e
 		return None
 	

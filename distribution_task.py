@@ -38,7 +38,7 @@ def main():
         try:
             t=result_manager.get(timeout=20)
             print "get %d from the queue server" %t
-        except Exception,e:
+        except Exception as e:
             print e
 
     manager.shutdown()

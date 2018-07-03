@@ -84,7 +84,7 @@ def genlist():
         try:
             print next(x)
             # print x.next()
-        except Exception,e:
+        except Exception as e:
             print e
             break
 

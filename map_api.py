@@ -108,7 +108,7 @@ def getcordinate_web():
             print lat,' , ',lng
             db[collection].update({'name': name, 'city_name': city}, {'$set': {'latitude': lat, 'longitude': lng}})
             time.sleep(1)
-        except Exception,e:
+        except Exception as e:
             print e
             time.sleep(16)
             continue

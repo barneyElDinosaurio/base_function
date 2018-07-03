@@ -25,6 +25,6 @@ def select_class(choice):
         return SecondClass()
 
 obj=select_class(10)
-print type(obj)
-print id(obj)
+print(type(obj))
+print(id(obj))
 obj.show_name()

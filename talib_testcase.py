@@ -110,7 +110,7 @@ def find_pattern(code):
     engine = get_engine('history')
     try:
         df = pd.read_sql(code, engine, index_col='index',)
-    except Exception,e:
+    except Exception as e:
         print e
         return
     # print df

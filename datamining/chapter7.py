@@ -9,7 +9,7 @@ import pytesseract
 def download(url,retry=3):
 	try:
 		r=requests.get(url=url)
-	except Exception,e:
+	except Exception as e:
 		print e
 		if retry <0:
 			return None

@@ -40,7 +40,7 @@ class sohu_cls():
         try:
             s=requests.get(url,headers=self.headers)
             print s.status_code
-        except Exception,e:
+        except Exception as e:
             print "requests issue"
             return 'error'
         js= s.json()

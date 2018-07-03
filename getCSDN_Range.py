@@ -16,7 +16,7 @@ for _ in range(retry):
         resp = urllib2.urlopen(req)
         stop=True
         break
-    except Exception,e:
+    except Exception as e:
         print e
         continue
 if not stop:

@@ -45,7 +45,7 @@ class HtmlDownload(object):
 					return r.text
 				else:
 					continue
-			except Exception,e:
+			except Exception as e:
 				print e
 
 		return None
@@ -74,7 +74,7 @@ class HtmlParse(object):
 		data['url']=url
 		try:
 			title = tree.xpath('//dd[@class="lemmaWgt-lemmaTitle-title"]/h1/text()')[0]
-		except Exception,e:
+		except Exception as e:
 			return None
 
 		data['title']=title
