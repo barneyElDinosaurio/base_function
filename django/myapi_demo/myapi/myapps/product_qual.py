@@ -37,9 +37,6 @@ def crawl(enterprise, page=1):
 
 
 def parse(r):
-    # num = int(re.findall('共\s+(\d+)\s+页',r.text)[0])
-    # print('num page {}'.format(num))
-    # if num==1:
     response = etree.HTML(r.text)
     try:
         num = int(response.xpath('//input[@id="page_pageNum"]/@value')[0])
@@ -51,24 +48,20 @@ def parse(r):
         item = []
         for j in range(15):
             item.append((i.xpath('.//td')[j].xpath('.//text()')[0].strip()))
-        # print(len(item))
         ret.append(item)
 
-    return ret,num
+    return ret, num
 
 
 def run(name):
     # name = '格力'
     r = crawl(name)
-    ret ,num = parse(r)
-    if num >1:
-        for i in range(2,num+1):
-            r = crawl(name,i)
-            l_ret,l_num = parse(r)
+    ret, num = parse(r)
+    if num > 1:
+        for i in range(2, num + 1):
+            r = crawl(name, i)
+            l_ret, l_num = parse(r)
             ret.extend(l_ret)
-    # return parse(crawl(name))
-    print(len(ret))
-    print(ret)
     return ret
 
 # run('')

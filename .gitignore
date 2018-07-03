@@ -13,3 +13,5 @@ data/
 temp
 request_header
 header_toolkit.txt
+*.xlsx
+*.log

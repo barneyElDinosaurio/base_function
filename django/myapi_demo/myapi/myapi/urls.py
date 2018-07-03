@@ -26,8 +26,17 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url('',include(router.urls)), 
     url(r'^fraud/(\S+)/$',views.get_fraud),
-    url(r'^productqual/$',views.get_product_quality),
-    url(r'^backpay/$',views.people_bad_behavious)
+    url(r'^productqual/$',views.get_product_quality), # 产品质量
+    url(r'^personbadbehavious/$',views.people_bad_behavious), # 人员不良行为
+    url(r'^companybadbehavious/$',views.company_bad_behavious), # 企业不良行为
+    url(r'^companybackpay/$',views.company_backpay), # 企业欠薪投诉
+    url(r'^companyblacklist/$',views.company_blacklist), # 企业欠薪投诉
+    url(r'^accident/$',views.accident), # 安全事故
+    url(r'^qualcancel/$',views.qualcancel), # 证书注销
+    url(r'^qualmiss/$',views.qualmiss), # 证书遗失
+
+
+
     # url(r'^/(\S+)/$',views.get_fraud)
     # url('', views.myindex),
     # url(r'^(\S+)/$', views.get_car),

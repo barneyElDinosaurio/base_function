@@ -6,7 +6,7 @@ import urllib2
 # 请替换appkey和secret
 import requests
 def useproxy(url,headers,postdata=None,post=False):
-    appkey = "104595392"
+    appkey = ""
     secret = "c978952ede1661bd5342b34ca0bf561e"
     paramMap = {
         "app_key": appkey,

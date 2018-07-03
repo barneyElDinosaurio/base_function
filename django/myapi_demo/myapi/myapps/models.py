@@ -42,6 +42,8 @@ class TbBackpaylist(models.Model):
         managed = False
         db_table = 'tb_backpaylist'
 
+    def __str__(self):
+        return self.enterprise
 
 class TbCreditrecord(models.Model):
     institution = models.CharField(max_length=50, blank=True, null=True)
@@ -217,8 +219,6 @@ class TbSafeaccident(models.Model):
     class Meta:
         managed = False
         db_table = 'tb_safeaccident'
-
-
 
 # remote mysql db
 class BaiduSearchLink(models.Model):
@@ -760,7 +760,7 @@ class TbPersonpunishment(models.Model):
 
 
 class TbQualCancel(models.Model):
-    index = models.BigIntegerField(blank=True, null=True)
+    index = models.BigIntegerField(primary_key=True)
     cancel_date = models.TextField(blank=True, null=True)
     cancel_institution = models.TextField(blank=True, null=True)
     cancel_method = models.TextField(blank=True, null=True)
@@ -775,7 +775,7 @@ class TbQualCancel(models.Model):
 
 
 class TbQualMissed(models.Model):
-    index = models.BigIntegerField(blank=True, null=True)
+    index = models.BigIntegerField(primary_key=True)
     accept_unit = models.TextField(blank=True, null=True)
     apply_seral_number = models.BigIntegerField(blank=True, null=True)
     cancel_date = models.TextField(blank=True, null=True)
