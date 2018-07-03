@@ -17,5 +17,5 @@ class FraudSerializer(serializers.HyperlinkedModelSerializer):
 class ProductQualitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ProductQuality
-        fields =('id','url','enterprise','product_detail_name','specifications','product_grade','test_results','tester','test_date')
+        fields =('id','url','enterprise_name')
 

@@ -9,7 +9,7 @@ from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
 
 class CustomerUserAgent(UserAgentMiddleware):
     def process_request(self, request, spider):
-        ua = 'HELLO World?????????'
+        ua = 'Personal Headers'
         request.headers.setdefault('User-Agent', ua)
 
 
@@ -23,7 +23,7 @@ class CustomProxy(object):
         # request.headers['Proxy-Authorization'] = auth_header
 
     def get_proxy(self,retry=5):
-        proxyurl = 'http:///dynamicIp/common/getDynamicIp.do'
+        proxyurl = 'http://:8081/dynamicIp/common/getDynamicIp.do'
         count = 0
         for i in range(retry):
             try:

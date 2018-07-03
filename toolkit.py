@@ -9,13 +9,13 @@ def timecal(func):
         start = time.time()
         func(*args,**kw)
         end=time.time() - start
-        print "Time used {}".format(end)
+        print("Time used {}".format(end))
 
     return wrapper
 
 def loop_test(func):
     def wrapper(*args,**kw):
-        print 'working'
+        print('working')
         func(*args,**kw)
         # for i in range(100):
             # s=func(*args,**kw)
