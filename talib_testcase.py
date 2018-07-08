@@ -23,10 +23,10 @@ def baseAPI():
     ma20 = talib.SMA(closed, timeperiod=20)
 
     # 打印出来每一个数据
-    print closed
-    print ma5
-    print ma10
-    print ma20
+    print(closed)
+    print(ma5)
+    print(ma10)
+    print(ma20)
 
     # 通过plog函数可以很方便的绘制出每一条均线
     plt.plot(closed)
@@ -46,7 +46,7 @@ def boll():
     closed = df['close'].values
 
     upper, middle, lower = talib.BBANDS(closed, matype=talib.MA_Type.SMA)
-    print upper, middle, lower
+    print(upper, middle, lower)
     plt.plot(upper)
     plt.plot(middle)
     plt.plot(lower)
@@ -54,16 +54,16 @@ def boll():
     plt.show()
     diff1 = upper - middle
     diff2 = middle - lower
-    print diff1
-    print diff2
+    print(diff1)
+    print(diff2)
 
 
 def price_moment():
     df = ts.get_k_data('300580', start='2017-01-12', end='2017-05-26')
     closed = df['close'].values
     ouput = talib.MOM(closed, timeperiod=5)
-    print closed
-    print ouput
+    print(closed)
+    print(ouput)
     plt.plot(ouput)
     plt.grid()
     plt.show()
@@ -83,7 +83,7 @@ def ma_type_test():
     mama = talib.MA(closed, timeperiod=10, matype=7)
     t3 = talib.MA(closed, timeperiod=10, matype=8)
     # ouput=talib.MA(closed,timeperiod=5,matype=0)
-    print closed
+    print(closed)
     plt.ylim([0, 40])
     plt.plot(sma, 'r--')
     plt.plot(ema, 'g-*')
@@ -111,14 +111,14 @@ def find_pattern(code):
     try:
         df = pd.read_sql(code, engine, index_col='index',)
     except Exception as e:
-        print e
+        print(e)
         return
-    # print df
+    # print(df)
     # for i in  df['open'].astype('float').values:
-    #     print type(i)
-    # print df['high'].values
-    # print df['low'].values
-    # print df['close'].values
+    #     print(type(i))
+    # print(df['high'].values)
+    # print(df['low'].values)
+    # print(df['close'].values)
     result = talib.CDLDARKCLOUDCOVER(df['open'].astype('float').values,
                             df['high'].astype('float').values,
                            df['low'].astype('float').values,
@@ -126,7 +126,7 @@ def find_pattern(code):
 
     df['CDL2CROWS']=result
     if len(df[df['CDL2CROWS']!=0])!=0:
-        print df[df['CDL2CROWS']!=0]
+        print(df[df['CDL2CROWS']!=0])
 # baseAPI()
 # boll()
 # price_moment()

@@ -32,7 +32,7 @@ def case1():
 def yanzengma():
     f=Image.open('data/yanzenma.jpg').convert('L')
     for i in range(4):
-        print i
+        print(i)
         x=f.crop((20+i*20,0,40+20*i,40))
         changeBW(x)
 
@@ -45,10 +45,10 @@ def changeBW(im):
                 mlist.append(1)
             else:
                 mlist.append(0)
-    print mlist
+    print(mlist)
     return mlist
 
 def case2():
-    print yanzengma()
+    print(yanzengma())
 
 # case2()

@@ -11,4 +11,4 @@ a = 10
 b =20
 c =99
 d={'A':10}
-print globals()
+print(globals())

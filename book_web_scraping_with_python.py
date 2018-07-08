@@ -20,10 +20,10 @@ def check_robots(url):
 	try:
 		r = requests.get(url+'/robots.txt',headers=headers)
 	except Exception as e:
-		print e
+		print(e)
 		return None
 	
-	print r.text
+	print(r.text)
 
 def show_robots():
 	url_list=['http://30daydo.com']
@@ -41,7 +41,7 @@ def download(url,retry_num=3):
 		html = urllib2.urlopen(req).read()
 
 	except urllib2.URLError as e:
-		print 'Download error',e.reason
+		print('Download error',e.reason)
 		html=None
 		if retry_num > 0:
 			if hasattr(e,'code') and 500 < e.code < 600:
@@ -52,12 +52,12 @@ def download(url,retry_num=3):
 
 def crawl_sitemap(url):
 	sitemap = download(url)
-	print sitemap
+	print(sitemap)
 
 
 def loop_test():
 	for page in itertools.count(1):
-		print page
+		print(page)
 
 def get_link(content,reg):
 	re.findall(reg,content)
@@ -69,14 +69,14 @@ def link_crawler(seed_url,max_depth=2):
 	seen[seed_url]=0
 	while crawl_queue:
 		url=crawl_queue.pop()
-		print url
+		print(url)
 		html=download(url)
 		links=re.findall('<a[^>]+href=["\'](.*?)["\']',html,re.IGNORECASE)
 		# defaultdict()
 		depth=seen[url]
 		if seen[url]<max_depth:
 			for link in links:
-				# print link
+				# print(link)
 				url_link=urlparse.urljoin(seed_url,link)
 				# if seen[url]
 				if url_link not in seen:
@@ -88,7 +88,7 @@ def link_crawler(seed_url,max_depth=2):
 def main():
 	# url='http://www.douban.com/sitemap.xml'
 	# show_robots()
-	# print download('http://zhihu.com')
+	# print(download('http://zhihu.com'))
 	# crawl_sitemap(url)
 	# loop_test()
 	url='http://example.webscraping.com/places/default/index/'

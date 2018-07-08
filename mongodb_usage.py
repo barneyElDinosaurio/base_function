@@ -18,21 +18,21 @@ def basic_usage():
     # ata2={"name":"b","sex":"F","school":"SYSU"}
     # collection.insert(data)
     # collection.save(data2)
-    print db.first_collection
-    print db.first_collection.find()
+    print(db.first_collection)
+    print(db.first_collection.find())
     arr = list(db.first_collection.find())
-    print arr
+    print(arr)
 
 
 def query():
-    print collection.count()
-    print collection.find({'name': 'a'})
+    print(collection.count())
+    print(collection.find({'name': 'a'}))
     ''''
     for i in collection.find({'name':'a'}):
-        print i
+        print(i)
     '''
     for i in collection.find():
-        print i
+        print(i)
 
 
 def remove():
@@ -62,11 +62,11 @@ def getlianjia_price():
     db = client.test
     data = db.total_lianjia.find({'city_name': '深圳'})
     data_list = list(data)
-    print len(data_list)
+    print(len(data_list))
     for i in data_list:
-        print type(i)
+        print(type(i))
         # js=json.loads(i['price'])
-        print i['price']['2017-07'][0]['price']
+        print(i['price']['2017-07'][0]['price'])
 
 
 def update_testcase():
@@ -77,7 +77,7 @@ def update_testcase():
     data = collection.find({})
     data_new = list(data)
     for i in range(10):
-        print data_new[1]
+        print(data_new[1])
 
 
 def update_json():
@@ -92,9 +92,9 @@ def remove_data():
     db = client.test
     data = db.fangtianxia_remove_same.find({'city_name': '北京'})
     curr = list(data)
-    # print len(curr)
+    # print(len(curr))
     for i in curr:
-        print i['city_name']
+        print(i['city_name'])
         db.fangtianxia_remove_same.remove({'city_name': i['city_name']})
 
 
@@ -103,9 +103,9 @@ def insert_bj():
     db = client.test
     bj_data = db.fangtianxia.find({'city_name': '北京'})
     data = list(bj_data)
-    print len(data)
+    print(len(data))
     for i in data:
-        # print i
+        # print(i)
         db.fangtianxia_remove_same.insert(i)
 
 
@@ -120,8 +120,8 @@ def update_url():
     for i in data_list:
         org_url = i['url']
         # new_url=org_url.replace('//','/')
-        # print new_url
-        print org_url
+        # print(new_url)
+        print(org_url)
         db[collection].update({'url': org_url},
                               {'$set': {'crawl_date': '2017-09-15', 'month_price': '2017-09', 'origin': 'FTX'}})
 
@@ -136,22 +136,22 @@ def get_price():
     for i in data_list:
         try:
             price = i['price']['2017-07'][0]['price']
-            # print type(price)
-            # print price
+            # print(type(price))
+            # print(price)
         except:
-            print i['name']
-            print i['city_name']
+            print(i['name'])
+            print(i['city_name'])
         # url=i['url']
-        # print price
+        # print(price)
         # if city_name==u'合川':
         # db[collection].update({'url': url}, {'$set': {'city_name': '郑州'}})
 
         if price > 0 and price <= 1000:
-            print price
+            print(price)
 
-            # print i['url']
+            # print(i['url'])
         # new_url = org_url.replace('//', '/')
-        # print new_url
+        # print(new_url)
         # db[collection].update({'url': url}, {'$set': {'price': 0}})
 
 
@@ -223,42 +223,42 @@ class StockMongo():
         for i in ret:
             for k,v in i.items():
                 if k!='_id':
-                    print k,v
+                    print(k,v)
 
     def show_industry(self):
         ret = self.collection.find({},{'_id':0})
-        print ret
-        print type(ret)
+        print(ret)
+        print(type(ret))
         for item in ret:
 
-            print item.get(u'版块名称')
+            print(item.get(u'版块名称'))
 
     def findone(self,name):
         ret = self.collection.find({u'版块名称':name})
         for i in ret:
             codes= i.get(u'代码',None)
             for code in codes:
-                print code
+                print(code)
 
 def mongo_calculation():
     collection=client['xueqiu']['ceo']
     result={}
     ret = collection.find({},{'created_at':1,'source':1})
-    print 'start to calculate'
+    print('start to calculate')
     count =0
     # ret= collection.find_one({'source':u'持仓盈亏'},{'description':1,'source_link':1})
 
     ret_list = list(ret)
     df = pd.DataFrame(ret_list)
     del df['_id']
-    print df.info()
+    print(df.info())
     # for i in ret:
     #     count+=1
     #     result.setdefault(i.get('source'),0)
     #     result[i.get('source')]+=1
-    # # print result
+    # # print(result)
     # for k,v in result.items():
-    #     print k,v
+    #     print(k,v)
 
 
 def main():

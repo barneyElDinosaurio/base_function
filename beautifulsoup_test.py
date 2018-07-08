@@ -7,7 +7,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 f = codecs.open("html.txt", 'r')
 stream = f.read()
-print stream
+print(stream)
 url = "http://photo.xitek.com/photoid/739530"
 req = urllib2.Request(url)
 resp = urllib2.urlopen(req)
@@ -23,6 +23,6 @@ f.close()
 #temp=unicode(title,'utf-8')
 #temp=title.decode('utf-8','ignore')
 a = "hello"
-print type(title)
-print type(a)
-#print title
+print(type(title))
+print(type(a))
+#print(title)

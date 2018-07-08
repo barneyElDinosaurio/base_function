@@ -54,7 +54,7 @@ def main():
             times[name].append(time.time() - start)
         # record end time of scrape and output the total
         end = time.time()
-        print '{}: {:.2f} seconds'.format(name, end - start)
+        print('{}: {:.2f} seconds'.format(name, end - start))
 
     writer = csv.writer(open('times.csv', 'w'))
     header = sorted(times.keys())

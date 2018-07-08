@@ -1,6 +1,6 @@
 from enum import Enum
 State = Enum('state','new running sleeping restart zombie')
-# print state.new
+# print(state.new)
 from abc import ABCMeta,abstractmethod
 
 class Server(object):

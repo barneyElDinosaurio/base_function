@@ -20,7 +20,7 @@ def main():
 	appfac = AppleFactory()
 	mac = appfac.build()
 
-	print mac
+	print(mac)
 
 
 

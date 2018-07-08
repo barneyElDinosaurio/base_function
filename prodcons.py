@@ -9,24 +9,24 @@ def queue_test(q):
     #q=Queue(10);
     for i in range(10):
         temp = randint(1, 10)
-        print temp
+        print(temp)
         q.put("number:", temp)
-        print "size of queue is %d" % q.qsize()
+        print("size of queue is %d" % q.qsize())
 
 
 def writeQ(q, i):
-    print "producter object for Q"
+    print("producter object for Q")
     data = randint(1, 10)
-    #print "data is %d" %data
+    #print("data is %d" %data)
     q.put(i, 1)
-    print "size now in producter is %d" % q.qsize()
+    print("size now in producter is %d" % q.qsize())
 
 
 def readQ(q):
-    print "consumer object for Q"
+    print("consumer object for Q")
     data = q.get(1)
-    print data
-    print "now after consume Q size is %d" % q.qsize()
+    print(data)
+    print("now after consume Q size is %d" % q.qsize())
 
 
 def writer(q, loop):
@@ -54,14 +54,14 @@ def area_test(a):
 def main():
     '''
     a=2
-    print "a=%d" %a
+    print("a=%d" %a)
     area_test(a)
-    print "a now is a= %d" %a
+    print("a now is a= %d" %a)
 
     q=Queue(10);
-    print "main q size %d" %q.qsize()
+    print("main q size %d" %q.qsize())
     queue_test(q)
-    print "after function q size %d" %q.qsize()
+    print("after function q size %d" %q.qsize())
     '''
     threads = []
     q = Queue(10)
@@ -79,7 +79,7 @@ def main():
 
     '''
 
-#print "end of main"
+#print("end of main")
 
 if __name__ == "__main__":
     main()

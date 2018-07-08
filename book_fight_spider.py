@@ -12,8 +12,8 @@ except:
 # read pickle
 # f=open('temp.plk','r')
 # d=pickle.load(f)
-# print type(d)
-# print d
+# print(type(d))
+# print(d)
 
 
 '''
@@ -21,17 +21,17 @@ except:
 import os
 
 if __name__=='__main__':
-	print 'current process {} start'.format(os.getpid())
+	print('current process {} start'.format(os.getpid()))
 
 	pid = os.fork()
 
 	if pid < 0 :
-		print 'error in fork'
+		print('error in fork')
 
 	elif pid ==0:
-		print 'i am child process {} and my parent process is {}'.format(os.getpid(),os.getppid())
+		print('i am child process {} and my parent process is {}'.format(os.getpid(),os.getppid()))
 	else:
-		print 'i {} create a child process {}'.format(os.getpid(),pid)
+		print('i {} create a child process {}'.format(os.getpid(),pid))
 
 '''
 
@@ -42,18 +42,18 @@ import os
 from multiprocessing import Process
 
 def sub_proc(name):
-	print 'chile process {} is running'.format(os.getpid())
+	print('chile process {} is running'.format(os.getpid()))
 
 def create_multiprocess():
-	print 'parent process is {}'.format(os.getpid())
+	print('parent process is {}'.format(os.getpid()))
 
 	for i in range(5):
 		p = Process(target=sub_proc,args=(i,))
-		print 'process will start'
+		print('process will start')
 		p.start()
 
 		p.join()
-	print 'main process end'
+	print('main process end')
 
 
 
@@ -69,23 +69,23 @@ import time
 import random
 
 def run_process(name):
-	print 'process no.{} and pid : {} is running'.format(name,os.getpid())
+	print('process no.{} and pid : {} is running'.format(name,os.getpid()))
 	time.sleep(random.random())
-	print 'process no.{} and pid {} end'.format(name,os.getpid())
+	print('process no.{} and pid {} end'.format(name,os.getpid()))
 
 
 def parent_process():
-	print 'parent pid is {}'.format(os.getpid())
+	print('parent pid is {}'.format(os.getpid()))
 	p =Pool()
 
 	for i in range(10):
 		p.apply_async(run_process,args=(i,))
 
-	print 'waiting all proces is done'
+	print('waiting all proces is done')
 	p.close()
-	print 'p is close'
+	print('p is close')
 	p.join()
-	print 'end of function'
+	print('end of function')
 
 parent_process()
 '''
@@ -96,13 +96,13 @@ import time
 import os
 def msg_send(pipe,urls):
 	for url in urls:
-		print 'process {} is sending {}'.format(os.getpid(),url)
+		print('process {} is sending {}'.format(os.getpid(),url))
 		pipe.send(url)
 		time.sleep(random.random())
 
 def msg_recv(pipe):
 	while True:
-		print 'process {} received msg {} '.format(os.getpid(),pipe.recv())
+		print('process {} received msg {} '.format(os.getpid(),pipe.recv()))
 
 
 
@@ -118,6 +118,6 @@ def create_process_pipe():
 	p1.join()
 	p2.join()
 
-	print 'end of function'
+	print('end of function')
 
 create_process_pipe()

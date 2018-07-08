@@ -9,20 +9,20 @@ DATA_GETTING_FLAG = "#"
 
 def basic_usage():
     df = ts.get_today_all()
-    print df[df['code'] == '000006']
-    # print df.to_excel('tets.xls')
-    #print df[df['code']=='000006']
+    print(df[df['code'] == '000006'])
+    # print(df.to_excel('tets.xls'))
+    #print(df[df['code']=='000006'])
 
 
 def quanshan():
     data = Toolkit.getUserData('data.cfg')
-    print data
+    print(data)
     ts.set_broker('htzq', user=data['huatai'], passwd=data['huatai_passwd'])
     ts.get_broker()
     htzq = ts.TraderAPI('htzq')
     htzq.login()
     info = htzq.baseinfo()
-    print info
+    print(info)
 
 
 def getNewStock():

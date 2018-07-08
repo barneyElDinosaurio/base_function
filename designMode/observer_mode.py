@@ -61,7 +61,7 @@ def main():
 
 	a = HexFormater()
 
-	# print df
+	# print(df)
 	df.add(a)
 	# df.add(b)
 	df.data=104

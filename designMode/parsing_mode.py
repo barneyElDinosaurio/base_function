@@ -15,9 +15,9 @@ class Gate:
 
 def main():
 	# gate = Gate()
-	# print gate
+	# print(gate)
 	# gate.turn_on()
-	# print gate
+	# print(gate)
 	word = Word(alphanums)
 	command = Group(OneOrMore(word))
 	token = Suppress('->')
@@ -27,10 +27,10 @@ def main():
 
 	cmd ='increase -> boiler temperature -> 3 degrees'
 	ret,dev,arg = event.parseString(cmd)
-	# print ' '.join(ret)
-	print ' '.join(ret)
-	print dev
-	print arg
+	# print(' '.join(ret))
+	print(' '.join(ret))
+	print(dev)
+	print(arg)
 
 
 main()

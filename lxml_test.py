@@ -9,23 +9,23 @@ def lxml_test():
     url = "http://www.caixunzz.com"
     req = urllib2.Request(url=url)
     resp = urllib2.urlopen(req)
-    #print resp.read()
+    #print(resp.read())
     '''
     parse_body=html.fromstring(resp.read())
     href=parse_body.xpath('//a[@class="label"]/@href')
-    print href
+    print(href)
     #not working from above
     '''
 
     tree = etree.HTML(resp.read())
     href = tree.xpath('//a[@class="label"]/@href')
-    #print href.tag
+    #print(href.tag)
     for i in href:
-        #print html.tostring(i)
-        #print type(i)
-        print i
+        #print(html.tostring(i))
+        #print(type(i))
+        print(i)
 
-    print type(href)
+    print(type(href))
 
 #not working yet
 session = requests.session()
@@ -41,12 +41,12 @@ headers = {'Host': 'www.zhihu.com',
 def lxml_text():
     url = 'https://www.zhihu.com/question/20401952/answer/21764432'
     s = requests.get(url, headers=headers).text
-    #print s
+    #print(s)
     tree = etree.HTML(s)
     content = tree.xpath('//div[@class="zm-editable-content clearfix"]')
-    print content
+    print(content)
     for i in content:
-        print i.xpath('string(.)')
+        print(i.xpath('string(.)'))
 
 
 
@@ -54,7 +54,7 @@ def lxml_case():
     r=requests.get('http://30daydo.com')
     t=etree.HTML(r.text)
     s=t.xpath('//div[@class="aw-item article"]')
-    print s
+    print(s)
 #lxml_text()
 
 #lxml_case()
@@ -75,7 +75,7 @@ def lxml_case2():
     '''
     tree=etree.HTML(str1)
     t1=tree.xpath('bookstore')
-    print t1
+    print(t1)
 
 def lxml_case3():
 
@@ -95,17 +95,17 @@ def lxml_case3():
 
     tree=etree.HTML(text)
     html_s=etree.tostring(tree)
-    #print html_s
-    #print tree.xpath('//li//span/text()')[0]
+    #print(html_s)
+    #print(tree.xpath('//li//span/text()')[0])
     '''
     reg_case=tree.xpath('//*[starts-with(@class,"item")]')
     for i in reg_case:
-        print i.xpath('.//a/@href')
+        print(i.xpath('.//a/@href'))
     '''
     result=tree.xpath(r'//*[re:match(@class, "item-0")]')
-    print result
+    print(result)
 
     for i in result[0]:
-        print i.xpath('.//a/@href')
+        print(i.xpath('.//a/@href'))
 
 lxml_case3()

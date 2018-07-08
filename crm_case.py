@@ -5,15 +5,15 @@ headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate,
 
 url = 'http://192.168.13.39:7789/crm/search_customer_company_api'
 r = requests.get(url=url, headers=headers, params={'name': u'中国移动', 'limit': 10, 'offset': 10})
-print r.status_code
-print r.text
+print(r.status_code)
+print(r.text)
 req_data = r.json()
-print req_data
+print(req_data)
 
 for i in req_data['rows']['customer_list']:
     for k, v in i.items():
-        print k, v
+        print(k, v)
 '''
 for i in r.json():
-    print i
+    print(i)
 '''

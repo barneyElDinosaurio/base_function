@@ -62,9 +62,9 @@ headers = {'Accept-Encoding': 'gzip', 'Charset': 'UTF-8', 'Connection': 'Keep-Al
 
 def storedata():
     advertiser = session.query(Advertiser).all()
-    print len(advertiser)
+    print(len(advertiser))
     for i in advertiser:
-        #print i.advertiser_name
+        #print(i.advertiser_name)
 
         obj = AdvertiserOrg(
             advertiser_name=i.advertiser_name,
@@ -83,7 +83,7 @@ def storedata():
         try:
             session.commit()
         except Exception, e:
-            print e
+            print(e)
             session.rollback()
 
 
@@ -124,15 +124,15 @@ def get_advertiser():
 
     try:
         r = r_session.post(url=url, data=s, headers=headers)
-        print 'statues code ', r.status_code
+        print('statues code ', r.status_code)
         ret_data = r.json()
     except Exception, e:
-        print e
+        print(e)
         return
     if not ret_data.has_key('order'):
         return
 
-    #print json.dumps(ret_data, indent=4, sort_keys=True)
+    #print(json.dumps(ret_data, indent=4, sort_keys=True))
     for i in ret_data.get('order'):
         # if i.has_key('open_scheme'):
         deep_link = i.get('open_scheme', '')
@@ -142,7 +142,7 @@ def get_advertiser():
         desc = i.get('abstract', '')
         ad_url = i.get('url', '')
         pic_url = i.get('thumbnails', '')
-        print 'len of pic ', len(pic_url)
+        print('len of pic ', len(pic_url))
 
         if len(pic_url) == 0 and (i.has_key('resource_urlList')):
             pic_url = i.get('resource_urlList')[0].get('url', '')
@@ -150,8 +150,8 @@ def get_advertiser():
             pic_url = i.get('resource_url0')
         elif len(pic_url) == 0:
             pic_url = ''
-        print 'pic url ', pic_url
-        print advertiser_name
+        print('pic url ', pic_url)
+        print(advertiser_name)
         items['advertiser_name'] = advertiser_name
         items['title'] = title
         items['ad_url'] = ad_url

@@ -1,7 +1,7 @@
 def if_else_test():
     name = "Rockyj"
     passwd = "rocky" if name in ['Rocky', 'Chen', "Hello"] else "fixed"
-    print passwd
+    print(passwd)
 
 
 def _random(n=13):
@@ -13,4 +13,4 @@ def _random(n=13):
 
 
 if_else_test()
-print _random(17)
+print(_random(17))

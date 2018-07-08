@@ -6,12 +6,12 @@ import pyautogui, time
 
 def get_pos():
     cur_x, cur_y = pg.position()
-    print cur_x, cur_y
+    print(cur_x, cur_y)
 
 
 def basic_api():
     x, y = pg.size()
-    print x, y
+    print(x, y)
 
     '''
     pg.moveTo(300,300,2)

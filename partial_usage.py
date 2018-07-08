@@ -13,7 +13,7 @@ def save_file(content,file_name):
         f.write('\n')
         f.close()
     except Exception as e:
-        print e
+        print(e)
         return
 
 def running_log():

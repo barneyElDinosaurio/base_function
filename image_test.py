@@ -11,14 +11,14 @@ import numpy as np
 def base_usage():
     im=Image.open("data/original.jpg")
     im2=Image.open("data/original.jpg")
-    print im
+    print(im)
     im=im.convert('L')
-    print im
+    print(im)
     image_data = im.getdata()
-    print image_data
+    print(image_data)
     #im.show()
     (w,h)=im.size
-    print w,h
+    print(w,h)
     im.thumbnail((w/2,h/2))
     im.save("data/small.jpg",'jpeg')
     im2.filter(ImageFilter.BLUR)
@@ -26,24 +26,24 @@ def base_usage():
 
 def read_image():
     im = Image.open('data/len_full.jpg')
-    print im.mode
-    # print im.getpixel((0,0))
+    print(im.mode)
+    # print(im.getpixel((0,0)))
     bw = im.convert('1')
     x,y = bw.size
-    print x,y
+    print(x,y)
     grey = im.convert('L')
     for i in range(x):
         for j in range(y):
             pass
-            #print bw.getpixel((i,j))
+            #print(bw.getpixel((i,j)))
     bw.show()
     grey.show()
     data = grey.getdata()
     new_data = np.matrix(data)
-    print new_data
+    print(new_data)
 
     dt = np.reshape(new_data,(855,400))
-    print dt
+    print(dt)
     for i in range(855-1):
         for j in range(400-1):
             if random.random()>0.5:
@@ -62,7 +62,7 @@ def image_recognize():
 
         def SaveResultToDocument(self):
             text = self.m()
-            print text
+            print(text)
             f = open(u"Verification.txt", "w")
             f.write(str(text))
             f.close()

@@ -77,18 +77,18 @@ urls_info = session.query(House.id, House.url).join(Price).filter(Price.origin =
     House.city_name == '保定').all()
 
 for i in urls_info:
-    #print i[1]
+    #print(i[1])
     try:
         hostid = re.findall('/(\d+)\.htm', i[1])[0]
-        print hostid
+        print(hostid)
     except:
         pass
-#print d.building_date
+#print(d.building_date)
 #if d.building_date==u'暂无数据':
     #d.building_date=u'2017年'
 '''
 for i in d:
-    print i.price
+    print(i.price)
     #session.delete(i)
 '''
 session.commit()

@@ -14,7 +14,7 @@ def QQ():
         # d(scrollable=True).scroll.to(text=u'红包')
         #d(scrollable=True).scroll.backward(steps=100)
         if d(text=u'红包').exists:
-            print "find one"
+            print("find one")
 
 
 if __name__ == "__main__":

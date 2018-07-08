@@ -24,7 +24,7 @@ class GetStockData(threading.Thread):
         self.q = q
 
     def run(self):
-        print ('线程%s开始下载' % (self.threadID))
+        print(('线程%s开始下载' % (self.threadID)))
         self._process_data()
 
     def _process_data(self):
@@ -80,7 +80,7 @@ def save_to_mysql(tablename=None, data=None, engine=None, code=None, num=None):
             print('save %s %s' % (code, num))
             break
         except BaseException as e:
-            print ('Save Error %s ' % (code))
+            print(('Save Error %s ' % (code)))
     return
 
 
@@ -111,15 +111,15 @@ def main():
 
         while not stocks.empty():
             pass
-        print u'数据请求完毕'
+        print(u'数据请求完毕')
         THREADS_EXITFLAG = 1
 
         for t in threads:
             t.join()
     except BaseException as e:
-        print ('Error', e)
+        print(('Error', e))
     return
 
 if __name__ == '__main__':
-    print u'开始请求%s的数据' %TICKS_DATA_DATE
+    print(u'开始请求%s的数据' %TICKS_DATA_DATE)
     main()

@@ -7,7 +7,7 @@ class Computer:
 		return 'This is {} Computer'.format(self.name)
 
 	def execute(self):
-		print 'execute a program'
+		print('execute a program')
 
 
 class Human:
@@ -19,7 +19,7 @@ class Human:
 		return 'This is {} Computer'.format(self.name)
 
 	def speak(self):
-		print 'speak a work'
+		print('speak a work')
 
 class Piano:
 	
@@ -30,7 +30,7 @@ class Piano:
 		return 'This is {} Computer'.format(self.name)
 
 	def play(self):
-		print 'play a song'
+		print('play a song')
 
 
 class Adapter:
@@ -55,10 +55,10 @@ def main():
 	obj.append(Adapter(human,dict(execute=human.speak)))
 
 	for i in obj:
-		# print i
-		# print i.__dict__
+		# print(i)
+		# print(i.__dict__)
 		i.execute()
-		print i
+		print(i)
 
 
 main()

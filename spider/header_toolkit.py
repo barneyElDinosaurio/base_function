@@ -25,9 +25,9 @@ def analysis_cookie():
     for item in items:
         name = item.split('=')[0]
         value = item.split('=')[1]
-        # print name,value
+        # print(name,value)
         name = name.replace(' ', '')
-        # print '\'',name,'\'',':','\'',value,'\'',','
+        # print('\'',name,'\'',':','\'',value,'\'',',')
         print('\"{}\":\"{}\",'.format(name, value))
 
 
@@ -47,25 +47,25 @@ def urlAdd(filename):
     with open(filename, 'r') as fp:
         line = fp.readline().strip()
         url = line
-        # print url
+        # print(url)
         curr_d = datetime.datetime.fromtimestamp(t)
         while 1:
-            # print url
+            # print(url)
             line = fp.readline().strip()
             if len(line) < 1:
                 break
             sp = line.split('=')
             print(sp[0], " ", sp[1])
-            # print sp[0],sp[1]
-            # print arg,val
+            # print(sp[0],sp[1])
+            # print(arg,val)
             d[sp[0]] = sp[1]
     base = 'http://lf.snssdk.com/api/news/feed/v66/?concern_id=6286225228934679042'
-    # print url
+    # print(url)
     # r = requests.get(url)
-    # print r.json()
+    # print(r.json())
 
     # return url
-    # print url
+    # print(url)
     return d
 
 
@@ -73,12 +73,12 @@ def read_json():
     fp = open('url', 'r').read().strip()
     # js=json.load(fp,encoding='utf-8')
 
-    # print fp
+    # print(fp)
     # js=json.loads(fp)
-    # print js
+    # print(js)
     return_data = eval(fp)
     print(return_data)
-    # print return_data['log_extra']
+    # print(return_data['log_extra'])
     if return_data.has_key('app_name'):
         print(return_data.get('app_name'))
         print(return_data.get('title'))
@@ -87,9 +87,9 @@ def read_json():
         print("TS")
 
     for k, v in return_data.items():
-        # print k,v
+        # print(k,v)
         if k == 'image_list':
-            # print v
+            # print(v)
             for i in v:
                 for ik, iv in i.items():
                     if ik == 'url_list':
@@ -100,7 +100,7 @@ def read_json():
         if k == 'filter_words':
             for i in v:
                 for k1, v1 in i.items():
-                    # print k1,v1
+                    # print(k1,v1)
                     pass
 
 
@@ -113,12 +113,12 @@ def debug_page():
     home_url = 'https://home.jd.com'
     r = requests.get(url=home_url, headers=headers)
     r.encoding = 'utf-8'
-    # print r.status_code
-    # print type(r.content)
-    # print r.text
-    # print chardet.detect(r)
+    # print(r.status_code)
+    # print(type(r.content))
+    # print(r.text)
+    # print(chardet.detect(r))
     tree = etree.HTML(r.text, parser=etree.HTMLParser(encoding='utf-8'))
-    # print etree.tostring(tree)
+    # print(etree.tostring(tree))
     print(r.text)
     return tree, r.text
 
@@ -135,6 +135,6 @@ def see_header():
 analysis_cookie()
 # urlParse()
 # read_json()
-# print urlAdd('urlparse')
+# print(urlAdd('urlparse'))
 # see_header()
 # tree, text = debug_page()

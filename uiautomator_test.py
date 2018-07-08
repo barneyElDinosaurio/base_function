@@ -8,11 +8,11 @@ import time
 def base_info():
     '''
     for v,k in enumerate(d.info):
-        print v,k
+        print(v,k)
     '''
     info = d.info
-    print type(info)
-    print info
+    print(type(info))
+    print(info)
 
 
 def click_test():
@@ -29,7 +29,7 @@ def scroll_test():
         d(scrollable=True).scroll.to(text="Linksys_2G")
         d(text='Linksys_2G').click()
     except:
-        print "Not found"
+        print("Not found")
 
 
 def liuliang():
@@ -43,7 +43,7 @@ def liuliang():
     time.sleep(1)
     d.click(271, 813)
     time.sleep(5)
-    print "get liu liang"
+    print("get liu liang")
 
 
 def each_dianpu():
@@ -74,11 +74,11 @@ def main():
 
     #op_test()
 
-    print "Go"
+    print("Go")
     #t=Device('0331416080186')
-    print "Start"
+    print("Start")
 
-    #print t.info
+    #print(t.info)
 
 
 
@@ -100,17 +100,17 @@ def main():
     #liuliang()
     #d(text=u'数码科技').click()
     #if d(text=u'腾讯体育').exists:
-    #print "Existed"
+    #print("Existed")
     #d.dump("hierarchy.xml")
     #d.swipe(500,1570,500,400)
     delta_each = 400
     time.sleep(3)
 
     for dragtime in range(20):
-        print 'dragtime'
+        print('dragtime')
         for i in range(3):
             d.click(919, 420 + i * delta_each)
-            print 'click'
+            print('click')
             time.sleep(8)
             #each_dianpu()
             each_dianpu()

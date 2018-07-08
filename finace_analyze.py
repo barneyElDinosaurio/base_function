@@ -27,9 +27,9 @@ def personal_money():
 
                 autopct='%1.1f'
                 )
-    print p
+    print(p)
     # plt.show()
-    print p[1]
+    print(p[1])
     # 中文乱码设置
     for font in p[1]:
         font.set_fontproperties(mpl.font_manager.FontProperties(
@@ -37,7 +37,7 @@ def personal_money():
 
     plt.subplot(2, 1, 2)
     x2 = [baidu_fix + baidu_current + jd + lujinsuo + icbc + cmb + qq, fund + stock_gj + stock_ht]
-    print x2
+    print(x2)
     labels2 = [u'现金', u'股票']
     p2 = plt.pie(x2, labels=labels2,autopct='%1.1f')
 

@@ -9,21 +9,21 @@ cur=0
 def sPush(n):
     global cur
     if cur > 15:
-        print "Stack is full"
+        print("Stack is full")
     else:
         sBuf[cur] = n
         cur = cur + 1
-        print cur
+        print(cur)
 
 
 def sPop():
     global cur
     if cur < 1:
-        print "Stack is empty"
+        print("Stack is empty")
     else:
         sBuf[cur] = 0
         cur = cur - 1
-        print cur
+        print(cur)
 
 
 def main():
@@ -32,13 +32,13 @@ def main():
     sPush(2)
     sPush(3)
     sPush(5)
-    print cur
-    print sBuf
+    print(cur)
+    print(sBuf)
 
 main()
 #dis.dis(main)
 '''
 #这个移位用太多时间了
 a = 2 ** 10000000
-print a
+print(a)
 '''

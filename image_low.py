@@ -10,7 +10,7 @@ def low_image():
     current_path = os.getcwd()
     for i in os.listdir(current_path):
         if re.search('\.jpg|\.png',i) and not re.search('_thunbnail',i):
-            print i.decode('gbk')
+            print(i.decode('gbk'))
             im = Image.open(os.path.join(current_path,i))
             w,h = im.size
             if w>1000 or h >1000:
@@ -48,5 +48,5 @@ if __name__=='__main__':
     else:
         filename=''
 
-    print filename
+    print(filename)
     low_snapshot(filename)

@@ -15,7 +15,7 @@ js = json.loads(str_data)
 for k, v in js.items():
 
     cmd = 'scrapy crawl anjuke_m -a city=%s' % k
-    print cmd
+    print(cmd)
     p = subprocess.Popen(cmd, stdout=std_fp, stderr=err_fp, shell=True)
     p.communicate()
     p.wait()
@@ -35,40 +35,40 @@ while 1:
         break
 '''
 for city in city_chinese_name:
-    #print city_chinese_name
-    print len(city_chinese_name)
+    #print(city_chinese_name)
+    print(len(city_chinese_name))
 
     cmd = 'scrapy crawl anjuke_rent -a city=%s' %city.strip()
-    print cmd
+    print(cmd)
     p = subprocess.Popen(cmd, stdout=std_fp, stderr=err_fp, shell=True)
     p.communicate()
     p.wait()
 
     city_chinese_name.remove(city)
     #time.sleep(10)
-print city_chinese_name
+print(city_chinese_name)
 '''
 # for i in city_chinese_name:
-# print i
-# print 'end'
+# print(i)
+# print('end')
 l = len(city_chinese_name)
 i = l - 1
-print 'len of : ', l
+print('len of : ', l)
 while i > -1:
-    print city_chinese_name[i]
+    print(city_chinese_name[i])
     del city_chinese_name[i]
     i = i - 1
-    print len(city_chinese_name)
+    print(len(city_chinese_name))
 
-print 'last'
-print city_chinese_name
-print len(city_chinese_name)
+print('last')
+print(city_chinese_name)
+print(len(city_chinese_name))
 # fp2.close()
 # std_fp.close()
 # err_fp.close()
 '''
 cmd = 'scrapy crawl anjuke_rent -a city="东莞"'
-print cmd
+print(cmd)
 p = subprocess.Popen(cmd, stdout=std_fp, stderr=err_fp, shell=True)
 p.communicate()
 p.wait()

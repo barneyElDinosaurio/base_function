@@ -90,8 +90,8 @@ def computeDeviations(users):
                     deviation[music1][music2]+=ratings1-ratings2
                     freq[music1].setdefault(music2,0)
                     freq[music1][music2]+=1
-    # print deviation
-    # print freq
+    # print(deviation)
+    # print(freq)
 
 
     for item1,item2 in deviation.items():
@@ -103,8 +103,8 @@ def computeDeviations(users):
 
 def slopeoneRecommand(userRating):
     deviation,freq=computeDeviations(users2)
-    # print deviation
-    # print userRating
+    # print(deviation)
+    # print(userRating)
     recommand={}
     freqs={}
     for d_user,d_user_item in deviation.items():
@@ -117,9 +117,9 @@ def slopeoneRecommand(userRating):
                     freqs[d_user]+=freq[d_user][key]
     r=[(k,v/float(freqs[k]))for k,v in recommand.items()]
     r=sorted(r,key=lambda x:x[1],reverse=True)
-    print r
-# print computeSimilarity('Blues Traveler','Deadmau5',users3)
-# print computeSimilarity("Fall Out Boy","Daft Punk",users3)
+    print(r)
+# print(computeSimilarity('Blues Traveler','Deadmau5',users3))
+# print(computeSimilarity("Fall Out Boy","Daft Punk",users3))
 # computeDeviations(users2)
 g=users2['Clara']
 slopeoneRecommand(g)

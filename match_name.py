@@ -17,10 +17,10 @@ result_1['spider'] = name
 result_1 = result_1.sort_values('score', ascending=False)
 # 匹配度排名
 highest = result_1[:3]
-#print result_1
+#print(result_1)
 #
-print highest
+print(highest)
 ll= list(highest['price'].values)
-print json.loads(ll[0])['2017-07'][0]['price']
+print(json.loads(ll[0])['2017-07'][0]['price'])
 
 #result = result.append(highest)

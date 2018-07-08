@@ -7,8 +7,8 @@ def getUserData():
     account = {}
     for i in f.readlines():
         ctype, passwd = i.split('=')
-        #print ctype
-        #print passwd
+        #print(ctype)
+        #print(passwd)
         account[ctype.strip()] = passwd.strip()
 
     return account
@@ -16,4 +16,4 @@ def getUserData():
 
 if __name__ == "__main__":
     data = getUserData()
-    print data
+    print(data)

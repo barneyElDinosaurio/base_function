@@ -15,7 +15,7 @@ multiprocessing.freeze_support()
 def write(q,lock):
     lock.acquire() #加上锁
     for value in ['A', 'B', 'C','D','E','F','G','H','I','J','K']:
-        print 'Put %s to queue...' % value
+        print('Put %s to queue...' % value)
         q.put(value)
         time.sleep(random.random())
     lock.release() #释放锁
@@ -25,7 +25,7 @@ def read(q):
     while True:
         if not q.empty():
             value = q.get(True)
-            print 'Get %s from queue.' % value
+            print('Get %s from queue.' % value)
             time.sleep(random.random())
         else:
             break
@@ -42,7 +42,7 @@ if __name__=='__main__':
     p.join()
 
     print
-    print '所有数据都写入并且读完'
+    print('所有数据都写入并且读完')
 '''
 
 '''
@@ -51,7 +51,7 @@ l = multiprocessing.Lock()
 
 def job(num):
   l.acquire()
-  print num
+  print(num)
   l.release()
   time.sleep(1)
 
@@ -77,7 +77,7 @@ from multiprocessing import Manager
 def send_request( data,lock):
     api_url = 'http://api.xxxx.com/?data=%s'
     start_time = clock()
-    print urllib2.urlopen(api_url % data).read()
+    print(urllib2.urlopen(api_url % data).read())
     end_time = clock()
     lock.acquire()
     with open('request.log', 'a+') as logs:
@@ -107,7 +107,7 @@ from multiprocessing import Manager
 def send_request(data):
     api_url = 'http://api.xxxx.com/?data=%s'
     start_time = time.clock()
-    print urllib2.urlopen(api_url % data).read()
+    print(urllib2.urlopen(api_url % data).read())
     end_time = time.clock()
     lock.acquire()
     with open('request.log', 'a+') as logs:

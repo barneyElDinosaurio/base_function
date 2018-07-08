@@ -46,7 +46,7 @@ class HtmlDownload(object):
 				else:
 					continue
 			except Exception as e:
-				print e
+				print(e)
 
 		return None
 
@@ -65,8 +65,8 @@ class HtmlParse(object):
 		data=self.get_data(url,tree)
 		host='https://baike.baidu.com'
 		urls =self.get_url(host,tree)
-		# print 'data: ',data
-		# print 'url: ',urls
+		# print('data: ',data)
+		# print('url: ',urls)
 		return data,urls
 
 	def get_data(self,url,tree):
@@ -78,12 +78,12 @@ class HtmlParse(object):
 			return None
 
 		data['title']=title
-		print title
+		print(title)
 		summary = tree.xpath('//div[@class="lemma-summary"]')
 		s =''
 		for i in summary:
 			content= i.xpath('string(.)')
-			print 'content',content
+			print('content',content)
 			s=s+content+' '
 
 		data['summary']=s
@@ -111,8 +111,8 @@ class SpiderCls(object):
 			new_url =self.manager.get_new_url()
 			html = self.download.download(new_url)
 			data,urls = self.parser.parse(new_url,html)
-			# print data
-			# print urls
+			# print(data)
+			# print(urls)
 
 			self.manager.add_new_urls(urls)
 

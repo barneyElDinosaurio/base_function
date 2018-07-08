@@ -33,19 +33,19 @@ def link_crawler(seed_url, link_regex=None, delay=5, max_depth=-1, max_urls=-1, 
         if True:
             throttle.wait(url)
             html = download(url, headers, proxy=proxy, num_retries=num_retries)
-            print len(html)
-            # print html
+            print(len(html))
+            # print(html)
             links = []
             if scrape_callback:
                 links.extend(scrape_callback(url, html) or [])
-                print links
+                print(links)
 
             if depth != max_depth:
                 # can still crawl further
                 if link_regex:
                     # filter for links matching our regular expression
                     links.extend(urlparse.urljoin(host_url,link) for link in get_links(html) if re.search(link_regex, link))
-                    print links
+                    print(links)
 
                 for link in links:
                     link = normalize(seed_url, link)
@@ -62,7 +62,7 @@ def link_crawler(seed_url, link_regex=None, delay=5, max_depth=-1, max_urls=-1, 
             if num_urls == max_urls:
                 break
         else:
-            print 'Blocked by robots.txt:', url
+            print('Blocked by robots.txt:', url)
 
 class ScrapeCallback:
     def __init__(self):
@@ -71,18 +71,18 @@ class ScrapeCallback:
         self.writer.writerow(self.fields)
 
     def __call__(self, url, html):
-        print 'in call'
-        print url
+        print('in call')
+        print(url)
         if re.search('/default/view', url) and (not re.search('(login|register)',url)):
-            print 'in search function'
+            print('in search function')
             tree = lxml.html.fromstring(html)
             row = []
             for field in self.fields:
-                print field
+                print(field)
                 details=tree.xpath('//table/tr[@id="places_{}__row"]/td[@class="w2p_fw"]/text()'.format(field))
-                # print 'details',details
+                # print('details',details)
                 # details=details[0].text_content()
-                print details
+                print(details)
                 if details:
                     row.append(details[0])
             if row:
@@ -111,7 +111,7 @@ class Throttle:
 
 
 def download(url, headers, proxy, num_retries, data=None):
-    print 'Downloading:', url
+    print('Downloading:', url)
     request = urllib2.Request(url, data, headers)
     opener = urllib2.build_opener()
     if proxy:
@@ -122,7 +122,7 @@ def download(url, headers, proxy, num_retries, data=None):
         html = response.read()
         code = response.code
     except urllib2.URLError as e:
-        print 'Download error:', e.reason
+        print('Download error:', e.reason)
         html = ''
         if hasattr(e, 'code'):
             code = e.code
@@ -163,7 +163,7 @@ def get_links(html):
     webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
     # list of all links from the webpage
     result= webpage_regex.findall(html)
-    print result
+    print(result)
     return result
 
 if __name__ == '__main__':

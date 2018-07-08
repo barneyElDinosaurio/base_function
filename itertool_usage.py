@@ -8,6 +8,6 @@ Contact: weigesysu@qq.com
 from itertools import permutations
 a=['a','b','c','d']
 for i in permutations(a,2):
-    print i[0],i[1]
+    print(i[0],i[1])
 
 

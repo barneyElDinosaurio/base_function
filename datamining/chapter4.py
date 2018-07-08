@@ -43,15 +43,15 @@ def computeNeighbor(username, user):
             recommands.append((k,distance))
 
 
-    # print recommands
+    # print(recommands)
     return sorted(recommands, key=lambda x: x[1])
 
 
 def normalize():
     pass
 def main():
-    # print oula_distance(music['Glee Cast/Jessie\'s Girl'], music['Dr Dog/Fate'])
-    print computeNeighbor('The Black Keys/Magic Potion', music)
+    # print(oula_distance(music['Glee Cast/Jessie\'s Girl'], music['Dr Dog/Fate']))
+    print(computeNeighbor('The Black Keys/Magic Potion', music))
 
 
 if __name__ == '__main__':

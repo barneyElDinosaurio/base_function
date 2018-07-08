@@ -18,17 +18,17 @@ url='http://httpbin.org/get'
 
 header={'User-Agent':'Mozilla/5.0 (Windows NT 5.1; rv:33.0) Gecko/66666 Firefox/33.0'}
 s=requests.get(url,headers=header)
-print s.text
-print s.headers
+print(s.text)
+print(s.headers)
 zhihu_url="http://xueqiu.com"
 #header={'User-Agent':'Mozilla/5.0 (Windows NT 5.1; rv:33.0) Gecko/20100101 Firefox/33.0'}
 z=requests.get(zhihu_url,headers=header)
-print z.headers
-print z.cookies
+print(z.headers)
+print(z.cookies)
 
 
 r = requests.get('http://github.com/timeline.json')
-print r
+print(r)
 '''
 
 def count_words(url):

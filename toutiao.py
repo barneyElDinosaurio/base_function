@@ -109,10 +109,10 @@ base = 'http://lf.snssdk.com/2/article/information/v23/?'
 base2 = 'http://lf.snssdk.com/api/news/feed/v66/?concern_id=6286225228934679042&'
 base3 = 'http://lg.snssdk.com/api/news/feed/v66/?concern_id=6286225228934679042&'
 arg_list = []
-print d
+print(d)
 for k, v in args_5.items():
     arg = k + '=' + v
     arg_list.append(arg)
 post_url = '&'.join(arg_list)
 url = base3 + post_url
-print url
+print(url)

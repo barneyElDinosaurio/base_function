@@ -5,32 +5,32 @@ def lambda_test(n):
 
 def testcase1():
     k = lambda_test(5)
-    print k(4)
-    print k(9)
+    print(k(4))
+    print(k(9))
     l = lambda x: x * x
     y = l(8)
-    print y
+    print(y)
 
 def multipliers():
   return [lambda x : i * x for i in range(4)]
 
 def testcase2():
     a=multipliers()
-    print a
+    print(a)
     for i in a:
-        print i(5)
-    print [m(2) for m in multipliers()]
+        print(i(5))
+    print([m(2) for m in multipliers()])
     for i in multipliers():
-        print i
+        print(i)
 
 def compare_case():
     f=lambda x,y: x if x>y else y
     x=f(61,8)
-    print x
+    print(x)
 
 def lamda_case2():
     y=lambda x,y:x*y
-    print y(2,4)
+    print(y(2,4))
 
 # testcase1()
 testcase2()

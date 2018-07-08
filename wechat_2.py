@@ -9,7 +9,7 @@ from NetEaseMusicApi import interact_select_song
 #with open('stop.mp3', 'w') as f: pass
 def close_music():
     #os.startfile('stop.mp3')
-    print "MP3"
+    print("MP3")
 
 
 @itchat.msg_register(itchat.content.TEXT)

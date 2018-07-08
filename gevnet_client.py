@@ -12,4 +12,4 @@ def download(url):
 if __name__ == '__main__':
     urls = ['http://httpbin.org/get'] * 100
     pool = Pool(20)
-    print pool.map(download, urls)
+    print(pool.map(download, urls))

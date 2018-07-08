@@ -23,4 +23,4 @@ class Tree(object):
 t1 = Tree(TreeType.apple_tree)
 t2 = Tree(TreeType.cherry_tree)
 t3 = Tree(TreeType.apple_tree)
-print id(t1),id(t2),id(t3)
+print(id(t1),id(t2),id(t3))

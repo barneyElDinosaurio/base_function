@@ -16,7 +16,7 @@ def getcity():
     r = requests.get(url=url, headers=headers)
     citylist=re.findall('cncity="(.*?)"',r.text)
     d=dict()
-    print len(citylist)
+    print(len(citylist))
     for i in citylist:
         name=i.split(',')[0]
         code=i.split(',')[1]
@@ -54,43 +54,43 @@ def fangtx():
         query_str.append(k + '=' + v)
 
     query = '&'.join(query_str)
-    print query
+    print(query)
     query_url = query_link + query
-    print query_url
+    print(query_url)
     s = requests.get(url=query_url, headers=headers)
     s.encoding = 'utf-8'
-    print s.status_code
-    #print s.text
+    print(s.status_code)
+    #print(s.text)
     from lxml import etree
-    print s.headers
+    print(s.headers)
     time.sleep(10)
     tree = etree.HTML(s.text)
 
     root = tree.xpath('//li/a')
     for elem in root:
         url = 'https://' + elem.xpath('.//@href')[0]
-        print url
+        print(url)
 
         name = elem.xpath('.//div[@class="txt"]/h3/text()')[0]
-        print name
+        print(name)
 
         price = elem.xpath('.//span[@class="new "]/i/text()')[0]
-        # print price
+        # print(price)
         price = re.findall('(\d+)', price)[0]
-        print price
+        print(price)
         address = elem.xpath('.//p/text()')[0]
-        print address
+        print(address)
         building_type = elem.xpath('.//p[@class="fc"]/span/text()')[0]
-        print building_type
+        print(building_type)
 
         building_date = elem.xpath('.//p[@class="fc"]/span/text()')[1]
-        print building_date
+        print(building_date)
 
 def getcontent():
     url='https://m.fang.com/fangjia/?c=pinggu&a=ajaxGetList&city=zh&price=&district=&comarea=&orderby=0&keyword=&x1=&y1=&distance=&from=&r=0.5950817591123896&p=99'
     r=requests.get(url)
     r.encoding='utf-8'
-    print r.text
+    print(r.text)
 #getcity()
 #fangtx()
 getcontent()

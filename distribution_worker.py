@@ -24,9 +24,9 @@ for i in range(10):
     try:
         time.sleep(2)
         t=task.get()
-        print 'get data %s from server' %t
+        print('get data %s from server' %t)
         s=process_fun(t)
         result.put(s)
     except Exception as e:
-        print e
+        print(e)
 

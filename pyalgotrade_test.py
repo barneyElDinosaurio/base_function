@@ -67,7 +67,7 @@ def testcase2():
     feed.addBarsFromCSV('nvda', 'nvda-2016.csv')
     myStrategy = Sell_Case(feed, 'nvda', 15)
     myStrategy.run()
-    print "Final portfolio %f" % myStrategy.getBroker().getEquity()
+    print("Final portfolio %f" % myStrategy.getBroker().getEquity())
 
 #testcase1()
 testcase2()

@@ -7,10 +7,10 @@ def yield_test():
 
 
 data=yield_test()
-print data
+print(data)
 for i in range(0,10):
-    print data.next()
+    print(data.next())
 
 
 for i in yield_test():
-    print i
+    print(i)

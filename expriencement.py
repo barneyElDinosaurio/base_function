@@ -35,20 +35,20 @@ class sohu_cls():
     def getData(self,ids,page,row_args):
         #url=self.header_fill('page2.cfg',ids,page)
         url='http://api.k.sohu.com/api/channel/v5/news.go?p1=NjMwMjg4NTczMDc1OTEyNzA2OA%3D%3D&pid=-1&channelId=3&num=20&imgTag=1&showPic=1&picScale=11&rt=json&net=wifi&cdma_lat=22.553063&cdma_lng=113.902367&from=channel&mac=b4%3A0b%3A44%3A83%3A93%3A16&AndroidID=4dd00e258bbe295f&carrier=CMCC&imei=990006203070023&imsi=460020242631842&density=3.0&apiVersion=37&skd=181cd7756f3346031f3c2cabb5747dbf9592f0ba9027bcbc4e8428628dee61e63c6043ce4d6b2df978eedd56c6ac5d70783755af90a01e6e2d50b9c0bf976aef41762bf8129a2be6ec278d9f5b07b347b8619ff25e017fcb26fdc0bd0a6529493310b14ea6ae9d195d6d19f662ee9ad1&v=1503331200&t=1503382594&page=2&action=2&mode=1&cursor=6836395&mainFocalId=0&focusPosition=2&viceFocalId=0&lastUpdateTime=0&gbcode=440300&apiVersion=37&u=1&isSupportRedPacket=0&t=1503382594'
-        print url
+        print(url)
         row=row_args
         try:
             s=requests.get(url,headers=self.headers)
-            print s.status_code
+            print(s.status_code)
         except Exception as e:
-            print "requests issue"
+            print("requests issue")
             return 'error'
         js= s.json()
-        #print json_normalize(js)
+        #print(json_normalize(js))
         #self.jsonParse(js)
         #time.sleep(50)
         articles=js[u'articles']
-        #print articles
+        #print(articles)
 
         '''
         #self.save2file('sohu_key.cfg',js.keys(),'w')
@@ -58,21 +58,21 @@ class sohu_cls():
         '''
         for article in articles:
             if article['newsType']==21:
-                print 'row :',row
+                print('row :',row)
                 col = 0
                 newsIds=article['newsId']
                 '''
-                print newsIds
+                print(newsIds)
                 self.sheet.write(row,col,newsIds)
                 col=col+1
                 '''
                 #df=pd.DataFrame(article)
-                #print df
+                #print(df)
                 #df.to_excel(str(newsIds)+'.xls',encoding='utf-8')
-                #print len(df)
+                #print(len(df))
 
                 for k,v in article.items():
-                    #print k,type(k)
+                    #print(k,type(k))
                     if k==u'link':
                         #self.sheet.write(row, col, v)
                         col = col + 1
@@ -257,10 +257,10 @@ class sohu_cls():
 
     def getChannelID(self):
         url=self.header_fill('argsv7.cfg',0,0)
-        print url
+        print(url)
         s=requests.get(url=url,headers=self.headers)
         js=s.json()
-        #print js['data']
+        #print(js['data'])
         result=[]
 
         for item in js['data']:
@@ -285,7 +285,7 @@ class sohu_cls():
         fp=open('page2.cfg','w')
 
         for i in x:
-            print i
+            print(i)
             fp.write(i+'\n')
 
         fp.close()
@@ -297,19 +297,19 @@ class sohu_cls():
     def jsonParse(self,dictionary):
         with open('channelID.txt','r') as fp:
             str_data=fp.read().strip()
-        #print str_data
+        #print(str_data)
         #dictionary=json.loads(str_data)
         dictionary=eval(str_data)
-        print type(dictionary)
-        print dictionary
+        print(type(dictionary))
+        print(dictionary)
         input('')
         if isinstance(dictionary,dict):
             for i in range(len(dictionary)):
                 key=dictionary.keys()[i]
                 value=dictionary[key]
-                print key,value
+                print(key,value)
                 self.jsonParse(value)
-            print '\n'
+            print('\n')
 
     def header_fill(self,filename,ids,page):
         #url=''
@@ -317,16 +317,16 @@ class sohu_cls():
         with open(filename,'r') as fp:
             line=fp.readline().strip()
             url=line
-            #print url
+            #print(url)
             curr_d = datetime.datetime.fromtimestamp(t)
             while 1:
-                #print url
+                #print(url)
                 line = fp.readline().strip()
                 if len(line)<1:
                     break
                 sp=line.split('=')
-                #print sp[0],sp[1]
-                #print arg,val
+                #print(sp[0],sp[1])
+                #print(arg,val)
                 if sp[0]=='channelId':
                     url=url+'&'+'channelId='+ids
                 if sp[0]=='page':
@@ -335,17 +335,17 @@ class sohu_cls():
                     url=url+'&'+str(t)
                 else:
                     url=url+'&'+line
-                #print 'done'
+                #print('done')
         return url
-        #print url
+        #print(url)
 
     def fetchAll(self,pages):
         id_list=self.getChannelID()
         row=0
         for ids in id_list:
-            print "channel ID" , ids
+            print("channel ID" , ids)
             for page in range(pages):
-                print 'outside row ',row
+                print('outside row ',row)
                 row=self.getData(str(ids),str(page),row)
                 #time.sleep(random.random()*5)
                 #self.row=self.row+1
@@ -363,12 +363,12 @@ class sohu_cls():
 
 
 def main():
-    print 'Stsrt :', datetime.datetime.now()
-    print 'timestamp :', time.time()
+    print('Stsrt :', datetime.datetime.now())
+    print('timestamp :', time.time())
     obj=sohu_cls()
     #obj.urlParse()
     #obj.fetchAll(20)
     obj.getData('3','2',0)
-    print 'End :',datetime.datetime.now()
-    print 'timestamp :', time.time()
+    print('End :',datetime.datetime.now())
+    print('timestamp :', time.time())
 main()

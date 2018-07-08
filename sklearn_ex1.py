@@ -3,22 +3,22 @@
 def case1():
 	from sklearn import datasets
 	news = datasets.fetch_20newsgroups(subset='all')
-	# print len(news.data)
-	# print len(news.target)
+	# print(len(news.data))
+	# print(len(news.target))
 
-	# print '*'*10
-	# print news.data[0]
-	# print '*'*10
-	# print news.target[0]
+	# print('*'*10)
+	# print(news.data[0])
+	# print('*'*10)
+	# print(news.target[0])
 	from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 	vec = CountVectorizer()
 	x = vec.fit_transform(news.data)
-	# print x.shape
-	# print x[:2]
-	print x[:10,:10].toarray()
+	# print(x.shape)
+	# print(x[:2])
+	print(x[:10,:10].toarray())
 	TFIDF = TfidfTransformer()
 	x_tfidf = TFIDF.fit_transform(x)
-	print x_tfidf[:10,:10].toarray()
+	print(x_tfidf[:10,:10].toarray())
 
 
 	from sklearn.cross_validation import train_test_split
@@ -40,12 +40,12 @@ def case2():
 
 	x,y = make_classification(n_samples=1000, n_features=2,n_redundant=0,n_informative=1,n_clusters_per_class=1)
 
-	print len(x)
-	print len(y)
-	print x
-	print y
+	print(len(x))
+	print(len(y))
+	print(x)
+	print(y)
 	for i in range(len(x)):
-		print x[i],y[i]
+		print(x[i],y[i])
 
 	x_data_train = x[:800,:]
 
@@ -53,13 +53,13 @@ def case2():
 	y_data_train = y[:800]
 	y_data_test = y[800:]
 
-	print '*'*20
-	print x_data_train
-	print x_data_test
-	print y_data_train
-	print y_data_test
+	print('*'*20)
+	print(x_data_train)
+	print(x_data_test)
+	print(y_data_train)
+	print(y_data_test)
 
-	print x[0,0]
+	print(x[0,0])
 
 
 def case3():
@@ -78,9 +78,9 @@ def case3():
 	#丢弃带有缺失值的数据（只要一个维度有缺失值）
 	data=data.dropna(how='any')
 	#输出data的数据量和维度
-	print data.shape
+	print(data.shape)
 	#(683,11)
-	print data
+	print(data)
 
 # case2()
 case3()

@@ -23,7 +23,7 @@ def anjuke():
                                    chrome_options=options)
         browser.get('https://shenzhen.anjuke.com/community/p%d/' %i)
         l = browser.find_elements_by_xpath('//div[@_soj="xqlb"]')
-        print len(l)
+        print(len(l))
         for i in l:
             item = dict()
             item['name']=i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').text
@@ -31,7 +31,7 @@ def anjuke():
             item['location']=i.find_element_by_xpath('.//div[@class="li-info"]/address').text
             item['building_date']=i.find_element_by_xpath('.//div[@class="li-info"]/p').text
             item['price']= i.find_element_by_xpath('.//div[@class="li-side"]/p/strong').text
-            #print item
+            #print(item)
             collection.insert(item)
         browser.close()
 

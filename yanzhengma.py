@@ -6,14 +6,14 @@ def testcase():
     im=Image.open('captcha.gif')
     data=im.convert('P')
     hist= im.histogram()
-    print data
+    print(data)
     values={}
     for i in range(256):
         values[i]=hist[i]
 
-    print values
+    print(values)
     for k,v in sorted(values.items(),reverse=True):
-        print k,v
+        print(k,v)
 
 
 def case3():

@@ -7,7 +7,7 @@ class Book:
 
 
 	def show(self):
-		print self.__dict__
+		print(self.__dict__)
 
 b = Book()
 print('__dict__ content: ')
@@ -20,11 +20,11 @@ print('__dict__ content: ')
 b.show()
 
 d={'a':1,'b':2}
-print d
+print(d)
 x={1:1,2:2,3:3}
-print x
+print(x)
 d.update(x)
-print d
+print(d)
 
 
 class NewBook:
@@ -43,12 +43,12 @@ class NewBook:
 
 
 nb = NewBook(name="Worf", price=10, release='2018', publisher='RMB')
-print nb
+print(nb)
 
 
 def func(**arg):
 	for k,v in arg.items():
-		print k,v
+		print(k,v)
 
 
 func(a='apple', b='banana', c='cat')
@@ -72,5 +72,5 @@ class ProtoType:
 p = ProtoType()
 p.register(nb)
 my_book = p.clone(year='2018',sex='male')
-print my_book
-print nb
+print(my_book)
+print(nb)

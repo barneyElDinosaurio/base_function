@@ -31,8 +31,8 @@ def useproxy(url,headers,postdata=None,post=False):
     if post:
         try:
             r = requests.post(url=url, headers=headers, proxies={'http': proxy},data=postdata)
-            #print 'in post'
-            #print r.text
+            #print('in post')
+            #print(r.text)
         except Exception as e:
             return None
     else:

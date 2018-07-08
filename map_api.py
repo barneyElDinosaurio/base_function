@@ -35,7 +35,7 @@ def addr_poi(city, addr):
         lng = js['result']['location']['lng']
         lat = js['result']['location']['lat']
     except Exception, e:
-        print e
+        print(e)
         lng = '0'
         lat = '0'
     return lat, lng
@@ -48,24 +48,24 @@ def getcordinate():
     db = client[dbname]
     data = db[collection].find({'latitude': 0})
     data_list = list(data)
-    print len(data_list)
+    print(len(data_list))
 
     for i in range(len(data_list)):
         city = data_list[i]['city_name'].encode('utf-8')
         name = data_list[i]['name'].encode('utf-8')
-        print city
-        print name
+        print(city)
+        print(name)
         try:
             lat, lng = addr_poi(city, name)
-            print lat, ' , ', lng
+            print(lat, ' , ', lng)
 
             db[collection].update({'name': name, 'city_name': city}, {'$set': {'latitude': lat, 'longitude': lng}},
                                   upsert=True)
 
             # time.sleep(1)
-            print 'done'
+            print('done')
         except Exception, e:
-            print e
+            print(e)
             time.sleep(16)
             continue
 
@@ -86,30 +86,30 @@ def getcordinate_web():
 
     for i in range(len(data_list)):
         url = data_list[i]['url']
-        print url
+        print(url)
         try:
             r = requests.get(url=url, headers=headers)
-            print r.status_code
+            print(r.status_code)
             content = r.text
 
             position = re.findall('markers=(.*?)&', content)[0]
             longitude = position.split(',')[0]
             latitude = position.split(',')[1]
-            print longitude
-            print latitude
+            print(longitude)
+            print(latitude)
             db[collection].update({'url': url}, {'$set': {'latitude': latitude, 'longitude': longitude}})
         except Exception, e:
-            print e
-            print 'fail to get on url', url
+            print(e)
+            print('fail to get on url', url)
 
         '''
         try:
             lat,lng=addr_poi(city,name)
-            print lat,' , ',lng
+            print(lat,' , ',lng)
             db[collection].update({'name': name, 'city_name': city}, {'$set': {'latitude': lat, 'longitude': lng}})
             time.sleep(1)
         except Exception as e:
-            print e
+            print(e)
             time.sleep(16)
             continue
         '''
@@ -117,5 +117,5 @@ def getcordinate_web():
 
 if __name__ == '__main__':
     getcordinate()
-    # print addr_poi('广州市', '金沙洲建设大道1号')
+    # print(addr_poi('广州市', '金沙洲建设大道1号'))
     # getcordinate_web()

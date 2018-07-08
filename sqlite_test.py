@@ -17,7 +17,7 @@ def create_table():
         #主要就是上面的语句
         conn.execute(create_tb_cmd)
     except:
-        print "Create table failed"
+        print("Create table failed")
         return False
     insert_dt_cmd = '''
     INSERT INTO USER (NAME,AGE,SALARY) VALUES ("Rocky",10,20.1);
@@ -30,7 +30,7 @@ def create_table():
 def insert():
     conn = sqlite3.connect(db_name)
 
-    print "open database passed"
+    print("open database passed")
     table_create = '''
                     CREATE TABLE COMPANY
                     (ID INT PRIMARY KEY,
@@ -48,7 +48,7 @@ def insert():
     teddy = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(3,'TEDDY',732,'CALIFORNIA',52000.00);"
     mark = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(4,'MARK',327,'CALIFORNIA',3000.00);"
     #conn.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(?,?,32,'CALIFORNIA',2000.00)",temp)
-    print paul
+    print(paul)
     conn.execute(paul)
     conn.execute(allen)
     conn.execute(teddy)
@@ -65,7 +65,7 @@ def insert():
     mark = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(4,'MARK',327,'CALIFORNIA',3000.00);"
     #sun="INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(?,?,?,?,?);"
     #conn.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES(?,?,32,'CALIFORNIA',2000.00)",temp)
-    print paul
+    print(paul)
     conn.execute(paul)
     conn.execute(paul_su)
     conn.execute(allen)
@@ -80,7 +80,7 @@ def insert():
 def query():
     db_name='python_test'
     conn = sqlite3.connect(db_name)
-    print "open database successful"
+    print("open database successful")
     # query_command = 'select id,name,age,address,salary from COMPANY'
     query_command='select ID,Name,Population from City ORDER by Population desc LIMIT 1000'
     cur=conn.cursor()
@@ -88,19 +88,19 @@ def query():
     cur.execute(query_command)
     s=cur.fetchall()
     colname=[cn[0] for cn in cur.description]
-    print colname
-    # print s
+    print(colname)
+    # print(s)
     '''
     for i in s:
-        print i
+        print(i)
     '''
     # data = conn.execute(query_command)
     # for i in data:
-    #     print "ID:\t%d" % i[0],
-    #     print "NAME:\t%s" % i[1],
-    #     print "AGE:\t%d" % i[2],
-    #     print "ADDRESS:\t%s" % i[3],
-    #     print "SALARY:\t%f" % i[4]
+    #     print("ID:\t%d" % i[0],)
+    #     print("NAME:\t%s" % i[1],)
+    #     print("AGE:\t%d" % i[2],)
+    #     print("ADDRESS:\t%s" % i[3],)
+    #     print("SALARY:\t%f" % i[4])
 
 
 def update():
@@ -125,16 +125,16 @@ def order_test():
         cur = conn.cursor()
         #cmd='select * from sqlite_master where type="table";'
         cmd = 'SELECT * FROM STRATEGY'
-        print cur.execute(cmd)
-        print cur.fetchall()
+        print(cur.execute(cmd))
+        print(cur.fetchall())
     except:
-        print "Error"
+        print("Error")
         #cur.commit()
 
 #insert()
 #db_name='rocky_sqlite.db'
 #update()
-#print "After update"
+#print("After update")
 data_path=os.path.join(os.getcwd(),'data')
 os.chdir(data_path) 
 query()

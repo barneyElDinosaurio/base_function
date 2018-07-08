@@ -24,7 +24,7 @@ def base_usage():
         x=r.get(i)
         print(x)
         print(type(x))
-    #print r.get('test')
+    #print(r.get('test'))
 
 #删除数据库
 def clear_db(db):
@@ -80,8 +80,8 @@ def pop_usage():
 def get_keys():
     '''
     for i in r.keys():
-        print i,
-        print r.get(i)
+        print(i,)
+        print(r.get(i))
     '''
     print(r.llen('codes'))
     i=0
@@ -93,7 +93,7 @@ def get_keys():
             d = eval(x[1])
             code = d.keys()[0]
             name = d[d.keys()[0]]
-            print code,name
+            print(code,name)
             '''
         except Exception as e:
             print(e)
@@ -105,8 +105,8 @@ def check_dup():
     # for i in range(l):
     total = r.lrange('url',0,l)
     for index,i in enumerate(total):
-        # print index
-        # print i
+        # print(index)
+        # print(i)
         pass
     x=len(set(total))
     print(x)
@@ -115,9 +115,9 @@ def search():
     for i in r.keys():
         print(r.get(i))
         # print(i)
-        # print r.get(i),len(r.get(i))
+        # print(r.get(i),len(r.get(i)))
         # if len(r.get(i))==0:
-            # print i
+            # print(i)
 # base_usage()
 # insert_data()
 # get_data()

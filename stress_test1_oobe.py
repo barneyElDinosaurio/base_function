@@ -39,8 +39,8 @@ class Test:
         p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         output, error = p.communicate()
         if p.returncode != 0:
-            print "Error while running - %s" % cmd
-            print error
+            print("Error while running - %s" % cmd)
+            print(error)
         return output 
 
     def run_cmd_background(self, cmd):
@@ -49,7 +49,7 @@ class Test:
     def start_test(self, number):
         count = 1
         while count <= number:
-            print "Cycle %d" % count
+            print("Cycle %d" % count)
             self.run_cmd(self.wait_device)
             time.sleep(10)
             self.run_cmd(self.log)
@@ -60,15 +60,15 @@ class Test:
             for event in self.events:
                 self.run_cmd(event)
                 time.sleep(5)
-            print "Setup Complete..."
+            print("Setup Complete...")
             self.run_cmd(self.log)
             if not self.leanback_focus in open("log1.txt").read():
-                print "leanback is not in focus"
+                print("leanback is not in focus")
                 self.run_cmd(self.dmesg)
                 sys.exit(1)
-            print "Leanback in focus..."
+            print("Leanback in focus...")
             for reset in self.factory_reset_cmd:
-                print reset
+                print(reset)
                 self.run_cmd(reset)
             count = count + 1
         

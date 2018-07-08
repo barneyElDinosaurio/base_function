@@ -24,7 +24,7 @@ def groupcheck():
         domain[mail]+=1
 
     result = sorted(domain.items(),key=lambda x:x[1],reverse=True)
-    print result
+    print(result)
 
 class MysqlUsage():
     def __init__(self):
@@ -33,7 +33,7 @@ class MysqlUsage():
         cur = self.db.cursor()
         cur.execute('select version()')
         data = cur.fetchone()
-        print data
+        print(data)
 
     def query(self):
         cursor = self.db.cursor()
@@ -41,12 +41,12 @@ class MysqlUsage():
         cursor.execute(cmd.format('300333', '2017-11-15'))
         data = cursor.fetchall()
         for i in data[0]:
-            print i,
+            print(i,)
         print
-        print data[0]
+        print(data[0])
         '''
         for i in data:
-            print i
+            print(i)
         '''
 
     def delete_item(self):
@@ -59,17 +59,17 @@ class MysqlUsage():
             cmd_del = 'delete  from `{}` where datetime = \'2017-11-17\';'
             try:
                 cursor.execute(cmd_del.format(code))
-                # print cursor.fetchall()
+                # print(cursor.fetchall())
                 self.db.commit()
             except Exception, e:
-                print e
+                print(e)
                 self.db.rollback()
 
     def modify_table(self):
         engine_line = get_engine('db_selection')
         df = pd.read_sql_table('xiayinxian', engine_line, index_col='index')
         df['ocupy_ration'] = df['ocupy_ration'].map(lambda x: '%.3f' % x)
-        # print df
+        # print(df)
         df.to_sql('xiayingxian', engine_line)
 
     def sql_table(self):
@@ -81,7 +81,7 @@ class MysqlUsage():
         db1 = sqlite3.connect("df_sql3.db")
         data = [[1, 2, 3, 4], [3, 4, 5, 6], [54, 234, 23, 222]]
         df1 = pd.DataFrame(data)
-        print df1
+        print(df1)
         df1.to_sql("data", db1)
 
     def DB_Usage_sqlite(self):
@@ -89,15 +89,15 @@ class MysqlUsage():
         # cursor=db.cursor()
         # cursor.execute("SELECT VERSION()")
         # data=cursor.fetchone()
-        # print data
+        # print(data)
         db.close()
         cmd = 'SELECT * from person;'
         df = pd.read_sql(cmd, db)
-        print df
+        print(df)
 
     def Aliyun(self):
         passwd = Toolkit.getUserData('data.cfg')['alipasswd']
-        print passwd
+        print(passwd)
         conn = MySQLdb.connect(host='',  # 远程主机的ip地址，
                                user='',  # MySQL用户名
                                db='',  # database名
@@ -107,7 +107,7 @@ class MysqlUsage():
         cursor = conn.cursor()
         cursor.execute('SELECT VERSION()')
         data = cursor.fetchone()
-        print data
+        print(data)
         # 已经连通了，可以开搞。
         id = 31
         cmd1 = "insert into `aws_user_action_history_data`(`history_id`,`associate_content`,`associate_attached`,`addon_data`) values ('%d','huati','',''),('%d','','',''),('%d','Rocky-Title','ROCK-Content','')" % (
@@ -135,7 +135,7 @@ class MysqlUsage():
         NAME TEXT,CITY_NAME TEXT,LOCATION TEXT,PRICE TEXT
         );
         '''
-        print create_cmd
+        print(create_cmd)
         cursor.execute(create_cmd)
         self.db.commit()
         self.db.close()
@@ -152,14 +152,14 @@ class MysqlUsage():
 
         cursor.execute('select version()')
         data = cursor.fetchone()
-        print data
-        print type(data)
+        print(data)
+        print(type(data))
         my_dict = {"2017-07": [{"origin": "LJ", "price": 44267, "crawl_date": "2017-09-01"}]}
         price = json.dumps(my_dict)
-        print price
+        print(price)
         item2 = {'name': '万科', 'city_name': '深圳', 'location': '龙岗', 'price': price}
         item = {'name': 'wk2', 'city_name': '1sz1', 'location': 'lg1', 'price': '12111'}
-        print item
+        print(item)
 
         sql = '''
                 insert into houseinfo ( name,city_name,location,price)
@@ -169,7 +169,7 @@ class MysqlUsage():
         # 这个是可以正常运行的
         sql2 = '''insert into houseinfo ( name,city_name,location,price) values ('%s','%s','%s','%s')''' % (
             item2['name'], item2['city_name'], item2['location'], item2['price'])
-        print sql2
+        print(sql2)
         # sql 插入有问题
         cursor.execute(sql2)
 
@@ -178,7 +178,7 @@ class MysqlUsage():
         '''
         # cursor.execute(sql)
         # data1=cursor.fetchone()
-        # print data1
+        # print(data1)
 
         self.db.commit()
         self.db.close()
@@ -193,9 +193,9 @@ class MysqlUsage():
         cursor.execute(sql_cmd1)
         # dataone=cursor.fetchone()
         dataall = cursor.fetchall()
-        # print dataone
+        # print(dataone)
         for i in dataall:
-            print i[0], i[1], i[2], i[3], i[4], i[5], i[6]
+            print(i[0], i[1], i[2], i[3], i[4], i[5], i[6])
 
     def update(self):
         sql_cmd = '''
@@ -221,13 +221,13 @@ class MysqlUsage():
                 cursor.execute(sql_cmd)
                 linenumber = linenumber + 1
             except Exception, e:
-                print e
-                print "EOF"
+                print(e)
+                print("EOF")
                 break
         self.db.commit()
         self.db.close()
-        print linenumber
-        # print line
+        print(linenumber)
+        # print(line)
 
     def replace(self):
         cursor = self.db.cursor()
@@ -241,14 +241,14 @@ class MysqlUsage():
         cur.execute(cmd)
         content = cur.fetchall()
         for item in content:
-            print item[0]
+            print(item[0])
 
 def remote_mysql():
     conn = MySQLdb.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
     cursor = conn.cursor()
     cursor.execute("SELECT count(*) from tb_houses;")
     data = cursor.fetchone()
-    print data
+    print(data)
     conn.close()
 
 
@@ -298,7 +298,7 @@ def remove_row():
     db=get_mysql_conn('history')
     cur = db.cursor()
     for k in r.keys():
-        print k
+        print(k)
         cmd = 'delete from `{}` where datetime > \'2017-11-16\';'.format(k)
         try:
             cur.execute(cmd)

@@ -8,7 +8,7 @@ def plot_feature_importance(feature_importances, title, feature_names):
     pos = np.arange(index_sort.shape[0]) + 0.5
     plt.figure()
     plt.bar(pos, feature_importances[index_sort], align='center')
-    print feature_names
+    print(feature_names)
     plt.xticks(pos, feature_names[index_sort])
     plt.ylabel('Relative Importance')
     plt.title(title)

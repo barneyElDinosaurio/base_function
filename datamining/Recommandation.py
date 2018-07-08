@@ -98,14 +98,14 @@ class recommander():
         #         recommand_list.append((item, self.data[recommand_user][item]))
         #
         recommand_list=list(recommand_list.items())
-        # print recommand_list
+        # print(recommand_list)
         recommand_list=[(self.convertProductID2name(k),v) for (k,v) in recommand_list]
         recommand_list.sort(key=lambda x:x[1],reverse=True)
 
         return recommand_list[:self.n]
     def userRatings(self, id, n):
         """Return n top ratings for user with id"""
-        print ("Ratings for " + self.userid2name[id])
+        print(("Ratings for " + self.userid2name[id]))
         ratings = self.data[id]
         print(len(ratings))
         ratings = list(ratings.items())
@@ -186,10 +186,10 @@ def main():
         users = json.load(f)
     obj = recommander(data=users)
     obj.loadBookDB('')
-    # print obj.recommand('171118')
-    # print obj.recommand('Hailey')
+    # print(obj.recommand('171118'))
+    # print(obj.recommand('Hailey'))
     obj.userRatings('171118',5)
 
 if __name__ == '__main__':
     main()
-    print "Done"
+    print("Done")

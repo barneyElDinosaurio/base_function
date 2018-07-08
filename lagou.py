@@ -28,17 +28,17 @@ def _postdata():
     for i in range(1, 10):
         data['pageNo'] = str(i)
         r = requests.post(url=url, data=data, headers=headers)
-        print r.status_code
+        print(r.status_code)
         js = r.json()
         # totalCount = js.get('content').get('data').get('page').get('totalCount')
         try:
-            # print r.text
+            # print(r.text)
             results = js.get('content').get('data').get('page').get('result')
-            print results
+            print(results)
             # time.sleep(random.random()*10)
         except:
-            print "can't find result"
-            print i
+            print("can't find result")
+            print(i)
             continue
 
 
@@ -61,8 +61,8 @@ def _company():
     r = requests.post(url='https://www.lagou.com/gongsi/215-0-0.json',
                       data=data,
                       headers=headers)
-    print r.status_code
-    print r.text
+    print(r.status_code)
+    print(r.text)
 
 
 #_postdata()

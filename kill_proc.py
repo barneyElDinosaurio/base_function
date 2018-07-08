@@ -20,7 +20,7 @@ def get_process(name):
 def old_function():
     f=open('kill_id.txt')
     data = f.readlines()
-    #print data
+    #print(data)
     for i in data:
         kid= i.split()[1]
         os.system('kill %s' %kid)

@@ -14,14 +14,14 @@ class DoubanMovie(BaseSpider):
     allowed_domains=['movie.douban.com']
     start_urls=[]
     def start_requests(self):
-        print os.getcwd()
+        print(os.getcwd())
         movie_names=open('film_name.txt','r').readlines()
-        #print movie_names
+        #print(movie_names)
 
         base_url='http://movie.douban.com/subject_search?search_text='
         for i in movie_names:
             i=i.strip().replace(' ','+')
-            print i
+            print(i)
             self.start_urls.append(base_url+i)
 
         for i in self.start_urls:
@@ -30,4 +30,4 @@ class DoubanMovie(BaseSpider):
 
 
     def parse(self,response):
-        print response.body
+        print(response.body)

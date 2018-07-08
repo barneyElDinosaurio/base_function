@@ -20,12 +20,12 @@ task = manager.get_task_queue()
 result = manager.get_result_queue()
 
 for url in ['Image_url'+str(i) for i in range(10)]:
-	print 'put url {} to task'.format(url)
+	print('put url {} to task'.format(url))
 	task.put(url)
 
-print 'try to get result'
+print('try to get result')
 
 for i in range(10):
-	print 'result is {}'.format(result.get(timeout=10))
+	print('result is {}'.format(result.get(timeout=10)))
 
 manager.shutdown()

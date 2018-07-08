@@ -21,16 +21,16 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-        print type(Ui_MainWindow)
-        print type(QtBaseClass)
+        print(type(Ui_MainWindow))
+        print(type(QtBaseClass))
         self.getName.clicked.connect(self.showName)
 
     def showName(self):
         name = self.textEdit.toPlainText()
         if name == "":
-            print "Please input the name"
+            print("Please input the name")
         else:
-            print name
+            print(name)
             self.display_line.setText(name)
 
 
@@ -41,7 +41,7 @@ def base_usage():
     w.show()
     sys.exit(app.exec_())
     #这样不会显示end
-    print "End"
+    print("End")
 
 
 class ChangeUI_lable(QtGui.QWidget):

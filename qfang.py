@@ -16,6 +16,6 @@ header = {
     'Referer': 'http://m.qfang.com/beijing/garden',
     'X-Requested-With': 'XMLHttpRequest'}
 p = requests.post(url=url, data={'more': 4},headers=header)
-print p.status_code
+print(p.status_code)
 s = p.text
-print s
+print(s)

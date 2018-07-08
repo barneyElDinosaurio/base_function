@@ -11,7 +11,7 @@ for _ in range(100):
         t = str(long(time.time() * 1000))
     else:
         t = str(int(time.time() * 1000))
-    #print t
+    #print(t)
     url='https://pan.baidu.com/share/verify?surl=o8zEuJC&t=%s&bdstoken=null&channel=chunlei&clienttype=0&web=1&app_id=250528&logid=MTUwNTkwMTQ3NzYzNjAuNTQwMjcwOTYwMTg0MTkyOA==' %t
     #url = 'https://pan.baidu.com/share/verify?surl=mhPHC7Y&t=%s&bdstoken=c5232d2c47ec22f6fb2de6a151828c91&channel=chunlei&clienttype=0&web=1&app_id=250528&logid=MTUwNTkwMDQyNDI2MzAuNDQyNTQxMzMyNDU0MTQ4NQ==' % t
     data = {'pwd': '2222', 'vcode': '', 'vcode_str': ''}

@@ -7,15 +7,15 @@ try:
     open('data.cfg', 'r')
 except urllib2.UnknownHandler, e:
     #Exception A handle
-    print "can't find"
+    print("can't find")
 except urllib2.URLError, e:
     #Exception B handle
-    print "still error"
+    print("still error")
 except urllib2.UnknownHandler, e:
     #Other exception handle
-    print "error"
+    print("error")
 else:
     #if no exception,get here
-    print "open"
+    print("open")
 finally:
-    print "finally"
+    print("finally")

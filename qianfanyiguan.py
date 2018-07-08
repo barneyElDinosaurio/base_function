@@ -8,7 +8,7 @@ session = DBSession()
 
 
 def storedata(d):
-    # print 'in store'
+    # print('in store')
     obj = Apps(
         app_rank=d['app_rank'],
         appName=d['appName'],
@@ -32,7 +32,7 @@ def storedata(d):
     try:
         session.commit()
     except Exception, e:
-        print e
+        print(e)
         session.rollback()
 
 
@@ -52,8 +52,8 @@ def getprimarycatelogy():
             '$reinitialize': 'undefined'}
 
     r = requests.post(url=url, data=data, headers=headers)
-    # print r.status_code
-    # print r.text
+    # print(r.status_code)
+    # print(r.text)
     js = r.json()
     primary_cates = js['datas']['primaryCateList']
     for primary_cate in primary_cates:
@@ -62,8 +62,8 @@ def getprimarycatelogy():
         first_cateName = primary_cate['cateName']
         d['first_cate_id'] = first_cate_id
         d['first_cateName'] = first_cateName
-        print 'first cate id', first_cate_id
-        print 'first cate name ', first_cateName
+        print('first cate id', first_cate_id)
+        print('first cate name ', first_cateName)
         getcatelogy(d)
 
 
@@ -84,25 +84,25 @@ def getcatelogy(d):
             '$reinitialize': 'undefined'}
 
     r = requests.post(url=url, data=data, headers=header)
-    # print r.status_code
-    # print r.text
+    # print(r.status_code)
+    # print(r.text)
     js = r.json()
     cates = js['datas']['cateInfoList']
-    # print len(cates)
+    # print(len(cates))
     for cate in cates:
         # d=dict()
         # first_cateName = cate['cateName']
         cateId = cate['cateId']
         # d['first_cateName']=first_cateName
         d['cateId'] = cateId
-        print 'second id', cateId
-        print 'second name', cate['cateName']
+        print('second id', cateId)
+        print('second name', cate['cateName'])
         #getdata(d)
-        # print 'type'
-        # print type(cateId)
+        # print('type')
+        # print(type(cateId))
         '''
         if (cateId==1191294) or (cateId==1041045):
-            print 'got'
+            print('got')
             getdata(d)
         else:
             continue
@@ -127,14 +127,14 @@ def getdata(d):
     try:
         r = useproxy(url=url, headers=header, postdata=data, post=True)
 
-        # print r.status_code
-        # print r.text
+        # print(r.status_code)
+        # print(r.text)
         js = r.json()
         app_lists = js['datas']['appIndexList']
-        # print len(app_lists)
+        # print(len(app_lists))
         # d = dict()
         if len(app_lists) == 0:
-            print "empyt app in catelogy", d['first_cateName']
+            print("empyt app in catelogy", d['first_cateName'])
         for rank, app in enumerate(app_lists):
             app_rank = rank + 1
             try:
@@ -146,7 +146,7 @@ def getdata(d):
                 developCompanyFullName = app['developCompanyFullName']
 
             except Exception, e:
-                print e
+                print(e)
                 developCompanyFullName = 'Nodata'
             # 二级目录
 
@@ -212,7 +212,7 @@ def getdata(d):
             d['appName'] = appName
 
             # 开发公司全称
-            print appName
+            print(appName)
             d['developCompanyFullName'] = developCompanyFullName
             d['second_cateName'] = second_cateName
             # d['first_cateName'] = first_cateName
@@ -239,10 +239,10 @@ def getdata(d):
             storedata(d)
 
     except  Exception, e:
-        print e
-        print d['cateId']
+        print(e)
+        print(d['cateId'])
         # r = requests.post(url=url, data=data, headers=header)
-        print 'wait'
+        print('wait')
 
 
 getprimarycatelogy()

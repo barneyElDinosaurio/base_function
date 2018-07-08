@@ -40,11 +40,11 @@ s.headers.update({'Proxy-Authorization': authHeader})
 while 1:
     pg = s.get(testUrl)  # tuple: 300 代表 connect timeout, 270 代表 read timeout
     #pg.encoding = 'GB18030'
-    #print pg.text
+    #print(pg.text)
     p = re.compile(u'请输入图片中的验证码')
     if p.findall(pg.text):
-        print "需要手动输入验证码"
+        print("需要手动输入验证码")
         # return 404
         raw_input("打开浏览器，输入验证码后按Enter确认键继续")
-    print pg.status_code
+    print(pg.status_code)
     time.sleep(5)

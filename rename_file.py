@@ -4,15 +4,15 @@ import os
 def rename_file():
     files=os.listdir('.')
     for file in files:
-        # print file
+        # print(file)
         if file.split('.')[-1]=='mp4':
-            # print type(file)
+            # print(type(file))
             new_name=file.replace(' ','_')
-            # print new_name
+            # print(new_name)
             # new_name=new_name.encode('unicode-escape')
-            # print type(new_name)
-            # print file
-            # print new_name
+            # print(type(new_name))
+            # print(file)
+            # print(new_name)
             print(file)
             print(type(file))
             print(new_name)
@@ -32,7 +32,7 @@ def push_file():
             os.system(cmd)
 
 if __name__ == "__main__":
-    # print "Start from here"
+    # print("Start from here")
     os.chdir('D:\\git\\you-get')
     # rename_file()
     push_file()

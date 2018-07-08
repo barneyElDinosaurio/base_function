@@ -15,7 +15,7 @@ class Rectangle:
 
 rec = Rectangle()
 rec.width, rec.height = 10, 20
-print rec.area()
+print(rec.area())
 
 
 class Suit():
@@ -53,8 +53,8 @@ class FaceCard(Card):
 
 cards = [AceCard('A',Spade),NumberCard('2',Heart)]
 for i in cards:
-    print i
+    print(i)
 rank=10
 class_ = {1:AceCard,11:FaceCard,12:FaceCard,13:FaceCard}.get(rank,NumberCard)
 
-print class_
+print(class_)

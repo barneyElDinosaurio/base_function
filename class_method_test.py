@@ -9,7 +9,7 @@ class Hero():
     '''
     @staticmethod
     def sayHello():
-        print "hello in static"
+        print("hello in static")
 
     '''
     will this effect ?
@@ -17,21 +17,21 @@ class Hero():
     @classmethod
     def sayHello_cls(cls):
         if cls.__name__ == "Girl_Hero":
-            print "Girl_Hero in classmethod"
+            print("Girl_Hero in classmethod")
         elif cls.__name__ == "Boy_Hero":
-            print "Boy_Here in classmethod"
+            print("Boy_Here in classmethod")
 
 
 
 
 class Girl_Hero(Hero):
     def foo(self):
-        print "in Girl"
+        print("in Girl")
 
 
 class Boy_Hero(Hero):
     def foo(self):
-        print "in Boy"
+        print("in Boy")
 
 
 
@@ -41,25 +41,25 @@ class Boy_Hero(Hero):
 #factory mode
 class worker():
     def pick(self):
-        print "Pick up"
+        print("Pick up")
 
     def drop(self):
-        print "Drop down"
+        print("Drop down")
 
 
 class Phone_worker(worker):
     def work_fun(self):
-        print "calling"
+        print("calling")
 
 
 class Wath_worker(worker):
     def work_fun(self):
-        print "watching"
+        print("watching")
 
 
 class PC_worker(worker):
     def work_fun(self):
-        print "Typing"
+        print("Typing")
 
 
 class Factory_Work():
@@ -103,20 +103,20 @@ class abc_abstract_test():
 
 class sub_class(abc_abstract_test):
     def getSize(self):
-        print "Size"
+        print("Size")
 
     def fun(self):
-        print "New here"
+        print("New here")
 
 class Base():
     def __init__(self):
-        print "in base init"
+        print("in base init")
 
 class Child(Base):
     def __init__(self):
-        print 'child init'
+        print('child init')
     def foo(self):
-        print 'in foo'
+        print('in foo')
 
 class TestDir():
     name = 'Rokcy'
@@ -151,8 +151,8 @@ class Birthday(object):
 
 
     def show(self):
-        print self.birthday
-        print type(self.birthday)
+        print(self.birthday)
+        print(type(self.birthday))
 
 
 
@@ -169,7 +169,7 @@ def main():
     # test1.sayHello()
 
     # h=Hero()
-    # print h.__doc__
+    # print(h.__doc__)
     # h.sayHello()
     # Hero.sayHello()
 
@@ -177,7 +177,7 @@ def main():
 
     # ik1 = Kls()
     # ik2 = Kls()
-    # print '*'*10
+    # print('*'*10)
     # print(get_no_of_instances(Kls))
 
     # obj = Birthday(2018,1,1)
@@ -187,9 +187,9 @@ def main():
 
 '''
 person = Person("Jacky", "He")
-print person.p_name
+print(person.p_name)
 person.last_name = "HHHH"
-print person.p_name
+print(person.p_name)
 '''
 #obj=sub_class()
 #obj.fun()
@@ -197,11 +197,11 @@ print person.p_name
 #obj = Child()
 #obj.foo()
 # obj = TestDir()
-# print dir(obj)
-# print vars(obj).keys()
-# print dir(TestDir)
-# print TestDir.__dict__
-# print vars(TestDir)
-# #print vars()
-# print obj
+# print(dir(obj))
+# print(vars(obj).keys())
+# print(dir(TestDir))
+# print(TestDir.__dict__)
+# print(vars(TestDir))
+# #print(vars())
+# print(obj)
 main()

@@ -59,7 +59,7 @@ class MsgSend:
             if i[u'PYQuanPin'] == self.name:
                 self.toName = i['UserName']
         if not self.toName:
-            print 'print input the right person name'
+            print('print input the right person name')
 
     def send_price(self, name, real_price, real_percent, types):
         content = name + ' ' + str(real_price) + ' ' + str(real_percent) + ' percent ' + types
@@ -86,11 +86,11 @@ def sendmail(content, subject):
         smtp.sendmail(msg['from'], msg['to'], msg.as_string())
         smtp.quit()
     except Exception, e:
-        print e
+        print(e)
 
 
 if __name__ == '__main__':
     # msg=MsgSend(u'wei')
     # msg.send_price('hsdq',12,12,'sell')
-    # print FROM_MAIL
+    # print(FROM_MAIL)
     pass

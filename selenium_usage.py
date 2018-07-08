@@ -56,29 +56,29 @@ def anjuke():
         try:
             browser.findElement(By.id('web_200'))
         except:
-            print "Error"
+            print("Error")
         cookiess=browser.get_cookies()
-        print 'cookies:',cookiess
-        print type(cookiess)
-        print len(cookiess)
+        print('cookies:',cookiess)
+        print(type(cookiess))
+        print(len(cookiess))
         for i in cookiess:
             for k,v in i.items():
-                print k,v
+                print(k,v)
         #cookie=browser.get_cookie('new_session')
-        #print 'cookie',cookie
-        #print type(cookie)
+        #print('cookie',cookie)
+        #print(type(cookie))
         l = browser.find_elements_by_xpath('//div[@_soj="xqlb"]')
-        print len(l)
+        print(len(l))
         for i in l:
             '''
-            print 'Name:',i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').text
-            print 'Link:',i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').get_attribute('href')
-            print 'Address',i.find_element_by_xpath('.//div[@class="li-info"]/address').text
-            print 'Built date:',i.find_element_by_xpath('.//div[@class="li-info"]/p').text
-            print 'Price: ' , i.find_element_by_xpath('.//div[@class="li-side"]/p/strong').text
+            print('Name:',i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').text)
+            print('Link:',i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').get_attribute('href'))
+            print('Address',i.find_element_by_xpath('.//div[@class="li-info"]/address').text)
+            print('Built date:',i.find_element_by_xpath('.//div[@class="li-info"]/p').text)
+            print('Price: ' , i.find_element_by_xpath('.//div[@class="li-side"]/p/strong').text)
             '''
-        #print browser.current_url
-        #print browser.title
+        #print(browser.current_url)
+        #print(browser.title)
 
         browser.close()
     # time.sleep(60)
@@ -118,7 +118,7 @@ def shop():
     time.sleep(5)
     txt=browser.page_source
 
-    print txt
+    print(txt)
 
     #browser.send_keys(Keys.DOWN)
 

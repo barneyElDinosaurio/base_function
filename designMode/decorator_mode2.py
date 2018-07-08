@@ -1,8 +1,8 @@
 known = {0:0,1:1}
 
 def fibonacci(n):
-	print 'current n {}'.format(n)
-	# print 'know : ',known
+	print('current n {}'.format(n))
+	# print('know : ',known)
 	if n in known:
 		return known[n]
 
@@ -12,7 +12,7 @@ def fibonacci(n):
 
 	return res
 
-print fibonacci(10)
+print(fibonacci(10))
 # from timeit import Timer
 
 # t =Timer('fibonacci(10)','from __main__ import fibonacci')

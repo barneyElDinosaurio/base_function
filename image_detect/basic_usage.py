@@ -141,7 +141,7 @@ def single_word():
 
     for i in os.listdir('.'):
         if os.path.isfile(i) and re.search('(\d+)-crop-(\d+).gif', i):
-            # print i
+            # print(i)
 
             im = Image.open(i)
             im = im.convert('L')

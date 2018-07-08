@@ -31,7 +31,7 @@ Usage:
 >>> from pytesser import *
 >>> im = Image.open('phototest.tif')
 >>> text = image_to_string(im)
->>> print text
+>>> print(text)
 This is a lot of 12 point text to test the
 ocr code and see if it works on all types
 of file format.
@@ -44,8 +44,8 @@ brown dog jumped over the lazy fox.
 >>> try:
 ... 	text = image_file_to_string('fnord.tif', graceful_errors=False)
 ... except errors.Tesser_General_Exception, value:
-... 	print "fnord.tif is incompatible filetype.  Try graceful_errors=True"
-... 	print value
+... 	print("fnord.tif is incompatible filetype.  Try graceful_errors=True")
+... 	print(value)
 ... 	
 fnord.tif is incompatible filetype.  Try graceful_errors=True
 Tesseract Open Source OCR Engine
@@ -54,11 +54,11 @@ Tessedit:Error:Read of file failed:fnord.tif
 Signal_exit 31 ABORT. LocCode: 3  AbortCode: 3
 
 >>> text = image_file_to_string('fnord.tif', graceful_errors=True)
->>> print "fnord.tif contents:", text
+>>> print("fnord.tif contents:", text)
 fnord.tif contents: fnord
 
 >>> text = image_file_to_string('fonts_test.png', graceful_errors=True)
->>> print text
+>>> print(text)
 12 pt
 And Arnazwngw few dwscotheques provwde jukeboxes
 Tames Amazmgly few dnscotheques pmvxde Jukeboxes

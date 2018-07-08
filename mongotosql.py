@@ -74,7 +74,7 @@ for i in data_list:
     try:
         session.commit()
     except Exception, e:
-        print e
+        print(e)
         session.rollback()
 
 session.close()

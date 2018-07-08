@@ -27,7 +27,7 @@ def getCityLink():
     tree = etree.HTML(fp)
     op = open('lianjia_city_link.txt', 'w')
     for i in tree.xpath('//li/a/@href'):
-        print '\'https://m.lianjia.com' + i + 'xiaoqu\','
+        print('\'https://m.lianjia.com' + i + 'xiaoqu\',')
         op.write('https://m.lianjia.com' + i + 'xiaoqu' + '\n')
 
 
@@ -35,9 +35,9 @@ def getCount(url):
     request_url = url + 'pg1/?_t=1'
 
     r = requests.get(url=request_url, headers=headers)
-    print r.text
+    print(r.text)
     xiaoqu_count = re.findall(r'\\"total\\":(\d+)}', r.text)[0]
-    print xiaoqu_count
+    print(xiaoqu_count)
 
 
 # url='https://m.lianjia.com/hz/xiaoqu/pg1/?_t=1'
@@ -47,14 +47,14 @@ def getAccess():
     # url='https://m.lianjia.com/sz/xiaoqu'
     url = 'https://m.lianjia.com/sz/xiaoqu/pg2/?_t=1'
     s = requests.get(url=url, headers=headers)
-    print s.text
+    print(s.text)
 
 
 def show_body():
     # with open('lianjia_body.txt','r') as fp:
     with open('cq_error.txt', 'r') as fp:
         content = json.loads(fp.read())['body']
-    # print content
+    # print(content)
     tree = etree.HTML(content)
     nodes = tree.xpath('//li[@class="pictext"]')
     for node in nodes:
@@ -63,15 +63,15 @@ def show_body():
         desc = node.xpath('.//div[@class="item_list"]/div[@class="item_other text_cut"]/text()')[0]
         details = desc.split()
         price = node.xpath('.//div[@class="item_list"]/div[@class="item_minor"]/span/em/text()')[0]
-        print xiaoqu_url
-        print name
-        print len(details)
-        # print details
+        print(xiaoqu_url)
+        print(name)
+        print(len(details))
+        # print(details)
         for i in details:
-            print i
+            print(i)
             print
-            # print details[0],details[1],details[2]
-            # print price
+            # print(details[0],details[1],details[2])
+            # print(price)
 
 
 def get_city_link():
@@ -80,7 +80,7 @@ def get_city_link():
     url = 'https://m.lianjia.com/city/'
     r = requests.get(url=url, headers=headers)
     contnet = r.text
-    # print contnet
+    # print(contnet)
     tree = etree.HTML(contnet)
     t1 = tree.xpath('//ul[@class="item_lists"]')[1]
     city_list = []
@@ -117,13 +117,13 @@ def getXiaoquCount():
     city_count = {}
     city_link = get_city_link()
     for city in city_link:
-        print city
+        print(city)
         city_code = city.split('/')[3]
         request_url = city + 'xiaoqu/pg1/?_t=1'
         r = requests.get(url=request_url, headers=headers)
-        print r
+        print(r)
         xiaoqu_count = re.findall(r'\\"total\\":(\d+)}', r.text)[0]
-        print "xiaoqu count", xiaoqu_count
+        print("xiaoqu count", xiaoqu_count)
         city_count[city_code] = int(xiaoqu_count)
     return city_count
 
@@ -145,9 +145,9 @@ def getSZXiaoqu():
     }
     for i in range(300, 400):
         access_url = 'https://m.lianjia.com/sz/xiaoqu/pg%d/?_t=1' % i
-        print access_url
+        print(access_url)
         r = requests.get(url=access_url, headers=headers)
-        print r.status_code
+        print(r.status_code)
         parse_body(r.text)
 
 
@@ -157,14 +157,14 @@ def parse_body(data):
     crawl_date = '2017-08-30'
     js = json.loads(data)
     arg = json.loads(js['args'])
-    print "No more data: ", arg['no_more_data']
+    print("No more data: ", arg['no_more_data'])
     body = js['body']
     p = re.compile('"cur_city_name":"(.*?)"')
     city_name = p.findall(js['args'])[0].decode('unicode_escape')
     tree = etree.HTML(body)
     nodes = tree.xpath('//li[@class="pictext"]')
     # log.msg(len(nodes), level=log.INFO)
-    print "number: ", len(nodes)
+    print("number: ", len(nodes))
     for node in nodes:
         items = {}
         # xiaoqu_url =node.xpath('.//a[@class="flexbox post_ulog"]/@href')[0]
@@ -210,7 +210,7 @@ def parse_body(data):
         fp.write(str)
         fp.write('\n')
 
-        # print 'type of items : ',type(items)
+        # print('type of items : ',type(items))
         # log.msg(items, level=log.INFO)
         # yield items
 
@@ -226,7 +226,7 @@ def getSZXiaoqu_WEB():
 
         headers['Referer'] = url
         r = requests.get(url=url, headers=headers)
-        print r.status_code
+        print(r.status_code)
         parse_bj(r.text)
 
 def parse_bj(content):
@@ -235,16 +235,16 @@ def parse_bj(content):
     nodes = tree.xpath('//ul[@class="listContent"]/li')
     for node in nodes:
         name = node.xpath('.//div[@class="title"]/a/text()')[0]
-        print 'name: ',name
+        print('name: ',name)
         try:
             position = node.xpath('.//div[@class="positionInfo"]/a/text()')
             address = position[0] + position[1]
         except:
             address = 'NA'
-        print 'address: ', address
+        print('address: ', address)
         try:
             text_content = node.xpath('.//div[@class="positionInfo"]/text()')
-            # print len(build_date)
+            # print(len(build_date))
 
             detail = text_content[3].split('/')
             # 除去北京，北京的页面会多一个小区结构
@@ -254,7 +254,7 @@ def parse_bj(content):
                 building_type = 'NA'
             '''
             for k, i in enumerate(detail):
-                print k, i
+                print(k, i)
 
             if len(detail) == 4:
                 buiding_type = detail[1].strip() + detail[3].strip()
@@ -267,8 +267,8 @@ def parse_bj(content):
         except:
             building_date = '未知年建成'
             building_type = 'NA'
-        print 'building type: ',building_type
-        print 'building_date:',building_date
+        print('building type: ',building_type)
+        print('building_date:',building_date)
         price_t = node.xpath('.//div[@class="totalPrice"]/span/text()')[0]
 
         p = re.findall('\d+', price_t)
@@ -276,13 +276,13 @@ def parse_bj(content):
             price = int(price_t)
         else:
             price = 0
-        print 'price:',price
+        print('price:',price)
 
 def parse_lianjia_web(data):
     fp = open('web_lianjia.txt', 'a')
     tree = etree.HTML(data)
     nodes = tree.xpath('//ul[@class="house-lst"]/li')
-    print  "len : ", len(nodes)
+    print( "len : ", len(nodes))
     for node in nodes:
         name = node.xpath('.//div[@class="info-panel"]/h2/a/text()')[0]
         try:
@@ -290,26 +290,26 @@ def parse_lianjia_web(data):
             address = position[0] + position[1]
         except:
             address = 'NA'
-        print address
+        print(address)
         try:
             text_content = node.xpath('.//div[@class="con"]/text()')
             '''
             for i in text_content:
-                print i.strip()
+                print(i.strip())
             '''
-            print text_content[3].strip()
+            print(text_content[3].strip())
             price_t = node.xpath('.//div[@class="price"]/span/text()')[0]
-            print price_t.strip()
+            print(price_t.strip())
             '''
             for i in detail:
-                print i.strip()
+                print(i.strip())
             '''
             #buiding_type=detail[1].strip()
-            #print buiding_type
+            #print(buiding_type)
             #build_date= detail[-1].strip()
             '''
             for k, i in enumerate(detail):
-                print k, i
+                print(k, i)
             '''
             '''
             if len(detail)==4:
@@ -323,12 +323,12 @@ def parse_lianjia_web(data):
             build_date='NA'
             buiding_type='NA'
         #detail=build_date[3].split('/')
-        #print len(detail)
+        #print(len(detail))
 
         #items['name'] = name
-        #print name
-        #print build_date
-        #print buiding_type
+        #print(name)
+        #print(build_date)
+        #print(buiding_type)
         #str1 = json.dumps(items)
         #fp.write(str1)
         #fp.write('\n')
@@ -347,8 +347,8 @@ def get_lianjia_m():
         url = base_url + '?_t=1'
         headers['Referer'] = base_url
         r = requests.get(url=url, headers=headers)
-        print r.status_code
-        # print r.text
+        print(r.status_code)
+        # print(r.text)
         parse_mobile_lj(r.text)
 
 
@@ -358,14 +358,14 @@ def parse_mobile_lj(data):
     crawl_date = '2017-08-30'
     js = json.loads(data)
     arg = json.loads(js['args'])
-    print "No more data: ", arg['no_more_data']
+    print("No more data: ", arg['no_more_data'])
     body = js['body']
-    # print body
+    # print(body)
     # time.sleep(2)
     tree = etree.HTML(body)
 
     nodes = tree.xpath('//li[@class="pictext"]')
-    print "number: ", len(nodes)
+    print("number: ", len(nodes))
     for node in nodes:
         items = {}
         # xiaoqu_url =node.xpath('.//a[@class="flexbox post_ulog"]/@href')[0]
@@ -414,17 +414,17 @@ def mobile_case():
         'Accept-Encoding': 'gzip'
     }
     x='MjAxNzAzMjRfYW5kcm9pZDo5ZDY5YjU0M2ZkMzQ5MTczMjJiZDIyN2VkOTdmOWNlYmRjYzMxYWFj'
-    print len(x)
-    print headers2
+    print(len(x))
+    print(headers2)
     t = int(time.time())
     base_auth='MjAxNzAzMjRfYW5kcm9pZD'
-    print len(base_auth)
+    print(len(base_auth))
     urlx = 'https://app.api.lianjia.com/house/community/search?limit_offset=80&city_id=440300&limit_count=20&request_ts=%s' % t
-    print urlx
+    print(urlx)
     r = requests.get(url=urlx, headers=headers2)
     js = r.json()
     for k, v in js.items():
-        print k, v
+        print(k, v)
 
 def getXiaoquDetail():
     url='https://m.lianjia.com/sz/xiaoqu/2411049901872/'
@@ -441,11 +441,11 @@ def getXiaoquDetail():
 
     r=requests.get(url=url,headers=header_xiaoqu)
     tree=etree.HTML(r.text,parser=etree.HTMLParser(encoding='utf-8'))
-    print r.text
+    print(r.text)
     #x=tree.xpath('//meta[@class="location"]/@content')[0]
-    #print x
+    #print(x)
     name = tree.xpath('//div[@class="xiaoqu_head_title"]/h1/text()')[0]
-    print name
+    print(name)
     # title=tree2.title
     #self.logger.info('name %s' % name)
 
@@ -457,64 +457,64 @@ def getXiaoquDetail():
     #longitude = cooridinate.split(',')[0]
     #latitude = cooridinate.split(',')[1]
     #address = tree.xpath('//p[@class="xiaoqu_head_address"]/text()')[0]
-    #print address
+    #print(address)
     #details = tree.xpath('//div[@class="mod_box jichuxinxi"]')
-    #print details
+    #print(details)
     '''
     building_date = details.xpath('.//div[@class="value"]/text()')[0].strip()
-    print building_date
+    print(building_date)
     building_type = details.xpath('.//div[@class="value"]/text()')[0].strip()
-    print building_type
+    print(building_type)
     '''
     #price = tree.xpath('//div=[@class="mod_box zoushi"]/div[@class="box_col"]/h4/text()')[0]
 
-    #print latitude
-    #print longitude
-    #print price
-    #print address
-    #print building_type
-    #print building_date
-    #print city_name
-    #print name
+    #print(latitude)
+    #print(longitude)
+    #print(price)
+    #print(address)
+    #print(building_type)
+    #print(building_date)
+    #print(city_name)
+    #print(name)
     src_link=tree.xpath('//div[@class="mod_box loudong"]/div/a/img/@src')[0]
     point=re.findall('center=(.*?)&width',src_link)[0]
-    print point
+    print(point)
     longtitue,latitude=point.split(',')
-    print longtitue
-    print latitude
+    print(longtitue)
+    print(latitude)
 
 
     address = tree.xpath('//p[@class="xiaoqu_head_address"]/text()')[0]
-    print address
+    print(address)
     details = tree.xpath('//div[@class="mod_box jichuxinxi"]/div[@class="mod_cont"]/div[@class="row"]')
-    print len(details)
+    print(len(details))
     building_date = details[0].xpath('.//div[@class="value"]/text()')[0].strip()
     #time.sleep(20)
     #building_date
-    print building_date
+    print(building_date)
     building_type = details[1].xpath('.//div[@class="value"]/text()')[0].strip()
-    print building_type
+    print(building_type)
     price = tree.xpath('//div[@class="mod_box zoushi"]//div[@class="gridbox col_3"]//div[@class="box_col"]/h4/text()')[0].strip()
-    print price
-    #print latitude
-    #print longitude
-    print price
-    print address
-    print building_type
-    print building_date
+    print(price)
+    #print(latitude)
+    #print(longitude)
+    print(price)
+    print(address)
+    print(building_type)
+    print(building_date)
     desc = tree.xpath('//head/meta[@name="location"]/@content')[0].encode('utf-8').strip()
-    print desc
-    print type(desc)
+    print(desc)
+    print(type(desc))
     city_name = re.findall('city=(.*?);', desc)[0]
-    print city_name
+    print(city_name)
     cooridinate = re.findall('coord=(.*)', desc)
-    print len(cooridinate)
-    print cooridinate
+    print(len(cooridinate))
+    print(cooridinate)
     longitude = cooridinate[0].split(',')[0]
     latitude = cooridinate[0].split(',')[1]
 
-    print latitude
-    print longitude
+    print(latitude)
+    print(longitude)
 
 # get_lianjia_m()
 #mobile_case()

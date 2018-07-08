@@ -26,7 +26,7 @@ class DefineIter:
 a = iter(DefineIter(10))
 
 for i in a:
-    print i
+    print(i)
 
 
 
@@ -46,4 +46,4 @@ class Counter:
             raise StopIteration
 
 # counter = iter(Counter())
-# print next(counter)
+# print(next(counter))

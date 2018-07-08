@@ -4,7 +4,7 @@ import pandas as pd
 import itertools
 engine =get_engine('qdm225205669_db')
 df= pd.read_sql('aws_users',engine,index_col='uid')
-# print df
+# print(df)
 
 def is_same(x,y):
 	return 1 if x==y else 0
@@ -24,18 +24,18 @@ def loop_crash(src):
 	df['new_pass']=map(crash,df['salt'],df['src'])
 	df['result'] = df.apply(lambda x:is_same(x.password,x.new_pass),axis=1)
 	if len(df[df['result']==1])>0:
-		print df[df['result']==1]['email']
-		print src
+		print(df[df['result']==1]['email'])
+		print(src)
 
 def start_crash():
 
 	# for i in itertools.permutations('1234567890', 6):
 	# 	x=''.join(i)
-	# 	# print x
+	# 	# print(x)
 	# 	loop_crash(x)
 
 	for i in range(0,1000000):
 		src=str(i).zfill(6)
-		print src
+		print(src)
 		loop_crash(src)
 start_crash()

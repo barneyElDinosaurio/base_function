@@ -41,10 +41,10 @@ while 1:
     '''
     p = re.compile(u'请输入图片中的验证码')
     if p.findall(resp):
-        print "需要手动输入验证码"
+        print("需要手动输入验证码")
         # return 404
         raw_input("打开浏览器，输入验证码后按Enter确认键继续")
     '''
-    print resp
+    print(resp)
     time.sleep(2)
 

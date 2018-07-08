@@ -3,9 +3,9 @@ import sys
 sys.setrecursionlimit(1500)
 def recursion(n):
     if(n <= 0):
-        print n
+        print(n)
         return
-    print n
+    print(n)
     recursion(n - 1)
 
 if __name__ == "__main__":

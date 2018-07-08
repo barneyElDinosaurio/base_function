@@ -36,13 +36,13 @@ def yield_calc(rate, money):
 def fv():
     for i in range(1, 8):
         rise = (1.1 ** i - 1) * 100
-        print "%d day's raise is %.2f" % (i, rise)
+        print("%d day's raise is %.2f" % (i, rise))
 
     for i in range(1,10):
         rise = 1.01**i
-        print rise
+        print(rise)
 
-    print math.log(2,1.01)
+    print(math.log(2,1.01))
 
 def fv_yield(n):
     for i in range(1,n):
@@ -53,40 +53,40 @@ def fv_yield(n):
 
 
 #c = yield_calc(3.65, 1000000)
-#print c
+#print(c)
 
-#print round(17.955, 2)
+#print(round(17.955, 2))
 def percentage(a,b):
-    print (a-b)*1.00/b*100
+    print((a-b)*1.00/b*100)
 
 
 
 def validation():
     for i in factorial_generator(10):
-        print i
+        print(i)
 
-    print permutations(2,6)
-    print combination(2,6)
+    print(permutations(2,6))
+    print(combination(2,6))
 
 def value_large():
     m = sys.maxint
-    print type(m)
+    print(type(m))
     m=m+1
-    print m
+    print(m)
     w  = math.log(m,2)
-    print w
-    print 2**w
+    print(w)
+    print(2**w)
 def main():
     #percentage(0.195,0.185)
-    #print factorial(5)
+    #print(factorial(5))
     #validation()
     #fv()
     # fv_g=fv_yield(100)
-    # print fv_g.next()
+    # print(fv_g.next())
     value_large()
 
 def ops_test(n):
-    print n
+    print(n)
     return n
 
 # run left then right

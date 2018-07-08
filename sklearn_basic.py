@@ -30,19 +30,19 @@ def timeit(name=None):
             start = datetime.datetime.now()
             r = func(*args, **kargs)
             end = datetime.datetime.now()
-            print '---------------'
-            print 'project name: %s' % name
-            print 'start at: %s' % start
-            print 'end at:   %s' % end
-            print 'cost:     %s' % (end - start)
-            print 'res:      %s' % r
-            print 'err1:     %s' \
+            print('---------------')
+            print('project name: %s' % name)
+            print('start at: %s' % start)
+            print('end at:   %s' % end)
+            print('cost:     %s' % (end - start))
+            print('res:      %s' % r)
+            print('err1:     %s' \)
                   % (50 - Counter(r[: 50]).most_common()[0][1])
-            print 'err2:     %s' \
+            print('err2:     %s' \)
                   % (50 - Counter(r[50: 100]).most_common()[0][1])
-            print 'err3:     %s' \
+            print('err3:     %s' \)
                   % (50 - Counter(r[100: 150]).most_common()[0][1])
-            print '---------------'
+            print('---------------')
             return r
         return wrapper1
     return wrapper2
@@ -139,9 +139,9 @@ def dbscan(fig):
     dbscan.fit(X_iris)
     res = dbscan.labels_
     core = dbscan.core_sample_indices_
-    print repr(core)
+    print(repr(core))
     size = [5 if i not in core else 40 for i in range(len(X_iris))]
-    print repr(size)
+    print(repr(size))
     for n, i in enumerate(X_iris):
         ax.scatter(*i[: 3], s=size[n], c='bgrcmyk'[res[n] % 7],
                    alpha=0.8, marker='o')

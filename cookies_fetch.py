@@ -15,7 +15,7 @@ def csdn():
     header['Referer'] = 'http://blog.csdn.net/yagamil'
     resp = requests.get(url, headers=header)
     # resp=session.get(url,headers=header)
-    print resp.text
+    print(resp.text)
 
 
 def getFromWebBrowser():
@@ -47,7 +47,7 @@ def build_opener_with_chrome_cookies(domain=None):
     cookiejar = cookielib.CookieJar()    # No cookies stored yet
 
     for row in conn.execute(sql):
-        print row
+        print(row)
         cookie_item = cookielib.Cookie(
             version=0, name=row[1], value=row[2],
                      port=None, port_specified=None,
@@ -100,4 +100,4 @@ if __name__ == "__main__":
     #cookie='lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; all-lj=406fadba61ceb7b8160b979dadec8dfa; _jzqx=1.1504062784.1504504548.5.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/ditu/; cityCode=sh; select_nation=1; ubt_load_interval_b=1504596501502; ubtd=30; __xsptplus696=696.12.1504593171.1504596501.12%234%7C%7C%7C%7C%7C%23%23gyQqVMqCwrVYIQ1usQGtakU25v17x-iv%23; ubta=4134795863.3241223259.1503971686808.1504596501519.1504596502502.79; ubtc=4134795863.3241223259.1504596502502.2B2FE031A44442B00CCE411FB51507D3; _jzqckmp=1; select_city=440300; _gat=1; _gat_global=1; _gat_new_global=1; _gat_dianpu_agent=1; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699,1504258015; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504602631; _smt_uid=59a62d3f.3df2aef3; CNZZDATA1255849469=1981540803-1504501266-null%7C1504599432; CNZZDATA1254525948=525084093-1504503860-null%7C1504601129; CNZZDATA1255633284=1367240027-1504501105-null%7C1504601407; CNZZDATA1255604082=785558872-1504501560-null%7C1504598966; _qzja=1.464521733.1504504547925.1504504547926.1504602551077.1504602626414.1504602631352.0.0.0.13.2; _qzjb=1.1504602551076.12.0.0.0; _qzjc=1; _qzjto=12.1.0; _jzqa=1.1378702697002941000.1504062784.1504504548.1504602546.10; _jzqc=1; _jzqb=1.13.10.1504602546.1; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.235704312.1504588604; lianjia_ssid=d82e4a07-563c-2f66-9eb3-cf38a595794c'
     cookie='lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; _jzqckmp=1; _jzqx=1.1504062784.1504605523.6.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=captcha%2Elianjia%2Ecom|jzqct=/; ubtreadd_b=; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699,1504258015,1504675657; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504675949; _smt_uid=59a62d3f.3df2aef3; _jzqa=1.1378702697002941000.1504062784.1504605523.1504675658.12; _jzqc=1; _jzqb=1.2.10.1504675658.1; _gid=GA1.2.235704312.1504588604; aliyungf_tc=AQAAAJ+TD1lFgAsAnkIYdH+u777bV6KX; select_city=320500; cityCode=su; _gat_u=1; __xsptplusUT_696=1; __xsptplus696=696.13.1504675656.1504676160.12%234%7C%7C%7C%7C%7C%23%23un_6cd_LD8h6uhQem1QRQG9agH-plMJm%23; _ga=GA1.2.331020171.1503638699; ubt_load_interval_b=1504676160161; ubt_load_interval_c=1504676160161; lianjia_ssid=0fbcdf1e-da2d-4751-d570-bc3e16a230b7; ubtd=12; gr_session_id_970bc0baee7301fa=c5746a98-e86d-4236-a0d6-4a262c3cbaff; ubta=1641808036.2641861454.1503971686808.1504676160235.1504676281816.91; ubtb=1641808036.2641861454.1504676281818.2FCA7814756D779495B76F54624DD919; ubtc=1641808036.2641861454.1504676281818.2FCA7814756D779495B76F54624DD919'
     trans = transCookie(cookie)
-    print trans.stringToDict()
+    print(trans.stringToDict())

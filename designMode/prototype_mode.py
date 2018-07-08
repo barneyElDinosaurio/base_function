@@ -18,11 +18,11 @@ a=A()
 b=B()
 c=b
 # c=copy.deepcopy(b)
-# print b
-print [str(i) for i in [b,c]]
-print [id(i) for i in [b,c]]
+# print(b)
+print([str(i) for i in [b,c]])
+print([id(i) for i in [b,c]])
 
 b.y=30
 
-print 'b',b
-print 'c',c
+print('b',b)
+print('c',c)

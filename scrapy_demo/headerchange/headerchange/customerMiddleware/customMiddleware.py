@@ -70,8 +70,8 @@ class CustomProxy(object):
         keys = param_map.keys()
         auth_header = "MYH-AUTH-MD5 " + str('&').join('%s=%s' % (key, param_map[key]) for key in keys)
 
-        # print time.strftime("%Y-%m-%d %H:%M:%S")
-        # print authHeader
+        # print(time.strftime("%Y-%m-%d %H:%M:%S"))
+        # print(authHeader)
 
         return auth_header
     '''

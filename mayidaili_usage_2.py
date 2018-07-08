@@ -25,7 +25,7 @@ paramMap["sign"] = sign
 keys = paramMap.keys()
 authHeader = "MYH-AUTH-MD5 " + str('&').join('%s=%s' % (key, paramMap[key]) for key in keys)
 
-print authHeader
+print(authHeader)
 
 # 接下来使用蚂蚁动态代理进行访问
 
@@ -39,4 +39,4 @@ request.add_header('Proxy-Authorization', authHeader)
 
 response = opener.open(request)
 
-print response.read()
+print(response.read())

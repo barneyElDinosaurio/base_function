@@ -13,16 +13,16 @@ class MyList(list):
 class Foo(type):
 	def __init__(cls, name, bases, attrs):
 		super(Foo,cls).__init__(name, bases, attrs)
-		print 'define on Foo, meta class'
+		print('define on Foo, meta class')
 		if '__str__' not in attrs:
 			warn('No __str__ method')
 
-print 'After foo before bar'
+print('After foo before bar')
 class Bar(object):
 	__metaclass__ = Foo
 
 	def __init__(self):
-		print 'define on Bar'
+		print('define on Bar')
 
 	def __str__(self):
 		return 'Bar is my home'
@@ -30,10 +30,10 @@ class Bar(object):
 
 # L = MyList()
 # L.add(2)
-# print L
+# print(L)
 
-print 'main'
+print('main')
 b = Bar()
-print 'end'
+print('end')
 
-print b
+print(b)

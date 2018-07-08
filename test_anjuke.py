@@ -17,28 +17,28 @@ headers = {
 start_url = 'https://m.anjuke.com/gu/community/?from=anjuke_home&p=1'
 r = requests.get(url=start_url, headers=headers)
 if  r.json()['data']:
-    print 'not empty'
+    print('not empty')
 else:
-    print 'empty'
+    print('empty')
 
 
 price_case='https://m.anjuke.com/gz/community/112952/'
 content=requests.get(url=price_case,headers=headers).text
 tree=etree.HTML(content)
 price=tree.xpath('//a[@data-soj="community_topprice"]/div[@class="txt-c"]/p[@class="price"]/text()')[0]
-print price
+print(price)
 name=tree.xpath('//div[@class="comm-tit"]/h1/text()')[0]
-print name
+print(name)
 address=tree.xpath('//div[@class="comm-tit"]/div[@class="comm-ad"]/p/text()')[0]
-print address
+print(address)
 building_type=tree.xpath('//div[@class="header-field"]/span')[0].xpath('./text()')[0]
 building_date=tree.xpath('//div[@class="header-field"]/span')[2].xpath('./text()')[0]
-print building_date
-print building_type
+print(building_date)
+print(building_type)
 pattern = 'data-center="(.*?)"'
 data = re.findall(pattern, content)
 t= data[0].split(',')
-print t[0]
-print t[1]
+print(t[0])
+print(t[1])
 #longitude = data[0]
 #latitude = data[1]

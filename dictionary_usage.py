@@ -5,20 +5,20 @@ import random
 def base_usage():
     keys = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
 
-    print keys
+    print(keys)
 
     values = [random.randint(0, 100) for i in range(len(keys))]
 
-    print values
+    print(values)
 
     d = zip(keys, values)
-    print d
-    print type(d)
+    print(d)
+    print(type(d))
     d1 = dict(d)
-    print d1
+    print(d1)
 
     k = sorted(d1.items(), key=lambda x: x[1], reverse=True)
-    print k
+    print(k)
 
 
 def choice_usage():
@@ -38,24 +38,24 @@ def choice_usage():
     l = CUSTOMER_FROM_NAMES
     l2 = l[1:9]
     l3 = l2 + l[:1]
-    print l3
-    print type(l[0])
-    print type(l[:1])
-    print l[0]
-    print l[:1]
+    print(l3)
+    print(type(l[0]))
+    print(type(l[:1]))
+    print(l[0])
+    print(l[:1])
 
 
 # 字典按照键或者值来排序
 def sort_usge():
     dic = {'a': 33, 'b': 2, 'c': 44, 'z': 22, 'd': 89, 'e': 5}
-    print dic
+    print(dic)
     for k, v in dic.items():
-        print k, v
+        print(k, v)
     dic2 = sorted(dic.iteritems(), key=lambda asd: asd[0], reverse=True)
-    print dic
-    print dic2
+    print(dic)
+    print(dic2)
     dic3 = sorted(dic.keys())
-    print dic3
+    print(dic3)
 
 
 # 根据值来找键
@@ -65,21 +65,21 @@ def find_key():
     vals = [random.randint(1, 100) for _ in range(len(keys))]
     d = dict(zip(keys, vals))
 
-    print d
+    print(d)
     p = 55
     for k, v in d.items():
         if p == v:
-            print k
+            print(k)
             break
 
 def dict_create():
     a=[('a',1),('b',2)]
     b=dict(a)
-    print b
+    print(b)
     c={}.fromkeys([i for i in range(10)])
-    print c
+    print(c)
     d=c.keys()
-    print d
+    print(d)
 
 class SortDict(dict):
     def keys(self):
@@ -88,14 +88,14 @@ class SortDict(dict):
 def sort_test():
     d = SortDict({'a': 33, 'b': 2, 'c': 44, 'z': 22, 'd': 89, 'e': 5})
     d1 = SortDict((('zheng-cai',67),('hui-jun',11),('xin-yi',88)))
-    print d.keys()
-    print d1.keys()
+    print(d.keys())
+    print(d1.keys())
 
 def multi_dictionary():
     user=dict()
-    print user
+    print(user)
     user['Dave']={"Rocket":2}
-    print user
+    print(user)
 
 def dict_update():
     a={'A':1,'B':2,'C':3}

@@ -1,16 +1,16 @@
 from enum import Enum
 
 PizzaProgress = Enum('PizzaProgressTag','queued preparation baking ready')
-print PizzaProgress.queued
+print(PizzaProgress.queued)
 
 class A(object):
 
 	def foo(self):
-		print 'hello',self
+		print('hello',self)
 
 	@classmethod
 	def foo1(cls):
-		print 'hello',cls
+		print('hello',cls)
 def testcase():
 	a=A()
 	b=A()
@@ -49,6 +49,6 @@ class Pizza:
 
 
 def main():
-	print Pizza.PizzaBuilder().add_gralic().add_cheese().build()
+	print(Pizza.PizzaBuilder().add_gralic().add_cheese().build())
 
 main()

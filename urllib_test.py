@@ -21,7 +21,7 @@ class Myurllib2():
         try:
             conn = sqlite3.connect(dbname)
         except:
-            print "error"
+            print("error")
             return
         query_cmd = '''
         select * from PROXY
@@ -38,8 +38,8 @@ class Myurllib2():
             #主要就是安装opener
             req = urllib2.Request(url, headers=self.header)
             content = urllib2.urlopen(req).read()
-            print "Now content is :"
-            print content
+            print("Now content is :")
+            print(content)
             time.sleep(200)
 
         conn.commit()
@@ -62,7 +62,7 @@ def getPost(date_time, filter_p):
     content = resp.read()
     p = re.compile('<h2 class="question-title">(.*)</h2></br></a>')
     result = re.findall(p, content)
-    print result
+    print(result)
 
 #标准的urllib2爬虫
 def get_page():
@@ -72,26 +72,26 @@ def get_page():
     url = "http://photo.xitek.com/style/0/p/1"
     req = urllib2.Request(url, headers=header)
     result = urllib2.urlopen(req).read()
-    print result
+    print(result)
     #p = re.compile(r'<a class='\blast\' href=\'/style/0/p/(\d+)' >')
     #p = re.compile('target="(.*)"')
     #p = re.compile('<img src="(.*?)" ')
     p = re.compile('<a class=\'blast\' href=\'/style/0/p/(\d+)\' >')
     #<a class='blast' href='/style/0/p/113' >
     page = p.findall(result)
-    print type(page)
-    print len(page)
-    #print page
+    print(type(page))
+    print(len(page))
+    #print(page)
     '''
     if page:
-        print page[0]
+        print(page[0])
         return page[0]
-        # print page[0]
+        # print(page[0])
         #return page[0]
     '''
-    print "return"
+    print("return")
     for i in page:
-        print i
+        print(i)
 
 import urllib2,sys,StringIO,gzip,time,random,re,urllib,os
 # 压缩内容解压
@@ -118,5 +118,5 @@ get_page()
 obj = Myurllib2()
 #obj.proxy_test()
 content = obj.getContent("http://xueqiu.com/8255849716")
-print content
+print(content)
 

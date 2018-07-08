@@ -49,7 +49,7 @@ def main():
     done_queue.put('STOP')
 
     for status in iter(done_queue.get, 'STOP'):
-        print status
+        print(status)
 
 if __name__ == '__main__':
     main()

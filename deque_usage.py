@@ -7,4 +7,4 @@ d.append(4)
 d.append(6)
 d.append(8)
 d.popleft()
-print d
+print(d)

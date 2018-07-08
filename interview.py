@@ -13,21 +13,21 @@ def exchange():
     a=10
     b=20
     a,b=b,a
-    print a,b
+    print(a,b)
 
 def f1(*arg):
     for i in arg:
-        print i
+        print(i)
 
 def f2(**args):
     for k in args:
-        print "Key : %s value: %s" %(k,args[k])
+        print("Key : %s value: %s" %(k,args[k]))
 
 def list_test(x,l=[]):
     for i in range(x):
         l.append(i*i)
-        print l
-        print id(l)
+        print(l)
+        print(id(l))
 
 def test_list_case():
     f1(1,'h',2)
@@ -38,86 +38,86 @@ def test_list_case():
 '''
 a=1
 def address(a):
-    print "fun_in a",id(a)
+    print("fun_in a",id(a))
     a=2
-    print "remount a ", id(a),id(2)
+    print("remount a ", id(a),id(2))
 
-print "fun out ", id(a),id(1)
+print("fun out ", id(a),id(1))
 address(a)
-print a
+print(a)
 '''
 
 class ObjectCreator(object):
     pass
 def foot(self):
-    print "foot!!"
+    print("foot!!")
 class ObjectCreator2():
     def foox(self):
-        print "in obj2 foo"
+        print("in obj2 foo")
 
 
 def foo1(obj):
-    print obj,'call'
+    print(obj,'call')
 
 
 class Test1():
     def help(self):
-        print "in side"
+        print("in side")
 
 def dynamic_class(name):
     if name=='foo':
         class foo():
             def __init__(self):
-                print "foo"
+                print("foo")
         return foo
     else:
         class nobody():
             def __init__(self):
-                print "nobody"
+                print("nobody")
         return nobody
 
 def testcase():
     x=dynamic_class('foo1')
-    print x
+    print(x)
     obj=x()
-    print obj
+    print(obj)
 
 def tesecase2():
     #exchange()
-    print ObjectCreator
+    print(ObjectCreator)
     foo1(ObjectCreator)
-    print hasattr(ObjectCreator,'new_func')
+    print(hasattr(ObjectCreator,'new_func'))
     ObjectCreator.new_func=foo1('x')
-    print hasattr(ObjectCreator,'new_func')
+    print(hasattr(ObjectCreator,'new_func'))
     #ObjectCreator.new_func('x')
-    print hasattr(Test1,'help')
+    print(hasattr(Test1,'help'))
     testcase()
-    print type(ObjectCreator)
+    print(type(ObjectCreator))
     a=type('ObjectCreator',(),{})
-    print a
+    print(a)
     b=type('ObjectCreator2',(),{'foot':foot})
-    print b
+    print(b)
     c=b()
     #c.foox()
-    print hasattr(b,'foox')
+    print(hasattr(b,'foox'))
     #返回的是True
     c.foot()
 
 class base_for_method():
     def foo(self):
-        print "under base"
+        print("under base")
 
 class method_test(base_for_method):
 
     def normal(self,x):
-        print "Nornal method %s" %x
+        print("Nornal method %s" %x)
 
     @staticmethod
     def static_method(x):
-        print 'Static method %s' %x
+        print('Static method %s' %x)
     @classmethod
     def class_method(cls,x):
-        print "Class method %s %s" %(cls,x)
+        print("Class method %s %s" %(cls,x))
 
 
 def testcase2():
@@ -135,19 +135,19 @@ class class_var():
 def testcase3():
     a=class_var()
     b=class_var()
-    print a.name
-    print b.name
+    print(a.name)
+    print(b.name)
     b.name='xxx'
-    print b.name
-    print class_var.name
+    print(b.name)
+    print(class_var.name)
 
     a.lover.append('1')
     a.lover.append('2')
-    print a.lover
-    print b.lover
-    print class_var.lover
+    print(a.lover)
+    print(b.lover)
+    print(class_var.lover)
     obj=base_for_method()
-    print isinstance(obj,method_test)
+    print(isinstance(obj,method_test))
 
 def testcase4():
     class line_test():
@@ -156,15 +156,15 @@ def testcase4():
             self.name='yong'
             self._foo='ni hao'
     obj=line_test()
-    print obj.first
-    print obj.name
-    print obj._foo
+    print(obj.first)
+    print(obj.name)
+    print(obj._foo)
 
 def testcase5():
     a=[1,2,3]
     b=(1,2,3)
     c={'a':'apple','b':'banana','c':'cat'}
-    print "a=%s" % c
+    print("a=%s" % c)
     f1('a','b','c','d')
 
 def testcase6():
@@ -179,47 +179,47 @@ def testcase6():
     class MyObject(Sington):
         a=1
     obj=MyObject()
-    print obj.a
-    print obj
+    print(obj.a)
+    print(obj)
 
     obj2=MyObject()
-    print obj2
+    print(obj2)
 
 def testcase7():
     a=[1,2,3,4,5,6]
     b=filter(lambda x:x>4,a)
-    print b
+    print(b)
 
     c=map(lambda x:x*x,a)
-    print c
+    print(c)
 
     d=reduce(lambda x,y:x*y,a)
-    print d
+    print(d)
 
 def testcase8():
     age=10
-    print age.__class__
-    print age.__class__.__class__
+    print(age.__class__)
+    print(age.__class__.__class__)
     class Obj_Cls(object):
         pass
-    print Obj_Cls.__class__.__class__
+    print(Obj_Cls.__class__.__class__)
 
 
 def testcase9():
     name='kingOfflight'
-    print name.startswith('kn')
+    print(name.startswith('kn'))
 
 def testcase10():
     x=1
     a=(lambda t:(t for _ in xrange(10)))(x)
     b=[1,2,3,4,5](2)
 
-    print list(a)
-    print b
+    print(list(a))
+    print(b)
 
 def testcase11():
     d=globals()
-    print d
+    print(d)
 
 
 def check_time(func):
@@ -228,18 +228,18 @@ def check_time(func):
         start=time.clock()
         func()
         use=(time.clock()-start)
-        print use
+        print(use)
         if use>1.0:
-            print "bad"
+            print("bad")
         else:
-            print "good"
+            print("good")
 
     return wrapper
 
 @check_time
 def run_time():
     t=random.random()
-    print t
+    print(t)
     time.sleep(t*2)
 
 def testcase12():
@@ -253,23 +253,23 @@ def testcase13():
     lily=jack
     tom=copy.deepcopy(jack)
     anny=copy.deepcopy(jack)
-    print id(jack)
-    print id(tom)
-    print id(anny)
-    print jack
-    print tom
-    print anny
+    print(id(jack))
+    print(id(tom))
+    print(id(anny))
+    print(jack)
+    print(tom)
+    print(anny)
 
     jack.append('married')
     jack[2].append('china')
-    print jack
-    print tom
-    print anny
+    print(jack)
+    print(tom)
+    print(anny)
 
     if jack is lily:
-        print "same"
+        print("same")
     else:
-        print "diff"
+        print("diff")
 # 快速查找list中某个元素
 def search_item(item,target):
     loc = item.index(target)
@@ -277,7 +277,7 @@ def search_item(item,target):
 def main():
     testcase11()
     # l = [2,1,33,2,11,22,99]
-    # print search_item(l,99)
+    # print(search_item(l,99))
 if __name__=='__main__':
     main()
 

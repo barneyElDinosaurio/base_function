@@ -7,18 +7,18 @@ import gevent, requests
 
 def f(n):
     for i in range(n):
-        print gevent.getcurrent(), i
+        print(gevent.getcurrent(), i)
         gevent.sleep(1)
 
 def get_data(url):
-    #print gevent.getcurrent()
-    print 'Get url {}'.format(url)
+    #print(gevent.getcurrent())
+    print('Get url {}'.format(url))
     resp = requests.get(url)
-    print len(resp.text)
+    print(len(resp.text))
 
 
 def testcase():
-    print "Version: ", gevent.version_info
+    print("Version: ", gevent.version_info)
     gevent.joinall([gevent.spawn(get_data, 'https://python.org/'),
                     gevent.spawn(get_data, 'https://www.yahoo.com/'),
                     gevent.spawn(get_data, 'https://github.com/')])
@@ -44,6 +44,6 @@ def main():
     # g5.join()
     start=time.time()
     testcase2()
-    print 'time used:{}'.format(time.time()-start)
+    print('time used:{}'.format(time.time()-start))
 
 main()

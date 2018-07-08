@@ -18,7 +18,7 @@ def divide_task(start,end,q):
     count=0
     for i in xrange(start,end):
         ip=getIP()
-        #print ip
+        #print(ip)
         if re.search('\.',ip) is not None:
             count=count+1
     q.put(count)
@@ -39,7 +39,7 @@ def start_run():
     while not q.empty():
         sum=sum+q.get()
 
-    print sum
+    print(sum)
 
 
 end=time.time()
@@ -47,9 +47,9 @@ end=time.time()
 start_run()
 
 if t_count==count:
-    print "100%%work"
+    print("100%%work")
 
-print 'time used: ',end-start
+print('time used: ',end-start)
 '''
 
-print getIP()
+print(getIP())

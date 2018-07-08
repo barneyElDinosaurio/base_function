@@ -10,7 +10,7 @@ class FinaceTool():
     # 每年追加存款
     def fuli(self):
         d1 = [np.fv(0.2, i, -1.4, -1.4) for i in range(1, 40)]
-        # print d1
+        # print(d1)
         d2 = [np.fv(0.15, i, -1.4, -1.4) for i in range(1, 40)]
         d3 = [np.fv(0.1, i, -1.4, -1.4) for i in range(1, 40)]
         d4 = [np.fv(0.05, i, -1.4, -1.4) for i in range(1, 40)]
@@ -19,7 +19,7 @@ class FinaceTool():
         df['d2']=d2
         df['d3']=d3
         df['d4']=d4
-        #print df.tail()
+        #print(df.tail())
         #df.plot()
         #plt.show()
         #
@@ -30,7 +30,7 @@ class FinaceTool():
     def plot_style(self,data):
 
         for xss in plt.style.available:
-            print xss
+            print(xss)
             plt.style.use(xss)
             data.plot()
             #plt.show()
@@ -43,7 +43,7 @@ class FinaceTool():
     # 存多少年的利息
     def fuli2(self):
         d = 14000 * (1 + 0.05) ** 40
-        print d
+        print(d)
 
 
 

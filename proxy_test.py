@@ -33,17 +33,17 @@ proxies = {
     "https": proxyMeta,
 }
 while 1:
-    #print proxies
+    #print(proxies)
     resp = requests.get(targetUrl, headers=headers)
     #resp = requests.get(targetUrl, headers=headers,proxies=proxies)
     time.sleep(2)
 
-    print resp.status_code
-    #print resp.text
+    print(resp.status_code)
+    #print(resp.text)
     content = resp.text
-    print content
+    print(content)
     p = re.compile(u'请输入图片中的验证码')
     if p.findall(content):
-        print "需要手动输入验证码"
+        print("需要手动输入验证码")
         # return 404
         raw_input("打开浏览器，输入验证码后按Enter确认键继续")

@@ -5,10 +5,10 @@ def csv_case():
 	mask='5s11s1s'
 	with open('dingkuan_data.txt','r') as f:
 		for line in f:
-			# print line
+			# print(line)
 			fields=struct.Struct(mask).unpack_from(line)
-			print fields
-			print '*'*10
+			print(fields)
+			print('*'*10)
 
 
 import numpy as np
@@ -47,12 +47,12 @@ def is_outlier(points, threshold=3.5):
 
     # compute median value    
     median = np.median(points, axis=0)
-    print 'median',median
+    print('median',median)
     # compute diff sums along the axis
-    # print 'point',points
-    print len(points)
+    # print('point',points)
+    print(len(points))
     diff = np.sum((points - median)**2, axis=-1)
-    print len(diff)
+    print(len(diff))
     diff = np.sqrt(diff)
     # compute MAD
     med_abs_deviation = np.median(diff)
@@ -100,19 +100,19 @@ def lena_show():
 	plt.imshow(lena)
 	plt.colorbar()
 	# plt.show()
-	print lena.shape
-	print lena.max()
-	print lena.dtype
+	print(lena.shape)
+	print(lena.max())
+	print(lena.dtype)
 
 def other_show():
 	import Image
 	bug=Image.open('stinkbug.png')
 	# arr=np.array(bug.getdata())
-	# print arr
+	# print(arr)
 	arr=np.array(bug.getdata(),np.uint8).reshape(bug.size[1],bug.size[0],3)
-	print arr
-	print arr.shape
-	print bug.size
+	print(arr)
+	print(arr.shape)
+	print(bug.size)
 	plt.gray()
 	plt.imshow(arr)
 	plt.colorbar()

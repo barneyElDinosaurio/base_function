@@ -15,28 +15,28 @@ class Yinyongbao():
         base_url='http://sj.qq.com/myapp/category.htm'
         parent_url='http://sj.qq.com/myapp/category.htm?orgame=1'
         s=requests.get(url=parent_url,headers=self.headers)
-        print s.status_code
-        #print s.text
+        print(s.status_code)
+        #print(s.text)
         tree=etree.HTML(s.text)
         menu=tree.xpath('//ul[@class="menu-junior"]')[0]
-        print type(menu)
+        print(type(menu))
 
         link= menu.xpath('.//li[@id]/a/@href')
         catelog=[]
         for i in link:
-            print i
+            print(i)
             p=re.compile('categoryId=(-?\d+)')
             #x=base_url+i
             x=p.findall(i)[0]
-            #print x
+            #print(x)
             catelog.append(x)
         return catelog
 
     def testcase(self):
         catelog=self.getData()
-        print catelog
+        print(catelog)
         for i in catelog:
-            print "Catelog : ", i
+            print("Catelog : ", i)
             self.each_page(int(i),0)
 
     #抓取某一个分类的
@@ -48,14 +48,14 @@ class Yinyongbao():
         js= s.json()
         name=[]
         df=pd.DataFrame(js['obj'])
-        print df
+        print(df)
         for i in js['obj']:
             #需要的数据都在这里面
             x= i['appName']
-            print x,' ---download count: ', i['appDownCount']
+            print(x,' ---download count: ', i['appDownCount'])
 
             name.append(x)
-        print len(name)
+        print(len(name))
         try:
             pageContext=int(js['pageContext'])
             self.each_page(categoryId,pageContext)

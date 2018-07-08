@@ -8,16 +8,16 @@ req = urllib2.Request(url, headers=headers)
 resp = urllib2.urlopen(req)
 content = resp.read()
 code = resp.info().get("Content-Encoding")
-print code
+print(code)
 if code == None:
-    print "No gzip"
-    print content
+    print("No gzip")
+    print(content)
 else:
-    print "gzip"
-    # print content
+    print("gzip")
+    # print(content)
     data = StringIO.StringIO(content)
     gzipper = gzip.GzipFile(fileobj=data)
     html = gzipper.read()
-    print html
+    print(html)
     # content = resp.read()
-    #print content
+    #print(content)

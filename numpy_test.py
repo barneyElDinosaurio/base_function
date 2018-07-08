@@ -8,26 +8,26 @@ def numpysum(n):
     b = np.arange(n)
     c = a + b
     d=a+10
-    print d
+    print(d)
     return c
 
 def testcase1():
     x = numpysum(20)
-    print x
+    print(x)
     d = np.array([1, 2, 34, 5])
-    print d
+    print(d)
     e = d.tolist()
-    print e
+    print(e)
 
     f = e
     g = np.array(f)
-    print g
+    print(g)
 
 def testcase2():
     np.random.seed(2000)
     y=np.random.standard_normal((20,2))
-    print y
-    print type(y)
+    print(y)
+    print(type(y))
 
 def testcase3():
     x=range(0,50)
@@ -35,7 +35,7 @@ def testcase3():
     #x=x.map(lambda t:t*1.00/3.14)
     x=map(lambda t:t/3.14,x)
     #x=result(x)
-    print x
+    print(x)
     y=[math.sin(i) for i in x]
     plt.figure(1)
     plt.plot(x,y,'o',label='sin(x)')
@@ -48,8 +48,8 @@ def testcase4():
     x=np.arange(n)
     y1=np.random.uniform(0.5,1,n)
     y2=np.random.uniform(0.5,1,n)
-    #print data.mean()
-    #print data
+    #print(data.mean())
+    #print(data)
     plt.figure(figsize=(9,6))
     plt.bar(x,y1,width=0.35,facecolor='lightblue',edgecolor='white')
     plt.bar(x+0.35,y2,width=0.35,facecolor='yellowgreen',edgecolor='white')
@@ -69,8 +69,8 @@ def testcase4():
 def testcase5():
     x=np.arange(101)
     y=x.cumsum()
-    print y
-    print len(y)
+    print(y)
+    print(len(y))
 
 def perf_compare():
     i=[x for x in xrange(10000000)]
@@ -78,13 +78,13 @@ def perf_compare():
     for ii in i:
         k=math.sin(ii)
     end=time.clock()
-    print "Time use:", end-start
+    print("Time use:", end-start)
 
     np_i=np.array(i)
     start=time.clock()
     np.sin(np_i)
     end=time.clock()
-    print "numpy time used : ", end-start
+    print("numpy time used : ", end-start)
 
 @timecal
 def python_multi(n):
@@ -101,42 +101,42 @@ def np_multi(n):
 
 def base_type():
     a = np.arange(10)
-    print a
-    print 'a type {}'.format(type(a))
-    print a.shape
-    print a.dtype
+    print(a)
+    print('a type {}'.format(type(a)))
+    print(a.shape)
+    print(a.dtype)
     b = np.arange(0,10,0.5)
-    print b
+    print(b)
     zero_array = np.zeros(20)
-    print zero_array
+    print(zero_array)
 
     a1 = np.array(range(20))
-    print 'a1 is ',a1
-    print a1[-1]
-    print 'revert ',a1[::-1]
+    print('a1 is ',a1)
+    print(a1[-1])
+    print('revert ',a1[::-1])
     b1 = np.arange(24)
     b2 = b1.reshape(2,3,4)
-    print 'b1',b1
-    print 'b2',b2
+    print('b1',b1)
+    print('b2',b2)
 
 
 @loop_test
 def Qscore():
     x=np.random.randn(1000).mean()
-    print 'function x is',x
+    print('function x is',x)
     return x
 
 def reshape_usage():
     x=np.arange(20)
     x=x.reshape(2,2,5)
-    print x
+    print(x)
 
 def basic_test():
     a = np.zeros(10)
     b = np.arange(10)
-    # print b
-    print b[5]
-    print type(b)
+    # print(b)
+    print(b[5])
+    print(type(b))
     
 
 def main():
@@ -147,7 +147,7 @@ def main():
     # np_multi(10000)
     # base_type()
     # x=Qscore()
-    # print 'qcore x is',x
+    # print('qcore x is',x)
     # numpysum(10)
     # reshape_usage()
     basic_test()

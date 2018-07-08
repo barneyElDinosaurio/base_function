@@ -17,7 +17,7 @@ for _ in range(retry):
         stop=True
         break
     except Exception as e:
-        print e
+        print(e)
         continue
 if not stop:
     exit(1)
@@ -25,10 +25,10 @@ content = resp.read()
 # p = re.compile(r'<li>排名：<span>(.*?)</span></li>')
 p = re.compile(r'    <div class="gradeAndbadge gradewidths" title="(\d+)">')
 result = p.findall(content)
-# print result[2]
+# print(result[2])
 
 today = time.strftime("%Y-%m-%d")
-print today
+print(today)
 
 f = open("csdn_range.txt", 'a')
 contents = today + '\t' + result[0] + '\n'

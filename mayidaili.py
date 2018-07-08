@@ -17,10 +17,10 @@ def mayiproxy(url,headers):
     keys.sort()
 
     codes = "%s%s%s" % (secret, str().join('%s%s' % (key, paramMap[key]) for key in keys), secret)
-    print codes
+    print(codes)
     # 计算签名
     sign = hashlib.md5(codes).hexdigest().upper()
-    print sign
+    print(sign)
     paramMap["sign"] = sign
 
     # 拼装请求头Proxy-Authorization的值

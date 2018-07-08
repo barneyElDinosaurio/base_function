@@ -27,7 +27,7 @@ def swap_sort(origin_list):
         t =
 def main():
     L= [ 1,2,3,9,7,7,2,5,10,8,6,4,9]
-    print swap_sort(L)
+    print(swap_sort(L))
 
 def case1():
     print(sorted({8: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'}))

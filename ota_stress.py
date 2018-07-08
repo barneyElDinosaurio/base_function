@@ -1515,7 +1515,7 @@ class OTAtest(Common, BaseTestInterface):
                         probable_kernel_timestamp = search_obj.group(1).strip()
                     elif (re.search(ota_success_regex, line, re.I)):
                         self.log.info(
-                            "Found OTA success print in recovery log. Maybe OTA was done but UART logs for partition updation wasn't found...")
+                            "Found OTA success print(in recovery log. Maybe OTA was done but UART logs for partition updation wasn't found..."))
                         self.post_ota_kernal_timestamp = probable_kernel_timestamp
                         self.ota_done = True
                         return self.post_ota_tests(stress_count)
@@ -2738,7 +2738,7 @@ class OTAtest(Common, BaseTestInterface):
     def get_recovery_dump_logs(self, stress_count, retry_count):
         self.log.info("Pulling the OTA recovery logs...")
         log_file = os.path.join(self.test_iteration_attempt_log_dir, "ota_recovery.log")
-        command = "shell dumpsys dropbox --print SYSTEM_RECOVERY_LOG > %s" % (log_file)
+        command = "shell dumpsys dropbox --print(SYSTEM_RECOVERY_LOG > %s" % (log_file))
         if (self.execute_adb_cmd(command, raise_exception=False)):
             self.log.info("Failed to pull the recovery logs...")
             return None
@@ -2881,4 +2881,4 @@ if __name__ == "__main__":
         main()
     except Exception:
         traceback.print_exc()
-        print "Exception while running the OTA stress test"
+        print("Exception while running the OTA stress test")

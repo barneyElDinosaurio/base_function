@@ -22,18 +22,18 @@ def addr_poi():
     # md5计算出的sn值7de5a22212ffaa9e326444c75a58f9a0
     # 最终合法请求url是http://api.map.baidu.com/geocoder/v2/?address=百度大厦&output=json&ak=yourak&sn=7de5a22212ffaa9e326444c75a58f9a0
     sn= hashlib.md5(urllib.quote_plus(rawStr)).hexdigest()
-    #print sn
+    #print(sn)
     #url='http://api.map.baidu.com/geocoder/v2/?address=%s&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO&sn=%s' %(addr,sn)
     url='http://api.map.baidu.com/geocoder/v2/?city=%s&address=%s&ret_coordtype=bd09ll&output=json&ak=%s&sn=%s' %(city,addr,ak_code,sn)
     #url='http://api.map.baidu.com/place/v2/search?q=银河小区&region=杭州市&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO&sn=%s' %sn
     s=requests.get(url)
-    print s.text
+    print(s.text)
     js=s.json()
     try:
         lng = js['result']['location']['lng']
         lat = js['result']['location']['lat']
     except Exception, e:
-        print e
+        print(e)
         lng = '0'
         lat = '0'
 
@@ -59,22 +59,22 @@ def poi_addr():
     # md5计算出的sn值7de5a22212ffaa9e326444c75a58f9a0
     # 最终合法请求url是http://api.map.baidu.com/geocoder/v2/?address=百度大厦&output=json&ak=yourak&sn=7de5a22212ffaa9e326444c75a58f9a0
     sn = hashlib.md5(urllib.quote_plus(rawStr)).hexdigest()
-    # print sn
+    # print(sn)
     # url='http://api.map.baidu.com/geocoder/v2/?address=%s&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO&sn=%s' %(addr,sn)
     url = 'http://api.map.baidu.com/geocoder/v2/?location=%s,%s&output=json&pois=0&coordtype=bd09mc&ak=%s&sn=%s' % (lat, lng, ak_code,sn)
     # url='http://api.map.baidu.com/place/v2/search?q=银河小区&region=杭州市&output=json&ak=pmBkd1mBGETE07Bmp0WW4KlOHz7AZbiO&sn=%s' %sn
     s = requests.get(url)
-    print s.text
+    print(s.text)
     js = s.json()
-    print js
-    print js['result']['location']
-    # print js['msg']
+    print(js)
+    print(js['result']['location'])
+    # print(js['msg'])
     try:
         for k, v in js['result'].items():
-            print k, v
+            print(k, v)
     except Exception, e:
-        print e
+        print(e)
 
 poi_addr()
 #x,y=addr_poi()
-#print x,y
+#print(x,y)

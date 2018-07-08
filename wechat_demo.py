@@ -13,21 +13,21 @@ def testcase1():
     #itchat.auto_login()
     itchat.send(content,toUserName='filehelper')
     account=itchat.get_friends(u'wwwei')
-    print account
-    print type(account)
+    print(account)
+    print(type(account))
     for i in account:
-        #print type(i)
-        #print i
+        #print(type(i))
+        #print(i)
         if i[u'PYQuanPin']==u'爱惟创意':
-            print i['UserName']
-            #print i
+            print(i['UserName'])
+            #print(i)
     #itchat.send(content, toUserName=id)
 
-    print 'done'
+    print('done')
 
 def testcase2():
     itchat.auto_login(hotReload=True)
-    print itchat.get_friends()
+    print(itchat.get_friends())
 
 
 testcase1()

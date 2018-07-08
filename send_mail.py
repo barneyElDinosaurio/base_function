@@ -30,12 +30,12 @@ class MailAtt():
         self.filename = filename + ".txt"
         self.msg['Date'] = Utils.formatdate(localtime=1)
         content = open(self.filename.decode('utf-8'), 'rb').read()
-        # print content
+        # print(content)
         #self.att = MIMEText(content, 'base64', 'utf-8')
         #self.att['Content-Type'] = 'application/octet-stream'
         # self.att["Content-Disposition"] = "attachment;filename=\"%s\"" %(self.filename.encode('gb2312'))
         #self.att["Content-Disposition"] = "attachment;filename=\"%s\"" % Header(self.filename, 'gb2312')
-        # print self.att["Content-Disposition"]
+        # print(self.att["Content-Disposition"])
         #self.msg.attach(self.att)
 
         #self.smtp.sendmail(self.msg['from'], self.msg['to'], self.msg.as_string())
@@ -59,7 +59,7 @@ def send_139():
         obj.login(sender, passwd)
         obj.sendmail(sender, receiver, msg.as_string())
     except smtplib.SMTPException, e:
-        print e
+        print(e)
 
 
 def main():

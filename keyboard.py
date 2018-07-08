@@ -1,7 +1,7 @@
 import pyautogui as pag
 import time
 screenWidth, screenHeight = pag.size()
-print screenWidth,screenHeight
+print(screenWidth,screenHeight)
 
 
 
@@ -10,10 +10,10 @@ def youdao():
 	time.sleep(3)
 	while count < 300:	
 		pag.keyDown('down')
-		print count
+		print(count)
 		time.sleep(0.03)
 		count +=1
-	print 'done'
+	print('done')
 
 
 def jiaoyi():
@@ -34,14 +34,14 @@ def jiaoyi():
 	pag.press('Y')
 	time.sleep(0.2)
 	pag.press('enter')
-	print 'done'
+	print('done')
 
 def message_win():
 	pag.alert("Box")
 
 def photo_compare():
 	time.sleep(3)
-	print pag.locateOnScreen('reflash.png')
+	print(pag.locateOnScreen('reflash.png'))
 # jiaoyi()
 # message_win()
 # photo_compare()

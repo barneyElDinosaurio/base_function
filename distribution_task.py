@@ -30,16 +30,16 @@ def main():
 
     for i in range(10):
         t=random.randint(0,100)
-        print "put %d into the queue" %t
+        print("put %d into the queue" %t)
         task_manager.put(t)
 
 
     for j in range(10):
         try:
             t=result_manager.get(timeout=20)
-            print "get %d from the queue server" %t
+            print("get %d from the queue server" %t)
         except Exception as e:
-            print e
+            print(e)
 
     manager.shutdown()
 

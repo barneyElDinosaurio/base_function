@@ -20,7 +20,7 @@ def loop_test(func):
         # for i in range(100):
             # s=func(*args,**kw)
         # avg = s*1.00/100
-        # print 'avg is {}'.format(avg)
+        # print('avg is {}'.format(avg))
     return wrapper
 
 class Toolkit():
@@ -46,8 +46,8 @@ class Toolkit():
         account = {}
         for i in f.readlines():
             ctype, passwd = i.split('=')
-            #print ctype
-            #print passwd
+            #print(ctype)
+            #print(passwd)
             account[ctype.strip()] = passwd.strip()
 
         return account

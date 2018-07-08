@@ -10,7 +10,7 @@ def download(url,retry=3):
 	try:
 		r=requests.get(url=url)
 	except Exception as e:
-		print e
+		print(e)
 		if retry <0:
 			return None
 		else:
@@ -22,7 +22,7 @@ def getCaptcha():
 	text=download(url)
 	if text:
 		tree=etree.HTML(text)
-		print tree
+		print(tree)
 		im_data=tree.xpath('//div[@id="recaptcha"]/img/@src')[0]
 		im_data=im_data.split(',')[-1]
 		binary_img_data=im_data.decode('base64')
@@ -39,7 +39,7 @@ def recognize_captcha():
 	im=getCaptcha()
 	
 	code=pytesseract.image_to_string(im)
-	print code
+	print(code)
 
 def main():
 	recognize_captcha()

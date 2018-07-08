@@ -41,7 +41,7 @@ class Engineer:
 def main():
 	pcfactory = Engineer()
 	pcfactory.build()
-	print pcfactory.computer
+	print(pcfactory.computer)
 
 
 

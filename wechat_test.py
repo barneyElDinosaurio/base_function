@@ -7,7 +7,7 @@ from itchat.content import *
 def text_reply(msg):
     match = re.search(u'年', msg['Text']).span()
     if match:
-        print msg['FromUserName']
+        print(msg['FromUserName'])
         itchat.send((u'那我就祝你鸡年大吉吧'), msg['FromUserName'])
 
 

@@ -60,7 +60,7 @@ def main():
 
 	mongo=MongoCache()
 	d=Download(cache=mongo)
-	print d('http://30daydo.com')
+	print(d('http://30daydo.com'))
 
 if __name__== '__main__':
 	main()

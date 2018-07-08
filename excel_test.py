@@ -57,9 +57,9 @@ def getCodeFromExcel(filename):
     code_list = df[u'证券代码'].values
     for i in code_list:
         i = str(i)
-        print type(i)
-        print i.zfill(6)
-        #print code_list
+        print(type(i))
+        print(i.zfill(6))
+        #print(code_list)
 
 
 def modify_excel2():
@@ -67,7 +67,7 @@ def modify_excel2():
     original_table = rb.sheets()[0]
     rows = original_table.nrows
     cols = original_table.ncols
-    print rows, cols
+    print(rows, cols)
 
     # w=copy(rb)
     #sheet=w.get_sheet(0)
@@ -77,11 +77,11 @@ def modify_excel2():
 # 为了提取所有的testcase id
 def save_id():
     df = pd.read_excel('2.xls',skiprows=[0])
-    #print df.info()
+    #print(df.info())
 
     '''
     for i in range(len(df)):
-        print str(df.iloc[i, 0]).strip(), ',',
+        print(str(df.iloc[i, 0]).strip(), ',',)
 
     '''
 def remove_use():
@@ -89,54 +89,54 @@ def remove_use():
     for i in l:
         if i != 4:
             l.remove(i)
-    print l
+    print(l)
 def check_diff():
     df1=pd.read_excel('less1.xlsx')
     df2=pd.read_excel('more1.xlsx')
-    print df1.info
-    print df2.info
-    print df1.dtypes
-    print df2.dtypes
+    print(df1.info)
+    print(df2.info)
+    print(df1.dtypes)
+    print(df2.dtypes)
     id1=df1.icol(0).values
     id2=df2.icol(0).values
-    #print id1
-    #print id2
+    #print(id1)
+    #print(id2)
     ax1=list(id1)
     ax2=list(id2)
     for i in ax1:
         if i in ax2:
             ax2.remove(i)
 
-    print ax2
+    print(ax2)
 
-    #print df
+    #print(df)
 
 
 def profit_line():
     #df=pd.read_excel('d.xlsx',header=0,skiprows=[0])
     df=pd.read_excel('d.xlsx')
-    print df[u'盈亏']
+    print(df[u'盈亏'])
     #df.reset_index(level=None, drop=True, inplace=True, col_level=1, col_fill='')
     df.set_index(u'日期',inplace=True,drop=True)
-    print df
+    print(df)
     date_d,profit=df.index,df[u'盈亏'].values
-    print type(profit)
-    print 'type of date_d ',type(date_d)
+    print(type(profit))
+    print('type of date_d ',type(date_d))
     #date_d
-    print "mean: ",df[u'盈亏'].mean()
-    #print df[u'盈亏'].mean()
-    print "count: ",df[u'盈亏'].count()
-    print "description: ",df.describe()
-    print "最大盈利: " ,df[u'盈亏'].max()
-    print "发生在: ",df[df[u'盈亏']==df[u'盈亏'].max()].index.values[0]
-    print "最大亏损: " ,df[df[u'盈亏']==df[u'盈亏'].min()].index.values[0]
+    print("mean: ",df[u'盈亏'].mean())
+    #print(df[u'盈亏'].mean())
+    print("count: ",df[u'盈亏'].count())
+    print("description: ",df.describe())
+    print("最大盈利: " ,df[u'盈亏'].max())
+    print("发生在: ",df[df[u'盈亏']==df[u'盈亏'].max()].index.values[0])
+    print("最大亏损: " ,df[df[u'盈亏']==df[u'盈亏'].min()].index.values[0])
 
     '''
     一些统计信息
     '''
 
-    print "亏损多余1w的次数", df[df[u'盈亏']<-10000][u'盈亏'].count()
-    print "盈利多余1w的次数", df[df[u'盈亏']>10000][u'盈亏'].count()
+    print("亏损多余1w的次数", df[df[u'盈亏']<-10000][u'盈亏'].count())
+    print("盈利多余1w的次数", df[df[u'盈亏']>10000][u'盈亏'].count())
 
     #plt.plot(profit,'o')
     #plt.grid()
@@ -162,9 +162,9 @@ def profit_line():
 
 
     date_d1=date_d.map(lambda x:x.strftime("%Y-%m-%d"))
-    print date_d1
-    print type(date_d1)
-    print type(profit)
+    print(date_d1)
+    print(type(date_d1))
+    print(type(profit))
 
 
     num=24
@@ -189,7 +189,7 @@ def drop_dup():
     filename='2017-08-23_23-36-36.xls'
 
     df=pd.read_excel(filename)
-    print df
+    print(df)
     #df=df.drop_duplicates()
     df.drop_duplicates(['Unnamed: 11'],inplace=True)
     df.drop_duplicates(['Unnamed: 15'],inplace=True)
@@ -221,33 +221,33 @@ def saveOneFile():
     files=os.listdir('.')
     df_list=[]
     for i in files:
-        #print i
+        #print(i)
         try:
 
             if len(re.findall(r'xls',i))!=0:
             #if 'xls'==i.split('.')[1]:
-                print i
+                print(i)
                 #deal with xls file
                 df = pd.read_excel(i)
                 #df.drop_duplicates(inplace=True)
                 #df.to_excel(i)
-                #print df
-                print len(df)
+                #print(df)
+                print(len(df))
                 df_list.append(df)
         except:
             continue
 
     final_df=pd.concat(df_list)
     final_df.to_excel('all.xls')
-    #print final_df
-    print len(final_df)
+    #print(final_df)
+    print(len(final_df))
     '''
     final_df.drop_duplicates(inplace=True)
     final_df.drop_duplicates([7],inplace=True)
     final_df.drop_duplicates([0],inplace=True)
     final_df.drop_duplicates([8],inplace=True)
-    print len(final_df)
-    print final_df
+    print(len(final_df))
+    print(final_df)
     final_df.to_excel('2017-08-25-sohu.xls')
     '''
 #file="python_excel_test.xls"

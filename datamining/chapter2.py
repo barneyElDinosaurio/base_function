@@ -4,7 +4,7 @@ import json,math
 with open('user.json','r') as f:
 	user=json.load(f)
 
-# print user
+# print(user)
 def MinkovskiDistance(user,nameX,nameY,r):
 	total=0
 	for k,v in user[nameX].items():
@@ -19,7 +19,7 @@ def computeNeighbor(username,user,r):
 		if k!=username:
 			distance=MinkovskiDistance(user,username,k,2)
 			recommands.append({k:distance})
-	# print recommands
+	# print(recommands)
 	return sorted(recommands,key=lambda x:x.values() ,reverse=True)
 
 def pearson(user1,user2):
@@ -55,11 +55,11 @@ def cosin(user1,user2):
 
 
 def main():
-	# print MinkovskiDistance(user,'Angelica','Veronica',2)
-	# print computeNeighbor('Bill',user,2)
-	# print pearson(user['Angelica'],user['Bill'])
-	# print pearson(user['Angelica'],user['Hailey'])
-	print pearson(user['Angelica'],user['Jordyn'])
+	# print(MinkovskiDistance(user,'Angelica','Veronica',2))
+	# print(computeNeighbor('Bill',user,2))
+	# print(pearson(user['Angelica'],user['Bill']))
+	# print(pearson(user['Angelica'],user['Hailey']))
+	print(pearson(user['Angelica'],user['Jordyn']))
 
 
 

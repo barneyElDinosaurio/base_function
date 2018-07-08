@@ -29,5 +29,5 @@ s.headers.update({'Proxy-Authorization': authHeader})
 s.proxies.update(mayi_proxy)
 pg = s.get(testUrl)  # tuple: 300 代表 connect timeout, 270 代表 read timeout
 #pg.encoding = 'GB18030'
-print pg.text
-print pg.status_code
+print(pg.text)
+print(pg.status_code)

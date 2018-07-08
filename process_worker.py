@@ -18,10 +18,10 @@ task = m.get_task_queue()
 result = m.get_result_queue()
 while not task.empty():
 	image_url = task.get(True,timeout=10)
-	print 'Download url {}'.format(image_url)
+	print('Download url {}'.format(image_url))
 	time.sleep(random.random())
 	result.put('Sucessful url {}'.format(image_url))
 
-print 'finish all the task'
+print('finish all the task')
 
 

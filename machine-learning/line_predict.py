@@ -16,15 +16,15 @@ with open('line_data.txt','r') as f:
 		y.append(float(line.strip().split(',')[1]))
 		line=f.readline()
 
-# print X_data
-# print y_data
+# print(X_data)
+# print(y_data)
 # plt.scatter(x,y)
 train_len = int(0.8*len(x))
 X_train=np.array(x[:train_len]).reshape(train_len,1)
 y_train=np.array(y[:train_len])
 test_len=len(x)-train_len
-# print X_train
-# print y_train
+# print(X_train)
+# print(y_train)
 
 X_test=np.array(x[train_len:]).reshape(test_len,1)
 y_test=np.array(y[train_len:]).reshape(test_len,1)
@@ -43,10 +43,10 @@ plt.scatter(X_test,y_test,color='b')
 y_predict=linear_regressor.predict(X_test)
 plt.scatter(X_test,y_predict,color='y')
 
-print 'mean error', round(sm.mean_absolute_error(y_test,y_predict),3)
-print 'mean std error', round(sm.mean_squared_error(y_test,y_predict),3)
-print 'median middle error', round(sm.median_absolute_error(y_test,y_predict),3)
-print 'explain score', round(sm.explained_variance_score(y_test,y_predict),3)
+print('mean error', round(sm.mean_absolute_error(y_test,y_predict),3))
+print('mean std error', round(sm.mean_squared_error(y_test,y_predict),3))
+print('median middle error', round(sm.median_absolute_error(y_test,y_predict),3))
+print('explain score', round(sm.explained_variance_score(y_test,y_predict),3))
 
 plt.show()
 

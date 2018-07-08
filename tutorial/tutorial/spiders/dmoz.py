@@ -33,5 +33,5 @@ class DmozSpider(Spider):
 
     def parse_item(self,response):
         #filename=response.url.spilt('/')[-2]
-        print response.body
+        print(response.body)
         #open(filename,'wb').write(response.body)

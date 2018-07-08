@@ -3,17 +3,17 @@ from time import sleep, ctime
 
 
 def loop1():
-    print "start %s " % ctime()
-    print "start in loop1"
+    print("start %s " % ctime())
+    print("start in loop1")
     sleep(3)
-    print "end %s " % ctime()
+    print("end %s " % ctime())
 
 
 def loop2():
-    print "sart %s " % ctime()
-    print "start in loop2"
+    print("sart %s " % ctime())
+    print("start in loop2")
     sleep(6)
-    print "end %s " % ctime()
+    print("end %s " % ctime())
 
 
 class MyThread(threading.Thread):
@@ -57,13 +57,13 @@ def fab(n):
 
 
 def single_thread():
-    print fib(12)
-    print sum(12)
-    print fab(12)
+    print(fib(12))
+    print(sum(12))
+    print(fab(12))
 
 
 def multi_thread():
-    print "in multithread"
+    print("in multithread")
     fun_list = [fib, sum, fab]
     n = len(fun_list)
     threads = []
@@ -77,19 +77,19 @@ def multi_thread():
     for i in range(n):
         threads[i].join()
         result = threads[i].getResult()
-        print result
+        print(result)
 
 
 def fast():
-    print "in fast"
+    print("in fast")
     sleep(10)
-    print "done in fast"
+    print("done in fast")
 
 
 def slow():
-    print "in slow"
+    print("in slow")
     sleep(15)
-    print "done in slow"
+    print("done in slow")
 
 
 def wireteQ(queue):
@@ -98,22 +98,22 @@ def wireteQ(queue):
 
 def main():
     '''
-    print "start at main"
+    print("start at main")
     thread.start_new_thread(loop1,())
     thread.start_new_thread(loop2,())
     sleep(10)
-    print "end at main"
+    print("end at main")
     '''
     '''
     start=ctime()
-    #print "Used %f" %(end-start).seconds
-    print start
+    #print("Used %f" %(end-start).seconds)
+    print(start)
     single_thread()
     end=ctime()
-    print end
+    print(end)
     multi_thread()
     '''
-    # print "used %s" %(end-start).seconds
+    # print("used %s" %(end-start).seconds)
     start=datetime.datetime.now()
     threads = []
     f = [fast, slow]
@@ -129,11 +129,11 @@ def main():
     for i in range(l):
         #pass
         threads[i].join()
-        print threads[i].getName()
+        print(threads[i].getName())
 
     end=datetime.datetime.now()
-    print end-start
-    print "Done on main"
+    print(end-start)
+    print("Done on main")
     exit()
 
 main()

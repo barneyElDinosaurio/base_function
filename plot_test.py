@@ -50,7 +50,7 @@ def from_book():
 
 def pd_plot():
     s = Series(np.random.randn(10).cumsum(), index=range(0, 100, 10))
-    print s
+    print(s)
     s.plot()
     # 为啥不能显示，只能在ipython上作用 ？
     df = pd.DataFrame(np.random.randn(10, 4).cumsum(0), index=np.arange(0, 100, 10), columns=['A', 'B', 'C', 'D'])
@@ -87,7 +87,7 @@ def multi_plot():
     ax1 = plt.subplot(211)
     ax2 = plt.subplot(212)
     x = np.linspace(0, 3, 100)
-    print x
+    print(x)
     for i in xrange(5):
         plt.figure(1)
         plt.plot(x, np.exp(i * x / 3))
@@ -103,7 +103,7 @@ def plot_csdn():
     range_list = []
     f = open('csdn_range.txt', 'r')
     for i in f.readlines():
-        # print i
+        # print(i)
         date_, range_ = i.split('\t')
         date_list.append(date_)
         range_list.append(range_)
@@ -120,8 +120,8 @@ def two_in_one_canvas():
     df = ts.get_hist_data('300333', '2015-01-01', '2016-12-30')
     closed = df.close
     vol = df.volume / 10000
-    print closed
-    print vol
+    print(closed)
+    print(vol)
     # closed.plot()
     closed.plot()
     vol.plot()
@@ -264,7 +264,7 @@ def testcase1():
 
 def testcase2():
     x = np.arange(10)
-    print x
+    print(x)
     fig = plt.figure()
     ax = plt.subplot(111)
 
@@ -308,7 +308,7 @@ def hist_case1():
 def my_hist():
     plt.figure('hello')
     x = np.random.randn(1000)
-    print x
+    print(x)
     plt.hist(x, bins=10, histtype='bar', alpha=0.75)
     plt.show()
 
@@ -322,7 +322,7 @@ def captcha():
     random_text = ''
     for _ in range(lens):
         random_text += random.choice(letter)
-    print random_text
+    print(random_text)
 
     image = Image.new('RGB', (400, 100))
     font = ImageFont.truetype('msyh.ttf')
@@ -372,10 +372,10 @@ def stock_plot():
 def stock_line():
     api = ts.get_apis()
     df = ts.bar('300141', conn=api, start_date='2018-01-01')
-    # print df
+    # print(df)
     del df['code']
     df.reset_index(inplace=True)
-    print df
+    print(df)
     df['datetime'] = df['datetime'].map(mdates.date2num)
     ax1 = plt.subplot2grid((6, 1), (0, 0), rowspan=5)
     ax2 = plt.subplot2grid((6, 1), (5, 0), rowspan=5, sharex=ax1)
@@ -430,7 +430,7 @@ def get_selected_stock():
 
     code_list = js_data.get('example1')
     for code in code_list:
-        print code,code_list[code]
+        print(code,code_list[code])
         plot_stock_line(code,'2018-01-01')
     ts.close_apis(api)
 

@@ -12,8 +12,8 @@ class FirstSpider(scrapy.Spider):
 
     def parse(self, response):
         #filename=response.url.split('/')[-2]+'.html'
-        print 'Header',response.headers
-        #print "Got it"
+        print('Header',response.headers)
+        #print("Got it")
         #time.sleep(5)
         #with open(filename,'w') as f:
             #f.write(response.body)
@@ -22,8 +22,8 @@ class FirstSpider(scrapy.Spider):
             #link=sel.xpath('.//div[@class="title-and-desc"]/a/@href').extract()
             title=sel.xpath('text()').extract()[0]
             #esc=sel.xpath('text()').extract()
-            #print title,link,desc
-            #print '\n'
+            #print(title,link,desc)
+            #print('\n')
             item['title']=title
             yield item
-            #print '\n'
+            #print('\n')
