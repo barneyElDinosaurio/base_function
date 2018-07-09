@@ -4,9 +4,8 @@ import json
 import pprint
 import pymongo, datetime
 import pandas as pd
-host = 'raspberrypi'
+host = 'localhost'
 client = pymongo.MongoClient(host, 27017)
-
 
 def basic_usage():
     client = pymongo.MongoClient(host, 27017)
@@ -239,19 +238,42 @@ class StockMongo():
             codes= i.get(u'代码',None)
             for code in codes:
                 print(code)
+<<<<<<< HEAD
+=======
+
+def remove_str(x):
+    ret = x.strip()
+    l = ret.split('.')
+    return '-'.join(l)
+    # return x.strip()
+>>>>>>> origin/master
 
 def mongo_calculation():
-    collection=client['xueqiu']['ceo']
+    collection=client['proxyip']['pool']
     result={}
+<<<<<<< HEAD
     ret = collection.find({},{'created_at':1,'source':1})
+=======
+    ret = collection.find({})
+>>>>>>> origin/master
     print('start to calculate')
     count =0
     # ret= collection.find_one({'source':u'持仓盈亏'},{'description':1,'source_link':1})
 
     ret_list = list(ret)
     df = pd.DataFrame(ret_list)
+<<<<<<< HEAD
     del df['_id']
     print(df.info())
+=======
+    # del df['_id']
+
+    print(df.info())
+    print(df.head())
+    # df['ip']=list(map(lambda x:x.strip(),df['ip']))
+    df['ips']=df['ip'].map(remove_str)
+    print(df['ips'])
+>>>>>>> origin/master
     # for i in ret:
     #     count+=1
     #     result.setdefault(i.get('source'),0)

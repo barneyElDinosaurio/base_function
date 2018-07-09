@@ -15,3 +15,4 @@ request_header
 header_toolkit.txt
 *.xlsx
 *.log
+__pycache__/

@@ -1,13 +1,8 @@
 # -*-coding=utf-8-*-
-__author__ = 'Rocky'
-'''
-http://30daydo.com
-Contact: weigesysu@qq.com
-'''
 import redis
-HOSTNAME='raspberrypi'
-# HOSTNAME='localhost'
-r = redis.Redis(host=HOSTNAME, port=6379, db=2,decode_responses=True)
+# HOSTNAME='raspberrypi'
+HOSTNAME='localhost'
+r = redis.Redis(host=HOSTNAME, port=6379, db=4,decode_responses=True)
 
 def base_usage():
     print(r.dbsize())
@@ -71,12 +66,15 @@ def getMulti2():
     print(x)
 
 def pop_usage():
+    for i in range(10):
+        r.lpush('mylist','Hello')
     #r.lpush('key',{'hello1':'world'})
     #r.lpush('key','hello')
     #r.lpush('key','hello')
-    for i in range(r.llen('key')):
-        x= r.lpop('key')
-        print(type(x))
+    # for i in range(r.llen('mylist')):
+        # print(r.lindex('mylist',i))
+        # x= r.lpop('key')
+        # print(type(x))
 def get_keys():
     '''
     for i in r.keys():
@@ -130,4 +128,5 @@ def search():
 #get_keys()
 # clear_db(1)
 # check_dup()
-search()
+# search()
+pop_usage()

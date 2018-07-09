@@ -1,11 +1,11 @@
 # coding: utf-8
 import hashlib
 import time
-import urllib2
+# import urllib2
 
 # 请替换appkey和secret
 import requests
-def mayiproxy(url,headers):
+def mayiproxy(url=None,headers={}):
     appkey = "104595392"
     secret = "c978952ede1661bd5342b34ca0bf561e"
     paramMap = {
@@ -15,8 +15,13 @@ def mayiproxy(url,headers):
     # 排序
     keys = paramMap.keys()
     keys.sort()
+    # new_key = sorted(list(keys))
 
     codes = "%s%s%s" % (secret, str().join('%s%s' % (key, paramMap[key]) for key in keys), secret)
+<<<<<<< HEAD
+=======
+    print('codes {}'.format(codes))
+>>>>>>> origin/master
     print(codes)
     # 计算签名
     sign = hashlib.md5(codes).hexdigest().upper()
@@ -30,5 +35,7 @@ def mayiproxy(url,headers):
     # 接下来使用蚂蚁动态代理进行访问
     target='http://members.3322.org/dyndns/getip'
     headers['Proxy-Authorization'] = authHeader
-    r=requests.get(url=url,headers=headers,proxies={'http':proxy})
+    r=requests.get(url=target,headers=headers,proxies={'http':proxy})
     return r
+
+print(mayiproxy())
