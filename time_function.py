@@ -216,7 +216,9 @@ def str_time_hour():
 # 时间戳
 def time_cuo():
     # 10位
+
     print(int(time.time()))
+
     # 13位
     # 1521204495005
     print(long(time.time()*1000))
