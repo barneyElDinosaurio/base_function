@@ -1,0 +1,2354 @@
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 9675,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 8, 31, 422320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 8, 17, 429320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 9675,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 9, 53, 372320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 9, 39, 543320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 4122,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 11, 55, 917320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 11, 42, 77320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 4122,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 12, 40, 634320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 12, 26, 830320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "E:\nexgo\gdcic\gdcic\gdcic\spiders\gdcicbad.py", line 36, in start_requests
+    yield scrapy.FormRequest(url=self.url, formdata=self.data, headers=self.headers, dont_filter=True)
+  File "C:\python3\lib\site-packages\scrapy\http\request\form.py", line 31, in __init__
+    querystr = _urlencode(items, self.encoding)
+  File "C:\python3\lib\site-packages\scrapy\http\request\form.py", line 66, in _urlencode
+    for k, vs in seq
+  File "C:\python3\lib\site-packages\scrapy\http\request\form.py", line 67, in <listcomp>
+    for v in (vs if is_listlike(vs) else [vs])]
+  File "C:\python3\lib\site-packages\scrapy\utils\python.py", line 119, in to_bytes
+    'object, got %s' % type(text).__name__)
+TypeError: to_bytes must receive a unicode, str or bytes object, got int
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 13, 30, 225320),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 13, 30, 197320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 9675,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 13, 54, 393320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 13, 40, 588320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 11331,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 15, 26, 88320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 15, 12, 290320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 2 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+DEBUG: Gave up retrying <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+ERROR: Error downloading <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionDone: Connection was closed cleanly.>]
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 9,
+ 'downloader/request_bytes': 11331,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/POST': 9,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 17, 22, 342320),
+ 'log_count/DEBUG': 10,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 6,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 16, 47, 864320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 79188,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 18, 3, 521320),
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 17, 49, 576320)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市市政集团有限公司 ',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市市政集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东电白建设集团有限公司 ',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东电白建设集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州建总建筑工程有限公司 ',
+ 'punish_date': '2017-08-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州建总建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕15号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-08-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市花都第一市政工程建设有限公司 ',
+ 'punish_date': '2018-05-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕13号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕11号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安集团有限公司 ',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕10号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '广东省中山市第一人民法院协助执行通知书',
+ 'punish_file_no': '（2018）粤2071执2870号之二'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'punish_date': '2018-03-18',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕9号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '惠阳建筑工程总公司 ',
+ 'punish_date': '2018-03-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕8号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝鹰建设集团股份有限公司 ',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市宝鹰建设集团股份有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕33号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东诚业建筑集团有限公司 ',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东诚业建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东新大华建筑工程有限公司 ',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东新大华建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕31号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '梅州常安机械有限公司 ',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于梅州常安机械有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕30号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市泰安劳务有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市泰安劳务有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕25号 '}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'punish_date': '2018-02-12',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕7号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省电白建筑集团有限公司 ',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东省电白建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕39号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市盾建地下工程有限公司 ',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市盾建地下工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕38号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '江门市建设监理顾问有限公司 ',
+ 'punish_date': '2017-11-22',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于江门市建设监理顾问有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建执罚〔2017〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '联建建设工程有限公司 ',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于联建建设工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕36号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '龙光工程建设有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于龙光工程建设有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕23号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市长胜建筑有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市长胜建筑劳务分包有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕24号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳建业工程集团股份有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳建业工程集团股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕27号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市市政工程总公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市市政工程总公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕29号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安桩基础工程有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市恩歌源建筑工程有限公司 ',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市恩歌源建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕37号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东强雄建设集团有限公司 ',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东强雄建设集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕34号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市城建工程总承包有限公司 ',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市城建工程总承包有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕35号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市深装总装饰股份有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市深装总装饰股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕26号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市住宅建设发展有限公司 ',
+ 'punish_date': '2017-10-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市住宅建设发展有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕22号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市裕欣国建筑工程有限公司 ',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市裕欣国建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕21号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市力创钢架结构工程有限公司 ',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市力创钢架结构工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕20号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-09-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕18号'}
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 79188,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 27, 39, 652716),
+ 'item_scraped_count': 35,
+ 'log_count/DEBUG': 39,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 27, 25, 576716)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市市政集团有限公司 ',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市市政集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东电白建设集团有限公司 ',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东电白建设集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州建总建筑工程有限公司 ',
+ 'punish_date': '2017-08-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州建总建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕15号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-08-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市花都第一市政工程建设有限公司 ',
+ 'punish_date': '2018-05-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕13号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝鹰建设集团股份有限公司 ',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市宝鹰建设集团股份有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕33号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕11号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东诚业建筑集团有限公司 ',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东诚业建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东新大华建筑工程有限公司 ',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东新大华建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕31号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安集团有限公司 ',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕10号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '梅州常安机械有限公司 ',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于梅州常安机械有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕30号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '广东省中山市第一人民法院协助执行通知书',
+ 'punish_file_no': '（2018）粤2071执2870号之二'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市泰安劳务有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市泰安劳务有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕25号 '}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'punish_date': '2018-03-18',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕9号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '龙光工程建设有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于龙光工程建设有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕23号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '惠阳建筑工程总公司 ',
+ 'punish_date': '2018-03-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕8号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市长胜建筑有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市长胜建筑劳务分包有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕24号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'punish_date': '2018-02-12',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕7号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳建业工程集团股份有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳建业工程集团股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕27号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省电白建筑集团有限公司 ',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东省电白建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕39号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市市政工程总公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市市政工程总公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕29号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市盾建地下工程有限公司 ',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市盾建地下工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕38号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安桩基础工程有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '江门市建设监理顾问有限公司 ',
+ 'punish_date': '2017-11-22',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于江门市建设监理顾问有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建执罚〔2017〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市深装总装饰股份有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市深装总装饰股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕26号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '联建建设工程有限公司 ',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于联建建设工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕36号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市住宅建设发展有限公司 ',
+ 'punish_date': '2017-10-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市住宅建设发展有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕22号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市恩歌源建筑工程有限公司 ',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市恩歌源建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕37号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市裕欣国建筑工程有限公司 ',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市裕欣国建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕21号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东强雄建设集团有限公司 ',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东强雄建设集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕34号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市力创钢架结构工程有限公司 ',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市力创钢架结构工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕20号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市城建工程总承包有限公司 ',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市城建工程总承包有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕35号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-09-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕18号'}
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 79188,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 29, 15, 71515),
+ 'item_scraped_count': 35,
+ 'log_count/DEBUG': 39,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 28, 59, 862515)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市市政集团有限公司 ',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市市政集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东电白建设集团有限公司 ',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东电白建设集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州建总建筑工程有限公司 ',
+ 'punish_date': '2017-08-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州建总建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕15号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-08-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市花都第一市政工程建设有限公司 ',
+ 'punish_date': '2018-05-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕13号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕11号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安集团有限公司 ',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕10号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '广东省中山市第一人民法院协助执行通知书',
+ 'punish_file_no': '（2018）粤2071执2870号之二'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'punish_date': '2018-03-18',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕9号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '惠阳建筑工程总公司 ',
+ 'punish_date': '2018-03-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕8号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'punish_date': '2018-02-12',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕7号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省电白建筑集团有限公司 ',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东省电白建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕39号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市盾建地下工程有限公司 ',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市盾建地下工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕38号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '江门市建设监理顾问有限公司 ',
+ 'punish_date': '2017-11-22',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于江门市建设监理顾问有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建执罚〔2017〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '联建建设工程有限公司 ',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于联建建设工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕36号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝鹰建设集团股份有限公司 ',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市宝鹰建设集团股份有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕33号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东诚业建筑集团有限公司 ',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东诚业建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东新大华建筑工程有限公司 ',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东新大华建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕31号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市恩歌源建筑工程有限公司 ',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市恩歌源建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕37号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东强雄建设集团有限公司 ',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东强雄建设集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕34号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市城建工程总承包有限公司 ',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市城建工程总承包有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕35号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '梅州常安机械有限公司 ',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于梅州常安机械有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕30号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市泰安劳务有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市泰安劳务有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕25号 '}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '龙光工程建设有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于龙光工程建设有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕23号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市长胜建筑有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市长胜建筑劳务分包有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕24号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳建业工程集团股份有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳建业工程集团股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕27号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市市政工程总公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市市政工程总公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕29号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安桩基础工程有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市深装总装饰股份有限公司 ',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市深装总装饰股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕26号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市住宅建设发展有限公司 ',
+ 'punish_date': '2017-10-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市住宅建设发展有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕22号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市裕欣国建筑工程有限公司 ',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市裕欣国建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕21号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市力创钢架结构工程有限公司 ',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市力创钢架结构工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕20号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'punish_date': '2017-09-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕18号'}
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 79188,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 20, 2, 30, 18, 998515),
+ 'item_scraped_count': 35,
+ 'log_count/DEBUG': 39,
+ 'log_count/INFO': 8,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 6, 20, 2, 30, 4, 972515)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市花都第一市政工程建设有限公司',
+ 'enterprise_link': '/ZWGK/20180525_twopublicb_4586',
+ 'punish_date': '2018-05-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕13号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司',
+ 'enterprise_link': '/ZWGK/20180505_twopublicb_4591',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司',
+ 'enterprise_link': '/ZWGK/20180505_twopublicb_4596',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕11号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安集团有限公司',
+ 'enterprise_link': '/ZWGK/20180420_twopublicb_4601',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕10号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司',
+ 'enterprise_link': '/ZWGK/20180420_twopublicb_4401',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '广东省中山市第一人民法院协助执行通知书',
+ 'punish_file_no': '（2018）粤2071执2870号之二'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司',
+ 'enterprise_link': '/ZWGK/20180318_twopublicb_4602',
+ 'punish_date': '2018-03-18',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕9号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '惠阳建筑工程总公司',
+ 'enterprise_link': '/ZWGK/20180312_twopublicb_4626',
+ 'punish_date': '2018-03-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕8号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司',
+ 'enterprise_link': '/ZWGK/20180212_twopublicb_4632',
+ 'punish_date': '2018-02-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕7号'}
+ERROR: Spider error processing <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\nexgo\gdcic\gdcic\gdcic\spiders\gdcicbad.py", line 57, in parse
+    item['punish_file'] = content[1].xpath('.//text()').extract_first().strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市盾建地下工程有限公司',
+ 'enterprise_link': '/ZWGK/20171201_twopublicb_3952',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市盾建地下工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕38号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省电白建筑集团有限公司',
+ 'enterprise_link': '/ZWGK/20171201_twopublicb_3951',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东省电白建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕39号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '江门市建设监理顾问有限公司',
+ 'enterprise_link': '/ZWGK/20171122_twopublicb_3955',
+ 'punish_date': '2017-11-22',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于江门市建设监理顾问有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建执罚〔2017〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市恩歌源建筑工程有限公司',
+ 'enterprise_link': '/ZWGK/20171121_twopublicb_3953',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市恩歌源建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕37号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '联建建设工程有限公司',
+ 'enterprise_link': '/ZWGK/20171121_twopublicb_3954',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于联建建设工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕36号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东强雄建设集团有限公司',
+ 'enterprise_link': '/ZWGK/20171115_twopublicb_3957',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东强雄建设集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕34号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市城建工程总承包有限公司',
+ 'enterprise_link': '/ZWGK/20171115_twopublicb_3956',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市城建工程总承包有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕35号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝鹰建设集团股份有限公司',
+ 'enterprise_link': '/ZWGK/20171109_twopublicb_3961',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市宝鹰建设集团股份有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕33号'}
+ERROR: Spider error processing <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\nexgo\gdcic\gdcic\gdcic\spiders\gdcicbad.py", line 58, in parse
+    item['punish_file_no'] = content[2].xpath('.//span/text()').extract_first().strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+ERROR: Spider error processing <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "C:\python3\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "E:\nexgo\gdcic\gdcic\gdcic\spiders\gdcicbad.py", line 57, in parse
+    item['punish_file'] = content[1].xpath('.//text()').extract_first().strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 83417,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 26, 10, 42, 59, 443356),
+ 'item_scraped_count': 16,
+ 'log_count/DEBUG': 20,
+ 'log_count/ERROR': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'spider_exceptions/AttributeError': 3,
+ 'start_time': datetime.datetime(2018, 6, 26, 10, 42, 51, 644356)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市花都第一市政工程建设有限公司 ',
+ 'enterprise_link': '/ZWGK/20180525_twopublicb_4586',
+ 'punish_date': '2018-05-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕13号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20180505_twopublicb_4591',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'enterprise_link': '/ZWGK/20180505_twopublicb_4596',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕11号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20180420_twopublicb_4601',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕10号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20180420_twopublicb_4401',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '广东省中山市第一人民法院协助执行通知书',
+ 'punish_file_no': '（2018）粤2071执2870号之二'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'enterprise_link': '/ZWGK/20180318_twopublicb_4602',
+ 'punish_date': '2018-03-18',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕9号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '惠阳建筑工程总公司 ',
+ 'enterprise_link': '/ZWGK/20180312_twopublicb_4626',
+ 'punish_date': '2018-03-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕8号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20180212_twopublicb_4632',
+ 'punish_date': '2018-02-12',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕7号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东大城建设集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20180211_twopublicb_4636',
+ 'punish_date': '2018-02-11',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': '粤建质罚〔2018〕6号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市隆盛建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20180205_twopublicb_4637',
+ 'punish_date': '2018-02-05',
+ 'punish_dept': '广东省住房和城乡建设厅 ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕5号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝豪市政工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20180205_twopublicb_4641',
+ 'punish_date': '2018-02-05',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕3号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省六建集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20180205_twopublicb_4638',
+ 'punish_date': '2018-02-05',
+ 'punish_dept': '广东省住房和城乡建设厅 ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕4号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '佛山市三水区南边建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20180124_twopublicb_4646',
+ 'punish_date': '2018-01-24',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕2号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20180104_twopublicb_4651',
+ 'punish_date': '2018-01-04',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕1号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东宏业建设工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171221_twopublicb_4692',
+ 'punish_date': '2017-12-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕40号'}
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市盾建地下工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171201_twopublicb_3952',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市盾建地下工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕38号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省电白建筑集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20171201_twopublicb_3951',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东省电白建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕39号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '江门市建设监理顾问有限公司 ',
+ 'enterprise_link': '/ZWGK/20171122_twopublicb_3955',
+ 'punish_date': '2017-11-22',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于江门市建设监理顾问有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建执罚〔2017〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市恩歌源建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171121_twopublicb_3953',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市恩歌源建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕37号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '联建建设工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171121_twopublicb_3954',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于联建建设工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕36号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东强雄建设集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20171115_twopublicb_3957',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东强雄建设集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕34号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市城建工程总承包有限公司 ',
+ 'enterprise_link': '/ZWGK/20171115_twopublicb_3956',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市城建工程总承包有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕35号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝鹰建设集团股份有限公司 ',
+ 'enterprise_link': '/ZWGK/20171109_twopublicb_3961',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市宝鹰建设集团股份有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕33号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东诚业建筑集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20171109_twopublicb_3962',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东诚业建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '梅州常安机械有限公司 ',
+ 'enterprise_link': '/ZWGK/20171107_twopublicb_3964',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于梅州常安机械有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕30号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东新大华建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171107_twopublicb_3963',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东新大华建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕31号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '龙光工程建设有限公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_4028',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于龙光工程建设有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕23号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市长胜建筑有限公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_4027',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市长胜建筑劳务分包有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕24号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳建业工程集团股份有限公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_3967',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳建业工程集团股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕27号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市市政工程总公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_3965',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市市政工程总公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕29号'}
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安桩基础工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_3966',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市泰安劳务有限公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_4026',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市泰安劳务有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕25号 '}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市深装总装饰股份有限公司 ',
+ 'enterprise_link': '/ZWGK/20171024_twopublicb_3971',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市深装总装饰股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕26号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市住宅建设发展有限公司 ',
+ 'enterprise_link': '/ZWGK/20171020_twopublicb_4029',
+ 'punish_date': '2017-10-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市住宅建设发展有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕22号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市裕欣国建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171013_twopublicb_4030',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市裕欣国建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕21号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市力创钢架结构工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20171013_twopublicb_4031',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市力创钢架结构工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕20号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20170930_twopublicb_4691',
+ 'punish_date': '2017-09-30',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕19号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20170901_twopublicb_4042',
+ 'punish_date': '2017-09-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕18号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市市政集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20170828_twopublicb_4041',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市市政集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东电白建设集团有限公司 ',
+ 'enterprise_link': '/ZWGK/20170828_twopublicb_4036',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东电白建设集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州建总建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20170825_twopublicb_4043',
+ 'punish_date': '2017-08-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州建总建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕15号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20170801_twopublicb_3631',
+ 'punish_date': '2017-08-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20170724_twopublicb_4686',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': '/ZWGK/20170724_twopublicb_4046',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 83417,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 26, 10, 44, 28, 577356),
+ 'item_scraped_count': 44,
+ 'log_count/DEBUG': 48,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 6, 26, 10, 44, 20, 836356)}
+INFO: Spider closed (finished)
+INFO: Scrapy 1.5.0 started (bot: gdcic)
+INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 18.4.0, Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+INFO: Overridden settings: {'BOT_NAME': 'gdcic', 'DOWNLOAD_DELAY': 3, 'NEWSPIDER_MODULE': 'gdcic.spiders', 'SPIDER_MODULES': ['gdcic.spiders']}
+INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'gdcic.middlewares.GdcicDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+WARNING: C:\python3\lib\site-packages\pymysql\cursors.py:170: Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 480")
+  result = self._query(query)
+
+INFO: Enabled item pipelines:
+['gdcic.pipelines.GdcicPipeline']
+INFO: Spider opened
+INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+INFO: Spider opened: gdcicbad
+DEBUG: Telnet console listening on 127.0.0.1:6023
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市花都第一市政工程建设有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180525_twopublicb_4586',
+ 'punish_date': '2018-05-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕13号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180505_twopublicb_4591',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180505_twopublicb_4596',
+ 'punish_date': '2018-05-05',
+ 'punish_dept': '广东省住房城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕11号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180420_twopublicb_4601',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕10号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '瑞华建设集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180420_twopublicb_4401',
+ 'punish_date': '2018-04-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '广东省中山市第一人民法院协助执行通知书',
+ 'punish_file_no': '（2018）粤2071执2870号之二'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东正业建设有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180318_twopublicb_4602',
+ 'punish_date': '2018-03-18',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕9号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '惠阳建筑工程总公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180312_twopublicb_4626',
+ 'punish_date': '2018-03-12',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕8号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180212_twopublicb_4632',
+ 'punish_date': '2018-02-12',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2018〕7号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东大城建设集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180211_twopublicb_4636',
+ 'punish_date': '2018-02-11',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': '粤建质罚〔2018〕6号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市隆盛建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180205_twopublicb_4637',
+ 'punish_date': '2018-02-05',
+ 'punish_dept': '广东省住房和城乡建设厅 ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕5号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝豪市政工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180205_twopublicb_4641',
+ 'punish_date': '2018-02-05',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕3号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省六建集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180205_twopublicb_4638',
+ 'punish_date': '2018-02-05',
+ 'punish_dept': '广东省住房和城乡建设厅 ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕4号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '佛山市三水区南边建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180124_twopublicb_4646',
+ 'punish_date': '2018-01-24',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕2号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市坤龙建筑安装工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20180104_twopublicb_4651',
+ 'punish_date': '2018-01-04',
+ 'punish_dept': '广东省住房和城乡建设厅    ',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2018〕1号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东宏业建设工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171221_twopublicb_4692',
+ 'punish_date': '2017-12-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕40号'}
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市盾建地下工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171201_twopublicb_3952',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市盾建地下工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕38号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东省电白建筑集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171201_twopublicb_3951',
+ 'punish_date': '2017-12-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东省电白建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕39号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '江门市建设监理顾问有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171122_twopublicb_3955',
+ 'punish_date': '2017-11-22',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于江门市建设监理顾问有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建执罚〔2017〕12号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市恩歌源建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171121_twopublicb_3953',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市恩歌源建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕37号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '联建建设工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171121_twopublicb_3954',
+ 'punish_date': '2017-11-21',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于联建建设工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕36号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东强雄建设集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171115_twopublicb_3957',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东强雄建设集团有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕34号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市城建工程总承包有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171115_twopublicb_3956',
+ 'punish_date': '2017-11-15',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市城建工程总承包有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕35号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市宝鹰建设集团股份有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171109_twopublicb_3961',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市宝鹰建设集团股份有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕33号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东诚业建筑集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171109_twopublicb_3962',
+ 'punish_date': '2017-11-09',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东诚业建筑集团有限公司的行政处罚决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '梅州常安机械有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171107_twopublicb_3964',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于梅州常安机械有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕30号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东新大华建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171107_twopublicb_3963',
+ 'punish_date': '2017-11-07',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东新大华建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕31号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '龙光工程建设有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_4028',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于龙光工程建设有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕23号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市长胜建筑有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_4027',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市长胜建筑劳务分包有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕24号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳建业工程集团股份有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_3967',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳建业工程集团股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕27号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市市政工程总公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_3965',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市市政工程总公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕29号'}
+DEBUG: Crawled (200) <POST http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx> (referer: http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx)
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市建安桩基础工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_3966',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': None,
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市泰安劳务有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_4026',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市泰安劳务有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕25号 '}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '深圳市深装总装饰股份有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171024_twopublicb_3971',
+ 'punish_date': '2017-10-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于深圳市深装总装饰股份有限公司行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕26号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市住宅建设发展有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171020_twopublicb_4029',
+ 'punish_date': '2017-10-20',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市住宅建设发展有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕22号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市裕欣国建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171013_twopublicb_4030',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市裕欣国建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕21号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '东莞市力创钢架结构工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20171013_twopublicb_4031',
+ 'punish_date': '2017-10-13',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于东莞市力创钢架结构工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕20号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170930_twopublicb_4691',
+ 'punish_date': '2017-09-30',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕19号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170901_twopublicb_4042',
+ 'punish_date': '2017-09-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的延长暂扣期限决定书',
+ 'punish_file_no': '粤建质罚〔2017〕18号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州市市政集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170828_twopublicb_4041',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州市市政集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东电白建设集团有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170828_twopublicb_4036',
+ 'punish_date': '2017-08-28',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东电白建设集团有限公司的延长暂扣期限决定书',
+ 'punish_file_no': None}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广州建总建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170825_twopublicb_4043',
+ 'punish_date': '2017-08-25',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广州建总建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕15号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170801_twopublicb_3631',
+ 'punish_date': '2017-08-01',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170724_twopublicb_4686',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+DEBUG: Scraped from <200 http://www.gdcic.gov.cn/ZWGK/twoPublicity2.aspx>
+{'enterprise': '广东腾越建筑工程有限公司 ',
+ 'enterprise_link': 'http://www.gdcic.gov.cn/ZWGK/20170724_twopublicb_4046',
+ 'punish_date': '2017-07-24',
+ 'punish_dept': '广东省住房和城乡建设厅',
+ 'punish_file': '关于广东腾越建筑工程有限公司的行政处罚决定书',
+ 'punish_file_no': '粤建质罚〔2017〕14号'}
+INFO: Closing spider (finished)
+INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3714,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/POST': 3,
+ 'downloader/response_bytes': 83417,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 6, 26, 10, 45, 59, 101356),
+ 'item_scraped_count': 44,
+ 'log_count/DEBUG': 48,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2018, 6, 26, 10, 45, 51, 603356)}
+INFO: Spider closed (finished)
