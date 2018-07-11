@@ -1,31 +1,35 @@
 # -*-coding=utf-8-*-
 import redis
+
 # HOSTNAME='raspberrypi'
-HOSTNAME='localhost'
-r = redis.Redis(host=HOSTNAME, port=6379, db=4,decode_responses=True)
+HOSTNAME = '10.18.6.101'
+r = redis.Redis(host=HOSTNAME, port=6379, db=4, decode_responses=True)
+
 
 def base_usage():
     print(r.dbsize())
-    #r.flushdb()
+    # r.flushdb()
     print(r.dbsize())
     print(r.exists('house'))
-    #r = redis.Redis(host='183.232.57.39', port=7001, db=0,password='jiguang')
+    # r = redis.Redis(host='183.232.57.39', port=7001, db=0,password='jiguang')
 
     for i in range(10):
-        r.set(i,i)
-        #每次执行不会覆盖
+        r.set(i, i)
+        # 每次执行不会覆盖
 
     for i in range(10):
-        x=r.get(i)
+        x = r.get(i)
         print(x)
         print(type(x))
-    #print(r.get('test'))
+    # print(r.get('test'))
 
-#删除数据库
+
+# 删除数据库
 def clear_db(db):
-    r=redis.StrictRedis(HOSTNAME,6379,db=db)
-    #r.flushdb()
+    r = redis.StrictRedis(HOSTNAME, 6379, db=db)
+    # r.flushdb()
     print(r.dbsize())
+
 
 def insert_data():
     '''
@@ -33,22 +37,25 @@ def insert_data():
     value=['shenzhen','欧陆经典','2000','160户']
     r.set(key,value)
     '''
-    key='dict'
-    value={'name':'rocky','age':26,'sex':'f'}
-    r.set(key,value)
+    key = 'dict'
+    value = {'name': 'rocky', 'age': 26, 'sex': 'f'}
+    r.set(key, value)
+
 
 def get_data():
-    keys=r.keys()
+    # keys = r.keys()
     # 返回的事key的列表
+    # print('key:', keys)
 
-    print('key:',keys)
+    # for key in keys:
+    #     print(key, " ", r.get(key), 'type ', type(r.get(key)))
 
-    for key in keys:
-        print(key," ",r.get(key),'type ', type(r.get(key)))
+    print(r.llen('hlj0706'))
 
 def list_usage():
     for i in range(10):
-        print(r.set(i,i*i))
+        print(r.set(i, i * i))
+
 
 def get_data2():
     k = r.keys()
@@ -57,24 +64,29 @@ def get_data2():
         print(r.get(each))
         r.delete(each)
 
+
 def getMulti():
-    d={'a':1,'b' :2,'c':3}
+    d = {'a': 1, 'b': 2, 'c': 3}
     r.mset(d)
 
+
 def getMulti2():
-    x= r.mget('a','b','c')
+    x = r.mget('a', 'b', 'c')
     print(x)
+
 
 def pop_usage():
     for i in range(10):
-        r.lpush('mylist','Hello')
-    #r.lpush('key',{'hello1':'world'})
-    #r.lpush('key','hello')
-    #r.lpush('key','hello')
+        r.lpush('mylist', 'Hello')
+    # r.lpush('key',{'hello1':'world'})
+    # r.lpush('key','hello')
+    # r.lpush('key','hello')
     # for i in range(r.llen('mylist')):
-        # print(r.lindex('mylist',i))
-        # x= r.lpop('key')
-        # print(type(x))
+    # print(r.lindex('mylist',i))
+    # x= r.lpop('key')
+    # print(type(x))
+
+
 def get_keys():
     '''
     for i in r.keys():
@@ -82,10 +94,10 @@ def get_keys():
         print(r.get(i))
     '''
     print(r.llen('codes'))
-    i=0
-    while i<10:
+    i = 0
+    while i < 10:
         try:
-            x= r.lpop('codes')
+            x = r.lpop('codes')
             print(x)
             '''
             d = eval(x[1])
@@ -96,18 +108,21 @@ def get_keys():
         except Exception as e:
             print(e)
             break
-        i=i+1
+        i = i + 1
+
+
 def check_dup():
-    l=r.llen('url')
+    l = r.llen('url')
     print(l)
     # for i in range(l):
-    total = r.lrange('url',0,l)
-    for index,i in enumerate(total):
+    total = r.lrange('url', 0, l)
+    for index, i in enumerate(total):
         # print(index)
         # print(i)
         pass
-    x=len(set(total))
+    x = len(set(total))
     print(x)
+
 
 def search():
     for i in r.keys():
@@ -115,18 +130,20 @@ def search():
         # print(i)
         # print(r.get(i),len(r.get(i)))
         # if len(r.get(i))==0:
-            # print(i)
+        # print(i)
+
+
 # base_usage()
 # insert_data()
 # get_data()
 # list_usage()
-#get_data2()
-#getMulti()
-#get_data2()
-#getMulti2()
-#pop_usage()
-#get_keys()
+# get_data2()
+# getMulti()
+# get_data2()
+# getMulti2()
+# pop_usage()
+# get_keys()
 # clear_db(1)
 # check_dup()
 # search()
-pop_usage()
+# pop_usage()

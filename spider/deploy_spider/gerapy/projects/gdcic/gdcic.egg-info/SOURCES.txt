@@ -1,0 +1,13 @@
+setup.py
+gdcic/__init__.py
+gdcic/items.py
+gdcic/middlewares.py
+gdcic/pipelines.py
+gdcic/settings.py
+gdcic.egg-info/PKG-INFO
+gdcic.egg-info/SOURCES.txt
+gdcic.egg-info/dependency_links.txt
+gdcic.egg-info/entry_points.txt
+gdcic.egg-info/top_level.txt
+gdcic/spiders/__init__.py
+gdcic/spiders/gdcicbad.py
