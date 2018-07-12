@@ -25,7 +25,7 @@ SECRET_KEY = 'h=v6d$upc-1!d!gtm*)b-f^o*_nrzk99upr2ue$w649=@9blf+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapps',
+    'sxrquery',
     'rest_framework',
 ]
 
@@ -76,20 +77,28 @@ WSGI_APPLICATION = 'myapi.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 
-        'default': {
+        'myapi': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'spider',
         'USER': 'crawler' ,
         'PASSWORD': 'Crawler@1234',
         'HOST':'10.18.4.211',
         'PORT':'3367',
+    },
 
-    }
+    'crawler':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'crawler_web_new',
+        'USER': 'crawler',
+        'PASSWORD': 'Crawler@1234',
+        'HOST': '10.18.4.211',
+        'PORT': '3367',
+    },
 }
 
 
@@ -111,9 +120,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+DATABASE_ROUTERS = ['myapi.database_router.DatabaseAppsRouter']
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
+# DATABASES_APPS_MAPPING
+DATABASES_APPS_MAPPING = {
+    # example:
+    # 'app_name':'database_name',
+    'myapps': 'myapi',
+    'sxrquery': 'crawler',
+
+}
 
 LANGUAGE_CODE = 'zh-hans'
 

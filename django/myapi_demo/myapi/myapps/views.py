@@ -256,6 +256,7 @@ def qualmiss(request):
             return HttpResponse(response, content_type='application/json,charset=utf-8')
 
 
+
 @csrf_exempt
 def add_car(request):
     if request.method == 'POST':

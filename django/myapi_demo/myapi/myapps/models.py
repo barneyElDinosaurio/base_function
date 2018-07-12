@@ -27,6 +27,7 @@ class DjangoMigrations(models.Model):
 
     class Meta:
         managed = False
+        # ordering=['name']
         db_table = 'django_migrations'
 
 

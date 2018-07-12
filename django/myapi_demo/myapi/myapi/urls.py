@@ -15,25 +15,27 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from myapps import views
+import myapps.views as myapps_views
+import sxrquery.views as sxr_views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 # router.register('myapps',views.CarView)
-router.register('myapps',views.ProductQualityView)
+router.register('myapps',myapps_views.ProductQualityView)
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
 	url('',include(router.urls)), 
-    url(r'^fraud/(\S+)/$',views.get_fraud),
-    url(r'^productqual/$',views.get_product_quality), # 产品质量
-    url(r'^personbadbehavious/$',views.people_bad_behavious), # 人员不良行为
-    url(r'^companybadbehavious/$',views.company_bad_behavious), # 企业不良行为
-    url(r'^companybackpay/$',views.company_backpay), # 企业欠薪投诉
-    url(r'^companyblacklist/$',views.company_blacklist), # 企业欠薪投诉
-    url(r'^accident/$',views.accident), # 安全事故
-    url(r'^qualcancel/$',views.qualcancel), # 证书注销
-    url(r'^qualmiss/$',views.qualmiss), # 证书遗失
+    url(r'^fraud/(\S+)/$',myapps_views.get_fraud),
+    url(r'^productqual/$',myapps_views.get_product_quality), # 产品质量
+    url(r'^personbadbehavious/$',myapps_views.people_bad_behavious), # 人员不良行为
+    url(r'^companybadbehavious/$',myapps_views.company_bad_behavious), # 企业不良行为
+    url(r'^companybackpay/$',myapps_views.company_backpay), # 企业欠薪投诉
+    url(r'^companyblacklist/$',myapps_views.company_blacklist), # 企业欠薪投诉
+    url(r'^accident/$',myapps_views.accident), # 安全事故
+    url(r'^qualcancel/$',myapps_views.qualcancel), # 证书注销
+    url(r'^qualmiss/$',myapps_views.qualmiss), # 证书遗失
+    url(r'^sxr/$',sxr_views.sxrquery)
 
 
 
