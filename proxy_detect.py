@@ -6,7 +6,7 @@ url = 'http://members.3322.org/dyndns/getip'
 
 
 def get_proxy(retry=5):
-    proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+    proxyurl = 'http://:8081/dynamicIp/common/getDynamicIp.do'
     count = 0
     for i in range(retry):
         try:
