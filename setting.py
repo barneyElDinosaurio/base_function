@@ -11,6 +11,7 @@ import os
 import itchat
 import json
 import pymysql
+
 cfg_file = os.path.join(os.path.dirname(__file__), 'data.cfg')
 with open(cfg_file, 'r') as f:
     json_data = json.load(f)
@@ -30,28 +31,37 @@ EMAIL_PASS = json_data['EMAIL_PASSWORD']
 SMTP_HOST = json_data['SMTP_HOST']
 FROM_MAIL = json_data['FROM_MAIL']
 TO_MAIL = json_data['TO_MAIL']
-Ali_DB=json_data['Ali_DB']
-PROXY=json_data['PROXY']
+Ali_DB = json_data['Ali_DB']
+PROXY = json_data['PROXY']
 
-def get_engine(db,local=True):
+MYSQL_HOST_XGD = json_data['MYSQL_HOST_XGD']
+MYSQL_USER_XGD = json_data['MYSQL_USER_XGD']
+MYSQL_PASSWORD_XGD = json_data['MYSQL_PASSWORD_XGD']
+
+
+def get_engine(db, local=True):
     if local:
-    # engine = create_engine('mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, MYSQL_PORT, db))
+        # engine = create_engine('mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, MYSQL_PORT, db))
         engine = create_engine(
-                                                    'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST,
-                                                            MYSQL_PORT, db))
+            'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST,
+                                                                 MYSQL_PORT, db))
     else:
-        db=Ali_DB
+        db = Ali_DB
         engine = create_engine(
-                                                    'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER_Ali, MYSQL_PASSWORD_Ali, MYSQL_HOST_Ali,
-                                                            MYSQL_PORT, db))
+            'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER_Ali, MYSQL_PASSWORD_Ali, MYSQL_HOST_Ali,
+                                                                 MYSQL_PORT, db))
     return engine
 
 
-def get_mysql_conn(db,local=True):
-    if local:
+def get_mysql_conn(db, local='local'):
+    if local == 'local':
         conn = pymysql.connect(MYSQL_REMOTE, MYSQL_REMOTE_USER, MYSQL_PASSWORD, db, charset='utf8')
+    elif local == 'XGD':
+        # conn = pymysql.connect(MYSQL_HOST_XGD, MYSQL_USER_XGD, MYSQL_PASSWORD_XGD, db, charset='utf8')
+        conn = pymysql.connect(host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234', db=db, charset='utf8')
+
     else:
-        db=Ali_DB
+        db = Ali_DB
         conn = pymysql.connect(MYSQL_HOST_Ali, MYSQL_USER_Ali, MYSQL_PASSWORD_Ali, db, charset='utf8')
 
     return conn
@@ -97,40 +107,48 @@ def sendmail(content, subject):
     except Exception as e:
         print(e)
 
+
 class LLogger:
-    def __init__(self,file_name):
+    def __init__(self, file_name):
         self.logger = logging.getLogger('mylogger')
         self.logger.setLevel(logging.DEBUG)
-        file_path = os.path.join(os.path.dirname(__file__),file_name)
+        file_path = os.path.join(os.path.dirname(__file__), file_name)
         f_handler = logging.FileHandler(file_path)
         f_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter('[%(asctime)s][%(filename)s][line: %(lineno)d]\[%(levelname)s] ## %(message)s')
         f_handler.setFormatter(formatter)
         self.logger.addHandler(f_handler)
 
-    def log(self,content):
+    def log(self, content):
         try:
             self.logger.debug(content)
         except Exception as e:
             self.logger.debug(e)
 
+
 def trading_time():
     current = datetime.datetime.now()
-    start = datetime.datetime(current.year,current.month,current.day,9,23,0)
-    noon_start = datetime.datetime(current.year,current.month,current.day,12,58,0)
+    start = datetime.datetime(current.year, current.month, current.day, 9, 23, 0)
+    noon_start = datetime.datetime(current.year, current.month, current.day, 12, 58, 0)
 
-    morning_end = datetime.datetime(current.year,current.month,current.day,11,31,0)
-    end = datetime.datetime(current.year,current.month,current.day,15,2,5)
+    morning_end = datetime.datetime(current.year, current.month, current.day, 11, 31, 0)
+    end = datetime.datetime(current.year, current.month, current.day, 15, 2, 5)
     if current > start and current < morning_end:
         return 0
 
-    elif current >noon_start and current< end:
+    elif current > noon_start and current < end:
         return 0
 
-    elif current> end:
+    elif current > end:
         return 1
-    elif current<start:
+    elif current < start:
         return -1
+
+MYSQL_HOST = '10.18.4.211'
+MYSQL_PORT = 3367
+MYSQL_DBNAME = 'losecredit'
+MYSQL_USER = 'crawler'
+MYSQL_PASSWD = 'Crawler@1234'
 
 if __name__ == '__main__':
     # msg=MsgSend(u'wei')

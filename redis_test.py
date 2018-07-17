@@ -133,6 +133,30 @@ def search():
         # print(i)
 
 
+
+from setting import get_mysql_conn
+def convert_sql():
+    conn = get_mysql_conn('spider','XGD')
+    cur = conn.cursor()
+
+    length = r.llen('hlj0706')
+    print(length)
+    for i in r.lrange('hlj0706',0,length):
+        # print(type(i))
+        # print(type(eval(i)))
+        d = eval(i)
+        name=d.get('name')
+        cid=d.get('identify_number')
+        cmd ='insert into `tb_hljsxr` (`executed_name`,`cidno`)VALUES ("{}","{}")'.format(name,cid)
+        print(cmd)
+        try:
+            cur.execute(cmd)
+            conn.commit()
+        except Exception as e:
+            print(e)
+    conn.close()
+
+
 # base_usage()
 # insert_data()
 # get_data()
@@ -147,3 +171,4 @@ def search():
 # check_dup()
 # search()
 # pop_usage()
+convert_sql()

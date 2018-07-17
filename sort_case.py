@@ -24,7 +24,7 @@ def swap_sort(origin_list):
                 m = origin_list[l]
         t= origin_list[i]
         origin_list[i]=m
-        t =
+        # t =
 def main():
     L= [ 1,2,3,9,7,7,2,5,10,8,6,4,9]
     print(swap_sort(L))
