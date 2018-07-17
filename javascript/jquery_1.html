@@ -1,0 +1,62 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// $(document).ready(function(){
+//   $("p").click(function(){
+//   $(this).hide();
+//   });
+// });
+
+
+// $(document).ready(function(){
+// 	$("button").click(function()
+// 	{
+// 		$("#test").hide();
+// 	});
+// });
+
+
+
+$(document).ready(function(){
+  $("#bt1").click(function(){
+    $("#test").hide();
+  });
+});
+
+$(document).ready(function(){
+  $("#bt2").click(function(){
+	$("p#test").append("Added this one")  	
+  });
+});
+
+
+$(document).ready(function(){
+  $("#bt3").click(function(){
+	alert('output')
+    $.get("demo.asp",function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<p>If you click on me, I will disappear.</p>
+
+<p>Another P block</p>
+
+<p id="test">this is in id dv</p>
+
+<button type="button" id='bt1'>hide</button>
+<button type="button" id='bt2'>add item </button>
+<button type="button" id='bt3'>GET Item</button>
+
+</body>
+
+</html> 
