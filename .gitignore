@@ -16,3 +16,4 @@ header_toolkit.txt
 *.xlsx
 *.log
 __pycache__/
+setting.py
