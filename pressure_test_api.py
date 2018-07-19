@@ -1,53 +1,65 @@
 # -*-coding=utf-8-*-
 import random
 import string
-
 import requests
 import threading
 import time
 import multiprocessing
 from multiprocessing import freeze_support
+from gevent import monkey
+monkey.patch_all()
+from gevent.pool import Pool
 
 
+# api 压力测试
 
 def ping(threadname):
-    url='http://10.18.6.101:8000/sxr/?name=0576cc884d087d5ecfdce44a14922c32&idnum=4b45ba32c45e83c1df1ab890735ef16d'
-    r=requests.get(url)
+    url='http://30daydo.com'
+    # url = 'http://10.18.6.101:8000/sxr/?name=0576cc884d087d5ecfdce44a14922c32&idnum=4b45ba32c45e83c1df1ab890735ef16d'
+    r = requests.get(url)
+    print('Thread ::: {}'.format(threadname))
     print(r.json())
-    print(threadname)
+
 
 def multi_thread():
     start = time.time()
     thread_list = []
     for i in range(100):
-        t=threading.Thread(target=ping,args=('thread{}'.format(i),))
+        t = threading.Thread(target=ping, args=('thread{}'.format(i),))
         thread_list.append(t)
     for t in thread_list:
         t.start()
         t.join()
-    time_used = time.time()-start
+    time_used = time.time() - start
     print('Time used :{}'.format(time_used))
 
+# 多进程
 def multi_process():
     start = time.time()
-    # thread_list = []
-    p=multiprocessing.Pool(processes=8)
+    p = multiprocessing.Pool(processes=8)
     for i in range(100):
-        p.apply_async(ping,args=('process {}'.format(str(i)),))
+        p.apply_async(ping, args=('process {}'.format(str(i)),))
     p.close()
     p.join()
-    time_used = time.time()-start
+    time_used = time.time() - start
     print('Time used :{}'.format(time_used))
 
-def random_string():
-    x=str(int(time.time()*1000))
-    ran_str = ''.join(random.sample(string.ascii_lowercase, 17))
-    orderNo= '{}{}'.format(x,ran_str)
+# 协程
+def gevent_case():
+    pool = Pool(8)
+    pool.map(ping,('none'))
+    # print(result)
 
-if __name__=='__main__':
+def random_string():
+    x = str(int(time.time() * 1000))
+    ran_str = ''.join(random.sample(string.ascii_lowercase, 17))
+    orderNo = '{}{}'.format(x, ran_str)
+
+
+if __name__ == '__main__':
     # multi_thread()
 
-# freeze_support()
+    # freeze_support()
     multi_process()
     # for _ in range(100000):
     #     z=random_string()
