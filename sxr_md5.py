@@ -69,6 +69,15 @@ def losecredit():
             return None
 
 
+def query_idnum(name):
+    db_num =16
+    for i in range(16):
+        if i==0:
+            tb_name = 'credit'
+        else:
+            tb_name='credit{}'.format(i)
+        cmd = 'select * from'
 
-ret = losecredit()
-print(ret)
+
+# ret = losecredit()
+# print(ret)

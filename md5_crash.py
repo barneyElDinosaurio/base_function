@@ -2,7 +2,7 @@ import hashlib
 from setting import get_engine
 import pandas as pd
 import itertools
-engine =get_engine('qdm225205669_db')
+engine =get_engine('')
 df= pd.read_sql('aws_users',engine,index_col='uid')
 # print(df)
 
@@ -38,4 +38,5 @@ def start_crash():
 		src=str(i).zfill(6)
 		print(src)
 		loop_crash(src)
+
 start_crash()

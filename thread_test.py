@@ -1,20 +1,17 @@
 import threading, time, datetime
 from time import sleep, ctime
 
-
 def loop1():
     print("start %s " % ctime())
     print("start in loop1")
     sleep(3)
     print("end %s " % ctime())
 
-
 def loop2():
     print("sart %s " % ctime())
     print("start in loop2")
     sleep(6)
     print("end %s " % ctime())
-
 
 class MyThread(threading.Thread):
     def __init__(self, fun, arg, name=""):
@@ -34,20 +31,17 @@ class MyThread(threading.Thread):
     def getResult(self):
         return self.result
 
-
 def fib(n):
     if n < 2:
         return 1
     else:
         return fib(n - 1) + fib(n - 2)
 
-
 def sum(n):
     if n < 2:
         return 1
     else:
         return n + sum(n - 1)
-
 
 def fab(n):
     if n < 2:
@@ -60,7 +54,6 @@ def single_thread():
     print(fib(12))
     print(sum(12))
     print(fab(12))
-
 
 def multi_thread():
     print("in multithread")
@@ -79,22 +72,18 @@ def multi_thread():
         result = threads[i].getResult()
         print(result)
 
-
 def fast():
     print("in fast")
     sleep(10)
     print("done in fast")
-
 
 def slow():
     print("in slow")
     sleep(15)
     print("done in slow")
 
-
 def wireteQ(queue):
     pass
-
 
 def main():
     '''
