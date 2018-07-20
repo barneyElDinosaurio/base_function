@@ -14,9 +14,10 @@ from gevent.pool import Pool
 # api 压力测试
 
 def ping(threadname):
-    url='http://30daydo.com'
-    # url = 'http://10.18.6.101:8000/sxr/?name=0576cc884d087d5ecfdce44a14922c32&idnum=4b45ba32c45e83c1df1ab890735ef16d'
+    # url='http://30daydo.com'
+    url = 'http://10.18.6.101:8000/sxr/?name=0576cc884d087d5ecfdce44a14922c32&idnum=4b45ba32c45e83c1df1ab890735ef16d'
     r = requests.get(url)
+    threadname='i'
     print('Thread ::: {}'.format(threadname))
     print(r.json())
 
@@ -47,7 +48,7 @@ def multi_process():
 # 协程
 def gevent_case():
     pool = Pool(8)
-    pool.map(ping,('none'))
+    pool.map(ping,(range(8),))
     # print(result)
 
 def random_string():
@@ -58,9 +59,9 @@ def random_string():
 
 if __name__ == '__main__':
     # multi_thread()
-
+    gevent_case()
     # freeze_support()
-    multi_process()
+    # multi_process()
     # for _ in range(100000):
     #     z=random_string()
     #     # print(len(z))
