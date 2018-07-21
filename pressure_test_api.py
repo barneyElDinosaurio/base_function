@@ -14,9 +14,12 @@ import gevent
 # api 压力测试
 
 def ping(threadname):
-    url='http://30daydo.com'
+
+    # url='http://30daydo.com'
+
     url = 'http://10.18.6.101:8000/sxr/?name=0576cc884d087d5ecfdce44a14922c32&idnum=4b45ba32c45e83c1df1ab890735ef16d'
     r = requests.get(url)
+    threadname='i'
     print('Thread ::: {}'.format(threadname))
     print(r.json())
 
@@ -46,8 +49,10 @@ def multi_process():
 
 # 协程
 def gevent_case():
-    # pool = Pool(8)
-    # pool.map(ping,('none'))
+
+    pool = Pool(8)
+    pool.map(ping,(range(8),))
+
     # print(result)
     gevent_list = [gevent.spawn(ping,str(i)) for i in range(10)]
     gevent.joinall(gevent_list)
