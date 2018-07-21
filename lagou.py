@@ -9,23 +9,32 @@ def _postdata():
     url = 'https://www.lagou.com/gongsi/searchPosition.json'
 
     # 最小header
-    headers = {'Origin': 'https://www.lagou.com', 'Content-Length': '87', 'Accept-Language': 'zh,en;q=0.8,en-US;q=0.6',
-               'Accept-Encoding': 'gzip, deflate, br', 'X-Anit-Forge-Code': '33435644',
-               'X-Requested-With': 'XMLHttpRequest', 'X-Anit-Forge-Token': '5b95a0d3-eed5-49e9-a5e7-f02be38a2716',
-               'Host': 'www.lagou.com', 'Accept': 'application/json, text/javascript, */*; q=0.01',
-               'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
-               'Connection': 'keep-alive',
+    headers = {
+        'Host': 'www.lagou.com',
+        'Connection': 'keep-alive',
+        # 'Content-Length': '89',
+        'Origin': 'https://www.lagou.com',
+        'X-Anit-Forge-Code': '15954614',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Accept': 'application/json, text/javascript, */*; q=0.01',
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-Anit-Forge-Token': '4b88c137-e592-4a33-9e1c-b35c47fd76a4',
+        'Referer': 'https://www.lagou.com/gongsi/j76066.html',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+        'Cookie': 'user_trace_token=20171121112654-d2256ffd-ce6b-11e7-9971-5254005c3644; LGUID=20171121112654-d22572b4-ce6b-11e7-9971-5254005c3644; _ga=GA1.2.1514235968.1511234812; LG_LOGIN_USER_ID=dc82d3e8edcc06f3ee143961873c3ba4ad0d8fe42571bced; index_location_city=%E5%85%A8%E5%9B%BD; JSESSIONID=ABAAABAACEBACDGCA1C30CEA6B9D058C206196A1051D923; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1530191868,1530289763,1530364609,1532137298; _gat=1; LGSID=20180721094145-39d2556b-8c87-11e8-a017-525400f775ce; PRE_UTM=; PRE_HOST=; PRE_SITE=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; _gid=GA1.2.336535918.1532137304; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1532137332; LGRID=20180721094213-4a720817-8c87-11e8-a017-525400f775ce; TG-TRACK-CODE=hpage_code'
 
-               'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Referer': 'https://www.lagou.com/gongsi/j917.html',
-               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
-
-    data = {'companyId': '917',
-            'positionFirstType': u'全部',
-            'schoolJob': 'False',
-            'pageNo': '1',
-            'pageSize': '10'}
-
-    for i in range(1, 10):
+    }
+    # cookies = {}
+    data = {
+        'companyId': '76066',
+        'positionFirstType': u'全部',
+        'schoolJob': 'False',
+        'pageNo': '1',
+        'pageSize': '10'}
+    import json
+    for i in range(1, 5):
         data['pageNo'] = str(i)
         r = requests.post(url=url, data=data, headers=headers)
         print(r.status_code)
@@ -65,5 +74,5 @@ def _company():
     print(r.text)
 
 
-#_postdata()
-_company()
+_postdata()
+# _company()
