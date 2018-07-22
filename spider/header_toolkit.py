@@ -132,7 +132,7 @@ def see_header():
 
 
 print(getheader())
-analysis_cookie()
+# analysis_cookie()
 # urlParse()
 # read_json()
 # print(urlAdd('urlparse'))
