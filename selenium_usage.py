@@ -109,17 +109,16 @@ def shop():
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    browser = webdriver.Chrome(executable_path=r'C:\OneDrive\Python\selenium\chromedriver.exe',
+    browser = webdriver.Chrome(executable_path=r'D:\OneDrive\Python\selenium\chromedriver.exe',
                                chrome_options=options)
 
     browser.implicitly_wait(60)
-    url='http://shop.99114.com/'
+    url='http://dzhy.haaic.gov.cn/yzt/toHandleQuery.do?id=YmVobG9xcXFxcnptcWh0ZHFj&uniScID=amNrbW9ycXBeVXVwRWp5fHJN&jumpFlag=false'
     browser.get(url)
-    time.sleep(5)
+    # time.sleep(1)
+    WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))
     txt=browser.page_source
-
     print(txt)
-
     #browser.send_keys(Keys.DOWN)
 
 #netease()

@@ -2,6 +2,7 @@ import requests
 import json
 import time
 
+
 def post_function():
     headers = {
         'User-Agent': 'Microsoft IE',
@@ -10,7 +11,7 @@ def post_function():
 
     url = 'http://httpbin.org/post'
     post_data = {'username': 'Rocky', 'password': '12345678'}
-    r = requests.post(url, headers=headers,	json=post_data)
+    r = requests.post(url, headers=headers, json=post_data)
     js = json.dumps(r.json(), indent=2, ensure_ascii=False)
     print(js)
 
@@ -40,7 +41,6 @@ def duoduojinbao():
         'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Mobile Safari/537.36',
         'Accept': 'application/json, text/javascript, */*; q=0.01',
 
-
     }
     post_data = {"keyword": "", "pageNumber": 1,
                  "pageSize": 60, "sortType": 0, "withCoupon": 0}
@@ -53,7 +53,6 @@ def duoduojinbao():
 
 
 def duoduojinbao_method2():
-
     url = "http://jinbao.pinduoduo.com/network/api/common/goodsList"
     data = {"pageSize": 60, "pageNumber": 1, "withCoupon": 0, "sortType": 0}
     headers = {
@@ -63,7 +62,6 @@ def duoduojinbao_method2():
         'Referer': 'http://jinbao.pinduoduo.com/',
         'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Mobile Safari/537.36',
         'Accept': 'application/json, text/javascript, */*; q=0.01',
-
 
     }
     r = requests.post(url=url, data=json.dumps(data), headers=headers)
@@ -79,7 +77,7 @@ def cookie_read():
         'Accept-Language': 'zh-CN,zh;q=0.9',
         'Cache-Control': 'max-age=0',
         'Host': 'www.hljcredit.gov.cn',
-        'Upgrade-Insecure-Requests':'1',
+        'Upgrade-Insecure-Requests': '1',
         # 'Cookie':'JSESSIONID=55GdciQL5cO4O1tHPeY3b34UbljdNY97NVNRmPmAybOQ8K4PQ74I!321925893',
         'Referer': 'http://www.hljcredit.gov.cn/',
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
@@ -90,12 +88,25 @@ def cookie_read():
     # print(r.text)
 
 
+def redirect_test():
+    url = 'http://www.gzonline.gov.cn/cri/BusinessMobile.aspx?Id=AB7E3AB7B64E2E9387DD937E093E8F4E'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'
+        }
+    r = requests.get(url, headers=headers)
+    print(r.text)
+
+
 def main():
-    # post_function()
-    # duoduojinbao()
-    # duoduojinbao_method2()
-    for _ in range(10):
-    	cookie_read()
-    	time.sleep(5)
+    redirect_test()
+
+# post_function()
+# duoduojinbao()
+# duoduojinbao_method2()
+# for _ in range(10):
+#     cookie_read()
+#     time.sleep(5)
+
+
 if __name__ == '__main__':
     main()
