@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+
+
 def template():
     options = webdriver.ChromeOptions()
     options.add_argument(
@@ -51,22 +53,22 @@ def anjuke():
                                chrome_options=options)
     browser.implicitly_wait(60)
     # browser.get("https://www.crunchbase.com/app/search/companies/")
-    for i in range(1,2):
-        browser.get('https://shenzhen.anjuke.com/community/p%d/' %i)
+    for i in range(1, 2):
+        browser.get('https://shenzhen.anjuke.com/community/p%d/' % i)
         try:
             browser.findElement(By.id('web_200'))
         except:
             print("Error")
-        cookiess=browser.get_cookies()
-        print('cookies:',cookiess)
+        cookiess = browser.get_cookies()
+        print('cookies:', cookiess)
         print(type(cookiess))
         print(len(cookiess))
         for i in cookiess:
-            for k,v in i.items():
-                print(k,v)
-        #cookie=browser.get_cookie('new_session')
-        #print('cookie',cookie)
-        #print(type(cookie))
+            for k, v in i.items():
+                print(k, v)
+        # cookie=browser.get_cookie('new_session')
+        # print('cookie',cookie)
+        # print(type(cookie))
         l = browser.find_elements_by_xpath('//div[@_soj="xqlb"]')
         print(len(l))
         for i in l:
@@ -77,8 +79,8 @@ def anjuke():
             print('Built date:',i.find_element_by_xpath('.//div[@class="li-info"]/p').text)
             print('Price: ' , i.find_element_by_xpath('.//div[@class="li-side"]/p/strong').text)
             '''
-        #print(browser.current_url)
-        #print(browser.title)
+        # print(browser.current_url)
+        # print(browser.title)
 
         browser.close()
     # time.sleep(60)
@@ -94,35 +96,42 @@ def key_operation():
     browser.implicitly_wait(60)
 
     browser.get('https://m.fang.com/fangjia/sz_list_pinggu/')
-    #browser.send_keys(Keys.DOWN)
-    count=0
-    while count<190:
+    # browser.send_keys(Keys.DOWN)
+    count = 0
+    while count < 190:
 
-        browser.find_element_by_xpath("//body[@class='whitebg']").send_keys(Keys.PAGE_DOWN)
+        browser.find_element_by_xpath(
+            "//body[@class='whitebg']").send_keys(Keys.PAGE_DOWN)
         time.sleep(5)
-        count=count+1
+        count = count+1
     raw_input('enter')
 
-def shop():
+
+def example():
     options = webdriver.ChromeOptions()
     options.add_argument(
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
     options.add_argument('--headless')
+    options.add_argument('--ignore-certificate-errors')
     options.add_argument('--disable-gpu')
-    browser = webdriver.Chrome(executable_path=r'D:\OneDrive\Python\selenium\chromedriver.exe',
+    browser = webdriver.Chrome(executable_path=r'D:\Download\chromedriver_win32\chromedriver.exe',
                                chrome_options=options)
 
     browser.implicitly_wait(60)
-    url='http://dzhy.haaic.gov.cn/yzt/toHandleQuery.do?id=YmVobG9xcXFxcnptcWh0ZHFj&uniScID=amNrbW9ycXBeVXVwRWp5fHJN&jumpFlag=false'
+
+    url = 'http://222.76.242.84:8084/xmgsggfw/SsztServlet?flag=sszt&action=viewSsztMobile&qyid=2c97f19049354aa601499c7b39cd5497&pritype=07&sfsszt=1&sfjyyc=2&qymc='
     browser.get(url)
     # time.sleep(1)
-    WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))
-    txt=browser.page_source
+    # WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))
+    time.sleep(12)
+
+    txt = browser.page_source
     print(txt)
-    #browser.send_keys(Keys.DOWN)
+    # browser.send_keys(Keys.DOWN)
+# netease()
+# anjuke()
 
-#netease()
-#anjuke()
 
-#key_operation()
-shop()
+# key_operation()
+# shop()
+example()

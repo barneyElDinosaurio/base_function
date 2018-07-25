@@ -7,7 +7,7 @@ import time
 import multiprocessing
 from multiprocessing import freeze_support
 from gevent import monkey
-monkey.patch_all()
+# monkey.patch_all()
 from gevent.pool import Pool
 import gevent
 
@@ -15,19 +15,19 @@ import gevent
 
 def ping(threadname):
 
-    # url='http://30daydo.com'
+    url = 'http://127.0.0.1:8000/barcode'
+    data={'url':'http://dzhy.haaic.gov.cn/yzt/toHandleQuery.do?id=YmVobG9xcXF2eHh1dGd5Ym1p&uniScID=amJrbW9ycXBeVXVxWWlHfHEn&jumpFlag=false'}
 
-    url = 'http://10.18.6.101:8000/sxr/?name=0576cc884d087d5ecfdce44a14922c32&idnum=4b45ba32c45e83c1df1ab890735ef16d'
-    r = requests.get(url)
+    r = requests.post(url,data)
+    print(r.json())
     threadname='i'
     print('Thread ::: {}'.format(threadname))
     print(r.json())
 
-
 def multi_thread():
     start = time.time()
     thread_list = []
-    for i in range(100):
+    for i in range(1000):
         t = threading.Thread(target=ping, args=('thread{}'.format(i),))
         thread_list.append(t)
     for t in thread_list:
@@ -40,7 +40,7 @@ def multi_thread():
 def multi_process():
     start = time.time()
     p = multiprocessing.Pool(processes=8)
-    for i in range(100):
+    for i in range(4):
         p.apply_async(ping, args=('process {}'.format(str(i)),))
     p.close()
     p.join()
@@ -63,9 +63,21 @@ def random_string():
     orderNo = '{}{}'.format(x, ran_str)
 
 
+def demo():
+    '''
+    url: 请求地址url
+    data: 字典,key为url,该值为请求的企业信用url
+    '''
+    url = 'http://10.18.6.101:8000/barcode'
+    data={'url':'http://gsxt.gdgs.gov.cn//GSpublicity/GSpublicityList.html?jumpid=rO0ABXQASntzZXJ2aWNlOmVudEluZm8sZW50Tm86N2Q3ZjljMTAtMDE0OC0xMDAwLWUwMDEtMzA2%0D%0AMTBhMGEwMTE1LHJlZ09yZzo0NDEzMDJ9%0D%0A'}
+    r = requests.post(url,data)
+    print(r.json())
+
+
 if __name__ == '__main__':
+    demo()
     # multi_thread()
-    gevent_case()
+    # gevent_case()
     # freeze_support()
     # multi_process()
     # for _ in range(100000):
