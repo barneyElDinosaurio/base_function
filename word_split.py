@@ -1,8 +1,8 @@
 from gensim.models import Word2Vec
 from gensim.models.word2vec import LineSentence
 
-filename = ''
-sentences = LinSentence(filename)
+filename = 'html.txt'
+sentences = LineSentence(filename)
 model = Word2Vec(sentences,size=128,window=5,min_count=5,workers=4)
 model.save('word_embedding_128')
 
