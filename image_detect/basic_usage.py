@@ -420,12 +420,9 @@ def main():
     # folder_detect()
     # validation()
     # find_best_args()
-<<<<<<< HEAD
     sample()
-=======
     clear_noise2()
 
->>>>>>> origin/master
 
 if __name__ == '__main__':
     main()

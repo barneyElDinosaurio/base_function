@@ -18,11 +18,9 @@ def mayiproxy(url=None,headers={}):
     # new_key = sorted(list(keys))
 
     codes = "%s%s%s" % (secret, str().join('%s%s' % (key, paramMap[key]) for key in keys), secret)
-<<<<<<< HEAD
-=======
+
     print('codes {}'.format(codes))
->>>>>>> origin/master
-    print(codes)
+
     # 计算签名
     sign = hashlib.md5(codes).hexdigest().upper()
     print(sign)

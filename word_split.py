@@ -3,10 +3,7 @@ from gensim.models import Word2Vec
 from gensim.models.word2vec import LineSentence
 import codecs
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 filename = 'html.txt'
 sentences = LineSentence(filename)
 model = Word2Vec(sentences, size=128, window=5, min_count=5, workers=4)
@@ -18,11 +15,6 @@ for item in items:
 
 print(model.similarity('男人', '女人'))
 
-<<<<<<< HEAD
-=======
-print(model.similarity('男人','女人'))
-
->>>>>>> origin/master
 filename = 'wikizhword.text'
 f = codecs.open(filename, 'r', encoding='utf-8')
 line = 20
