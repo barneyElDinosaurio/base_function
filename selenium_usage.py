@@ -111,22 +111,23 @@ def example():
     options = webdriver.ChromeOptions()
     options.add_argument(
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--disable-gpu')
     browser = webdriver.Chrome(executable_path=r'D:\Download\chromedriver_win32\chromedriver.exe',
                                chrome_options=options)
 
     browser.implicitly_wait(60)
-
-    url = 'http://222.76.242.84:8084/xmgsggfw/SsztServlet?flag=sszt&action=viewSsztMobile&qyid=2c97f19049354aa601499c7b39cd5497&pritype=07&sfsszt=1&sfjyyc=2&qymc='
+    url='http://ssgs.zhuhai.gov.cn/ssdj/ssztkydj0117/201709/t20170901_24360412.htm'
     browser.get(url)
     # time.sleep(1)
     # WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))
-    time.sleep(12)
+    # time.sleep(12)
 
     txt = browser.page_source
     print(txt)
+    time.sleep(12)
+
     # browser.send_keys(Keys.DOWN)
 # netease()
 # anjuke()

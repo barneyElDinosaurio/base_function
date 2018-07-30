@@ -68,6 +68,7 @@ def demo():
     url: 请求地址url
     data: 字典,key为url,该值为请求的企业信用url
     '''
+    
     url = 'http://10.18.6.101:8000/barcode'
     data={'url':'http://gsxt.gdgs.gov.cn//GSpublicity/GSpublicityList.html?jumpid=rO0ABXQASntzZXJ2aWNlOmVudEluZm8sZW50Tm86N2Q3ZjljMTAtMDE0OC0xMDAwLWUwMDEtMzA2%0D%0AMTBhMGEwMTE1LHJlZ09yZzo0NDEzMDJ9%0D%0A'}
     r = requests.post(url,data)
