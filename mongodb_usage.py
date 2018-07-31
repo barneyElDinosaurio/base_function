@@ -5,10 +5,9 @@ import pprint
 import pymongo, datetime
 import pandas as pd
 host = 'localhost'
-client = pymongo.MongoClient(host, 27017)
+client = pymongo.MongoClient(host)
 
 def basic_usage():
-    client = pymongo.MongoClient(host, 27017)
     # db=client.test
     db = client.demo_api
     # collection=db.houseinfo_aug
@@ -24,14 +23,24 @@ def basic_usage():
 
 
 def query():
-    print(collection.count())
-    print(collection.find({'name': 'a'}))
-    ''''
-    for i in collection.find({'name':'a'}):
-        print(i)
-    '''
-    for i in collection.find():
-        print(i)
+    collection=client['meituan']['food']
+    # print(collection.count())
+    ret = collection.find({'poiid': '999942031291'})
+    # print(list(ret))
+    ret=(list(ret))
+    if ret:
+        print('true')
+    else:
+        print('false')
+    for i in ret:
+        # print(i)
+        for k,v in i.items():
+            print(k,v)
+    # for i in collection.find({'name': 'a'}):
+    #     print(i)
+
+    # for i in collection.find():
+    #     print(i)
 
 
 def remove():
@@ -283,11 +292,12 @@ def mongo_calculation():
 
 
 def main():
+    query()
     # obj=StockMongo('stock','industry')
     # obj.find()
     # obj.findone(u'中成')
     # obj.show_industry()
-    mongo_calculation()
+    # mongo_calculation()
 
 if __name__ == '__main__':
     main()

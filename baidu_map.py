@@ -17,7 +17,7 @@ def addr_poi():
     encodedStr = urllib.quote(queryStr, safe="/:=&?#+!$,;'@()*[]")
 
     # 在最后直接追加上yoursk
-    rawStr = encodedStr + 'xxxxxxxxxxxxxxxxxx'
+    rawStr = encodedStr + ''
 
     # md5计算出的sn值7de5a22212ffaa9e326444c75a58f9a0
     # 最终合法请求url是http://api.map.baidu.com/geocoder/v2/?address=百度大厦&output=json&ak=yourak&sn=7de5a22212ffaa9e326444c75a58f9a0
@@ -32,7 +32,7 @@ def addr_poi():
     try:
         lng = js['result']['location']['lng']
         lat = js['result']['location']['lat']
-    except Exception, e:
+    except Exception as e:
         print(e)
         lng = '0'
         lat = '0'
