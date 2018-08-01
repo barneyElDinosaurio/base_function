@@ -22,12 +22,20 @@ def base_usage():
     #     print(x)
     #     print(type(x))
     # print(r.get('test'))
+    key='meituan_city_id'
+    for i in range(10):
+        print(r.lpop(key))
+    # result = {}
+    # for i in range(r.llen(key)):
+    #     ret = r.lindex(key, i)
+    #     ret=eval(ret)
+    #     if ret.get('id') in result:
+    #         print(ret.get('id'),ret.get('name'))
+    #     else:
+    #         result[ret.get('id')]=ret.get('name')
 
-    for i in range(r.llen('meituan_city_id')):
-        ret = r.lindex('meituan_city_id', i)
-        print(ret)
-        ret_dict = eval(ret)
-        print(ret_dict)
+    # print(result)
+    # print('done')
 
 # 删除数据库
 def clear_db(db):
