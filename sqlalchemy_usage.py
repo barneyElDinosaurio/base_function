@@ -1,7 +1,4 @@
 # -*-coding=utf-8-*-
-'''
-没有成功，失败。
-'''
 
 import json
 import urllib
