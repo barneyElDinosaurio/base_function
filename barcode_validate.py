@@ -35,25 +35,35 @@ def get_result(url):
 # df = pd.read_sql('tb_qrcode',engine,index_col='index')
 # print(df.head())
 
-connect = pymysql.connect(host='localhost',user='root',password='123456z',db='db_parker')
-cursor = connect.cursor()
-query_cmd = 'select * from tb_qrcode where validation is null'
-cursor.execute(query_cmd)
-ret = cursor.fetchall()
-for item in ret:
-    # print(item[0],item[1],item[2],item[3])
-    url = item[2]
-    ret = get_result(url)
-    rets=json.dumps(ret,ensure_ascii=False)
-    # print(type(rets))
-    update_cmd ='update tb_qrcode set validation = "{}" where `index` = {};'.format(ret,item[0])
-    # print(update_cmd)
-    try:
-        cursor.execute(update_cmd)
-        connect.commit()
-    except Exception as e:
-        print(e)
-        connect.rollback()
+def get_collection():
+    connect = pymysql.connect(host='localhost',user='root',password='123456z',db='db_parker')
+    cursor = connect.cursor()
+    query_cmd = 'select * from tb_qrcode where validation is null'
+    cursor.execute(query_cmd)
+    ret = cursor.fetchall()
+    for item in ret:
+        # print(item[0],item[1],item[2],item[3])
+        url = item[2]
+        ret = get_result(url)
+        rets=json.dumps(ret,ensure_ascii=False)
+        # print(type(rets))
+        update_cmd ='update tb_qrcode set validation = "{}" where `index` = {};'.format(ret,item[0])
+        # print(update_cmd)
+        try:
+            cursor.execute(update_cmd)
+            connect.commit()
+        except Exception as e:
+            print(e)
+            connect.rollback()
 
-connect.commit()
+    connect.commit()
 
+def get_static():
+    connect = pymysql.connect(host='localhost',user='root',password='123456z',db='db_parker')
+    cursor = connect.cursor()
+    query_cmd = 'select * from tb_qrcode'
+    cursor.execute(query_cmd)
+    ret = cursor.fetchall()
+    for item in ret:
+        if item[4]=='Timeout':
+            print(item[2])
