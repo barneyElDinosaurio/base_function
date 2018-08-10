@@ -1,16 +1,16 @@
 # -*-coding=utf-8-*-
+import pymysql
 import redis
 
-__author__ = 'xda'
 import MySQLdb, sqlite3
 import pandas as pd
 from toolkit import Toolkit
 import json,os
 from setting import get_mysql_conn,get_engine
 
-db = 'qdm225205669_db'
+# db = 'qdm225205669_db'
 # engine = get_engine('daily')
-conn = get_mysql_conn(db,local=False)
+# conn = get_mysql_conn(db,local=False)
 
 def groupcheck():
     cur =conn.cursor()
@@ -61,7 +61,7 @@ class MysqlUsage():
                 cursor.execute(cmd_del.format(code))
                 # print(cursor.fetchall())
                 self.db.commit()
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 self.db.rollback()
 
@@ -220,7 +220,7 @@ class MysqlUsage():
                        json.dumps(item['price']))
                 cursor.execute(sql_cmd)
                 linenumber = linenumber + 1
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 print("EOF")
                 break
@@ -335,6 +335,22 @@ def put_to_redis():
     for i in ret:
         r.lpush('identity',i[0])
 
+def query_case():
+    connect = pymysql.connect(host='10.18.4.211', port=3367,user='crawler', password='Crawler@1234', db='losecredit', charset='utf8')
+    cursor = connect.cursor()
+    cmd='select DISTINCT fname from dishonest limit 2000'
+    cursor.execute(cmd)
+    ret = cursor.fetchall()
+    name=[]
+    for i in ret:
+        name.append(i[0])
+    for i in name:
+        cmd2='select flag,count(*) as fn from dishonest where fname={!r} group by `flag` having fn=1'.format(i)
+        cursor.execute(cmd2)
+        ret3=cursor.fetchall()
+        if ret3:
+            print(ret3)
+            print(i)
 
 def main():
     # DB_Usage()
@@ -357,9 +373,10 @@ def main():
     # remove_row()
     # run_sql_script()
     # groupcheck()
-    put_to_redis()
+    # put_to_redis()
+    query_case()
 
 if __name__ == '__main__':
     data_path=os.path.join(os.getcwd(),'data')
-    os.chdir(data_path) 
+    os.chdir(data_path)
     main()

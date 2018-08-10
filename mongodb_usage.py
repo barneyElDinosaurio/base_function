@@ -4,7 +4,9 @@ import json
 import pprint
 import pymongo, datetime
 import pandas as pd
-host = 'localhost'
+import re
+
+host = '10.18.6.102'
 client = pymongo.MongoClient(host)
 
 def basic_usage():
@@ -33,9 +35,9 @@ def query():
     else:
         print('false')
     for i in ret:
-        # print(i)
         for k,v in i.items():
             print(k,v)
+
     # for i in collection.find({'name': 'a'}):
     #     print(i)
 
@@ -48,21 +50,30 @@ def remove():
 
 
 def insert():
-    client = pymongo.MongoClient(host, 27017)
     # db=client.test
     db = client.demo_api
     # collection=db.houseinfo_aug
     collection = db.first_collection
     date = datetime.datetime.now()
-    data = {"_id": "100001", "name": "rocky", "age": 21, "date": date}
-    for i in xrange(100, 200):
+    data = {"_id": "", "name": "rocky", "age": 21, "date": date}
+    for i in range(100, 200):
         # data={'_id':i}
-        data['_id'] = i
-        collection.save(data)
+        data['_id'] = str(i).zfill(6)
+        collection.insert(data)
+        # collection.save(data)
 
 
 def update():
-    db.first_collection.update({'name': 'rocky', 'age': 19}, {'name': 'rocky', 'age': 199})
+    doc = client['spider']['jd_book']
+    result = doc.find({})
+
+    for item in result:
+        remark = item['remark']
+        remark = re.sub('条评价','',remark)
+        remark=re.sub('万','0000',remark)
+        remark=re.sub('\.','',remark)
+        doc.update({'_id':item['_id']},{'$set':{'remark':remark}})
+    # doc.update({'name': 'rocky', 'age': 19}, {'name': 'rocky', 'age': 199})
 
 
 def getlianjia_price():
@@ -255,6 +266,13 @@ def remove_str(x):
     return '-'.join(l)
     # return x.strip()
 
+# 去重
+def deduplication():
+    doc = client['spider']['jd_book']
+    ret = doc.find({})
+    ret_list = list(ret)
+    df = pd.DataFrame(ret_list)
+    print(df.head())
 
 def mongo_calculation():
     collection=client['proxyip']['pool']
@@ -292,12 +310,15 @@ def mongo_calculation():
 
 
 def main():
-    query()
+    # query()
     # obj=StockMongo('stock','industry')
     # obj.find()
     # obj.findone(u'中成')
     # obj.show_industry()
     # mongo_calculation()
+    # insert()
+    # update()
+    deduplication()
 
 if __name__ == '__main__':
     main()
