@@ -35,14 +35,15 @@ def ping(threadname):
 def multi_thread():
     start = time.time()
     thread_list = []
-    for i in range(1000):
-        t = threading.Thread(target=ping, args=('thread{}'.format(i),))
+
+    for i in range(100):
+        t = threading.Thread(target=sxr, args=())
         thread_list.append(t)
     for t in thread_list:
         t.start()
         t.join()
     time_used = time.time() - start
-    print('Time used :{}'.format(time_used))
+    print('Time used :{} ms'.format(time_used*1000))
 
 
 # 多进程
@@ -54,7 +55,7 @@ def multi_process():
     p.close()
     p.join()
     time_used = time.time() - start
-    print('Time used :{}'.format(time_used))
+    print('Time used :{0}'.format(time_used*1000))
 
 
 # 协程
@@ -85,7 +86,16 @@ def demo():
     r = requests.post(url, data)
     print(r.json())
 
-
+def sxr():
+    url='http://127.0.0.1:8000/sxr'
+    # data={'name':'f1f9c4b219ca6b87ca21bc696acf37ba','idnum':'6ff02be5ac5232c013f4e8f5dc5e9ca3','orderNo':'123456789'}
+    data={'name':'路露','idnum':'320106198210040436','orderNo':'123456789'}
+    # for _ in range(10):
+    # start=time.time()
+    r=requests.post(url,data=data)
+    # print(r.json())
+    # print('Time used:{0}\n'.format(time.time()-start))
+    return True
 if __name__ == '__main__':
     # demo()
     # multi_thread()
@@ -95,4 +105,11 @@ if __name__ == '__main__':
     # for _ in range(100000):
     #     z=random_string()
     #     # print(len(z))
-    ping('dfd')
+    # ping('dfd')
+    for i in range(5):
+        # start=time.time()
+        # sxr()
+        # print("time used {} ms".format((time.time()-start)*1000))
+        multi_thread()
+    # time.sleep()
+    print('Done')
