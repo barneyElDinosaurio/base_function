@@ -1,14 +1,11 @@
 # -*-coding=utf-8-*-
-import pymysql
 import redis
-
-import MySQLdb, sqlite3
+import pymysql, sqlite3
 import pandas as pd
 from toolkit import Toolkit
 import json,os
 from setting import get_mysql_conn,get_engine
-
-# db = 'qdm225205669_db'
+import time
 # engine = get_engine('daily')
 # conn = get_mysql_conn(db,local=False)
 
@@ -251,7 +248,6 @@ def remote_mysql():
     print(data)
     conn.close()
 
-
 def remote_mysql2():
     '''
     可以运行
@@ -275,7 +271,6 @@ def remote_mysql2():
         cursor.execute("SELECT count(*) from tb_houses;")
         data = cursor.fetchone()
         conn.close()
-
 
 def create_db_case():
     low_db = get_mysql_conn('db_selection')
@@ -352,6 +347,23 @@ def query_case():
             print(ret3)
             print(i)
 
+def test_main():
+    db='losecredit'
+    conn = get_mysql_conn(db,local='XGD')
+    start = time.time()
+    access_nornal(conn)
+    print('time used {}'.format(time.time()-start))
+
+def access_nornal(conn):
+    cursor = conn.cursor()
+    name = '杨小东'
+    idnum='320705197208301539'
+    cmd =   "SELECT DISTINCT t.cidno,t.fname, t.region, t.case_time, t.case_no, t.court, t.basis_no, t.detail,  t.fullfil, t.publish_time FROM   dw_person_dishonest t where t.fname='{0}' and t.cidno ='{1}'".format(
+                name, idnum)
+    cursor.execute(cmd)
+    ret = cursor.fetchall()
+    print(ret[0])
+
 def main():
     # DB_Usage()
     # DB_Usage_sqlite()
@@ -374,8 +386,8 @@ def main():
     # run_sql_script()
     # groupcheck()
     # put_to_redis()
-    query_case()
-
+    # query_case()
+    test_main()
 if __name__ == '__main__':
     data_path=os.path.join(os.getcwd(),'data')
     os.chdir(data_path)
