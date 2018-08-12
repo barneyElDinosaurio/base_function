@@ -1,31 +1,38 @@
 # -*-coding=utf-8-*-
+import random
+
 import redis
 import pymysql, sqlite3
 import pandas as pd
 from toolkit import Toolkit
-import json,os
-from setting import get_mysql_conn,get_engine
+import json, os
+from setting import get_mysql_conn, get_engine
 import time
+import threading
+from twisted.enterprise import adbapi
+
 # engine = get_engine('daily')
 # conn = get_mysql_conn(db,local=False)
 
 def groupcheck():
-    cur =conn.cursor()
+    cur = conn.cursor()
     cmd = 'select `email` from aws_users group by`email`'
     cur.execute(cmd)
     ret = cur.fetchall()
     domain = {}
     for i in ret:
         mail = i[0].split('@')[1]
-        domain.setdefault(mail,0)
-        domain[mail]+=1
+        domain.setdefault(mail, 0)
+        domain[mail] += 1
 
-    result = sorted(domain.items(),key=lambda x:x[1],reverse=True)
+    result = sorted(domain.items(), key=lambda x: x[1], reverse=True)
     print(result)
+
 
 class MysqlUsage():
     def __init__(self):
-        self.conn=get_mysql_conn('db_zdt',local=True)
+        self.conn = get_mysql_conn('db_zdt', local=True)
+
     def getVersion(self):
         cur = self.db.cursor()
         cur.execute('select version()')
@@ -38,7 +45,7 @@ class MysqlUsage():
         cursor.execute(cmd.format('300333', '2017-11-15'))
         data = cursor.fetchall()
         for i in data[0]:
-            print(i,)
+            print(i, )
         print
         print(data[0])
         '''
@@ -234,11 +241,12 @@ class MysqlUsage():
 
     def show_all_table(self):
         cur = self.conn.cursor()
-        cmd='show tables;'
+        cmd = 'show tables;'
         cur.execute(cmd)
         content = cur.fetchall()
         for item in content:
             print(item[0])
+
 
 def remote_mysql():
     conn = MySQLdb.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
@@ -247,6 +255,7 @@ def remote_mysql():
     data = cursor.fetchone()
     print(data)
     conn.close()
+
 
 def remote_mysql2():
     '''
@@ -272,6 +281,7 @@ def remote_mysql2():
         data = cursor.fetchone()
         conn.close()
 
+
 def create_db_case():
     low_db = get_mysql_conn('db_selection')
     low_cursor = low_db.cursor()
@@ -287,10 +297,11 @@ def create_db_case():
     low_cursor.execute(insert_cmd, low_info)
     low_db.commit()
 
+
 # 删除某一行
 def remove_row():
-    r = redis.StrictRedis('localhost',6379,db=0)
-    db=get_mysql_conn('history')
+    r = redis.StrictRedis('localhost', 6379, db=0)
+    db = get_mysql_conn('history')
     cur = db.cursor()
     for k in r.keys():
         print(k)
@@ -304,7 +315,7 @@ def remove_row():
 
 
 def run_sql_script():
-    cur_db='python_test'
+    cur_db = 'python_test'
 
     # db = MySQLdb.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, cur_db, charset='utf8')
     # cur=db.cursor()
@@ -315,54 +326,71 @@ def run_sql_script():
 
     import sqlite3
 
-    db=sqlite3.connect(cur_db)
-    cur=db.cursor()
-    with open('world.sql','rb') as f:
+    db = sqlite3.connect(cur_db)
+    cur = db.cursor()
+    with open('world.sql', 'rb') as f:
         cur.executescript(f.read())
+
 
 def put_to_redis():
     r = redis.Redis(host='localhost', port=6379, db=10)
-    conn = get_mysql_conn('db_parker',local=True)
+    conn = get_mysql_conn('db_parker', local=True)
     cursor = conn.cursor()
     cmd = 'select `identity_number` from frauds'
     cursor.execute(cmd)
     ret = cursor.fetchall()
     for i in ret:
-        r.lpush('identity',i[0])
+        r.lpush('identity', i[0])
+
 
 def query_case():
-    connect = pymysql.connect(host='10.18.4.211', port=3367,user='crawler', password='Crawler@1234', db='losecredit', charset='utf8')
+    connect = pymysql.connect(host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234', db='losecredit',
+                              charset='utf8')
     cursor = connect.cursor()
-    cmd='select DISTINCT fname from dishonest limit 2000'
+    cmd = 'select DISTINCT fname from dishonest limit 2000'
     cursor.execute(cmd)
     ret = cursor.fetchall()
-    name=[]
+    name = []
     for i in ret:
         name.append(i[0])
     for i in name:
-        cmd2='select flag,count(*) as fn from dishonest where fname={!r} group by `flag` having fn=1'.format(i)
+        cmd2 = 'select flag,count(*) as fn from dishonest where fname={!r} group by `flag` having fn=1'.format(i)
         cursor.execute(cmd2)
-        ret3=cursor.fetchall()
+        ret3 = cursor.fetchall()
         if ret3:
             print(ret3)
             print(i)
 
-def test_main():
-    db='losecredit'
-    conn = get_mysql_conn(db,local='XGD')
-    start = time.time()
-    access_nornal(conn)
-    print('time used {}'.format(time.time()-start))
 
-def access_nornal(conn):
-    cursor = conn.cursor()
+def test_main():
+    start = time.time()
+    dbpool=adbapi.ConnectionPool('pymysql',host='10.18.4.211',port=3367,user='crawler',password='Crawler@1234',database='losecredit',charset='utf8')
+    thread_list = []
+    for i in range(100):
+        # access_nornal()
+        t = threading.Thread(target=access_nornal, args=(dbpool,))
+        thread_list.append(t)
+    for t in thread_list:
+        t.start()
+        t.join()
+
+    print('time used {}ms'.format((time.time() - start) * 1000))
+
+
+def access_nornal(dbpool):
+    # db = 'losecredit'
+    # conn = get_mysql_conn(db, local='XGD')
+
     name = '杨小东'
-    idnum='320705197208301539'
-    cmd =   "SELECT DISTINCT t.cidno,t.fname, t.region, t.case_time, t.case_no, t.court, t.basis_no, t.detail,  t.fullfil, t.publish_time FROM   dw_person_dishonest t where t.fname='{0}' and t.cidno ='{1}'".format(
-                name, idnum)
-    cursor.execute(cmd)
-    ret = cursor.fetchall()
-    print(ret[0])
+    idnum = '3207051972083015{}{}'.format(random.randint(0,9),random.randint(0,9))
+    cmd = "SELECT DISTINCT t.cidno,t.fname, t.region, t.case_time, t.case_no, t.court, t.basis_no, t.detail,  t.fullfil, t.publish_time FROM   dw_person_dishonest t where t.fname='{0}' and t.cidno ='{1}'".format(
+        name, idnum)
+    dbpool.
+    # cursor = conn.cursor()
+    # cursor.execute(cmd)
+    # ret = cursor.fetchall()
+    # print(ret[0])
+
 
 def main():
     # DB_Usage()
@@ -388,7 +416,9 @@ def main():
     # put_to_redis()
     # query_case()
     test_main()
+
+
 if __name__ == '__main__':
-    data_path=os.path.join(os.getcwd(),'data')
+    data_path = os.path.join(os.getcwd(), 'data')
     os.chdir(data_path)
     main()

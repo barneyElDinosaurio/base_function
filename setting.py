@@ -16,15 +16,21 @@ cfg_file = os.path.join(os.path.dirname(__file__), 'data.cfg')
 with open(cfg_file, 'r') as f:
     json_data = json.load(f)
 
+# 本地用户
+MYSQL_HOST = json_data['MYSQL_HOST']
+MYSQL_PORT = json_data['MYSQL_PORT']
 MYSQL_USER = json_data['MYSQL_USER']
-MYSQL_USER_Ali = json_data['MYSQL_USER_Ali']
-MYSQL_REMOTE_USER = json_data['MYSQL_REMOTE_USER']
 MYSQL_PASSWORD = json_data['MYSQL_PASSWORD']
+
+MYSQL_USER_Ali = json_data['MYSQL_USER_Ali']
+
+
 MYSQL_PASSWORD_Ali = json_data['MYSQL_PASSWORD_Ali']
 MYSQL_HOST_Ali = json_data['MYSQL_HOST_Ali']
-MYSQL_HOST = json_data['MYSQL_HOST']
+
+MYSQL_REMOTE_USER = json_data['MYSQL_REMOTE_USER']
 MYSQL_REMOTE = json_data['MYSQL_REMOTE']
-MYSQL_PORT = json_data['MYSQL_PORT']
+
 REDIS_HOST = 'localhost'
 EMAIL_USER = json_data['EMAIL_USER']
 EMAIL_PASS = json_data['EMAIL_PASSWORD']
@@ -54,8 +60,14 @@ def get_engine(db, local=True):
 
 
 def get_mysql_conn(db, local):
+    '''
+
+    :param db: 数据库名字
+    :param local: 本地还是远程还是xgd
+    :return:返回conn
+    '''
     if local=='local':
-        conn = pymysql.connect(MYSQL_REMOTE, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
+        conn = pymysql.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
 
     elif local == 'XGD':
         conn = pymysql.connect(host=MYSQL_XGD_HOST, port=int(MYSQL_XGD_PORT), user=MYSQL_XGD_USER,
@@ -95,6 +107,8 @@ def sendmail(content, subject):
     '''
     发送邮件
     '''
+    obj = ClsLogger(__file__)
+
     username = EMAIL_USER
     password = EMAIL_PASS
     smtp_host = SMTP_HOST
@@ -109,12 +123,11 @@ def sendmail(content, subject):
         smtp.sendmail(msg['from'], msg['to'], msg.as_string())
         smtp.quit()
     except Exception as e:
-        print(e)
-
+        obj.error(e)
 
 class ClsLogger:
     def __init__(self, file_name):
-        self.logger = logging.getLogger()
+        self.logger = logging.getLogger('default')
         self.logger.setLevel(logging.DEBUG)
         profix = os.path.splitext(file_name)[0]
         file_path = os.path.join(os.path.dirname(__file__), profix + '.log')
