@@ -1,7 +1,7 @@
 # -*-coding=utf-8-*-
 import logging
 import datetime
-
+from setting import llogger
 def lloger():
     logging.basicConfig(
                         level=logging.DEBUG,
@@ -32,3 +32,6 @@ def lloger():
     # logger.addHandler(ch)
 
     return logger
+
+f=llogger(__file__)
+f.info('On the file')
