@@ -98,7 +98,7 @@ def sxr():
     return True
 if __name__ == '__main__':
     # demo()
-    # multi_thread()
+    multi_thread()
     # gevent_case()
     # freeze_support()
     # multi_process()
@@ -106,10 +106,10 @@ if __name__ == '__main__':
     #     z=random_string()
     #     # print(len(z))
     # ping('dfd')
-    for i in range(5):
+    # for i in range(5):
         # start=time.time()
         # sxr()
         # print("time used {} ms".format((time.time()-start)*1000))
-        multi_thread()
+        # multi_thread()
     # time.sleep()
     print('Done')
