@@ -53,12 +53,12 @@ def get_engine(db, local=True):
     return engine
 
 
-def get_mysql_conn(db, local=True):
-    if local:
+def get_mysql_conn(db, local):
+    if local=='local':
         conn = pymysql.connect(MYSQL_REMOTE, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
 
     elif local == 'XGD':
-        conn = pymysql.connect(host=MYSQL_XGD_HOST, port=MYSQL_XGD_PORT, user=MYSQL_XGD_USER,
+        conn = pymysql.connect(host=MYSQL_XGD_HOST, port=int(MYSQL_XGD_PORT), user=MYSQL_XGD_USER,
                                password=MYSQL_XGD_PASSWORD, db=db, charset='utf8')
 
     else:
