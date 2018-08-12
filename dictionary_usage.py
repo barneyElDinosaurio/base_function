@@ -103,6 +103,20 @@ def dict_update():
     a.update({'A':9,'D':10})
     print('new a : {}'.format(a))
 
+def full_run():
+    import sys
+    top = 4*44739243
+    f={}
+    try:
+        for k in range(0, top):
+            sys.stdout.write('%d %f%%\r' % (k, k * 100.0 / top))
+            f[k]=k
+    except:
+        print()
+        print("limit:")
+        print(k)
+        raise
+
 def main():
     #sort_usge()
     # base_usage()
@@ -110,7 +124,8 @@ def main():
     #dict_create()
     # sort_test()
     # multi_dictionary()
-    dict_update()
+    # dict_update()
+    full_run()
 
 if __name__ == '__main__':
     main()

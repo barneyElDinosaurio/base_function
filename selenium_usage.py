@@ -118,7 +118,7 @@ def example():
                                chrome_options=options)
 
     browser.implicitly_wait(60)
-    url='http://ssgs.zhuhai.gov.cn/ssdj/ssztkydj0117/201709/t20170901_24360412.htm'
+    url='http://members.3322.org/dyndns/getip'
     browser.get(url)
     # time.sleep(1)
     # WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))

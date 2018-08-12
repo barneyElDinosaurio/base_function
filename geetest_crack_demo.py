@@ -14,6 +14,7 @@ import time
 class Crack():
     def __init__(self,keyword):
         self.url = 'http://www.ahcredit.gov.cn/index.jspx'
+        # self.url = 'http://218.22.14.70:9090/EntInfo.jspx?id=ZGVocG9xcXBvcnFtdWt5Zm9q&uniScID=amNqcG9yc3ReVXNBeWdAeXRl'
         self.browser = webdriver.Chrome(executable_path=r'D:\Download\chromedriver_win32\chromedriver.exe')
         self.wait = WebDriverWait(self.browser, 100)
         self.keyword = keyword
