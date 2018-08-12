@@ -16,7 +16,6 @@ header_toolkit.txt
 *.xlsx
 *.log
 __pycache__/
-setting.py
 wikizhword.text
 news_tensite_xml.dat
 news_tensite_xml.smarty.dat
