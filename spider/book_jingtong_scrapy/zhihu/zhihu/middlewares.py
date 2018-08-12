@@ -15,8 +15,8 @@ class BrowserCookieMiddleware(CookiesMiddleware):
         self.load_browser_cookie()
 
     def load_browser_cookie(self):
-        jar = self.jars['firefox']
-        firefox_cookiejar = browsercookie.firefox()
+        jar = self.jars['chrome']
+        firefox_cookiejar = browsercookie.chrome()
         for cookie in firefox_cookiejar:
             jar.set_cookie(cookie)
 
