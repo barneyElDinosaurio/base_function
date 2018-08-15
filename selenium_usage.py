@@ -118,15 +118,21 @@ def example():
                                chrome_options=options)
 
     browser.implicitly_wait(60)
-    url='http://members.3322.org/dyndns/getip'
+    # url='http://members.3322.org/dyndns/getip'
+    url = 'http://www.hljcredit.gov.cn/WebCreditQueryService.do?gssearch&type=sxbzxr&detail=true&sxbzxrmc=&proselect=&cityselect=&disselect=&curPageNO=1'
     browser.get(url)
     # time.sleep(1)
     # WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))
-    # time.sleep(12)
+    time.sleep(12)
 
     txt = browser.page_source
+
     print(txt)
-    time.sleep(12)
+    ret = browser.find_element_by_xpath('//table[@class="list_2_tab"]/tbody/tr[2]//a[1]')
+    ret.click()
+    time.sleep(20)
+    print(ret)
+    # time.sleep(12)
 
     # browser.send_keys(Keys.DOWN)
 # netease()

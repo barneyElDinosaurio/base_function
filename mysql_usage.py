@@ -10,7 +10,8 @@ from setting import get_mysql_conn, get_engine
 import time
 import threading
 from twisted.enterprise import adbapi
-from twisted.internet import reactor,defer
+from twisted.internet import reactor, defer
+
 
 # engine = get_engine('daily')
 # conn = get_mysql_conn(db,local=False)
@@ -264,7 +265,6 @@ def remote_mysql2():
     :return:
     '''
 
-
     with SSHTunnelForwarder(
             ('x', 8220),
             ssh_password="x",
@@ -365,7 +365,8 @@ def query_case():
 def test_main():
     start = time.time()
 
-    dbpool=adbapi.ConnectionPool('pymysql',host='10.18.4.211',port=3367,user='crawler',password='Crawler@1234',database='losecredit',charset='utf8')
+    dbpool = adbapi.ConnectionPool('pymysql', host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234',
+                                   database='losecredit', charset='utf8')
     thread_list = []
     for i in range(100):
         t = threading.Thread(target=access_nornal, args=(dbpool,))
@@ -376,11 +377,12 @@ def test_main():
 
     print('time used {}ms'.format((time.time() - start) * 1000))
 
+
 def access_nornal():
     db = 'losecredit'
 
     name = '杨小东'
-    idnum = '3207051972083015{}{}'.format(random.randint(0,9),random.randint(0,9))
+    idnum = '3207051972083015{}{}'.format(random.randint(0, 9), random.randint(0, 9))
     cmd = "SELECT DISTINCT t.cidno,t.fname, t.region, t.case_time, t.case_no, t.court, t.basis_no, t.detail,  t.fullfil, t.publish_time FROM   dw_person_dishonest t where t.fname='{0}' and t.cidno ='{1}'".format(
         name, idnum)
 
@@ -392,20 +394,51 @@ def access_nornal():
     cursor.execute(cmd)
     ret = cursor.fetchall()
 
+
 def dbpool_main():
-    dbpool=adbapi.ConnectionPool('pymysql',host='10.18.4.211',port=3367,user='crawler',password='Crawler@1234',database='losecredit',charset='utf8')
+    dbpool = adbapi.ConnectionPool('pymysql', host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234',
+                                   database='losecredit', charset='utf8')
 
     for i in range(100):
-        dbpool.runInteraction(query_cmd)
+        dbpool.runInteraction(query_cmd, None)
 
     reactor.run()
-    
-def query_cmd(tx):
+
+
+def query_cmd(tx, item):
     name = '杨小东'
-    idnum = '3207051972083015{}{}'.format(random.randint(0,9),random.randint(0,9))
+    idnum = '320705197208301539'
+
+    # idnum = '3207051972083015{}{}'.format(random.randint(0, 9), random.randint(0, 9))
     cmd = "SELECT DISTINCT t.cidno,t.fname, t.region, t.case_time, t.case_no, t.court, t.basis_no, t.detail,  t.fullfil, t.publish_time FROM   dw_person_dishonest t where t.fname='{0}' and t.cidno ='{1}'".format(
         name, idnum)
-    tx.excute(cmd)
+    tx.excute(cmd, None)
+
+
+dbpool = adbapi.ConnectionPool('pymysql', host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234',
+                               database='losecredit', charset='utf8')
+
+
+def runQuery():
+    name = '杨小东'
+    idnum = '320705197208301539'
+    # idnum = '3207051972083015{}{}'.format(random.randint(0, 9), random.randint(0, 9))
+    cmd = "SELECT DISTINCT t.cidno,t.fname, t.region, t.case_time, t.case_no, t.court, t.basis_no, t.detail,  t.fullfil, t.publish_time FROM   dw_person_dishonest t where t.fname='{0}' and t.cidno ='{1}'".format(
+        name, idnum)
+    return dbpool.runQuery(cmd)
+
+
+def query_cmd1(l):
+    print(l)
+    # for item in l:
+    #     print(item)
+
+
+def pool_main():
+    runQuery().addCallback(query_cmd1)
+    # reactor.callLater(1, reactor.stop)
+    # reactor.run()
+
 
 def main():
     # DB_Usage()
@@ -431,7 +464,9 @@ def main():
     # put_to_redis()
     # query_case()
     # test_main()
-    dbpool_main()
+    # dbpool_main()
+    pool_main()
+
 
 if __name__ == '__main__':
     data_path = os.path.join(os.getcwd(), 'data')
