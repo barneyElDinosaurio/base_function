@@ -210,7 +210,7 @@ def update_info():
 
         try:
             session.commit()
-        except Exception, e:
+        except Exception as e:
             print(e)
             session.rollback()
 

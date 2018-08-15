@@ -78,7 +78,7 @@ for i in data_list:
     session.add(house)
     try:
         session.commit()
-    except Exception, e:
+    except Exception as e:
         print(e)
         session.rollback()
 session.close()

@@ -34,7 +34,7 @@ def addr_poi(city, addr):
     try:
         lng = js['result']['location']['lng']
         lat = js['result']['location']['lat']
-    except Exception, e:
+    except Exception as e:
         print(e)
         lng = '0'
         lat = '0'
@@ -64,7 +64,7 @@ def getcordinate():
 
             # time.sleep(1)
             print('done')
-        except Exception, e:
+        except Exception as e:
             print(e)
             time.sleep(16)
             continue
@@ -98,7 +98,7 @@ def getcordinate_web():
             print(longitude)
             print(latitude)
             db[collection].update({'url': url}, {'$set': {'latitude': latitude, 'longitude': longitude}})
-        except Exception, e:
+        except Exception as e:
             print(e)
             print('fail to get on url', url)
 

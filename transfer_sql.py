@@ -82,7 +82,7 @@ def storedata():
 
         try:
             session.commit()
-        except Exception, e:
+        except Exception as e:
             print(e)
             session.rollback()
 
@@ -126,7 +126,7 @@ def get_advertiser():
         r = r_session.post(url=url, data=s, headers=headers)
         print('statues code ', r.status_code)
         ret_data = r.json()
-    except Exception, e:
+    except Exception as e:
         print(e)
         return
     if not ret_data.has_key('order'):

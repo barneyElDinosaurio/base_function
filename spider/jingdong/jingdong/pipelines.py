@@ -7,12 +7,11 @@
 
 import pymongo
 class JingdongPipeline(object):
+    def __init__(self):
+        self.mongo = pymongo.MongoClient('10.18.6.102')
+        self.doc = self.mongo['spider']['jd_book2']
+
     def process_item(self, item, spider):
-        def __init__(self):
-            self.mongo = pymongo.MongoClient('10.18.6.102')
-            self.doc = self.mongo['spider']['jd_book']
+        self.doc.insert(dict(item))
 
-        def process_item(self, item, spider):
-            self.doc.insert(dict(item))
-
-            return item
+        return item

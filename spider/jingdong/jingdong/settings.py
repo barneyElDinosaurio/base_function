@@ -102,7 +102,7 @@ SPIDER_MIDDLEWARES = {
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
 
 ITEM_PIPELINES = {
-   'jd.pipelines.JDPipeline': 300,
+   'jingdong.pipelines.JingdongPipeline': 300,
 }
 
 SPLASH_URL = 'http://10.18.6.102:8050'
