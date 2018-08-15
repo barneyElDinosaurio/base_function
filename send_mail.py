@@ -58,7 +58,7 @@ def send_139():
         obj.connect('smtp.126.com', 25)
         obj.login(sender, passwd)
         obj.sendmail(sender, receiver, msg.as_string())
-    except smtplib.SMTPException, e:
+    except smtplib.SMTPException as e:
         print(e)
 
 

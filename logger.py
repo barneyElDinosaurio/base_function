@@ -1,37 +1,28 @@
 # -*-coding=utf-8-*-
 import logging
 import datetime
-from setting import llogger
-def lloger():
-    logging.basicConfig(
-                        level=logging.DEBUG,
-                        # format='%(asctime)s %(levelname)s %(filename)s[line:%(lineno)d] %(message)s',
-                        # datefmt='%Y%m%d %H:%M:%S',
-                        # filename=datetime.datetime.now().strftime("%Y-%m-%d") + '.log',
-                        filemode='a')
+import os
+# from setting import llogger
+def llogger(filename):
 
-    # 创建一个logger
-    logger = logging.getLogger('mylogger')
-    # logger.setLevel(logging.DEBUG)
-
-    # 创建一个handler，用于写入日志文件
-    fh = logging.FileHandler(datetime.datetime.now().strftime("%Y-%m-%d") + '.log')
-    # fh.setLevel(logging.DEBUG)
-
-    # 再创建一个handler，用于输出到控制台
-    # ch = logging.StreamHandler()
-    # ch.setLevel(logging.DEBUG)
-
-    # 定义handler的输出格式
-    formatter = logging.Formatter('[%(asctime)s][%(thread)d][%(filename)s][line: %(lineno)d][%(levelname)s] ## %(message)s')
+    logger = logging.getLogger(filename)  # 不加名称设置root logger
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s: - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S')
+    # 使用FileHandler输出到文件
+    prefix = os.path.splitext(filename)[0]
+    fh = logging.FileHandler(prefix+'.log')
+    fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
-    # ch.setFormatter(formatter)
-
-    # 给logger添加handler
+    # 使用StreamHandler输出到屏幕
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+    ch.setFormatter(formatter)
+    # 添加两个Handler
+    logger.addHandler(ch)
     logger.addHandler(fh)
-    # logger.addHandler(ch)
-
+    # logger.info('this is info message')
+    # logger.warning('this is warn message')
     return logger
 
-f=llogger(__file__)
-f.info('On the file')

@@ -8,7 +8,12 @@
 import scrapy
 
 
-class JingdongItem(scrapy.Item):
+class JdItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    # pass
+    name=scrapy.Field()
+    price=scrapy.Field()
+    remark=scrapy.Field()
+    publish=scrapy.Field()
+    # shop=scrapy.Field()

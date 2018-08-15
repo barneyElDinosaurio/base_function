@@ -23,7 +23,7 @@ def attack_post(mtfly):
     try:
         requests.post(url, data=payload, headers=headers)
         print('post success!')
-    except Exception, e:
+    except Exception as e:
         print(e)
         print('post fail!')
 
@@ -35,7 +35,7 @@ def attack_get(mtfly):
     try:
         requests.get(url, headers=headers)
         print('get success!')
-    except Exception, e:
+    except Exception as e:
         print(e)
         print('get fail!')
 
@@ -70,7 +70,7 @@ m = list()
 
 try:
     f = open('mtfly.txt', 'r')
-except Exception, e:
+except Exception as e:
     print(e)
     print('flie fail!')
 for eachLine in f.readlines():

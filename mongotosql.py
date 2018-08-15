@@ -73,7 +73,7 @@ for i in data_list:
 
     try:
         session.commit()
-    except Exception, e:
+    except Exception as e:
         print(e)
         session.rollback()
 

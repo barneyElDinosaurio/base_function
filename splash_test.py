@@ -17,14 +17,24 @@ def get_proxy(retry=5):
             return proxyServer
 
 def splash_demo():
-    headers={''}
-
+    # headers={''}
+    lua_script = """
+    function main(splash)
+        splash:go(splash.args.url)
+        splash:wait(5)
+        splash:wait(5)
+        return splash:html()
+    end
+    """
     splash_url = 'http://10.18.6.102:8050/render.html'
-    proxy=get_proxy()
-
+    # proxy=get_proxy()
     # url='http://1212.ip138.com/ic.asp'
-    url='https://helloacm.com/api/user-agent/'
-    args = {'url':url,'timeout':15,'wait':3,'User-Agent':'FireFox 10.113 IE'}
+    # url='https://helloacm.com/api/user-agent/'
+    # url='http://www.jsgsj.gov.cn:58888/province/infoQueryServlet.json?pt&c=75B161B67BE862B185C5FBADD913D5BBA5F3EBF07300310A24C11C6EF9F87B0D566A644D16F7111EE62F2388DEF5CA351CBE356AEB9A2326BE613C937889291D'
+    # url='http://ssgs.zhuhai.gov.cn/ssdj/ssztkydj0117/201711/t20171116_24906438.htm'
+    page=2
+    url='http://www.hljcredit.gov.cn/WebCreditQueryService.do?gssearch&type=sxbzxr&detail=true&sxbzxrmc=&proselect=&cityselect=&disselect=&curPageNO={}'.format(page)
+    args = {'url':url,'timeout':15,'wait':15,'lua_script':lua_script}
     # args = {'url':url,'timeout':15,'iamges':0,'proxy':proxy}
     # args = {'url':'http://quotes.toscrape.com/js/','timeout':15,'iamge':0}
     response = requests.get(splash_url,params=args)

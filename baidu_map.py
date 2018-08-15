@@ -72,7 +72,7 @@ def poi_addr():
     try:
         for k, v in js['result'].items():
             print(k, v)
-    except Exception, e:
+    except Exception as e:
         print(e)
 
 poi_addr()

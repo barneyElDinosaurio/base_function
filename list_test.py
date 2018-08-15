@@ -109,7 +109,7 @@ def iter_test():
         try:
             print(next(i))
             print('while')
-        except Exception, e:
+        except Exception as e:
             print(e)
             break
     print(i)
@@ -118,7 +118,7 @@ def iter_test():
         try:
             print(next(i))
             #不会有任何输出，因为你已经在上一个循环中迭代完成了，位置已经指向最后。
-        except Exception, e:
+        except Exception as e:
             print(e)
             break
 

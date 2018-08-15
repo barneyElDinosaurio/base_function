@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'jingdong.spiders'
 #USER_AGENT = 'jingdong (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -88,3 +88,24 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_splash.SplashCookiesMiddleware': 723,
+    'scrapy_splash.SplashMiddleware': 725,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+}
+
+SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+}
+
+# 设置去重过滤器
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
+ITEM_PIPELINES = {
+   'jingdong.pipelines.JingdongPipeline': 300,
+}
+
+SPLASH_URL = 'http://10.18.6.102:8050'
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0'
