@@ -437,7 +437,7 @@ def query_cmd1(l):
 def pool_main():
     runQuery().addCallback(query_cmd1)
     # reactor.callLater(1, reactor.stop)
-    # reactor.run()
+    reactor.run()
 
 
 def main():
