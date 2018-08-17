@@ -2,7 +2,7 @@
 import redis
 import json
 # HOSTNAME='raspberrypi'
-HOSTNAME = '10.18.6.101'
+HOSTNAME = '10.18.6.102'
 r = redis.Redis(host=HOSTNAME, port=6379, db=0, decode_responses=True)
 
 
@@ -66,9 +66,15 @@ def get_data():
     print(r.llen('hlj0706'))
 
 def list_usage():
-    for i in range(10):
-        print(r.set(i, i * i))
-
+    l=r.llen('image_url')
+    # result_set = set()
+    result_list = []
+    for i in r.lrange('image_url',0,l):
+        # print(r.set(i, i * i))
+        result_list.append(i)
+    print('list length {}'.format(len(result_list)))
+    result_set=list(set(result_list))
+    print('set length {}'.format(len(result_set)))
 
 def get_data2():
     k = r.keys()
@@ -168,10 +174,10 @@ def convert_sql():
             print(e)
     conn.close()
 
-base_usage()
+# base_usage()
 # insert_data()
 # get_data()
-# list_usage()
+list_usage()
 # get_data2()
 # getMulti()
 # get_data2()
