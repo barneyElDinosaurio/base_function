@@ -16,8 +16,6 @@ import gevent
 
 def ping(threadname):
 
-    import requests
-
     name='f1f9c4b219ca6b87ca21bc696acf37ba'
     idnum='6ff02be5ac5232c013f4e8f5dc5e9ca3'
     orderNo='123456789123456789123456789000'

@@ -104,11 +104,26 @@ class OperatingSystem:
 # obj1 = NewClass()
 # obj1.show
 
+class MyObj(object):
+	author='Google'
+	def __init__(self):
+		self.name = 'Joe'
+		self.sex = 'Female'
 
-obj =OperatingSystem()
-obj.start()
-obj.check()
-obj.kill()
-obj.check()
-obj.start()
-obj.check()
+def getattr_usage():
+	obj = MyObj()
+	name=getattr(obj,'name',None)
+	author=getattr(obj,'author',None)
+	print(name,author)
+	print(obj.name)
+
+
+# obj =OperatingSystem()
+# obj.start()
+# obj.check()
+# obj.kill()
+# obj.check()
+# obj.start()
+# obj.check()
+
+getattr_usage()
