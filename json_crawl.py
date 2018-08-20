@@ -3,7 +3,7 @@ import codecs
 import re
 import sys
 import requests, urllib2, urllib, json
-reload(sys)
+# reload(sys)
 sys.setdefaultencoding('utf-8')
 from lxml import etree
 def using_requests():
@@ -55,7 +55,7 @@ def list_all_dict(dict_a):
 
             temp_value = dict_a[temp_key]
 
-            print"%s : %s" % (temp_key, temp_value)
+            print("%s : %s" % (temp_key, temp_value))
 
             list_all_dict(temp_value)  # 自我调用实现无限遍历
 
@@ -132,7 +132,6 @@ def json_read_file():
     fp2=codecs.open('new_city.txt','w',encoding='utf-8')
     fp2.write(str1)
     fp2.close()
-
 
 #getJson()
 #testcase1()

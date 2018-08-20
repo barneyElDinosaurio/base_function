@@ -24,7 +24,6 @@ MYSQL_PASSWORD = json_data['MYSQL_PASSWORD']
 
 MYSQL_USER_Ali = json_data['MYSQL_USER_Ali']
 
-
 MYSQL_PASSWORD_Ali = json_data['MYSQL_PASSWORD_Ali']
 MYSQL_HOST_Ali = json_data['MYSQL_HOST_Ali']
 
@@ -32,8 +31,8 @@ MYSQL_REMOTE_USER = json_data['MYSQL_REMOTE_USER']
 MYSQL_REMOTE = json_data['MYSQL_REMOTE']
 
 REDIS_HOST = 'localhost'
-EMAIL_USER = json_data['EMAIL_USER']
-EMAIL_PASS = json_data['EMAIL_PASSWORD']
+LOGIN_EMAIL_USER = json_data['LOGIN_EMAIL_USER']
+LOGIN_EMAIL_PASS = json_data['LOGIN_EMAIL_PASSWORD']
 SMTP_HOST = json_data['SMTP_HOST']
 FROM_MAIL = json_data['FROM_MAIL']
 TO_MAIL = json_data['TO_MAIL']
@@ -43,11 +42,17 @@ MYSQL_XGD_HOST = json_data['MYSQL_XGD_HOST']
 MYSQL_XGD_USER = json_data['MYSQL_XGD_USER']
 MYSQL_XGD_PASSWORD = json_data['MYSQL_XGD_PASSWORD']
 MYSQL_XGD_PORT = json_data['MYSQL_XGD_PORT']
+DATA_PATH = json_data['DATA_PATH']
 
 
 def get_engine(db, local=True):
+    '''
+
+    :param db:
+    :param local:
+    :return:
+    '''
     if local:
-        # engine = create_engine('mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, MYSQL_PORT, db))
         engine = create_engine(
             'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST,
                                                                  MYSQL_PORT, db))
@@ -66,14 +71,14 @@ def get_mysql_conn(db, local):
     :param local: 本地还是远程还是xgd
     :return:返回conn
     '''
-    if local=='local':
+    if local == 'local':
         conn = pymysql.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
 
     elif local == 'XGD':
         conn = pymysql.connect(host=MYSQL_XGD_HOST, port=int(MYSQL_XGD_PORT), user=MYSQL_XGD_USER,
                                password=MYSQL_XGD_PASSWORD, db=db, charset='utf8')
 
-    else:
+    elif local == 'ali':
         db = Ali_DB
         conn = pymysql.connect(MYSQL_HOST_Ali, MYSQL_USER_Ali, MYSQL_PASSWORD_Ali, db, charset='utf8')
 
@@ -109,8 +114,8 @@ def sendmail(content, subject):
     '''
     obj = ClsLogger(__file__)
 
-    username = EMAIL_USER
-    password = EMAIL_PASS
+    username = LOGIN_EMAIL_USER
+    password = LOGIN_EMAIL_PASS
     smtp_host = SMTP_HOST
     smtp = smtplib.SMTP(smtp_host)
 
@@ -124,6 +129,7 @@ def sendmail(content, subject):
         smtp.quit()
     except Exception as e:
         obj.error(e)
+
 
 class ClsLogger:
     def __init__(self, file_name):
@@ -159,7 +165,7 @@ def llogger(filename):
     logger.setLevel(logging.DEBUG)
 
     # 创建一个handler，用于写入日志文件
-    fh = logging.FileHandler(pre_fix+'.log')
+    fh = logging.FileHandler(pre_fix + '.log')
 
     # 再创建一个handler，用于输出到控制台
     ch = logging.StreamHandler()
@@ -177,7 +183,12 @@ def llogger(filename):
 
     return logger
 
+
 def trading_time():
+    '''
+
+    :return:
+    '''
     current = datetime.datetime.now()
     start = datetime.datetime(current.year, current.month, current.day, 9, 23, 0)
     noon_start = datetime.datetime(current.year, current.month, current.day, 12, 58, 0)
@@ -202,10 +213,11 @@ def is_holiday():
     return ts.is_holiday(current)
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # msg=MsgSend(u'wei')
     # msg.send_price('hsdq',12,12,'sell')
     # print(FROM_MAIL)
     # mylogger('test.log','just for test')
     # trading_time()
-    sendmail('content--------', 'subject------')
+    # sendmail('content--------', 'subject------')
+
