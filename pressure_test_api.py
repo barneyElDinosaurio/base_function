@@ -16,15 +16,17 @@ import gevent
 
 def ping(threadname):
 
-    name='f1f9c4b219ca6b87ca21bc696acf37ba'
-    idnum='6ff02be5ac5232c013f4e8f5dc5e9ca3'
-    orderNo='123456789123456789123456789000'
-    url = 'http://10.18.6.101:8000/sxr/?name={0}&idnum={1}&orderNo={2}'.format(name,idnum,orderNo)
+    # name='f1f9c4b219ca6b87ca21bc696acf37ba'
+    # idnum='6ff02be5ac5232c013f4e8f5dc5e9ca3'
+    # orderNo='123456789123456789123456789000'
+    # url = 'http://10.18.6.101:8000/sxr/?name={0}&idnum={1}&orderNo={2}'.format(name,idnum,orderNo)
 
-    r = requests.get(url)
+    # r = requests.get(url)
+    # print(r.json())
+
+    data={'orderNo':'1234555','content':'http://www.szcredit.com.cn/web/GSZJGSPT/QyxyDetail.aspx?rid=ff86d6dce2ee483bb2b2f852cc2cb1b1&cid=9144030079921798XW'}
+    r=requests.post(url='http://127.0.0.1:8002/barcode',data=data)
     print(r.json())
-
-
     threadname = 'i'
     print('Thread ::: {}'.format(threadname))
     # print(r.json())
@@ -34,7 +36,7 @@ def multi_thread():
     start = time.time()
     thread_list = []
 
-    for i in range(100):
+    for i in range(10):
         t = threading.Thread(target=sxr, args=())
         thread_list.append(t)
     for t in thread_list:
@@ -85,27 +87,51 @@ def demo():
     print(r.json())
 
 def sxr():
-    host='10.18.6.101'
-    local='10.18.4.211'
+    # host='10.18.6.101'
+    # local='10.18.4.211'
+    local = '127.0.0.1'
     # url='http://{}:8000/sxr/?name=334c911e750c27347887de00016b5e26&idnum=50ba516c1038f17d52c6d506ab9bf745&orderNo=12345678'.format(local)
     url='http://{}:8556/sxr'.format(local)
     # 'f1f9c4b219ca6b87ca21bc696acf37ba&idnum=6ff02be5ac5232c013f4e8f5dc5e9ca3'
     # data={'name':'334c911e750c27347887de00016b5e26','orderNo':'123456789','idnum':'50ba516c1038f17d52c6d506ab9bf745'}
     # data={'name':'f1f9c4b219ca6b87ca21bc696acf37ba','idnum':'6ff02be5ac5232c013f4e8f5dc5e9ca3','orderNo':'123456789'}
     # data={'name':'路露','idnum':'320106198210040436','orderNo':'123456789'}
-    data={'name':'容家业','idnum':'110101********1012','orderNo':'123456789'}
+    data={'name':'郝宝顺','idnum':'120103196402053519','orderNo':'qqqqqqqqqqqqqqqqqq'}
     # data={'name':'冷景佳','idnum':'360423********101X','orderNo':'123456789'}
     # for _ in range(10):
     # start=time.time()
     # r=requests.get(url)
     r=requests.post(url,data=data)
-    # print(r.json())
+    print(r.json())
     # print('Time used:{0}\n'.format(time.time()-start))
     return True
 
+def loop_back():
+    while True:
+
+        # local = '127.0.0.1'
+        local='10.18.4.211'
+
+        # url='http://{}:8000/sxr/?name=334c911e750c27347887de00016b5e26&idnum=50ba516c1038f17d52c6d506ab9bf745&orderNo=12345678'.format(local)
+        url = 'http://{}:8556/sxr'.format(local)
+        # 'f1f9c4b219ca6b87ca21bc696acf37ba&idnum=6ff02be5ac5232c013f4e8f5dc5e9ca3'
+        # data={'name':'334c911e750c27347887de00016b5e26','orderNo':'123456789','idnum':'50ba516c1038f17d52c6d506ab9bf745'}
+        # data={'name':'f1f9c4b219ca6b87ca21bc696acf37ba','idnum':'6ff02be5ac5232c013f4e8f5dc5e9ca3','orderNo':'123456789'}
+        # data={'name':'路露','idnum':'320106198210040436','orderNo':'123456789'}
+        data = {'name': '郝宝顺', 'idnum': '120103196402053519', 'orderNo': '12345678900000'}
+        # data={'name':'冷景佳','idnum':'360423********101X','orderNo':'123456789'}
+        # for _ in range(10):
+        # start=time.time()
+        # r=requests.get(url)
+        r = requests.post(url, data=data)
+        print(r.json())
+        # print('Time used:{0}\n'.format(time.time()-start))
+        # return True
+        time.sleep(3000)
+
 if __name__ == '__main__':
     # demo()
-    multi_thread()
+    # multi_thread()
     # gevent_case()
     # freeze_support()
     # multi_process()
@@ -119,4 +145,5 @@ if __name__ == '__main__':
         # print("time used {} ms".format((time.time()-start)*1000))
         # multi_thread()
     # time.sleep()
-    print('Done')
+    # print('Done')
+    loop_back()
