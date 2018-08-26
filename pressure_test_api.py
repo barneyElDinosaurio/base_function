@@ -36,7 +36,7 @@ def multi_thread():
     start = time.time()
     thread_list = []
 
-    for i in range(10):
+    for i in range(100):
         t = threading.Thread(target=sxr, args=())
         thread_list.append(t)
     for t in thread_list:
@@ -87,11 +87,9 @@ def demo():
     print(r.json())
 
 def sxr():
-    # host='10.18.6.101'
-    # local='10.18.4.211'
-    local = '127.0.0.1'
+    host='10.18.4.211'
     # url='http://{}:8000/sxr/?name=334c911e750c27347887de00016b5e26&idnum=50ba516c1038f17d52c6d506ab9bf745&orderNo=12345678'.format(local)
-    url='http://{}:8556/sxr'.format(local)
+    url='http://{}:8556/sxr'.format(host)
     # 'f1f9c4b219ca6b87ca21bc696acf37ba&idnum=6ff02be5ac5232c013f4e8f5dc5e9ca3'
     # data={'name':'334c911e750c27347887de00016b5e26','orderNo':'123456789','idnum':'50ba516c1038f17d52c6d506ab9bf745'}
     # data={'name':'f1f9c4b219ca6b87ca21bc696acf37ba','idnum':'6ff02be5ac5232c013f4e8f5dc5e9ca3','orderNo':'123456789'}
@@ -131,7 +129,7 @@ def loop_back():
 
 if __name__ == '__main__':
     # demo()
-    # multi_thread()
+    multi_thread()
     # gevent_case()
     # freeze_support()
     # multi_process()
@@ -146,4 +144,4 @@ if __name__ == '__main__':
         # multi_thread()
     # time.sleep()
     # print('Done')
-    loop_back()
+    # loop_back()
