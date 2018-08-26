@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
+from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
-
-
 # Create your views here.
+import logging
 def search(request):
+
     kw = request.GET.get('kw')
     print(kw)
     content = baidu_page(kw)

@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from snippets import views as s_views
+from baidu import views as b_views
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path(r'^', include('snippets.urls'))
+    path('snippets',s_views.test1),
+    url(r'^s/$', b_views.search),
 ]
