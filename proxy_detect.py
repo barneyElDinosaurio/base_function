@@ -1,12 +1,12 @@
 # -*-coding=utf-8-*-
 import requests
 import time
+import config
 
 url = 'http://members.3322.org/dyndns/getip'
 
-
 def get_proxy(retry=5):
-    proxyurl = 'http://:8081/dynamicIp/common/getDynamicIp.do'
+    proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxy_ip)
     count = 0
     for i in range(retry):
         try:

@@ -2,6 +2,7 @@
 import base64
 
 import requests
+import config
 
 proxy = "http://proxy.asiainfo.com:8080"
 proxy_type = "http"
