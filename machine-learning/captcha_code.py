@@ -9,6 +9,7 @@ import random
 import string
 from keras.models import *
 from keras.layers import *
+
 # characters = string.digits + string.ascii_uppercase
 characters = string.digits
 print(characters)
