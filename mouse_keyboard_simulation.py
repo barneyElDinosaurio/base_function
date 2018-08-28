@@ -36,7 +36,7 @@ print(screenWidth, screenHeight)
 def youdao():
         count = 0
         time.sleep(5)
-        while count < 300:
+        while count < 500:
             pag.keyDown('down')
             print(count)
             time.sleep(0.5)
