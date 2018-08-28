@@ -221,11 +221,23 @@ def str_function():
     # print(x.find('Xname') # -1)
     print(x.count('n'))
 
-
+def bucket_test():
+    ip='127.0.0.1'
+    port='12'
+    lua_script = """
+    splash:on_request(function(request)
+    request:set_proxy{
+        host = %s,
+        port = %s,
+    }
+    end)
+    """ %(ip,port)
+    # print(lua_script.format('127.0.0.1','80'))
+    print(lua_script)
 
 #check_year()
 #_write_adead()
-zfill_test()
+# zfill_test()
 #loo_each()
 #replace_func()
 #garbe_character()
@@ -245,3 +257,4 @@ zfill_test()
 #find_usage()
 # lower_usage()
 # str_function()
+bucket_test()

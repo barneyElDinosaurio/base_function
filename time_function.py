@@ -178,7 +178,7 @@ def time_exchange():
     print(locatime)
     print('type of locatime ', type(locatime))
     # datatime类型转为timestamp timestamp 为long类型
-    t_stamp = long(time.mktime(locatime.timetuple()) * 1000.0 + locatime.microsecond / 1000.0)
+    t_stamp = int(time.mktime(locatime.timetuple()) * 1000.0 + locatime.microsecond / 1000.0)
     print(t_stamp)
     print('type of t_stamp ', type(t_stamp))
     # timestamp类型转为 datatime
@@ -221,11 +221,14 @@ def time_cuo():
 
     # 13位
     # 1521204495005
-    print(long(time.time()*1000))
+    print(int(time.time()*1000))
 
     #十三位转为时间
-    t_1= 1526018963000/1000.00
+    t_1= 1535002908006/1000.00
     print('t_1', time.ctime(t_1))
+
+    t_2= 1533825084
+    print('t_2', time.ctime(t_2))
 
     t_s=1504165854069/1000.0
     t2 = 1503048528 * 1.00
