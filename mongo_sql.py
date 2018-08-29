@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 
 client = pymongo.MongoClient('10.18.6.101')
 doc = client['spider']['meituan']
-engine = create_engine('mysql+pymysql://:@1234@10.18.4.211:/spider?charset=utf8')
+engine = create_engine('mysql+pymysql://:@@:/spider?charset=utf8')
 
 
 def classic_method():

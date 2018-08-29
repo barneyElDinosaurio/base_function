@@ -10,7 +10,9 @@ from gevent import monkey
 # monkey.patch_all()
 from gevent.pool import Pool
 import gevent
+import logging
 
+logger = logging.getLogger()
 
 # api 压力测试
 
@@ -87,6 +89,7 @@ def demo():
     print(r.json())
 
 def sxr():
+    # host='127.0.0.1'
     host='10.18.4.211'
     # url='http://{}:8000/sxr/?name=334c911e750c27347887de00016b5e26&idnum=50ba516c1038f17d52c6d506ab9bf745&orderNo=12345678'.format(local)
     url='http://{}:8556/sxr'.format(host)
@@ -94,13 +97,13 @@ def sxr():
     # data={'name':'334c911e750c27347887de00016b5e26','orderNo':'123456789','idnum':'50ba516c1038f17d52c6d506ab9bf745'}
     # data={'name':'f1f9c4b219ca6b87ca21bc696acf37ba','idnum':'6ff02be5ac5232c013f4e8f5dc5e9ca3','orderNo':'123456789'}
     # data={'name':'路露','idnum':'320106198210040436','orderNo':'123456789'}
-    data={'name':'郝宝顺','idnum':'120103196402053519','orderNo':'qqqqqqqqqqqqqqqqqq'}
+    data={'name':'04bd28789cb1425e0af388b7223f4537','idnum':'c62cd3435439508238fe592c427a8320','orderNo':'qqqqqqqqqqqqqqqqqq'}
     # data={'name':'冷景佳','idnum':'360423********101X','orderNo':'123456789'}
     # for _ in range(10):
     # start=time.time()
     # r=requests.get(url)
     r=requests.post(url,data=data)
-    print(r.json())
+    # print(r.json())
     # print('Time used:{0}\n'.format(time.time()-start))
     return True
 
@@ -116,7 +119,7 @@ def loop_back():
         # data={'name':'334c911e750c27347887de00016b5e26','orderNo':'123456789','idnum':'50ba516c1038f17d52c6d506ab9bf745'}
         # data={'name':'f1f9c4b219ca6b87ca21bc696acf37ba','idnum':'6ff02be5ac5232c013f4e8f5dc5e9ca3','orderNo':'123456789'}
         # data={'name':'路露','idnum':'320106198210040436','orderNo':'123456789'}
-        data = {'name': '郝宝顺', 'idnum': '120103196402053519', 'orderNo': '12345678900000'}
+        data = {'name': '04bd28789cb1425e0af388b7223f4537', 'idnum': 'c62cd3435439508238fe592c427a8320', 'orderNo': '12345678900000'}
         # data={'name':'冷景佳','idnum':'360423********101X','orderNo':'123456789'}
         # for _ in range(10):
         # start=time.time()
@@ -127,9 +130,98 @@ def loop_back():
         # return True
         time.sleep(3000)
 
+def get_content(url, retry=3):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+    }
+
+    for i in range(retry):
+
+        try:
+            proxies = get_proxy()
+            logger.info('Proxy {}'.format(proxies))
+            r = requests.get(url=url, headers=headers, timeout=10)
+            # r = requests.get(url=url, headers=headers, proxies=proxies, timeout=10)
+            logger.info('访问URL：{} 的状态码为{}'.format(url, r.status_code))
+
+            if r.status_code == 200:
+                return r.text
+
+            else:
+                logger.info('访问URL:: {} 状态码出错。返回非法页面或者页面不存在。'.format(url))
+                # return '404'
+            logger.info('retry:{} times'.format(i))
+        except Exception as e:
+
+            logger.error("访问企业:: URL {}。异常信息：{}。".format(url, e))
+
+    return '404'
+def get_proxy( retry=50):
+
+    proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+    for i in range(1, retry + 1):
+        try:
+            r = requests.get(proxyurl, timeout=10)
+        except Exception as e:
+            logger.error('获取代理错误：{}'.format(e))
+            logger.error('Failed to get proxy ip, retry {}'.format(i))
+            time.sleep(1)
+
+        else:
+            js = r.json()
+            proxyServer = {'http':'http://{0}:{1}'.format(js.get('ip'), js.get('port'))}
+            return proxyServer
+
+def barcode_speed():
+    url='http://gsxt.gdgs.gov.cn//GSpublicity/GSpublicityList.html?service=entInfo&entNo=a9d314a0-0159-1000-e000-18c60a0c0115&regOrg=441923'
+    avg_time = []
+    for i in range(10):
+        start=time.time()
+        r=get_content(url)
+        time_used = time.time()-start
+        avg_time.append(time_used)
+    s=0
+    for i in avg_time:
+        s=s+i
+    print('avg time used : {}'.format(s))
+
+def barcode_pressure():
+    local='http://127.0.0.1:8002/barcode'
+    data={'orderNo':'119','content':'http://gsxt.gdgs.gov.cn//GSpublicity/GSpublicityList.html?service=entInfo&entNo=a9d314a0-0159-1000-e000-18c60a0c0115&regOrg=441923'}
+
+
+    avg_time =[]
+    for i in range(10):
+        start=time.time()
+        r = requests.post(url=local, data=data)
+        time_used = time.time()-start
+        avg_time.append(time_used)
+    s=0
+    for i in avg_time:
+        s=s+i
+    print('total: {}'.format(s))
+    print('avg time used : {} ms'.format(s/10*1000))
+
+
+def proxy_speed():
+    avg_time =[]
+    for i in range(100):
+        start=time.time()
+        proxy = get_proxy()
+        time_used = time.time()-start
+        avg_time.append(time_used)
+    s=0
+    for i in avg_time:
+        s=s+i
+    print('total: {}'.format(s))
+    print('avg time used : {} ms'.format(s/100*1000))
+
 if __name__ == '__main__':
     # demo()
     multi_thread()
+
+    # barcode_pressure()
+    # proxy_speed()
     # gevent_case()
     # freeze_support()
     # multi_process()

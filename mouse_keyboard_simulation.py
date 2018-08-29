@@ -102,12 +102,23 @@ def draw_rect():
 def message_test():
     pag.alert('This displays some text with an OK button')
 
-
-
+def web_control():
+    x,y=1628, 546
+    time.sleep(3)
+    n=0
+    print(pag.position())
+    while n <30:
+        for _ in range(15):
+            pag.scroll(-500)
+            time.sleep(1.1)
+        time.sleep(1.5)
+        pag.click(x,y)
+        time.sleep(3)
 
 # basic_api()
 #example()
 #draw_rect()
 # message_test()
 # youdao()
-jiaoyi()
+# jiaoyi()
+web_control()

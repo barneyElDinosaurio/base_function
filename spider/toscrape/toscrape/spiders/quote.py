@@ -4,7 +4,7 @@ import scrapy
 import time
 from scrapy_splash import SplashRequest
 from toscrape.items import ToscrapeItem
-
+import config
 lua_script = '''
 function main(splash)
     splash:go(splash.args.url)
@@ -60,7 +60,8 @@ class QuoteSpider(scrapy.Spider):
                                 args={'timeout': 10.1, 'images': 0, 'wait': 9.1})
 
     def get_proxy(self, retry=50):
-        proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+
+        proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxy_ip)
         for i in range(1, retry + 1):
             try:
                 r = requests.get(proxyurl, timeout=10)

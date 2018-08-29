@@ -85,10 +85,10 @@ DATABASES = {
         'myapi': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'spider',
-        'USER': 'crawler' ,
-        'PASSWORD': 'Crawler@1234',
-        'HOST':'10.18.4.211',
-        'PORT':'3367',
+        'USER': '' ,
+        'PASSWORD': '@',
+        'HOST':'10.18.4.',
+        'PORT':'',
     },
 
     'crawler':{

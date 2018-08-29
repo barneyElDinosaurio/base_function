@@ -11,8 +11,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import datetime
 
-# engine = create_engine('mysql+pymysql://crawler:Crawler@1234@10.18.4.211:3367/spider?charset=utf8')
-engine = create_engine('mysql+pymysql://root:123456z@localhost/spider?charset=utf8')
+engine = create_engine('mysql+pymysql://:@localhost/spider?charset=utf8')
 
 
 Base = declarative_base()

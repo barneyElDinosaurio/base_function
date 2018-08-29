@@ -62,7 +62,7 @@ class SplashSpider(scrapy.Spider):
                                 args={'timeout': 10.1, 'images': 0, 'wait': 9.1})
 
     def get_proxy(self, retry=50):
-        proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+        proxyurl = 'http://:8081/dynamicIp/common/getDynamicIp.do'.format()
         for i in range(1, retry + 1):
             try:
                 r = requests.get(proxyurl, timeout=10)

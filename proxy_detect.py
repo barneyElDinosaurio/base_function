@@ -3,14 +3,14 @@ import requests
 import time
 import config
 
-url = 'http://members.3322.org/dyndns/getip'
+url = 'http://httpbin.org/ip'
 
-def get_proxy(retry=5):
+def get_proxy(retry=10000):
     proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxy_ip)
     count = 0
     for i in range(retry):
         try:
-            r = requests.get(proxyurl, timeout=10)
+            r = requests.get(proxyurl)
         except Exception as e:
             print(e)
             count += 1
@@ -19,6 +19,9 @@ def get_proxy(retry=5):
 
         else:
             js = r.json()
+
+            # if len(js.get('port'))<5:
+            print('port number: {}'.format(js.get('port')))
             proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
             proxies_random = {
                 'http': proxyServer
@@ -26,6 +29,8 @@ def get_proxy(retry=5):
             print(proxies_random)
             return proxies_random
 
+
 proxy = get_proxy()
 r = requests.get(url,proxies=proxy)
-print('web content {}'.format(r.text))
+print(r.status_code)
+print('web content ::  {}'.format(r.text))

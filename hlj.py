@@ -270,7 +270,7 @@ def hclear(x):
 
 # %% 获取代理
 def getip():
-    proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+    proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format()
     count = 0
     while count < 100000:
         try:

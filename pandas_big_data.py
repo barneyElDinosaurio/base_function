@@ -1,6 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
-engine = create_engine('mysql+pymysql://crawler:Crawler@1234@10.18.4.211:3367/crawler_web_new?charset=utf8')
+engine = create_engine('mysql+pymysql://:@@:3367/crawler_web_new?charset=utf8')
 def read_sql(table,engine,chunksize=None,return_generator=True):
 
         if chunksize is not None and chunksize<=0:

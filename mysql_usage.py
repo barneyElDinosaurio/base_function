@@ -344,7 +344,7 @@ def put_to_redis():
 
 
 def query_case():
-    connect = pymysql.connect(host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234', db='losecredit',
+    connect = pymysql.connect(host='', port=, user='', password='', db='losecredit',
                               charset='utf8')
     cursor = connect.cursor()
     cmd = 'select DISTINCT fname from dishonest limit 2000'
@@ -365,7 +365,7 @@ def query_case():
 def test_main():
     start = time.time()
 
-    dbpool = adbapi.ConnectionPool('pymysql', host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234',
+    dbpool = adbapi.ConnectionPool('pymysql', host='', port=3367, user='', password='',
                                    database='losecredit', charset='utf8')
     thread_list = []
     for i in range(100):
@@ -396,7 +396,7 @@ def access_nornal():
 
 
 def dbpool_main():
-    dbpool = adbapi.ConnectionPool('pymysql', host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234',
+    dbpool = adbapi.ConnectionPool('pymysql', host='', port=, user='', password='@',
                                    database='losecredit', charset='utf8')
 
     for i in range(100):
@@ -415,7 +415,7 @@ def query_cmd(tx, item):
     tx.excute(cmd, None)
 
 
-dbpool = adbapi.ConnectionPool('pymysql', host='10.18.4.211', port=3367, user='crawler', password='Crawler@1234',
+dbpool = adbapi.ConnectionPool('pymysql', host='', port=, user='', password='@',
                                database='losecredit', charset='utf8')
 
 
