@@ -21,16 +21,19 @@ def get_proxy(retry=10000):
             js = r.json()
 
             # if len(js.get('port'))<5:
-            print('port number: {}'.format(js.get('port')))
+            # print('port number: {}'.format(js.get('port')))
             proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
             proxies_random = {
                 'http': proxyServer
             }
             print(proxies_random)
             return proxies_random
+start=time.time()
+for _ in range(10):
+    # proxy = get_proxy()
+    r = requests.get(url)
+    print(r.status_code)
+    print('web content ::  {}'.format(r.text))
 
-
-proxy = get_proxy()
-r = requests.get(url,proxies=proxy)
-print(r.status_code)
-print('web content ::  {}'.format(r.text))
+end = time.time()-start
+print('time used {} ms'.format(end*1000))
