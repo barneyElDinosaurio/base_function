@@ -2,33 +2,20 @@
 import pandas as pd
 import json
 import pymongo
-# from setting import get_engine
 from sqlalchemy import create_engine
-
+import config
 # 将mongo数据转移到mysql
 
-client = pymongo.MongoClient('10.18.6.101')
-doc = client['spider']['meituan']
-<<<<<<< HEAD
-engine = create_engine('mysql+pymysql://:@@:/spider?charset=utf8')
-=======
-<<<<<<< HEAD
-# engine = get_engine('')
-engine = create_engine('mysql+pymysql://crawler:Crawler@1234@10.18.4.211:3367/spider?charset=utf8')
-=======
-engine = create_engine('mysql+pymysql://:@1234@10.18.4.211:/spider?charset=utf8')
->>>>>>> origin/master
->>>>>>> origin/master
+client = pymongo.MongoClient('10.18.6.102')
+doc = client['stock']['jsl']
+engine = create_engine('mysql+pymysql://root:123456z@127.0.0.1:3306/db_rocky?charset=utf8'.format(config.localpassword))
 
 
 def classic_method():
     temp = []
     start = 0
     # 数据太大还是会爆内存,或者游标丢失
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
     for i in doc.find().batch_size(500):
         start += 1
         del i['_id']
@@ -43,56 +30,58 @@ def classic_method():
 
 
 def chunksize_move():
-    block = 10000
+    block = 100
     total = doc.find({}).count()
     iter_number = total // block
-<<<<<<< HEAD
-    # remain_part = total%block
-=======
 
->>>>>>> origin/master
+    # remain_part = total%block
+
     for i in range(iter_number + 1):
         small_part = doc.find({}).limit(block).skip(i * block)
         list_data = []
 
         for item in small_part:
             del item['_id']
-            del item['crawl_time']
+            # del item['crawl_time']
             item['poiid'] = int(item['poiid'])
             for k, v in item.items():
                 if isinstance(v, dict) or isinstance(v, list):
-<<<<<<< HEAD
+
                     # print(v)
                     item[k] = json.dumps(v, ensure_ascii=False)
                 # else:
                 # print(v)
-=======
+
 
                     item[k] = json.dumps(v, ensure_ascii=False)
 
->>>>>>> origin/master
-            list_data.append(item)
 
+            list_data.append(item)
         df = pd.DataFrame(list_data)
         df = df.set_index('poiid', drop=True)
-<<<<<<< HEAD
         # print(df.head(5))
 
         try:
-            # pass
-=======
-
-        try:
->>>>>>> origin/master
             df.to_sql('meituan', con=engine, if_exists='append')
             print('to sql {}'.format(i))
         except Exception as e:
             print(e)
 
-<<<<<<< HEAD
+def mongo_transfer():
+    doc = client['stock']['jsl']
+    backup_mongo=pymongo.MongoClient('10.18.6.101')['stock']['jsl']
+    block = 100
+    total = doc.find({}).count()
+    iter_number = total // block
 
-chunksize_move()
+    for i in range(iter_number + 1):
+        small_part = doc.find({}).limit(block).skip(i * block)
+        # list_data = []
+        for item in small_part:
+            print('insert.....')
+            backup_mongo.insert(item)
 
-=======
-chunksize_move()
->>>>>>> origin/master
+    print('done')
+
+# chunksize_move()
+mongo_transfer()

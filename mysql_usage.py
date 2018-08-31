@@ -1,6 +1,6 @@
 # -*-coding=utf-8-*-
 import random
-from sshtunnel import SSHTunnelForwarder
+# from sshtunnel import SSHTunnelForwarder
 import redis
 import pymysql, sqlite3
 import pandas as pd
@@ -104,7 +104,7 @@ class MysqlUsage():
     def Aliyun(self):
         passwd = Toolkit.getUserData('data.cfg')['alipasswd']
         print(passwd)
-        conn = MySQLdb.connect(host='',  # 远程主机的ip地址，
+        conn = pymysql.connect(host='',  # 远程主机的ip地址，
                                user='',  # MySQL用户名
                                db='',  # database名
                                passwd=passwd,  # 数据库密码
@@ -251,7 +251,7 @@ class MysqlUsage():
 
 
 def remote_mysql():
-    conn = MySQLdb.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
+    conn = pymysql.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
     cursor = conn.cursor()
     cursor.execute("SELECT count(*) from tb_houses;")
     data = cursor.fetchone()
@@ -265,21 +265,21 @@ def remote_mysql2():
     :return:
     '''
 
-    with SSHTunnelForwarder(
-            ('x', 8220),
-            ssh_password="x",
-            ssh_username="x",
-            remote_bind_address=('x', 3306)) as server:
-        conn = MySQLdb.connect(host='127.0.0.1',
-                               port=server.local_bind_port,
-                               user='x',
-                               passwd='x',
-                               db='db_parker')
-
-        cursor = conn.cursor()
-        cursor.execute("SELECT count(*) from tb_houses;")
-        data = cursor.fetchone()
-        conn.close()
+    # with SSHTunnelForwarder(
+    #         ('x', 8220),
+    #         ssh_password="x",
+    #         ssh_username="x",
+    #         remote_bind_address=('x', 3306)) as server:
+    #     conn = pymysql.connect(host='127.0.0.1',
+    #                            port=server.local_bind_port,
+    #                            user='x',
+    #                            passwd='x',
+    #                            db='db_parker')
+    conn = get_mysql_conn()
+    cursor = conn.cursor()
+    cursor.execute("SELECT count(*) from tb_houses;")
+    data = cursor.fetchone()
+    conn.close()
 
 
 def create_db_case():
@@ -317,7 +317,7 @@ def remove_row():
 def run_sql_script():
     cur_db = 'python_test'
 
-    # db = MySQLdb.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, cur_db, charset='utf8')
+    # db = pymysql.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, cur_db, charset='utf8')
     # cur=db.cursor()
     # with open('world.sql','r') as f:
     #     cur.executescript(f.read())
@@ -344,7 +344,7 @@ def put_to_redis():
 
 
 def query_case():
-    connect = pymysql.connect(host='', port=, user='', password='', db='losecredit',
+    connect = pymysql.connect(host='', port=0, user='', password='', db='losecredit',
                               charset='utf8')
     cursor = connect.cursor()
     cmd = 'select DISTINCT fname from dishonest limit 2000'
@@ -390,13 +390,13 @@ def access_nornal():
     # cursor.execute(cmd)
     # ret = cursor.fetchall()
 
-    cursor = conn.cursor()
-    cursor.execute(cmd)
-    ret = cursor.fetchall()
+    # cursor = conn.cursor()
+    # cursor.execute(cmd)
+    # ret = cursor.fetchall()
 
 
 def dbpool_main():
-    dbpool = adbapi.ConnectionPool('pymysql', host='', port=, user='', password='@',
+    dbpool = adbapi.ConnectionPool('pymysql', host='', port=0, user='', password='@',
                                    database='losecredit', charset='utf8')
 
     for i in range(100):
@@ -415,7 +415,7 @@ def query_cmd(tx, item):
     tx.excute(cmd, None)
 
 
-dbpool = adbapi.ConnectionPool('pymysql', host='', port=, user='', password='@',
+dbpool = adbapi.ConnectionPool('pymysql', host='', port=0, user='', password='@',
                                database='losecredit', charset='utf8')
 
 
@@ -438,6 +438,17 @@ def pool_main():
     runQuery().addCallback(query_cmd1)
     # reactor.callLater(1, reactor.stop)
     reactor.run()
+
+
+def connection_check():
+    conn_test = pymysql.connect(host='rds0710650me01y6d3ogo.mysql.rds.aliyuncs.com',
+                                port=3306,
+                                user='yunker',
+                                passwd='yunke2016',
+                                db='yunketest',
+                                charset='utf8'
+                                )
+    cursor = conn_test.cursor()
 
 
 def main():
@@ -465,7 +476,8 @@ def main():
     # query_case()
     # test_main()
     # dbpool_main()
-    pool_main()
+    # pool_main()
+    connection_check()
 
 
 if __name__ == '__main__':
