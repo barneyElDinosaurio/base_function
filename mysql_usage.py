@@ -251,7 +251,7 @@ class MysqlUsage():
 
 
 def remote_mysql():
-    conn = pymysql.connect(host='172.16.103.57:9990', user='parker', passwd='parker_3z7ljV0dDjRO', db='db_parker')
+    conn = pymysql.connect(host='172.16.103.57:9990', user='parker', passwd='', db='db_parker')
     cursor = conn.cursor()
     cursor.execute("SELECT count(*) from tb_houses;")
     data = cursor.fetchone()
@@ -445,7 +445,7 @@ def connection_check():
                                 port=3306,
                                 user='yunker',
                                 passwd='yunke2016',
-                                db='yunketest',
+                                db='',
                                 charset='utf8'
                                 )
     cursor = conn_test.cursor()

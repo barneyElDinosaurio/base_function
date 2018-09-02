@@ -1,116 +1,86 @@
 # -*-coding=utf-8-*-
 import hashlib
-
+import json
+import logging
 import time
-
 import requests
-from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
+from scrapy.downloadermiddlewares.retry import RetryMiddleware
+from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from headerchange import config
+import random
+# from headerchange.user_agents import agents
+from fake_useragent import UserAgent
+from scrapy.utils.response import response_status_message
 
+class CustomUserAgentMiddleware(UserAgentMiddleware):
 
-class CustomerUserAgent(UserAgentMiddleware):
     def process_request(self, request, spider):
-        ua = 'Personal Headers'
-        request.headers.setdefault('User-Agent', ua)
+
+        agent = UserAgent()
+        request.headers["User-Agent"] = agent.random
 
 
-class CustomProxy(object):
+class CustomProxyMiddleware(object):
     def process_request(self, request, spider):
-        # request.meta['']
-        # time.sleep(1)
-        # auth_header = self.get_auth_header()
         proxy = self.get_proxy()
         request.meta['proxy'] = proxy
-        # request.headers['Proxy-Authorization'] = auth_header
 
     def get_proxy(self,retry=5):
-        proxyurl = 'http://:8081/dynamicIp/common/getDynamicIp.do'
+        proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
         count = 0
         for i in range(retry):
             try:
                 r = requests.get(proxyurl, timeout=10)
             except Exception as e:
-                print(e)
+                logging.error(e)
                 count += 1
-                print('代理获取失败,重试' + str(count))
+                logging.error('代理获取失败,重试' + str(count))
                 time.sleep(1)
 
             else:
                 js = r.json()
                 proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
-                proxies_random = {
-                    'http': proxyServer
-                }
                 return proxyServer
 
-    '''
-    def get_auth_header(self):
-        # 请替换app_key和secret
-        app_key = "xxxxxxxxx"
-        secret = "xxxxxxxxxxxxx"
-
-        param_map = {
-            "app_key": app_key,
-            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),  # 如果你的程序在国外，请进行时区处理
-            "enable-simulate": 'true',
-            "random-useragent": 'pc',
-            "clear-cookies": 'true'
-        }
-        # 排序
-        keys = param_map.keys()
-        keys.sort()
-
-        codes = "%s%s%s" % (secret, str().join('%s%s' % (key, param_map[key]) for key in keys), secret)
-
-        # 计算签名
-        sign = hashlib.md5(codes).hexdigest().upper()
-
-        param_map["sign"] = sign
-
-        # 拼装请求头Proxy-Authorization的值
-        keys = param_map.keys()
-        auth_header = "MYH-AUTH-MD5 " + str('&').join('%s=%s' % (key, param_map[key]) for key in keys)
-
-        # print(time.strftime("%Y-%m-%d %H:%M:%S"))
-        # print(authHeader)
-
-        return auth_header
-    '''
+        return None
 
 
-class MayiProxy(object):
-    def process_request(self,request,spider):
-        auth_header = self.get_auth_header()
-        request.meta['proxy'] = "http://s3.proxy.mayidaili.com:8123"
-        request.headers['Proxy-Authorization'] = auth_header
+class CustomRetryMiddleware(RetryMiddleware):
+    def process_response(self, request, response, spider):
+        if request.meta.get('dont_retry', False):
+            return response
 
-    def get_auth_header(self):
-        # 请替换app_key和secret
-        app_key = "67783764"
-        secret = "6151eb360668ca10ad772ca9e46d306b"
+        if response.status in self.retry_http_codes:
+            reason = response_status_message(response.status)
+            return self._retry(request, reason, spider) or response
 
-        param_map = {
-            "app_key": app_key,
-            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),  # 如果你的程序在国外，请进行时区处理
-            "enable-simulate": 'true',
-            "random-useragent": 'pc',
-            "clear-cookies": 'true'
-        }
-        # 排序
-        keys = param_map.keys()
-        # keys.sort()
+        # customiz' here
+        # content = response.text
+        if not response.xpath('//table[@class="list_2_tab"]/tbody/tr'):
 
-        codes = "%s%s%s" % (secret, str().join('%s%s' % (key, param_map[key]) for key in keys), secret)
+            proxy = self.get_proxy()
+            logging.info('>>>>>>>> 替换代理重试')
+            request.meta['proxy']=proxy
 
-        # 计算签名
-        sign = hashlib.md5(codes).hexdigest().upper()
+            return self._retry(request, response.body, spider) or response
 
-        param_map["sign"] = sign
+        return response
 
-        # 拼装请求头Proxy-Authorization的值
-        keys = param_map.keys()
-        auth_header = "MYH-AUTH-MD5 " + str('&').join('%s=%s' % (key, param_map[key]) for key in keys)
+    def get_proxy(self,retry=5):
+        proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
+        count = 0
+        for i in range(retry):
+            try:
+                r = requests.get(proxyurl, timeout=10)
+            except Exception as e:
+                logging.error(e)
+                count += 1
+                logging.error('代理获取失败,重试' + str(count))
+                time.sleep(1)
 
-        # print time.strftime("%Y-%m-%d %H:%M:%S")
-        # print authHeader
+            else:
+                js = r.json()
+                proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
+                return proxyServer
 
-        return auth_header
+        return None

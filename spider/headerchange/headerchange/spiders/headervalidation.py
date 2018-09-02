@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+from headerchange.user_agents import agents
+import random
+import json
 
 class HeadervalidationSpider(scrapy.Spider):
     name = 'headervalidation'
-    allowed_domains = ['helloacm.com']
-    start_urls = ['http://helloacm.com/api/user-agent/']
 
-
-    # def start_requests(self):
-    #     header={'User-Agent':'Hello World'}
-    #     yield scrapy.Request(url='http://helloacm.com/api/user-agent/',headers=header)
+    def start_requests(self):
+        url='http://httpbin.org/ip'
+        for i in range(5):
+            yield scrapy.Request(url=url,dont_filter=True)
 
     def parse(self, response):
         print('*'*20)
-        print(response.body)
+        print(response.text)
+        # print(json.loads(response.body_as_unicode()).get('headers').get('User-Agent'))
         print('*'*20)

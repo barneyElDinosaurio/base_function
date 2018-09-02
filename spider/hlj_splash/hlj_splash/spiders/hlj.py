@@ -14,12 +14,14 @@ class HljSpider(scrapy.Spider):
     test_url = 'http://httpbin.org/ip'
 
     def start_requests(self):
-        my_proxy = self.get_proxy()
+        # my_proxy = self.get_proxy()
 
         yield Request(
             url=self.test_url,
             meta={'splash':
-                      {'args': {'proxy': my_proxy, 'wait': 5},
+                      {'args': {
+                          'proxy': my_proxy,
+                                'wait': 5},
                        'endpoint': 'render.html',
                        }
                   }

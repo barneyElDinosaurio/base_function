@@ -12,28 +12,33 @@ def template():
     options = webdriver.ChromeOptions()
     options.add_argument(
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
-    driver = webdriver.Chrome(executable_path=r'C:\OneDrive\Python\selenium\chromedriver.exe',
+    driver = webdriver.Chrome(executable_path=r'D:\OneDrive\Python\selenium\chromedriver.exe',
                               chrome_options=options)
     driver.implicitly_wait(40)
 
 
-def netease():
+def login_demo():
     options = webdriver.ChromeOptions()
     options.add_argument(
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
-    driver = webdriver.Chrome(executable_path=r'C:\software\chrome\chromedriver.exe',
+    driver = webdriver.Chrome(executable_path=r'D:\OneDrive\Python\selenium\chromedriver.exe',
                               chrome_options=options)
     driver.implicitly_wait(40)
-    driver.get("http://30daydo.com/")
-    elem_user = driver.find_element_by_tag_name("登录")
-    elem_user.click()
-    ''''
-    elem_pwd = driver.find_element_by_name("password")
-    elem_pwd.send_keys("123456")
-    elem_pwd.send_keys(Keys.RETURN)
-    '''
+    url=''
+    driver.get(url)
+    username = driver.find_element_by_id("aw-login-user-name")
+    username.clear()
+    username.send_keys('')
+    psd = driver.find_element_by_id("aw-login-user-password")
+    psd.clear()
+    psd.send_keys('')
+    commit = driver.find_element_by_id("login_submit")
+    commit.click()
     time.sleep(5)
-    assert "baidu" in driver.title
+    cookies=driver.get_cookies()
+
+    for c in cookies:
+        print(c)
     driver.close()
     driver.quit()
 
@@ -170,4 +175,5 @@ def anjuke():
 # anjuke()
 # key_operation()
 # shop()
-example()
+# example()
+login_demo()

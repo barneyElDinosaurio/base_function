@@ -10,10 +10,10 @@ class ProxyCaseSpider(scrapy.Spider):
 
     def start_requests(self):
         proxy=self.get_proxy()
-        print('proxy ip {}'.format(proxy))
+        # print('proxy ip {}'.format(proxy))
         yield SplashRequest(
             url=self.test_url,
-            args={'proxy':proxy},
+            args={'wait':2,'proxy':proxy},
             endpoint='render.html'
                             )
 

@@ -52,9 +52,10 @@ ROBOTSTXT_OBEY = False
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'headerchange.customerMiddleware.customMiddleware.CustomerUserAgent':10
-    #    'headerchange.middlewares.MyCustomDownloaderMiddleware': 543,
-    'headerchange.customerMiddleware.customMiddleware.CustomProxy': 20
+    'headerchange.customerMiddleware.customMiddleware.CustomerUserAgentMiddleware':10,
+    'headerchange.customerMiddleware.customMiddleware.CustomProxyMiddleware':20
+       # 'headerchange.middlewares.MyCustomDownloaderMiddleware': 543,
+    # 'headerchange.customerMiddleware.customMiddleware.CustomProxy': 20
 }
 
 # Enable or disable extensions
@@ -89,8 +90,8 @@ DOWNLOADER_MIDDLEWARES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-REDIS_HOST = '127.0.0.1'
-REDIS_PORT = 6379
+# REDIS_HOST = '127.0.0.1'
+# REDIS_PORT = 6379
 # SCHEDULER_PERSIST = True
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"

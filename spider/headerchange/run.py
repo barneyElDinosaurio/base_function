@@ -6,5 +6,5 @@ http://30daydo.com
 Email: weigesysu@qq.com
 '''
 from scrapy import cmdline
-cmd = 'scrapy crawl proxyauto'
+cmd = 'scrapy crawl headervalidation'
 cmdline.execute(cmd.split())
