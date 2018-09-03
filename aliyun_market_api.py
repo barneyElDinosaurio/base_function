@@ -3,6 +3,9 @@ import sys,json
 import ssl
 import urllib.request
 from urllib import parse
+'''
+阿里云市场的一些api
+'''
 
 host = 'https://jisuznwd.market.alicloudapi.com'
 path = '/iqa/query'

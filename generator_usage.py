@@ -1,10 +1,11 @@
-#-*-coding=utf-8-*-
+# -*-coding=utf-8-*-
 try:
     # python3
     from queue import Queue
 except:
     # python2
     from Queue import Queue
+
 
 # 生成器解析器
 def generator_usage():
@@ -32,14 +33,16 @@ def generator_usage():
             print('finanlly')
             # return 1
 
+
 def list_generator():
-    l = [ x for x in range(1000)]
+    l = [x for x in range(1000)]
     print(type(l))
     print(l)
 
+
 def iter_function():
-    a=[i for i in range(100)]
-    b=iter(a)
+    a = [i for i in range(100)]
+    b = iter(a)
     while True:
         try:
             print(b.__next__())
@@ -47,21 +50,23 @@ def iter_function():
             print('over')
             break
 
+
 def key_function():
-    d={'a':1,'z':2,'f':3,'g':9,'i':8}
+    d = {'a': 1, 'z': 2, 'f': 3, 'g': 9, 'i': 8}
     '''
     for i in d:
         print(i)
     '''
 
     for i in d.items():
-    #for i in d.itervalues():
-    #for i in d.iterkeys():
-    #for i in d.iteritems():
+        # for i in d.itervalues():
+        # for i in d.iterkeys():
+        # for i in d.iteritems():
         print(i)
 
+
 def iter_usage():
-    q=Queue()
+    q = Queue()
     q.put(1)
     q.put(2)
     q.put(3)
@@ -72,11 +77,12 @@ def iter_usage():
     def fetchdata():
         return q.get()
 
-    for i in iter(fetchdata,'END'):
+    for i in iter(fetchdata, 'END'):
         print(i)
 
+
 def genlist():
-    x = (i**2 for i in range(10))
+    x = (i ** 2 for i in range(10))
     while 1:
         try:
             print(next(x))
@@ -85,9 +91,11 @@ def genlist():
             print(e)
             break
 
+
 def gensquart(N):
     for i in range(N):
-        yield i**3
+        yield i ** 3
+
 
 def testcase():
     x = gensquart(10)
@@ -111,18 +119,19 @@ def testcase():
 
 
 class MyGenerator():
-    def __init__(self,n):
-        self.end=n
-        self.current =-1
+    def __init__(self, n):
+        self.end = n
+        self.current = -1
         self.content = []
         for i in range(self.end):
-            self.content.append(i**3)
+            self.content.append(i ** 3)
+
     def __iter__(self):
         return self
 
     def next(self):
-         self.current=self.current+1
-         return self.content[self.current]
+        self.current = self.current + 1
+        return self.content[self.current]
 
 
 def testcase2():
@@ -137,12 +146,27 @@ def testcase2():
         print(i)
 
 
+def yield_test():
+    a = 1
+    for i in range(0, 10):
+        b = a + i
+        yield b
+
+
+data = yield_test()
+print(data)
+for i in range(0, 10):
+    print(next(data))
+
+for i in yield_test():
+    print(i)
+
 # generator_usage()
 # iter_usage()
 # genlist()
 testcase()
-#iter_function()
-#key_function()
-#x = generator_usage()
-#print(x)
-#list_generator()
+# iter_function()
+# key_function()
+# x = generator_usage()
+# print(x)
+# list_generator()
