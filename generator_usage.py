@@ -1,28 +1,36 @@
 #-*-coding=utf-8-*-
-
-
+try:
+    # python3
+    from queue import Queue
+except:
+    # python2
+    from Queue import Queue
 
 # 生成器解析器
-
-# coding: utf-8
-from Queue import Queue
-
 def generator_usage():
-    g = (x for x in range(1000))
-    #rint type(g)
-    #print(g)
-    #print(g.next())
+    g = (x for x in range(100))
+    print(type(g))
+    print(g)
+    # print(g(1))
+    # print(sum(g))
+
+    # for i in g:
+    #     print(i)
+
+    # print(g.next())
+
     while g:
         try:
-            print(g.next())
-        except IOError:
+            # python2使用g.next() 或者next（g） ， python3使用 next(g) 或者g.__next__()
+            print(next(g))
+        except StopIteration:
             break
         else:
             print(' in else')
-            return 0
+            # return 0
         finally:
             print('finanlly')
-            return 1
+            # return 1
 
 def list_generator():
     l = [ x for x in range(1000)]
@@ -34,7 +42,7 @@ def iter_function():
     b=iter(a)
     while True:
         try:
-            print(b.next())
+            print(b.__next__())
         except StopIteration:
             print('over')
             break
@@ -67,17 +75,6 @@ def iter_usage():
     for i in iter(fetchdata,'END'):
         print(i)
 
-
-
-#iter_function()
-#key_function()
-#x = generator_usage()
-#print(x)
-#list_generator()
-iter_usage()
-
-    
-
 def genlist():
     x = (i**2 for i in range(10))
     while 1:
@@ -104,7 +101,7 @@ def testcase():
     '''
     while 1:
         try:
-            print(x.next())
+            print(x.__next__())
         except StopIteration:
             print('stop')
             break
@@ -128,8 +125,6 @@ class MyGenerator():
          return self.content[self.current]
 
 
-
-
 def testcase2():
     obj = MyGenerator(10)
     '''
@@ -142,8 +137,12 @@ def testcase2():
         print(i)
 
 
-def main():
-    genlist()
-    # testcase()
-
-main()
+# generator_usage()
+# iter_usage()
+# genlist()
+testcase()
+#iter_function()
+#key_function()
+#x = generator_usage()
+#print(x)
+#list_generator()

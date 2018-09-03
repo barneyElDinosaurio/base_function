@@ -119,6 +119,6 @@ def web_control():
 #example()
 #draw_rect()
 # message_test()
-# youdao()
+youdao()
 # jiaoyi()
-web_control()
+# web_control()
