@@ -23,7 +23,7 @@ def img_to_b64(img_path):
         base64_data=base64.b64encode(f.read())
     return base64_data.decode('utf-8')
 
-img_path = 'test.png' #图片路径
+img_path = '1536032291.png' #图片路径
 
 img_b64 = img_to_b64(img_path) #转为base64编码
 img_dict={'img':img_b64}
