@@ -95,7 +95,7 @@ def lxml_case3():
 
     tree=etree.HTML(text)
     html_s=etree.tostring(tree)
-    #print(html_s)
+    print(html_s)
     #print(tree.xpath('//li//span/text()')[0])
     '''
     reg_case=tree.xpath('//*[starts-with(@class,"item")]')
