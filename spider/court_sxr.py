@@ -10,8 +10,8 @@ from scrapy.selector import Selector
 import base64
 import time
 import pymongo
-
-
+import config
+from myultility import get_proxy
 name = '广元'
 # cidno = '360423197812221010'
 cidno = ''
@@ -24,11 +24,34 @@ headers = {
     'User-Agent': 'Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.3396.99Safari/537.36'
 }
 
-session = requests.session()
-session.headers.update(headers)
+post_header = {
+    'Host': 'zxgk.court.gov.cn',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:48.0) Gecko/20100101 Firefox/48.0',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+    'Accept-Encoding': 'gzip, deflate',
+    'Referer': 'http://zxgk.court.gov.cn/shixin/findDis',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Content-Type': 'application/x-www-form-urlencoded'
+}
 
-mongo = pymongo.MongoClient('10.18.6.102',27018)
+detail_header = {
+    'Host': 'zxgk.court.gov.cn',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:48.0) Gecko/20100101 Firefox/48.0',
+    'Accept': '*/*',
+    'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+    'Accept-Encoding': 'gzip, deflate',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Referer': 'http://zxgk.court.gov.cn/shixin/new_index.html',
+    'Connection': 'keep-alive',
+}
+session = requests.Session()
+# session.headers.update(headers)
+
+mongo = pymongo.MongoClient('10.18.6.102', 27018)
 doc = mongo['spider']['zgfsxr']
+
 
 # 编码
 def img_to_b64(img_path):
@@ -46,7 +69,7 @@ def crack_code(img_path):
 
 
 url = 'http://zxgk.court.gov.cn/shixin/index_form.do'
-get_session = session.get(url=url)
+get_session = session.get(url=url, headers=headers,proxies=get_proxy())
 print(get_session.text)
 
 response = Selector(text=get_session.text)
@@ -97,9 +120,9 @@ while loop_count > 0:
     post_url = 'http://zxgk.court.gov.cn/shixin/findDis'
 
     try:
-        resp_content = session.post(url=post_url, data=payload)
+        resp_content = session.post(url=post_url, data=payload, headers=post_header)
         # print(resp_content.text)
-        hold_session = copy.deepcopy(session)
+        # hold_session = copy.deepcopy(session)
 
     except Exception as e:
         print(e)
@@ -132,21 +155,20 @@ while loop_count > 0:
             case_id = i.xpath('.//a[@class="View"]/@id').extract_first()
             detail_url = 'http://zxgk.court.gov.cn/shixin/disDetail?id={}&pCode={}&captchaId={}'.format(case_id, code,
                                                                                                         cap_id)
-            session.headers.update({'X-Requested-With': 'XMLHttpRequest'})
-            s4 = session.get(url=detail_url)
+            # session.headers.update({'X-Requested-With': 'XMLHttpRequest'})
+            s4 = session.get(url=detail_url, headers=headers)
             ret = s4.json()
             print(ret)
             doc.insert(ret)
 
-
         # 第二页到后面的情况
 
         if count_number > 10:
-            total_page = count_number//10
+            total_page = count_number // 10
 
-            for p in range(2,total_page+1):
+            for p in range(2, total_page + 1):
                 payload_page = {
-                    'currentPage':str(p),
+                    'currentPage': str(p),
                     'pName': name,
                     'pCardNum': cidno,
                     'pProvince': '0',
@@ -156,7 +178,7 @@ while loop_count > 0:
 
                 try:
                     # 需要把header remove
-                    resp_content = hold_session.post(url=post_url, data=payload)
+                    resp_content = session.post(url=post_url, data=payload_page, headers=post_header)
                     print(resp_content.text)
                 except Exception as e:
                     print(e)
@@ -183,14 +205,12 @@ while loop_count > 0:
                         detail_url = 'http://zxgk.court.gov.cn/shixin/disDetail?id={}&pCode={}&captchaId={}'.format(
                             case_id, code,
                             cap_id)
-                        session.headers.update({'X-Requested-With': 'XMLHttpRequest'})
-                        s4 = session.get(url=detail_url)
+                        # session.headers.update({'X-Requested-With': 'XMLHttpRequest'})
+                        s4 = session.get(url=detail_url, headers=detail_header)
                         ret = s4.json()
                         print(ret)
                         doc.insert(ret)
 
-
-
-
 print('Failure rate >>> {}%'.format((failure_count / total_count) * 100))
 print('Server Failure rate >>> {}%'.format((server_failure / total_count) * 100))
+

@@ -156,9 +156,10 @@ def get_content(url, retry=3):
             logger.error("访问企业:: URL {}。异常信息：{}。".format(url, e))
 
     return '404'
+
 def get_proxy( retry=50):
 
-    proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+    proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
     for i in range(1, retry + 1):
         try:
             r = requests.get(proxyurl, timeout=10)
