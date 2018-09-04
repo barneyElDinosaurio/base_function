@@ -7,7 +7,7 @@
 import requests
 import time
 from scrapy import signals
-
+import config
 
 class HljSplashSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
@@ -114,7 +114,7 @@ class CustomerProxyMiddleware(object):
             request.meta['splash']['args']['proxy'] =proxy
 
     def get_proxy(self,retry=5):
-        proxyurl = 'http://120.79.150.101:8081/dynamicIp/common/getDynamicIp.do'
+        proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
         for i in range(1, retry + 1):
             try:
                 r = requests.get(proxyurl, timeout=10)

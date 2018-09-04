@@ -1,59 +1,72 @@
-#-*-coding=utf-8-*-
-
+# -*-coding=utf-8-*-
+try:
+    # python3
+    from queue import Queue
+except:
+    # python2
+    from Queue import Queue
 
 
 # 生成器解析器
-
-# coding: utf-8
-from Queue import Queue
-
 def generator_usage():
-    g = (x for x in range(1000))
-    #rint type(g)
-    #print(g)
-    #print(g.next())
+    g = (x for x in range(100))
+    print(type(g))
+    print(g)
+    # print(g(1))
+    # print(sum(g))
+
+    # for i in g:
+    #     print(i)
+
+    # print(g.next())
+
     while g:
         try:
-            print(g.next())
-        except IOError:
+            # python2使用g.next() 或者next（g） ， python3使用 next(g) 或者g.__next__()
+            print(next(g))
+        except StopIteration:
             break
         else:
             print(' in else')
-            return 0
+            # return 0
         finally:
             print('finanlly')
-            return 1
+            # return 1
+
 
 def list_generator():
-    l = [ x for x in range(1000)]
+    l = [x for x in range(1000)]
     print(type(l))
     print(l)
 
+
 def iter_function():
-    a=[i for i in range(100)]
-    b=iter(a)
+    a = [i for i in range(100)]
+    b = iter(a)
     while True:
         try:
-            print(b.next())
+            print(b.__next__())
         except StopIteration:
             print('over')
             break
 
+
 def key_function():
-    d={'a':1,'z':2,'f':3,'g':9,'i':8}
+    d = {'a': 1, 'z': 2, 'f': 3, 'g': 9, 'i': 8}
     '''
     for i in d:
         print(i)
     '''
 
     for i in d.items():
-    #for i in d.itervalues():
-    #for i in d.iterkeys():
-    #for i in d.iteritems():
+        # for i in d.itervalues():
+        # for i in d.iterkeys():
+        # for i in d.iteritems():
         print(i)
 
+
 def iter_usage():
-    q=Queue()
+    q = Queue()
     q.put(1)
     q.put(2)
     q.put(3)
@@ -64,22 +77,12 @@ def iter_usage():
     def fetchdata():
         return q.get()
 
-    for i in iter(fetchdata,'END'):
+    for i in iter(fetchdata, 'END'):
         print(i)
 
 
-
-#iter_function()
-#key_function()
-#x = generator_usage()
-#print(x)
-#list_generator()
-iter_usage()
-
-    
-
 def genlist():
-    x = (i**2 for i in range(10))
+    x = (i ** 2 for i in range(10))
     while 1:
         try:
             print(next(x))
@@ -88,9 +91,11 @@ def genlist():
             print(e)
             break
 
+
 def gensquart(N):
     for i in range(N):
-        yield i**3
+        yield i ** 3
+
 
 def testcase():
     x = gensquart(10)
@@ -104,7 +109,7 @@ def testcase():
     '''
     while 1:
         try:
-            print(x.next())
+            print(x.__next__())
         except StopIteration:
             print('stop')
             break
@@ -114,20 +119,19 @@ def testcase():
 
 
 class MyGenerator():
-    def __init__(self,n):
-        self.end=n
-        self.current =-1
+    def __init__(self, n):
+        self.end = n
+        self.current = -1
         self.content = []
         for i in range(self.end):
-            self.content.append(i**3)
+            self.content.append(i ** 3)
+
     def __iter__(self):
         return self
 
     def next(self):
-         self.current=self.current+1
-         return self.content[self.current]
-
-
+        self.current = self.current + 1
+        return self.content[self.current]
 
 
 def testcase2():
@@ -142,8 +146,27 @@ def testcase2():
         print(i)
 
 
-def main():
-    genlist()
-    # testcase()
+def yield_test():
+    a = 1
+    for i in range(0, 10):
+        b = a + i
+        yield b
 
-main()
+
+data = yield_test()
+print(data)
+for i in range(0, 10):
+    print(next(data))
+
+for i in yield_test():
+    print(i)
+
+# generator_usage()
+# iter_usage()
+# genlist()
+testcase()
+# iter_function()
+# key_function()
+# x = generator_usage()
+# print(x)
+# list_generator()

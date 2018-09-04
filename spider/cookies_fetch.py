@@ -2,10 +2,21 @@
 __author__ = 'Rocky'
 import requests
 import os
+import json
 import sqlite3
-import cookielib
-import Cookie
-import urllib2
+# import cookielib
+# import Cookie
+# import urllib2
+import random
+import time
+import redis
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+import config
 
 def csdn():
     session = requests.session()
@@ -21,18 +32,62 @@ def csdn():
     # resp=session.get(url,headers=header)
     print(resp.text)
 
-
+# 使用无头浏览器登录并保存cookie
 def getFromWebBrowser():
-    #not work
-    import requests
-    import browsercookie
-    # cj_chr = browsercookie.chrome()
-    cj_ff = browsercookie.firefox()
-    print(type(cj_ff))
-    for cookie in cj_ff:
-        print(cookie)
-    # r = requests.get('http://stackoverflow.com', cookies=cj)
 
+    options = webdriver.ChromeOptions()
+    options.add_argument(
+        '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
+    driver = webdriver.Chrome(executable_path=r'D:\OneDrive\Python\selenium\chromedriver.exe',
+                              chrome_options=options)
+    driver.implicitly_wait(40)
+    url = 'http://30daydo.com/login/'
+    driver.get(url)
+    username = driver.find_element_by_id("aw-login-user-name")
+    username.clear()
+    username.send_keys(config.username)
+    psd = driver.find_element_by_id("aw-login-user-password")
+    psd.clear()
+    psd.send_keys(config.password)
+    commit = driver.find_element_by_id("login_submit")
+    commit.click()
+    time.sleep(5)
+    cookies = driver.get_cookies()
+    cookies_dct={}
+    for c in cookies:
+        # print(c)
+        cookies_dct[c.get('name')]=c.get('value')
+
+    update_cookie(config.username,cookies_dct)
+
+#使用cookie登录, 使用request
+
+def login_with_cookie():
+    cookie = json.loads(load_cookie())
+    headers={
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+    }
+    url = 'http://30daydo.com/notifications/'
+    r = requests.get(url=url,cookies=cookie,headers=headers)
+    r.encoding='utf8'
+    print(r.text)
+
+
+# 更新cookie
+def update_cookie(name,cookies):
+    r = redis.StrictRedis('10.18.6.102',decode_responses=False,db=3)
+    if r.get(name) is None:
+        r.set(name,json.dumps(cookies))
+        print("save")
+    else:
+        print('cookies is existed!')
+
+# 获取cookie
+def load_cookie():
+    r = redis.StrictRedis('10.18.6.102',decode_responses=False,db=3)
+    name = random.choice(r.keys())
+    cookie = r.get(name)
+    return cookie
 
 def build_opener_with_chrome_cookies(domain=None):
     #同样失败了
@@ -115,20 +170,9 @@ def check_cookie():
 
     
 if __name__ == "__main__":
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_city=440300; select_nation=1; CNZZDATA1254525948=145009446-1503633660-%7C1503908541; CNZZDATA1253491255=851767322-1503638199-%7C1503907203; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503912523; lianjia_ssid=290ce12b-c434-4782-9b1a-06c450c2dbb3'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_nation=1; select_city=441900; CNZZDATA1253491255=851767322-1503638199-%7C1503914876; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1503919341; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503920035; lianjia_ssid=e07f3016-cad2-4f82-96f5-516af563669e'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_nation=1; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; ubt_load_interval_b=1503971694981; ubta=3154866423.3241223259.1503971686808.1503971686808.1503971695039.2; ubtc=3154866423.3241223259.1503971695041.0EF45810F9672DC3BD68868B080BCCEE; ubtd=2; __xsptplus696=696.1.1503971687.1503971695.2%234%7C%7C%7C%7C%7C%23%23fcZh1fCVH7j7doKzh4kC96wk_XE7Y965%23; select_city=500000; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503984016; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1503984153; CNZZDATA1253491255=851767322-1503638199-%7C1503981640; lianjia_ssid=343c0faf-c443-4673-b900-5c05298bd28a'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; ubt_load_interval_b=1503971694981; ubta=3154866423.3241223259.1503971686808.1503971686808.1503971695039.2; ubtc=3154866423.3241223259.1503971695041.0EF45810F9672DC3BD68868B080BCCEE; ubtd=2; __xsptplus696=696.1.1503971687.1503971695.2%234%7C%7C%7C%7C%7C%23%23fcZh1fCVH7j7doKzh4kC96wk_XE7Y965%23; select_city=441900; select_nation=1; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1503995449; CNZZDATA1253491255=851767322-1503638199-%7C1503992440; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503997546; lianjia_ssid=bc9efc9f-e684-48a9-ba85-00445efd9b8e'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; select_nation=1; ubtreadd_b=116.24.65.18, 116.211.165.20; __xsptplusUT_696=1; _gat=1; _gat_su=1; ubt_load_interval_b=1504010643534; ubt_load_interval_c=1504010643534; ubtd=12; __xsptplus696=696.3.1504009165.1504010643.8%234%7C%7C%7C%7C%7C%23%23-z3bQR1R9MlwhM552JVj8NxMi25X8E56%23; gr_session_id_970bc0baee7301fa=27345ff4-a223-4916-8fd2-72741f5a2f79; ubta=4134795863.3241223259.1503971686808.1504010643547.1504010649763.12; ubtb=4134795863.3241223259.1504010649764.59CACEDE6473D431BA70CC45A3A1E9AA; ubtc=4134795863.3241223259.1504010649764.59CACEDE6473D431BA70CC45A3A1E9AA; select_city=130100; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1504006250; CNZZDATA1253491255=851767322-1503638199-%7C1504008679; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504010661; lianjia_ssid=0484567a-0863-349a-eb62-4fc161820284'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; select_nation=1; ubtreadd_b=116.24.65.18, 116.211.165.20; _gat=1; _gat_su=1; ubt_load_interval_b=1504010643534; ubt_load_interval_c=1504010643534; ubtd=12; __xsptplus696=696.3.1504009165.1504010643.8%234%7C%7C%7C%7C%7C%23%23-z3bQR1R9MlwhM552JVj8NxMi25X8E56%23; gr_session_id_970bc0baee7301fa=27345ff4-a223-4916-8fd2-72741f5a2f79; ubta=4134795863.3241223259.1503971686808.1504010643547.1504010649763.12; ubtb=4134795863.3241223259.1504010649764.59CACEDE6473D431BA70CC45A3A1E9AA; ubtc=4134795863.3241223259.1504010649764.59CACEDE6473D431BA70CC45A3A1E9AA; select_city=130100; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504010661; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1504006250; CNZZDATA1253491255=851767322-1503638199-%7C1504008679; lianjia_ssid=0484567a-0863-349a-eb62-4fc161820284'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; lj-api=9111950472618e41591b6800072ddacb; _jzqckmp=1; ubt_load_interval_b=1504076659297; ubta=3154866423.3241223259.1503971686808.1504062380059.1504076659413.19; ubtc=3154866423.3241223259.1504076659416.04775B09D4A0751F8665A61B54987A68; ubtd=19; __xsptplus696=696.5.1504076659.1504076659.1%234%7C%7C%7C%7C%7C%23%230CIWTVwbBidFOpEsVtab9KgnY2MeVIYe%23; sample_traffic_test=guide_card; select_nation=1; _jzqx=1.1504062784.1504090314.3.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=you%2Elianjia%2Ecom|jzqct=/hk; select_city=441300; _smt_uid=59a62d3f.3df2aef3; _jzqa=1.1378702697002941000.1504062784.1504083754.1504090314.4; _jzqc=1; _jzqb=1.3.10.1504090314.1; _gat_global=1; _gat_new_global=1; _gat_dianpu_agent=1; CNZZDATA1254525948=145009446-1503633660-%7C1504087254; CNZZDATA1253491255=851767322-1503638199-%7C1504091020; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504091650; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; lianjia_ssid=bd082802-0db2-4698-84e5-b015007e18f3'
-    #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; lj-api=9111950472618e41591b6800072ddacb; _jzqckmp=1; ubt_load_interval_b=1504076659297; ubta=3154866423.3241223259.1503971686808.1504062380059.1504076659413.19; ubtc=3154866423.3241223259.1504076659416.04775B09D4A0751F8665A61B54987A68; ubtd=19; __xsptplus696=696.5.1504076659.1504076659.1%234%7C%7C%7C%7C%7C%23%230CIWTVwbBidFOpEsVtab9KgnY2MeVIYe%23; sample_traffic_test=guide_card; select_nation=1; _jzqx=1.1504062784.1504090314.3.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=you%2Elianjia%2Ecom|jzqct=/hk; select_city=441300; _smt_uid=59a62d3f.3df2aef3; _jzqa=1.1378702697002941000.1504062784.1504083754.1504090314.4; _jzqc=1; _jzqb=1.3.10.1504090314.1; CNZZDATA1254525948=145009446-1503633660-%7C1504087254; CNZZDATA1253491255=851767322-1503638199-%7C1504091020; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504092147; lianjia_ssid=bd082802-0db2-4698-84e5-b015007e18f3'
-    #cookie='lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; all-lj=6341ae6e32895385b04aae0cf3d794b0; ubt_load_interval_b=1504076659297; ubta=3154866423.3241223259.1503971686808.1504062380059.1504076659413.19; ubtc=3154866423.3241223259.1504076659416.04775B09D4A0751F8665A61B54987A68; ubtd=19; __xsptplus696=696.5.1504076659.1504076659.1%234%7C%7C%7C%7C%7C%23%230CIWTVwbBidFOpEsVtab9KgnY2MeVIYe%23; select_nation=1; _jzqx=1.1504062784.1504090314.3.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=you%2Elianjia%2Ecom|jzqct=/hk; select_city=440300; _jzqckmp=1; _smt_uid=59a62d3f.3df2aef3; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504159225; CNZZDATA1255849469=590735468-1504057966-null%7C1504156591; CNZZDATA1254525948=1531358740-1504060252-null%7C1504157522; CNZZDATA1255633284=355134272-1504060008-null%7C1504156303; CNZZDATA1255604082=1601457208-1504060276-null%7C1504156141; _qzja=1.218613373.1504062783783.1504083754402.1504159190536.1504159217348.1504159225576.0.0.0.33.4; _qzjb=1.1504159190535.5.0.0.0; _qzjc=1; _qzjto=5.1.0; _jzqa=1.1378702697002941000.1504062784.1504090314.1504159191.5; _jzqc=1; _jzqb=1.5.10.1504159191.1; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; lianjia_ssid=91b42e46-ef70-501d-e228-53ee3b069ed5'
-    #cookie='lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; all-lj=6341ae6e32895385b04aae0cf3d794b0; select_nation=1; _jzqx=1.1504062784.1504090314.3.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=you%2Elianjia%2Ecom|jzqct=/hk; _jzqckmp=1; cityCode=sh; __xsptplus696=696.6.1504164644.1504165854.10%234%7C%7C%7C%7C%7C%23%23NTqr6t6GiZMyZVzgpXGicjWjL29L2Uan%23; ubt_load_interval_b=1504165854069; ubtd=29; ubta=2299869246.3241223259.1503971686808.1504165855073.1504165862464.29; ubtc=2299869246.3241223259.1504165862465.092EC81127748E6E91BE9ED24C39F495; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; select_city=440300; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504169192; _smt_uid=59a62d3f.3df2aef3; CNZZDATA1255849469=590735468-1504057966-null%7C1504167391; CNZZDATA1254525948=1531358740-1504060252-null%7C1504168464; CNZZDATA1255633284=355134272-1504060008-null%7C1504166449; CNZZDATA1255604082=1601457208-1504060276-null%7C1504166658; _jzqa=1.1378702697002941000.1504062784.1504162491.1504164572.7; _jzqc=1; _qzja=1.218613373.1504062783783.1504164602018.1504166641481.1504169184377.1504169192487.0.0.0.44.7; _qzjb=1.1504166641480.6.0.0.0; _qzjc=1; _qzjto=16.4.0; _jzqb=1.20.10.1504164572.1; lianjia_ssid=5d09f424-3ea5-4240-ad81-024db2a8379b'
-    #cookie='lianjia_uuid=ca5a64ec-9cbe-4f31-8499-f06c3ea622da; UM_distinctid=15e23b039a53a7-0b6a06eff463b1-5c153d17-1fa400-15e23b039a68d1; gr_user_id=9895cc06-d162-4985-b42c-0cc98cdee98f; _smt_uid=59a36a39.a7e32ae; _jzqa=1.206544328628398600.1503881786.1503881786.1503881786.1; lj-ss=1e5c8b6bb356c2aabadd162c97341948; ubt_load_interval_b=1504537420276; ubtd=4; __xsptplus696=696.5.1504537420.1504537420.1%234%7C%7C%7C%7C%7C%23%23Dyu9Xh4KKNw0aqvAFjtibtSfVngPI3dg%23; ubta=3154866423.1593962235.1503840667336.1504537420288.1504537421470.26; ubtc=3154866423.1593962235.1504537421471.54A8769FA2903B4254B688736A67011F; select_nation=1; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; select_city=440300; _ga=GA1.2.885541457.1503837305; _gid=GA1.2.893652375.1504537910; CNZZDATA1254525948=1758800946-1503835682-%7C1504541662; CNZZDATA1253491255=597282999-1503832971-%7C1504541193; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503881786,1504101487,1504454486,1504537910; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504542040; lianjia_ssid=c76950fe-ad1d-43b6-9dbd-825dc40fc561'
-    #cookie='lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; all-lj=406fadba61ceb7b8160b979dadec8dfa; _jzqx=1.1504062784.1504504548.5.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/ditu/; cityCode=sh; select_nation=1; ubt_load_interval_b=1504596501502; ubtd=30; __xsptplus696=696.12.1504593171.1504596501.12%234%7C%7C%7C%7C%7C%23%23gyQqVMqCwrVYIQ1usQGtakU25v17x-iv%23; ubta=4134795863.3241223259.1503971686808.1504596501519.1504596502502.79; ubtc=4134795863.3241223259.1504596502502.2B2FE031A44442B00CCE411FB51507D3; _jzqckmp=1; select_city=440300; _gat=1; _gat_global=1; _gat_new_global=1; _gat_dianpu_agent=1; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699,1504258015; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504602631; _smt_uid=59a62d3f.3df2aef3; CNZZDATA1255849469=1981540803-1504501266-null%7C1504599432; CNZZDATA1254525948=525084093-1504503860-null%7C1504601129; CNZZDATA1255633284=1367240027-1504501105-null%7C1504601407; CNZZDATA1255604082=785558872-1504501560-null%7C1504598966; _qzja=1.464521733.1504504547925.1504504547926.1504602551077.1504602626414.1504602631352.0.0.0.13.2; _qzjb=1.1504602551076.12.0.0.0; _qzjc=1; _qzjto=12.1.0; _jzqa=1.1378702697002941000.1504062784.1504504548.1504602546.10; _jzqc=1; _jzqb=1.13.10.1504602546.1; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.235704312.1504588604; lianjia_ssid=d82e4a07-563c-2f66-9eb3-cf38a595794c'
     # cookie='lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; gr_user_id=4571568e-96d5-467c-ad95-9dd1f55471e1; _jzqckmp=1; _jzqx=1.1504062784.1504605523.6.jzqsr=sz%2Efang%2Elianjia%2Ecom|jzqct=/.jzqsr=captcha%2Elianjia%2Ecom|jzqct=/; ubtreadd_b=; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699,1504258015,1504675657; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1504675949; _smt_uid=59a62d3f.3df2aef3; _jzqa=1.1378702697002941000.1504062784.1504605523.1504675658.12; _jzqc=1; _jzqb=1.2.10.1504675658.1; _gid=GA1.2.235704312.1504588604; aliyungf_tc=AQAAAJ+TD1lFgAsAnkIYdH+u777bV6KX; select_city=320500; cityCode=su; _gat_u=1; __xsptplusUT_696=1; __xsptplus696=696.13.1504675656.1504676160.12%234%7C%7C%7C%7C%7C%23%23un_6cd_LD8h6uhQem1QRQG9agH-plMJm%23; _ga=GA1.2.331020171.1503638699; ubt_load_interval_b=1504676160161; ubt_load_interval_c=1504676160161; lianjia_ssid=0fbcdf1e-da2d-4751-d570-bc3e16a230b7; ubtd=12; gr_session_id_970bc0baee7301fa=c5746a98-e86d-4236-a0d6-4a262c3cbaff; ubta=1641808036.2641861454.1503971686808.1504676160235.1504676281816.91; ubtb=1641808036.2641861454.1504676281818.2FCA7814756D779495B76F54624DD919; ubtc=1641808036.2641861454.1504676281818.2FCA7814756D779495B76F54624DD919'
     # trans = transCookie(cookie)
     # print(trans.stringToDict())
     #csdn()
-    getFromWebBrowser()
+    # getFromWebBrowser()
+    login_with_cookie()
