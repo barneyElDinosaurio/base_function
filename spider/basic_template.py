@@ -47,10 +47,3 @@ def visit_url(url):
     headers = getheader()
     r = requests.get(url=url, headers=headers)
     print(r.text)
-
-# url='https://www.itslaw.com/api/v1/detail?timestamp=1535621066576&judgementId=f2e88e6b-b84c-498d-8499-ecb1152ad5df'
-# visit_url(url)
-
-# code_decode()
-
-UA_random()

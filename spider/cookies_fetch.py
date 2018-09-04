@@ -85,6 +85,35 @@ class transCookie:
             itemDict[key] = value
         return itemDict
 
+def check_cookie():
+    session = requests.Session()
+
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0'}
+    url='https://m.anjuke.com/cityList/'
+    r1 = session.get(url=url, headers=headers)
+    print(r1.status_code)
+    print(type(r1.cookies))
+    # cookie里面的字段是字典
+    print('cookies >>>>', r1.cookies.get_dict())
+    print('sessid>>>>>>>', r1.cookies.get('sessid'))
+
+
+
+    # for i in r1.cookies:
+    #     print(i.get('sessid'))
+    # print(r1.cookies['lps'])
+
+    return_s1 = session.get(url=url, headers=headers)
+    print(return_s1.status_code)
+    print('cookies >>>>', return_s1.cookies.get_dict())
+    print('sessid>>>>>>>', return_s1.cookies.get('sessid'))
+
+    # for i in return_s1.cookies:
+    #     print(i)
+    print(session.cookies.get_dict())
+
+    
 if __name__ == "__main__":
     #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_city=440300; select_nation=1; CNZZDATA1254525948=145009446-1503633660-%7C1503908541; CNZZDATA1253491255=851767322-1503638199-%7C1503907203; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503912523; lianjia_ssid=290ce12b-c434-4782-9b1a-06c450c2dbb3'
     #cookie='lj-ss=5bd2bc45dbdf0644d704777dc2075366; lianjia_uuid=c6a7836e-cf96-45ae-96e5-6fdb2def9fb7; UM_distinctid=15e17d9bbf960c-08e33a5d4e4891-4d015463-1fa400-15e17d9bbfa300; select_nation=1; select_city=441900; CNZZDATA1253491255=851767322-1503638199-%7C1503914876; _ga=GA1.2.331020171.1503638699; _gid=GA1.2.2040440312.1503909104; _gat=1; _gat_past=1; _gat_new=1; _gat_global=1; _gat_new_global=1; CNZZDATA1254525948=145009446-1503633660-%7C1503919341; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1503638699; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1503920035; lianjia_ssid=e07f3016-cad2-4f82-96f5-516af563669e'
