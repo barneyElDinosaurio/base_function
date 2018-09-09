@@ -30,10 +30,11 @@ def get_proxy(retry=10000):
             return proxies_random
 start=time.time()
 for _ in range(10):
-    # proxy = get_proxy()
-    r = requests.get(url)
+    proxy = get_proxy()
+    print(proxy)
+    r = requests.get(url,proxies=proxy)
     print(r.status_code)
     print('web content ::  {}'.format(r.text))
-
+    print(proxy)
 end = time.time()-start
 print('time used {} ms'.format(end*1000))

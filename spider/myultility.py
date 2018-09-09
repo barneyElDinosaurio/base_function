@@ -2,8 +2,9 @@
 # @Time : 2018/7/30 11:24
 # @File : myultility.py
 import re
-
+import config
 import requests
+import time
 from scrapy.selector import Selector
 
 def html_to_text(r):
@@ -57,3 +58,31 @@ def download(url, retry=5):
         except Exception as e:
             print(e)
     return None
+
+def get_proxy(retry=10):
+    proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
+    count = 0
+    for i in range(retry):
+        try:
+            r = requests.get(proxyurl,timeout=3)
+        except Exception as e:
+            print(e)
+            count += 1
+            print('代理获取失败,重试' + str(count))
+            time.sleep(1)
+
+        else:
+            js = r.json()
+            proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
+            proxies_random = {
+                'http': proxyServer
+            }
+            return proxies_random
+#
+# proxyip = get_proxy()
+# print('>>>>proxy ip {}'.format(proxyip))
+# while 1:
+#     r=requests.get(url='http://httpbin.org/ip',proxies=proxyip)
+#     print(r.text)
+#     print(time.ctime())
+#     time.sleep(1)

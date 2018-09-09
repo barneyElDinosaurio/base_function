@@ -47,3 +47,6 @@ def visit_url(url):
     headers = getheader()
     r = requests.get(url=url, headers=headers)
     print(r.text)
+
+url='https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人名单&cardNum=&iname=峨眉&areaName=&pn=10&rn=10&ie=utf-8&oe=utf-8&format=json&t=1536300591664&cb=jQuery1102018043360291625454_1536300402086&_=1536300402101'
+visit_url(url)

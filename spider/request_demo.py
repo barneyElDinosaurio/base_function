@@ -27,10 +27,10 @@ def img_to_b64(img_path):
 
 
 def post_method():
-    img_path = 'test.png'  # 图片路径
+    img_path = 'shibiecuowu1536301856.png'  # 图片路径
     img_b64 = img_to_b64(img_path) #转为base64编码
     img_dict={'img':img_b64}
-    res=requests.post('http://10.18.4.211:5001/Captcha_api',data=img_dict)
+    res=requests.post('http://10.18.6.102:5001/Captcha_api',data=img_dict,timeout=1)
     print(res.text)
 
 
@@ -48,4 +48,5 @@ def multi_thread():
     time_used = time.time() - start
     print('Time used :{} ms'.format(time_used*1000))
 
-multi_thread()
+# multi_thread()
+post_method()

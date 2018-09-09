@@ -7,7 +7,9 @@ import pandas as pd
 import re
 
 host = '10.18.6.102'
-client = pymongo.MongoClient(host)
+port = 27018
+client = pymongo.MongoClient(host, port)
+
 
 def basic_usage():
     # db=client.test
@@ -25,18 +27,18 @@ def basic_usage():
 
 
 def query():
-    collection=client['meituan']['food']
+    collection = client['meituan']['food']
     # print(collection.count())
     ret = collection.find({'poiid': '999942031291'})
     # print(list(ret))
-    ret=(list(ret))
+    ret = (list(ret))
     if ret:
         print('true')
     else:
         print('false')
     for i in ret:
-        for k,v in i.items():
-            print(k,v)
+        for k, v in i.items():
+            print(k, v)
 
     # for i in collection.find({'name': 'a'}):
     #     print(i)
@@ -69,10 +71,10 @@ def update():
 
     for item in result:
         remark = item['remark']
-        remark = re.sub('条评价','',remark)
-        remark=re.sub('万','0000',remark)
-        remark=re.sub('\.','',remark)
-        doc.update({'_id':item['_id']},{'$set':{'remark':remark}})
+        remark = re.sub('条评价', '', remark)
+        remark = re.sub('万', '0000', remark)
+        remark = re.sub('\.', '', remark)
+        doc.update({'_id': item['_id']}, {'$set': {'remark': remark}})
     # doc.update({'name': 'rocky', 'age': 19}, {'name': 'rocky', 'age': 199})
 
 
@@ -240,22 +242,21 @@ class StockMongo():
     def find(self):
         ret = self.collection.find({})
         for i in ret:
-            for k,v in i.items():
-                if k!='_id':
-                    print(k,v)
+            for k, v in i.items():
+                if k != '_id':
+                    print(k, v)
 
     def show_industry(self):
-        ret = self.collection.find({},{'_id':0})
+        ret = self.collection.find({}, {'_id': 0})
         print(ret)
         print(type(ret))
         for item in ret:
-
             print(item.get(u'版块名称'))
 
-    def findone(self,name):
-        ret = self.collection.find({u'版块名称':name})
+    def findone(self, name):
+        ret = self.collection.find({u'版块名称': name})
         for i in ret:
-            codes= i.get(u'代码',None)
+            codes = i.get(u'代码', None)
             for code in codes:
                 print(code)
 
@@ -266,6 +267,7 @@ def remove_str(x):
     return '-'.join(l)
     # return x.strip()
 
+
 # 去重
 def deduplication():
     doc = client['spider']['jd_book']
@@ -274,51 +276,35 @@ def deduplication():
     df = pd.DataFrame(ret_list)
     print(df.head())
 
-def mongo_calculation():
-    collection=client['proxyip']['pool']
-    result={}
 
-    ret = collection.find({},{'created_at':1,'source':1})
+def mongo_calculation():
+    collection = client['spider']['sxr_name']
+    result = []
 
     ret = collection.find({})
 
     print('start to calculate')
-    count =0
-    # ret= collection.find_one({'source':u'持仓盈亏'},{'description':1,'source_link':1})
-
-    ret_list = list(ret)
-    df = pd.DataFrame(ret_list)
+    for i in ret:
+        result.append(i)
+    # ret_list = list(ret)
+    df = pd.DataFrame(result)
 
     del df['_id']
     print(df.info())
-
-    # del df['_id']
-
-    print(df.info())
     print(df.head())
-    # df['ip']=list(map(lambda x:x.strip(),df['ip']))
-    df['ips']=df['ip'].map(remove_str)
-    print(df['ips'])
+    # for item,g in df.groupby('counts'):
+        # print(item)
 
-    # for i in ret:
-    #     count+=1
-    #     result.setdefault(i.get('source'),0)
-    #     result[i.get('source')]+=1
-    # # print(result)
-    # for k,v in result.items():
-    #     print(k,v)
+    print(df[df['counts']==-999])
 
 
-def main():
-    # query()
-    # obj=StockMongo('stock','industry')
-    # obj.find()
-    # obj.findone(u'中成')
-    # obj.show_industry()
-    # mongo_calculation()
-    # insert()
-    # update()
-    deduplication()
+# query()
+# obj=StockMongo('stock','industry')
+# obj.find()
+# obj.findone(u'中成')
+# obj.show_industry()
+mongo_calculation()
+# insert()
+# update()
+# deduplication()
 
-if __name__ == '__main__':
-    main()

@@ -2,8 +2,11 @@
 import redis
 import json
 # HOSTNAME='raspberrypi'
+from setting import get_mysql_conn
+import pymongo
+import pandas as pd
 HOSTNAME = '10.18.6.102'
-r = redis.Redis(host=HOSTNAME, port=6379, db=0, decode_responses=True)
+# r = redis.Redis(host=HOSTNAME, port=6379, db=9, decode_responses=True)
 
 
 def base_usage():
@@ -54,8 +57,10 @@ def insert_data():
     value = {'name': 'rocky', 'age': 26, 'sex': 'f'}
     r.set(key, value)
 
+# 查看某个元素是否在列表里
 
 def get_data():
+    pass
     # keys = r.keys()
     # 返回的事key的列表
     # print('key:', keys)
@@ -63,7 +68,8 @@ def get_data():
     # for key in keys:
     #     print(key, " ", r.get(key), 'type ', type(r.get(key)))
 
-    print(r.llen('hlj0706'))
+    # print(r.llen('hlj0706'))
+
 
 def list_usage():
     l=r.llen('image_url')
@@ -152,7 +158,6 @@ def search():
         # print(i)
 
 
-from setting import get_mysql_conn
 def convert_sql():
     conn = get_mysql_conn('spider','XGD')
     cur = conn.cursor()
@@ -174,10 +179,64 @@ def convert_sql():
             print(e)
     conn.close()
 
+# 删除list中某个元素
+def remove_item():
+    db=pymongo.MongoClient('10.18.6.102',27018)
+    doc=db['spider']['ent_history']
+    r = redis.Redis(host=HOSTNAME, port=6379, db=11, decode_responses=True)
+    location=doc.find({})
+    # print('len location {}'.format(len(location)))
+    count = 0
+    # for item in location:
+    #     name=item.get('name')
+    #     # print(name)
+    #     count +=1
+    #     counts=item.get('counts')
+    #     crawl_count = item.get('crawl_count')
+    #     if crawl_count is None:
+    #         print(name)
+    #         print(counts)
+    #         print(crawl_count)
+    #         continue
+
+        # if counts!=crawl_count:
+        #     print(name)
+
+        # r.lrem('location',num=1,value=name)
+    r.lrem('location',num=1,value='泌阳')
+    # for i in range(10):
+    #     r.lpush('test',i)
+    print(count)
+
+def push_excel_redis():
+    filename = '失信被执行人爬取关键词.xlsx'
+    df = pd.read_excel(filename)
+    # print(df.head())
+    result = df['行政区划前两字'].values.tolist()
+    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=12)
+    for i in result:
+        r.lpush('location',i.strip())
+
+def copy_redis():
+    r0 = redis.StrictRedis('10.18.6.101', decode_responses=True, db=4)
+    r1 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=3)
+    lens = r0.llen('hlj0706')
+    print('>>>> start')
+    for i in r0.lrange('hlj0706',0,lens):
+        # print(i)
+        # print(type(i))
+        try:
+            x=eval(i).get('name')
+            r1.sadd('hlj_name',x)
+        except Exception as e:
+            print(e)
+            continue
+
+
 # base_usage()
 # insert_data()
 # get_data()
-list_usage()
+# list_usage()
 # get_data2()
 # getMulti()
 # get_data2()
@@ -189,3 +248,6 @@ list_usage()
 # search()
 # pop_usage()
 # convert_sql()
+# remove_item()
+# push_excel_redis()
+copy_redis()
