@@ -1,4 +1,5 @@
 from enum import Enum
+import os
 State = Enum('state','new running sleeping restart zombie')
 # print(state.new)
 from abc import ABCMeta,abstractmethod
@@ -118,6 +119,14 @@ def getattr_usage():
 	print(obj.name)
 
 
+def file_builtin():
+    print(os.listdir('.'))
+    current = '~/git/base_function/yanzhengma.py'
+    print(os.path.dirname(current))
+    print(os.path.basename(current))
+    print(os.linesep)
+    print(os.path.getsize('yanzhengma.py'))
+    
 # obj =OperatingSystem()
 # obj.start()
 # obj.check()
@@ -125,5 +134,5 @@ def getattr_usage():
 # obj.check()
 # obj.start()
 # obj.check()
-
-getattr_usage()
+#getattr_usage()
+file_builtin()

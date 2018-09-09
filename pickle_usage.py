@@ -4,7 +4,11 @@ __author__ = 'Rocky'
 http://30daydo.com
 Contact: weigesysu@qq.com
 '''
-import cPickle as pickle
+try:
+    import cPickle as pickle
+except:
+    import pickle
+
 import pprint
 #import pickle,pprint
 def write_file():
@@ -17,6 +21,8 @@ def read_file():
     with open('save.pkl','rb') as f:
         p=pickle.load(f)
         pprint.pprint(p)
+        for i in p:
+            print(i*3)
 
 write_file()
 read_file()
