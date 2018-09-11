@@ -1,4 +1,6 @@
 # -*-coding=utf-8-*-
+import random
+
 try:
     # python3
     from queue import Queue
@@ -152,21 +154,50 @@ def yield_test():
         b = a + i
         yield b
 
+def testcase3():
+    data = yield_test()
+    print(data)
+    for i in range(0, 10):
+        print(next(data))
 
-data = yield_test()
-print(data)
-for i in range(0, 10):
-    print(next(data))
+    for i in yield_test():
+        print(i)
 
-for i in yield_test():
-    print(i)
+def simgen():
+    yield 'hello'
+    yield 'world'
 
+def simegen_demo():
+    x=simgen()
+    print(x.__next__())
+    print(x.__next__())
+    # print(x.__next__())
+    x2=simgen()
+    for i in x2:
+        print(i)
+
+def unlimit_random():
+
+    def func():
+        while 1:
+            yield random.randint(1,100)
+
+    f = func()
+    print(next(f))
+    print(next(f))
+    print(next(f))
+    print(next(f))
+
+def generator_send():
+    
 # generator_usage()
 # iter_usage()
 # genlist()
-testcase()
+# testcase()
 # iter_function()
 # key_function()
 # x = generator_usage()
 # print(x)
 # list_generator()
+# simegen_demo()
+unlimit_random()
