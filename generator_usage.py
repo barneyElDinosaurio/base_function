@@ -189,7 +189,34 @@ def unlimit_random():
     print(next(f))
 
 def generator_send():
-    
+
+    def counter(start=0):
+        val = start
+        while 1:
+            count = yield val
+            if count is not None:
+                val=count
+            else:
+                val+=1
+
+    c=counter()
+    print(next(c))
+    print(next(c))
+    print(next(c))
+    print(next(c))
+    print(next(c))
+    print(next(c))
+    print(c.send(0))
+    print(next(c))
+    print(next(c))
+    print(next(c))
+    print(next(c))
+    print(next(c))
+
+    d = counter(10)
+    # 错误的写法
+    # for i in d(10):
+    #     print(i)
 # generator_usage()
 # iter_usage()
 # genlist()
@@ -200,4 +227,5 @@ def generator_send():
 # print(x)
 # list_generator()
 # simegen_demo()
-unlimit_random()
+# unlimit_random()
+generator_send()
