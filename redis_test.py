@@ -5,8 +5,8 @@ import json
 from setting import get_mysql_conn
 import pymongo
 import pandas as pd
+
 HOSTNAME = '10.18.6.102'
-# r = redis.Redis(host=HOSTNAME, port=6379, db=9, decode_responses=True)
 
 
 def base_usage():
@@ -150,8 +150,10 @@ def check_dup():
 
 
 def search():
-    for i in r.keys():
-        print(r.get(i))
+    r=redis.StrictRedis('10.18.6.102',db=15)
+    print(r.exists('114.230.217.124:38454'))
+    # for i in r.keys():
+    #     print(r.get(i))
         # print(i)
         # print(r.get(i),len(r.get(i)))
         # if len(r.get(i))==0:
@@ -213,13 +215,25 @@ def push_excel_redis():
     df = pd.read_excel(filename)
     # print(df.head())
     result = df['行政区划前两字'].values.tolist()
-    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=12)
+    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=14)
     for i in result:
         r.lpush('location',i.strip())
 
+# 中文名放到redis
+def push_name_redis():
+    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=14)
+    key = 'chineseName'
+    with open('full_name.dat', 'r') as f:
+        while 1:
+            line = f.readline()
+            if not line:
+                break
+
+            r.lpush(key, line.strip())
+
 def copy_redis():
     r0 = redis.StrictRedis('10.18.6.101', decode_responses=True, db=4)
-    r1 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=3)
+    r1 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=14)
     lens = r0.llen('hlj0706')
     print('>>>> start')
     for i in r0.lrange('hlj0706',0,lens):
@@ -250,4 +264,6 @@ def copy_redis():
 # convert_sql()
 # remove_item()
 # push_excel_redis()
-copy_redis()
+# copy_redis()
+# push_name_redis()
+search()

@@ -2,9 +2,9 @@ import requests
 import time
 import simplejson
 import setting
-
+import config
 def get_proxy(retry=10):
-    proxyurl = 'http://{0}/dynamicIp/common/getDynamicIp.do'.format(setting.PROXY)
+    proxyurl = 'http://{0}/dynamicIp/common/getDynamicIp.do'.format(config.proxy_ip)
     count = 0
     for i in range(retry):
         try:

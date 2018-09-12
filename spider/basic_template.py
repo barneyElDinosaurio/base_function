@@ -18,11 +18,12 @@ url编码与解码
 
 def code_decode():
 
-    content = '%E6%88%90%E9%83%BD'
+    content = 'http://www.bidchance.com/info.do?channel=biangeng&id=5672342&q=%D5%D0%C9%CC'
+    # content = '%E6%88%90%E9%83%BD'
     uncode_str = urllib.parse.unquote(content)
     print(uncode_str)
-    encode_str = urllib.parse.quote(uncode_str)
-    print(encode_str)
+    # encode_str = urllib.parse.quote(uncode_str)
+    # print(encode_str)
 
 '''
  显示headers
@@ -48,5 +49,7 @@ def visit_url(url):
     r = requests.get(url=url, headers=headers)
     print(r.text)
 
-url='https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人名单&cardNum=&iname=峨眉&areaName=&pn=10&rn=10&ie=utf-8&oe=utf-8&format=json&t=1536300591664&cb=jQuery1102018043360291625454_1536300402086&_=1536300402101'
-visit_url(url)
+# url='https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人名单&cardNum=&iname=峨眉&areaName=&pn=10&rn=10&ie=utf-8&oe=utf-8&format=json&t=1536300591664&cb=jQuery1102018043360291625454_1536300402086&_=1536300402101'
+# visit_url(url)
+# print(getheader())
+code_decode()
