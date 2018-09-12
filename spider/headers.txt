@@ -1,11 +1,13 @@
-Accept: */*
-Accept-Language: zh-CN
-Referer: http://10.1.3.160:7001/pcis//policy/universal/pop/renewPly_input_dialog.jsp?dptCde=0304000302
-Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/javascript, */*; q=0.01
 Accept-Encoding: gzip, deflate
-User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
-Host: 10.1.3.160:7001
-Content-Length: 2997
-Connection: Keep-Alive
+Accept-Language: zh,en;q=0.9,en-US;q=0.8
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 265
+Content-Type: application/json;charset=UTF-8
+Host: 222.218.31.5:889
+Origin: http://222.218.31.5:889
 Pragma: no-cache
-Cookie: JSESSIONID=vLT9bJNTJsbVNXRtFQ2QTvbJcPChRgVb5jTJQVjjNLG7TQGf5xp1!1386029910; selectedProdInfo=%7B%22kindCde%22%3A%2203%22%2C%22prodNo%22%3A%220320%22%7D
+Referer: http://222.218.31.5:889/epoint-web-zwdt/nxzjjg/pages/agencyResource/resourceLibrary.html
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
+X-Requested-With: XMLHttpRequest
