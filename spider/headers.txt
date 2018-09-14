@@ -3,11 +3,12 @@ Accept-Encoding: gzip, deflate
 Accept-Language: zh,en;q=0.9,en-US;q=0.8
 Cache-Control: no-cache
 Connection: keep-alive
-Content-Length: 265
-Content-Type: application/json;charset=UTF-8
-Host: 222.218.31.5:889
-Origin: http://222.218.31.5:889
+Content-Length: 172
+Content-Type: application/json
+Cookie: ICITYSession=3914ef9b861a46bdbca65fd29ba01d93; selectedRegion=420000000000; selectedRegionName=%E6%B9%96%E5%8C%97%E7%9C%81; selectedRegionParentId=0; selectedRegionId=AA6D43EB827C4965B1F9238623CD57D1
+Host: www.hbzjfw.gov.cn
+Origin: http://www.hbzjfw.gov.cn
 Pragma: no-cache
-Referer: http://222.218.31.5:889/epoint-web-zwdt/nxzjjg/pages/agencyResource/resourceLibrary.html
+Referer: http://www.hbzjfw.gov.cn/imng/icity/browse/agency_institution
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
 X-Requested-With: XMLHttpRequest

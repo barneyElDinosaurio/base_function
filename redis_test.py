@@ -1,7 +1,8 @@
 # -*-coding=utf-8-*-
 import redis
 import json
-# HOSTNAME='raspberrypi'
+import codecs
+import re
 from setting import get_mysql_conn
 import pymongo
 import pandas as pd
@@ -151,7 +152,17 @@ def check_dup():
 
 def search():
     r=redis.StrictRedis('10.18.6.102',db=15)
-    print(r.exists('114.230.217.124:38454'))
+    with codecs.open('remove_test','r','utf8') as f:
+        while 1:
+            t=f.readline()
+            if not t:
+                break
+
+            print(r.srem('kjq_name',t.strip()))
+
+    # for i in range(10):
+        # if r.sismember('kjq_name','���������������'):
+    # print(r.exists('114.230.217.124:38454'))
     # for i in r.keys():
     #     print(r.get(i))
         # print(i)
@@ -215,21 +226,36 @@ def push_excel_redis():
     df = pd.read_excel(filename)
     # print(df.head())
     result = df['行政区划前两字'].values.tolist()
-    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=14)
+    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=15)
     for i in result:
         r.lpush('location',i.strip())
 
 # 中文名放到redis
+
 def push_name_redis():
-    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=14)
-    key = 'chineseName'
-    with open('full_name.dat', 'r') as f:
+    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=15)
+    key = 'kjq_name'
+    count  = 10000
+    current =0
+    with codecs.open(r'E:\temp\CSVFile_2018-09-13T13_20_29\CSVFile_2018-09-13T13_20_29.csv', 'r',encoding='utf8') as f:
         while 1:
             line = f.readline()
             if not line:
                 break
+            # print(line.strip())
+            txt=line.strip()
+            ret= re.sub('\s+|[0-9A-Za-z]+|\"|\'|\*|\?|%|&|\.|/|\+|,|;|@|#','',txt)
+            print('before {} after {}'.format(txt,ret))
+                # continue
+            # else:
+            if ret:
+                r.sadd(key,ret)
 
-            r.lpush(key, line.strip())
+            # if count<current:
+            #     break
+            # current+=1
+
+            # r.lpush(key, line.strip())
 
 def copy_redis():
     r0 = redis.StrictRedis('10.18.6.101', decode_responses=True, db=4)
@@ -259,11 +285,11 @@ def copy_redis():
 # get_keys()
 # clear_db(1)
 # check_dup()
-# search()
+search()
 # pop_usage()
 # convert_sql()
 # remove_item()
 # push_excel_redis()
 # copy_redis()
 # push_name_redis()
-search()
+# search()
