@@ -18,12 +18,11 @@ url编码与解码
 
 def code_decode():
 
-    content = 'http://www.bidchance.com/info.do?channel=biangeng&id=5672342&q=%D5%D0%C9%CC'
-    # content = '%E6%88%90%E9%83%BD'
+    content = '%E6%88%90%E9%83%BD'
     uncode_str = urllib.parse.unquote(content)
     print(uncode_str)
-    # encode_str = urllib.parse.quote(uncode_str)
-    # print(encode_str)
+    encode_str = urllib.parse.quote(uncode_str)
+    print(encode_str)
 
 '''
  显示headers
