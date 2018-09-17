@@ -1,14 +1,11 @@
-Accept: application/json, text/javascript, */*; q=0.01
-Accept-Encoding: gzip, deflate
-Accept-Language: zh,en;q=0.9,en-US;q=0.8
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
 Cache-Control: no-cache
 Connection: keep-alive
-Content-Length: 172
-Content-Type: application/json
-Cookie: ICITYSession=3914ef9b861a46bdbca65fd29ba01d93; selectedRegion=420000000000; selectedRegionName=%E6%B9%96%E5%8C%97%E7%9C%81; selectedRegionParentId=0; selectedRegionId=AA6D43EB827C4965B1F9238623CD57D1
-Host: www.hbzjfw.gov.cn
-Origin: http://www.hbzjfw.gov.cn
+Cookie: ALF=1539744188; SCF=Arejsw06Aa86L7rLsj3RRh8YiCul1z1Yapy6v1kQNGNbjcNLV3LPZbziAEtRKYVOAL_s5JKT2rck3tB7VAtepd4.; SUB=_2A252m2dXDeRhGedH7lcT8y7Fwj-IHXVSZAkfrDV6PUJbktAKLRejkW1NUKTAOGny8CQfH8IlGwCeP72gG_Pf_dFi; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WWIFwD6xpqyuh9_mA2jr6on5JpX5K-hUgL.Fo24SK-Ee0541Ke2dJLoI7LCdcSuwHvAMN-t; SUHB=0Ryruv0xgZvGM5; SSOLoginState=1537152775; _T_WM=ae5298708cece22521d281346fac7744
+Host: weibo.cn
 Pragma: no-cache
-Referer: http://www.hbzjfw.gov.cn/imng/icity/browse/agency_institution
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-X-Requested-With: XMLHttpRequest
+Referer: https://weibo.cn/search/mblog?hideSearchFrame=&keyword=000001&page=2
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36

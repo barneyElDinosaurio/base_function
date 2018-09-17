@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy import Request
-
+from scrapy_selenium.items import ScrapySeleniumItem
 
 class SeluiumDemoSpider(scrapy.Spider):
     name = 'seluium_demo'
@@ -19,7 +19,40 @@ class SeluiumDemoSpider(scrapy.Spider):
             yield Request(url=base_url.format(str(i)), callback=self.parse_item, headers=self.headers,dont_filter=True)
 
     def parse_item(self, response):
-        print(response.text)
+        # print(response.text)
         # for node in response.xpath('//div[@class="quote"]'):
         #     print(node.xpath('.//span[@itemprop="text"]/text()').extract_first())
         #     print('')
+        for sel in response.css('ul.gl-warp.clearfix > li.gl-item'):
+            item = ScrapySeleniumItem()
+            name = sel.css('div.p-name').xpath('string(.//em)').extract_first()
+            price = sel.css('div.p-price i::text').extract_first()
+            try:
+                remark = sel.xpath('.//div[(@class="p-commit" or @class="p-comm")]').xpath('string(.)').extract_first()
+                if remark:
+                    remark = remark.strip()
+            except:
+                remark = None
+            try:
+                price = float(price)
+            except:
+                price = price
+
+            # 自营
+            # shop=sel.css('div.p-shopnum span::text').extract_first()
+
+            # 出版社
+
+            publish = sel.css('div.p-shopnum a::text').extract_first()
+            if publish is None:
+                publish = sel.css('div.p-shop a::text').extract_first()
+            # if shop is None:
+            #     shop=sel.css('div.p-shopnum a::text').extract_first()
+            #     publish=None
+
+            item['name'] = name
+            item['price'] = price
+            item['remark'] = remark
+            item['publish'] = publish
+            # item['shop']=shop
+            yield item

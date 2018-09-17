@@ -9,7 +9,9 @@ def func():
     cwd = os.getcwd()
     print(cwd)
     cwd1 = os.path.dirname(__file__)
+    cwd2 = os.path.basename(__file__)
     print(cwd1)
+    print(cwd2)
 
 
 # p = re.compile('\.txt')
@@ -28,11 +30,6 @@ def func():
 #             if p.search(i):
 #                 os.remove(os.path.join(dirpath, i))
 
-
-def testcase1():
-    i = "memory"
-    sub_folder = os.path.join(os.getcwd(), i)
-    print(sub_folder)
 
 
 def testcase2():
@@ -97,10 +94,11 @@ def testcase6():
 
 def move_file():
     # current_path = os.getcwd()
-    current_path = r'D:\锤子手机相册\坚果'
+    current_path = r'F:\Penny 手机图片'
+    year='2015'
     for i in range(1, 13):
         try:
-            folder_path = os.path.join(current_path,'2018-{}'.format(str(i).zfill(2)))
+            folder_path = os.path.join(current_path,'{}-{}'.format(year,str(i).zfill(2)))
             os.mkdir(folder_path)
         except Exception as e:
             print(e)
@@ -110,11 +108,11 @@ def move_file():
         if files:
             for file in files:
                 try:
-                    if re.findall('2018(\d{2})', file):
-                        month = re.findall('IMG_2018(\d{2})', file)[0]
+                    if re.findall('2015(\d{2})', file):
+                        month = re.findall('2015(\d{2})', file)[0]
 
                         org_file = os.path.join(dirname,file)
-                        dst_file = os.path.join(current_path,'2018-{}'.format(month),file)
+                        dst_file = os.path.join(current_path,'{}-{}'.format(year,month),file)
                         # fpath,fname = os.path.split(file)
 
                         shutil.move(org_file,dst_file)
@@ -124,8 +122,8 @@ def move_file():
 
 def main():
     # testcase6()
-    # func()
-    move_file()
+    func()
+    # move_file()
 
 
 if __name__ == '__main__':
