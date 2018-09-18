@@ -14,12 +14,14 @@ import base64
 import time
 import pymongo
 import config
-from myultility import get_proxy
+from myultility import redis_proxy, random_ua
 import redis
 import pandas as pd
 import math
 import logging
-from fake_useragent import UserAgent
+
+
+# from fake_useragent import UserAgent
 
 
 def llogger(filename):
@@ -62,12 +64,13 @@ headers = {
     'Host': 'zxgk.court.gov.cn',
     'Pragma': 'no-cache',
     'Upgrade-Insecure-Requests': '1',
-    # 'User-Agent': 'Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.3396.99Safari/537.36'
+    'User-Agent': 'Mozilla/5.0(WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.22.99Safari'
 }
 
 post_header = {
     'Host': 'zxgk.court.gov.cn',
     # 'User-Agent': 'Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.3396.99Safari/537.36',
+    'User-Agent': 'Mozilla/5.0(WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.22.99Safari',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
     'Accept-Encoding': 'gzip, deflate',
@@ -80,6 +83,7 @@ post_header = {
 detail_header = {
     'Host': 'zxgk.court.gov.cn',
     # 'User-Agent': 'Mozilla/5.0(WindowsNT6.1;WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.3396.99Safari/537.36',
+    'User-Agent': 'Mozilla/5.0(WOW64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.22.99Safari',
     'Accept': '*/*',
     'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
     'Accept-Encoding': 'gzip, deflate',
@@ -91,9 +95,10 @@ url = 'http://zxgk.court.gov.cn/shixin/index_form.do'
 post_url = 'http://zxgk.court.gov.cn/shixin/findDis'
 
 mongo = pymongo.MongoClient('10.18.6.102', 27018)
-doc = mongo['spider']['sx_ent']
+doc = mongo['spider']['sx_kjq']
 
-ua =UserAgent()
+
+# ua =UserAgent()
 
 # 编码
 def img_to_b64(img_path):
@@ -117,7 +122,7 @@ def update_session(session, name, cap_id, full_image_url, pageNo=None):
         logger.info('第{}次更新'.format(retry))
         try:
             png_strean = session.get(full_image_url, headers=headers,
-                                     # proxies=get_proxy(),
+                                     proxies=redis_proxy(),
                                      timeout=5)
             with open('test.png', 'wb') as f:
                 f.write(png_strean.content)
@@ -153,7 +158,7 @@ def update_session(session, name, cap_id, full_image_url, pageNo=None):
 
         try:
             resp_content = session.post(url=post_url, data=payloads, headers=post_header,
-                                        # proxies=get_proxy(),
+                                        proxies=redis_proxy(),
                                         timeout=5)
             # print(resp_content.text)
 
@@ -175,7 +180,7 @@ def update_session(session, name, cap_id, full_image_url, pageNo=None):
 
             return session, codes, resp_content
 
-    codes='100'
+    codes = '100'
     return session, codes, None
 
 
@@ -186,7 +191,7 @@ def anti_anyu(name):
     try:
         logger.info('获取查询页面')
         get_session = session.get(url=url, headers=headers,
-                                  # proxies=get_proxy(),
+                                  proxies=redis_proxy(),
                                   timeout=5)
     except Exception as e:
         logger.warning(e)
@@ -221,18 +226,19 @@ def check_sxr(name):
     :param name: 查询的个人名字/企业名字
     :return: -1 访问出错；0：无查询记录，大于0：有查询记录，返回条数
     '''
+
     session = requests.Session()
     session.keep_alive = False  # 关闭多余连接
     item_num = 0
-    custom_ua = ua.random
-    headers['User-Agent']= custom_ua
-    post_header['User-Agent']=custom_ua
-    detail_header['User-Agent']=custom_ua
+    custom_ua = random_ua()
+    headers['User-Agent'] = custom_ua
+    post_header['User-Agent'] = custom_ua
+    detail_header['User-Agent'] = custom_ua
 
     try:
         logger.info('获取查询页面')
         get_session = session.get(url=url, headers=headers,
-                                  # proxies=get_proxy(),
+                                  proxies=redis_proxy(),
                                   timeout=5)
     except Exception as e:
         logger.warning(e)
@@ -293,10 +299,10 @@ def check_sxr(name):
             # 需要把header remove
             # 这个时候会过期
             logger.info('>>>> 提交翻页请求,页码：{}'.format(p))
-            proxy_ip = get_proxy()
+            proxy_ip = redis_proxy()
             logger.info('目前的代理IP是 前：{}'.format(proxy_ip))
             resp_content = session.post(url=post_url, data=payload_page, headers=post_header,
-                                        # proxies=proxy_ip,
+                                        proxies=proxy_ip,
                                         timeout=5
                                         )
             logger.info('目前的代理IP是：{}'.format(proxy_ip))
@@ -317,7 +323,7 @@ def check_sxr(name):
                     if resp_content:
                         break
             if not resp_content:
-                return -1,-1
+                return -1, -1
 
             if '已被安域防护拦截' in resp_content.text or '屏蔽' in resp_content.text:
                 logger.warning('>>>>被安域防护拦截')
@@ -348,7 +354,7 @@ def check_sxr(name):
                 try:
                     logger.info('>>>>获取个人细节')
                     s4 = session.get(url=detail_url, headers=detail_header,
-                                     # proxies=get_proxy(),
+                                     proxies=redis_proxy(),
                                      timeout=5)
                 except Exception as e:
                     logger.warning(e)
@@ -358,7 +364,7 @@ def check_sxr(name):
                         time.sleep(random.random() * 2)
                         try:
                             s4 = session.get(url=detail_url, headers=detail_header,
-                                             # proxies=get_proxy(),
+                                             proxies=redis_proxy(),
                                              timeout=10 + t_out)
                             last_try = True
                             break
@@ -379,7 +385,7 @@ def check_sxr(name):
                 except Exception as e:
                     logger.warning(e)
                     logger.warning('>>>> 没获取到json数据')
-                    s4.encoding='utf8'
+                    s4.encoding = 'utf8'
                     print()
                     print(s4.text)
                     # 需要重新post 那里 开始
@@ -457,17 +463,14 @@ def check_sxr(name):
     return item_num, count_number
 
 
-
-
 def get_name_from_redis():
-    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=11)
+    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=15)
     # r2 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=8)
-    key = 'location'
+    key = 'kjq_name'
     mongo_result = pymongo.MongoClient('10.18.6.102', 27018)
     save_doc = mongo_result['spider']['ent_history']
-
     while 1:
-        name = r.lpop(key)
+        name = r.spop(key)
         if name:
             save_doc.insert({'name': name, 'counts': -999})
             logger.info('>>>>查询 地区{}'.format(name))
@@ -482,12 +485,13 @@ def get_name_from_redis():
 
             # d = {'name': name, 'crawl_count': item_num, 'counts': count_number}
             try:
-                save_doc.update_one({'name':name},{'$set':{'counts':count_number,'crawl_count':item_num}})
+                save_doc.update_one({'name': name}, {'$set': {'counts': count_number, 'crawl_count': item_num}})
             except Exception as e:
                 logger.warning(e)
 
         else:
             break
+
 
 # name = '李爱'
 # item_num, count_number = check_sxr(name)

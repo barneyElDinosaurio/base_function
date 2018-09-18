@@ -65,4 +65,5 @@ url='https://weibo.cn/search/mblog?hideSearchFrame=&keyword=000001&page=1'
 # visit_url(url)
 # print(getheader())
 # code_decode()
-analysis_cookie()
+# analysis_cookie()
+getheader()
