@@ -98,7 +98,7 @@ class ScrapySeleniumDownloaderMiddleware(object):
         self.driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
         # time.sleep(3)
         source=self.driver.page_source
-        self.driver.quit()
+        # self.driver.quit()
         return HtmlResponse(request.url,body=source,encoding='utf8',request=request)
 
     def process_response(self, request, response, spider):

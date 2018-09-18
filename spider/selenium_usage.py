@@ -1,4 +1,5 @@
 # coding: utf-8
+import random
 import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,7 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import pymongo
+import logging
 
+logger = logging.getLogger()
 
 def template():
     options = webdriver.ChromeOptions()
@@ -14,9 +18,9 @@ def template():
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
     driver = webdriver.Chrome(executable_path=r'D:\OneDrive\Python\selenium\chromedriver.exe',
                               chrome_options=options)
-    driver.implicitly_wait(40)
+    driver.implicitly_wait(10)
 
-
+# 一个登陆的示例
 def login_demo():
     options = webdriver.ChromeOptions()
     options.add_argument(
@@ -43,50 +47,6 @@ def login_demo():
     driver.quit()
 
 
-def anjuke():
-    # browser = webdriver.Chrome()
-    options = webdriver.ChromeOptions()
-    options.add_argument(
-        '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
-    # options.add_argument('--headless')
-    # options.add_argument('--disable-gpu')
-    browser = webdriver.Chrome(executable_path=r'C:\software\chrome\chromedriver.exe',
-                               chrome_options=options)
-    browser.implicitly_wait(60)
-    # browser.get("https://www.crunchbase.com/app/search/companies/")
-    for i in range(1, 2):
-        browser.get('https://shenzhen.anjuke.com/community/p%d/' % i)
-        try:
-            browser.findElement(By.id('web_200'))
-        except:
-            print("Error")
-        cookiess = browser.get_cookies()
-        print('cookies:', cookiess)
-        print(type(cookiess))
-        print(len(cookiess))
-        for i in cookiess:
-            for k, v in i.items():
-                print(k, v)
-        # cookie=browser.get_cookie('new_session')
-        # print('cookie',cookie)
-        # print(type(cookie))
-        l = browser.find_elements_by_xpath('//div[@_soj="xqlb"]')
-        print(len(l))
-        for i in l:
-            '''
-            print('Name:',i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').text)
-            print('Link:',i.find_element_by_xpath('.//div[@class="li-info"]/h3/a').get_attribute('href'))
-            print('Address',i.find_element_by_xpath('.//div[@class="li-info"]/address').text)
-            print('Built date:',i.find_element_by_xpath('.//div[@class="li-info"]/p').text)
-            print('Price: ' , i.find_element_by_xpath('.//div[@class="li-side"]/p/strong').text)
-            '''
-        # print(browser.current_url)
-        # print(browser.title)
-
-        browser.close()
-    # time.sleep(60)
-
-
 def key_operation():
     # 滚动操作
     options = webdriver.ChromeOptions()
@@ -105,39 +65,25 @@ def key_operation():
             "//body[@class='whitebg']").send_keys(Keys.PAGE_DOWN)
         time.sleep(5)
         count = count+1
-    raw_input('enter')
+    input('enter')
 
 
-def example():
+# 使用书 selenium自动化测试 --基于python语言的书
+def hlj_book():
+
     options = webdriver.ChromeOptions()
     options.add_argument(
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36')
-    # options.add_argument('--headless')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--disable-gpu')
     browser = webdriver.Chrome(executable_path=r'D:\Download\chromedriver_win32\chromedriver.exe',
                                chrome_options=options)
 
-    browser.implicitly_wait(60)
-    # url='http://members.3322.org/dyndns/getip'
+    browser.implicitly_wait(10)
     url = 'http://www.hljcredit.gov.cn/WebCreditQueryService.do?gssearch&type=sxbzxr&detail=true&sxbzxrmc=&proselect=&cityselect=&disselect=&curPageNO=1'
     browser.get(url)
-    # time.sleep(1)
-    # WebDriverWait(browser,5).until(lambda x: x.find_element_by_xpath('//div[@id="dom"]'))
-    time.sleep(12)
-
-    txt = browser.page_source
-
-    print(txt)
-    ret = browser.find_element_by_xpath('//table[@class="list_2_tab"]/tbody/tr[2]//a[1]')
-    ret.click()
-    time.sleep(20)
-    print(ret)
-    # time.sleep(12)
-
-    # browser.send_keys(Keys.DOWN)
-# netease()
-# anjuke()
+    time.sleep(random.random())
+    logger.info(browser.current_url)
 
 def anjuke():
     client=pymongo.MongoClient('127.0.0.1',27017)
@@ -172,4 +118,5 @@ def anjuke():
 # key_operation()
 # shop()
 # example()
-login_demo()
+hlj_book()
+# login_demo()
