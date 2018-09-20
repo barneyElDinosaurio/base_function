@@ -4,7 +4,15 @@
 # @File : rsa_demo.py
 
 import rsa
+import logging
+import sys
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
+format = logging.Formatter("%(asctime)s [%(levelname)s]:: %(message)s")    # output format 
+sh = logging.StreamHandler(stream=sys.stdout)    # output to standard output
+sh.setFormatter(format)
+logger.addHandler(sh)
 # 模反
 def mofang():
     base=11
@@ -83,6 +91,35 @@ def is_prime_number(n):
         return True
 
 
+def cal_d():
+    k=20
+    e=25
+    count=1
+    while 1:
+        if (count*e%k)==1:
+            logger.info(count)
+            break
+        else:
+            count+=1
+        # logger.info(msg)
+
+def custom_define_encry_decry():
+    a=8
+    b=7
+
+    n=33
+    d=24
+    e=25
+
+    encry_msg = a**e%n
+    logger.info('原始数据为 {}'.format(a))
+    logger.info('加密后的数据{}'.format(encry_msg))
+
+    logger.info('开始解密>>>>>>>')
+
+    decry_msg = encry_msg**d%n
+    logger.info('解密后的数据为 {}'.format(decry_msg))
+
 # mofang()
 # rsa_demo()
 # get_key()
@@ -91,4 +128,6 @@ def is_prime_number(n):
 # for i in f:
 #     # print(next(f))
 #     print(i)
-print(is_prime_number(199))
+# print(is_prime_number(199))
+custom_define_encry_decry()
+# cal_d()

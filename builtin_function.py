@@ -127,6 +127,16 @@ def file_builtin():
     print(os.linesep)
     print(os.path.getsize('yanzhengma.py'))
     
+def eval_test():
+    exp = "2*10"
+    result = eval(exp)
+    print(result)
+
+    a = input("Please input a exp:\n")
+    t = eval(a)
+    #这个时候如果输入了 os.system("dir") 就可以看到系统的目录文件
+    print(t)
+
 # obj =OperatingSystem()
 # obj.start()
 # obj.check()
@@ -135,4 +145,5 @@ def file_builtin():
 # obj.start()
 # obj.check()
 #getattr_usage()
-file_builtin()
+# file_builtin()
+eval_test()
