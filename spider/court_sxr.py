@@ -123,7 +123,7 @@ def update_session(session, name, cap_id, full_image_url, pageNo=None):
         try:
             png_strean = session.get(full_image_url, headers=headers,
                                      proxies=redis_proxy(),
-                                     timeout=5)
+                                     timeout=12)
             with open('test.png', 'wb') as f:
                 f.write(png_strean.content)
 
@@ -159,7 +159,7 @@ def update_session(session, name, cap_id, full_image_url, pageNo=None):
         try:
             resp_content = session.post(url=post_url, data=payloads, headers=post_header,
                                         proxies=redis_proxy(),
-                                        timeout=5)
+                                        timeout=10)
             # print(resp_content.text)
 
         except Exception as e:
@@ -239,7 +239,7 @@ def check_sxr(name):
         logger.info('获取查询页面')
         get_session = session.get(url=url, headers=headers,
                                   proxies=redis_proxy(),
-                                  timeout=5)
+                                  timeout=10)
     except Exception as e:
         logger.warning(e)
         logger.info('>>>> 获取查询页失败')
@@ -303,7 +303,7 @@ def check_sxr(name):
             logger.info('目前的代理IP是 前：{}'.format(proxy_ip))
             resp_content = session.post(url=post_url, data=payload_page, headers=post_header,
                                         proxies=proxy_ip,
-                                        timeout=5
+                                        timeout=10
                                         )
             logger.info('目前的代理IP是：{}'.format(proxy_ip))
             print(resp_content.text)

@@ -221,6 +221,13 @@ def remove_item():
     #     r.lpush('test',i)
     print(count)
 
+# 删除集合中的某个元素
+def remove_set_item():
+
+    r = redis.Redis(host='10.18.6.102', port=6379, db=15, decode_responses=True)
+    print(r.srem('kjq_name',''))
+
+
 def push_excel_redis():
     filename = '失信被执行人爬取关键词.xlsx'
     df = pd.read_excel(filename)
@@ -233,10 +240,12 @@ def push_excel_redis():
 # 中文名放到redis
 
 def push_name_redis():
-    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=15)
+    doc=pymongo.MongoClient('10.18.6.102',port=27018)['db_parker']['kjq_name']
+    # r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=15)
     key = 'kjq_name'
     count  = 10000
     current =0
+    name_list = []
     with codecs.open(r'E:\temp\CSVFile_2018-09-13T13_20_29\CSVFile_2018-09-13T13_20_29.csv', 'r',encoding='utf8') as f:
         while 1:
             line = f.readline()
@@ -244,18 +253,23 @@ def push_name_redis():
                 break
             # print(line.strip())
             txt=line.strip()
-            ret= re.sub('\s+|[0-9A-Za-z]+|\"|\'|\*|\?|%|&|\.|/|\+|,|;|@|#','',txt)
+            ret= re.sub('\s+|[0-9A-Za-z]+|\"|\'|\*|\?|%|&|\.|/|\+|,|;|@|#|�|','',txt)
             print('before {} after {}'.format(txt,ret))
                 # continue
             # else:
             if ret:
-                r.sadd(key,ret)
+                name_list.append(ret)
+                # r.sadd(key,ret)
+                # doc.insert('')
 
             # if count<current:
             #     break
             # current+=1
 
             # r.lpush(key, line.strip())
+    name_set = list(set(name_list))
+    for i in name_set:
+        doc.insert({'name':i})
 
 def copy_redis():
     r0 = redis.StrictRedis('10.18.6.101', decode_responses=True, db=4)
@@ -285,7 +299,7 @@ def copy_redis():
 # get_keys()
 # clear_db(1)
 # check_dup()
-search()
+# search()
 # pop_usage()
 # convert_sql()
 # remove_item()
@@ -293,3 +307,4 @@ search()
 # copy_redis()
 # push_name_redis()
 # search()
+remove_set_item()

@@ -5,11 +5,14 @@ import pprint
 import pymongo, datetime
 import pandas as pd
 import re
+import redis
+import logging
+# logger = logging.getLogger('default')
 
 host = '10.18.6.102'
 port = 27018
 client = pymongo.MongoClient(host, port)
-
+rds = redis.StrictRedis('10.18.6.102',db=15)
 
 def basic_usage():
     # db=client.test
@@ -27,27 +30,37 @@ def basic_usage():
 
 
 def query():
-    collection = client['meituan']['food']
+    collection = client['db_parker']['kjq_name']
+    # 查询个数
     # print(collection.count())
-    ret = collection.find({'poiid': '999942031291'})
-    # print(list(ret))
-    ret = (list(ret))
-    if ret:
-        print('true')
-    else:
-        print('false')
+
+    # 使用正则表达式查询
+    # ret = collection.find({"name": {"$regex": "^.{0,1}$"}})
+
+    # count=0
+    # for i in ret:
+    #     name=i.get('name')
+    #     rds.srem('kjq_name',name)
+    #     print('delete {}'.format(name))
+    #     count+=1
+    # print('共删除{}个元素'.format(count))
+
+
+    ret = collection.find({"name": {"$regex": "^.{5,}$"}})
+    count=0
     for i in ret:
-        for k, v in i.items():
-            print(k, v)
+        name=i.get('name')
+    #     print(rds.srem('kjq_name',name))
+        print('delete {}'.format(name))
+    #     count+=1
+    # print('共删除{}个元素'.format(count))
 
-    # for i in collection.find({'name': 'a'}):
-    #     print(i)
 
-    # for i in collection.find():
-    #     print(i)
+
 
 
 def remove():
+    collection = client['db_parker']['kjq_name']
     collection.remove({"name": "b"})
 
 
@@ -293,18 +306,17 @@ def mongo_calculation():
     print(df.info())
     print(df.head())
     # for item,g in df.groupby('counts'):
-        # print(item)
+    # print(item)
 
-    print(df[df['counts']==-999])
+    print(df[df['counts'] == -999])
 
 
-# query()
+query()
 # obj=StockMongo('stock','industry')
 # obj.find()
 # obj.findone(u'中成')
 # obj.show_industry()
-mongo_calculation()
+# mongo_calculation()
 # insert()
 # update()
 # deduplication()
-
