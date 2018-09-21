@@ -6,6 +6,8 @@
 import rsa
 import logging
 import sys
+import base64
+
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
@@ -92,33 +94,105 @@ def is_prime_number(n):
 
 
 def cal_d():
-    k=20
-    e=25
-    count=1
+    x=1
     while 1:
-        if (count*e%k)==1:
-            logger.info(count)
-            break
+        if (17*x-1)%3120==0:
+            print(x)
+            # break
+            x+=1
         else:
-            count+=1
-        # logger.info(msg)
+            x+=1
+
 
 def custom_define_encry_decry():
-    a=8
-    b=7
+    # a=30
+    # b=7
+    #
+    # n=33
+    # d=97
+    # e=13
 
-    n=33
-    d=24
-    e=25
-
-    encry_msg = a**e%n
+    a=3333
+    n=3233
+    e=17
+    d=2753
+    encry_msg = (a**e)%n
     logger.info('原始数据为 {}'.format(a))
     logger.info('加密后的数据{}'.format(encry_msg))
 
     logger.info('开始解密>>>>>>>')
 
-    decry_msg = encry_msg**d%n
+    decry_msg = (encry_msg**d)%n
     logger.info('解密后的数据为 {}'.format(decry_msg))
+
+# 计算d的值
+def cal_mofang():
+    # 13X+1=20Y
+    pass
+
+# 因数分解
+def factor_split():
+    t=1230186684530117755130494958384962720772853569595334792197322452151726400507263657518745202199786469389956474942774063845925192557326303453731548268507917026122142913461670429214311602221240479274737794080665351419597459856902143413
+    print(t)
+    a=33478071698956898786044169848212690817704794983713768568912431388982883793878002287614711652531743087737814467999489
+    print(t%a)
+
+
+# py2
+def web_demo():
+
+
+    def str2key(s):
+        # 对字符串解码
+        b_str = base64.b64decode(s)
+        # print(b_str)
+
+        if len(b_str) < 162:
+            return False
+
+        hex_str = ''
+        # b_str=s
+        # 按位转换成16进制
+        for x in b_str:
+            # print(x)
+            # print(type(x))
+            h = hex(ord(x))[2:]
+            h = h.rjust(2, '0')
+            hex_str += h
+
+        # 找到模数和指数的开头结束位置
+        m_start = 29 * 2
+        e_start = 159 * 2
+        m_len = 128 * 2
+        e_len = 3 * 2
+
+        modulus = hex_str[m_start:m_start + m_len]
+        exponent = hex_str[e_start:e_start + e_len]
+
+        return modulus,exponent
+
+
+    pubkey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDC7kw8r6tq43pwApYvkJ5laljaN9BZb21TAIfT/vexbobzH7Q8SUdP5uDPXEBKzOjx2L28y7Xs1d9v3tdPfKI2LR7PAzWBmDMn8riHrDDNpUpJnlAGUqJG9ooPn8j7YNpcxCa1iybOlc2kEhmJn5uwoanQq+CA6agNkqly2H4j6wIDAQAB"
+    key = str2key(pubkey)
+    print(key)
+
+# py2
+def web_demo2():
+    import binascii
+    def en_test():
+        param_1 = "010001"
+        # 某次我找到的
+        param_2 = "955120AB9334B7CD52FCDB422DBF564AFD46DEBDC706F33502BBFAD9DD216A22E4D5012CB70F28473B46FB7190D08C31B4B8E76B5112ACE1C5552408961530B1C932DEEA8FC38A9A624AD22073F56F02BF453DD2C1FEA0164106D6B099CC9E5EC88C356FC164FCA47C766DD565D3D11048D27F2DD4221A0B26AB59BD7D09841F"
+        message = 'nihao'
+        modulus = int(param_2, 16)
+        exponent = int(param_1, 16)
+        rsa_pubkey = rsa.PublicKey(modulus, exponent)
+        crypto = rsa.encrypt(message, rsa_pubkey)
+        data = binascii.b2a_hex(crypto)
+
+        print(data)
+
+    en_test()
 
 # mofang()
 # rsa_demo()
@@ -129,5 +203,9 @@ def custom_define_encry_decry():
 #     # print(next(f))
 #     print(i)
 # print(is_prime_number(199))
-custom_define_encry_decry()
+# custom_define_encry_decry()
 # cal_d()
+# factor_split()
+# custom_define_encry_decry()
+# web_demo()
+web_demo2()

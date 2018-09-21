@@ -27,7 +27,7 @@ def img_to_b64(img_path):
 
 
 def post_method():
-    img_path = 'shibiecuowu1537377890.png'  # 图片路径
+    img_path = 'shibiecuowu1537481397.png'  # 图片路径
     img_b64 = img_to_b64(img_path) #转为base64编码
     img_dict={'img':img_b64}
     res=requests.post('http://10.18.6.102:5001/Captcha_api',data=img_dict,timeout=1)
