@@ -1,5 +1,5 @@
 # -*-coding=utf-8-*-
-#lambdah函数的使用
+#lambda函数的使用
 def lambda_test(n):
     return lambda s: s + n
 
