@@ -450,6 +450,7 @@ def connection_check():
                                 )
     cursor = conn_test.cursor()
 
+def transfer():
 
 def main():
     # DB_Usage()
@@ -477,7 +478,7 @@ def main():
     # test_main()
     # dbpool_main()
     # pool_main()
-    connection_check()
+    # connection_check()
 
 
 if __name__ == '__main__':

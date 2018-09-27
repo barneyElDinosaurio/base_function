@@ -52,15 +52,29 @@ def get_engine(db, local=True):
     :param local:
     :return:
     '''
-    if local:
-        engine = create_engine(
-            'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST,
-                                                                 MYSQL_PORT, db))
-    else:
+    if local == 'local':
+        user=MYSQL_USER
+        password=MYSQL_PASSWORD
+        host=MYSQL_HOST
+        port=MYSQL_PORT
+
+    elif local == 'XGD':
+        user=MYSQL_XGD_USER
+        password=MYSQL_XGD_PASSWORD
+        host=MYSQL_XGD_HOST
+        port=MYSQL_XGD_PORT
+
+    elif local == 'ali':
+
         db = Ali_DB
-        engine = create_engine(
-            'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER_Ali, MYSQL_PASSWORD_Ali, MYSQL_HOST_Ali,
-                                                                 MYSQL_PORT, db))
+        user=MYSQL_USER_Ali
+        password=MYSQL_PASSWORD_Ali
+        host=MYSQL_HOST_Ali
+        port=MYSQL_PORT
+
+    engine = create_engine(
+        'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(user,password,host,port, db))
+
     return engine
 
 
@@ -85,7 +99,7 @@ def get_mysql_conn(db, local):
     return conn
 
 
-class MsgSend:
+class WechatSend:
     def __init__(self, name):
         # name为微信要发送的人的微信名称
         self.name = name
@@ -107,18 +121,22 @@ class MsgSend:
         content = '{} Warning {} : ceiling volume is {}'.format(current, name, vol)
         itchat.send(content, toUserName=self.toName)
 
+    def send_content(self,content):
+        itchat.send(content, toUserName=self.toName)
+
 
 def sendmail(content, subject):
     '''
     发送邮件
     '''
-    obj = ClsLogger(__file__)
+    # obj = ClsLogger(__file__)
 
     username = LOGIN_EMAIL_USER
     password = LOGIN_EMAIL_PASS
     smtp_host = SMTP_HOST
     smtp = smtplib.SMTP(smtp_host)
-
+    # smtp.ehlo()
+    # smtp.starttls()
     try:
         smtp.login(username, password)
         msg = MIMEText(content, 'plain', 'utf-8')
@@ -128,7 +146,8 @@ def sendmail(content, subject):
         smtp.sendmail(msg['from'], msg['to'], msg.as_string())
         smtp.quit()
     except Exception as e:
-        obj.error(e)
+        # obj.error(e)
+        print('>>>>>{}'.format(e))
 
 
 class ClsLogger:
@@ -214,10 +233,9 @@ def is_holiday():
 
 
 # if __name__ == '__main__':
-    # msg=MsgSend(u'wei')
-    # msg.send_price('hsdq',12,12,'sell')
+#     msg=WechatSend(u'wei')
+#     msg.send_price('hsdq',12,12,'sell')
     # print(FROM_MAIL)
     # mylogger('test.log','just for test')
     # trading_time()
     # sendmail('content--------', 'subject------')
-

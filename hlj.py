@@ -290,7 +290,7 @@ def getip():
 # %% 写数据库
 def write_database(detail_data):
     count = 1
-    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='123456z', db='db_parker', charset='utf8')
+    db = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='', db='db_parker', charset='utf8')
     for detail in detail_data:
         table = 'hlj_shixin'
         qmarks = ', '.join(['%s'] * len(detail))  # 用于替换记录值

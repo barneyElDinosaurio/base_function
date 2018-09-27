@@ -8,7 +8,7 @@ import config
 
 client = pymongo.MongoClient('10.18.6.102')
 doc = client['stock']['jsl']
-engine = create_engine('mysql+pymysql://root:123456z@127.0.0.1:3306/db_rocky?charset=utf8'.format(config.localpassword))
+engine = create_engine('mysql+pymysql://root:@127.0.0.1:3306/db_rocky?charset=utf8'.format(config.localpassword))
 
 
 def classic_method():

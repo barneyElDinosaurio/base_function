@@ -95,7 +95,7 @@ url = 'http://zxgk.court.gov.cn/shixin/index_form.do'
 post_url = 'http://zxgk.court.gov.cn/shixin/findDis'
 
 mongo = pymongo.MongoClient('10.18.6.102', 27018)
-doc = mongo['spider']['sx_kjq']
+doc = mongo['spider']['sx_ent']
 
 
 # ua =UserAgent()
@@ -464,13 +464,13 @@ def check_sxr(name):
 
 
 def get_name_from_redis():
-    r = redis.StrictRedis('10.18.6.102', decode_responses=True, db=15)
+    r = redis.StrictRedis('10.18.4.211', decode_responses=True, db=12)
     # r2 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=8)
-    key = 'kjq_name'
+    key = 'location_remain'
     mongo_result = pymongo.MongoClient('10.18.6.102', 27018)
     save_doc = mongo_result['spider']['ent_history']
     while 1:
-        name = r.spop(key)
+        name = r.lpop(key)
         if name:
             save_doc.insert({'name': name, 'counts': -999})
             logger.info('>>>>查询 地区{}'.format(name))

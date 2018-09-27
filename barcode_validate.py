@@ -7,7 +7,7 @@ import pymysql
 import json
 
 
-# engine = create_engine('mysql+pymysql://root:123456z@localhost:3306/db_parker?charset=utf8')
+# engine = create_engine('mysql+pymysql://root:@localhost:3306/db_parker?charset=utf8')
 
 def get_result(url):
     if len(url) < 1:
@@ -40,7 +40,7 @@ def get_result(url):
 # print(df.head())
 
 def get_collection():
-    connect = pymysql.connect(host='localhost', user='root', password='123456z', db='db_parker', charset='utf8')
+    connect = pymysql.connect(host='localhost', user='root', password='', db='db_parker', charset='utf8')
     cursor = connect.cursor()
     query_cmd = 'select * from tb_qrcode'
     cursor.execute(query_cmd)
