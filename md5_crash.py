@@ -1,9 +1,9 @@
 import hashlib
-from setting import get_engine
+# from setting import get_engine
 import pandas as pd
 import itertools
-engine =get_engine('')
-df= pd.read_sql('aws_users',engine,index_col='uid')
+# engine =get_engine('')
+# df= pd.read_sql('aws_users',engine,index_col='uid')
 # print(df)
 
 def is_same(x,y):
@@ -39,4 +39,11 @@ def start_crash():
 		print(src)
 		loop_crash(src)
 
-start_crash()
+def md5_encode():
+	s=bytes("I'm Persian.",encoding='utf8')
+	m = hashlib.md5()
+	m.update(s)
+	first_md5 = m.hexdigest()
+	print(first_md5)
+# start_crash()
+md5_encode()
