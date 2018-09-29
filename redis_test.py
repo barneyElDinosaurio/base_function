@@ -272,19 +272,19 @@ def push_name_redis():
         doc.insert({'name':i})
 
 def copy_redis():
-    r0 = redis.StrictRedis('10.18.6.101', decode_responses=True, db=4)
-    r1 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=14)
-    lens = r0.llen('hlj0706')
-    print('>>>> start')
-    for i in r0.lrange('hlj0706',0,lens):
+    origin = redis.StrictRedis('10.18.4.211', decode_responses=True, db=12)
+    destination = redis.StrictRedis('10.18.6.26', decode_responses=True, db=3)
+    lens = origin.llen('location_remain')
+    for i in origin.lrange('location_remain',0,lens):
         # print(i)
         # print(type(i))
-        try:
-            x=eval(i).get('name')
-            r1.sadd('hlj_name',x)
-        except Exception as e:
-            print(e)
-            continue
+        # try:
+        #     x=eval(i).get('name')
+        #     destination.sadd('hlj_name',x)
+        # except Exception as e:
+        #     print(e)
+        #     continue
+        destination.lpush('location_remain',i)
 
 
 # base_usage()
@@ -307,4 +307,5 @@ def copy_redis():
 # copy_redis()
 # push_name_redis()
 # search()
-remove_set_item()
+# remove_set_item()
+copy_redis()

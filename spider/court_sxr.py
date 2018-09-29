@@ -19,7 +19,7 @@ import redis
 import pandas as pd
 import math
 import logging
-
+import datetime
 
 # from fake_useragent import UserAgent
 
@@ -29,9 +29,9 @@ def llogger(filename):
     # 创建一个logger
     logger = logging.getLogger('mylogger')
     logger.setLevel(logging.DEBUG)
-
+    current = datetime.datetime.now().strftime('%Y-%m-%d')
     # 创建一个handler，用于写入日志文件
-    fh = logging.FileHandler(pre_fix + '.log')
+    fh = logging.FileHandler(pre_fix + '-{}.log'.format(current))
 
     # 再创建一个handler，用于输出到控制台
     ch = logging.StreamHandler()
@@ -94,7 +94,7 @@ detail_header = {
 url = 'http://zxgk.court.gov.cn/shixin/index_form.do'
 post_url = 'http://zxgk.court.gov.cn/shixin/findDis'
 
-mongo = pymongo.MongoClient('10.18.6.102', 27018)
+mongo = pymongo.MongoClient('10.18.6.26', 27018)
 doc = mongo['spider']['sx_ent']
 
 
@@ -113,7 +113,6 @@ def crack_code(img_path):
     img_dict = {'img': img_b64}
     res = requests.post('http://10.18.6.102:5001/Captcha_api', data=img_dict, verify=False, timeout=2)
     return res.text
-
 
 # 更新session 验证码
 def update_session(session, name, cap_id, full_image_url, pageNo=None):
@@ -306,7 +305,7 @@ def check_sxr(name):
                                         timeout=10
                                         )
             logger.info('目前的代理IP是：{}'.format(proxy_ip))
-            print(resp_content.text)
+            # print(resp_content.text)
         except Exception as e:
             logger.warning(e)
             logger.warning('>>>>提交post数据异常')
@@ -464,10 +463,10 @@ def check_sxr(name):
 
 
 def get_name_from_redis():
-    r = redis.StrictRedis('10.18.4.211', decode_responses=True, db=12)
+    r = redis.StrictRedis('10.18.6.26', decode_responses=True, db=3)
     # r2 = redis.StrictRedis('10.18.6.102', decode_responses=True, db=8)
     key = 'location_remain'
-    mongo_result = pymongo.MongoClient('10.18.6.102', 27018)
+    mongo_result = pymongo.MongoClient('10.18.6.26', 27018)
     save_doc = mongo_result['spider']['ent_history']
     while 1:
         name = r.lpop(key)
@@ -485,7 +484,7 @@ def get_name_from_redis():
 
             # d = {'name': name, 'crawl_count': item_num, 'counts': count_number}
             try:
-                save_doc.update_one({'name': name}, {'$set': {'counts': count_number, 'crawl_count': item_num}})
+                save_doc.update({'name': name}, {'$set': {'counts': count_number, 'crawl_count': item_num}},False,True)
             except Exception as e:
                 logger.warning(e)
 
@@ -493,7 +492,7 @@ def get_name_from_redis():
             break
 
 
-# name = '李爱'
+# name = ''
 # item_num, count_number = check_sxr(name)
 # print(item_num, count_number)
 # push_name_redis()

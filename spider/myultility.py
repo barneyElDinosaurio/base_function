@@ -3,9 +3,7 @@
 # @File : myultility.py
 import random
 import re
-
 import redis
-
 import config
 import requests
 import time
@@ -63,7 +61,7 @@ def download(url, retry=5):
             print(e)
     return None
 
-rds = redis.StrictRedis('10.18.6.102', db=13, decode_responses=True)
+rds = redis.StrictRedis(config.redis_proxy, db=13, decode_responses=True)
 
 def redis_proxy(retry = 5 ):
     while retry > 0 :
@@ -76,7 +74,7 @@ def redis_proxy(retry = 5 ):
             continue
     return None
 
-
+# 旧的代理使用方式
 def get_proxy(retry=10):
     proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
     count = 0

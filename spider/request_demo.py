@@ -4,7 +4,12 @@ Created on Fri Aug 31 14:58:31 2018
 
 @author: liuxinyu
 """
+import shutil
 import time
+
+import os
+
+import pymongo
 
 """
 接口返回
@@ -48,5 +53,51 @@ def multi_thread():
     time_used = time.time() - start
     print('Time used :{} ms'.format(time_used*1000))
 
+def barcode(img_path=None):
+
+    url = 'http://10.18.6.107:8180/rest/qrDroid'
+    # img_path ='yyzz10.jpg'
+    print(img_path)
+    img_str = img_to_b64(img_path)
+    data = {'imgStr':img_str,'sysApplyId':'99999999999'}
+    # print(data)
+    r = requests.post(url=url,json=data)
+    try:
+        ret = r.json()
+    except Exception as e:
+        print(e)
+        return False
+
+    if ret.get('thirdMsg') == '识别成功':
+        return True
+    else:
+        return False
+
+def save_barcode_content(content):
+    db = pymongo.MongoClient('10.18.6.26',port=27018)
+    doc = db['spider']['qrcode']
+    try:
+        doc.insert({'qrcode':content})
+    except Exception as e:
+        print(e)
+
+
+def loop_image():
+    count=0
+    total=0
+    for (dirname, dirs, filename) in os.walk('.'):
+        for file in filename:
+            total+=1
+            if barcode(file):
+                count+=1
+                print(file)
+
+                shutil.copy(file,'successed/'+file)
+
+    print('count >>>>',count)
+    print('total >>>>',total)
+    print('successful rate {}'.format(count/total*100))
 # multi_thread()
-post_method()
+# post_method()
+# barcode()
+loop_image()
