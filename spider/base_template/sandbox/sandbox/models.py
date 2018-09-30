@@ -13,7 +13,7 @@ Base = declarative_base()
 engine = create_engine('mysql+pymysql://{}:{}@{}:3367/spider?charset=utf8'.format(config.username,config.password,config.mysql_ip))
 DBSession = sessionmaker(bind=engine)
 
-TABLE_NAME = 'card_bin_scrapy_remain'
+TABLE_NAME = 'card_bin_scrapy'
 
 # ORM 模型，根据项目需求修改
 class SpiderModels(Base):

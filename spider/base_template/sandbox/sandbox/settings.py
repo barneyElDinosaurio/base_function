@@ -52,10 +52,10 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-   'sandbox.middlewares.RandomUserAgent': 543,
-   'sandbox.middlewares.ProxyMiddleware': 553,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#    'sandbox.middlewares.RandomUserAgent': 543,
+#    'sandbox.middlewares.ProxyMiddleware': 553,
+# }
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -65,10 +65,10 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'sandbox.pipelines.SQLPipeline': 300,
-   # 'sandbox.pipelines.MongoPipeline': 100,
-}
+# ITEM_PIPELINES = {
+#    'sandbox.pipelines.SQLPipeline': 300,
+#    # 'sandbox.pipelines.MongoPipeline': 100,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

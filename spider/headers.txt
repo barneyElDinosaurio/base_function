@@ -1,13 +1,9 @@
-Accept: application/json, text/javascript, */*; q=0.01
+Host: www.yzcetc.com
+Origin: http://www.yzcetc.com
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://www.yzcetc.com/yzcetc/YW_Info/HuiYuanInfo/HuiYuanInfoList.aspx?CategoryNum=004&DanWeiType=13
 Accept-Encoding: gzip, deflate
 Accept-Language: zh,en;q=0.9,en-US;q=0.8
-Cache-Control: no-cache
-Connection: keep-alive
-Content-Length: 86
-Content-Type: application/json;utf-8
-Host: www.jxzjfww.com
-Origin: http://www.jxzjfww.com
-Pragma: no-cache
-Referer: http://www.jxzjfww.com/jxzjjgpt/websearch/zjzs.aspx
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-X-Requested-With: XMLHttpRequest

@@ -12,4 +12,9 @@ class SpiderItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     card=Field()
-
+    accountLength = Field()
+    cardName = Field()
+    cardType = Field()
+    mainAccount = Field()
+    mainValue = Field()
+    orgName = Field()
