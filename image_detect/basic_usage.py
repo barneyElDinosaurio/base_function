@@ -1,13 +1,63 @@
 # -*-coding:utf-8-*-
+# 图像的基本测试
+
 import time
 import os
-from PIL import Image
-import pytesseract
 # from urllib import request
 import requests
 from PIL import ImageFilter, ImageDraw
 from PIL import ImageEnhance
 import re
+import random
+import pytesseract
+from PIL import Image
+from PIL import Image, ImageFilter
+import numpy as np
+
+
+def base_usage():
+    im = Image.open("data/original.jpg")
+    im2 = Image.open("data/original.jpg")
+    print(im)
+    im = im.convert('L')
+    print(im)
+    image_data = im.getdata()
+    print(image_data)
+    # im.show()
+    (w, h) = im.size
+    print(w, h)
+    im.thumbnail((w / 2, h / 2))
+    im.save("data/small.jpg", 'jpeg')
+    im2.filter(ImageFilter.BLUR)
+    im2.save("data/blur3.jpg", 'jpeg')
+
+
+def read_image():
+    im = Image.open('data/len_full.jpg')
+    print(im.mode)
+    # print(im.getpixel((0,0)))
+    bw = im.convert('1')
+    x, y = bw.size
+    print(x, y)
+    grey = im.convert('L')
+    for i in range(x):
+        for j in range(y):
+            pass
+            # print(bw.getpixel((i,j)))
+    bw.show()
+    grey.show()
+    data = grey.getdata()
+    new_data = np.matrix(data)
+    print(new_data)
+
+    dt = np.reshape(new_data, (855, 400))
+    print(dt)
+    for i in range(855 - 1):
+        for j in range(400 - 1):
+            if random.random() > 0.5:
+                dt[i, j] = 0
+    new_im = Image.fromarray(dt)
+    new_im.show()
 
 
 def image_recognize():
@@ -22,9 +72,9 @@ def image_recognize():
         def SaveResultToDocument(self):
             text = self.m()
             print(text)
-            f = open(u"Verification.txt", "w")
-            f.write(str(text))
-            f.close()
+            # f = open(u"Verification.txt", "w")
+            # f.write(str(text))
+            # f.close()
 
     g = GetImageDate()
     g.SaveResultToDocument()
@@ -189,7 +239,7 @@ def sample():
             #     im.putpixel((i,j),(255,255,255))
     # im = ImageEnhance.Sharpness(im).enhance(9)
     # im.show()
-    im=im.convert('L')
+    im = im.convert('L')
     im.save('no-greed-code.gif')
     return im
 
@@ -362,20 +412,20 @@ def remove_noise():
     im.show()
 
 
-
 def folder_detect():
     for i in os.listdir('.'):
         if i.endswith('.gif'):
             im = Image.open(i)
 
-            im=im.convert('L')
+            im = im.convert('L')
             text = pytesseract.image_to_string(im)
             try:
                 print(text)
-                if text.upper()=='J4V2V':
+                if text.upper() == 'J4V2V':
                     print('found file {}'.format(i))
             except:
                 continue
+
 
 def find_best_args():
     # 去噪,G = 50,N = 4,Z = 4
@@ -390,17 +440,20 @@ def find_best_args():
 
                 image.save('test-no-green-{}-{}-{}.gif'.format(i, j, k))
 
+
 def validation():
     image = Image.open('15-crop.gif')
-    image=image.convert('L')
-    clearNoise(image,131,2,2)
-    text=pytesseract.image_to_string(image)
+    image = image.convert('L')
+    clearNoise(image, 131, 2, 2)
+    text = pytesseract.image_to_string(image)
     print(text)
+
 
 def clear_noise2():
     img = Image.open('g.jpg')
-    clearNoise(img,50,1,4)
+    clearNoise(img, 50, 1, 4)
     img.show()
+
 
 def main():
     # os.chdir('data/temp')
