@@ -1,9 +1,0 @@
-Host: www.yzcetc.com
-Origin: http://www.yzcetc.com
-Upgrade-Insecure-Requests: 1
-Content-Type: application/x-www-form-urlencoded
-User-Agent: Mozilla/5.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
-Referer: http://www.yzcetc.com/yzcetc/YW_Info/HuiYuanInfo/HuiYuanInfoList.aspx?CategoryNum=004&DanWeiType=13
-Accept-Encoding: gzip, deflate
-Accept-Language: zh,en;q=0.9,en-US;q=0.8
