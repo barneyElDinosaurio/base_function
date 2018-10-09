@@ -5,15 +5,13 @@ import time
 import os
 # from urllib import request
 import requests
-from PIL import ImageFilter, ImageDraw
-from PIL import ImageEnhance
+from PIL import ImageFilter, ImageDraw,ImageEnhance,Image,ImageFilter
 import re
 import random
 import pytesseract
-from PIL import Image
-from PIL import Image, ImageFilter
 import numpy as np
-
+import cv2
+import matplotlib.pyplot as plt
 
 def base_usage():
     im = Image.open("data/original.jpg")
@@ -184,6 +182,80 @@ def split_photo_piece():
             # im_x=im_x.convert('L')
             im_x.save(str(num) + '-crop-{}'.format(i) + '.gif')
 
+# 使用opencv 切割
+def split_photo_cv():
+    img = Image.open('shibiecuowu1537546979.png')
+    # plt.imshow(img)
+    # plt.title('color')
+    # plt.show()
+
+    img = img.convert('RGB')
+
+    width = img.size[0]  # 长度
+    height = img.size[1]  # 宽度
+
+    #仅对某种验证码有效
+    # print(width, height)
+    # for i in range(0, width):  # 遍历所有长度的点
+    #     for j in range(0, height):  # 遍历所有宽度的点
+    #         data = (img.getpixel((i, j)))  # 打印该图片的所有点
+    #         # print(data)  # 打印每个像素点的颜色RGBA的值(r,g,b,alpha)
+    #         # print(data[0])  # 打印RGBA的r值
+    #         # print(data[1])
+    #         if data[1] > 200:
+    #             # data[1]=0
+    #             # r=data[0]
+    #             img.putpixel((i, j), (255, 255, 255))  # 则这些像素点的颜色改成大红色
+
+    # plt.imshow(img)
+    # plt.title('remove noise')
+    # plt.show()
+
+    g_img = img.convert('L')
+    # plt.imshow(g_img)
+    # plt.title('gray')
+    # plt.show()
+
+    np_img = np.array(g_img)
+    ret,thres_img = cv2.threshold(np_img,0, 255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+    # ret,thres_img = cv2.threshold(np_img,0, 255,cv2.THRESH_BINARY+cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+    print(ret)
+    # thres_img = cv2.adaptiveThresh(np_img,127, cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,11,5)
+    # plt.imshow(thres_img)
+    # plt.title('black')
+    # plt.show()
+
+    print(pytesseract.image_to_string(thres_img))
+
+    # 切割
+
+    img,contour,hier = cv2.findContours(thres_img.copy(),cv2.RETR_CCOMP,cv2.CHAIN_APPROX_SIMPLE)
+    cnts = sorted([(c, cv2.boundingRect(c)[0]) for c in contour], key=lambda x: x[1])
+    rets = []
+    for c, b in cnts:
+        x, y, w, h = cv2.boundingRect(c)
+        print(x, y, w, h)
+        rets.append((x, y, w, h))
+        # if h >= 14:
+        #     if w > 14*2 and w < 14*3:
+        #         rets.append((x, y, int(w/2), h))
+        #         rets.append((x+int(w/2), y, int(w/2), h))
+        #     elif w < 14*3:
+        #         rets.append((x, y, w, h))
+
+        #     if w > 20:
+        #         rets.append((x, y, int(w / 2), h))
+        #         rets.append((x, y + int(w / 2), int(w / 2), h))
+        #     else:
+        #         rets.append((x, y, w, h))
+
+    for idx, cord in enumerate(rets):
+        print(cord)
+        (x, y, w, h) = cord
+        # plt.imsave('10091-{}.jpg'.format(idx), thres_img[y:y + h, x:x + w])
+        # print(pytesseract.image_to_string(thres_img[y:y + h, x:x + w]))
+        cv2.imshow('{}'.format(idx),thres_img[y:y + h, x:x + w])
+        cv2.waitKey(0)
 
 def single_word():
     import string, shutil, re
@@ -454,6 +526,88 @@ def clear_noise2():
     clearNoise(img, 50, 1, 4)
     img.show()
 
+# 轮廓的使用 csdn 例子
+def contour_usage():
+
+    img = cv2.imread('contour.jpg')
+    imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(imgray, 127, 255, 0)
+    cv2.imshow('black',thresh)
+    cv2.waitKey(0)
+    img_,contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE , cv2.CHAIN_APPROX_SIMPLE)
+    cv2.imshow('after contour',img_)
+    cv2.waitKey(0)
+
+    print('len of contours ',len(contours))
+    print('index 0 contours ',len(contours[0]))
+    print('index 1 contours ',len(contours[1]))
+    # print('index 2 contours ',len(contours[2]))
+    # print('index 3 contours ',len(contours[3]))
+    print(contours, '--------')
+    print(hierarchy, '********')
+    output = np.zeros(img.shape, dtype=np.uint8)
+    cv2.drawContours(output, contours, -1, (0, 255, 0), 2)
+    cv2.imshow('whole', output)
+    cv2.waitKey(0)
+    output[:] = 0
+
+    flag = [1, ] * len(contours)
+    for i in range(len(contours)):
+        contour = contours[i].copy()
+        index = i
+        while flag[index] == 1:
+            cv2.drawContours(output, [contour], -1, (0, 255, 0), 2)  # contours is a list
+            flag[index] = 0
+            print(index)
+            index = hierarchy[0][index][0]  # dimension array
+            cv2.imshow('stepbystep', output)
+            cv2.waitKey(0)
+            if index == -1:
+                print(index)
+                break
+            else:
+                contour = contours[index]
+
+# 修改
+def contour_usage2():
+
+    img = cv2.imread('contour.jpg')
+    imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(imgray, 127, 255, 0)
+    cv2.imshow('black',thresh)
+    cv2.waitKey(0)
+    img_,contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE , cv2.CHAIN_APPROX_SIMPLE)
+    cv2.imshow('after contour',img_)
+    cv2.waitKey(0)
+    offet=50
+    for i in range(len(contours)):
+        (x,y,w,h)=cv2.boundingRect(contours[i])
+
+        cv2.imshow('{} pic'.format(i),img[y-offet:y+w+offet,x-offet:x+h+offet])
+        cv2.waitKey(0)
+
+    time.sleep(5)
+
+# 官方教程 画轮廓
+def contour_usage3():
+
+    img = cv2.imread('tw_photo.jpg')
+    imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(imgray, 127, 255, 0)
+    # cv2.imshow('black',thresh)
+    # cv2.waitKey(0)
+    img_,contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    # cv2.imshow('after contour',img_)
+    # cv2.waitKey(0)
+    print('len of ',len(contours))
+    for i in range(len(contours)):
+        cnt = contours[i]
+        output = np.zeros(img.shape, dtype=np.uint8)
+        output[:] = 0
+
+        cv2.drawContours(output,[cnt],0,(0,255,0),3)
+        cv2.imshow('draw',output)
+        cv2.waitKey(0)
 
 def main():
     # os.chdir('data/temp')
@@ -473,9 +627,11 @@ def main():
     # folder_detect()
     # validation()
     # find_best_args()
-    sample()
-    clear_noise2()
-
+    # sample()
+    # clear_noise2()
+    split_photo_cv()
+    # contour_usage2()
+    # contour_usage3()
 
 if __name__ == '__main__':
     main()

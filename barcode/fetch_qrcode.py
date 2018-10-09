@@ -72,13 +72,15 @@ def multi_thread():
     time_used = time.time() - start
     logger.info('Time used :{} ms'.format(time_used * 1000))
 
+
 def save_barcode_content(content):
     db = pymongo.MongoClient('10.18.6.26', port=27018)
-    doc = db['spider']['qrcode']
+    doc = db['spider']['qrcode1008']
     try:
         doc.insert({'qrcode': content})
     except Exception as e:
         logger.info(e)
+
 
 def barcode(img_path=None):
     url = 'http://10.18.6.107:8180/rest/qrDroid'
@@ -100,7 +102,6 @@ def barcode(img_path=None):
         return False
 
 
-
 def loop_image():
     count = 0
     total = 0
@@ -111,28 +112,29 @@ def loop_image():
                 count += 1
                 logger.info(file)
 
-                # shutil.move(file, 'successed/' + file)
+                shutil.move(file, 'successed/' + file)
             else:
-            	os.remove(file)
-                # shutil.move(file,'failed/'+file)
+                # os.remove(file)
+                shutil.move(file,'failed/'+file)
 
     logger.info('count >>>>{}'.format(count))
     logger.info('total >>>>{}'.format(total))
     logger.info('successful rate {}'.format(count / total * 100))
 
+
 def image_enchange(img_path):
     # img_path = '2.jpg'
     img = img_to_b64(img_path)
-    data = {'imgBase64':img}
+    data = {'imgBase64': img}
     try:
-        r = requests.post(url='http://10.18.6.102:5002/qr_api',data=data)
+        r = requests.post(url='http://10.18.6.102:5002/qr_api', data=data)
     except Exception as e:
         logger.info(e)
         return False
 
     # print(r.json())
     try:
-        print('content >>>>',r.text)
+        print('content >>>>', r.text)
         ret = r.json()
         logger.info(ret)
     except Exception as e:

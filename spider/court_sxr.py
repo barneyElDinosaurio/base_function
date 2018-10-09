@@ -195,6 +195,7 @@ def anti_anyu(name):
     except Exception as e:
         logger.warning(e)
         logger.info('>>>> 获取查询页失败')
+        session.close()
         return None
     # print(get_session.text)
 
@@ -207,6 +208,7 @@ def anti_anyu(name):
     except Exception as e:
         logger.warning(e)
         logger.warning('>>>>没有找到captchaId')
+        session.close()
         return None
 
     full_image_url = 'http://zxgk.court.gov.cn/shixin/' + image_url
@@ -233,7 +235,6 @@ def check_sxr(name):
     headers['User-Agent'] = custom_ua
     post_header['User-Agent'] = custom_ua
     detail_header['User-Agent'] = custom_ua
-
     try:
         logger.info('获取查询页面')
         get_session = session.get(url=url, headers=headers,
@@ -242,6 +243,7 @@ def check_sxr(name):
     except Exception as e:
         logger.warning(e)
         logger.info('>>>> 获取查询页失败')
+        session.close()
         return -1, -1
     # print(get_session.text)
 
@@ -254,6 +256,7 @@ def check_sxr(name):
     except Exception as e:
         logger.warning(e)
         logger.warning('>>>>没有找到captchaId')
+        session.close()
         return -1, -1
 
     full_image_url = 'http://zxgk.court.gov.cn/shixin/' + image_url
@@ -266,6 +269,7 @@ def check_sxr(name):
 
     if not resp_content:
         logger.warning('>>>>获取的内容为空')
+        session.close()
         return -1, -1
 
     try:
@@ -273,10 +277,13 @@ def check_sxr(name):
     except Exception as e:
         logger.warning(e)
         logger.warning('>>>>页面内容为空,条数没找到')
+        session.close()
         count_number = 0
 
     if count_number == 0:
         logger.warning('>>>>无此人/企业实行记录')
+        session.close()
+        session.close()
         return 0, 0
 
     # 页面数目
@@ -322,6 +329,7 @@ def check_sxr(name):
                     if resp_content:
                         break
             if not resp_content:
+                session.close()
                 return -1, -1
 
             if '已被安域防护拦截' in resp_content.text or '屏蔽' in resp_content.text:
@@ -334,6 +342,7 @@ def check_sxr(name):
                 continue
 
             if not resp_content:
+                session.close()
                 return -1, -1
 
             response = Selector(text=resp_content.text)
@@ -371,6 +380,7 @@ def check_sxr(name):
                             logger.warning(e)
                             logger.warning('重试失败 :: {}'.format(t_out))
                     if last_try == False:
+                        session.close()
                         return -1, -1
                     # continue
                 if s4.status_code != 200:
@@ -459,6 +469,7 @@ def check_sxr(name):
 
     if count_number != item_num:
         logger.info('>>>>姓名丢失数据{}条'.format(count_number - item_num))
+    session.close()
     return item_num, count_number
 
 
