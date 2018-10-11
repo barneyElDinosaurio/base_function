@@ -28,3 +28,4 @@ httpcache
 config.py
 *.png
 full_name.dat
+.ipynb_checkpoints/
