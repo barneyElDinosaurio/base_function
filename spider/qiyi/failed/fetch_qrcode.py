@@ -75,7 +75,7 @@ def multi_thread():
 
 def save_barcode_content(content):
     db = pymongo.MongoClient('10.18.6.26', port=27018)
-    doc = db['spider']['qrcode1008']
+    doc = db['spider']['qrcode1012']
     try:
         doc.insert({'qrcode': content})
     except Exception as e:

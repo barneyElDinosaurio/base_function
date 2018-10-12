@@ -1,0 +1,1922 @@
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:08 - root - INFO: - 0038c571-27ce-44a0-81f1-a745dba3dfbf.jpg
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:08 - root - INFO: - 01348456-39da-4071-a0b6-369d4108b060.jpg
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:08 - root - INFO: - 0229ff4a-09f9-466d-9b66-5e9227f1817b.jpg
+2018-10-12 15:23:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:14 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:14 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:23:14 - root - INFO: - 04d4753f-3817-4a2d-aa23-e43fd38b027e.jpg
+2018-10-12 15:23:14 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:14 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:14 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:14 - root - INFO: - 07289cb0-0713-4c57-9476-d01b15551c3f.jpg
+2018-10-12 15:23:14 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:22 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:23:22 - root - INFO: - 084b85a5-0680-49d8-88bb-7b11310d7a23.jpg
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:22 - root - INFO: - 085909ad-a601-4524-8281-f0810f08df27.jpg
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:22 - root - INFO: - 0897d02d-365c-4568-a2db-bd77e2d5508f.jpg
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:22 - root - INFO: - 0917e268-e14a-4e97-8037-1e234fe52638.jpg
+2018-10-12 15:23:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:28 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 226
+2018-10-12 15:23:28 - root - INFO: - {'code': '000000', 'result': 'http://www.jsgsj.gov.cn:58888/province/infoQueryServlet.json?pt&c=75B161B67BE862B18BB8E2C64A75E23920568EB901BCE418DFC07F6B0577D1A7883AB5A4A6072E142BEBC8BD6C43BAFE2E55FEC11EFCB5B84A6E4436E46BBAA1'}
+2018-10-12 15:23:28 - root - INFO: - 09ecfb2d-b978-463a-8f71-96d521c5a581.jpg
+2018-10-12 15:23:28 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:28 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:28 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:28 - root - INFO: - 09f367b1-9ac0-4bf7-99d0-449e58fa95f6.jpg
+2018-10-12 15:23:28 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:33 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:33 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:23:33 - root - INFO: - 0a91644d-9c06-4402-ae9c-e8ebf8bbd427.jpg
+2018-10-12 15:23:33 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:33 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:33 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:33 - root - INFO: - 0ab14617-6037-4590-838e-c396630203ec.jpg
+2018-10-12 15:23:33 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:33 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:23:33 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:23:33 - root - INFO: - 0b74eb22-71cc-41fe-9b33-3a2af7ba9b7e.jpg
+2018-10-12 15:23:33 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:23:58 - root - INFO: - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-10-12 15:23:58 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:08 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:24:08 - root - INFO: - 0cb62ed8-6595-4483-84b3-1bdd85bbb40d.jpg
+2018-10-12 15:24:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:08 - root - INFO: - 0cce7ca2-8f02-4d0b-87f7-51121b269f41.jpg
+2018-10-12 15:24:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:16 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:24:16 - root - INFO: - 0ce36d3c-60e9-491c-8dc7-b66f4ef51c52.jpg
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:17 - root - INFO: - 0d8b98d9-f2b6-46e4-9396-c2309db67926.jpg
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:17 - root - INFO: - 0e20d1cd-1076-4f81-a424-8dcd5f116208.jpg
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:17 - root - INFO: - 0e8e93d7-a452-483c-ac47-c67ff14e6225.jpg
+2018-10-12 15:24:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 690
+2018-10-12 15:24:18 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码：91330683091690093T,企业注册号:330683000103485;企业名称:绍兴市佳博电器科技有限公司;登记机关:嵊州市市场监督管理局;登记时间:2015-12-08;经营范围:研发、生产、销售：压缩机、压缩机电机及配件。;详询信用公示系统:http://gsxt.zjaic.gov.cn                                                                                 '}
+2018-10-12 15:24:18 - root - INFO: - 0ebcf703-7f65-4632-9e22-ebb59f300810.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:18 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:18 - root - INFO: - 0eeb6059-93ca-448d-86d5-997571c0c487.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:18 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:18 - root - INFO: - 0ef5d38e-ae9f-47ed-82d7-875b78ac83ca.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:18 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:18 - root - INFO: - 0ef60d7c-8d7b-4c97-b4e4-b0717fcfd100.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:18 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:18 - root - INFO: - 0f073b89-040e-484c-b93f-18d8fe012397.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:18 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:18 - root - INFO: - 1127c051-b179-4915-8efc-fdf0dda2f911.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:18 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:18 - root - INFO: - 11fd0e31-cede-4dfd-bf2f-9361c40f4ee0.jpg
+2018-10-12 15:24:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:34 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:24:34 - root - INFO: - 123dd021-2a13-4d91-81d0-7955bbaddb48.jpg
+2018-10-12 15:24:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:34 - root - INFO: - 12a77313-e3de-490f-9173-0931b29eeb71.jpg
+2018-10-12 15:24:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:34 - root - INFO: - 12c4ead7-8577-481a-92e0-4ee08e20da1a.jpg
+2018-10-12 15:24:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:36 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:36 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:24:36 - root - INFO: - 131dae09-3d49-425a-942e-53118b2ad05a.jpg
+2018-10-12 15:24:36 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:45 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:45 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:24:45 - root - INFO: - 1374353a-cc52-4ae2-9544-26b9ad23dc4c.jpg
+2018-10-12 15:24:45 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:45 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:45 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:45 - root - INFO: - 1465ff54-66e3-4cba-812b-a71c0ff39272.jpg
+2018-10-12 15:24:45 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:47 - root - INFO: - {'code': '000003', 'result': 'Null'}
+2018-10-12 15:24:47 - root - INFO: - 1539913e-7966-48a9-a443-ab5aa5034502.jpg
+2018-10-12 15:24:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:56 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:24:56 - root - INFO: - 15b6f7e2-1227-4055-b007-8b95d6c0d694.jpg
+2018-10-12 15:24:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:24:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:24:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:24:56 - root - INFO: - 16078203-7969-49ab-a818-ac629a48aad8.jpg
+2018-10-12 15:24:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:05 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:05 - root - INFO: - 16456044-b064-49f9-bbf9-49366d2e4bb2.jpg
+2018-10-12 15:25:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:14 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:14 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:14 - root - INFO: - 17706a27-7ca3-4f21-9720-d37005d82571.jpg
+2018-10-12 15:25:15 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 786
+2018-10-12 15:25:17 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码：91330283MA282XH82R,企业注册号:330283000170245;企业名称:宁波福锐迅机电有限公司;登记机关:宁波市奉化区市场监督管理局;登记时间:2017-01-03;经营范围:机电配件、机械配件、五金配件、电子元件的制造、加工；自营和代理各类商品和技术的进出口业务，但国家限定***;详询信用公示系统:http://gsxt.zjaic.gov.cn'}
+2018-10-12 15:25:17 - root - INFO: - 18b1c196-a5ea-497c-b7aa-39aff57e80a5.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 18d3d75a-102a-4658-9162-41d61618fa0d.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 19df3c2d-2402-4feb-932d-2d1d075b7d3d.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 1afe2288-9cab-4df6-a6d7-bbe7c0314bf8.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 1bb81264-918e-430f-b239-1af12453d3d5.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 1bcbedaa-8505-4024-b610-1899d33fdd39.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 1c30b754-28e1-422b-9571-b12377cb72c0.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:17 - root - INFO: - 1d53b809-f4fd-4a4c-bce3-92c0346386ab.jpg
+2018-10-12 15:25:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:18 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:18 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:18 - root - INFO: - 1d820646-175e-4538-8bbd-8e9027d664f8.jpg
+2018-10-12 15:25:18 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:35 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:35 - root - INFO: - 1d9f8c2d-8303-4f8c-8766-ebf55f787382.jpg
+2018-10-12 15:25:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:45 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:45 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:45 - root - INFO: - 1ed29366-7d9b-438e-8ea4-d62f6ef5873a.jpg
+2018-10-12 15:25:45 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:53 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:53 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:53 - root - INFO: - 1ed29c9a-2354-43d5-a018-b0eabea99da3.jpg
+2018-10-12 15:25:53 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:53 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:53 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:53 - root - INFO: - 1f8c46f7-6417-4a03-9d31-59078cafd43b.jpg
+2018-10-12 15:25:53 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:53 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:53 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:53 - root - INFO: - 1f8d96b0-8b4f-415d-a5cb-967510220ee4.jpg
+2018-10-12 15:25:53 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 203bf074-997d-478f-8324-5b8852f23bc0.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 203e505c-160d-4e42-8131-1baf93f4d176.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 2198fa24-4474-4bbb-b91c-1860de7af47b.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 22e94af8-404d-4198-abaa-3e127e343f46.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 24a3f2f8-8087-44fa-9bae-95f86aeb6f0a.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 24e9b65a-3a6b-4736-9a27-3c4fa555f235.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:25:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:25:56 - root - INFO: - 25124821-6f8b-46e2-b998-3f6f5248bd54.jpg
+2018-10-12 15:25:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:04 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:26:04 - root - INFO: - 251e399a-0828-4129-898f-390cd46c440f.jpg
+2018-10-12 15:26:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 663
+2018-10-12 15:26:07 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码：91330122143594395L,企业注册号:330122000043693;企业名称:桐庐恒福机械制造有限公司;登记机关:桐庐县市场监督管理局;登记时间:2016-12-07;经营范围:  生产、销售：铸件、五金配件。\r\n;详询信用公示系统:http://gsxt.zjaic.gov.cn                                                                                                      '}
+2018-10-12 15:26:07 - root - INFO: - 27198801-5624-4e38-9a4a-28171cc022e0.jpg
+2018-10-12 15:26:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 788
+2018-10-12 15:26:08 - root - INFO: - {'code': '000000', 'result': '370833228013892\n名称:济宁山特松正工程机械有限公司\n类型:有限责任公司(自然人独资)\n法定代表人:周秀杰\n注册资本:100.00万元\n住所:济宁高新区万丽富德广场第0001幢01单2206层\n成立日期:2007-01-23\n营业期限:2007年1月23日至2027年1月22日\n登记机关:济宁市工商行政管理局高新区分局\n公示地址:济宁市工商局公示系统 http://www.jnaic.gov.cn'}
+2018-10-12 15:26:08 - root - INFO: - 27e96a3d-8053-4710-8666-f2a9e05a49bc.jpg
+2018-10-12 15:26:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:08 - root - INFO: - 28f0d766-e3bf-4d2c-9cf3-e3dae68b01ce.jpg
+2018-10-12 15:26:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:17 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:26:17 - root - INFO: - 298ebd2f-7ce6-42ca-977d-652f7898a057.jpg
+2018-10-12 15:26:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 29941dbf-1eb4-482b-a95f-db163d832f35.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 29e4df2d-a955-4ee6-a2fc-653814570adc.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 2b396fdc-a034-48c3-9d7f-bd1ef2be141a.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 2bc5f49d-6806-4261-b021-c360b2b8332c.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 2c4f2cc3-c0e2-480e-8e62-beb6461800ac.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 2cb9efbe-e493-435e-b1df-278494aba3fa.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 2cc90b46-8fc6-4ccd-b4ce-002842c12859.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 2fe553b7-daaf-49dc-9f03-37baed49603c.jpg
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:23 - root - INFO: - 30b8b766-ebe8-49e3-aca6-4e8526ffbd15.jpg
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:24 - root - INFO: - 30c09170-ef8e-4dda-b8e2-12e9fa5d54ef.jpg
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:24 - root - INFO: - 311d5c52-8a56-471a-b7e6-738a001e9277.jpg
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:24 - root - INFO: - 320426db-72c5-4f93-8f4a-adc51aa19457.jpg
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:24 - root - INFO: - 333eac1e-c0b6-4745-9770-61572849e1c3.jpg
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:24 - root - INFO: - 345f80df-ad32-445e-98fc-8a89d03026b6.jpg
+2018-10-12 15:26:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 773
+2018-10-12 15:26:26 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码：91330212MA2816106A,企业注册号:330212000498703;企业名称:宁波市鄞州永代塑胶有限公司;登记机关:宁波市鄞州区市场监督管理局;登记时间:2015-11-13;经营范围:  塑料制品、橡胶制品、模具、五金件的制造、加工、研发、销售；磨床、车床、电脉冲、线切割的加工。;详询信用公示系统:http://gsxt.zjaic.gov.cn'}
+2018-10-12 15:26:26 - root - INFO: - 355541da-f1c6-4825-89ea-e7350dc89828.jpg
+2018-10-12 15:26:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:35 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:26:35 - root - INFO: - 35732558-4d0b-4471-bedf-5370adb8cdb6.jpg
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:35 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:35 - root - INFO: - 3583881a-f3ec-4c6e-a064-838ff342ae08.jpg
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:35 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:35 - root - INFO: - 36fbfdd8-f646-4ec6-bb28-cacce3763a9f.jpg
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:35 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:35 - root - INFO: - 37e8bd72-6b06-49b2-aa49-7d92d1a9d472.jpg
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:35 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:35 - root - INFO: - 387c1a6a-838d-4c77-9a16-4774592ce4cb.jpg
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:35 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:26:35 - root - INFO: - 38914ca0-0d30-42d2-b5da-e1a254c7ca5d.jpg
+2018-10-12 15:26:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:49 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:49 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:26:49 - root - INFO: - 3923d0c0-52d0-45cc-ade0-8b6a880064ef.jpg
+2018-10-12 15:26:49 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 784
+2018-10-12 15:26:51 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码:91330212MA282L081A;注册号:330212000568576;企业名称:宁波市鄞州权志机械配件有限公司;登记机关:宁波市鄞州区市场监督管理局;登记时间:2017-08-30;经营范围:  机械设备及配件、五金工具、医疗器件配件、汽车配件、塑料制品、电子产品的制造、加工。（依法须经批准***;详询信用公示系统:http://gsxt.zjaic.gov.cn/'}
+2018-10-12 15:26:51 - root - INFO: - 39eff3f3-2692-4277-b361-8abd0117d8bc.jpg
+2018-10-12 15:26:52 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:26:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:26:54 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:26:54 - root - INFO: - 3a7c46cf-415c-4385-bbaa-4bf7d5e51947.jpg
+2018-10-12 15:26:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:04 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:04 - root - INFO: - 3b5483de-ea20-4fdc-b534-0e38ffe07170.jpg
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:04 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:04 - root - INFO: - 3bf2a844-7c28-492d-9839-36e5e4929a57.jpg
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:04 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:04 - root - INFO: - 3c04f63e-fbde-4e07-9a61-4de6e2f3568d.jpg
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:04 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:05 - root - INFO: - 3c4f5e76-e50b-43dd-8108-3bcf261b2fee.jpg
+2018-10-12 15:27:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:05 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:05 - root - INFO: - 3d77fa51-94d9-4c9a-92ae-64a044651b42.jpg
+2018-10-12 15:27:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:11 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:11 - root - INFO: - 3e69eff2-6f33-4d08-9c77-f5c57695fdc2.jpg
+2018-10-12 15:27:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:13 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 757
+2018-10-12 15:27:13 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码:91330201316855267W;注册号:330218000026250;企业名称:宁波璟晟贸易有限公司;登记机关:宁波市市场监督管理局杭州湾***;登记时间:2017-07-26;经营范围:  金属材料、金属制品、塑料原料、塑料制品、五金产品、橡胶原料销售。（依法须经批准的项目，经相关部门***;详询信用公示系统:http://gsxt.zjaic.gov.cn/'}
+2018-10-12 15:27:13 - root - INFO: - 3ee1cc69-3ef5-4e05-89af-59f885e9243a.jpg
+2018-10-12 15:27:13 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:13 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:13 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:13 - root - INFO: - 3f810659-43a2-4553-8a2a-2068ebd0d3d3.jpg
+2018-10-12 15:27:13 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:13 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:13 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:13 - root - INFO: - 3f912a1b-1167-482b-a508-ea3f53a9b9e8.jpg
+2018-10-12 15:27:13 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:14 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:14 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:14 - root - INFO: - 400c007c-05fa-4b93-bacb-dee6929d9b9a.jpg
+2018-10-12 15:27:14 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:17 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:17 - root - INFO: - 4073b5dd-d9e4-4921-9bac-1977b43dc266.jpg
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:17 - root - INFO: - 40f78d2a-7600-4ef5-a67e-faa0e4def9a3.jpg
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:17 - root - INFO: - 4153ce7f-e026-4460-9491-3eb7c168f628.jpg
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:17 - root - INFO: - 417eb86d-a4b7-4ef2-acad-a04542fea5d7.jpg
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:17 - root - INFO: - 41c0e702-ba84-4f32-91c1-39466524f1a8.jpg
+2018-10-12 15:27:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:20 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:20 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:20 - root - INFO: - 41c74758-ee30-440b-ac3b-0a8a3d81c26e.jpg
+2018-10-12 15:27:20 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:20 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:20 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:20 - root - INFO: - 41f9f9cf-a770-4b2d-8ce8-0d7cd36e9029.jpg
+2018-10-12 15:27:20 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:20 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:20 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:20 - root - INFO: - 420381ac-63c2-4e39-8e0e-8194c29eba25.jpg
+2018-10-12 15:27:20 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:21 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:21 - root - INFO: - 42ce75e3-04f0-4db2-924c-2bbf377cd43f.jpg
+2018-10-12 15:27:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:38 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:38 - root - INFO: - 43836c39-a911-43a1-bb0c-fb2b94605ec2.jpg
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:38 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:38 - root - INFO: - 44bbeca3-8a22-4ae0-9b1d-087a012e75d4.jpg
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:38 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:38 - root - INFO: - 45b4c9a6-65b0-43f3-b330-8a704cc66c3c.jpg
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:38 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:38 - root - INFO: - 45b54cb3-824a-403d-90e0-408b94c03b81.jpg
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:38 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:38 - root - INFO: - 45ed2fd4-48f0-4183-9a6f-6aff66559b6f.jpg
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:38 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:38 - root - INFO: - 45f78375-2e68-493a-aaba-1e68abf8ef3d.jpg
+2018-10-12 15:27:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:39 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:39 - root - INFO: - 469cc2b0-46c5-4cf3-9671-7e6826560e85.png
+2018-10-12 15:27:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:39 - root - INFO: - 47a60290-0e6e-4ff4-8b21-1706f5437a42.jpg
+2018-10-12 15:27:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:39 - root - INFO: - 480f1224-0f73-422f-a6e0-73a20c7dd72a.jpg
+2018-10-12 15:27:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 49ed0f1b-bb1c-43b0-8971-2fb6f7564058.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 4b5e0718-c638-4fec-8f2e-e6df7203b139.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 4b65ba4f-af0e-4de8-9ef5-ee86d90ad88e.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 4b97cc6d-3f98-490b-812d-718ba2a34ef6.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 4b9ad03f-2cdb-42b8-9054-149f36efba0b.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 4be5621b-d85a-4798-b640-b40f87a22821.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:27:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:27:50 - root - INFO: - 4c95732a-71ae-40bb-816e-ff09882cfbcc.jpg
+2018-10-12 15:27:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:04 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:28:04 - root - INFO: - 4d0c0987-f4d2-45e3-810a-a83b5bacba1a.jpg
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:04 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:04 - root - INFO: - 4d96a68b-21ed-4077-b415-09102d0ef87e.jpg
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:04 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:04 - root - INFO: - 4ec80d90-4ec9-43b9-a126-fb3b25a1d8cf.jpg
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:04 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:04 - root - INFO: - 4f79d3ee-37c1-4b4b-8b03-2fc84f9bf849.jpg
+2018-10-12 15:28:04 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:21 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:28:21 - root - INFO: - 4fbd2005-966e-4a49-b6da-8a09870b611c.jpg
+2018-10-12 15:28:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:21 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:21 - root - INFO: - 4fd778a4-acee-4f84-98d1-5f6a2b172fcf.jpg
+2018-10-12 15:28:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:21 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:21 - root - INFO: - 5059f954-c7b3-497e-a109-5a1b2dda8ec6.jpg
+2018-10-12 15:28:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:26 - root - INFO: - {'code': '000003', 'result': 'Null'}
+2018-10-12 15:28:26 - root - INFO: - 5067dd6c-6167-451a-ae58-8ffbb384f94f.jpg
+2018-10-12 15:28:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:37 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:37 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:28:37 - root - INFO: - 51f21067-a5f8-4cd1-a5ed-bdad21844e84.jpg
+2018-10-12 15:28:37 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:37 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:37 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:37 - root - INFO: - 52398e09-e461-45c0-bafa-322b1d44df3a.jpg
+2018-10-12 15:28:37 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:40 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:40 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:28:40 - root - INFO: - 527635c4-a69c-4702-ab8c-3513055e48b2.jpg
+2018-10-12 15:28:40 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:40 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:40 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:40 - root - INFO: - 52a801e2-4759-43b5-82df-356e33625b76.jpg
+2018-10-12 15:28:40 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:50 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:28:50 - root - INFO: - 537462e5-e010-40e9-a804-ef9dc02096c6.jpg
+2018-10-12 15:28:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:50 - root - INFO: - 53cfc1ff-ffc6-4e4a-9a4f-c771cf841f51.jpg
+2018-10-12 15:28:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:58 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:58 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:28:58 - root - INFO: - 543cbfeb-cda9-4378-a102-2e6370692ad7.jpg
+2018-10-12 15:28:58 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:28:58 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:28:58 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:28:58 - root - INFO: - 54e0205f-91cf-454a-8636-f5dd746fbd6f.jpg
+2018-10-12 15:28:58 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:00 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:00 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:00 - root - INFO: - 550230de-5b58-4a58-93d1-be4a0602ff7b.jpg
+2018-10-12 15:29:01 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:06 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:06 - root - INFO: - 553491bb-00b7-481a-818c-94d937b749fe.jpg
+2018-10-12 15:29:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:06 - root - INFO: - 55c48f62-e4a1-4224-92ea-76ba8c8f5ff0.jpg
+2018-10-12 15:29:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:07 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:07 - root - INFO: - 56175400-c4ed-498d-b3a5-24ee09abe0c2.jpg
+2018-10-12 15:29:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:07 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:07 - root - INFO: - 56343c45-1470-470f-84d9-044c52967ce3.jpg
+2018-10-12 15:29:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:15 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:15 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:15 - root - INFO: - 5643789b-fe6e-4b45-bb15-de1afb1a40f3.jpg
+2018-10-12 15:29:15 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:15 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:15 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:15 - root - INFO: - 5808ca6c-fa78-4f73-9ef6-4c3b8b845586.jpg
+2018-10-12 15:29:15 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:23 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:23 - root - INFO: - 581b54f3-c907-4f20-b114-615415382f95.jpg
+2018-10-12 15:29:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:37 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:37 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:37 - root - INFO: - 58a29c4d-0dee-4904-be44-3d8c99112bca.jpg
+2018-10-12 15:29:37 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 58b70f4b-b0d4-4086-b4ee-b7c35e946827.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 58d250da-7162-4844-903a-565a131acc14.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 59bb2d8f-1e98-467c-a07f-58e82fd21361.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 5ab7fc0d-384a-4436-be15-4e3146a16c5a.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 5afcfc96-37be-4cc6-8737-c386cba547f1.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 5c595da7-8bb9-4c3a-9e40-997bc45a88ff.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 5f903f98-511c-4ef0-9d7f-3d967901f19f.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 5fce9799-a6fb-49a9-a125-4ec641b8c9a4.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 5fe2376e-37ed-49a7-9619-8e3530a19a0b.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:43 - root - INFO: - 61f10921-f295-49f3-8d2e-98888f5e3b39.jpg
+2018-10-12 15:29:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 627054a4-5639-42d5-bfb8-6fb6110a73f6.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 6331ec32-0e84-4eaa-8446-b5b7aee8465e.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 64b57691-cfe1-455e-8553-d1d39deb29a0.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 656c6f57-0c47-43ce-b817-b866f55b3efd.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 65c1c4bc-f3a6-4c36-b80b-fa0a1389a8c9.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 669f7f77-5505-45a8-b8d5-2607d8fa03c8.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:47 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:47 - root - INFO: - 67a09325-7a7c-4100-a913-9fb011d06d76.jpg
+2018-10-12 15:29:47 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:49 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 134
+2018-10-12 15:29:49 - root - INFO: - {'code': '000000', 'result': 'http://www.hebscztxyxx.gov.cn/noticehb/query/queryEntInfoMain.do?uuid=SuCq5Y6vqnS.2gktdywbcAvMqczwS7nU'}
+2018-10-12 15:29:49 - root - INFO: - 68462a91-8f38-4774-8f26-63f064ff753f.jpg
+2018-10-12 15:29:49 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:59 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:59 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:29:59 - root - INFO: - 6981ad07-173e-44d0-a30c-3a8017917aa7.jpg
+2018-10-12 15:29:59 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:59 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:59 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:59 - root - INFO: - 69858114-e002-492a-aa1b-8a550d4a9164.jpg
+2018-10-12 15:29:59 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:29:59 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:29:59 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:29:59 - root - INFO: - 6a6b205c-5dc9-49ec-a63d-f926dd07d551.jpg
+2018-10-12 15:29:59 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:07 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:07 - root - INFO: - 6aef2b4f-bf17-49d0-b837-d49ee9721b1f.jpg
+2018-10-12 15:30:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:07 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:07 - root - INFO: - 6c300ffd-0cad-4086-9132-1d2d4ad01fda.jpg
+2018-10-12 15:30:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:07 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:07 - root - INFO: - 6c31244b-db1e-4b95-ae73-231d41644143.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6c7ae514-2080-47ae-af28-d60a25941bcf.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6d0e78d6-0bea-4a2d-8ec2-0171c14757f0.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6d3a1b8d-a28f-4474-aecd-5595050a7443.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6d698075-aa07-4bd0-bd3e-f7d08dc268ba.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6e18503e-e9d2-451c-a845-51505d41e85d.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6edca11e-9329-40cd-9b1e-c7f1ade646fa.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:08 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:08 - root - INFO: - 6ef36053-a191-4e90-b952-a75e3e3f394e.jpg
+2018-10-12 15:30:08 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:12 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:12 - root - INFO: - 6fb5deb0-c7e5-42de-b5a8-d4950918ddad.jpg
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:12 - root - INFO: - 70845970-2269-49d2-8961-80f1dc6940e3.jpg
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:12 - root - INFO: - 7132b715-6cd0-47cc-8c8c-fa79b00bc1b9.jpg
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:12 - root - INFO: - 7271d92a-04ed-49ff-a99a-ca0ae88549e2.jpg
+2018-10-12 15:30:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:21 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:21 - root - INFO: - 734b0dbe-11f2-4322-a184-5ee40fb49a6e.jpg
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:21 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:21 - root - INFO: - 74a223cb-f9d3-4517-a87b-2ab5c125e348.jpg
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:21 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:21 - root - INFO: - 74e3931d-0dd2-4ae0-a1ff-c2684ec1df5f.jpg
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:21 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:21 - root - INFO: - 76dce459-7fe3-4066-a6b0-c34e11c054f1.jpg
+2018-10-12 15:30:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:22 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:22 - root - INFO: - 773cd32c-5135-426a-8d89-db3d0f16de07.jpg
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:22 - root - INFO: - 774000c1-fd2c-4a97-bdfd-77c3c9d903b6.jpg
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:22 - root - INFO: - 77a55414-39c8-490f-b8d2-80134eb25d08.jpg
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:22 - root - INFO: - 78799947-6abc-4423-85bb-68ce0e9a3d6b.jpg
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:22 - root - INFO: - 789cfc11-602b-49c9-bc22-308183c34484.jpg
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:22 - root - INFO: - 79eb81d8-767c-48fa-afb6-376449394fd9.jpg
+2018-10-12 15:30:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7a4ac662-a336-4287-aa20-76a8316b932c.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7bb354ea-a171-4b44-b12a-cdf89c5209e2.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7bfba3ad-6744-4919-b02d-333cdec77e40.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7ca68fbd-b861-42af-a3f7-d209cbb0adfe.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7cbf539e-b43f-4d7f-bfe6-5291bb335c4f.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7ccf4ee6-e487-4c02-bbb2-ab5247860cd8.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:23 - root - INFO: - 7d03eb2f-b734-4c5b-b405-e870c3c78303.jpg
+2018-10-12 15:30:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:24 - root - INFO: - 7e715023-c93f-4dae-81c7-d5496b364635.jpg
+2018-10-12 15:30:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:25 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:25 - root - INFO: - 7ead75b0-681a-4ec0-8946-fdd19496b5f3.jpg
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:25 - root - INFO: - 7f08d6c8-338b-47b5-9930-27aac32df019.jpg
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:25 - root - INFO: - 7f1357f6-358a-4588-b9bf-b1392d298178.jpg
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:25 - root - INFO: - 7f5582ea-15ff-4025-8f17-6f3b7f3e39f9.jpg
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:25 - root - INFO: - 805aa0f2-ed2e-4e27-a21c-859b47027c92.jpg
+2018-10-12 15:30:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:39 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:30:39 - root - INFO: - 8072b0d2-38ee-4a05-b083-156c03cf07d7.jpg
+2018-10-12 15:30:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:39 - root - INFO: - 818d1dbc-9aa1-410c-9d7c-6a117f935de9.jpg
+2018-10-12 15:30:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:39 - root - INFO: - 81e1d46a-17bc-472e-9960-5ac40859e435.jpg
+2018-10-12 15:30:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:41 - root - INFO: - {'code': '000003', 'result': 'Null'}
+2018-10-12 15:30:41 - root - INFO: - 821c6324-f148-4fc8-bd9c-9f2005573abd.jpg
+2018-10-12 15:30:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:41 - root - INFO: - 822c66c6-fe71-4e8d-ba2a-fee86b487464.jpg
+2018-10-12 15:30:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:41 - root - INFO: - 84bfce10-3a4d-4e63-8615-59c648444e8f.jpg
+2018-10-12 15:30:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 754
+2018-10-12 15:30:44 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码:91330681336896621P;注册号:330681000293384;企业名称:诸暨市栋琪五金配件有限公司;登记机关:诸暨市市场监督管理局;登记时间:2017-08-29;经营范围:  制造、加工、销售：五金配件、机械配件、制冷配件、暖通设备、水暖管材、管件（依法须经批准的项目，经***;详询信用公示系统:http://gsxt.zjaic.gov.cn/'}
+2018-10-12 15:30:44 - root - INFO: - 86dc791f-fd5f-47ef-89de-0cbd59c443e3.jpg
+2018-10-12 15:30:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:30:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:30:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:30:44 - root - INFO: - 879d412c-01fd-433e-9fe8-f448ae5cda36.jpg
+2018-10-12 15:30:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:03 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:03 - root - INFO: - 88c8b99e-bf9a-4ddc-8a05-ee84d8555a2d.jpg
+2018-10-12 15:31:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 899003f6-92d8-4962-b6e3-8e754c0d26d4.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 89c8cfe0-44c1-4cda-b4e9-b9c988bdd3e9.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 8a633295-3992-442d-b720-cff5aa75a328.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 8aba7882-daf6-4393-8498-9b912fd59ffa.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 8b358dd1-b344-498e-8ceb-cef6c9d5e848.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 8e3b24cb-05a7-4d84-9605-a3bff21e2e27.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 8e9aa799-7016-413f-968a-d82de0e0e411.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:12 - root - INFO: - 8ead01f1-1293-4d8f-9331-7a8897e4ee55.jpg
+2018-10-12 15:31:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:26 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:26 - root - INFO: - 903b9a71-0f0f-4b0d-9437-f67499aaa4ac.jpg
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:26 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:26 - root - INFO: - 9074984d-3c1a-42cb-8460-7aa4f528cbf3.jpg
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:26 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:26 - root - INFO: - 90f92b4e-7ced-4963-b0d9-fc41caec94ca.jpg
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:26 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:26 - root - INFO: - 9155d37a-2a7d-436c-a5ef-d8b9712b14dd.jpg
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:26 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:26 - root - INFO: - 92578f1b-56be-49d8-b2e8-a53443f3d0ff.jpg
+2018-10-12 15:31:26 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:27 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:27 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:27 - root - INFO: - 928ff41c-7671-45d5-88b6-aaaad5602503.jpg
+2018-10-12 15:31:27 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:34 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:34 - root - INFO: - 93e9e9c3-a50f-48b5-8df6-98919624ac72.jpg
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:34 - root - INFO: - 94da23a1-f611-4d71-b573-3362949450b7.jpg
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:34 - root - INFO: - 95f69c64-95ff-4723-9a89-8c4b043f3ba0.jpg
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:34 - root - INFO: - 96ada5f6-c960-4628-9206-910d0a56fc68.jpg
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:34 - root - INFO: - 96d91cdc-451a-4d6b-b4cb-ded684ff831b.jpg
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:34 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:34 - root - INFO: - 9778e38a-03a3-442d-96f3-cd58ba91e4aa.jpg
+2018-10-12 15:31:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:50 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:50 - root - INFO: - 97f91a59-8d22-4a43-be19-773bd86eac48.jpg
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:50 - root - INFO: - 986bdcfa-c54d-429c-9985-11efff062164.jpg
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:50 - root - INFO: - 98a97f9f-55af-4358-9ae5-355ae1c10716.jpg
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:50 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:50 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:51 - root - INFO: - 98b6550a-7ff8-4190-80d7-1497e92d0cdf.jpg
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:51 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:51 - root - INFO: - 9a3c4623-2218-4a6e-8b91-d6f53633e807.jpg
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:51 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:51 - root - INFO: - 9ad9c893-3743-4dba-8bc9-64a93984a372.jpg
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:51 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:51 - root - INFO: - 9af7c0a0-de12-4e6b-9e95-55c8de753c1e.jpg
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:51 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:51 - root - INFO: - 9b07db38-25a0-46bf-a4c8-3e7754b295ee.jpg
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:51 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:51 - root - INFO: - 9bd02e50-176c-44b7-955a-43e97a8fd3fa.jpg
+2018-10-12 15:31:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:54 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:54 - root - INFO: - 9bde1dcf-9f7c-48dd-a246-fc177b016859.jpg
+2018-10-12 15:31:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:55 - root - INFO: - {'code': '000003', 'result': 'Null'}
+2018-10-12 15:31:55 - root - INFO: - 9db417ff-2619-4a98-b431-20a8a7b851c2.jpg
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:55 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:55 - root - INFO: - 9e8cdd11-8320-442f-b3a9-4ba7b7a94cb1.jpg
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:55 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:55 - root - INFO: - 9f5a304c-2b2a-44d1-84ca-a576b01ce7b6.jpg
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:55 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:55 - root - INFO: - 9fe3ab2c-0f82-4b43-9566-2a423bef1f95.jpg
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:55 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:55 - root - INFO: - a09ba19d-cc61-4ca3-9c9d-28feb7ca96e8.jpg
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:55 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:31:55 - root - INFO: - a188166f-abf4-46ec-a94a-52b09c8e6fe8.jpg
+2018-10-12 15:31:55 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:31:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:31:57 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:31:57 - root - INFO: - a1ea4c2c-0e7f-4c82-b898-60c97a41e085.jpg
+2018-10-12 15:31:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:03 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:03 - root - INFO: - a26c353c-9ad2-4730-a1b3-8f701e5a0b81.jpg
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:03 - root - INFO: - a2a75e19-d862-4425-a3fe-33660012b0f2.jpg
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:03 - root - INFO: - a3913ffd-d4bc-4be6-abc4-e84c601e441b.jpg
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:03 - root - INFO: - a40df903-0fce-4807-928b-122d50273b58.jpg
+2018-10-12 15:32:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:05 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:05 - root - INFO: - a423f0bc-a8eb-4b45-88d0-f07765760cc3.jpg
+2018-10-12 15:32:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:05 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:05 - root - INFO: - a5403c34-d215-4fbb-930e-449144857684.jpg
+2018-10-12 15:32:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:07 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:07 - root - INFO: - a57e1153-63f5-427f-9fe6-493af3c53a92.jpg
+2018-10-12 15:32:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:21 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:21 - root - INFO: - a59c8ced-6c42-4dc3-8e42-8fe284e120b7.jpg
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:22 - root - INFO: - a5ea225e-5a84-439b-93fb-55b4d0d86ea6.jpg
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:22 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:22 - root - INFO: - a6ec0673-4f3e-4709-961e-99b8cab20e33.jpg
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:22 - root - INFO: - a6ef8b78-f38d-4988-891c-e75c0ad42198.jpg
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:22 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:22 - root - INFO: - a748e777-a42b-490d-a6f5-4f2c02cd8644.jpg
+2018-10-12 15:32:22 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:27 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:27 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:27 - root - INFO: - a77e317f-692c-46a5-9853-5c97e3e2e7ac.jpg
+2018-10-12 15:32:27 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:27 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:27 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:27 - root - INFO: - a7ccdaa6-6dd3-43e2-bd93-d4f2fda19184.jpg
+2018-10-12 15:32:27 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:35 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:35 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:35 - root - INFO: - a971b9fa-290c-4530-8bfb-0eed4b442e7b.jpg
+2018-10-12 15:32:35 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:37 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:37 - root - INFO: - {'code': '000003', 'result': 'Null'}
+2018-10-12 15:32:37 - root - INFO: - aac0c647-6a25-4425-9b17-703e5ea969c0.jpg
+2018-10-12 15:32:37 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:37 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:37 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:37 - root - INFO: - aaf17634-37fe-41f6-b2b8-5ba394d8bb8b.jpg
+2018-10-12 15:32:37 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:39 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:39 - root - INFO: - abc7b834-d4ff-4f89-8143-13b0cb66a8a1.jpg
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:39 - root - INFO: - ac14ebab-3e24-492f-baa2-10f9f3d6f041.jpg
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:39 - root - INFO: - ac6aa9b2-1156-403d-9fc1-9b5f6b237151.jpg
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:39 - root - INFO: - acbe5860-363b-43be-95e0-c6da8a3ed182.jpg
+2018-10-12 15:32:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:48 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:48 - root - INFO: - acd05114-9361-45b6-b37b-e07d592c5827.jpg
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:48 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:48 - root - INFO: - acdd53e2-fff6-4de2-adca-82ff50b296cc.jpg
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:48 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:48 - root - INFO: - ad42ae5b-20ea-4f50-af16-edd43aa58e06.jpg
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:48 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:48 - root - INFO: - ad56a71f-d465-4f69-8998-fc8ced8b823b.jpg
+2018-10-12 15:32:48 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:51 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:51 - root - INFO: - adfbc0e7-68b1-4713-be38-b7c132a71277.jpg
+2018-10-12 15:32:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:51 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:51 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:51 - root - INFO: - adfdb949-8f53-4076-b160-4dc7d9ebd306.jpg
+2018-10-12 15:32:51 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:52 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:52 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:52 - root - INFO: - ae078875-1fa1-41ac-95b1-46e28447c6ce.jpg
+2018-10-12 15:32:52 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:52 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:52 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:52 - root - INFO: - aeba2fa8-08fc-4fe6-ad06-0bc250054426.jpg
+2018-10-12 15:32:52 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:52 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:52 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:52 - root - INFO: - af08e0c0-ed7c-4a70-81fa-c169eb07eafd.jpg
+2018-10-12 15:32:52 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b02797f1-e095-4ff1-8c18-aa4c4f2d3c3b.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b18c7327-0c70-4a29-8964-5d79e279713a.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b4730360-cc91-4bf1-876e-2df4e44e5b0f.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b5c91aab-bf5c-4f09-9fe4-ae0f1eae1411.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b7508860-9e6e-48ee-96d1-7dacc07278be.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b840a34b-5afe-430b-a395-9b0f07a958c3.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b8fbe823-6a38-4ff6-b9dd-67aee5917f9e.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b91ea22a-aa46-42fd-bead-41762007d710.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:54 - root - INFO: - b9f74489-4be6-4b5e-8368-0194fa397c76.jpg
+2018-10-12 15:32:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:56 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:56 - root - INFO: - bbb1d732-02ae-4532-b028-8786b4543e63.jpg
+2018-10-12 15:32:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:56 - root - INFO: - bbbc147e-53ca-459c-bd20-f75914e7e85d.jpg
+2018-10-12 15:32:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - bce683e4-4d12-4526-bd99-e6dfb9c02c96.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - bde9aed8-7e67-4d97-a5f5-599d42a72eb9.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - be26692d-407c-43bc-b8c5-559af895c563.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - bedc29b8-36c1-46c5-aca8-ca491d88e5ea.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - bfdb9a6c-9b75-44f6-99f3-e277daf7eaab.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - c1f7a0f9-47ea-48fe-8b82-16efa91c2a16.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - c595dfde-3d78-4824-a23f-d3f1d947d329.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:57 - root - INFO: - c6255c09-182b-43d4-a634-6c4aab62e53c.jpg
+2018-10-12 15:32:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:58 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:58 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:32:58 - root - INFO: - c9ae8240-0571-442e-b40f-9dbfd05e4489.jpg
+2018-10-12 15:32:58 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:32:58 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:32:58 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:32:58 - root - INFO: - ca71f784-ba4a-464f-80b5-07a422f86959.jpg
+2018-10-12 15:32:58 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:02 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:02 - root - INFO: - ca7c8291-47f8-42ee-91f4-06255f2a11ae.jpg
+2018-10-12 15:33:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:03 - root - INFO: - cac6d25e-b470-4a10-a6f0-d6b1c9d7b1d0.jpg
+2018-10-12 15:33:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:10 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:10 - root - INFO: - cb1b63f5-a894-4503-a564-3be64cb283e7.jpg
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:10 - root - INFO: - cbab6153-1a1d-45dc-9521-43851671b682.jpg
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:10 - root - INFO: - cdce13e3-0269-4185-8430-fac3a0bc94f4.jpg
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:10 - root - INFO: - ce690027-a738-4056-b6bf-65bdcd4d04ae.jpg
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:10 - root - INFO: - cfa42cb0-dc20-4e90-8a27-46a07937a493.jpg
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:10 - root - INFO: - d0aceed2-e4d6-4b98-b376-10eebad7ea4b.jpg
+2018-10-12 15:33:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:17 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:17 - root - INFO: - d157f6f4-9a79-4079-acb9-b7e7bffe7eaa.jpg
+2018-10-12 15:33:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:17 - root - INFO: - d175ab15-d37e-400e-9816-e7ed97bdb218.jpg
+2018-10-12 15:33:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:17 - root - INFO: - d2923943-e727-4690-bae6-97a5c95f3cab.jpg
+2018-10-12 15:33:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:21 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:21 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:21 - root - INFO: - d2ad834a-a8aa-4f83-8405-5f04833bae00.jpg
+2018-10-12 15:33:21 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:34 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:34 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:34 - root - INFO: - d33e6f8e-4851-47fa-b9a4-4348c9465756.jpg
+2018-10-12 15:33:34 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:40 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:40 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:40 - root - INFO: - d342506d-7013-489e-afce-c31f5dc034a9.jpg
+2018-10-12 15:33:40 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:40 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:40 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:41 - root - INFO: - d39e04a9-dce4-41fd-9711-43473a67de30.jpg
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:41 - root - INFO: - d44206d5-8286-4685-8894-8f53aa96e4cc.jpg
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:41 - root - INFO: - d52e28b8-6833-4b21-868d-f3bc0489c309.jpg
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:41 - root - INFO: - d5b97a86-8ce2-4a48-bac6-ed0ca99e8941.jpg
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:41 - root - INFO: - d665549a-4bf4-4632-a4e8-8c3fa0208b9d.jpg
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:41 - root - INFO: - d6f35366-9a9e-4e4f-990d-fe7ea14ac879.jpg
+2018-10-12 15:33:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 226
+2018-10-12 15:33:43 - root - INFO: - {'code': '000000', 'result': 'http://www.jsgsj.gov.cn:58888/province/infoQueryServlet.json?pt&c=75B161B67BE862B1BCC14858BD63303AC5DFE01C444522D1A9D80FF7915D21A05F02FDDE65EDDBF906F1E873506224FF3C40CB5EA090BF3DBE613C937889291D'}
+2018-10-12 15:33:43 - root - INFO: - d7ab52bf-6129-4a64-9b23-c879140437cb.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:43 - root - INFO: - d7b205ee-57bb-4c9e-841e-907403d12d89.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:43 - root - INFO: - d81c41fc-2205-44cd-a40c-b571122cc66e.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:43 - root - INFO: - d82ba3a6-e8c1-4849-afa5-103a93abdbe7.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:43 - root - INFO: - d838f791-5c72-4832-b6c7-b8ec5e9ddfd0.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:43 - root - INFO: - d866cc21-d325-45d6-93f3-94cff57fc499.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:43 - root - INFO: - d8bb65cf-28b4-4e50-bed9-826d0c2f9ce4.jpg
+2018-10-12 15:33:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:56 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:33:56 - root - INFO: - dadded9a-080e-46a4-a2c3-3aff5ad03ef4.jpg
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:56 - root - INFO: - dae14d80-38ea-493a-a8f8-ab20341975ac.jpg
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:56 - root - INFO: - db00285a-5921-4f63-9ebb-ec0a7cd092b5.jpg
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:33:56 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:33:56 - root - INFO: - db378df4-3aba-4511-97cf-97bca221add2.jpg
+2018-10-12 15:33:56 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:01 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:01 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:01 - root - INFO: - db3e28e7-953d-4a90-9183-dd67228e8a6b.jpg
+2018-10-12 15:34:01 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:07 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:07 - root - INFO: - dbd64cd7-a7f2-4936-a896-8848268a1b49.jpg
+2018-10-12 15:34:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:07 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:07 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:07 - root - INFO: - dbd94243-240f-4dd0-9e7e-577e76fa0991.jpg
+2018-10-12 15:34:07 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 782
+2018-10-12 15:34:11 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码：91330206MA281CM9X2,企业注册号:330206000303772;企业名称:宁波栖友装修工程有限公司;登记机关:宁波市北仑区市场监督管理局;登记时间:2016-01-04;经营范围:  室内外装潢工程、建筑安装工程、钢结构工程、暖通工程、防水防腐工程、保温工程、园林绿化工程、市政工***;详询信用公示系统:http://gsxt.zjaic.gov.cn'}
+2018-10-12 15:34:11 - root - INFO: - dbebf94c-ada4-4f4c-a1d3-4f9d70b45881.jpg
+2018-10-12 15:34:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:12 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:12 - root - INFO: - dc8da299-5860-4f08-a49a-5aa71d08a0e1.jpg
+2018-10-12 15:34:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:12 - root - INFO: - e152fd39-958f-4c25-9a56-98e023ee40f5.jpg
+2018-10-12 15:34:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:16 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:16 - root - INFO: - e1a9ce7f-d9c0-44d5-8197-3ba6607bbc34.jpg
+2018-10-12 15:34:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:16 - root - INFO: - e28852e4-17aa-48c0-b8c1-929740790438.jpg
+2018-10-12 15:34:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:16 - root - INFO: - e2f3f63d-5964-4943-bb07-56cf09098bda.jpg
+2018-10-12 15:34:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 146
+2018-10-12 15:34:17 - root - INFO: - {'code': '000000', 'result': 'http://www.mohurd.gov.cn/docmaap/CertQRCodeQuery.aspx?CertID=D332148405&Type=2&ID=27310D8C7A3F4CD9AF163FD4E52F52C8'}
+2018-10-12 15:34:17 - root - INFO: - e37903eb-853b-4f47-8985-bf6db514da26.jpg
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:17 - root - INFO: - e3869506-78c6-4e64-89c3-8e82ecfa17d2.jpg
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:17 - root - INFO: - e39155cd-bb20-4199-9303-7856e3a7ef31.jpg
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:17 - root - INFO: - e39fb9d0-ebba-4b1a-a395-3ff027ef139f.jpg
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:17 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:17 - root - INFO: - e47e3eba-aebc-4320-afc2-65419d7aa484.jpg
+2018-10-12 15:34:17 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:24 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:24 - root - INFO: - e4ec4c01-cf02-4a98-baea-8503b255bbcc.jpg
+2018-10-12 15:34:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:24 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:24 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:24 - root - INFO: - e53dd710-b697-4f61-8850-d67a8382ff9f.jpg
+2018-10-12 15:34:24 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - e5eae61e-75cc-40c9-8a55-1ceb8ec7182e.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - e5fbe465-037b-4e62-82d6-866f38c95ec9.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - e7f9a4d8-1ab7-4ac1-b8b3-b2b29260dcef.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - e9c055e9-5f00-465d-81d8-47812f8fdb62.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - e9f45c8e-f651-47c9-861a-d51670194f5b.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - ea0cc084-64e6-42b1-a278-194df3d30b36.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:25 - root - INFO: - ec869caf-51d8-4344-95e4-2cade6e092c9.jpg
+2018-10-12 15:34:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - ee064049-e763-4f12-8e28-d39e809f868f.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - ee415be5-2a30-4288-8c70-59cc7bcc12ec.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - eead26b7-bda9-4620-aea2-fb6082de9595.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - efda0fc0-ce98-41fb-b2fa-fdd5fd249d4c.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - f107c8b3-3e4e-4988-85b6-794bc20f2383.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - f1a41b2f-10d6-4713-8ca0-167a3c16f909.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:32 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:32 - root - INFO: - f22faa6d-37b6-43e9-a376-28557f8b0ab2.jpg
+2018-10-12 15:34:32 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:39 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:39 - root - INFO: - f28650eb-7989-4dfc-956f-2c2fc579c653.jpg
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:39 - root - INFO: - f2ba90a4-8ba5-49ff-be0b-c339ab4badb3.jpg
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:39 - root - INFO: - f2bf9ec4-fd1b-4792-b4b4-2c911c456113.jpg
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:39 - root - INFO: - f3744adc-267c-4089-933a-2909be016dc3.jpg
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:39 - root - INFO: - f375d5a0-8c3c-4e86-bc99-bdba359de1ce.jpg
+2018-10-12 15:34:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:41 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:41 - root - INFO: - f39cf421-6b05-44fc-8072-3be103093e34.jpg
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:41 - root - INFO: - f442992b-a1a5-4025-a6d0-bbe95d1b8beb.jpg
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:41 - root - INFO: - f503a0e3-9425-45ee-a3f2-7ff4ec40a506.jpg
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:41 - root - INFO: - f55abdad-8527-4ce1-bb13-52a9fc353012.jpg
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:41 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:41 - root - INFO: - f577e310-4a47-4571-9937-6f1c2cda8740.jpg
+2018-10-12 15:34:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 770
+2018-10-12 15:34:43 - root - INFO: - {'code': '000000', 'result': '统一社会信用代码:913302823090526850;注册号:330282000294831;企业名称:宁波神州东天电子科技有限公司;登记机关:慈溪市市场监督管理局;登记时间:2017-07-07;经营范围:电子产品、电动开窗机控制设备、消防电动开窗机、五金配件、金属制品、遮阳伞、帐篷、窗帘控制系统的研发、***;详询信用公示系统:http://gsxt.zjaic.gov.cn/'}
+2018-10-12 15:34:43 - root - INFO: - f5bc5cc8-e1f5-4859-b63b-e632f972bb73.jpg
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:43 - root - INFO: - f63e4c52-7338-4a93-ae81-2d6752280046.jpg
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:43 - root - INFO: - f6d85bb1-08c3-41e5-b10e-60638b9f3c1e.jpg
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:43 - root - INFO: - f6e0c176-2bc9-4c83-af67-42e253c6342e.jpg
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:43 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:43 - root - INFO: - f6fbbacc-0c4f-41cb-895a-d7b6da995147.jpg
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:43 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:43 - root - INFO: - f80f63e1-08ce-4b7a-8f0e-b66c4ab40797.jpg
+2018-10-12 15:34:43 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:44 - root - INFO: - f904a30d-2ab2-4c27-a87d-e08d38fbf56f.jpg
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:44 - root - INFO: - f9b9d380-42c4-49b8-b333-4aed26688514.jpg
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:44 - root - INFO: - fa63d9eb-9854-41c0-81a7-2a745beea503.jpg
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:44 - root - INFO: - fb5e9faa-5e2c-4964-9d21-cc1d088264a0.jpg
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:44 - root - INFO: - fbfa93f2-b366-43dc-91a6-a3cba9806105.jpg
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:44 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:44 - root - INFO: - fc8cee16-1f13-4d5c-be78-e3b1ace08bdc.jpg
+2018-10-12 15:34:44 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:57 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:34:57 - root - INFO: - fd5438c1-597e-44aa-b202-21d59d2c59e1.jpg
+2018-10-12 15:34:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:34:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:34:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:34:57 - root - INFO: - fe9ac40a-bc7b-44b2-b5b9-7daad93a02d2.jpg
+2018-10-12 15:34:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:35:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:35:06 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:35:06 - root - INFO: - fed493ab-0600-424c-9c9a-ad7802a526ed.jpg
+2018-10-12 15:35:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:35:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:35:10 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 15:35:10 - root - INFO: - feee20b6-138f-4659-9f74-15cc4cc69a1c.jpg
+2018-10-12 15:35:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:35:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 500 291
+2018-10-12 15:35:10 - root - INFO: - Expecting value: line 1 column 1 (char 0)
+2018-10-12 15:35:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:35:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:35:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:35:10 - root - INFO: - ffeb605f-19c6-42e1-b333-a78ae28693f5.jpg
+2018-10-12 15:35:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:35:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 15:35:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 15:35:11 - root - INFO: - fffdc31c-b79f-472d-9f83-61073551c206.jpg
+2018-10-12 15:35:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 15:35:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 500 291
+2018-10-12 15:35:11 - root - INFO: - Expecting value: line 1 column 1 (char 0)
+2018-10-12 16:02:38 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:39 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:02:39 - root - INFO: - 05db1bd1-e370-454b-a5c9-3ef695fc1cbe.jpg
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:39 - root - INFO: - 06668f8f-408d-443c-ab5b-94552bd698ac.jpg
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:39 - root - INFO: - 0abeafe9-6db9-48ec-a2f0-76e6b83feec9.jpg
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:39 - root - INFO: - 0ec7715a-52c6-4322-bf91-49e4830920db.jpg
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:39 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:39 - root - INFO: - 0f8b1dad-3a1c-4344-94ba-5b986a11cf66.JPG
+2018-10-12 16:02:39 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:48 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:48 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:02:48 - root - INFO: - 13aed481-b934-41dc-95b9-71e7cea413f0.jpg
+2018-10-12 16:02:48 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:48 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:48 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:48 - root - INFO: - 14659265-1ab6-447f-8300-f76b42e061b0.jpg
+2018-10-12 16:02:48 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 206f06bb-b386-4776-9a49-7a2131bc05f1.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 23e3b5cc-2f54-4191-ae7b-4e6640b5a570.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 2aa2d84a-e4e2-4cbb-9b05-a6ee01a8f29d.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 2bb068f0-d9a8-444f-8238-31442b257956.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 307ddba5-c321-4d58-8f97-befa5360c521.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 31ad7e35-ebfa-4385-9e18-aa4b26926a37.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:02:57 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:02:57 - root - INFO: - 345c8594-3d99-42cb-a235-590dede5d763.jpg
+2018-10-12 16:02:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 389b0114-b1db-4f86-bd88-c00bcee7dccc.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 39291088-fa89-49ed-957f-5982bdbad899.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 39769785-fcab-40ed-b002-5bd2ae5c1d55.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 3aefa54a-5956-4ff3-b18a-ca1bcef01630.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 3af6b239-fcd0-4cb9-bf61-0db1a322e41d.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 3c308aba-0f61-45f7-a498-f034cc2d7bc7.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:03 - root - INFO: - 46b6b6a0-33cb-4119-a70e-8990109f128b.jpg
+2018-10-12 16:03:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:05 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:05 - root - INFO: - 481ffd84-4615-4bff-8ce9-b0df7443d895.jpg
+2018-10-12 16:03:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:05 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:05 - root - INFO: - 4b656780-3643-46c4-97ef-9eaeb2408f7b.jpg
+2018-10-12 16:03:05 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:05 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:05 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 4e550069-ebc9-4668-829c-69a6e28c11fa.jpg
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 4f8b0922-eddb-479d-aaa6-e99aabd0de05.jpg
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 506e7c0c-c027-413d-8920-ca61dca9eb8d.jpg
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 5247d28f-ebb6-4c15-bb49-1c100628a15d.jpg
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 524b8957-27ba-41ca-9d36-c38a551c2732.JPG
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 525a0aad-0e51-4b51-a195-38612b742862.jpg
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:06 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:06 - root - INFO: - 55f27551-2176-4583-8009-b981f66b6855.jpg
+2018-10-12 16:03:06 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:10 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:10 - root - INFO: - 58170aaa-cf22-4ea9-8b0a-192349b36c99.jpg
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:10 - root - INFO: - 5a7b3716-9001-41b2-aeb2-f41bdad07a5c.jpg
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:10 - root - INFO: - 5fbec685-5a9e-45de-9f65-33234cbf53a9.jpg
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:10 - root - INFO: - 642e92e8-fc5b-4174-9e38-00dbf2c4d496.jpg
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:10 - root - INFO: - 64e28c12-17d6-4d1c-a361-b5531c9b15fa.jpg
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:10 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:10 - root - INFO: - 67e2ecb6-86e7-4d53-9312-ce04b7462dab.jpg
+2018-10-12 16:03:10 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 6993fe7b-8c25-48e2-b70a-c3e36fd357d7.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 69f54818-1e62-49d9-be3a-919f62a40e29.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 6adc4416-54d5-454b-b8a1-a5b5beec47f5.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 6b4e61bc-2538-46ca-89e4-9e77d090ee48.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 6b6776a3-d84b-4937-b009-e1b5a7a23c0f.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 708adc68-e2dc-41c1-8bb8-279082d63654.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 723ef410-24c6-40f6-a704-596c7d316bda.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:11 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:11 - root - INFO: - 72c6846a-5b05-47b1-9a8f-6913df913f41.jpg
+2018-10-12 16:03:11 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:12 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:12 - root - INFO: - 73f5024b-29c7-4984-b1cb-9d4cae79ec3e.jpg
+2018-10-12 16:03:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:12 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:12 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:12 - root - INFO: - 759294a9-4d5d-4608-90df-9c1fd2f35efe.jpg
+2018-10-12 16:03:12 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:15 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:15 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:15 - root - INFO: - 7813d8be-ddc5-457e-872d-6500ea6bb70c.jpg
+2018-10-12 16:03:15 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:15 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:15 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:15 - root - INFO: - 78176bc1-ad61-4c17-aa19-356d84256a3c.jpg
+2018-10-12 16:03:15 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 78a329fc-5df4-4b92-883d-c60bbd3f84cf.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 7c4046de-6632-4cdf-8f07-6c74b9e27c58.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 7dda491d-e848-4131-ac47-9055545eedb4.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 814967fb-022e-4545-b8b0-e396da240400.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 8525af75-dc6a-4474-a477-7e5c75b9acd1.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 86c8a268-390d-425d-84d8-5a8d5099eadb.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 93dd3394-06ba-482d-bebd-5e7a32fb20f2.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:16 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:16 - root - INFO: - 999d74b1-172a-4a80-b35b-5431c2e700d5.jpg
+2018-10-12 16:03:16 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:23 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:23 - root - INFO: - 9eb2b9ea-d5dc-43bb-a915-f8ff63bed849.jpg
+2018-10-12 16:03:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:23 - root - INFO: - a3054989-01f8-4409-a407-f409160f5daa.jpg
+2018-10-12 16:03:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:23 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:23 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:23 - root - INFO: - a3a4bc15-6cbe-4209-a7a3-38b3b26ff5c8.jpg
+2018-10-12 16:03:23 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 226
+2018-10-12 16:03:25 - root - INFO: - {'code': '000000', 'result': 'http://www.jsgsj.gov.cn:58888/province/infoQueryServlet.json?pt&c=75B161B67BE862B14AD1356C9CEA6054747BED20404FEF836FC5A189FE913B1F92CBCD0D5CA6826994BDB8FF226862BD72E7D06251BD34A3BE613C937889291D'}
+2018-10-12 16:03:25 - root - INFO: - a6030394-27e1-4719-bea9-73d7b3acf44e.jpg
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:25 - root - INFO: - a7a5b69a-3fc8-4c4c-b048-b8dfdfd929b6.jpg
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:25 - root - INFO: - b26ee18c-8ced-4f8c-a2dd-040328570752.jpg
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:25 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:25 - root - INFO: - b4d8ca7b-aaf8-47bd-bc44-d8331e96f209.jpg
+2018-10-12 16:03:25 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:41 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:41 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:41 - root - INFO: - bdb82b37-a9c9-48c0-b9c8-7c34043277f9.jpg
+2018-10-12 16:03:41 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:52 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:52 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:52 - root - INFO: - c06a0b7f-06e1-4643-8548-990dec3c896d.jpg
+2018-10-12 16:03:52 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:52 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:52 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:52 - root - INFO: - c5309751-7591-40de-94b1-0bb304561eeb.jpg
+2018-10-12 16:03:52 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:53 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:53 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:53 - root - INFO: - ca42294c-ab72-4080-9218-215cd02d4e5b.jpg
+2018-10-12 16:03:53 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - cf2a8b51-0cbd-4aac-98e3-16ee530ead7d.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - d049eab5-a286-437a-958e-cd26a275de9a.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - d2ca78ff-025e-4e1e-9eb7-f82b32ab115b.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - d3f98b38-9868-4a7d-8e78-f7512e7aa78e.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - d5da15e6-27a9-4e59-b60a-ccfc0c37ae8a.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - d8d289d9-f937-4e55-b1e3-3d7c9c95ee8e.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:54 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:03:54 - root - INFO: - de81e47a-a6a6-4978-992b-8fb064779e17.jpg
+2018-10-12 16:03:54 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:03:57 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:03:57 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:03:57 - root - INFO: - e8732227-fe34-4794-a3c4-5da0897be7cc.jpg
+2018-10-12 16:03:57 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - e98ea283-0163-4dcf-a407-603a2da589bd.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - ebf6f232-8cd1-4b73-aaf9-2b1fcd3e3795.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - ef548a69-936a-4e9d-8ba7-7ee8ba2469fd.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - f1a0b470-f047-42d1-bac3-7303c1d7a919.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - f3ccf64b-946a-4475-bdfa-e66eacfe350e.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - f4bcbe22-95c6-420e-bc68-042024d5b859.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:02 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:02 - root - INFO: - f97b4fc5-820b-4671-abe9-ec0552e2d13e.jpg
+2018-10-12 16:04:02 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:03 - root - INFO: - {'code': '000005', 'result': 'Null'}
+2018-10-12 16:04:03 - root - INFO: - faaae3c9-3641-4091-9c17-1446399d64d0.jpg
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:03 - root - INFO: - fcc8d0bc-f94b-4203-ae50-37e472f74480.jpg
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 500 291
+2018-10-12 16:04:03 - root - INFO: - Expecting value: line 1 column 1 (char 0)
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 200 36
+2018-10-12 16:04:03 - root - INFO: - {'code': '000004', 'result': 'Null'}
+2018-10-12 16:04:03 - root - INFO: - ff4efe7a-adc1-4d77-bcd4-2f2f7f434938.jpg
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - Starting new HTTP connection (1): 10.18.6.102:5002
+2018-10-12 16:04:03 - urllib3.connectionpool - DEBUG: - http://10.18.6.102:5002 "POST /qr_api HTTP/1.1" 500 291
+2018-10-12 16:04:03 - root - INFO: - Expecting value: line 1 column 1 (char 0)
