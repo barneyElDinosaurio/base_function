@@ -8,7 +8,7 @@ from sandbox.models import SpiderModels, DBSession
 import logging
 import pymongo
 from sandbox import config
-
+from sandbox import setting
 
 class SQLPipeline(object):
     def __init__(self):
@@ -24,6 +24,8 @@ class SQLPipeline(object):
             mainAccount=item['mainAccount'],
             mainValue=item['mainValue'],
             orgName=item['orgName'],
+            origin=item['origin'],
+            crawltime=item['crawltime'],
         )
         self.session.add(obj)
 
@@ -37,10 +39,12 @@ class SQLPipeline(object):
 
 class MongoPipeline(object):
     def __init__(self):
-        DOCUMENT = ''
+        DOCUMENT = setting.MONGODB_DOC
         self.db = pymongo.MongoClient(config.mongo_ip, port=27018)
         self.doc = self.db['spider'][DOCUMENT]
 
     def process_item(self, item, spider):
-        self.doc.insert(dict(item))
+        insert_item = dict(item)
+        self.doc.insert(insert_item)
+
         return item

@@ -18,3 +18,4 @@ class SpiderItem(Item):
     mainAccount = Field()
     mainValue = Field()
     orgName = Field()
+    crawltime = Field()

@@ -29,8 +29,9 @@ class SpiderModels(Base):
     mainAccount = Column(Text, comment='主账号')
     mainValue = Column(Text, comment='主账号值')
     orgName = Column(Text, comment='发卡行')
-    # origin = Column(String(30), comment='来源')
-    crawtime = Column(DateTime, default=datetime.datetime.now(), comment='抓取时间')
+
+    origin = Column(String(30), comment='来源')
+    crawltime = Column(DateTime, default=datetime.datetime.now(), comment='抓取时间')
 
 
 Base.metadata.create_all(engine)
