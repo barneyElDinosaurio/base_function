@@ -63,19 +63,19 @@ def download(url, retry=5):
 
 rds = redis.StrictRedis(config.redis_proxy, db=13, decode_responses=True)
 
-def redis_proxy(retry = 5 ):
-    while retry > 0 :
-        proxy=rds.randomkey()
-        if proxy:
-            proxy_dict = {'http':'http://{}'.format(proxy)}
-            return proxy_dict
-        else:
-            retry-=1
-            continue
-    return None
+# def redis_proxy(retry = 5 ):
+#     while retry > 0 :
+#         proxy=rds.randomkey()
+#         if proxy:
+#             proxy_dict = {'http':'http://{}'.format(proxy)}
+#             return proxy_dict
+#         else:
+#             retry-=1
+#             continue
+#     return None
 
 # 旧的代理使用方式
-def get_proxy(retry=10):
+def redis_proxy(retry=10):
     proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
     count = 0
     for i in range(retry):
