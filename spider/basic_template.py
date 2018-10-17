@@ -90,34 +90,25 @@ def post_method():
         '__CSRFCOOKIE': '6d3eecf2-7377-45df-b567-b22463f0910f'
     }
 
-    url = 'http://oa.xinguodu.com/login/VerifyLogin.jsp'
+    url = 'http://122.96.62.234/Wind.WFC.Enterprise.Web/Enterprise/WindSecureApi.aspx?wind.sessionid=75e88a1178c44927a8460685003d4338&cmd=getclassifycompany&page=result-search&s=0.47776212910570837'
 
     post_data = {
-        'loginfile': '/wui/theme/ecology7/page/login.jsp?templateId=4&logintype=1&gopage=',
-        'logintype': '1',
-        'fontName': '微软雅黑',
-        'message': '',
-        'gopage': '',
-        'formmethod': 'post',
-        'rnd': '',
-        'serial': '',
-        'username': '',
-        'isie': 'false',
-        'loginid': 'wangshuai',
-        'userpassword': 'cjw@0619',
-        'submit': '',
+        'pageNo': 0, 'pageSize': 50, 'companyname': '科陆电子',
+        'status': '', 'establishedtime': '',
+        'feature': '', 'token': '75e88a1178c44927a8460685003d4338',
+        'deviceId': 'ffffffff-ccc6-5d51-ffff-ffffe64ecdb1',
+        'ver': '1.0.30', 'osName': 'iOS'
     }
 
     # 使用json
     r = requests.post(url=url,
-                      headers=headers,
+                      # headers=headers,
                       data=post_data,
                       # json=post_data,
-                      cookies=cookies
+                      # cookies=cookies
                       )
     # r.encoding = 'gbk'
     print(r.text)
-
 
 
 # 先访问一页获取某个值
