@@ -3,6 +3,8 @@ import json
 import re
 import requests
 import urllib.parse
+import config
+import time
 from fake_useragent import UserAgent
 from lxml import etree
 
@@ -62,19 +64,42 @@ def analysis_cookie():
         # print('\'',name,'\'',':','\'',value,'\'',',')
         print('\"{}\":\"{}\",'.format(name, value))
 
+def get_proxy(retry=5):
+    proxyurl = 'http://{}:8081/dynamicIp/common/getDynamicIp.do'.format(config.proxyip)
+    count = 0
+    for i in range(retry):
+        try:
+            r = requests.get(proxyurl,timeout=3)
+        except Exception as e:
+            print(e)
+            count += 1
+            print('代理获取失败,重试' + str(count))
+            time.sleep(1)
 
-def get_method(url):
-    # headers = getheader()
-    headers = {'Host': 'www.yzcetc.com', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0',
-               'Origin': 'http://www.yzcetc.com', 'Upgrade-Insecure-Requests': '1',
-               # 'Content-Type': 'application/x-www-form-urlencoded',
-               'User-Agent': 'Mozilla/5.0AppleWebKit/537.36(KHTML,likeGecko)Chrome/67.0.3396.99Safari/537.36',
-               # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-               'Referer': 'http://www.yzcetc.com/yzcetc/YW_Info/HuiYuanInfo/HuiYuanInfoList.aspx?CategoryNum=004&DanWeiType=13',
-               'Accept-Encoding': 'gzip,deflate', 'Accept-Language': 'zh,en;q=0.9,en-US;q=0.8'
-               }
+        else:
+            js = r.json()
+            proxyServer = 'http://{0}:{1}'.format(js.get('ip'), js.get('port'))
+            proxies_random = {
+                'http': proxyServer
+            }
+            return proxies_random
+    return None
 
-    r = requests.get(url=url, headers=headers)
+def get_method(proxy=False):
+    s='李作权与广东省城规建设监理有限公司劳动争议纠纷上诉案'
+    headers = getheader()
+    base_url='https://www.itslaw.com/api/v1/caseFiles?startIndex=0&countPerPage=20&sortType=1&conditions={}'
+    quote_kw = 'searchWord+{}+1+{}'.format(s,s)
+    url=base_url.format(urllib.parse.quote(quote_kw))
+    print(url)
+    # url='https://www.itslaw.com/api/v1/caseFiles?startIndex=0&countPerPage=20&sortType=1&conditions=searchWord%2B%E6%9D%8E%E4%BD%9C%E6%9D%83%E4%B8%8E%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%9F%8E%E8%A7%84%E5%BB%BA%E8%AE%BE%E7%9B%91%E7%90%86%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%8A%B3%E5%8A%A8%E4%BA%89%E8%AE%AE%E7%BA%A0%E7%BA%B7%E4%B8%8A%E8'
+    # headers['']
+    if proxy == False:
+        proxies = None
+    else:
+        proxies=get_proxy()
+
+    r = requests.get(url=url, headers=headers,proxies=proxies)
     print(r.text)
 
 
@@ -119,12 +144,10 @@ def improve_get_method():
     if 'Content-Length' in headers:
         del headers['Content-Length']
 
-    url = 'http://www.yzcetc.com/yzcetc/YW_Info/HuiYuanInfo/HuiYuanInfoList.aspx?CategoryNum=004&DanWeiType=13'
-
     r = session.get(url=url,
                     headers=headers)
 
-    r.encoding = 'gbk'
+    # r.encoding = 'gbk'
     tree = etree.HTML(r.text)
     EVENTVALIDATION = tree.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
     print(EVENTVALIDATION)
@@ -162,12 +185,10 @@ def improve_get_method():
     print(r.text)
 
 
-# url='https://weibo.cn/search/mblog?hideSearchFrame=&keyword=000001&page=1'
-# url='https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信被执行人名单&cardNum=&iname=峨眉&areaName=&pn=10&rn=10&ie=utf-8&oe=utf-8&format=json&t=1536300591664&cb=jQuery1102018043360291625454_1536300402086&_=1536300402101'
-# get_method(url)
+get_method(proxy=True)
 # print(getheader())
 # code_decode()
 # analysis_cookie()
 # getheader()
-post_method()
+# post_method()
 # improve_get_method()
