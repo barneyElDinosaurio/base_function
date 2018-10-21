@@ -185,10 +185,10 @@ def improve_get_method():
     print(r.text)
 
 
-get_method(proxy=True)
+# get_method(proxy=True)
 # print(getheader())
 # code_decode()
 # analysis_cookie()
-# getheader()
+getheader()
 # post_method()
 # improve_get_method()
