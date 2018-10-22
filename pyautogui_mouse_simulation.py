@@ -37,7 +37,7 @@ def youdao():
         count = 0
         time.sleep(5)
         while count < 90000:
-            pag.keyDown('down')
+            pag.keyDown('up')
             print(count)
             time.sleep(1)
             count += 1
