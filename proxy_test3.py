@@ -37,7 +37,7 @@ def demo():
         try:
             r = requests.get(url=url, headers=headers,proxies=proxies)
             print(r.text)
-        except Exception,e:
+        except Exception as e:
             print(e)
 
 

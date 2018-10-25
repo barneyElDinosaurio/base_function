@@ -11,6 +11,7 @@ import itchat
 import json
 import pymysql
 import tushare as ts
+import config
 
 cfg_file = os.path.join(os.path.dirname(__file__), 'data.cfg')
 with open(cfg_file, 'r') as f:
@@ -85,6 +86,8 @@ def get_mysql_conn(db, local):
     :param local: 本地还是远程还是xgd
     :return:返回conn
     '''
+    conn= None
+
     if local == 'local':
         conn = pymysql.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, db, charset='utf8')
 
@@ -96,6 +99,8 @@ def get_mysql_conn(db, local):
         db = Ali_DB
         conn = pymysql.connect(MYSQL_HOST_Ali, MYSQL_USER_Ali, MYSQL_PASSWORD_Ali, db, charset='utf8')
 
+    elif local=='101':
+        conn = pymysql.connect(config.mysql_host_101, config.mysql_user_101, config.mysql_password_101, db, charset='utf8')
     return conn
 
 
