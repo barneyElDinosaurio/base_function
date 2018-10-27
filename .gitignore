@@ -29,3 +29,4 @@ httpcache
 config.py
 full_name.dat
 .ipynb_checkpoints/
+spider/headers.txt

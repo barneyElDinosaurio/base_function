@@ -67,7 +67,6 @@ def analysis_cookie():
 
 
 def parse_header():
-
     # 替换这个
     header = b'''
     Accept: */*
@@ -85,8 +84,8 @@ def parse_header():
 
     header_dict = headers_raw_to_dict(header)
     print(header_dict)
-    for k,v in header_dict.items():
-        print('"{}":"{}",'.format(str(k,encoding='utf8'),str(v,encoding='utf8')))
+    for k, v in header_dict.items():
+        print('"{}":"{}",'.format(str(k, encoding='utf8'), str(v, encoding='utf8')))
 
 
 def get_proxy(retry=5):
@@ -141,26 +140,32 @@ def post_method():
         '__CSRFCOOKIE': '6d3eecf2-7377-45df-b567-b22463f0910f'
     }
 
-    url = 'http://122.96.62.234/Wind.WFC.Enterprise.Web/Enterprise/WindSecureApi.aspx?wind.sessionid=75e88a1178c44927a8460685003d4338&cmd=getclassifycompany&page=result-search&s=0.47776212910570837'
+    url = 'https://app.gsxt.gov.cn/gsxt/corp-query-app-search-1.html'
+    sub_str = {"excep_tab": "0", "ill_tab": "0", "area": "0", "cStatus": "0", "xzxk": "0", "xzcf": "0",
+               "dydj": "0"}
+
+    js_str = json.dumps(sub_str)
 
     post_data = {
-        'pageNo': 0, 'pageSize': 50, 'companyname': '科陆电子',
-        'status': '', 'establishedtime': '',
-        'feature': '', 'token': '75e88a1178c44927a8460685003d4338',
-        'deviceId': 'ffffffff-ccc6-5d51-ffff-ffffe64ecdb1',
-        'ver': '1.0.30', 'osName': 'iOS'
+        'conditions': js_str,
+        'searchword': '91442000796252026X',
+        'sourceType': 'W'
+
     }
 
     # 使用json
     r = requests.post(url=url,
-                      # headers=headers,
+                      headers=headers,
                       data=post_data,
                       # json=post_data,
                       # cookies=cookies
                       )
     # r.encoding = 'gbk'
     print(r.text)
+    js_data = r.json()
 
+    for item in js_data.get('data').get('result').get('data'):
+        print(item)
 
 # 先访问一页获取某个值
 def improve_get_method():
@@ -216,6 +221,7 @@ def improve_get_method():
 # code_decode()
 # analysis_cookie()
 # getheader()
-parse_header()
-# post_method()
+# parse_header()
+print(time.ctime())
+post_method()
 # improve_get_method()
