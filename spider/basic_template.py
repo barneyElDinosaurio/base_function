@@ -140,7 +140,7 @@ def post_method():
         '__CSRFCOOKIE': '6d3eecf2-7377-45df-b567-b22463f0910f'
     }
 
-    url = 'https://app.gsxt.gov.cn/gsxt/corp-query-app-search-1.html'
+    url = ''
     sub_str = {"excep_tab": "0", "ill_tab": "0", "area": "0", "cStatus": "0", "xzxk": "0", "xzcf": "0",
                "dydj": "0"}
 
