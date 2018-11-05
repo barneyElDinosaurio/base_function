@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'sandbox.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'sandbox (+http://www.yourdomain.com)'
+#USER_AGENT = 'Mozilla/5.0 (Linux; Android 8.0.0; STF-AL10 Build/HUAWEISTF-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.91 Mobile Safari/537.36 MicroMessenger/6.7.3.1360(0x26070336) NetType/WIFI Language/zh_CN Process/appbrand0'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False

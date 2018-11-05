@@ -30,3 +30,4 @@ config.py
 full_name.dat
 .ipynb_checkpoints/
 spider/headers.txt
+area_code.txt

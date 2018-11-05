@@ -113,18 +113,20 @@ def get_proxy(retry=5):
 def get_method(proxy=False):
     s = '李作权与广东省城规建设监理有限公司劳动争议纠纷上诉案'
     headers = getheader()
-    base_url = 'https://www.itslaw.com/api/v1/caseFiles?startIndex=0&countPerPage=20&sortType=1&conditions={}'
+    base_url = 'https://servicewechat.com/wx5b0ed3b8c0499950/6/page-frame.html'
     quote_kw = 'searchWord+{}+1+{}'.format(s, s)
     url = base_url.format(urllib.parse.quote(quote_kw))
-    print(url)
+    # print(url)
     # url='https://www.itslaw.com/api/v1/caseFiles?startIndex=0&countPerPage=20&sortType=1&conditions=searchWord%2B%E6%9D%8E%E4%BD%9C%E6%9D%83%E4%B8%8E%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%9F%8E%E8%A7%84%E5%BB%BA%E8%AE%BE%E7%9B%91%E7%90%86%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E5%8A%B3%E5%8A%A8%E4%BA%89%E8%AE%AE%E7%BA%A0%E7%BA%B7%E4%B8%8A%E8'
     # headers['']
     if proxy == False:
         proxies = None
     else:
         proxies = get_proxy()
-
-    r = requests.get(url=url, headers=headers, proxies=proxies)
+    print(proxies)
+    r = requests.get(url=base_url,
+                     # headers=headers,
+                     proxies=proxies)
     print(r.text)
 
 
@@ -140,7 +142,7 @@ def post_method():
         '__CSRFCOOKIE': '6d3eecf2-7377-45df-b567-b22463f0910f'
     }
 
-    url = ''
+    url = 'https://...cn/gsxt/---search-1.html'
     sub_str = {"excep_tab": "0", "ill_tab": "0", "area": "0", "cStatus": "0", "xzxk": "0", "xzcf": "0",
                "dydj": "0"}
 
@@ -148,7 +150,7 @@ def post_method():
 
     post_data = {
         'conditions': js_str,
-        'searchword': '91442000796252026X',
+        'searchword': '新国都',
         'sourceType': 'W'
 
     }
@@ -216,12 +218,12 @@ def improve_get_method():
     print(r.text)
 
 
-# get_method(proxy=True)
+get_method(proxy=True)
 # print(getheader())
 # code_decode()
 # analysis_cookie()
 # getheader()
 # parse_header()
 print(time.ctime())
-post_method()
+# post_method()
 # improve_get_method()

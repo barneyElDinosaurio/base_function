@@ -60,13 +60,22 @@ class CreditIdentifier(object):
         return C9
 
 
+def gen_code():
+    first=['9']
+    second=['1','2','3','9']
+    # third=
+
+
+
+
+
 if __name__ == '__main__':
     codeHelper = CreditIdentifier()
-    input_code = '91430111MA4L41YT1U'
+    input_code = '92141021MA0HATBW'
     ret=codeHelper.getSocialCreditCode(input_code)
-
-    if ret == input_code:
-        print("统一社会信用代码验证成功")
-    else:
-        print('统一社会信用代码验证失败')
+    print(ret)
+    # if ret == input_code:
+    #     print("统一社会信用代码验证成功")
+    # else:
+    #     print('统一社会信用代码验证失败')
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
-
+import re
 import scrapy
 from scrapy import Request, FormRequest
 import logging
@@ -12,18 +12,15 @@ from sandbox.items import SpiderItem
 class WebGetSpider(scrapy.Spider):
     name = 'website1'
     headers = {
-        "Host": "cha.zfzj.cn",
-        "Accept": "application/json, text/javascript, */*; q=0.01",
-        "X-Requested-With": "XMLHttpRequest",
         "User-Agent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko)",
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Referer": "https://cha.zfzj.cn/mainPage.html",
     }
-    URL = 'https://cha.zfzj.cn/bankCardDetail/select'
+    URL = 'http://www.baidu.com'
 
     def start_requests(self):
         # TO DO
-        yield Request(url=self.URL)
+        yield Request(url=self.URL,
+                      headers=self.headers
+                      )
 
     def parse(self, response):
         # logging.info(response.text)
